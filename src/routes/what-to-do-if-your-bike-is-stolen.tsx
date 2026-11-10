@@ -75,12 +75,12 @@ function GuidePage() {
         whatIs:
           "The frame serial number is the key to getting a stolen bike back. It's what police enter in their report, what you <a href=\"/report-stolen\">report on SafeOrStolen</a>, and what a careful buyer checks before paying. Once your serial is reported, anyone who checks it on SafeOrStolen sees the bike is reported stolen, without seeing your name.",
         howItWorks:
-          "Enter your bike's frame serial in the search box. SafeOrStolen searches a national stolen-bicycle registry, its own theft reports and public web results, including listings and posts that mention the serial. That shows you whether your report is showing up, and whether the serial appears in a listing somewhere online.",
+          "Enter your bike's frame serial in the search box. SafeOrStolen searches a national stolen-bicycle registry, its own theft reports that mention the serial. That shows you whether your report is showing up, and whether the serial appears in a listing somewhere online.",
         whyCheck:
           "Buyers who check a serial before paying are the people most likely to stop the sale and call the police. They can only do that if your bike has been reported, with the right serial number.",
         benefits: [
           "Free to report your bike on SafeOrStolen",
-          "Bike checks search a national stolen-bicycle registry, SafeOrStolen theft reports and public web results",
+          "Bike checks search a national stolen-bicycle registry, SafeOrStolen theft reports",
           "Your report shows to any buyer who checks the serial",
           "Your name is never shown to people who check",
           "Works for road bikes, mountain bikes, kids' bikes and e-bikes",

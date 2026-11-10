@@ -21,7 +21,7 @@ const WHAT_YOU_GET: string[][] = [
 ];
 
 const SOURCES: string[][] = [
-  ['Any serial number', 'SafeOrStolen theft reports and public web results (listings and posts that mention the number)'],
+  ['Any serial number', 'SafeOrStolen theft reports (listings and posts that mention the number)'],
   ['Guns', 'Also more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
   ['Bikes', 'Also a national stolen-bicycle registry'],
   ['Phones (IMEI)', 'Also the make and model from the IMEI; the carrier blacklist is a separate paid check'],
@@ -43,7 +43,7 @@ const FAQS = [
   {
     question: 'Does SafeOrStolen search police records?',
     answer:
-      "Yes, for several item types. It searches its own theft reports and public web results, plus police firearm theft reports from 33 states and DC and live Ohio records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. Treat it as one check alongside the reporting your state requires.",
+      "Yes, for several item types. It searches its own theft reports, plus police firearm theft reports from 33 states and DC and live Ohio records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. Treat it as one check alongside the reporting your state requires.",
   },
   {
     question: 'Does a SafeOrStolen check satisfy state pawn or secondhand dealer laws?',
@@ -78,7 +78,7 @@ export default function ForBusinesses() {
       provider: { '@type': 'Organization', name: 'SafeOrStolen', url: 'https://safeorstolen.com' },
       areaServed: { '@type': 'Country', name: 'United States' },
       description:
-        'Single and bulk checks of serial numbers, IMEIs and VINs against SafeOrStolen theft reports and public web results, with a dated record of every check.',
+        'Single and bulk checks of serial numbers, IMEIs and VINs against SafeOrStolen theft reports, with a dated record of every check.',
       offers: [
         { '@type': 'Offer', price: '0.99', priceCurrency: 'USD', description: '2 checks' },
         { '@type': 'Offer', price: '10.00', priceCurrency: 'USD', description: 'Unlimited checks per month' },

@@ -13,7 +13,7 @@ const StolenCheckDallas = () => {
  const faqs = [
  {
  question: "How do I check if a used car in Dallas is stolen?",
- answer: "Get the 17-character VIN from the dashboard or driver's door jamb and enter it on SafeOrStolen (safeorstolen.com/stolen-check-dallas). It decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results in a few seconds. Then make sure the VIN matches the Texas title and the seller's name matches their ID."
+ answer: "Get the 17-character VIN from the dashboard or driver's door jamb and enter it on SafeOrStolen (safeorstolen.com/stolen-check-dallas). It decodes the year, make and model, lists open safety recalls, and searches theft reports in a few seconds. Then make sure the VIN matches the Texas title and the seller's name matches their ID."
  },
  {
  question: "Where can I safely meet sellers in Dallas?",
@@ -106,7 +106,7 @@ const StolenCheckDallas = () => {
  For a phone, watch the seller sign out of their Apple or Google account before you pay.
  </p>
  <p>
- A SafeOrStolen check takes a few seconds. Every check searches theft reports filed on SafeOrStolen and public web results;
+ A SafeOrStolen check takes a few seconds. Every check searches theft reports filed on SafeOrStolen;
  VIN checks also decode the vehicle and list open recalls, and bike checks also search a national stolen-bicycle registry.
  </p>
  </div>

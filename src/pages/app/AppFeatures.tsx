@@ -19,7 +19,7 @@ const AppFeatures = () => {
     {
       icon: <Search className="w-8 h-8" />,
       title: "Results in a few seconds",
-      description: "Every check searches theft reports filed on SafeOrStolen and public web results. Guns, bikes, phones and Arizona vehicles add their own records, and the result lists every source it searched.",
+      description: "Every check searches theft reports filed on SafeOrStolen. Guns, bikes, phones and Arizona vehicles add their own records, and the result lists every source it searched.",
       highlight: "Sources listed"
     },
     {
@@ -169,7 +169,7 @@ const AppFeatures = () => {
                 What you can check
               </h2>
               <p className="text-xl text-muted-foreground">
-                Each item type searches SafeOrStolen theft reports and public web results, plus the records listed below
+                Each item type searches SafeOrStolen theft reports, plus the records listed below
               </p>
             </div>
 
@@ -286,7 +286,7 @@ const AppFeatures = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-2">We search the records</h3>
                   <p className="text-muted-foreground">
-                    SafeOrStolen searches its own theft reports and public web results, plus the records for that item type. It takes a few seconds and needs a data or Wi-Fi connection.
+                    SafeOrStolen searches its own theft reports, plus the records for that item type. It takes a few seconds and needs a data or Wi-Fi connection.
                   </p>
                 </div>
               </div>

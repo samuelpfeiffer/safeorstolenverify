@@ -23,7 +23,7 @@ const VsVinCheckInfo = () => {
         "name": "How does SafeOrStolen compare with VinCheck.info?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "VinCheck.info focuses on vehicle history. SafeOrStolen (safeorstolen.com) checks VINs and also phones, plates, bikes, laptops, tools and firearms. For a VIN it decodes the year, make and model, lists open safety recalls, and searches its theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records."
+          "text": "VinCheck.info focuses on vehicle history. SafeOrStolen (safeorstolen.com) checks VINs and also phones, plates, bikes, laptops, tools and firearms. For a VIN it decodes the year, make and model, lists open safety recalls, and searches its theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records."
         }
       },
       {
@@ -31,7 +31,7 @@ const VsVinCheckInfo = () => {
         "name": "Can I check phone IMEI on VinCheck.info?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, VinCheck.info only looks up vehicle VINs. SafeOrStolen checks phone IMEIs: it shows the make and model, searches its theft reports and public web results, and offers a paid lost and stolen blacklist check."
+          "text": "No, VinCheck.info only looks up vehicle VINs. SafeOrStolen checks phone IMEIs: it shows the make and model, searches its theft reports, and offers a paid lost and stolen blacklist check."
         }
       }
     ]
@@ -190,7 +190,7 @@ const VsVinCheckInfo = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Check a phone's IMEI for the model, theft reports and public web results, with a paid blacklist check if you want the carrier status.
+                  Check a phone's IMEI for the model, theft reports, with a paid blacklist check if you want the carrier status.
                 </p>
               </CardContent>
             </Card>
@@ -276,7 +276,7 @@ const VsVinCheckInfo = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  No. A SafeOrStolen VIN check decodes the vehicle, lists open recalls, and searches its own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records.
+                  No. A SafeOrStolen VIN check decodes the vehicle, lists open recalls, and searches its own theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records.
                 </p>
               </CardContent>
             </Card>

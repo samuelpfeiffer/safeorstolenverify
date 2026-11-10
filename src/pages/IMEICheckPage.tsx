@@ -25,17 +25,17 @@ const IMEICheckPage = () => {
  ]}
  quickAnswer={{
  question: "How do I run an IMEI check?",
- answer: "Dial *#06# on the phone to show its 15-digit IMEI, then type it into SafeOrStolen (safeorstolen.com/imei-check). In a few seconds you see the make and model, any theft reports filed on SafeOrStolen, and public web results that mention the number. A paid carrier blacklist check is available if you also want lost/stolen blacklist status."
+ answer: "Dial *#06# on the phone to show its 15-digit IMEI, then type it into SafeOrStolen (safeorstolen.com/imei-check). In a few seconds you see the make and model, any theft reports filed on SafeOrStolen that mention the number. A paid carrier blacklist check is available if you also want lost/stolen blacklist status."
  }}
  content={{
- intro: "An IMEI check tells you what phone a 15-digit IMEI belongs to and whether anyone has reported it stolen. On SafeOrStolen you get the make and model from the IMEI, SafeOrStolen's own theft reports, and public web results that mention the number, in a few seconds. If the model on screen doesn't match the phone in your hand, stop there.",
+ intro: "An IMEI check tells you what phone a 15-digit IMEI belongs to and whether anyone has reported it stolen. On SafeOrStolen you get the make and model from the IMEI, SafeOrStolen's own theft reports that mention the number, in a few seconds. If the model on screen doesn't match the phone in your hand, stop there.",
  whatIs: "The IMEI (International Mobile Equipment Identity) is the number a phone uses to identify itself to cell networks. Owners and carriers use it to report a phone lost or stolen. An IMEI check looks that number up in theft records so you can spot a problem before you pay.",
- howItWorks: "Type the IMEI into the search box. SafeOrStolen reads the make and model from the number, searches theft reports filed by owners on SafeOrStolen, and searches public web results such as listings and stolen-phone posts. You see \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The paid blacklist check adds lost/stolen carrier blacklist status.",
+ howItWorks: "Type the IMEI into the search box. SafeOrStolen reads the make and model from the number, searches theft reports filed by owners on SafeOrStolen. You see \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The paid blacklist check adds lost/stolen carrier blacklist status.",
  whyCheck: "A stolen phone can be blacklisted by the owner's carrier, locked to the owner's Apple or Google account, or taken back by police, and the buyer usually loses what they paid. Checking the IMEI and keeping a dated record of it takes a minute at the meetup.",
  benefits: [
  "1 free check, no account or credit card needed",
  "Make and model read from the IMEI",
- "SafeOrStolen theft reports and public web results",
+ "SafeOrStolen theft reports",
  "Paid lost/stolen carrier blacklist check available (up to 20 a month for monthly members)",
  "Works for iPhone, Samsung, Google Pixel and other phones",
  "Each check saved to your account with the date",
@@ -59,7 +59,7 @@ const IMEICheckPage = () => {
  },
  {
  question: "What does the IMEI check search?",
- answer: "A SafeOrStolen IMEI check (safeorstolen.com/imei-check) shows the make and model from the IMEI, searches theft reports filed by owners on SafeOrStolen, and searches public web results that mention the number. The paid blacklist check adds carrier lost/stolen status."
+ answer: "A SafeOrStolen IMEI check (safeorstolen.com/imei-check) shows the make and model from the IMEI, searches theft reports filed by owners on SafeOrStolen."
  },
  {
  question: "What if the IMEI shows reported stolen or blacklisted?",

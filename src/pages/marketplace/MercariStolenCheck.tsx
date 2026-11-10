@@ -18,7 +18,7 @@ const MercariStolenCheck = () => {
       ]}
       canonical="/mercari-stolen-check"
       marketplaceName="Mercari"
-      heroSubtitle="Before you buy a phone, console, camera or watch on Mercari, ask the seller for the IMEI or serial number and check it. SafeOrStolen searches its theft reports and public web results in a few seconds."
+      heroSubtitle="Before you buy a phone, console, camera or watch on Mercari, ask the seller for the IMEI or serial number and check it. SafeOrStolen searches its theft reports in a few seconds."
       problemStats={[
         {
           title: "Stolen Phones",

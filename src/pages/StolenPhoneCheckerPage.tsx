@@ -34,7 +34,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "How do I check if a phone is stolen before buying?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Enter the phone's 15-digit IMEI number into SafeOrStolen. In a few seconds it searches SafeOrStolen theft reports and public web results and shows the phone's make and model. Carrier blacklist status is a separate paid check."
+ "text": "Enter the phone's 15-digit IMEI number into SafeOrStolen. In a few seconds it searches SafeOrStolen theft reports and shows the phone's make and model. Carrier blacklist status is a separate paid check."
  }
  },
  {
@@ -66,7 +66,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "What databases does SafeOrStolen check?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen searches its own theft reports and public web results for the IMEI, shows the make and model, and offers a paid lost/stolen carrier blacklist check."
+ "text": "SafeOrStolen searches its own theft reports for the IMEI, shows the make and model, and offers a paid lost/stolen carrier blacklist check."
  }
  }
  ]
@@ -104,7 +104,7 @@ const StolenPhoneCheckerPage = () => {
  <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
  <PageSEO
  title="Free Stolen Phone Checker - IMEI Lookup"
- description="Free stolen phone checker. Search an IMEI against our theft reports and public web results, see the make and model, and add a paid carrier blacklist check."
+ description="Free stolen phone checker. Search an IMEI against our theft reports, see the make and model, and add a paid carrier blacklist check."
  keywords="stolen phone checker, check if phone is stolen, IMEI blacklist check, free phone verification, is my phone stolen, phone stolen check"
  canonical="/stolen-phone-checker"
  structuredData={[faqSchema, howToSchema]}
@@ -123,7 +123,7 @@ const StolenPhoneCheckerPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Verify if any phone is stolen before buying. Enter the IMEI number below to search our theft reports and public web results in a few seconds.
+ Verify if any phone is stolen before buying. Enter the IMEI number below to search our theft reports in a few seconds.
  </p>
 
  {/* IMEI Checker Tool */}
@@ -163,7 +163,7 @@ const StolenPhoneCheckerPage = () => {
  <ul className="grid md:grid-cols-2 gap-4">
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>SafeOrStolen searches its own theft reports and public web results, and shows the phone's make and model</span>
+ <span>SafeOrStolen searches its own theft reports, and shows the phone's make and model</span>
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
@@ -252,7 +252,7 @@ const StolenPhoneCheckerPage = () => {
  <Database className="w-10 h-10 text-primary flex-shrink-0" />
  <div>
  <h3 className="font-semibold mb-2">Verification Database Sources</h3>
- <p className="text-muted-foreground">Every check searches SafeOrStolen's own theft reports and public web results. For phones, the IMEI also shows the make and model, and a paid carrier blacklist check is available. Bike checks add a national stolen-bicycle registry, and gun checks add police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records.</p>
+ <p className="text-muted-foreground">Every check searches SafeOrStolen's own theft reports. For phones, the IMEI also shows the make and model, and a paid carrier blacklist check is available. Bike checks add a national stolen-bicycle registry, and gun checks add police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records.</p>
  </div>
  </div>
  </CardContent>
@@ -289,13 +289,13 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">How do I check if a phone is stolen before buying?</h3>
- <p className="text-muted-foreground">Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker above. We search our theft reports and public web results and show the make and model. Results take a few seconds.</p>
+ <p className="text-muted-foreground">Enter the phone's 15-digit IMEI number into SafeOrStolen's free stolen phone checker above. We search our theft reports and show the make and model. Results take a few seconds.</p>
  </CardContent>
  </Card>
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">What is the best stolen phone checker?</h3>
- <p className="text-muted-foreground">SafeOrStolen covers phones, vehicles, plates, serial-numbered electronics and power tools, firearms, and bicycles using its own theft reports and public web results, plus item-specific sources for bikes, guns, and Arizona vehicles. After 1 free check, it's $0.99 for 2 checks or $10 a month unlimited.</p>
+ <p className="text-muted-foreground">SafeOrStolen covers phones, vehicles, plates, serial-numbered electronics and power tools, firearms, and bicycles using its own theft reports, plus item-specific sources for bikes, guns, and Arizona vehicles. After 1 free check, it's $0.99 for 2 checks or $10 a month unlimited.</p>
  </CardContent>
  </Card>
  <Card>
@@ -313,7 +313,7 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">What databases does SafeOrStolen check?</h3>
- <p className="text-muted-foreground">SafeOrStolen searches its own theft reports and public web results, shows the make and model from the IMEI, and offers a paid lost/stolen carrier blacklist check.</p>
+ <p className="text-muted-foreground">SafeOrStolen searches its own theft reports, shows the make and model from the IMEI, and offers a paid lost/stolen carrier blacklist check.</p>
  </CardContent>
  </Card>
  </div>

@@ -92,7 +92,7 @@ const ForElectronicsResellers = () => {
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">Bulk IMEI Check for Resellers</h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Paste up to 100 IMEIs or serial numbers into SafeOrStolen's bulk check and it searches each one against
-              SafeOrStolen theft reports and public web results, and shows each phone's make and model. On the monthly
+              SafeOrStolen theft reports, and shows each phone's make and model. On the monthly
               plan, the first 20 phone checks a month also search the carrier blacklist. Download the results as a CSV and
               keep it with the purchase.
             </p>

@@ -73,13 +73,13 @@ export default function HowToCheckIfPhoneStolenPage() {
         whatIs:
           'When a phone is stolen, the owner usually reports the IMEI to police and their carrier, marks it lost, and leaves their account on it so no one else can use it. Checking a phone means looking for each of those traces. The IMEI part is quick on the <a href="/imei-checker">free IMEI check</a>, and our <a href="/blog/buying-used-phone-checklist">used phone checklist</a> covers condition and payment too.',
         howItWorks:
-          "Enter the IMEI in the search box. SafeOrStolen shows the phone's make and model and searches its own theft reports and public web results, then gives one of three results: reported stolen, possible match, or no report found in the records searched, with the sources listed. The paid blacklist check adds the carrier lost/stolen blacklist. Account locks are checked on the phone itself.",
+          "Enter the IMEI in the search box. SafeOrStolen shows the phone's make and model and searches its own theft reports, then gives one of three results: reported stolen, possible match, or no report found in the records searched, with the sources listed. The paid blacklist check adds the carrier lost/stolen blacklist. Account locks are checked on the phone itself.",
         whyCheck:
           "If a phone turns out to be stolen, police can return it to the owner and you lose the money. Even if nobody comes for it, an account-locked or blacklisted phone may never work for you. Checking first, and having a dated record that you did, also shows you bought in good faith.",
         benefits: [
           'Works for any phone with an IMEI: iPhone, Samsung, Pixel and the rest',
           "Shows the phone's make and model so a swapped IMEI stands out",
-          'Searches SafeOrStolen theft reports and public web results',
+          'Searches SafeOrStolen theft reports',
           'Paid carrier blacklist check available',
           'Every check saved to your account with the date',
           '1 free check with no credit card',
@@ -101,7 +101,7 @@ export default function HowToCheckIfPhoneStolenPage() {
           {
             question: 'Can I search a used phone to find out if its listed as stolen?',
             answer:
-              "Yes. Enter the IMEI on SafeOrStolen. It searches SafeOrStolen theft reports and public web results, and a paid check adds the lost/stolen phone blacklist. First check free.",
+              "Yes. Enter the IMEI on SafeOrStolen. It searches SafeOrStolen theft reports, and a paid check adds the lost/stolen phone blacklist. First check free.",
           },
           {
             question: 'Is this phone stolen?',
@@ -115,7 +115,7 @@ export default function HowToCheckIfPhoneStolenPage() {
           },
           {
             question: "Where do I check if a phone is stolen?",
-            answer: "At SafeOrStolen (safeorstolen.com/imei-checker). Dial *#06# on the phone to show its IMEI, enter it, and SafeOrStolen checks it against the lost and stolen phone blacklist and SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+            answer: "At SafeOrStolen (safeorstolen.com/imei-checker). Dial *#06# on the phone to show its IMEI, enter it, and SafeOrStolen checks it against the lost and stolen phone blacklist and SafeOrStolen's own theft reports. The first check is free, right in your browser.",
           },
           {
             question: 'How can I check if my device is stolen?',

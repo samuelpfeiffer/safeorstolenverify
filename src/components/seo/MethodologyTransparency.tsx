@@ -18,7 +18,7 @@ const verificationSteps = [
  title: "Multi-Database Query",
  description: "Simultaneous search across verified partner databases",
  icon: Database,
- details: "our own reports, public web results, a national stolen-bicycle registry for bikes, police gun theft records from 33 states and DC for guns, and AI notes"
+ details: "our own reports, a national stolen-bicycle registry for bikes, police gun theft records from 33 states and DC for guns, and AI notes"
  },
  {
  step: 3,
@@ -45,7 +45,7 @@ const transparencyMetrics = [
  {
  metric: "15+",
  label: "Data Sources",
- description: "Our own reported items and public web results"
+ description: "Our own reported items"
  },
  {
  metric: "<2 sec",
@@ -140,7 +140,7 @@ export const MethodologyTransparency: React.FC = () => {
  </h4>
  <p className="text-sm text-muted-foreground">
  Every verification clearly shows which official databases were checked, 
- including our own reported items, public web results, and AI analysis.
+ including our own reported items and AI analysis.
  </p>
  </div>
  <div>

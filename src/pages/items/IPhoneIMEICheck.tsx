@@ -8,7 +8,7 @@ const IPhoneIMEICheck = () => {
  return (
  <SEOLandingPageTemplate
  title="Check if iPhone is Stolen - Free IMEI Check"
- metaDescription="Check if a used iPhone is stolen before you buy: find the IMEI, search theft reports and public web results, check the carrier blacklist, and spot Activation Lock."
+ metaDescription="Check if a used iPhone is stolen before you buy: find the IMEI, search theft reports, check the carrier blacklist, and spot Activation Lock."
  h1="Check if iPhone is Stolen - Free IMEI Check"
  keywords={[
  'check if iphone is stolen',
@@ -26,18 +26,18 @@ const IPhoneIMEICheck = () => {
  itemType="iPhone"
  identifierType="IMEI"
  heroBadge="iPhone IMEI Check"
- heroSubtitle="Before you buy a used iPhone, check its IMEI on SafeOrStolen: see the model, search theft reports and public web results, and add a paid carrier blacklist check if you want one."
+ heroSubtitle="Before you buy a used iPhone, check its IMEI on SafeOrStolen: see the model, search theft reports, and add a paid carrier blacklist check if you want one."
  stats={[
  { value: "15 digits", label: "IMEI length" },
  { value: "*#06#", label: "Dial to show the IMEI" },
  { value: "Free", label: "First 2 checks" }
  ]}
  whatIsTitle="What is an iPhone IMEI check?"
- whatIsContent="Every iPhone has a 15-digit IMEI that identifies that exact phone. When an iPhone is reported lost or stolen to a carrier, its IMEI goes on the carrier blacklist, and the phone stops working on cellular networks. A SafeOrStolen IMEI check shows the iPhone's model from the IMEI and searches theft reports filed on SafeOrStolen and public web results. The lost and stolen blacklist is a separate paid check. Activation Lock can only be confirmed on the phone itself."
+ whatIsContent="Every iPhone has a 15-digit IMEI that identifies that exact phone. When an iPhone is reported lost or stolen to a carrier, its IMEI goes on the carrier blacklist, and the phone stops working on cellular networks. A SafeOrStolen IMEI check shows the iPhone's model from the IMEI and searches theft reports filed on SafeOrStolen. The lost and stolen blacklist is a separate paid check. Activation Lock can only be confirmed on the phone itself."
  howItWorksSteps={[
  "Find the IMEI: dial *#06#, or open Settings > General > About and scroll to IMEI",
  "Enter the 15-digit IMEI on SafeOrStolen",
- "SafeOrStolen shows the model and searches its theft reports and public web results; add the paid blacklist check if you want the carrier status",
+ "SafeOrStolen shows the model and searches its theft reports; add the paid blacklist check if you want the carrier status",
  "Read the result in a few seconds: reported stolen, possible match, or no report found in the records searched"
  ]}
  howItWorksDescription="Every source searched is listed on the result, and the check is saved to your account with the date. Before you pay, also watch the seller sign out of their Apple ID, and ask the carrier about any unpaid financing."
@@ -79,7 +79,7 @@ const IPhoneIMEICheck = () => {
  },
  {
  question: "How accurate is the iPhone stolen check?",
- answer: "SafeOrStolen searches its own theft reports and public web results, and the paid blacklist check searches the lost and stolen carrier blacklist. Every source searched is listed on the result. Before you pay, also test the phone and watch the seller remove their Apple ID."
+ answer: "SafeOrStolen searches its own theft reports, and the paid blacklist check searches the lost and stolen carrier blacklist. Every source searched is listed on the result. Before you pay, also test the phone and watch the seller remove their Apple ID."
  },
  {
  question: "Can someone change an iPhone's IMEI?",

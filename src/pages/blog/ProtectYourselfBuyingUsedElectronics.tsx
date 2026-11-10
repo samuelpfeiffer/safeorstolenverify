@@ -54,7 +54,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
     },
     {
       question: 'How accurate is SafeOrStolen verification?',
-      answer: 'SafeOrStolen checks its own theft reports and public web results. Bike checks also search a national stolen-bicycle registry, gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records, and phone checks show the make and model from the IMEI. No check covers every record, so the results list every source searched.'
+      answer: 'SafeOrStolen checks its own theft reports. Bike checks also search a national stolen-bicycle registry, gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records, and phone checks show the make and model from the IMEI. No check covers every record, so the results list every source searched.'
     }
   ];
 
@@ -65,7 +65,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
     },
     {
       name: 'Verify with SafeOrStolen',
-      text: 'Run the serial number or IMEI through SafeOrStolen to check it against SafeOrStolen\'s own theft reports and public web results. This takes a few seconds.',
+      text: 'Run the serial number or IMEI through SafeOrStolen to check it against SafeOrStolen\'s own theft reports. This takes a few seconds.',
       url: 'https://safeorstolen.com/verify'
     },
     {
@@ -201,7 +201,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
                 </div>
                 <p className="text-muted-foreground mb-3">
                   Run the serial number or IMEI through SafeOrStolen to check it against SafeOrStolen's own theft
-                  reports and public web results. Every source searched is listed, and it takes a few seconds.
+                  reports. Every source searched is listed, and it takes a few seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">
                   <Shield className="h-4 w-4" />
@@ -315,7 +315,7 @@ export default function ProtectYourselfBuyingUsedElectronics() {
               <div className="border-l-4 border-primary pl-4">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">How accurate is SafeOrStolen's verification?</h3>
                 <p className="text-muted-foreground">
-                  SafeOrStolen checks its own theft reports and public web results, and phone checks show the make and
+                  SafeOrStolen checks its own theft reports, and phone checks show the make and
                   model from the IMEI. No check covers every record, so a clean result means no report was found in the
                   records searched, and every source is listed.
                 </p>

@@ -6,7 +6,7 @@ const IllinoisLicensePlateLookupPage = () => {
  <>
  <ItemLandingPageTemplate
  title="Illinois License Plate Lookup - Check IL Stolen Vehicle by Plate"
- metaDescription="Free Illinois license plate lookup. Check an IL plate against SafeOrStolen theft reports and public web results in a few seconds before you buy. No owner names shown."
+ metaDescription="Free Illinois license plate lookup. Check an IL plate against SafeOrStolen theft reports in a few seconds before you buy. No owner names shown."
  h1="Illinois License Plate Lookup - Check IL Vehicles"
  itemType="Vehicle"
  searchType="plate"
@@ -23,13 +23,13 @@ const IllinoisLicensePlateLookupPage = () => {
  'naperville plate lookup'
  ]}
  content={{
- intro: "Enter an Illinois plate and SafeOrStolen searches its own theft reports and public web results for it in a few seconds. Use it to screen a car from a Chicago, Aurora, Rockford or Naperville seller before you go see it, then run the VIN too. It never shows the owner's name.",
- whatIs: "An Illinois license plate lookup on SafeOrStolen tells you whether an IL plate appears in SafeOrStolen theft reports, filed by owners, or in public web results such as listings and posts. Every source is listed with the result, and owner names and addresses are never shown.",
- howItWorks: "Type the plate exactly as shown, letters and numbers only, and pick Illinois. SafeOrStolen searches its theft reports and public web results and returns reported stolen, possible match, or no report found in the records searched. The check is saved to your account with the date. For year, make, model and open recalls, run the VIN from the dashboard or driver's door jamb.",
+ intro: "Enter an Illinois plate and SafeOrStolen searches its own theft reports for it in a few seconds. Use it to screen a car from a Chicago, Aurora, Rockford or Naperville seller before you go see it, then run the VIN too. It never shows the owner's name.",
+ whatIs: "An Illinois license plate lookup on SafeOrStolen tells you whether an IL plate appears in SafeOrStolen theft reports, filed by owners. Every source is listed with the result, and owner names and addresses are never shown.",
+ howItWorks: "Type the plate exactly as shown, letters and numbers only, and pick Illinois. SafeOrStolen searches its theft reports and returns reported stolen, possible match, or no report found in the records searched. The check is saved to your account with the date. For year, make, model and open recalls, run the VIN from the dashboard or driver's door jamb.",
  whyCheck: "Plates are easy to move from one car to another, so check the VIN as well as the plate. Chicago's used-car market moves fast, and cars cross into Indiana and Wisconsin easily. Check the plate before you drive out, check the VIN when you see the car, and make sure the name on the Illinois title matches the seller's ID.",
  benefits: [
  "1 free check, no account or credit card needed",
- "Searches SafeOrStolen theft reports and public web results",
+ "Searches SafeOrStolen theft reports",
  "Results in a few seconds, with every source listed",
  "Never shows owner names or addresses",
  "Each check saved to your account with the date",
@@ -47,11 +47,11 @@ const IllinoisLicensePlateLookupPage = () => {
  faqs: [
  {
  question: "What is the most accurate license plate search in Illinois?",
- answer: "For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. Chicago Police stolen-vehicle and stolen-plate records are searched on every check. It works the same in Chicago, Aurora, Naperville, Rockford and every other Illinois city.",
+ answer: "For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. Chicago Police stolen-vehicle and stolen-plate records are searched on every check. It works the same in Chicago, Aurora, Naperville, Rockford and every other Illinois city.",
  },
  {
  question: "Can I check if a car is stolen in Illinois using just the license plate?",
- answer: "You can screen it. SafeOrStolen (safeorstolen.com/illinois-license-plate-lookup) searches its theft reports and public web results for an Illinois plate in a few seconds. Plates can be moved between cars, though, so also check the VIN and make sure it matches the dashboard, door jamb and title before you buy."
+ answer: "You can screen it. SafeOrStolen (safeorstolen.com/illinois-license-plate-lookup) searches its theft reports for an Illinois plate in a few seconds. Plates can be moved between cars, though, so also check the VIN and make sure it matches the dashboard, door jamb and title before you buy."
  },
  {
  question: "How do I find a vehicle's Illinois license plate number?",
@@ -59,7 +59,7 @@ const IllinoisLicensePlateLookupPage = () => {
  },
  {
  question: "What information can I get from an Illinois license plate lookup?",
- answer: "On SafeOrStolen, you see whether the plate appears in SafeOrStolen theft reports or public web results, with each source listed. Owner names, addresses and registration details are never shown; the Illinois Secretary of State keeps those, and access is restricted under the federal Driver's Privacy Protection Act."
+ answer: "On SafeOrStolen, you see whether the plate appears in SafeOrStolen theft reports, with each source listed. Owner names, addresses and registration details are never shown; the Illinois Secretary of State keeps those, and access is restricted under the federal Driver's Privacy Protection Act."
  },
  {
  question: "How much does an Illinois license plate lookup cost?",
@@ -67,7 +67,7 @@ const IllinoisLicensePlateLookupPage = () => {
  },
  {
  question: "What does SafeOrStolen search for an Illinois plate?",
- answer: "SafeOrStolen searches its own theft reports and public web results, and lists every source with the result. For title or lien questions, contact the Illinois Secretary of State. To confirm a theft report, call local police."
+ answer: "SafeOrStolen searches its own theft reports, and lists every source with the result. For title or lien questions, contact the Illinois Secretary of State. To confirm a theft report, call local police."
  },
  {
  question: "What if the name on the title doesn't match the seller?",
@@ -75,7 +75,7 @@ const IllinoisLicensePlateLookupPage = () => {
  },
  {
  question: "Does SafeOrStolen work for plates from anywhere in Illinois?",
- answer: "Yes. You can check a plate from Chicago, Aurora, Rockford, Naperville, Joliet, Springfield, Peoria or anywhere else in the state. The sources are the same everywhere: SafeOrStolen theft reports and public web results."
+ answer: "Yes. You can check a plate from Chicago, Aurora, Rockford, Naperville, Joliet, Springfield, Peoria or anywhere else in the state. The sources are the same everywhere: SafeOrStolen theft reports."
  }
  ]
  }}

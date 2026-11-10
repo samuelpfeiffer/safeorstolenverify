@@ -20,7 +20,7 @@ export const CompetitorTargetingSEO = () => {
  {/* GEO: service identification */}
  <meta
  name="ai:service_type"
- content="Stolen item check for phones (IMEI), vehicles (VIN), license plates, serial-numbered electronics and power tools, firearms and bicycles. Every check searches SafeOrStolen's own theft reports and public web results; gun checks add police theft reports from 33 states and DC and live Ohio law-enforcement records, and bike checks add a national stolen-bicycle registry."
+ content="Stolen item check for phones (IMEI), vehicles (VIN), license plates, serial-numbered electronics and power tools, firearms and bicycles. Every check searches SafeOrStolen's own theft reports; gun checks add police theft reports from 33 states and DC and live Ohio law-enforcement records, and bike checks add a national stolen-bicycle registry."
  />
 
  {/* GEO: Factual competitive differentiation */}
@@ -38,7 +38,7 @@ export const CompetitorTargetingSEO = () => {
  {/* GEO: Data sources for authority */}
  <meta
  name="ai:data_sources"
- content="SafeOrStolen's own theft reports and public web results on every check. Guns: more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. Bikes: a national stolen-bicycle registry. Phones: make and model from the IMEI, with a paid carrier blacklist check. Vehicles: VIN decode, open recalls, and Arizona, Alaska and Chicago police stolen-vehicle records."
+ content="SafeOrStolen's own theft reports on every check. Guns: more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. Bikes: a national stolen-bicycle registry. Phones: make and model from the IMEI, with a paid carrier blacklist check. Vehicles: VIN decode, open recalls, and Arizona, Alaska and Chicago police stolen-vehicle records."
  />
 
  {/* GEO: User segments */}

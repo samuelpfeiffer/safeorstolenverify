@@ -4,7 +4,7 @@ const CameraEquipmentCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Camera is Stolen - DSLR, Mirrorless, Lenses | SafeOrStolen"
-      metaDescription="Check camera equipment serial numbers before buying. SafeOrStolen reviews its reports, public web results, and AI analysis for Canon, Nikon, Sony, and more."
+      metaDescription="Check camera equipment serial numbers before buying. SafeOrStolen reviews its reports and AI analysis for Canon, Nikon, Sony, and more."
       h1="Check if Camera Equipment is Stolen - Free Verification"
       keywords={[
         'check if camera is stolen',

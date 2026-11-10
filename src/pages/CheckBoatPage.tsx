@@ -22,13 +22,13 @@ const CheckBoatPage = () => {
  'used boat buying checklist'
  ]}
  content={{
- intro: "Before you buy a used boat, jet ski or other watercraft, find its Hull Identification Number (HIN), confirm it matches the paperwork, and check it with the official agencies listed below. SafeOrStolen has no marine-specific data source, but you can run the HIN through SafeOrStolen's general serial number check, which searches theft reports filed on SafeOrStolen and public web results that mention the HIN.",
- whatIs: "A HIN is the 12-character code that identifies a boat, similar to a car's VIN. Checking whether a boat is stolen means confirming the HIN on the hull matches the title and registration, and asking the agencies that hold boat records. Those official resources include your state's boat registration and titling agency, the U.S. Coast Guard National Vessel Documentation Center (for federally documented vessels), and your local police or marine patrol. SafeOrStolen adds a search of its own theft reports and public web results for the HIN.",
- howItWorks: "Enter the HIN on the SafeOrStolen serial number checker. It searches theft reports filed on SafeOrStolen and public web results for the HIN. You get one of three results — reported stolen, possible match, or no report found in the records searched — with every source listed, and the check is saved to your account with the date. If you're selling, an optional $1.99 verification certificate gives the buyer a dated link showing you checked before the sale. Use it together with the official resources above.",
+ intro: "Before you buy a used boat, jet ski or other watercraft, find its Hull Identification Number (HIN), confirm it matches the paperwork, and check it with the official agencies listed below. SafeOrStolen has no marine-specific data source, but you can run the HIN through SafeOrStolen's general serial number check, which searches theft reports filed on SafeOrStolen that mention the HIN.",
+ whatIs: "A HIN is the 12-character code that identifies a boat, similar to a car's VIN. Checking whether a boat is stolen means confirming the HIN on the hull matches the title and registration, and asking the agencies that hold boat records. Those official resources include your state's boat registration and titling agency, the U.S. Coast Guard National Vessel Documentation Center (for federally documented vessels), and your local police or marine patrol. SafeOrStolen adds a search of its own theft reports for the HIN.",
+ howItWorks: "Enter the HIN on the SafeOrStolen serial number checker. It searches theft reports filed on SafeOrStolen for the HIN. You get one of three results — reported stolen, possible match, or no report found in the records searched — with every source listed, and the check is saved to your account with the date. If you're selling, an optional $1.99 verification certificate gives the buyer a dated link showing you checked before the sale. Use it together with the official resources above.",
  whyCheck: "A stolen boat can be recovered by authorities and returned to its owner even after you pay, and a boat with mismatched or altered HINs may not be registrable. Checking the HIN and paperwork before you pay — and keeping a record that you checked — protects buyers, and gives honest sellers a way to show they have nothing to hide. Before you pay, also ask for proof of ownership.",
  benefits: [
  "Run a HIN through SafeOrStolen's general serial check in seconds",
- "Searches SafeOrStolen theft reports and public web results for the HIN",
+ "Searches SafeOrStolen theft reports for the HIN",
  "Result saved to your account with the date; optional $1.99 verification certificate for sellers",
  "1 free check, no account needed, then $0.99 for 2 checks or $10/month unlimited",
  "Same account checks phones, vehicles, electronics, power tools, firearms and bicycles"
@@ -48,7 +48,7 @@ const CheckBoatPage = () => {
  },
  {
  question: "Does SafeOrStolen search Coast Guard or state boat records?",
- answer: "No. SafeOrStolen has no marine-specific data source. You can run a HIN through its general serial check (theft reports filed on SafeOrStolen and public web results). Check with your state's boat registration agency, the Coast Guard National Vessel Documentation Center for documented vessels, and local police yourself."
+ answer: "No. SafeOrStolen has no marine-specific data source. You can run a HIN through its general serial check (theft reports filed on SafeOrStolen). Check with your state's boat registration agency, the Coast Guard National Vessel Documentation Center for documented vessels, and local police yourself."
  },
  {
  question: "Where can I check a HIN myself?",

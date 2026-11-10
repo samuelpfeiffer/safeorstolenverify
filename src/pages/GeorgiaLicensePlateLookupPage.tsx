@@ -11,7 +11,7 @@ const GeorgiaLicensePlateLookupPage = () => {
     <>
     <ItemLandingPageTemplate
       title="Georgia License Plate Lookup - Free GA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Georgia license plate lookup: check a GA plate against SafeOrStolen theft reports and public web results, then match the plate, VIN and title before you buy."
+      metaDescription="Georgia license plate lookup: check a GA plate against SafeOrStolen theft reports, then match the plate, VIN and title before you buy."
       h1="Georgia License Plate Lookup - Check GA Vehicles Before You Buy"
       itemType="Vehicle"
       dateModified="2026-10-07"
@@ -28,16 +28,16 @@ const GeorgiaLicensePlateLookupPage = () => {
         'GA vehicle stolen database'
       ]}
       content={{
-        intro: "Before you buy a used car in Georgia, look up the plate on SafeOrStolen. It searches theft reports filed on SafeOrStolen and public web results in a few seconds. Then check the VIN, because a plate can be moved from one car to another.",
+        intro: "Before you buy a used car in Georgia, look up the plate on SafeOrStolen. It searches theft reports filed on SafeOrStolen in a few seconds. Then check the VIN, because a plate can be moved from one car to another.",
 
-        whatIs: "A Georgia license plate lookup on SafeOrStolen searches theft reports owners filed on SafeOrStolen and public web results that mention the plate, and lists every source with the result. It never shows owner names. For title or registration questions, contact the Georgia Department of Revenue's motor vehicle division.",
+        whatIs: "A Georgia license plate lookup on SafeOrStolen searches theft reports owners filed on SafeOrStolen that mention the plate, and lists every source with the result. It never shows owner names. For title or registration questions, contact the Georgia Department of Revenue's motor vehicle division.",
 
-        howItWorks: "Enter the plate and choose Georgia. SafeOrStolen searches its own theft reports and public web results and shows reported stolen, possible match, or no report found in the records searched, with every source listed. The check is saved to your account with the date.",
+        howItWorks: "Enter the plate and choose Georgia. SafeOrStolen searches its own theft reports and shows reported stolen, possible match, or no report found in the records searched, with every source listed. The check is saved to your account with the date.",
 
         whyCheck: "Cars sold privately around Atlanta, Savannah and Augusta change hands with nobody checking the paperwork. Stolen cars sometimes wear a plate taken from another vehicle, and cars damaged in coastal storms sometimes turn up for sale far from where they flooded. A plate check plus a VIN check and a look at the title catches mismatches before you pay.",
 
         benefits: [
-          "Searches SafeOrStolen theft reports and public web results",
+          "Searches SafeOrStolen theft reports",
           "Results in a few seconds, saved to your account with the date",
           "Never shows owner names or other private DMV information",
           "Reminds you to match the plate, VIN and title",
@@ -56,11 +56,11 @@ const GeorgiaLicensePlateLookupPage = () => {
         faqs: [
           {
             question: "Can I check if a car is stolen in Atlanta using the license plate?",
-            answer: "You can run a first check. SafeOrStolen (safeorstolen.com/georgia-license-plate-lookup) searches theft reports filed on SafeOrStolen and public web results for the plate. Because plates can be swapped, also check the VIN and compare it with the title before you pay."
+            answer: "You can run a first check. SafeOrStolen (safeorstolen.com/georgia-license-plate-lookup) searches theft reports filed on SafeOrStolen for the plate. Because plates can be swapped, also check the VIN and compare it with the title before you pay."
           },
           {
             question: "How accurate is the Georgia license plate stolen vehicle check?",
-            answer: "It tells you what SafeOrStolen's theft reports and public web results show for that plate, and lists each source. Before you pay, also run the VIN, ask the seller for proof of ownership, and call local police if something seems off."
+            answer: "It tells you what SafeOrStolen's theft reports show for that plate, and lists each source. Before you pay, also run the VIN, ask the seller for proof of ownership, and call local police if something seems off."
           },
           {
             question: "Does the lookup work for vehicles in Savannah and coastal Georgia?",

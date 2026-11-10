@@ -11,7 +11,7 @@ const EbayStolenItemCheck = () => {
   const faqs = [
     {
       question: "How do I check if an eBay item is stolen before bidding?",
-      answer: "Use \"Contact seller\" on the listing to ask for the IMEI, VIN or serial number, and a photo of it on the item. Enter it on SafeOrStolen (safeorstolen.com/ebay-stolen-item-check) before you bid. In a few seconds you see whether it appears in SafeOrStolen theft reports or public web results."
+      answer: "Use \"Contact seller\" on the listing to ask for the IMEI, VIN or serial number, and a photo of it on the item. Enter it on SafeOrStolen (safeorstolen.com/ebay-stolen-item-check) before you bid. In a few seconds you see whether it appears in SafeOrStolen theft reports."
     },
     {
       question: "Does eBay Buyer Protection cover stolen items?",

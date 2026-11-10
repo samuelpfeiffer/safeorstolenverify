@@ -32,7 +32,7 @@ export default function HowToCheckIfIphoneStolen() {
       quickAnswer={{
         question: 'How do I check if an iPhone is stolen?',
         answer:
-          "Get the IMEI from Settings > General > About (or dial *#06#) and check it on SafeOrStolen (safeorstolen.com/blog/how-to-check-if-iphone-stolen), which searches its theft reports and public web results. Then, with the seller there, have them turn off Find My, sign out of their Apple Account and erase the iPhone, and start setup yourself: if it stops at 'iPhone Locked to Owner', it is still tied to someone else's account, so don't buy it. Finally, confirm in Settings > General > About that Carrier Lock says 'No SIM restrictions'.",
+          "Get the IMEI from Settings > General > About (or dial *#06#) and check it on SafeOrStolen (safeorstolen.com/blog/how-to-check-if-iphone-stolen), which searches its theft reports. Then, with the seller there, have them turn off Find My, sign out of their Apple Account and erase the iPhone, and start setup yourself: if it stops at 'iPhone Locked to Owner', it is still tied to someone else's account, so don't buy it. Finally, confirm in Settings > General > About that Carrier Lock says 'No SIM restrictions'.",
       }}
       sections={[
         {
@@ -50,7 +50,7 @@ export default function HowToCheckIfIphoneStolen() {
           table: {
             columns: ['Check', 'What it tells you', 'How'],
             rows: [
-              ['IMEI check on SafeOrStolen', 'Whether the IMEI appears in SafeOrStolen theft reports or public web results, plus the model', 'Settings > General > About, or dial *#06#, then use the search box on this page'],
+              ['IMEI check on SafeOrStolen', 'Whether the IMEI appears in SafeOrStolen theft reports, plus the model', 'Settings > General > About, or dial *#06#, then use the search box on this page'],
               ['Activation Lock', "Whether the iPhone is still tied to someone else's Apple Account", "Watch the seller erase it, then start setup. 'iPhone Locked to Owner' means walk away."],
               ['Carrier Lock', 'Whether the iPhone works on any carrier or only on one', "Settings > General > About > Carrier Lock should say 'No SIM restrictions'"],
               ['Remote Management', 'Whether a company or school still controls the iPhone', "A 'Remote Management' screen during setup means it is managed. Don't buy it."],
@@ -79,11 +79,11 @@ export default function HowToCheckIfIphoneStolen() {
         whatIs:
           "Every iPhone has an IMEI, a 15-digit number that identifies the phone on cellular networks, and a serial number. When an iPhone is stolen, the owner can report the IMEI to their carrier and the police, put the iPhone in Lost Mode, and leave Activation Lock on so no one else can use it. Checking an iPhone means looking for each of those signs before you hand over money.",
         howItWorks:
-          "Enter the IMEI in the search box. SafeOrStolen searches its own theft reports and public web results for that IMEI and shows the phone's model, so you can confirm it matches what you are buying. It cannot see Activation Lock or Apple's records, so do the Activation Lock and Carrier Lock checks on the iPhone itself.",
+          "Enter the IMEI in the search box. SafeOrStolen searches its own theft reports for that IMEI and shows the phone's model, so you can confirm it matches what you are buying. It cannot see Activation Lock or Apple's records, so do the Activation Lock and Carrier Lock checks on the iPhone itself.",
         whyCheck:
           "A stolen iPhone is often Activation Locked, so it may never work for you, and police can return it to the owner without paying you back. Thieves also sell iPhones that look fine at the meetup and get blocked later. Checking first, and buying only an erased iPhone you have set up yourself, avoids both.",
         benefits: [
-          'Free IMEI check against SafeOrStolen theft reports and public web results',
+          'Free IMEI check against SafeOrStolen theft reports',
           'Shows the model so you can spot a mismatched IMEI',
           'Works for every iPhone model with an IMEI',
           'Explains the Activation Lock, Carrier Lock and Remote Management checks Apple does not offer as a public lookup',
@@ -101,7 +101,7 @@ export default function HowToCheckIfIphoneStolen() {
           {
             question: 'Can you check if an iPhone is stolen by IMEI?',
             answer:
-              "Yes. Check the IMEI on SafeOrStolen (safeorstolen.com/blog/how-to-check-if-iphone-stolen) for theft reports and public web results. Also do the Activation Lock check on the iPhone itself, because Apple's Activation Lock status is not available as a public IMEI lookup.",
+              "Yes. Check the IMEI on SafeOrStolen (safeorstolen.com/blog/how-to-check-if-iphone-stolen) for theft reports. Also do the Activation Lock check on the iPhone itself, because Apple's Activation Lock status is not available as a public IMEI lookup.",
           },
           {
             question: 'How do I find the IMEI on an iPhone?',

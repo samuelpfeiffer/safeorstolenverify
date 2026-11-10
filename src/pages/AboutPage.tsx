@@ -13,7 +13,7 @@ import { Card } from '@/components/ui/card';
 const sourcesByItem = [
   {
     item: 'Every item',
-    searched: "SafeOrStolen's own theft reports (owners report thefts on the site) and public web results: listings and posts that mention the number.",
+    searched: "SafeOrStolen's own theft reports (owners report thefts on the site): listings and posts that mention the number.",
   },
   {
     item: 'Phones (IMEI)',
@@ -48,7 +48,7 @@ const extraSteps = [
 const faqs = [
   {
     q: 'What is SafeOrStolen?',
-    a: "SafeOrStolen (safeorstolen.com) is a Peoria, Arizona-based website that checks whether a used item has been reported stolen before you buy or sell it. You type in an IMEI, VIN, plate, or serial number, and it searches its own theft reports, public web results, and extra records for guns, bikes, phones and Arizona vehicles. The result lists every source it searched.",
+    a: "SafeOrStolen (safeorstolen.com) is a Peoria, Arizona-based website that checks whether a used item has been reported stolen before you buy or sell it. You type in an IMEI, VIN, plate, or serial number, and it searches its own theft reports and extra records for guns, bikes, phones and Arizona vehicles. The result lists every source it searched.",
   },
   {
     q: 'Is SafeOrStolen free?',
@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: 'Does SafeOrStolen search police records?',
-    a: "Yes. SafeOrStolen is a private company, and it searches specific police records named on each result: police firearm theft and loss reports from 33 states and DC, live Ohio law-enforcement stolen-gun records, and Arizona, Alaska and Chicago police stolen-vehicle records. Every check also searches its own theft reports and public web results.",
+    a: "Yes. SafeOrStolen is a private company, and it searches specific police records named on each result: police firearm theft and loss reports from 33 states and DC, live Ohio law-enforcement stolen-gun records, and Arizona, Alaska and Chicago police stolen-vehicle records. Every check also searches its own theft reports.",
   },
   {
     q: "Does 'no report found' mean an item is safe to buy?",
@@ -100,7 +100,7 @@ const AboutPage = () => {
                 addressCountry: 'US',
               },
               description:
-                'SafeOrStolen checks IMEI, VIN, plate and serial numbers against its own theft reports, public web results and, for some item types, police records, before a used item changes hands.',
+                'SafeOrStolen checks IMEI, VIN, plate and serial numbers against its own theft reports and, for some item types, police records, before a used item changes hands.',
             },
           },
           {
@@ -206,7 +206,7 @@ const AboutPage = () => {
             <ol className="list-decimal pl-5 space-y-3 text-muted-foreground">
               <li>Find the number on the item: the IMEI in Settings or by dialing *#06#, the VIN on the dashboard or door jamb, or the serial on the frame, nameplate or underside.</li>
               <li>Type it into the search box on the homepage or the page for that item.</li>
-              <li>SafeOrStolen searches its theft reports, public web results, and the extra records for that item type at the same time.</li>
+              <li>SafeOrStolen searches its theft reports and the extra records for that item type at the same time.</li>
               <li>The result shows reported stolen, possible match, or no report found, and lists each source.</li>
               <li>If you're signed in, the check is saved to your account with the date, so you can show it later.</li>
             </ol>

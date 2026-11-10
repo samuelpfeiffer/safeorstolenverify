@@ -34,7 +34,7 @@ const MotorcycleVINCheck = () => {
  howItWorksSteps={[
  "Find the VIN: Usually on the steering neck (right side), frame near the engine, or on registration documents",
  "Enter the 17-character VIN into our free verification tool",
- "Our system analyzes SafeOrStolen reports, public web results, and uses AI to check for reported theft instantly",
+ "Our system analyzes SafeOrStolen reports and uses AI to check for reported theft instantly",
  "Get results in 3 seconds - see if the motorcycle is CLEAR or STOLEN"
  ]}
  whyVerifyTitle="Why Check Motorcycles Before Buying?"

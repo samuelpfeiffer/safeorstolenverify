@@ -20,7 +20,7 @@ const IMEICheckerAppPage = () => {
  {
  icon: Zap,
  title: "Results in a Few Seconds",
- description: "See the phone's make and model from the IMEI, plus any match in SafeOrStolen theft reports and public web results."
+ description: "See the phone's make and model from the IMEI, plus any match in SafeOrStolen theft reports."
  },
  {
  icon: Shield,
@@ -50,7 +50,7 @@ const IMEICheckerAppPage = () => {
  {
  "@type": "Question",
  "name": "Is there an app to check IMEI for stolen phones?",
- "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen has a free installable web app at safeorstolen.com/app that you add to your home screen from the browser; it isn't in the App Store or Google Play. Scan or type the IMEI and in a few seconds you see the make and model and any match in SafeOrStolen theft reports and public web results. A carrier blacklist check is a paid add-on." }
+ "acceptedAnswer": { "@type": "Answer", "text": "Yes. SafeOrStolen has a free installable web app at safeorstolen.com/app that you add to your home screen from the browser; it isn't in the App Store or Google Play. Scan or type the IMEI and in a few seconds you see the make and model and any match in SafeOrStolen theft reports. A carrier blacklist check is a paid add-on." }
  },
  {
  "@type": "Question",

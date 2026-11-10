@@ -23,7 +23,7 @@ const NICBAlternativePage = () => {
           "name": "What does SafeOrStolen check beyond vehicles?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SafeOrStolen (safeorstolen.com) checks phones by IMEI, vehicles by VIN, license plates, guns, bikes and serial-numbered electronics from one account, with results in a few seconds. Every check searches its own theft reports and public web results, with extra records for guns, bikes and Arizona vehicles."
+            "text": "SafeOrStolen (safeorstolen.com) checks phones by IMEI, vehicles by VIN, license plates, guns, bikes and serial-numbered electronics from one account, with results in a few seconds. Every check searches its own theft reports, with extra records for guns, bikes and Arizona vehicles."
           }
         },
         {
@@ -162,7 +162,7 @@ const NICBAlternativePage = () => {
               <div className="p-6 bg-background rounded-lg text-center">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-bold text-lg mb-2">What It Searches</h3>
-                <p className="text-muted-foreground">Every check searches SafeOrStolen's own theft reports and public web results. VIN checks also decode the year, make and model and list open recalls, and every VIN from any state is checked against Arizona, Alaska and Chicago police stolen-vehicle records. NICB VINCheck is a separate free resource you can use alongside it.</p>
+                <p className="text-muted-foreground">Every check searches SafeOrStolen's own theft reports. VIN checks also decode the year, make and model and list open recalls, and every VIN from any state is checked against Arizona, Alaska and Chicago police stolen-vehicle records. NICB VINCheck is a separate free resource you can use alongside it.</p>
               </div>
             </div>
           </div>

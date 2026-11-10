@@ -31,7 +31,7 @@ const PhoneBlacklistCheckPage = () => {
  },
  {
  q: "How do I check if a phone is blacklisted?",
- a: "Get the IMEI by dialing *#06#, then enter it at SafeOrStolen (safeorstolen.com/phone-blacklist-check). The basic check shows the make and model and searches SafeOrStolen theft reports and public web results. The lost/stolen carrier blacklist check is a paid add-on; monthly members get up to 20 a month. Results come back in a few seconds."
+ a: "Get the IMEI by dialing *#06#, then enter it at SafeOrStolen (safeorstolen.com/phone-blacklist-check). The basic check shows the make and model and searches SafeOrStolen theft reports. The lost/stolen carrier blacklist check is a paid add-on; monthly members get up to 20 a month. Results come back in a few seconds."
  },
  {
  q: "Can a blacklisted phone be fixed?",
@@ -76,7 +76,7 @@ const PhoneBlacklistCheckPage = () => {
  </h1>
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Enter the IMEI before you pay. You'll see the make and model and any match in SafeOrStolen theft reports and public web results, and you can add a paid lost/stolen carrier blacklist check. A blacklisted phone usually won't activate on participating networks.
+ Enter the IMEI before you pay. You'll see the make and model and any match in SafeOrStolen theft reports, and you can add a paid lost/stolen carrier blacklist check. A blacklisted phone usually won't activate on participating networks.
  </p>
 
  {/* Blacklist Checker Tool */}
@@ -156,7 +156,7 @@ const PhoneBlacklistCheckPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold text-lg mb-2">Basic IMEI check</h3>
- <p className="text-muted-foreground">Part of every check: the phone's make and model from the IMEI, plus any match in SafeOrStolen theft reports and public web results. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</p>
+ <p className="text-muted-foreground">Part of every check: the phone's make and model from the IMEI, plus any match in SafeOrStolen theft reports. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</p>
  </CardContent>
  </Card>
  <Card>

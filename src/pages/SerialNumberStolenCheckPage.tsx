@@ -54,7 +54,7 @@ const SerialNumberStolenCheckPage = () => {
  const faqs = [
  {
  question: "Can I check if something is stolen with just a serial number?",
- answer: "Yes. Enter the serial on SafeOrStolen (safeorstolen.com/serial-number-stolen-check) and it searches SafeOrStolen theft reports and public web results for it; bikes also go against a national stolen-bicycle registry and guns against police firearm theft records. Not every theft is reported, so \"no report found in the records searched\" is not a guarantee the item was never stolen."
+ answer: "Yes. Enter the serial on SafeOrStolen (safeorstolen.com/serial-number-stolen-check) and it searches SafeOrStolen theft reports for it; bikes also go against a national stolen-bicycle registry and guns against police firearm theft records. Not every theft is reported, so \"no report found in the records searched\" is not a guarantee the item was never stolen."
  },
  {
  question: "What if I only have a partial serial?",
@@ -70,7 +70,7 @@ const SerialNumberStolenCheckPage = () => {
  },
  {
  question: "Is there a national stolen property database?",
- answer: "There is no single public database of every stolen item in the US. Police records such as NCIC are not open to the public. SafeOrStolen searches its own theft reports, where owners report stolen items, plus public web results, and adds item-specific sources for bikes, guns and Arizona vehicles. Each result lists every source searched."
+ answer: "There is no single public database of every stolen item in the US. Police records such as NCIC are not open to the public. SafeOrStolen searches its own theft reports, where owners report stolen items,, and adds item-specific sources for bikes, guns and Arizona vehicles. Each result lists every source searched."
  }
  ];
 
@@ -132,7 +132,7 @@ const SerialNumberStolenCheckPage = () => {
  <>
  <SEOHead
  title="Check If an Item Is Stolen by Serial Number | SafeOrStolen"
- description="Check any item's serial number against SafeOrStolen theft reports and public web results before you buy a used phone, tool, bike, laptop or gun. 1 free check."
+ description="Check any item's serial number against SafeOrStolen theft reports before you buy a used phone, tool, bike, laptop or gun. 1 free check."
  canonical="/serial-number-stolen-check"
  keywords="serial number stolen check, check if item is stolen, stolen property lookup, serial number database, is my item stolen, stolen goods check, serial number verification"
  schemaJson={schema}
@@ -236,7 +236,7 @@ const SerialNumberStolenCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-3">How SafeOrStolen combines multiple risk signals</h3>
  <p className="text-muted-foreground">
- Every check searches SafeOrStolen's own theft reports and public web results. A phone IMEI also shows the make and model. Bike serials are searched against a national stolen-bicycle registry, and gun serials against police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. The result says "reported stolen", "possible match" or "no report found in the records searched", and lists every source.
+ Every check searches SafeOrStolen's own theft reports. A phone IMEI also shows the make and model. Bike serials are searched against a national stolen-bicycle registry, and gun serials against police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records. The result says "reported stolen", "possible match" or "no report found in the records searched", and lists every source.
  </p>
  </div>
  </div>

@@ -34,7 +34,7 @@ const sosCheck = (what: string) => ({
   name: `Run a SafeOrStolen ${what} check`,
   cost: "Free to try, no account needed",
   description:
-    "SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis.",
+    "SafeOrStolen checks its own stolen-item reports.",
   tellsYou:
     "Whether the identifier appears in the sources SafeOrStolen actually checked and whether public listing signals deserve review. Before you pay, also ask for proof of ownership.",
 });
@@ -656,7 +656,7 @@ export const MOTORCYCLE_GUIDE: DefinitiveGuideProps = {
     {
       question: "What does SafeOrStolen's motorcycle check search?",
       answer:
-        "SafeOrStolen's vehicle check searches Arizona, Alaska and Chicago police stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. Also match the VIN to the title and ask police to check it if anything seems off.",
+        "SafeOrStolen's vehicle check searches Arizona, Alaska and Chicago police stolen-vehicle records and federal vehicle records, plus its own stolen-item reports. Also match the VIN to the title and ask police to check it if anything seems off.",
     },
   ],
   related: [
@@ -732,7 +732,7 @@ export const TRAILER_ATV_GUIDE: DefinitiveGuideProps = {
     {
       question: "What does SafeOrStolen's check search for trailers and off-road vehicles?",
       answer:
-        "SafeOrStolen's vehicle check searches Arizona, Alaska and Chicago police stolen-vehicle records and federal vehicle records, plus its own stolen-item reports and public web results. Also match the VIN to the title and ask police to check it if anything seems off.",
+        "SafeOrStolen's vehicle check searches Arizona, Alaska and Chicago police stolen-vehicle records and federal vehicle records, plus its own stolen-item reports. Also match the VIN to the title and ask police to check it if anything seems off.",
     },
   ],
   related: [
@@ -790,7 +790,7 @@ export const WATCH_GUIDE: DefinitiveGuideProps = {
     {
       question: "Is there a stolen watch database?",
       answer:
-        "SafeOrStolen checks watch serial numbers against its own stolen-item reports and public web results. For a high-value watch, also have a jeweler or the brand's service center inspect it before you pay.",
+        "SafeOrStolen checks watch serial numbers against its own stolen-item reports. For a high-value watch, also have a jeweler or the brand's service center inspect it before you pay.",
     },
     {
       question: "Can a missing serial number be normal?",
@@ -800,7 +800,7 @@ export const WATCH_GUIDE: DefinitiveGuideProps = {
     {
       question: "What does SafeOrStolen check for watches?",
       answer:
-        "No. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis.",
+        "No. SafeOrStolen checks its own stolen-item reports.",
     },
   ],
   related: [
@@ -868,7 +868,7 @@ export const CAMERA_GUIDE: DefinitiveGuideProps = {
     {
       question: "What does SafeOrStolen check for cameras?",
       answer:
-        "No. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis.",
+        "No. SafeOrStolen checks its own stolen-item reports.",
     },
   ],
   related: [
@@ -949,7 +949,7 @@ export const APPLE_DEVICE_GUIDE: DefinitiveGuideProps = {
     {
       question: "How do I check an Apple device's lock status?",
       answer:
-        "Apple checks are done on the device and on Apple's site. SafeOrStolen checks its own stolen-item reports, public web results, and AI analysis for the serial.",
+        "Apple checks are done on the device and on Apple's site. SafeOrStolen checks its own stolen-item reports for the serial.",
     },
   ],
   related: [

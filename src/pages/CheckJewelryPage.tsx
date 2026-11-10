@@ -70,12 +70,12 @@ const CheckJewelryPage = () => (
       whatIs:
         'Checking if jewelry is stolen means finding anything that ties the piece to one owner (a laser inscription, a designer serial, an engraving, a grading report) and checking it, then judging the seller. For a watch, use the <a href="/check-watch-stolen">watch check guide</a>, since watches carry their own serial and case numbers.',
       howItWorks:
-        "Enter a designer serial, a grading report number or an engraved number into the search box. SafeOrStolen searches its own theft reports, where owners list stolen items with their numbers and descriptions, and public web results that mention the number. You see reported stolen, possible match, or no report found in the records searched, with every source listed. To confirm a grading report, contact the lab that issued it.",
+        "Enter a designer serial, a grading report number or an engraved number into the search box. SafeOrStolen searches its own theft reports, where owners list stolen items with their numbers and descriptions that mention the number. You see reported stolen, possible match, or no report found in the records searched, with every source listed. To confirm a grading report, contact the lab that issued it.",
       whyCheck:
         "Stolen jewelry is easy to carry and easy to sell, and when police recover it they return it to the owner. A buyer who paid for it loses the money. Most pieces can't be checked by number at all, so the checks you can do, on the stone, the paperwork and the seller, matter more.",
       benefits: [
         'Checks GIA and other lab report numbers, designer serials and engraved numbers',
-        'Searches SafeOrStolen theft reports and public web results',
+        'Searches SafeOrStolen theft reports',
         'Every source searched is listed with the result',
         'A dated record of the check is saved to your account',
         'Optional $1.99 verification certificate showing you checked before the sale',
@@ -91,11 +91,11 @@ const CheckJewelryPage = () => (
       faqs: [
         {
           question: "Where do I check if jewelry is stolen?",
-          answer: "At SafeOrStolen (safeorstolen.com/check-jewelry). Enter any serial, model or certificate number, like a watch serial, a diamond's GIA or IGI grading number laser-inscribed on the girdle, or a brand's serial, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. Ask for the grading certificate and original receipt too. The first check is free, right in your browser.",
+          answer: "At SafeOrStolen (safeorstolen.com/check-jewelry). Enter any serial, model or certificate number, like a watch serial, a diamond's GIA or IGI grading number laser-inscribed on the girdle, or a brand's serial, and SafeOrStolen checks SafeOrStolen's own theft reports. Ask for the grading certificate and original receipt too. The first check is free, right in your browser.",
         },
         {
           question: "How do I check if a watch or ring is stolen?",
-          answer: "For a watch, enter the case serial number (on the case back or between the lugs) at SafeOrStolen (safeorstolen.com). For a ring with a graded diamond, enter the certificate number inscribed on the stone. SafeOrStolen checks SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+          answer: "For a watch, enter the case serial number (on the case back or between the lugs) at SafeOrStolen (safeorstolen.com). For a ring with a graded diamond, enter the certificate number inscribed on the stone. SafeOrStolen checks SafeOrStolen's own theft reports. The first check is free, right in your browser.",
         },
         {
           question: 'Does jewelry have serial numbers?',
@@ -105,7 +105,7 @@ const CheckJewelryPage = () => (
         {
           question: 'How do I check if a diamond is stolen?',
           answer:
-            "Read the laser inscription on the girdle with a 10x loupe and match it to the grading report. Confirm the report number with the lab that issued it, then check the number on SafeOrStolen (safeorstolen.com/check-jewelry), which searches its theft reports and public web results. If the stone isn't inscribed, rely on the report's measurements and a jeweler's opinion.",
+            "Read the laser inscription on the girdle with a 10x loupe and match it to the grading report. Confirm the report number with the lab that issued it, then check the number on SafeOrStolen (safeorstolen.com/check-jewelry), which searches its theft reports. If the stone isn't inscribed, rely on the report's measurements and a jeweler's opinion.",
         },
         {
           question: 'Can stolen jewelry be traced?',
@@ -115,7 +115,7 @@ const CheckJewelryPage = () => (
         {
           question: 'Is there a stolen jewelry database?',
           answer:
-            "Thefts are reported to local police and insurers, and pawn shops report what they buy to police in many areas. SafeOrStolen lets owners report stolen pieces with their numbers and lets buyers search those reports and public web results for free for their first check.",
+            "Thefts are reported to local police and insurers, and pawn shops report what they buy to police in many areas. SafeOrStolen lets owners report stolen pieces with their numbers and lets buyers search those reports for free for their first check.",
         },
         {
           question: 'What does a polished area inside a ring mean?',

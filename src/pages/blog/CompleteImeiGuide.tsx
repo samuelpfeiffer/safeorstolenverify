@@ -192,7 +192,7 @@ export default function CompleteImeiGuide() {
                   <h3 className="text-xl font-semibold text-foreground">Recommended: SafeOrStolen</h3>
                 </div>
                 <p className="text-muted-foreground mb-3">
-                  SafeOrStolen checks its own theft reports and public web results, and for phones it also shows the make and model from the IMEI.
+                  SafeOrStolen checks its own theft reports, and for phones it also shows the make and model from the IMEI.
                   To see whether a phone is on the lost/stolen carrier blacklist, you can buy a blacklist check on SafeOrStolen (monthly members get up to 20 a month) or ask the carrier. Results come back in a few seconds.
                 </p>
                 <Button onClick={() => navigate('/verify')} className="gap-2">
@@ -305,7 +305,7 @@ export default function CompleteImeiGuide() {
               <Shield className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-3 text-foreground">Verify IMEI Before Buying</h3>
               <p className="text-muted-foreground mb-6">
-                Check any phone's IMEI against SafeOrStolen's theft reports and public web results in a few seconds. 1 free check, no account needed.
+                Check any phone's IMEI against SafeOrStolen's theft reports in a few seconds. 1 free check, no account needed.
               </p>
               <Button onClick={() => navigate('/verify')} size="lg" className="gap-2">
                 <Shield className="h-5 w-5" />

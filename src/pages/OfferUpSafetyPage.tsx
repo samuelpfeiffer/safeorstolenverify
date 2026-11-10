@@ -42,7 +42,7 @@ const OfferUpSafetyPage = () => {
  "name": "How do I verify if an OfferUp item is stolen?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Ask the seller for the IMEI (phones), VIN (vehicles), or serial number. Enter it into SafeOrStolen before meeting. Every check searches SafeOrStolen's own theft reports and public web results, with extra records for guns, bikes and Arizona vehicles, and shows \"reported stolen\", \"possible match\", or \"no report found in the records searched\"."
+ "text": "Ask the seller for the IMEI (phones), VIN (vehicles), or serial number. Enter it into SafeOrStolen before meeting. Every check searches SafeOrStolen's own theft reports, with extra records for guns, bikes and Arizona vehicles, and shows \"reported stolen\", \"possible match\", or \"no report found in the records searched\"."
  }
  }
  ]

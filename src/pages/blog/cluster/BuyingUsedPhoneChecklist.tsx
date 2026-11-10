@@ -36,7 +36,7 @@ export default function BuyingUsedPhoneChecklist() {
           <p>
             Run the IMEI on the <a href="/imei-checker">free IMEI check</a>. It shows the make and
             model, so you can confirm it matches the listing, and searches SafeOrStolen theft
-            reports and public web results. For an expensive phone, add the paid lost/stolen
+            reports. For an expensive phone, add the paid lost/stolen
             blacklist check.
           </p>
           <h3>3. Ask the questions that matter</h3>

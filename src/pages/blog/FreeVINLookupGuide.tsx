@@ -27,7 +27,7 @@ const FreeVINLookupGuide = () => {
  "step": [
  { "@type": "HowToStep", "position": 1, "name": "Find the VIN", "text": "Locate the 17-character VIN on the dashboard (driver's side), driver's door jamb, or vehicle registration." },
  { "@type": "HowToStep", "position": 2, "name": "Enter the VIN", "text": "Go to safeorstolen.com/verify and paste the 17-character VIN. The search box recognizes it as a VIN, so there's nothing to pick from a menu." },
- { "@type": "HowToStep", "position": 3, "name": "Review results", "text": "In a few seconds you see the decoded year, make and model, any open safety recalls, and whether the VIN appears in SafeOrStolen theft reports or public web results. Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records." },
+ { "@type": "HowToStep", "position": 3, "name": "Review results", "text": "In a few seconds you see the decoded year, make and model, any open safety recalls, and whether the VIN appears in SafeOrStolen theft reports. Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records." },
  { "@type": "HowToStep", "position": 4, "name": "Save proof of the check", "text": "Every check is saved to your account with the date. For $1.99 you can add a verification certificate with its own link that shows you checked before the sale." }
  ],
  "totalTime": "PT30S"
@@ -37,11 +37,11 @@ const FreeVINLookupGuide = () => {
  "@type": "FAQPage",
  "mainEntity": [
  { "@type": "Question", "name": "Is VIN lookup really free?", "acceptedAnswer": { "@type": "Answer", "text": "You get 1 free check with a free SafeOrStolen account and no credit card. After that $0.99 gets you 2 more checks, or $10 a month covers unlimited checks and you can cancel anytime. Cars, trucks, motorcycles and RVs all use the same 17-character VIN check." } },
- { "@type": "Question", "name": "What databases does a VIN check search?", "acceptedAnswer": { "@type": "Answer", "text": "A SafeOrStolen VIN check searches SafeOrStolen theft reports and public web results, decodes the year, make and model, and lists open safety recalls. every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Before you pay, match the VIN to the paper title and the seller's ID." } },
+ { "@type": "Question", "name": "What databases does a VIN check search?", "acceptedAnswer": { "@type": "Answer", "text": "A SafeOrStolen VIN check searches SafeOrStolen theft reports, decodes the year, make and model, and lists open safety recalls. every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Before you pay, match the VIN to the paper title and the seller's ID." } },
  { "@type": "Question", "name": "Where do I find the VIN on a car?", "acceptedAnswer": { "@type": "Answer", "text": "The VIN is located on the dashboard (visible through the windshield on the driver's side), the driver's door jamb sticker, the vehicle registration, and the insurance card." } },
  { "@type": "Question", "name": "Can I check a VIN before meeting the seller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ask the seller to text you the VIN before you drive out. If they refuse, treat that as a red flag. Paste it into safeorstolen.com/verify and you'll have a result in a few seconds, then match it to the dashboard and door jamb when you see the car." } },
  { "@type": "Question", "name": "What does it mean if a VIN comes back as stolen?", "acceptedAnswer": { "@type": "Answer", "text": "Don't buy the vehicle and don't confront the seller. Call your local police non-emergency line with the VIN, the listing and your saved SafeOrStolen result. A stolen car is usually seized and returned to its owner, so a buyer can lose both the car and the money paid for it." } },
- { "@type": "Question", "name": "Is SafeOrStolen better than Carfax for stolen checks?", "acceptedAnswer": { "@type": "Answer", "text": "They do different jobs. Carfax covers vehicle history such as accidents, service records and mileage. SafeOrStolen checks for theft reports in its own records and public web results, decodes the VIN and lists open recalls. Use Carfax for history and SafeOrStolen for the stolen check." } }
+ { "@type": "Question", "name": "Is SafeOrStolen better than Carfax for stolen checks?", "acceptedAnswer": { "@type": "Answer", "text": "They do different jobs. Carfax covers vehicle history such as accidents, service records and mileage. SafeOrStolen checks for theft reports in its own records, decodes the VIN and lists open recalls. Use Carfax for history and SafeOrStolen for the stolen check." } }
  ]
  }
  ];
@@ -92,7 +92,7 @@ const FreeVINLookupGuide = () => {
  <span className="font-bold text-foreground">Quick Answer</span>
  </div>
  <p className="text-muted-foreground text-sm">
- Enter the 17-character VIN at safeorstolen.com/verify. SafeOrStolen searches its own theft reports and public web results, decodes the year, make and model, and lists open safety recalls; every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.
+ Enter the 17-character VIN at safeorstolen.com/verify. SafeOrStolen searches its own theft reports, decodes the year, make and model, and lists open safety recalls; every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.
  </p>
  </div>
 
@@ -165,11 +165,11 @@ const FreeVINLookupGuide = () => {
 
  <h2 className="text-2xl font-black text-foreground mt-12 mb-4">What Databases Does SafeOrStolen Check?</h2>
  <p className="text-muted-foreground leading-relaxed mb-6">
- SafeOrStolen checks your VIN against its own theft reports and public web results, decodes it, and lists open safety recalls. Arizona VINs also go against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily. To round out your research before you buy, you can also run these:
+ SafeOrStolen checks your VIN against its own theft reports, decodes it, and lists open safety recalls. Arizona VINs also go against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily. To round out your research before you buy, you can also run these:
  </p>
  <div className="grid md:grid-cols-2 gap-4 my-8">
  {[
- { db: 'SafeOrStolen check', desc: "SafeOrStolen theft reports, public web results, VIN decode and open recalls plus Arizona, Alaska and Chicago police stolen-vehicle records, for any vehicle from any state, saved to your account" },
+ { db: 'SafeOrStolen check', desc: "SafeOrStolen theft reports, VIN decode and open recalls plus Arizona, Alaska and Chicago police stolen-vehicle records, for any vehicle from any state, saved to your account" },
  { db: 'Local police (if anything looks off)', desc: 'Non-emergency line with the VIN and plate if the check or the seller raises doubts' },
  ].map(d => (
  <div key={d.db} className="bg-card border border-border rounded-lg p-4">
@@ -223,11 +223,11 @@ const FreeVINLookupGuide = () => {
  <div className="space-y-6 my-8">
  {[
  { q: 'Is VIN lookup really free?', a: 'Your first check on SafeOrStolen is free, and no account or credit card is needed. After that it\'s $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime. The same VIN check covers cars, trucks, motorcycles and RVs.' },
- { q: 'What databases does a VIN check search?', a: "A SafeOrStolen VIN check searches SafeOrStolen theft reports and public web results, decodes the year, make and model, and lists open safety recalls. every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Before you pay, match the VIN to the paper title and the seller's ID." },
+ { q: 'What databases does a VIN check search?', a: "A SafeOrStolen VIN check searches SafeOrStolen theft reports, decodes the year, make and model, and lists open safety recalls. every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Before you pay, match the VIN to the paper title and the seller's ID." },
  { q: 'Where do I find the VIN on a car?', a: 'The VIN is on the dashboard (driver\'s side, visible through windshield), the driver\'s door jamb sticker, the registration, and insurance card.' },
  { q: 'Can I check a VIN before meeting the seller?', a: 'Yes. Ask the seller to text you the VIN before you drive out. If they won\'t, treat that as a red flag. Paste it into safeorstolen.com/verify for a result in a few seconds, then make sure it matches the dashboard and door jamb when you see the car.' },
  { q: 'What does it mean if a VIN comes back as stolen?', a: 'It means the VIN matches a theft report in the records searched. Don\'t buy the car and don\'t confront the seller. Call your local police non-emergency line with the VIN, the listing and your saved SafeOrStolen result. A stolen car is usually seized, and the buyer can lose the money paid.' },
- { q: 'Is SafeOrStolen better than Carfax?', a: 'They do different jobs. Carfax shows vehicle history such as accidents and service records. SafeOrStolen checks whether the VIN appears in its theft reports or public web results, decodes it and lists open recalls. Use Carfax for history and SafeOrStolen for the stolen check.' },
+ { q: 'Is SafeOrStolen better than Carfax?', a: 'They do different jobs. Carfax shows vehicle history such as accidents and service records. SafeOrStolen checks whether the VIN appears in its theft reports, decodes it and lists open recalls. Use Carfax for history and SafeOrStolen for the stolen check.' },
  ].map((faq, i) => (
  <div key={i} className="bg-card border border-border rounded-xl p-5">
  <h3 className="text-foreground font-bold mb-2">{faq.q}</h3>

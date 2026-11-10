@@ -26,7 +26,7 @@ const HowToCheckIfBoatStolenPage = () => (
     quickAnswer={{
       question: 'How do I check if a boat is stolen?',
       answer:
-        "Read the 12-character Hull Identification Number (HIN) on the right side of the transom, near the top, and match it to the title and registration in the seller's name. Check it on SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen), which searches its theft reports and public web results. Then check the trailer VIN and outboard serial too, and look for a HIN that's been sanded, painted over or re-riveted. Your state's boat titling agency and marine patrol can check official records.",
+        "Read the 12-character Hull Identification Number (HIN) on the right side of the transom, near the top, and match it to the title and registration in the seller's name. Check it on SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen), which searches its theft reports. Then check the trailer VIN and outboard serial too, and look for a HIN that's been sanded, painted over or re-riveted. Your state's boat titling agency and marine patrol can check official records.",
     }}
     sections={[
       {
@@ -70,12 +70,11 @@ const HowToCheckIfBoatStolenPage = () => (
       whatIs:
         'A boat stolen check looks up the Hull Identification Number in records of reported thefts. The HIN works like a car\'s VIN: it is unique to the hull, it goes on the title, and police use it to identify recovered boats. For a single-item check on a boat you\'re about to see, our <a href="/how-to-check-if-boat-stolen">boat check page</a> has the search box and the short version.',
       howItWorks:
-        "Enter the HIN in the box. SafeOrStolen searches its own theft reports, which owners file on the site, and public web results that mention the HIN, such as old listings or stolen-boat posts. You see reported stolen, possible match, or no report found in the records searched, with each source listed. For title and registration, also ask your state boat agency, and call local marine patrol if anything doesn't add up.",
+        "Enter the HIN in the box. SafeOrStolen searches its own theft reports, which owners file on the site that mention the HIN, such as old listings or stolen-boat posts. You see reported stolen, possible match, or no report found in the records searched, with each source listed. For title and registration, also ask your state boat agency, and call local marine patrol if anything doesn't add up.",
       whyCheck:
         'Boats are often stored out of sight on trailers, which makes them easy to hook up and tow away, and they are commonly sold for cash. If a boat turns out to be stolen, police return it to the owner and the buyer usually loses the money. Checking three numbers before you pay takes less time than the sea trial.',
       benefits: [
         'Checks any HIN, trailer VIN or outboard serial against SafeOrStolen theft reports',
-        'Shows public web results that mention the number',
         'Lists every source searched with the result',
         'Each check saved to your account with the date',
         '1 free check with no credit card',
@@ -91,12 +90,12 @@ const HowToCheckIfBoatStolenPage = () => (
       faqs: [
         {
           question: "Where do I check if a boat is stolen?",
-          answer: "At SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen). Enter the boat's 12-character HIN from the right side of the transom, or the outboard motor's serial number, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+          answer: "At SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen). Enter the boat's 12-character HIN from the right side of the transom, or the outboard motor's serial number, and SafeOrStolen checks SafeOrStolen's own theft reports. The first check is free, right in your browser.",
         },
         {
           question: 'How do I check a boat HIN for free?',
           answer:
-            "Enter the 12-character HIN on SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen). the first check is free, with no account or credit card needed. It searches SafeOrStolen theft reports and public web results. For state title and lien information, contact the agency that titles boats in your state; depending on the state that may be the DMV or the wildlife department.",
+            "Enter the 12-character HIN on SafeOrStolen (safeorstolen.com/how-to-check-if-boat-stolen). the first check is free, with no account or credit card needed. It searches SafeOrStolen theft reports. For state title and lien information, contact the agency that titles boats in your state; depending on the state that may be the DMV or the wildlife department.",
         },
         {
           question: 'Where is the HIN on a boat?',

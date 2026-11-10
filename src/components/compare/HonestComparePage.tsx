@@ -33,7 +33,7 @@ export const COMPARES: Record<string, HonestCompare> = {
       { label: 'What it searches', us: "SafeOrStolen's own stolen-item reports, Arizona, Alaska and Chicago police stolen-vehicle records, and NHTSA VIN decode and recalls for vehicles.", them: "NICB's records of unrecovered vehicle thefts and total-loss vehicles reported by participating insurers." },
       { label: 'Does SafeOrStolen query it?', us: 'No. SafeOrStolen searches police stolen-vehicle records from Arizona, Alaska and Chicago instead, for a vehicle from any state.', them: '—' },
     ],
-    useBoth: 'For a used car from any state, SafeOrStolen searches police stolen-vehicle records from Arizona, Alaska and Chicago, its own theft reports and public web results for a vehicle from any state, and decodes the VIN with open recalls, all in one search. If it shows a theft record, do not buy and contact local police.',
+    useBoth: 'For a used car from any state, SafeOrStolen searches police stolen-vehicle records from Arizona, Alaska and Chicago, its own theft reports for a vehicle from any state, and decodes the VIN with open recalls, all in one search. If it shows a theft record, do not buy and contact local police.',
     faqs: [
       { q: 'Is NICB VINCheck free?', a: 'Yes. NICB VINCheck is free to use for vehicle VINs.' },
       { q: 'Does NICB VINCheck check phones or guns?', a: 'No. It covers vehicles only. It does not check phones, guns, bikes or other serial numbers.' },

@@ -35,7 +35,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  // Only Arizona plates are also searched against state law-enforcement records.
  const isArizona = stateData.abbrev === 'AZ';
  const title = `Free ${stateData.name} License Plate Lookup | SafeOrStolen`;
- const metaDescription = `${stateData.name} license plate lookup: check if a ${stateData.abbrev} car is reported stolen. Searches SafeOrStolen theft reports and public web results${isArizona ? ', plus Arizona law-enforcement records' : ''}. 1 free check.`;
+ const metaDescription = `${stateData.name} license plate lookup: check if a ${stateData.abbrev} car is reported stolen. Searches SafeOrStolen theft reports${isArizona ? ', plus Arizona law-enforcement records' : ''}. 1 free check.`;
  
  const keywords = [
  `${stateData.name.toLowerCase()} license plate lookup`,
@@ -87,7 +87,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  "name": `How much does the ${stateData.name} license plate lookup cost?`,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": `You get 1 free check with a free SafeOrStolen account. After that a ${stateData.name} plate check is $0.99, or $10 a month for unlimited checks. Each check searches SafeOrStolen theft reports and public web results${isArizona ? ', and Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records' : ''}. Owner names are never shown.`
+ "text": `You get 1 free check with a free SafeOrStolen account. After that a ${stateData.name} plate check is $0.99, or $10 a month for unlimited checks. Each check searches SafeOrStolen theft reports${isArizona ? ', and Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records' : ''}. Owner names are never shown.`
  }
  },
  {
@@ -95,7 +95,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  "name": `Can I check if a car is stolen in ${stateData.majorCities[0]} using the license plate?`,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": `Yes. The ${stateData.name} plate lookup works the same in ${stateData.majorCities.slice(0, 3).join(', ')} and anywhere else in the state: enter the plate and pick ${stateData.abbrev}, and you'll see whether it shows up in SafeOrStolen theft reports or public web results in a few seconds.`
+ "text": `Yes. The ${stateData.name} plate lookup works the same in ${stateData.majorCities.slice(0, 3).join(', ')} and anywhere else in the state: enter the plate and pick ${stateData.abbrev}, and you'll see whether it shows up in SafeOrStolen theft reports in a few seconds.`
  }
  },
  {
@@ -103,7 +103,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  "name": `What is the most accurate license plate search in ${stateData.name}?`,
  "acceptedAnswer": {
  "@type": "Answer",
- "text": `For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. It works the same in ${stateData.majorCities.slice(0, 4).join(', ')} and every other ${stateData.name} city.`
+ "text": `For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. It works the same in ${stateData.majorCities.slice(0, 4).join(', ')} and every other ${stateData.name} city.`
  }
  }
  ]
@@ -128,7 +128,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </header>
  <div>
  <p><strong>Free {stateData.name} License Plate Lookup</strong></p>
- <p>Search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona, Alaska and Chicago police stolen-vehicle records,' : ''} before buying a {stateData.abbrev} vehicle.</p>
+ <p>Search SafeOrStolen's theft reports{isArizona ? ', plus Arizona, Alaska and Chicago police stolen-vehicle records,' : ''} before buying a {stateData.abbrev} vehicle.</p>
  
  <h2>What We Search for {stateData.name} Vehicles</h2>
  <ul>
@@ -154,7 +154,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <h2>How It Works</h2>
  <ol>
  <li>Enter {stateData.name} license plate number</li>
- <li>We search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona law-enforcement records' : ''}</li>
+ <li>We search SafeOrStolen's theft reports{isArizona ? ', plus Arizona law-enforcement records' : ''}</li>
  <li>In a few seconds you see "reported stolen", "possible match" or "no report found in the records searched", with every source listed</li>
  </ol>
  
@@ -164,7 +164,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <h3>Can I check if a car is stolen in {stateData.majorCities[0]} using the license plate?</h3>
  <p>Yes. The plate lookup works the same in {stateData.majorCities.join(', ')} and anywhere else in {stateData.name}.</p>
  <h3>What is the most accurate license plate search in {stateData.name}?</h3>
- <p>For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. It works the same in {stateData.majorCities.slice(0, 4).join(', ')} and every other {stateData.name} city.</p>
+ <p>For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. It works the same in {stateData.majorCities.slice(0, 4).join(', ')} and every other {stateData.name} city.</p>
  {uniqueContent?.uniqueFaqs.map((faq, i) => (
  <div key={i}>
  <h3>{faq.question}</h3>
@@ -194,7 +194,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  Free {stateData.name} License Plate Lookup
  </h1>
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
- Search SafeOrStolen's theft reports and public web results{isArizona ? ', plus Arizona, Alaska and Chicago police stolen-vehicle records' : ''}. 
+ Search SafeOrStolen's theft reports{isArizona ? ', plus Arizona, Alaska and Chicago police stolen-vehicle records' : ''}. 
  Check a {stateData.abbrev} plate before you buy the car. Works for 
  {stateData.majorCities.slice(0, 3).join(', ')} and all of {stateData.name}.
  </p>
@@ -226,7 +226,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
  <Shield className="w-8 h-8 text-primary mb-2" />
  <span className="text-sm font-semibold">
- {isArizona ? 'Arizona law-enforcement records' : 'SafeOrStolen reports and public web results'}
+ {isArizona ? 'Arizona law-enforcement records' : 'SafeOrStolen reports'}
  </span>
  </div>
  <div className="flex flex-col items-center p-4 bg-card rounded-lg">
@@ -398,8 +398,8 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  {[
  `Enter ${stateData.name} license plate above`,
  isArizona
- ? "We search SafeOrStolen's theft reports, public web results and Arizona, Alaska and Chicago police stolen-vehicle records"
- : "We search SafeOrStolen's theft reports and public web results",
+ ? "We search SafeOrStolen's theft reports and Arizona, Alaska and Chicago police stolen-vehicle records"
+ : "We search SafeOrStolen's theft reports",
  "In a few seconds you see the result, with every source listed"
  ].map((step, index) => (
  <div key={index} className="flex gap-4 p-6 bg-card rounded-lg">
@@ -424,7 +424,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
  You get 1 free check, no account needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks. 
- Each {stateData.abbrev} plate check searches SafeOrStolen theft reports and public web results{isArizona ? ', plus Arizona, Alaska and Chicago police stolen-vehicle records' : ''}.
+ Each {stateData.abbrev} plate check searches SafeOrStolen theft reports{isArizona ? ', plus Arizona, Alaska and Chicago police stolen-vehicle records' : ''}.
  </AccordionContent>
  </AccordionItem>
  <AccordionItem value="item-1" className="bg-background px-6 rounded-lg">
@@ -451,7 +451,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  </AccordionTrigger>
  <AccordionContent className="text-muted-foreground">
  Yes. Arizona plates and VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, which are updated daily. 
- It also searches SafeOrStolen theft reports and public web results, and it never shows owner names.
+ It also searches SafeOrStolen theft reports, and it never shows owner names.
  </AccordionContent>
  </AccordionItem>
  )}

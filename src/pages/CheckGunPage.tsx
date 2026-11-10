@@ -29,8 +29,7 @@ const CheckGunPage = () => {
           <p>
             A SafeOrStolen gun check searches <strong>more than 220,000 police firearm theft and loss
             reports</strong> from 33 states and Washington, DC (filed 1973–2017), live Ohio
-            law-enforcement stolen-gun records, theft reports filed by owners on SafeOrStolen, and
-            public web results. It also flags serials that look altered.
+            law-enforcement stolen-gun records, and theft reports filed by owners on SafeOrStolen. It also flags serials that look altered.
           </p>
           <p>That means:</p>
           <ul>

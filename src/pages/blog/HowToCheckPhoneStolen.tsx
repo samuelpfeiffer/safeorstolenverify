@@ -76,7 +76,7 @@ export default function HowToCheckPhoneStolen() {
           <h2>Step by Step: How to Check if a Phone Is Stolen</h2>
 
           <h3>Method 1: Check the IMEI on SafeOrStolen</h3>
-          <p>SafeOrStolen searches theft reports that owners have filed on the site and public web results such as listings and posts that mention the IMEI. It also shows the make and model the IMEI belongs to.</p>
+          <p>SafeOrStolen searches theft reports that owners have filed on the site such as listings and posts that mention the IMEI. It also shows the make and model the IMEI belongs to.</p>
           <ol>
             <li>Go to <Link to="/verify" className="text-primary hover:underline">safeorstolen.com/verify</Link></li>
             <li>Enter the 15-digit IMEI</li>
@@ -189,7 +189,7 @@ export default function HowToCheckPhoneStolen() {
           <h2>What SafeOrStolen Adds</h2>
           <p>Carrier checks only answer for one network. SafeOrStolen gives you:</p>
           <ul>
-            <li>A search of its own theft reports and public web results in one check</li>
+            <li>A search of its own theft reports in one check</li>
             <li>The make and model from the IMEI, so a mismatched listing stands out</li>
             <li>An optional paid carrier blacklist check</li>
             <li>A free installable web app with a camera barcode scanner</li>

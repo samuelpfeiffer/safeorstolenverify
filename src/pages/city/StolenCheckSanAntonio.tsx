@@ -12,7 +12,7 @@ const StolenCheckSanAntonio = () => {
   const faqs = [
     {
       question: "How do I check if something is stolen in San Antonio?",
-      answer: "Get the number off the item: the IMEI on a phone (dial *#06#), the VIN on a car, or the serial on a bike, tool or laptop. Enter it on SafeOrStolen (safeorstolen.com/stolen-check-san-antonio). In a few seconds it searches SafeOrStolen theft reports and public web results, and lists every source searched."
+      answer: "Get the number off the item: the IMEI on a phone (dial *#06#), the VIN on a car, or the serial on a bike, tool or laptop. Enter it on SafeOrStolen (safeorstolen.com/stolen-check-san-antonio). In a few seconds it searches SafeOrStolen theft reports, and lists every source searched."
     },
     {
       question: "Where can I safely meet sellers in San Antonio?",
@@ -57,7 +57,7 @@ const StolenCheckSanAntonio = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">San Antonio Stolen Item Check</h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Buying used off Marketplace, OfferUp or Craigslist in San Antonio? Enter the IMEI, VIN or serial number and SafeOrStolen searches its theft reports and public web results in a few seconds.
+              Buying used off Marketplace, OfferUp or Craigslist in San Antonio? Enter the IMEI, VIN or serial number and SafeOrStolen searches its theft reports in a few seconds.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="gap-2">

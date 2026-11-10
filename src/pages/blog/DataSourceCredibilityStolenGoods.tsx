@@ -62,7 +62,7 @@ const FAQS = [
   {
     question: 'What sources does SafeOrStolen search?',
     answer:
-      "Every check on SafeOrStolen (safeorstolen.com) searches its own theft reports and public web results. Guns add more than 220,000 police theft and loss reports from 33 states and DC plus live Ohio records. Bikes add a national stolen-bicycle registry. Arizona VINs and plates add Arizona law-enforcement records. Phones get make and model, with a paid carrier blacklist check.",
+      "Every check on SafeOrStolen (safeorstolen.com) searches its own theft reports. Guns add more than 220,000 police theft and loss reports from 33 states and DC plus live Ohio records. Bikes add a national stolen-bicycle registry. Arizona VINs and plates add Arizona law-enforcement records. Phones get make and model, with a paid carrier blacklist check.",
   },
   {
     question: 'Can a stolen item check be wrong?',
@@ -181,7 +181,7 @@ export default function DataSourceCredibilityStolenGoods() {
               <Link to="/data-sources">data sources page</Link>.
             </p>
             <ul>
-              <li><strong>Every check:</strong> SafeOrStolen's own theft reports from owners, and public web results mentioning the number.</li>
+              <li><strong>Every check:</strong> SafeOrStolen's own theft reports from owners mentioning the number.</li>
               <li><strong>Guns:</strong> more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), plus live Ohio law-enforcement records. Altered-looking serials are flagged.</li>
               <li><strong>Bikes:</strong> a national stolen-bicycle registry.</li>
               <li><strong>Vehicles:</strong> VIN decode and open safety recalls; Arizona VINs and plates also go against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily.</li>

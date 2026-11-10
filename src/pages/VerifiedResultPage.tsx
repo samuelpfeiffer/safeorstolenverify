@@ -11,7 +11,7 @@ const VerifiedResultPage: React.FC = () => {
     <>
       <PageSEO
         title="SafeOrStolen Check Result — No Report Found"
-        description="This item was checked on SafeOrStolen. No report was found in the records searched: SafeOrStolen theft reports and public web results, plus item-specific records."
+        description="This item was checked on SafeOrStolen. No report was found in the records searched: SafeOrStolen theft reports, plus item-specific records."
         canonical={`/verified/${id}`}
       />
       <div className="max-w-lg mx-auto px-4 py-16 pt-24 text-center space-y-8">
@@ -20,7 +20,7 @@ const VerifiedResultPage: React.FC = () => {
             <CheckCircle className="w-10 h-10 text-green-600" />
           </div>
           <h1 className="text-2xl font-bold text-foreground">No Report Found</h1>
-          <p className="text-muted-foreground">This item was checked on SafeOrStolen on the date below. Nothing turned up in the records searched: SafeOrStolen theft reports and public web results, plus item-specific records such as police gun theft reports or a stolen-bicycle registry. That is not a guarantee the item was never stolen.</p>
+          <p className="text-muted-foreground">This item was checked on SafeOrStolen on the date below. Nothing turned up in the records searched: SafeOrStolen theft reports, plus item-specific records such as police gun theft reports or a stolen-bicycle registry. That is not a guarantee the item was never stolen.</p>
         </header>
 
         <section className="bg-card border border-border rounded-xl p-6 text-left space-y-4">

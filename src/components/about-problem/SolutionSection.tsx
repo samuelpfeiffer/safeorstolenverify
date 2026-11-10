@@ -7,7 +7,7 @@ export const SolutionSection = () => {
     {
       icon: <Shield className="h-6 w-6" />,
       title: "Real-Time Database Integration",
-      description: "Our own extensive stolen-item reports and public web results provide instant verification"
+      description: "Our own extensive stolen-item reports provide instant verification"
     },
     {
       icon: <Zap className="h-6 w-6" />,
@@ -34,7 +34,7 @@ export const SolutionSection = () => {
             <h2 className="text-3xl font-bold mb-6">Our Revolutionary Solution</h2>
             <p className="text-xl text-foreground/90 max-w-3xl mx-auto leading-relaxed">
               SafeOrStolen is the world's first comprehensive verification system that bridges 
-              our comprehensive stolen-item reports and public web results, creating a robust shield
+              our comprehensive stolen-item reports, creating a robust shield
               against stolen goods purchases.
             </p>
           </div>

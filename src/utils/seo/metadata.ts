@@ -161,10 +161,10 @@ const SITE_CONFIG = {
 const PAGE_METADATA: Record<string, PageMetadata> = {
  home: {
  title: `Complete Stolen Item Verification | Multi-Database IMEI, VIN & Serial Number Check`,
- description: 'Fast, accurate stolen item verification using our reported stolen items, public web results, and AI analysis. Instant IMEI, VIN, and serial number checks for vehicles, electronics, firearms, machinery, tools, home appliances, and specialty equipment. Serving the US with international expansion. Free trial.',
+ description: 'Fast, accurate stolen item verification using our reported stolen items and AI analysis. Instant IMEI, VIN, and serial number checks for vehicles, electronics, firearms, machinery, tools, home appliances, and specialty equipment. Serving the US with international expansion. Free trial.',
  keywords: SITE_CONFIG.keywords.join(', ') + ', multi-database verification, stolen item check, IMEI checker, VIN verification, comprehensive verification service, trusted verification platform',
  ogTitle: `Complete Multi-Database Verification - IMEI, VIN & Serial Number Check`,
- ogDescription: 'Trusted verification for stolen items. Comprehensive checking for all categories using our reported stolen items, public web results, and AI analysis.',
+ ogDescription: 'Trusted verification for stolen items. Comprehensive checking for all categories using our reported stolen items and AI analysis.',
  ogImage: SITE_CONFIG.ogImage,
  robotsDirectives: 'index, follow, max-image-preview:large'
  },

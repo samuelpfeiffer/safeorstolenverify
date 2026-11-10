@@ -92,7 +92,7 @@ const AffiliateDisclosurePage: React.FC = () => {
             <CardContent className="space-y-3 text-sm text-muted-foreground leading-relaxed">
               <p>
                 A result ("reported stolen", "possible match", or "no report found in the records searched") comes
-                only from the records searched: SafeOrStolen's own theft reports and public web results, plus
+                only from the records searched: SafeOrStolen's own theft reports, plus
                 police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona
                 law-enforcement stolen-vehicle records from Arizona, Alaska and Chicago, searched for vehicles from any state. No payment from anyone changes a
                 result. The AI note on a result explains it in plain language and never decides it.

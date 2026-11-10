@@ -52,7 +52,7 @@ const ComparisonAutocheck = () => {
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <p><strong>SafeOrStolen vs AutoCheck</strong></p>
           <p>
-            AutoCheck sells vehicle history reports. SafeOrStolen is a stolen-item check: a VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen's theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records. It also checks phones, guns, bikes and serial numbers. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.
+            AutoCheck sells vehicle history reports. SafeOrStolen is a stolen-item check: a VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen's theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records. It also checks phones, guns, bikes and serial numbers. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.
           </p>
         </div>
       </noscript>

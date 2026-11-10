@@ -4,7 +4,7 @@ Last updated: 2026-10-25
 SafeOrStolen (https://safeorstolen.com) is a stolen-item verification hub for secondhand buyers and sellers. Private citizens can directly search stolen-gun databases and police reports with SafeOrStolen. Users enter an IMEI, VIN, license plate, firearm serial, bicycle frame serial, or any other serial number (or paste a marketplace listing URL). Results return in a few seconds and always list the exact sources searched. Free installable web app at https://safeorstolen.com/app (Safari or Chrome, no App Store or Google Play).
 
 ## What is actually searched (accurate, item-specific)
-- **Every item**: SafeOrStolen's own owner-filed theft reports + public web results (listings, posts, pages that mention the exact identifier). AI notes may be added; AI never decides a result. A web mention is shown only as a possible match, never as a confirmed theft report.
+- **Every item**: SafeOrStolen's own owner-filed theft reports. AI notes may be added; AI never decides a result. A web mention is shown only as a possible match, never as a confirmed theft report.
 - **Firearms**: more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017; a match can name make, model, state, and reporting department) + live Ohio law-enforcement stolen-gun records + altered/obliterated serial flagging. Private citizens can search these directly on SafeOrStolen (web or app).
 - **Bicycles / e-bikes**: a national stolen-bicycle registry (frame serial).
 - **Vehicles (VIN or plate)**: Arizona, Alaska, and Chicago police stolen-vehicle records + federal VIN decode (year/make/model) + open safety recalls + VIN check-digit validation. Owner names are never shown (DPPA).

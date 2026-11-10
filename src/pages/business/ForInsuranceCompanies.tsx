@@ -25,12 +25,12 @@ const FAQS = [
   {
     question: 'How can an insurer verify a stolen property claim by serial number?',
     answer:
-      "Collect the serial numbers, IMEIs or VINs of the claimed items and run them on SafeOrStolen (safeorstolen.com/for-insurance-companies). Each check searches owner-filed theft reports and public web results, so you can see an earlier theft report on the same item or a listing that mentions it after the loss date. Up to 100 numbers go through /bulk-check at once.",
+      "Collect the serial numbers, IMEIs or VINs of the claimed items and run them on SafeOrStolen (safeorstolen.com/for-insurance-companies). Each check searches owner-filed theft reports, so you can see an earlier theft report on the same item or a listing that mentions it after the loss date. Up to 100 numbers go through /bulk-check at once.",
   },
   {
     question: 'What records does SafeOrStolen search?',
     answer:
-      "Every check searches SafeOrStolen's own theft reports and public web results. Guns also go against police firearm theft and loss reports from 33 states and DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona, Alaska and Chicago police stolen-vehicle records. Phones can add a paid lost and stolen blacklist check.",
+      "Every check searches SafeOrStolen's own theft reports. Guns also go against police firearm theft and loss reports from 33 states and DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona VINs and plates against Arizona, Alaska and Chicago police stolen-vehicle records. Phones can add a paid lost and stolen blacklist check.",
   },
   {
     question: 'Can SafeOrStolen tell me if a claimed phone was blacklisted?',
@@ -92,7 +92,7 @@ const ForInsuranceCompanies = () => {
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">Theft Claims Verification by Serial Number</h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               To check a theft claim, run the serial number, IMEI or VIN of each claimed item through SafeOrStolen. The
-              search covers owner-filed theft reports and public web results, so it can show an earlier theft report on the
+              search covers owner-filed theft reports, so it can show an earlier theft report on the
               same item or a listing that mentions it after the loss. Gun serials also go against police theft reports
               from 33 states and DC. Lists of up to 100 run through the bulk check.
             </p>

@@ -70,7 +70,7 @@ export const DataPartnerBadges: React.FC<DataPartnerBadgesProps> = ({
  </div>
  </div>
  <p className="text-sm text-muted-foreground mb-4">
- Every check searches SafeOrStolen theft reports and public web results. Guns, bikes, phones and vehicles add the sources below. Each result lists exactly which sources were searched.
+ Every check searches SafeOrStolen theft reports. Guns, bikes, phones and vehicles add the sources below. Each result lists exactly which sources were searched.
  </p>
  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
  {DATA_PARTNERS.map((partner, index) => (

@@ -85,12 +85,11 @@ function GuidePage() {
         whatIs:
           "A stolen-car report is the police record that tells every officer, and later your insurer, that the car was taken without your permission. It is what gets the VIN and plate flagged when the car is stopped, parked or offered for sale. Reporting it on SafeOrStolen as well adds it to the theft reports that buyers search before they pay.",
         howItWorks:
-          "After the police report, add the theft on SafeOrStolen's <a href=\"/report-stolen\">report a stolen item</a> page with your VIN, plate and description. Every VIN or plate check on SafeOrStolen searches those reports, so a buyer checking your car sees it was reported stolen. You can also check your own VIN in the box above: it searches SafeOrStolen theft reports and public web results, which can turn up a listing that mentions the VIN.",
+          "After the police report, add the theft on SafeOrStolen's <a href=\"/report-stolen\">report a stolen item</a> page with your VIN, plate and description. Every VIN or plate check on SafeOrStolen searches those reports, so a buyer checking your car sees it was reported stolen. You can also check your own VIN in the box above: it searches SafeOrStolen theft reports, which can turn up a listing that mentions the VIN.",
         whyCheck:
           "Stolen cars are often sold quickly, sometimes with a swapped plate. The sooner your report is out, the more likely an officer, a buyer or a dealer stops it. Keep checking marketplace listings for your make, model and color in your area, and send any match to the police rather than going to see it.",
         benefits: [
           "Your report is searched in every SafeOrStolen VIN and plate check",
-          "Checks public web results for listings that mention your VIN",
           "Keeps a dated record of your report",
           "Free to report a theft",
         ],

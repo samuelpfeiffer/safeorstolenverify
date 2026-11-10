@@ -36,7 +36,7 @@ const faqs = [
   {
     question: 'What is SafeOrStolen?',
     answer:
-      "SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ. You enter an IMEI, VIN, plate or serial at safeorstolen.com and it searches SafeOrStolen's own theft reports and public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona VINs and plates.",
+      "SafeOrStolen is a stolen-item check for used phones, cars, guns, bikes and anything with a serial number, based in Peoria, AZ. You enter an IMEI, VIN, plate or serial at safeorstolen.com and it searches SafeOrStolen's own theft reports, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona VINs and plates.",
   },
   {
     question: 'Where is SafeOrStolen based?',
@@ -51,7 +51,7 @@ const faqs = [
   {
     question: 'What records does SafeOrStolen search?',
     answer:
-      "Every check searches SafeOrStolen's theft reports and public web results. Gun checks add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Bike checks add a national stolen-bicycle registry. Arizona VINs and plates add Arizona, Alaska and Chicago police stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, and the paid phone check searches the lost and stolen phone blacklist.",
+      "Every check searches SafeOrStolen's theft reports. Gun checks add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Bike checks add a national stolen-bicycle registry. Arizona VINs and plates add Arizona, Alaska and Chicago police stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, and the paid phone check searches the lost and stolen phone blacklist.",
   },
   {
     question: 'Does SafeOrStolen work for businesses?',
@@ -150,7 +150,7 @@ const CrunchbasePage: React.FC = () => (
           <li><strong className="text-foreground">Plates:</strong> SafeOrStolen theft reports, plus Arizona records for Arizona plates. Owner names are never shown. <Link to="/license-plate-lookup" className="text-primary hover:underline">Plate lookup</Link></li>
           <li><strong className="text-foreground">Guns:</strong> police firearm theft and loss reports from 33 states and Washington, DC, live Ohio records, and a flag for altered serials. <Link to="/firearms-check" className="text-primary hover:underline">Gun serial check</Link></li>
           <li><strong className="text-foreground">Bikes:</strong> a national stolen-bicycle registry. <Link to="/check-bike" className="text-primary hover:underline">Bike check</Link></li>
-          <li><strong className="text-foreground">Everything else with a serial:</strong> SafeOrStolen theft reports and public web results. <Link to="/serial-number-checker" className="text-primary hover:underline">Serial number check</Link></li>
+          <li><strong className="text-foreground">Everything else with a serial:</strong> SafeOrStolen theft reports. <Link to="/serial-number-checker" className="text-primary hover:underline">Serial number check</Link></li>
         </ul>
         <p className="text-muted-foreground mb-12">
           Results read "reported stolen", "possible match", or "no report found in the records searched". AI

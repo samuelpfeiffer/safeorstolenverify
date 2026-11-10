@@ -34,27 +34,27 @@ export const COMPLETE_STATE_VIN_DATA: Record<string, StateVinData> = {
  california: {
  state: "California", stateCode: "CA", slug: "california-vin-lookup",
  title: "California VIN Lookup - Free CA Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free California VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before you buy.",
+ metaDescription: "Free California VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports in a few seconds before you buy.",
  topCities: ["Los Angeles", "Oakland", "San Francisco"],
  dmvLink: "",
  content: {
- intro: "Enter a California car's 17-character VIN and SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its own theft reports and public web results for that VIN.",
+ intro: "Enter a California car's 17-character VIN and SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its own theft reports for that VIN.",
  whyCheck: "Most California private sales start on Marketplace, Craigslist or OfferUp and end in a parking lot. If the seller has no title in their name, the VIN sticker on the door jamb is missing, or the price is far under market, check the VIN before you go.",
  localLaws: "California Penal Code 496 makes it a crime to buy or keep property you know is stolen. A stolen car can be returned to its owner even if you paid for it. The California DMV handles titles and registration."
  },
  faqs: [
- { question: "How do I check if a California car is stolen?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN appears in SafeOrStolen theft reports or public web results. Then match the VIN on the dash, door jamb and title, and check the seller's ID against the title." },
- { question: "Does SafeOrStolen search California DMV records?", answer: "No. SafeOrStolen searches its own theft reports and public web results and decodes the VIN. For title, lien or registration status, contact the California DMV. Out-of-state cars also need a VIN verification before California will register them." }
+ { question: "How do I check if a California car is stolen?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN appears in SafeOrStolen theft reports. Then match the VIN on the dash, door jamb and title, and check the seller's ID against the title." },
+ { question: "Does SafeOrStolen search California DMV records?", answer: "No. SafeOrStolen searches its own theft reports and decodes the VIN. For title, lien or registration status, contact the California DMV. Out-of-state cars also need a VIN verification before California will register them." }
  ]
  },
  texas: {
  state: "Texas", stateCode: "TX", slug: "texas-vin-lookup",
  title: "Texas VIN Lookup - Free TX Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Texas VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before buying.",
+ metaDescription: "Free Texas VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports in a few seconds before buying.",
  topCities: ["Houston", "Dallas", "San Antonio"],
  dmvLink: "",
  content: {
- intro: "Type a Texas vehicle's VIN into SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen theft reports and public web results for that VIN.",
+ intro: "Type a Texas vehicle's VIN into SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen theft reports for that VIN.",
  whyCheck: "Pickups sell privately all over Texas, often for cash. Houston, Dallas and San Antonio buyers see cars from every neighboring state. A seller without a title in their name, or a truck with a damaged ignition, is the time to check the VIN.",
  localLaws: "Texas Penal Code 31.03 covers theft, including keeping property you know is stolen. A stolen vehicle can be returned to its owner even if you paid for it. Titles go through your county tax assessor-collector for the Texas DMV."
  },
@@ -66,43 +66,43 @@ export const COMPLETE_STATE_VIN_DATA: Record<string, StateVinData> = {
  florida: {
  state: "Florida", stateCode: "FL", slug: "florida-vin-lookup",
  title: "Florida VIN Lookup - Free FL Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Florida VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before you buy.",
+ metaDescription: "Free Florida VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports in a few seconds before you buy.",
  topCities: ["Miami", "Jacksonville", "Tampa"],
  dmvLink: "",
  content: {
- intro: "Enter a Florida vehicle's VIN and SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its theft reports and public web results for that VIN.",
+ intro: "Enter a Florida vehicle's VIN and SafeOrStolen decodes the year, make and model, lists open safety recalls, and checks its theft reports for that VIN.",
  whyCheck: "After every hurricane season, water-damaged cars get dried out and resold, sometimes far from where they flooded. A VIN check tells you if the car has a theft report or online listings with a different story. Check the car itself for silt, rust on seat bolts and a musty smell.",
  localLaws: "Florida Statutes 812.014 covers theft, and dealing in stolen property is a separate crime. A stolen car can be returned to its owner even after you paid. FLHSMV handles titles through county tax collector offices."
  },
  faqs: [
  { question: "How do I check a Florida car for flood damage?", answer: "Look at the car: silt or water lines under the carpet and in the trunk, rusty seat bolts, fogged lights and a musty smell. Buy a vehicle history report for title brands, and run the VIN on SafeOrStolen (safeorstolen.com) for theft reports." },
- { question: "How do I check if a car is stolen in Miami?", answer: "Run the VIN on SafeOrStolen to decode it, see open recalls, and search SafeOrStolen theft reports and public web results. Match the VIN on the dash, door jamb and title, and check the seller's ID against the title before you pay." }
+ { question: "How do I check if a car is stolen in Miami?", answer: "Run the VIN on SafeOrStolen to decode it, see open recalls, and search SafeOrStolen theft reports. Match the VIN on the dash, door jamb and title, and check the seller's ID against the title before you pay." }
  ]
  },
  newyork: {
  state: "New York", stateCode: "NY", slug: "new-york-vin-lookup",
  title: "New York VIN Lookup - Free NY Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free New York VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before buying.",
+ metaDescription: "Free New York VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports in a few seconds before buying.",
  topCities: ["New York City", "Buffalo", "Rochester"],
  dmvLink: "",
  content: {
- intro: "Run a New York vehicle's VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen theft reports and public web results.",
+ intro: "Run a New York vehicle's VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen theft reports.",
  whyCheck: "Cars sold around New York City often come from New Jersey, Connecticut or Pennsylvania, and luxury SUVs are frequent theft targets. Check the VIN and make sure the seller's name is on the title before you meet.",
  localLaws: "New York Penal Law treats possessing stolen property as a crime, graded by value. A stolen car can be returned to its owner even if you paid for it. The New York DMV handles titles and registration."
  },
  faqs: [
- { question: "How do I check if a car is stolen in New York?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN shows up in SafeOrStolen theft reports or public web results. Then match the VIN on the car and title and check the seller's ID." },
- { question: "Does SafeOrStolen search New York DMV records?", answer: "No. SafeOrStolen searches its own theft reports and public web results and decodes the VIN. For title, lien or registration questions, contact the New York DMV before you pay." }
+ { question: "How do I check if a car is stolen in New York?", answer: "Run the VIN on SafeOrStolen (safeorstolen.com). In a few seconds you see the decoded vehicle, open recalls, and whether the VIN shows up in SafeOrStolen theft reports. Then match the VIN on the car and title and check the seller's ID." },
+ { question: "Does SafeOrStolen search New York DMV records?", answer: "No. SafeOrStolen searches its own theft reports and decodes the VIN. For title, lien or registration questions, contact the New York DMV before you pay." }
  ]
  },
  pennsylvania: {
  state: "Pennsylvania", stateCode: "PA", slug: "pennsylvania-vin-lookup",
  title: "Pennsylvania VIN Lookup - Free PA Stolen Vehicle Check | SafeOrStolen",
- metaDescription: "Free Pennsylvania VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports and public web results in a few seconds before you buy.",
+ metaDescription: "Free Pennsylvania VIN lookup. Decode the vehicle, see open recalls, and check SafeOrStolen theft reports in a few seconds before you buy.",
  topCities: ["Philadelphia", "Pittsburgh", "Allentown"],
  dmvLink: "",
  content: {
- intro: "Type a Pennsylvania car's VIN and SafeOrStolen decodes the year, make and model, shows open safety recalls, and searches its theft reports and public web results for that VIN.",
+ intro: "Type a Pennsylvania car's VIN and SafeOrStolen decodes the year, make and model, shows open safety recalls, and searches its theft reports for that VIN.",
  whyCheck: "Philadelphia buyers see cars from New Jersey and Delaware, and Pittsburgh buyers see cars from Ohio and West Virginia. Pennsylvania title transfers are done at a notary or tag service, so a seller who won't go there with you is a red flag.",
  localLaws: "Pennsylvania law (18 Pa. C.S. 3925) makes receiving stolen property a crime. A stolen car can be returned to its owner even if you paid for it. PennDOT handles titles, usually through an authorized tag and title service."
  },

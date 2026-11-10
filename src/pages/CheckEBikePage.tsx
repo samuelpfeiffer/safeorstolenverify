@@ -18,8 +18,8 @@ const CheckEBikePage = () => {
  ]}
  content={{
  intro: "Check whether an eBike or e-scooter has been reported stolen in a few seconds. Enter the frame, motor, or battery serial for Rad Power, Trek, Specialized, Aventon, or any other brand. Do it before you buy from Facebook Marketplace, eBay, Craigslist, or a bike shop. eBikes cost a lot and are easy to resell, which makes them frequent theft targets.",
- whatIs: "Checking if an eBike is stolen means looking up its serial numbers in records of reported thefts. Electric bikes usually carry several: a frame serial, a motor serial and a battery serial, and it's worth checking each one. SafeOrStolen's eBike check searches its own theft reports, public web results and a national stolen-bicycle registry, for any brand. If an eBike turns out to be stolen after you buy it, police can take it back.",
- howItWorks: "Each serial you enter is searched against three sources: (1) a national stolen-bicycle registry, (2) SafeOrStolen's own theft reports, and (3) public web results such as listings and posts that mention the number. Check frame serial (bottom bracket), motor serial (motor casing), and battery serial (battery pack). In a few seconds you see reported stolen, possible match, or no report found in the records searched, with every source listed.",
+ whatIs: "Checking if an eBike is stolen means looking up its serial numbers in records of reported thefts. Electric bikes usually carry several: a frame serial, a motor serial and a battery serial, and it's worth checking each one. SafeOrStolen's eBike check searches its own theft reports and a national stolen-bicycle registry, for any brand. If an eBike turns out to be stolen after you buy it, police can take it back.",
+ howItWorks: "Each serial you enter is searched against two sources: (1) a national stolen-bicycle registry and (2) SafeOrStolen's own theft reports. Check frame serial (bottom bracket), motor serial (motor casing), and battery serial (battery pack). In a few seconds you see reported stolen, possible match, or no report found in the records searched, with every source listed.",
  whyCheck: "If you buy a stolen eBike, police can take it back and return it to its owner, and you're left trying to get your money back from the seller. Some eBikes have a GPS tracker or a brand app the owner can still use to find the bike. Knowingly buying stolen property is a crime, and ignoring obvious warning signs can count against you. Stolen eBikes often turn up on Facebook Marketplace, Craigslist, and OfferUp priced well below what similar bikes sell for. Checking every serial before you pay is the simplest way to catch one that's been reported.",
  benefits: [
  "Check Rad Power Bikes - RadRunner, RadRover, RadCity, RadMission, RadWagon",
@@ -29,7 +29,7 @@ const CheckEBikePage = () => {
  "Check any eBike brand - Giant, Cannondale, Pedego, Lectric, Super73",
  "Verify e-scooters - Segway, Xiaomi, Bird, Lime, unagi scooters",
  "Check frame, motor, and battery serial numbers",
- "Searches a national stolen-bicycle registry, SafeOrStolen theft reports and public web results",
+ "Searches a national stolen-bicycle registry, SafeOrStolen theft reports",
  "1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited"
  ],
  process: [
@@ -63,11 +63,11 @@ const CheckEBikePage = () => {
  },
  {
  question: "Can eBike serial numbers be removed or faked?",
- answer: "Yes. Thieves sometimes grind off or replace serial numbers on stolen eBikes, and that alone is a serious warning sign. Signs of tampering: (1) Frame serial number area looks scratched, filed, polished, or re-stamped, (2) Serial sticker is obviously replaced, peeling, or doesn't match bike quality, (3) Serial numbers are partially illegible or incomplete, (4) Motor or battery serial numbers are missing entirely, (5) Seller can't or won't show you the serial numbers. If you see signs of tampering, walk away. SafeOrStolen doesn't judge whether a serial looks genuine; it only tells you whether that serial shows up in theft reports, public web results, or a national stolen-bicycle registry."
+ answer: "Yes. Thieves sometimes grind off or replace serial numbers on stolen eBikes, and that alone is a serious warning sign. Signs of tampering: (1) Frame serial number area looks scratched, filed, polished, or re-stamped, (2) Serial sticker is obviously replaced, peeling, or doesn't match bike quality, (3) Serial numbers are partially illegible or incomplete, (4) Motor or battery serial numbers are missing entirely, (5) Seller can't or won't show you the serial numbers. If you see signs of tampering, walk away. SafeOrStolen doesn't judge whether a serial looks genuine; it only tells you whether that serial shows up in theft reports, or a national stolen-bicycle registry."
  },
  {
  question: "How long does an eBike serial number check take?",
- answer: "A few seconds per serial number. Enter the frame, motor, or battery serial and you get a result in a few seconds. Each check searches a national stolen-bicycle registry, SafeOrStolen's own theft reports, and public web results."
+ answer: "A few seconds per serial number. Enter the frame, motor, or battery serial and you get a result in a few seconds. Each check searches a national stolen-bicycle registry, SafeOrStolen's own theft reports."
  },
  {
  question: "What are red flags when buying a used eBike?",

@@ -75,7 +75,7 @@ const FAQS = [
   },
   {
     q: 'Can I check a serial number to see if an item is stolen?',
-    a: 'Yes. Enter the serial, IMEI or VIN on SafeOrStolen. Depending on the item it searches theft reports filed on SafeOrStolen, police firearm theft records, a national stolen-bicycle registry, Arizona law-enforcement vehicle records and public web results. A clean result only means no report was found in the records searched.',
+    a: 'Yes. Enter the serial, IMEI or VIN on SafeOrStolen. Depending on the item it searches theft reports filed on SafeOrStolen, police firearm theft records, a national stolen-bicycle registry, Arizona law-enforcement vehicle records. A clean result only means no report was found in the records searched.',
   },
 ];
 

@@ -243,7 +243,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — Shows the make and model from the IMEI, searches SafeOrStolen theft reports and public web results, and offers a paid carrier blacklist check. The same account also checks cars, bikes and guns.
+                  <strong>Winner: SafeOrStolen</strong> — Shows the make and model from the IMEI, searches SafeOrStolen theft reports, and offers a paid carrier blacklist check. The same account also checks cars, bikes and guns.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runners-up: IMEI.info, Swappa IMEI Check
@@ -258,7 +258,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — Decodes the VIN, lists open recalls, and searches SafeOrStolen theft reports and public web results. Arizona VINs and plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records.
+                  <strong>Winner: SafeOrStolen</strong> — Decodes the VIN, lists open recalls, and searches SafeOrStolen theft reports. Arizona VINs and plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runners-up: NICB VINCheck, VinCheck.info
@@ -273,7 +273,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: Bike Index</strong> — A dedicated bike registry you can search yourself for free. SafeOrStolen is a good pick if you also check other kinds of items: its bike check covers a national stolen-bicycle registry, SafeOrStolen theft reports and public web results in one search.
+                  <strong>Winner: Bike Index</strong> — A dedicated bike registry you can search yourself for free. SafeOrStolen is a good pick if you also check other kinds of items: its bike check covers a national stolen-bicycle registry, SafeOrStolen theft reports in one search.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runners-up: SafeOrStolen, BikeRegister
@@ -288,7 +288,7 @@ const BestStolenItemCheckers2026 = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  <strong>Winner: SafeOrStolen</strong> — Takes serial numbers for laptops, game consoles, cameras and tools as well as phone IMEIs, and searches SafeOrStolen theft reports and public web results for them.
+                  <strong>Winner: SafeOrStolen</strong> — Takes serial numbers for laptops, game consoles, cameras and tools as well as phone IMEIs, and searches SafeOrStolen theft reports for them.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Runner-up: Ask Your Carrier (free)

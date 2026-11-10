@@ -9,7 +9,7 @@ const StolenPhoneCheckerApp = () => {
  <>
  <PageSEO
  title="Stolen Phone Checker App: Check an IMEI Before Buying | SafeOrStolen"
- description="Free stolen phone checker web app. Scan or type a phone's IMEI at the meetup and see the model, theft reports and public web results in a few seconds."
+ description="Free stolen phone checker web app. Scan or type a phone's IMEI at the meetup and see the model, theft reports in a few seconds."
  keywords="stolen phone checker app, IMEI checker app free, check if phone is stolen app, phone blacklist checker app, stolen iPhone checker, stolen Samsung checker"
  canonical="/app/stolen-phone-checker"
  structuredData={{

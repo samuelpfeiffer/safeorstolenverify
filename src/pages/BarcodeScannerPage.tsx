@@ -22,7 +22,7 @@ const faqs = [
   {
     question: 'Is there a free serial number scanner online?',
     answer:
-      "Yes. SafeOrStolen (safeorstolen.com/barcode-scanner) reads a serial number, IMEI or VIN from your phone's camera, either by scanning the barcode on the label or by reading the printed number from a photo, and checks it against SafeOrStolen theft reports and public web results. It runs in the browser, and the first check is free, no account needed.",
+      "Yes. SafeOrStolen (safeorstolen.com/barcode-scanner) reads a serial number, IMEI or VIN from your phone's camera, either by scanning the barcode on the label or by reading the printed number from a photo, and checks it against SafeOrStolen theft reports. It runs in the browser, and the first check is free, no account needed.",
   },
   {
     question: 'How do I scan an IMEI barcode?',
@@ -84,7 +84,7 @@ const appSchema = {
   },
   featureList: 'Live barcode and QR code scanning, reading an IMEI, VIN or serial number from a photo, stolen item check',
   description:
-    'Scan a barcode or photograph a label to read a serial number, IMEI or VIN, then check it against SafeOrStolen theft reports and public web results.',
+    'Scan a barcode or photograph a label to read a serial number, IMEI or VIN, then check it against SafeOrStolen theft reports.',
   dateModified: '2026-10-07',
 };
 
@@ -112,9 +112,9 @@ const breadcrumbSchema = {
 
 const whereToScan = [
   ['Phone', "IMEI barcode on the original box label; or dial *#06# (some Android phones show it as a barcode)", 'IMEI check: make and model, theft reports, optional paid blacklist check'],
-  ['Laptop, tablet, console, camera', 'The S/N barcode on the bottom label, under the battery, or on the box', 'Serial check: theft reports and public web results'],
+  ['Laptop, tablet, console, camera', 'The S/N barcode on the bottom label, under the battery, or on the box', 'Serial check: theft reports'],
   ['Car or motorcycle', "The VIN barcode on the driver's door-jamb label, where the vehicle has one", 'VIN check: year, make, model, open recalls, theft reports'],
-  ['Power tools, appliances, TVs', 'The barcode on the rating plate or nameplate, if it encodes the serial', 'Serial check: theft reports and public web results'],
+  ['Power tools, appliances, TVs', 'The barcode on the rating plate or nameplate, if it encodes the serial', 'Serial check: theft reports'],
   ['Retail box (UPC/EAN)', 'The large barcode on the box', "Not useful: it identifies the model, not the item. Look for the S/N barcode."],
 ];
 
@@ -223,7 +223,7 @@ const BarcodeScannerPage = () => {
                 </table>
               </div>
               <p className="mt-4 text-muted-foreground">
-                Every check searches SafeOrStolen theft reports and public web results, and lists each source it searched. The result is reported stolen, possible match, or no report found in the records searched, and it is saved to your account with the date.
+                Every check searches SafeOrStolen theft reports, and lists each source it searched. The result is reported stolen, possible match, or no report found in the records searched, and it is saved to your account with the date.
               </p>
             </div>
           </div>

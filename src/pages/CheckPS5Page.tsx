@@ -29,7 +29,7 @@ const CheckPS5Page = () => {
       ]}
       quickAnswer={{
         question: "How do I check a PS5 serial number?",
-        answer: "Find the serial number on the label on the bottom of the console (when it stands upright; remove the stand if attached), or on the PS5 itself under Settings > System > System Software > Console Information. Enter it at SafeOrStolen (safeorstolen.com/check-ps5), which checks it against its stolen-item reports and public web results and gives you a result in a few seconds. The first check is free. Before you pay, also make sure the number on the console matches the box, then sign in to your own PlayStation account to test for a ban."
+        answer: "Find the serial number on the label on the bottom of the console (when it stands upright; remove the stand if attached), or on the PS5 itself under Settings > System > System Software > Console Information. Enter it at SafeOrStolen (safeorstolen.com/check-ps5), which checks it against its stolen-item reports and gives you a result in a few seconds. The first check is free. Before you pay, also make sure the number on the console matches the box, then sign in to your own PlayStation account to test for a ban."
       }}
       sections={[
         {
@@ -90,16 +90,16 @@ const CheckPS5Page = () => {
       content={{
         intro: "Check a PlayStation 5 serial number for free before you buy a used console. It works for the original PS5, the PS5 Slim and the PS5 Pro, disc or digital. Results in a few seconds, 1 free check, no credit card.",
 
-        whatIs: "A PS5 serial number check looks for that exact console in theft reports. When a PS5 is stolen, the owner gives its serial number to the police and their insurer, and can report it on SafeOrStolen. SafeOrStolen searches its own stolen-item reports and public web results for the serial number, including listings and posts that mention it. Sony does not offer a public lookup for stolen consoles, so checking here and inspecting the console in person are the two things a buyer can do.",
+        whatIs: "A PS5 serial number check looks for that exact console in theft reports. When a PS5 is stolen, the owner gives its serial number to the police and their insurer, and can report it on SafeOrStolen. SafeOrStolen searches its own stolen-item reports for the serial number, including listings and posts that mention it. Sony does not offer a public lookup for stolen consoles, so checking here and inspecting the console in person are the two things a buyer can do.",
 
-        howItWorks: "Type the serial number into the search box. SafeOrStolen searches its stolen-item reports and public web results at the same time and returns one of three results: reported stolen, possible match, or no report found in the records searched. Each result lists the sources it searched and is saved to your account with the date. After the check you can get a $1.99 verification certificate showing you checked the console before the sale.",
+        howItWorks: "Type the serial number into the search box. SafeOrStolen searches its stolen-item reports at the same time and returns one of three results: reported stolen, possible match, or no report found in the records searched. Each result lists the sources it searched and is saved to your account with the date. After the check you can get a $1.99 verification certificate showing you checked the console before the sale.",
 
         whyCheck: "Game consoles are among the most commonly stolen and resold electronics, because they are easy to carry and sell quickly online. If you buy a stolen PS5, police can return it to the owner and you lose what you paid. A stolen or banned console can also be blocked from PlayStation Network. A few minutes of checking before you pay protects you.",
 
         benefits: [
           "Free PS5 serial number check, 1 free check with no card",
           "Works for PS5, PS5 Slim and PS5 Pro, disc or digital",
-          "Searches SafeOrStolen theft reports and public web results",
+          "Searches SafeOrStolen theft reports",
           "Results in a few seconds, with every source listed",
           "Dated record of every check saved to your account",
           "Also works for Xbox, Nintendo Switch, Steam Deck and PS4",

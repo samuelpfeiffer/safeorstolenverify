@@ -40,11 +40,11 @@ const LikeCarfaxForPhones = () => {
         faqs={[
           {
             question: "Is there a Carfax for phones?",
-            answer: "Not in the sense of a full ownership and repair history. What you can do is check the phone's IMEI for theft reports. SafeOrStolen (safeorstolen.com/verify) searches its own theft reports and public web results, shows the make and model from the IMEI, and offers a paid carrier blacklist check. the first check is free."
+            answer: "Not in the sense of a full ownership and repair history. What you can do is check the phone's IMEI for theft reports. SafeOrStolen (safeorstolen.com/verify) searches its own theft reports, shows the make and model from the IMEI, and offers a paid carrier blacklist check. the first check is free."
           },
           {
             question: "How is SafeOrStolen like Carfax?",
-            answer: "Both start from a unique number. Carfax takes a VIN and returns a vehicle history. SafeOrStolen takes an IMEI, VIN or serial number and tells you whether it appears in SafeOrStolen theft reports or public web results, with every source listed. For a phone, it also shows the make and model from the IMEI, and a paid check adds carrier blacklist status."
+            answer: "Both start from a unique number. Carfax takes a VIN and returns a vehicle history. SafeOrStolen takes an IMEI, VIN or serial number and tells you whether it appears in SafeOrStolen theft reports, with every source listed. For a phone, it also shows the make and model from the IMEI, and a paid check adds carrier blacklist status."
           },
           {
             question: "Can I check a phone like Carfax checks a car?",
@@ -56,7 +56,7 @@ const LikeCarfaxForPhones = () => {
           },
           {
             question: "Does SafeOrStolen work in all 50 states?",
-            answer: "You can run a check from anywhere. Every check searches SafeOrStolen theft reports and public web results. Some extra sources are state-specific: Arizona VINs and plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records, and gun checks include police reports from 33 states and Washington, DC."
+            answer: "You can run a check from anywhere. Every check searches SafeOrStolen theft reports. Some extra sources are state-specific: Arizona VINs and plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records, and gun checks include police reports from 33 states and Washington, DC."
           }
         ]}
       />
@@ -180,7 +180,7 @@ const LikeCarfaxForPhones = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>Shows theft reports</strong> from SafeOrStolen records and public web results</span>
+                    <span><strong>Shows theft reports</strong> from SafeOrStolen records</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />

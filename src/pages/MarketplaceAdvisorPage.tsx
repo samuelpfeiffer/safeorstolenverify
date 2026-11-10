@@ -34,7 +34,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: 'Can it tell me if the item is stolen?',
     answer:
-      "It points out signs that often go with stolen goods, like a seller who won't share the serial number, and it lists any number it finds in the listing. To check that number against theft reports, enter it on SafeOrStolen's verify page, which searches its theft reports and public web results and lists every source.",
+      "It points out signs that often go with stolen goods, like a seller who won't share the serial number, and it lists any number it finds in the listing. To check that number against theft reports, enter it on SafeOrStolen's verify page, which searches its theft reports and lists every source.",
   },
   {
     question: 'Which listing links can I paste?',

@@ -104,7 +104,7 @@ const NewsIndexPage = () => {
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-2xl font-bold mb-6">What a check covers as of October 2026</h2>
             <p className="text-muted-foreground mb-6">
-              Every check searches SafeOrStolen's own theft reports and public web results that mention the
+              Every check searches SafeOrStolen's own theft reports that mention the
               number. On top of that:
             </p>
             <div className="space-y-4">

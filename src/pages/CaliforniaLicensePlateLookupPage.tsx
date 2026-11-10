@@ -7,7 +7,7 @@ const CaliforniaLicensePlateLookupPage = () => {
  <>
  <ItemLandingPageTemplate
  title="California License Plate Lookup: Check a CA Plate for Theft Reports"
- metaDescription="California license plate lookup: check a CA plate against SafeOrStolen theft reports and public web results. No owner names. Then verify the VIN before you buy."
+ metaDescription="California license plate lookup: check a CA plate against SafeOrStolen theft reports. No owner names. Then verify the VIN before you buy."
  h1="California license plate lookup: check a CA plate for theft reports"
  itemType="Vehicle"
  searchType="plate"
@@ -20,9 +20,9 @@ const CaliforniaLicensePlateLookupPage = () => {
  'california stolen vehicle plate lookup'
  ]}
  content={{
- intro: "Type a California plate into SafeOrStolen and in a few seconds you see whether it matches a theft report filed on SafeOrStolen or turns up in public web results, such as a stolen-car post. The lookup never shows owner names. Use it as a first screen, then check the VIN on the car itself before you pay.",
- whatIs: "A California plate lookup on SafeOrStolen searches the plate against SafeOrStolen's own theft reports and public web results. It never shows who owns the car. Owner and registration details in California are confidential and only released by the DMV to people with a legal reason.",
- howItWorks: "Enter the plate exactly as it appears. SafeOrStolen searches its theft reports and public web results and shows \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date.",
+ intro: "Type a California plate into SafeOrStolen and in a few seconds you see whether it matches a theft report filed on SafeOrStolen. The lookup never shows owner names. Use it as a first screen, then check the VIN on the car itself before you pay.",
+ whatIs: "A California plate lookup on SafeOrStolen searches the plate against SafeOrStolen's own theft reports. It never shows who owns the car. Owner and registration details in California are confidential and only released by the DMV to people with a legal reason.",
+ howItWorks: "Enter the plate exactly as it appears. SafeOrStolen searches its theft reports and shows \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date.",
  whyCheck: "Plates can be swapped between cars, so a plate check is a quick first screen, not the final word. If the plate looks fine, run the VIN from the dashboard and driver's door sticker, and make sure the name on the title matches the seller's ID.",
  benefits: [
  "Check a California plate for SafeOrStolen theft reports",
@@ -41,11 +41,11 @@ const CaliforniaLicensePlateLookupPage = () => {
  faqs: [
  {
  question: "What is the most accurate license plate search in California?",
- answer: "For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. It works the same in Los Angeles, San Diego, San Jose, San Francisco and every other California city.",
+ answer: "For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. It works the same in Los Angeles, San Diego, San Jose, San Francisco and every other California city.",
  },
  {
  question: "Can I check if a car is stolen in California using the license plate?",
- answer: "You can use the plate as a first screen. SafeOrStolen (safeorstolen.com/california-license-plate-lookup) searches a California plate against its own theft reports and public web results. Plates can be moved between cars, so also check the VIN on the dashboard and door sticker, and make sure the title name matches the seller's ID."
+ answer: "You can use the plate as a first screen. SafeOrStolen (safeorstolen.com/california-license-plate-lookup) searches a California plate against its own theft reports. Plates can be moved between cars, so also check the VIN on the dashboard and door sticker, and make sure the title name matches the seller's ID."
  },
  {
  question: "Will a California plate lookup show the owner's name?",
@@ -53,7 +53,7 @@ const CaliforniaLicensePlateLookupPage = () => {
  },
  {
  question: "What does a California plate lookup search?",
- answer: "A SafeOrStolen plate check searches SafeOrStolen theft reports and public web results. For registration or title questions, contact the California DMV. If you think a car is stolen, give the plate and location to your local police non-emergency line."
+ answer: "A SafeOrStolen plate check searches SafeOrStolen theft reports. For registration or title questions, contact the California DMV. If you think a car is stolen, give the plate and location to your local police non-emergency line."
  }
  ]
  }}

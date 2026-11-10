@@ -53,7 +53,7 @@ const VsBikeIndex = () => {
         "name": "What does a SafeOrStolen bike check search?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A SafeOrStolen bike check searches a national stolen-bicycle registry, SafeOrStolen's own theft reports, and public web results such as listings and posts that mention the serial number. The result lists every source searched."
+          "text": "A SafeOrStolen bike check searches a national stolen-bicycle registry, SafeOrStolen's own theft reports such as listings and posts that mention the serial number. The result lists every source searched."
         }
       },
       {
@@ -301,7 +301,7 @@ const VsBikeIndex = () => {
                   <CardContent>
                     <p className="text-muted-foreground">
                       A SafeOrStolen bike check searches a national stolen-bicycle registry, its own theft reports
-                      and public web results, and lists every source. Bike Index relies on user-submitted reports.
+                     , and lists every source. Bike Index relies on user-submitted reports.
                     </p>
                   </CardContent>
                 </Card>
@@ -368,7 +368,7 @@ const VsBikeIndex = () => {
                   <CardContent>
                     <p className="text-muted-foreground">
                       A SafeOrStolen bike check searches a national stolen-bicycle registry, SafeOrStolen's
-                      own theft reports, and public web results that mention the serial number. Every source
+                      own theft reports that mention the serial number. Every source
                       searched is listed in the result.
                     </p>
                   </CardContent>

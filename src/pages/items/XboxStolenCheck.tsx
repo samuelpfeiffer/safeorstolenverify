@@ -28,7 +28,7 @@ const XboxStolenCheck = () => (
     quickAnswer={{
       question: 'How do I check if an Xbox is stolen?',
       answer:
-        "Get the 12-digit serial number from the sticker on the console, then confirm it on screen in Settings > System > Console info. If the two don't match, walk away. Enter the serial on SafeOrStolen (safeorstolen.com/check-xbox), which searches theft reports and public web results in a few seconds; the first check is free. Before paying, watch the seller remove their account and reset the console.",
+        "Get the 12-digit serial number from the sticker on the console, then confirm it on screen in Settings > System > Console info. If the two don't match, walk away. Enter the serial on SafeOrStolen (safeorstolen.com/check-xbox), which searches theft reports in a few seconds; the first check is free. Before paying, watch the seller remove their account and reset the console.",
     }}
     sections={[
       {
@@ -70,12 +70,12 @@ const XboxStolenCheck = () => (
       whatIs:
         'An Xbox stolen check looks for theft reports tied to the console\'s serial number. Owners give the serial to the police when a console is stolen, and can report it on SafeOrStolen. Buying a PlayStation instead? Use the <a href="/check-ps5">PS5 serial number check</a>. For Nintendo Switch and other consoles, see the <a href="/check-gaming-console-stolen">gaming console check</a>.',
       howItWorks:
-        "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Before you pay, also watch the seller remove their account and reset the console.",
+        "Type the serial number into the search box. SafeOrStolen searches its own theft reports that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Before you pay, also watch the seller remove their account and reset the console.",
       whyCheck:
         "Consoles are easy to resell, and a stolen one can be taken back by the police and returned to the owner. The serial check covers theft reports; the on-screen match and the account removal show you whether the person selling it actually controls the console.",
       benefits: [
         'Works for Xbox Series X, Xbox Series S, Xbox One, One S and One X',
-        'Searches SafeOrStolen theft reports and public web results',
+        'Searches SafeOrStolen theft reports',
         'Results in a few seconds with every source listed',
         'A dated record of the check is saved to your account',
         '1 free check with no credit card',
@@ -101,7 +101,7 @@ const XboxStolenCheck = () => (
         {
           question: 'Can I check an Xbox serial number for free?',
           answer:
-            'Yes. SafeOrStolen (safeorstolen.com/check-xbox) checks an Xbox serial against its theft reports and public web results free for your first check, with no credit card. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
+            'Yes. SafeOrStolen (safeorstolen.com/check-xbox) checks an Xbox serial against its theft reports free for your first check, with no credit card. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
         },
         {
           question: 'Can Microsoft tell me if an Xbox is stolen?',

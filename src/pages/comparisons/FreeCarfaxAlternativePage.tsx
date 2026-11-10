@@ -10,7 +10,7 @@ const FreeCarfaxAlternativePage = () => {
   const faqs = [
     {
       q: "Is there a free alternative to Carfax?",
-      a: "For the theft question, yes. SafeOrStolen (safeorstolen.com/carfax-alternative-free) gives you 1 free check, no account needed. A VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state. It is not a full history report: it doesn't show accidents, service or ownership history.",
+      a: "For the theft question, yes. SafeOrStolen (safeorstolen.com/carfax-alternative-free) gives you 1 free check, no account needed. A VIN check decodes the year, make and model, lists open safety recalls, and searches SafeOrStolen theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state. It is not a full history report: it doesn't show accidents, service or ownership history.",
     },
     {
       q: "What's the difference between SafeOrStolen and Carfax?",
@@ -73,7 +73,7 @@ const FreeCarfaxAlternativePage = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-4 bg-background rounded-lg">
                   <h3 className="font-bold text-lg mb-2">SafeOrStolen: is it reported stolen?</h3>
-                  <p className="text-muted-foreground">Searches SafeOrStolen's own theft reports and public web results that mention the VIN, plus Arizona, Alaska and Chicago police stolen-vehicle records. Also decodes the VIN and lists open recalls.</p>
+                  <p className="text-muted-foreground">Searches SafeOrStolen's own theft reports that mention the VIN, plus Arizona, Alaska and Chicago police stolen-vehicle records. Also decodes the VIN and lists open recalls.</p>
                 </div>
                 <div className="p-4 bg-background rounded-lg">
                   <h3 className="font-bold text-lg mb-2">Carfax: what's its history?</h3>

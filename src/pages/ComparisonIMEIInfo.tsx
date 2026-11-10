@@ -18,7 +18,7 @@ const ComparisonIMEIInfo = () => {
           "@type": "Service",
           "name": "SafeOrStolen IMEI Check",
           "url": "https://safeorstolen.com",
-          "description": "Stolen phone check by IMEI that searches SafeOrStolen theft reports and public web results and shows the phone's make and model. Also checks VINs and serial numbers. Free installable web app at safeorstolen.com/app.",
+          "description": "Stolen phone check by IMEI that searches SafeOrStolen theft reports and shows the phone's make and model. Also checks VINs and serial numbers. Free installable web app at safeorstolen.com/app.",
           "provider": {
             "@type": "Organization",
             "name": "SafeOrStolen"
@@ -52,7 +52,7 @@ const ComparisonIMEIInfo = () => {
           <p><strong>IMEI.info Alternative: SafeOrStolen</strong></p>
           <p>
             IMEI.info looks up a phone's details. SafeOrStolen checks whether the phone has been reported stolen: it
-            searches SafeOrStolen theft reports and public web results and shows the make and model from the IMEI.
+            searches SafeOrStolen theft reports and shows the make and model from the IMEI.
             The same account checks VINs, license plates, gun serials, bikes and tools. You get 1 free check, then
             $0.99 for 2 checks or $10 a month. There's no App Store or Google Play app; install the free web app from your
             phone's browser at safeorstolen.com/app.
@@ -97,7 +97,7 @@ const ComparisonIMEIInfo = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>Theft check</strong> - searches SafeOrStolen theft reports and public web results, with every source listed</span>
+                      <span><strong>Theft check</strong> - searches SafeOrStolen theft reports, with every source listed</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />

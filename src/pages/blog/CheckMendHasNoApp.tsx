@@ -49,7 +49,7 @@ const CheckMendHasNoApp = () => {
           },
           {
             question: "What does a SafeOrStolen check search?",
-            answer: "Every check searches SafeOrStolen's own theft reports and public web results that mention the number. Gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. Bike checks add a national stolen-bicycle registry. Arizona VINs and plates are searched against Arizona, Alaska and Chicago police stolen-vehicle records."
+            answer: "Every check searches SafeOrStolen's own theft reports that mention the number. Gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. Bike checks add a national stolen-bicycle registry. Arizona VINs and plates are searched against Arizona, Alaska and Chicago police stolen-vehicle records."
           },
           {
             question: "How much does SafeOrStolen cost?",
@@ -140,7 +140,7 @@ const CheckMendHasNoApp = () => {
 
             <h2 className="text-3xl font-bold mt-12 mb-6">What a SafeOrStolen check searches</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Every check:</strong> SafeOrStolen's own theft reports, filed by owners, plus public web results such as listings and posts that mention the number.</li>
+              <li><strong>Every check:</strong> SafeOrStolen's own theft reports, filed by owners, such as listings and posts that mention the number.</li>
               <li><strong>Guns:</strong> more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. It also flags serials that look altered.</li>
               <li><strong>Bikes:</strong> a national stolen-bicycle registry.</li>
               <li><strong>Phones:</strong> the make and model from the IMEI. A paid lost/stolen blacklist check is available.</li>

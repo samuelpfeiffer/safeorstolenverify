@@ -231,7 +231,7 @@ export default function GunTheftStatisticsPage() {
                 </p>
                 <p>
                   Every SafeOrStolen gun check searches all of these reports, plus live Ohio law-enforcement
-                  stolen-gun records, SafeOrStolen's own theft reports and public web results. For a private
+                  stolen-gun records, SafeOrStolen's own theft reports. For a private
                   sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial.
                 </p>
                 <p>

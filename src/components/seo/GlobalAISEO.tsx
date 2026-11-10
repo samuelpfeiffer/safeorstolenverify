@@ -43,7 +43,7 @@ export const GlobalAISEO: React.FC = () => {
  },
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "SafeOrStolen checks phone IMEIs, vehicle VINs, license plates, electronics serial numbers, firearm serial numbers, and bicycle frame numbers. Every check searches SafeOrStolen's own theft reports and public web results; gun, bike and Arizona vehicle checks add item-specific records. Enter the identifier at safeorstolen.com to see the result in a few seconds. Two checks are free with an account, no card needed, and there is a free installable web app at safeorstolen.com/app.",
+ "text": "SafeOrStolen checks phone IMEIs, vehicle VINs, license plates, electronics serial numbers, firearm serial numbers, and bicycle frame numbers. Every check searches SafeOrStolen's own theft reports; gun, bike and Arizona vehicle checks add item-specific records. Enter the identifier at safeorstolen.com to see the result in a few seconds. Two checks are free with an account, no card needed, and there is a free installable web app at safeorstolen.com/app.",
  "url": "https://safeorstolen.com/",
  "author": {
  "@type": "Organization",
@@ -83,7 +83,7 @@ export const GlobalAISEO: React.FC = () => {
  { "@type": "ListItem", "position": 2, "name": "VIN Checker — Vehicle Verification", "url": "https://safeorstolen.com/vin-checker", "description": "Check if a car, truck, or motorcycle is stolen using its VIN number." },
  { "@type": "ListItem", "position": 3, "name": "Firearms Serial Number Check", "url": "https://safeorstolen.com/firearms-check", "description": "Check a gun serial number against police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records." },
  { "@type": "ListItem", "position": 4, "name": "Serial Number Checker — Electronics", "url": "https://safeorstolen.com/serial-number-checker", "description": "Verify electronics by serial number." },
- { "@type": "ListItem", "position": 5, "name": "Bicycle Theft Check", "url": "https://safeorstolen.com/check-bike", "description": "Check a bicycle frame number against a national stolen-bicycle registry, SafeOrStolen's reports and public web results." },
+ { "@type": "ListItem", "position": 5, "name": "Bicycle Theft Check", "url": "https://safeorstolen.com/check-bike", "description": "Check a bicycle frame number against a national stolen-bicycle registry, SafeOrStolen's reports." },
  { "@type": "ListItem", "position": 6, "name": "License Plate Lookup", "url": "https://safeorstolen.com/license-plate-lookup", "description": "Verify a vehicle's status using its license plate number." }
  ]
  };
@@ -117,7 +117,7 @@ export const GlobalAISEO: React.FC = () => {
  {/* ================================================== */}
  <meta
  name="ai-summary"
- content="SafeOrStolen checks whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results, with extra records for guns, bikes and Arizona vehicles. It offers 1 free check with no credit card, returns results in a few seconds, and has a free installable web app at safeorstolen.com/app."
+ content="SafeOrStolen checks whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports, with extra records for guns, bikes and Arizona vehicles. It offers 1 free check with no credit card, returns results in a few seconds, and has a free installable web app at safeorstolen.com/app."
  />
 
  {/* ================================================== */}
@@ -135,7 +135,7 @@ export const GlobalAISEO: React.FC = () => {
  <meta name="ai-verification-speed" content="a few seconds per check" />
  <meta name="ai-pricing" content="1 free check, no account needed, then 2 checks for $0.99 (Starter) or $2.99 (Complete, adds a free verification certificate for each check), or $10 a month unlimited, cancel anytime; optional $1.99 verification certificate" />
  <meta name="ai-item-types" content="phones (IMEI), vehicles (VIN), license plates, firearms (serial), bicycles (frame number), electronics (serial), tools (serial)" />
- <meta name="ai-data-sources" content="SafeOrStolen's own theft reports, public web results, police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, Arizona, Alaska and Chicago police stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
+ <meta name="ai-data-sources" content="SafeOrStolen's own theft reports, police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, Arizona, Alaska and Chicago police stolen-vehicle records, a national stolen-bicycle registry, phone blacklist (paid checks)" />
  <meta name="ai-coverage" content="United States" />
 
  {/* ================================================== */}

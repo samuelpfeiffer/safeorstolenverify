@@ -82,7 +82,7 @@ export const TrustBuildingFAQ = () => {
  <li>Law enforcement stolen property databases</li>
  <li>Insurance company blacklists</li>
  <li>Manufacturer recall databases</li>
- <li>Comprehensive checks include SafeOrStolen reports, public web results, and AI analysis</li>
+ <li>Comprehensive checks include SafeOrStolen reports and AI analysis</li>
  </ul>
  <p>We're completely transparent about our sources and limitations. View our full methodology on our <a href="/about" className="text-sos-orange hover:underline">About page</a>.</p>
  </div>

@@ -71,7 +71,7 @@ const GROUPS: { heading: string; anchor: string; note: string; rows: Row[] }[] =
  heading: 'Watches, jewelry and instruments',
  anchor: 'watches-jewelry',
  note:
- 'These are the hardest to check. Many pieces have no serial at all, and thefts are often reported by description only. A serial check still searches SafeOrStolen theft reports and public web results, so run any number you can find.',
+ 'These are the hardest to check. Many pieces have no serial at all, and thefts are often reported by description only. A serial check still searches SafeOrStolen theft reports, so run any number you can find.',
  rows: [
  { item: 'Luxury watch', id: 'Serial or case number', onItem: 'Case back, between the lugs, or on the inner ring of the dial, depending on the brand', elsewhere: 'Warranty card or papers; the number should match exactly', check: 'Watch check', href: '/check-watch-stolen' },
  { item: 'Diamond or graded stone', id: 'Report number', onItem: 'Some stones have the grading report number laser-inscribed on the girdle (needs a loupe)', elsewhere: 'The grading report', check: 'Jewelry check', href: '/check-jewelry' },

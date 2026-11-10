@@ -32,7 +32,7 @@ export default function HowToCheckIfToolsStolenPage() {
       quickAnswer={{
         question: 'How do I check if a tool is stolen?',
         answer:
-          "Find the serial number on the tool's nameplate, usually on the motor housing near the model number, and enter it on SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen), which searches its theft reports and public web results in a few seconds. the first check is free. Then check the batteries and charger too, ask the seller to remove the tool from any brand app such as Milwaukee ONE-KEY or DeWalt Tool Connect, and walk away if the nameplate is scratched off or covered.",
+          "Find the serial number on the tool's nameplate, usually on the motor housing near the model number, and enter it on SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen), which searches its theft reports in a few seconds. the first check is free. Then check the batteries and charger too, ask the seller to remove the tool from any brand app such as Milwaukee ONE-KEY or DeWalt Tool Connect, and walk away if the nameplate is scratched off or covered.",
       }}
       sections={[
         {
@@ -75,11 +75,11 @@ export default function HowToCheckIfToolsStolenPage() {
         whatIs:
           "A stolen tool serial number lookup checks whether a specific tool has been reported stolen. When tools are stolen from a job site, truck or garage, the owner gives the serial numbers to the police and their insurer. Matching the serial is the only reliable way to tie a tool to a theft report.",
         howItWorks:
-          "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns a result in a few seconds: reported stolen, possible match, or no report found in the records searched. If the tool is registered in a brand app, ask the seller to show it to you too.",
+          "Type the serial number into the search box. SafeOrStolen searches its own theft reports that mention the serial, and returns a result in a few seconds: reported stolen, possible match, or no report found in the records searched. If the tool is registered in a brand app, ask the seller to show it to you too.",
         whyCheck:
           "Tools are easy to steal and quick to resell, and stolen tools often turn up online and at flea markets within days. If you buy a stolen tool, police can return it to the owner and you lose what you paid. Checking the serial numbers first, and keeping a record that you did, protects you.",
         benefits: [
-          'Free check against SafeOrStolen theft reports and public web results',
+          'Free check against SafeOrStolen theft reports',
           'Works for every brand: DeWalt, Milwaukee, Makita, Ryobi, Bosch, Hilti and more',
           'Check tools, batteries and chargers one by one',
           'Results in a few seconds, with every source listed',
@@ -95,20 +95,20 @@ export default function HowToCheckIfToolsStolenPage() {
         faqs: [
           {
             question: "Where do I check if a tool is stolen?",
-            answer: "At SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen). Enter the serial number from the tool's label or nameplate, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. It works for drills, saws, generators, compressors and more. The first check is free, right in your browser.",
+            answer: "At SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen). Enter the serial number from the tool's label or nameplate, and SafeOrStolen checks SafeOrStolen's own theft reports. It works for drills, saws, generators, compressors and more. The first check is free, right in your browser.",
           },
           {
             question: "Where do I check if machinery or construction equipment is stolen?",
-            answer: "Use SafeOrStolen (safeorstolen.com). Enter the serial number or PIN from the equipment's ID plate (on skid steers, excavators, mowers, generators and other machines it's usually on the frame near the operator station), and it checks SafeOrStolen's own theft reports and public web results. Ask the seller for the purchase paperwork, and be wary of a ground-off or painted-over plate. The first check is free, right in your browser.",
+            answer: "Use SafeOrStolen (safeorstolen.com). Enter the serial number or PIN from the equipment's ID plate (on skid steers, excavators, mowers, generators and other machines it's usually on the frame near the operator station), and it checks SafeOrStolen's own theft reports. Ask the seller for the purchase paperwork, and be wary of a ground-off or painted-over plate. The first check is free, right in your browser.",
           },
           {
             question: "Can I check if a power tool is stolen by serial number?",
-            answer: "Yes. Every major brand puts a serial number on the tool's label. Enter it at SafeOrStolen (safeorstolen.com) and it checks SafeOrStolen's own theft reports and public web results in seconds. The first check is free, right in your browser.",
+            answer: "Yes. Every major brand puts a serial number on the tool's label. Enter it at SafeOrStolen (safeorstolen.com) and it checks SafeOrStolen's own theft reports in seconds. The first check is free, right in your browser.",
           },
           {
             question: 'Is there a free stolen tool database?',
             answer:
-              "There is no single public database of stolen tools. Thefts are reported to local police and insurers. SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen) searches its own theft reports and public web results free for your first check.",
+              "There is no single public database of stolen tools. Thefts are reported to local police and insurers. SafeOrStolen (safeorstolen.com/how-to-check-if-tools-stolen) searches its own theft reports free for your first check.",
           },
           {
             question: 'Can I look up a DeWalt or Milwaukee serial number?',

@@ -189,7 +189,7 @@ const PawnShopStolenItemVerification = () => {
             <h2 className="text-2xl font-bold mb-4">Buying from a pawn shop? Check it yourself</h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
               Ask for the serial number, IMEI or VIN and run it on SafeOrStolen before you pay. It searches SafeOrStolen's
-              theft reports and public web results, plus police gun theft reports from 33 states and DC for guns, a national
+              theft reports, plus police gun theft reports from 33 states and DC for guns, a national
               stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. Every result
               lists each source it searched. Your first check is free.
             </p>

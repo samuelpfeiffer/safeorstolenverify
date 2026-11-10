@@ -72,7 +72,7 @@ export default function VerifyItemBeforeMeetup() {
         whatIs:
           "Verifying an item before a meetup means confirming two things: that the item isn't reported stolen, and that the person selling it controls it. The serial number check covers the first. The in-person checks (matching the number, unlocking, signing out) cover the second. If you only have the listing link so far, paste it into the <a href=\"/marketplace-url-checker\">Facebook Marketplace scam checker</a> to see the warning signs first.",
         howItWorks:
-          'Type the number the seller sent into the search box. SafeOrStolen searches its theft reports and public web results, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. The check is saved to your account with the date. You can run it again from your phone at the meetup on safeorstolen.com or the free web app at safeorstolen.com/app.',
+          'Type the number the seller sent into the search box. SafeOrStolen searches its theft reports, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. The check is saved to your account with the date. You can run it again from your phone at the meetup on safeorstolen.com or the free web app at safeorstolen.com/app.',
         whyCheck:
           'Once you have paid in cash, there is no getting the money back if the item turns out to be stolen and police return it to its owner. Checking first, and matching the number in person, is the cheapest protection you have. It also gives you a dated record that you checked.',
         benefits: [
@@ -99,7 +99,7 @@ export default function VerifyItemBeforeMeetup() {
           {
             question: 'Can I check if an item is stolen before I meet the seller?',
             answer:
-              'Yes, as long as the seller gives you its serial number, IMEI or VIN. Enter it on SafeOrStolen (safeorstolen.com/verify), which searches its theft reports and public web results and lists every source. the first check is free. Then match the same number on the item at the meetup, so you know you checked the right one.',
+              'Yes, as long as the seller gives you its serial number, IMEI or VIN. Enter it on SafeOrStolen (safeorstolen.com/verify), which searches its theft reports and lists every source. the first check is free. Then match the same number on the item at the meetup, so you know you checked the right one.',
           },
           {
             question: 'What if the seller says they will show the serial number at the meetup?',

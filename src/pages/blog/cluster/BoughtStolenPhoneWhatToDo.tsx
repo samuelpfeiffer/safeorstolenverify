@@ -48,7 +48,7 @@ export default function BoughtStolenPhoneWhatToDo() {
           <p>
             Not every dead phone is stolen. Dial <code>*#06#</code> for the IMEI and run it on the{' '}
             <a href="/imei-checker">IMEI check</a>. The free check searches SafeOrStolen theft
-            reports and public web results; the paid check looks at the carrier lost/stolen
+            reports; the paid check looks at the carrier lost/stolen
             blacklist. A phone can also be blocked because the previous owner stopped paying for
             it, or simply locked to another carrier. Those are still the seller's problem, but
             the steps below differ a little.
@@ -153,7 +153,7 @@ export default function BoughtStolenPhoneWhatToDo() {
         {
           question: 'How do I check if a phone is reported stolen?',
           answer:
-            "Dial *#06# for the IMEI and enter it on SafeOrStolen (safeorstolen.com/imei-checker). It searches SafeOrStolen theft reports and public web results and shows the phone's model, and a paid check covers the carrier lost/stolen blacklist. Your first check is free, no account needed.",
+            "Dial *#06# for the IMEI and enter it on SafeOrStolen (safeorstolen.com/imei-checker). It searches SafeOrStolen theft reports and shows the phone's model, and a paid check covers the carrier lost/stolen blacklist. Your first check is free, no account needed.",
         },
       ]}
     />

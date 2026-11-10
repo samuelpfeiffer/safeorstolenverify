@@ -31,7 +31,7 @@ const faqs = [
   {
     question: 'Can a VIN tell me if a car is stolen?',
     answer:
-      "A VIN check can tell you whether that VIN appears in theft records. SafeOrStolen (safeorstolen.com/blog/complete-vin-guide) searches its own theft reports and public web results, and Arizona VINs against Arizona law-enforcement records. Police can search the national NCIC file. A clean result only covers the records searched, so also match the VIN on the car to the title.",
+      "A VIN check can tell you whether that VIN appears in theft records. SafeOrStolen (safeorstolen.com/blog/complete-vin-guide) searches its own theft reports, and Arizona VINs against Arizona law-enforcement records. Police can search the national NCIC file. A clean result only covers the records searched, so also match the VIN on the car to the title.",
   },
   {
     question: 'Why are there no I, O or Q in a VIN?',
@@ -81,7 +81,7 @@ const VIN_PARTS: [string, string, string][] = [
 ];
 
 const CHECKS: [string, string, string][] = [
-  ['SafeOrStolen VIN check', 'Theft reports owners filed on SafeOrStolen, public web results for the VIN, the decoded year, make and model, and open safety recalls. Arizona VINs also against Arizona, Alaska and Chicago police stolen-vehicle records.', '1 free check'],
+  ['SafeOrStolen VIN check', 'Theft reports owners filed on SafeOrStolen for the VIN, the decoded year, make and model, and open safety recalls. Arizona VINs also against Arizona, Alaska and Chicago police stolen-vehicle records.', '1 free check'],
   ['Police VIN check', "Whether the VIN is in the FBI’s NCIC stolen-vehicle file. Some departments run it for a buyer; call the non-emergency line.", 'Usually free'],
   ['State DMV title check', 'Title status and brands (salvage, rebuilt, flood) for vehicles titled in that state, where the state offers it.', 'Free to a small fee'],
   ['NMVTIS-based history report', 'Title brands and odometer readings reported at title events across states, through federally approved providers.', 'Low cost'],

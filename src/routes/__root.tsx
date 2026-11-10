@@ -51,7 +51,7 @@ const webApplicationJsonLd = JSON.stringify({
   name: "SafeOrStolen",
   url: "https://safeorstolen.com",
   description:
-    "Check whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. Your first check is free, no account needed.",
+    "Check whether a used phone, vehicle, plate, gun, bike or serial-numbered item has been reported stolen. Every check searches SafeOrStolen's own theft reports. Your first check is free, no account needed.",
   applicationCategory: "SecurityApplication",
   operatingSystem: "Web",
   offers: {
@@ -120,7 +120,6 @@ const organizationJsonLd = JSON.stringify({
     "serial number check",
     "secondhand marketplace fraud prevention",
     "SafeOrStolen's reports",
-    "public web results",
     "secondhand vehicle checks",
     "secondhand phone checks",
     "firearm serial checks",
@@ -163,7 +162,7 @@ const coreGraphJsonLd = JSON.stringify({
       url: "https://safeorstolen.com",
       name: "SafeOrStolen — Stolen Item Verification",
       description:
-        "Check used items for theft reports before you buy: SafeOrStolen's own theft reports and public web results on every check, plus item-specific records for guns, bikes and Arizona vehicles.",
+        "Check used items for theft reports before you buy: SafeOrStolen's own theft reports on every check, plus item-specific records for guns, bikes and Arizona vehicles.",
       publisher: { "@id": "https://safeorstolen.com/#organization" },
       potentialAction: {
         "@type": "SearchAction",
@@ -177,7 +176,7 @@ const coreGraphJsonLd = JSON.stringify({
       "@id": "https://safeorstolen.com/#service",
       name: "Stolen Item Verification Service",
       description:
-        "SafeOrStolen checks whether a used item has been reported stolen. Every check searches SafeOrStolen's own theft reports and public web results. Phone checks show the make and model from the IMEI, bike checks also search a national stolen-bicycle registry, gun checks also search more than 220,000 police theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, and Arizona VINs and plates are searched against Arizona, Alaska and Chicago police stolen-vehicle records.",
+        "SafeOrStolen checks whether a used item has been reported stolen. Every check searches SafeOrStolen's own theft reports. Phone checks show the make and model from the IMEI, bike checks also search a national stolen-bicycle registry, gun checks also search more than 220,000 police theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, and Arizona VINs and plates are searched against Arizona, Alaska and Chicago police stolen-vehicle records.",
       provider: { "@id": "https://safeorstolen.com/#organization" },
       serviceType: "Stolen Item Verification",
       areaServed: { "@type": "Country", name: "United States" },
@@ -221,7 +220,7 @@ const softwareApplicationJsonLd = JSON.stringify({
   name: "SafeOrStolen AI",
   alternateName: ["SafeOrStolen AI Chat", "SOS AI"],
   description:
-    "Chat assistant that runs SafeOrStolen checks on IMEIs, VINs, plates and serial numbers and explains the results. Checks search SafeOrStolen's own theft reports and public web results, plus item-specific records for guns, bikes and Arizona vehicles.",
+    "Chat assistant that runs SafeOrStolen checks on IMEIs, VINs, plates and serial numbers and explains the results. Checks search SafeOrStolen's own theft reports, plus item-specific records for guns, bikes and Arizona vehicles.",
   applicationCategory: "BusinessApplication",
   applicationSubCategory: "Conversational AI Verification Assistant",
   operatingSystem: "Web",

@@ -16,7 +16,7 @@ export const HomeContentSections = () => {
  const faqs = [
  {
  question: "How do I check if a phone is stolen using IMEI?",
- answer: "Enter the phone's IMEI number into SafeOrStolen's free verification tool. To find your IMEI, dial *#06# on the phone or check Settings → About Phone. We check SafeOrStolen reports, public web results, and use AI analysis to provide insights. You can also ask your carrier if the device is blacklisted. Results appear in 3 seconds showing whether the device is clean, blacklisted, or reported stolen."
+ answer: "Enter the phone's IMEI number into SafeOrStolen's free verification tool. To find your IMEI, dial *#06# on the phone or check Settings → About Phone. We check SafeOrStolen reports and use AI analysis to provide insights. You can also ask your carrier if the device is blacklisted. Results appear in 3 seconds showing whether the device is clean, blacklisted, or reported stolen."
  },
  {
  question: "Is SafeOrStolen really free?",
@@ -24,11 +24,11 @@ export const HomeContentSections = () => {
  },
  {
  question: "What databases does SafeOrStolen check?",
- answer: "We combine SafeOrStolen's own reported items, public web results, and AI analysis for comprehensive checks. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 33 states and DC plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. This multi-faceted approach helps identify potential stolen items."
+ answer: "We combine SafeOrStolen's own reported items and AI analysis for comprehensive checks. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 33 states and DC plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. This multi-faceted approach helps identify potential stolen items."
  },
  {
  question: "How do I check if a car is stolen using VIN?",
- answer: "Enter the vehicle's 17-character VIN (Vehicle Identification Number) into SafeOrStolen. Find the VIN on the driver's side dashboard (visible through windshield), driver's door jamb, vehicle registration, or insurance card. We check SafeOrStolen reports, public web results, and use AI analysis to identify potential issues. Results in 3 seconds."
+ answer: "Enter the vehicle's 17-character VIN (Vehicle Identification Number) into SafeOrStolen. Find the VIN on the driver's side dashboard (visible through windshield), driver's door jamb, vehicle registration, or insurance card. We check SafeOrStolen reports and use AI analysis to identify potential issues. Results in 3 seconds."
  },
  {
  question: "Can I check items on Facebook Marketplace before buying?",
@@ -44,7 +44,7 @@ export const HomeContentSections = () => {
  },
  {
  question: "How is SafeOrStolen different from Carfax?",
-  answer: "Carfax provides vehicle-history reports. SafeOrStolen checks six item categories for stolen-item signals using its reports, public web results, and AI analysis. The services can be used for different parts of a pre-purchase review."
+  answer: "Carfax provides vehicle-history reports. SafeOrStolen checks six item categories for stolen-item signals using its reports and AI analysis. The services can be used for different parts of a pre-purchase review."
  },
  {
  question: "Does SafeOrStolen have a mobile app?",
@@ -71,7 +71,7 @@ export const HomeContentSections = () => {
  <div className="max-w-5xl mx-auto">
  <h2 className="text-2xl md:text-3xl font-bold mb-6">What SafeOrStolen Checks — Complete Verification Coverage</h2>
  <p className="text-muted-foreground mb-8 text-lg">
-  SafeOrStolen covers <strong>all six item categories</strong> in one place. Each check uses SafeOrStolen reports, public web results, and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns.
+  SafeOrStolen covers <strong>all six item categories</strong> in one place. Each check uses SafeOrStolen reports and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns.
  </p>
  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
  {[
@@ -87,7 +87,7 @@ export const HomeContentSections = () => {
  items: "Cars, trucks, SUVs, vans — all makes and models",
  identifier: "VIN Number",
  link: "/vin-checker",
- detail: "SafeOrStolen reports, public web results, AI analysis"
+ detail: "SafeOrStolen reports, AI analysis"
  },
  {
  title: "🔫 Firearms",
@@ -115,14 +115,14 @@ export const HomeContentSections = () => {
  items: "Road bikes, mountain bikes, e-bikes — all brands",
  identifier: "Serial Number",
  link: "/check-bike",
- detail: "SafeOrStolen reports, BikeIndex, public web results, AI analysis"
+ detail: "SafeOrStolen reports, BikeIndex, AI analysis"
  },
  {
  title: "🏍️ Motorcycles",
  items: "Harley-Davidson, Honda, Yamaha, Kawasaki, BMW, Ducati",
  identifier: "VIN Number",
  link: "/check-motorcycle-vin",
- detail: "SafeOrStolen reports, public web results, AI analysis"
+ detail: "SafeOrStolen reports, AI analysis"
  },
  {
  title: "⌚ Watches & Jewelry",
@@ -169,7 +169,7 @@ export const HomeContentSections = () => {
  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
  <h3 className="font-bold text-lg mb-2">We Search multiple sources</h3>
  <p className="text-sm text-muted-foreground">
- In parallel, we query SafeOrStolen's own reports, public web results, and use AI analysis. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 33 states and DC plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. More sources means higher accuracy.
+ In parallel, we query SafeOrStolen's own reports and use AI analysis. Bikes are also checked against a national stolen-bicycle registry, guns against police theft reports from 33 states and DC plus live Ohio records, and paid phone checks search the lost and stolen phone blacklist. More sources means higher accuracy.
  </p>
  </div>
  <div className="text-center p-6 bg-card rounded-lg border border-border">
@@ -256,7 +256,7 @@ export const HomeContentSections = () => {
  Over $15 billion worth of property is stolen annually in the United States, and a significant portion of stolen goods ends up on secondhand marketplaces including Facebook Marketplace, Craigslist, OfferUp, eBay, and local pawn shops. For buyers, the risk is real: if you unknowingly purchase stolen property, law enforcement can seize it and you lose both the item and your money with no legal recourse. In some cases, buyers can face criminal charges for receiving stolen property, especially if the price was suspiciously low or the circumstances were questionable.
  </p>
  <p>
-  SafeOrStolen combines its own stolen-item reports, public web results, and AI analysis into one check. Whether it's checking an <Link to="/imei-checker" className="text-primary hover:underline">IMEI number on a used iPhone</Link>, running a <Link to="/vin-checker" className="text-primary hover:underline">VIN check on a used car</Link>, or performing a <Link to="/firearms-check" className="text-primary hover:underline">gun serial number lookup</Link>, the result explains what was found in the sources checked.
+  SafeOrStolen combines its own stolen-item reports into one check. Whether it's checking an <Link to="/imei-checker" className="text-primary hover:underline">IMEI number on a used iPhone</Link>, running a <Link to="/vin-checker" className="text-primary hover:underline">VIN check on a used car</Link>, or performing a <Link to="/firearms-check" className="text-primary hover:underline">gun serial number lookup</Link>, the result explains what was found in the sources checked.
  </p>
  <p>
  For sellers, SafeOrStolen adds trust and transparency to your listings. Share a verification certificate to prove your items are legitimate, increase buyer confidence, and command higher prices. For businesses like <Link to="/for-pawn-shops" className="text-primary hover:underline">pawn shops</Link>, dealers, and <Link to="/for-electronics-resellers" className="text-primary hover:underline">electronics resellers</Link>, our business plans include bulk verification, API integration, compliance reporting, and audit trails to meet state due diligence requirements.

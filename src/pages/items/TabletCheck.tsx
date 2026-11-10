@@ -27,7 +27,7 @@ const TabletCheck = () => (
     quickAnswer={{
       question: 'How do I check if an iPad is stolen?',
       answer:
-        "Open Settings > General > About on the iPad and enter the serial number on SafeOrStolen (safeorstolen.com/check-tablet-stolen), which searches theft reports and public web results in a few seconds. Cellular iPads also show an IMEI there. Then have the seller sign out of their Apple Account and erase the iPad in front of you. If setup shows \"iPad Locked to Owner\", it is still tied to someone's account. Don't buy it.",
+        "Open Settings > General > About on the iPad and enter the serial number on SafeOrStolen (safeorstolen.com/check-tablet-stolen), which searches theft reports in a few seconds. Cellular iPads also show an IMEI there. Then have the seller sign out of their Apple Account and erase the iPad in front of you. If setup shows \"iPad Locked to Owner\", it is still tied to someone's account. Don't buy it.",
     }}
     sections={[
       {
@@ -70,12 +70,12 @@ const TabletCheck = () => (
       whatIs:
         'A tablet stolen check has two parts: a serial or IMEI check for theft reports, and a check that the tablet is not still locked to someone\'s Apple or Google account. For a cellular iPad you can also check the IMEI with the <a href="/imei-checker">IMEI check</a>, which includes an optional paid carrier blacklist check.',
       howItWorks:
-        "Type the serial number or IMEI into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the number, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Then do the account steps above with the seller.",
+        "Type the serial number or IMEI into the search box. SafeOrStolen searches its own theft reports that mention the number, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Then do the account steps above with the seller.",
       whyCheck:
         "A tablet that is still locked to the owner's account can't be set up, and a stolen one can be taken back by the police. The serial check finds reported thefts, and watching the seller sign out and erase it shows you the tablet is free of account locks.",
       benefits: [
         'Works for iPad, Samsung Galaxy Tab, Amazon Fire and other tablets',
-        'Checks serial numbers and IMEIs against SafeOrStolen theft reports and public web results',
+        'Checks serial numbers and IMEIs against SafeOrStolen theft reports',
         'Results in a few seconds with every source listed',
         'A dated record of the check is saved to your account',
         '1 free check with no credit card',
@@ -90,7 +90,7 @@ const TabletCheck = () => (
       faqs: [
         {
           question: "Where do I check if an iPad or tablet is stolen?",
-          answer: "At SafeOrStolen (safeorstolen.com/check-tablet-stolen). Enter the serial number from Settings, then General, then About (or the IMEI on cellular models), and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. Make sure the seller signs out of their account in front of you. The first check is free, right in your browser.",
+          answer: "At SafeOrStolen (safeorstolen.com/check-tablet-stolen). Enter the serial number from Settings, then General, then About (or the IMEI on cellular models), and SafeOrStolen checks SafeOrStolen's own theft reports. Make sure the seller signs out of their account in front of you. The first check is free, right in your browser.",
         },
         {
           question: 'Where is the serial number on an iPad?',
@@ -100,7 +100,7 @@ const TabletCheck = () => (
         {
           question: 'Can I check an iPad serial number for free?',
           answer:
-            'Yes. SafeOrStolen (safeorstolen.com/check-tablet-stolen) checks an iPad or tablet serial against its theft reports and public web results free for your first check, with no credit card. Then check Activation Lock by having the seller erase the iPad in front of you.',
+            'Yes. SafeOrStolen (safeorstolen.com/check-tablet-stolen) checks an iPad or tablet serial against its theft reports free for your first check, with no credit card. Then check Activation Lock by having the seller erase the iPad in front of you.',
         },
         {
           question: 'How do I know if an iPad has Activation Lock?',

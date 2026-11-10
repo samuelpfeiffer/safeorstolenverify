@@ -29,7 +29,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: Zap,
       title: "Results in a Few Seconds",
-      description: "Every check searches SafeOrStolen theft reports and public web results. Gun checks add police theft reports from 33 states and DC, and bike checks add a national stolen-bicycle registry.",
+      description: "Every check searches SafeOrStolen theft reports. Gun checks add police theft reports from 33 states and DC, and bike checks add a national stolen-bicycle registry.",
       action: "Learn How It Works",
       onClick: () => window.open('/how-it-works', '_blank')
     },

@@ -12,7 +12,7 @@ const StolenCheckChicago = () => {
   const faqs = [
     {
       question: "How do I check if a car in Chicago is stolen?",
-      answer: "Ask the seller for the 17-character VIN and enter it on SafeOrStolen (safeorstolen.com/stolen-check-chicago). In a few seconds it decodes the year, make and model, lists open recalls, and searches SafeOrStolen theft reports and public web results. Then match the VIN on the dash, door sticker and title before you pay."
+      answer: "Ask the seller for the 17-character VIN and enter it on SafeOrStolen (safeorstolen.com/stolen-check-chicago). In a few seconds it decodes the year, make and model, lists open recalls, and searches SafeOrStolen theft reports. Then match the VIN on the dash, door sticker and title before you pay."
     },
     {
       question: "Where can I safely meet sellers in Chicago?",
@@ -59,7 +59,7 @@ const StolenCheckChicago = () => {
               Chicago Stolen Item Verification
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Buying used on Facebook Marketplace or Craigslist in Chicago? Enter the VIN, IMEI or serial number and SafeOrStolen searches its theft reports and public web results in a few seconds. 2 checks free.
+              Buying used on Facebook Marketplace or Craigslist in Chicago? Enter the VIN, IMEI or serial number and SafeOrStolen searches its theft reports in a few seconds. 2 checks free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

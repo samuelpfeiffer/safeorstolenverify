@@ -11,7 +11,7 @@ const GunSerialNumberCheckGuide = () => {
  const faqs = [
  {
  q: "How do I check if a gun is stolen for free?",
- a: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered. A free account gets 2 checks with no credit card; results come back in a few seconds."
+ a: "Enter the serial number at SafeOrStolen (safeorstolen.com/firearms-check). It searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports, and flags serials that look altered. A free account gets 2 checks with no credit card; results come back in a few seconds."
  },
  {
  q: "Is there a national stolen gun database the public can search?",
@@ -31,7 +31,7 @@ const GunSerialNumberCheckGuide = () => {
  },
  {
  q: "What does SafeOrStolen check for firearms?",
- a: "A SafeOrStolen gun check searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), live Ohio law-enforcement stolen-gun records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated."
+ a: "A SafeOrStolen gun check searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973 to 2017), live Ohio law-enforcement stolen-gun records, SafeOrStolen's own theft reports, and flags serials that look altered or obliterated."
  },
  {
  q: "What should I do if a gun comes back as stolen?",
@@ -125,7 +125,7 @@ const GunSerialNumberCheckGuide = () => {
  {[
  { name: 'Police firearm theft and loss reports', desc: 'More than 220,000 reports from 33 states and Washington, DC, filed 1973 to 2017' },
  { name: 'Live Ohio law-enforcement records', desc: 'Current stolen-gun records from Ohio' },
- { name: 'SafeOrStolen theft reports and public web results', desc: 'Thefts owners reported on the site, plus listings and posts that mention the serial' },
+ { name: 'SafeOrStolen theft reports', desc: 'Thefts owners reported on the site, plus listings and posts that mention the serial' },
  { name: 'Altered-serial flag', desc: 'Flags serials that look altered, obliterated or like placeholders' },
  ].map(db => (
  <li key={db.name} className="flex gap-3 bg-card/50 border border-border rounded-xl p-4">

@@ -65,7 +65,7 @@ export const BusinessPageTemplate = ({
  },
  {
  question: `How quickly does SafeOrStolen return results?`,
- answer: `Results are returned in approximately 3 seconds. SafeOrStolen checks its own reported stolen items, public web results, and uses AI analysis to provide insights.`
+ answer: `Results are returned in approximately 3 seconds. SafeOrStolen checks its own reported stolen items and uses AI analysis to provide insights.`
  }
  ];
  

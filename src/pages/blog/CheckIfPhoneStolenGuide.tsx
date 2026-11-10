@@ -6,7 +6,7 @@ import { blogImages } from '@/assets/blog';
 import { AuthorByline, PrimarySources, AUTHOR_PERSON } from '@/components/seo/AuthorByline';
 
 const FAQ_ITEMS = [
-  { q: 'How do I check if a phone is stolen before buying it?', a: 'Ask the seller to dial *#06# so the IMEI shows on screen, then type that 15-digit number into SafeOrStolen (safeorstolen.com/verify). It searches SafeOrStolen\'s own theft reports and public web results and shows the make and model from the IMEI. Results come back in a few seconds. A paid lost/stolen carrier blacklist check is available too.' },
+  { q: 'How do I check if a phone is stolen before buying it?', a: 'Ask the seller to dial *#06# so the IMEI shows on screen, then type that 15-digit number into SafeOrStolen (safeorstolen.com/verify). It searches SafeOrStolen\'s own theft reports and shows the make and model from the IMEI. Results come back in a few seconds. A paid lost/stolen carrier blacklist check is available too.' },
   { q: 'What is an IMEI number and where do I find it?', a: 'An IMEI (International Mobile Equipment Identity) is a 15-digit number that identifies a phone on cellular networks. Dial *#06#, or go to Settings > General > About on an iPhone or Settings > About phone on Android. It is also printed on the original box, and on many iPhones it is etched on the SIM tray.' },
   { q: 'Can a stolen phone be used after a factory reset?', a: 'A factory reset does not change the IMEI, so a blacklisted phone stays blacklisted. iPhones also have Activation Lock tied to the owner\'s Apple Account, and most Android phones have Factory Reset Protection tied to the owner\'s Google account. Either one stops a reset phone from being set up without the owner\'s login.' },
   { q: 'What does a blacklisted IMEI mean?', a: 'A blacklisted IMEI has been reported lost or stolen to a carrier, or flagged for an unpaid balance. Carriers that honor the list will refuse to activate the phone, so it may not make calls or use mobile data. SafeOrStolen offers a paid blacklist check, and monthly members get up to 20 blacklist checks a month.' },
@@ -45,7 +45,7 @@ const CheckIfPhoneStolenGuide = () => {
       "totalTime": "PT5M",
       "step": [
         { "@type": "HowToStep", "name": "Get the IMEI", "text": "Ask the seller to dial *#06# on the phone, or open Settings > General > About (iPhone) or Settings > About phone (Android). Write down the 15-digit number." },
-        { "@type": "HowToStep", "name": "Run an IMEI check", "text": "Go to safeorstolen.com/verify and enter the IMEI. The check searches SafeOrStolen's theft reports and public web results and shows the make and model from the IMEI." },
+        { "@type": "HowToStep", "name": "Run an IMEI check", "text": "Go to safeorstolen.com/verify and enter the IMEI. The check searches SafeOrStolen's theft reports and shows the make and model from the IMEI." },
         { "@type": "HowToStep", "name": "Read the result", "text": "In a few seconds you see \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. Make sure the model matches the phone in your hand." },
         { "@type": "HowToStep", "name": "Check the lock", "text": "On an iPhone, Find My must be off and the seller signed out of their Apple Account. On Android, the seller should remove their Google account before a reset." },
         { "@type": "HowToStep", "name": "Keep a record", "text": "Each check is saved to your account with the date. An optional $1.99 certificate gives you a dated record with its own link." }
@@ -100,7 +100,7 @@ const CheckIfPhoneStolenGuide = () => {
 
         <div className="speakable-summary bg-primary/10 border border-primary/30 rounded-2xl p-6 mb-10">
           <p className="text-foreground font-semibold text-lg leading-relaxed">
-            To check if a used phone is stolen, dial *#06# for the 15-digit IMEI and enter it at safeorstolen.com/imei-checker. The check searches SafeOrStolen theft reports and public web results, and can add a lost-and-stolen blacklist check. Also confirm the phone is not locked to the seller's Apple or Google account before you pay. the first check is free.</p>
+            To check if a used phone is stolen, dial *#06# for the 15-digit IMEI and enter it at safeorstolen.com/imei-checker. The check searches SafeOrStolen theft reports, and can add a lost-and-stolen blacklist check. Also confirm the phone is not locked to the seller's Apple or Google account before you pay. the first check is free.</p>
         </div>
 
         <div className="bg-card border border-border rounded-2xl p-6 mb-10 text-center">
@@ -153,7 +153,7 @@ const CheckIfPhoneStolenGuide = () => {
           <div className="space-y-6 mb-8">
             {[
               { step: 1, title: 'Get the IMEI from the seller', desc: 'Ask for it before you meet. If they don\'t know what it is, tell them to dial *#06# and it shows on screen in a few seconds. If they refuse, end the conversation.' },
-              { step: 2, title: 'Run the IMEI through SafeOrStolen', desc: 'Go to safeorstolen.com/verify and enter the 15 digits. The check searches SafeOrStolen\'s theft reports and public web results, and shows the make and model from the IMEI.' },
+              { step: 2, title: 'Run the IMEI through SafeOrStolen', desc: 'Go to safeorstolen.com/verify and enter the 15 digits. The check searches SafeOrStolen\'s theft reports, and shows the make and model from the IMEI.' },
               { step: 3, title: 'Read the result', desc: 'You see "reported stolen", "possible match", or "no report found in the records searched", with every source listed. Make sure the make and model match the phone in front of you. If you want the carrier blacklist status, add the paid blacklist check.' },
               { step: 4, title: 'Check the account lock', desc: 'On an iPhone, open Settings, tap the name at the top, then Find My > Find My iPhone. It must be off, and the seller should sign out of their Apple Account in front of you. On Android, the seller should remove their Google account under Settings > Accounts before resetting.' },
               { step: 5, title: 'Keep a record', desc: 'Each check is saved to your account with the date. If you want a record you can share, the optional $1.99 certificate gives you a dated page with its own link showing you checked before the sale.' },

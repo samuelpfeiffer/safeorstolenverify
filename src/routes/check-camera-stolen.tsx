@@ -29,7 +29,7 @@ function GuidePage() {
       quickAnswer={{
         question: 'How do I check if a camera is stolen?',
         answer:
-          "Read the body serial number on the bottom plate and each lens serial on the barrel or mount, and enter them on SafeOrStolen (safeorstolen.com/check-camera-stolen), which searches theft reports and public web results in a few seconds. At the meetup, take a test photo: many cameras write the body serial into the photo's data, so you can confirm it matches the plate. Also look for someone else's name in the camera's copyright or owner setting.",
+          "Read the body serial number on the bottom plate and each lens serial on the barrel or mount, and enter them on SafeOrStolen (safeorstolen.com/check-camera-stolen), which searches theft reports in a few seconds. At the meetup, take a test photo: many cameras write the body serial into the photo's data, so you can confirm it matches the plate. Also look for someone else's name in the camera's copyright or owner setting.",
       }}
       sections={[
         {
@@ -70,12 +70,12 @@ function GuidePage() {
         whatIs:
           'A camera stolen check looks for theft reports tied to the serial numbers of the body and each lens. Owners give these serials to the police and their insurer after a theft, and can report them on SafeOrStolen. For laptops, phones and other gear, see the <a href="/serial-number-checker">electronics check</a>.',
         howItWorks:
-          "Type the body or lens serial into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Check each serial separately.",
+          "Type the body or lens serial into the search box. SafeOrStolen searches its own theft reports that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Check each serial separately.",
         whyCheck:
           "Camera kits are valuable, light and easy to resell piece by piece, and stolen gear recovered by police goes back to the owner. Checking every serial, and confirming the body serial in a test photo, takes a few minutes and catches the cases a buyer can catch.",
         benefits: [
           'Works for camera bodies, lenses, drones and action cameras from any brand',
-          'Searches SafeOrStolen theft reports and public web results',
+          'Searches SafeOrStolen theft reports',
           'Results in a few seconds with every source listed',
           'A dated record of each check is saved to your account',
           '1 free check with no credit card',
@@ -101,7 +101,7 @@ function GuidePage() {
           {
             question: 'Can I check a camera serial number for free?',
             answer:
-              'Yes. SafeOrStolen (safeorstolen.com/check-camera-stolen) checks camera body and lens serials against its theft reports and public web results free for your first check, with no credit card. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
+              'Yes. SafeOrStolen (safeorstolen.com/check-camera-stolen) checks camera body and lens serials against its theft reports free for your first check, with no credit card. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
           },
           {
             question: 'Do lenses have serial numbers?',

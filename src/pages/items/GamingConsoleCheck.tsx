@@ -28,7 +28,7 @@ const GamingConsoleCheck = () => (
     quickAnswer={{
       question: 'How do I check if a gaming console is stolen?',
       answer:
-        "Read the serial number on screen in the console's system settings and make sure it matches the sticker on the console. Enter it on SafeOrStolen (safeorstolen.com/check-gaming-console-stolen), which searches theft reports and public web results in a few seconds; the first check is free. Then watch the seller sign out of their account and reset the console before you pay. A seller who can't do that may not own it.",
+        "Read the serial number on screen in the console's system settings and make sure it matches the sticker on the console. Enter it on SafeOrStolen (safeorstolen.com/check-gaming-console-stolen), which searches theft reports in a few seconds; the first check is free. Then watch the seller sign out of their account and reset the console before you pay. A seller who can't do that may not own it.",
     }}
     sections={[
       {
@@ -71,12 +71,12 @@ const GamingConsoleCheck = () => (
       whatIs:
         'A console stolen check looks for theft reports tied to the console\'s serial number. Owners give the serial to the police when a console is stolen. Buying a PlayStation? The <a href="/check-ps5">PS5 serial number check</a> covers it step by step. Buying an Xbox? Use the <a href="/check-xbox">Xbox serial number check</a>.',
       howItWorks:
-        "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Before you pay, also watch the seller sign out of their account and reset the console.",
+        "Type the serial number into the search box. SafeOrStolen searches its own theft reports that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Before you pay, also watch the seller sign out of their account and reset the console.",
       whyCheck:
         "Consoles are small, valuable and quick to resell, and a stolen one can be taken back by the police and returned to the owner. The serial check covers theft reports. The on-screen match and the account reset show you whether the seller actually controls the console.",
       benefits: [
         'Works for Nintendo, PlayStation, Xbox and handheld gaming PCs',
-        'Searches SafeOrStolen theft reports and public web results',
+        'Searches SafeOrStolen theft reports',
         'Results in a few seconds with every source listed',
         'A dated record of the check is saved to your account',
         '1 free check with no credit card',
@@ -97,7 +97,7 @@ const GamingConsoleCheck = () => (
         {
           question: 'Can I check a console serial number for free?',
           answer:
-            'Yes. SafeOrStolen (safeorstolen.com/check-gaming-console-stolen) checks a console serial against its theft reports and public web results free for your first check, with no credit card. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
+            'Yes. SafeOrStolen (safeorstolen.com/check-gaming-console-stolen) checks a console serial against its theft reports free for your first check, with no credit card. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
         },
         {
           question: 'Can Nintendo, Sony or Microsoft tell me if a console is stolen?',

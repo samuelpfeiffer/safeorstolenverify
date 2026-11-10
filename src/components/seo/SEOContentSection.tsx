@@ -51,7 +51,7 @@ export const SEOContentSection = () => {
  <h3 className="text-xl font-semibold mb-3">IMEI Number Check</h3>
  <p className="text-muted-foreground mb-4">
  Verify smartphones and tablets using their unique 15-digit IMEI number. Our IMEI checker 
- checks SafeOrStolen's reports, public web results, and uses AI analysis instantly.
+ checks SafeOrStolen's reports and uses AI analysis instantly.
  </p>
  <Link to="/imei-checker" className="text-primary hover:underline font-medium">
  Check IMEI Number →
@@ -151,14 +151,14 @@ export const SEOContentSection = () => {
  </h3>
  <div className="space-y-4 mb-12">
  <p className="text-muted-foreground leading-relaxed">
- Our verification system searches SafeOrStolen's reports, public web results, and uses AI analysis,
+ Our verification system searches SafeOrStolen's reports and uses AI analysis,
  along with a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns.
  Simply enter the IMEI, VIN, or serial number and receive instant results.
  </p>
  <p className="text-muted-foreground leading-relaxed">
  We check items against stolen property databases updated daily from law enforcement agencies nationwide. 
  For smartphones, we perform an IMEI device lookup to provide model and detail information.
- Vehicle VIN checks include SafeOrStolen's reports, public web results, and AI analysis.
+ Vehicle VIN checks include SafeOrStolen's reports and AI analysis.
  </p>
  </div>
 

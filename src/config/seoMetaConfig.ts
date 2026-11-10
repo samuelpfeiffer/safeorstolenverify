@@ -35,7 +35,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/': {
  title: 'Free Stolen Item Checker - IMEI VIN Serial Verification',
-  description: 'Check phones, vehicles, plates, serial-numbered goods, firearms, and bikes using SafeOrStolen reports, public web results, and AI analysis.',
+  description: 'Check phones, vehicles, plates, serial-numbered goods, firearms, and bikes using SafeOrStolen reports and AI analysis.',
  keywords: 'stolen item checker, IMEI checker, VIN checker, serial number verification, stolen phone check',
  canonical: '/'
  },
@@ -104,7 +104,7 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/verify': {
  title: 'Verify Items - Instant Stolen Check in 3 Seconds',
-  description: 'Check an IMEI, VIN, plate, or serial number using SafeOrStolen reports, public web results, and AI analysis before buying a secondhand item.',
+  description: 'Check an IMEI, VIN, plate, or serial number using SafeOrStolen reports and AI analysis before buying a secondhand item.',
  keywords: 'verify stolen items, instant verification, stolen goods check, marketplace safety',
  canonical: '/verify'
  },
@@ -194,8 +194,8 @@ export const PAGE_SEO_CONFIG: Record<string, PageSEOConfig> = {
  // ========================================
  '/database': {
   title: 'Sources Used in SafeOrStolen Checks',
- description: 'How SafeOrStolen checks items: our own stolen-item reports, public web results and AI analysis, plus police gun theft records from 33 states and DC and a stolen-bike registry.',
- keywords: 'stolen item reports, public web results, global theft checks',
+ description: 'How SafeOrStolen checks items: our own stolen-item reports, plus police gun theft records from 33 states and DC and a stolen-bike registry.',
+ keywords: 'stolen item reports, global theft checks',
  canonical: '/database'
  },
 

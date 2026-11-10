@@ -71,11 +71,11 @@ export default function WhatToDoIfBoughtStolenPage() {
         whatIs:
           "You usually find out one of three ways: a serial check comes back reported stolen, a phone shows a lock screen or blacklist message after you buy it, or the owner or the police contact you. In each case, the steps are the same: stop using it, save your records, and turn it over to police.",
         howItWorks:
-          'If you are not sure yet, enter the serial number, IMEI or VIN above. SafeOrStolen searches its theft reports and public web results, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. A "reported stolen" result is the time to call the police; a "possible match" is worth reading carefully before you do.',
+          'If you are not sure yet, enter the serial number, IMEI or VIN above. SafeOrStolen searches its theft reports, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. A "reported stolen" result is the time to call the police; a "possible match" is worth reading carefully before you do.',
         whyCheck:
           'A dated check result and your saved messages show what you knew and when. That record helps you with police, with your bank or payment app, and with the marketplace when you report the seller.',
         benefits: [
-          'Find out if the number is in SafeOrStolen theft reports or public web results',
+          'Find out if the number is in SafeOrStolen theft reports',
           'Every source listed with the result',
           'Dated record of the check saved to your account',
           'Extra sources for guns, bikes, phones and Arizona vehicles',

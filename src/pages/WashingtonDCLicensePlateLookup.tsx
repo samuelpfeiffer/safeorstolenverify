@@ -29,7 +29,7 @@ const WashingtonDCLicensePlateLookup = () => {
  "@context": "https://schema.org",
  "@type": "WebPage",
  "name": "Washington DC License Plate Lookup - Free DC Stolen Plate Check",
- "description": "Free Washington DC license plate lookup. Check a DC plate against SafeOrStolen theft reports and public web results in a few seconds. No owner names are shown.",
+ "description": "Free Washington DC license plate lookup. Check a DC plate against SafeOrStolen theft reports in a few seconds. No owner names are shown.",
  "url": "https://safeorstolen.com/washington-dc-license-plate-lookup",
  "mainEntity": {
  "@type": "Service",
@@ -55,7 +55,7 @@ const WashingtonDCLicensePlateLookup = () => {
  "name": "How do I look up a DC license plate for free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Enter the DC plate at SafeOrStolen (safeorstolen.com/washington-dc-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports and public web results for that plate and lists every source. It doesn't show the owner or registration details; those stay with the DC DMV. the first check is free."
+ "text": "Enter the DC plate at SafeOrStolen (safeorstolen.com/washington-dc-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports for that plate and lists every source. It doesn't show the owner or registration details; those stay with the DC DMV. the first check is free."
  }
  },
  {
@@ -63,7 +63,7 @@ const WashingtonDCLicensePlateLookup = () => {
  "name": "What can I find with a Washington DC plate lookup?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "On SafeOrStolen, a DC plate check tells you whether the plate appears in SafeOrStolen theft reports or public web results. It doesn't show the owner's name or registration. To get the year, make, model and open recalls, run the car's VIN instead, which you'll find on the dashboard and driver's door jamb."
+ "text": "On SafeOrStolen, a DC plate check tells you whether the plate appears in SafeOrStolen theft reports. It doesn't show the owner's name or registration. To get the year, make, model and open recalls, run the car's VIN instead, which you'll find on the dashboard and driver's door jamb."
  }
  },
  {
@@ -81,7 +81,7 @@ const WashingtonDCLicensePlateLookup = () => {
  <>
  <PageSEO
  title="Washington DC License Plate Lookup Free - DC Stolen Plate Check | SafeOrStolen"
- description="Free Washington DC license plate lookup. Check a DC plate against SafeOrStolen theft reports and public web results in a few seconds. 1 free check, no owner names shown."
+ description="Free Washington DC license plate lookup. Check a DC plate against SafeOrStolen theft reports in a few seconds. 1 free check, no owner names shown."
  keywords="DC license plate lookup, Washington DC plate search, DC DMV plate check, District of Columbia vehicle search, DC stolen car check, DC plate to VIN, Washington DC DMV lookup free"
  canonical="/washington-dc-license-plate-lookup"
  structuredData={[structuredData, faqSchema]}
@@ -101,7 +101,7 @@ const WashingtonDCLicensePlateLookup = () => {
  </h1>
  <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
  Enter a DC plate to see in a few seconds whether it shows up in SafeOrStolen theft reports
- or public web results. 1 free check, no account needed.
+. 1 free check, no account needed.
  </p>
 
  {/* Search Form */}
@@ -280,7 +280,7 @@ const WashingtonDCLicensePlateLookup = () => {
  <CardContent>
  <p className="text-muted-foreground">
  Enter the DC license plate number into SafeOrStolen's verification tool above. 
- SafeOrStolen searches its theft reports and public web results for that plate
+ SafeOrStolen searches its theft reports for that plate
  and lists every source. For registration records, contact the DC DMV. Your first 2
  checks are free.
  </p>
@@ -294,7 +294,7 @@ const WashingtonDCLicensePlateLookup = () => {
  <CardContent>
  <p className="text-muted-foreground">
  A SafeOrStolen DC plate check shows whether the plate appears in SafeOrStolen theft
- reports or public web results. It doesn't show the owner, registration, police records or
+ reports. It doesn't show the owner, registration, police records or
  accident history. For year, make, model and open recalls, run the VIN from the dashboard
  or driver&apos;s door jamb.
  </p>

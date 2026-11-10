@@ -7,7 +7,7 @@ const PowerToolsCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Power Tools Are Stolen - DeWalt, Milwaukee, Makita | SafeOrStolen"
-      metaDescription="Check a used DeWalt, Milwaukee, Makita or Ryobi tool's serial number against SafeOrStolen theft reports and public web results in a few seconds before you buy."
+      metaDescription="Check a used DeWalt, Milwaukee, Makita or Ryobi tool's serial number against SafeOrStolen theft reports in a few seconds before you buy."
       h1="Check if Power Tools Are Stolen - Free Serial Check"
       keywords={[
         'check if power tools stolen',
@@ -25,7 +25,7 @@ const PowerToolsCheck = () => {
       itemType="Power Tools"
       identifierType="Serial Number"
       heroBadge="Power Tool Verification"
-      heroSubtitle="Buying a used drill, impact driver or saw off Marketplace? Type the serial number from the tool's label and SafeOrStolen searches its theft reports and public web results for it in a few seconds."
+      heroSubtitle="Buying a used drill, impact driver or saw off Marketplace? Type the serial number from the tool's label and SafeOrStolen searches its theft reports for it in a few seconds."
       stats={[
         { value: "2", label: "Free Checks" },
         { value: "$0.99", label: "Per Check After That" },
@@ -33,11 +33,11 @@ const PowerToolsCheck = () => {
         { value: "Dated", label: "Record Saved to Your Account" }
       ]}
       whatIsTitle="What Is Power Tool Serial Number Verification?"
-      whatIsContent="Most professional power tools carry a serial number on a label or plate on the body. When a contractor loses tools from a truck or job site, the serial numbers are what they give police and post online. A SafeOrStolen check searches SafeOrStolen's own theft reports, where owners report stolen items, and public web results such as stolen-tool posts and listings that mention that serial. Each result lists every source searched."
+      whatIsContent="Most professional power tools carry a serial number on a label or plate on the body. When a contractor loses tools from a truck or job site, the serial numbers are what they give police and post online. A SafeOrStolen check searches SafeOrStolen's own theft reports, where owners report stolen items such as stolen-tool posts and listings that mention that serial. Each result lists every source searched."
       howItWorksSteps={[
         "Find the serial number: it's usually on a sticker or plate on the tool body, near the battery slot, or on the motor housing",
         "Type the serial number into the search box",
-        "SafeOrStolen searches its theft reports and public web results for that serial",
+        "SafeOrStolen searches its theft reports for that serial",
         "In a few seconds you see \"reported stolen\", \"possible match\" or \"no report found in the records searched\", with each source listed"
       ]}
       howItWorksDescription="Check each tool in a set separately, since every tool and many batteries have their own serial. Each check is saved to your account with the date."
@@ -72,7 +72,7 @@ const PowerToolsCheck = () => {
         },
         {
           question: "Which power tool brands can I check?",
-          answer: "Any tool with a serial number: DeWalt, Milwaukee, Makita, Bosch, Ridgid, Ryobi, Craftsman, Hilti, Festool and others. SafeOrStolen (safeorstolen.com/check-power-tools-stolen) searches its theft reports and public web results for the serial you enter, whatever the brand."
+          answer: "Any tool with a serial number: DeWalt, Milwaukee, Makita, Bosch, Ridgid, Ryobi, Craftsman, Hilti, Festool and others. SafeOrStolen (safeorstolen.com/check-power-tools-stolen) searches its theft reports for the serial you enter, whatever the brand."
         },
         {
           question: "What is Milwaukee ONE-KEY?",

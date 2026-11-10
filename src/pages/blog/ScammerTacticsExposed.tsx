@@ -71,11 +71,11 @@ export default function ScammerTacticsExposed() {
         whatIs:
           "Every one of these tactics exists to stop you from doing two things: checking the serial number, and seeing whether the seller controls the item. Ask for the number early, and insist on watching them unlock and sign out of it. If you already bought something that turned out to be stolen, read <a href=\"/what-to-do-if-you-bought-something-stolen\">what to do if you bought something stolen</a>.",
         howItWorks:
-          'Enter the serial number, IMEI or VIN in the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the number, plus extra sources for guns, bikes, phones and Arizona vehicles. You see "reported stolen", "possible match" or "no report found in the records searched", with every source listed.',
+          'Enter the serial number, IMEI or VIN in the search box. SafeOrStolen searches its own theft reports that mention the number, plus extra sources for guns, bikes, phones and Arizona vehicles. You see "reported stolen", "possible match" or "no report found in the records searched", with every source listed.',
         whyCheck:
           "Each tactic above is a story. The serial number check is a fact. A seller who has a good answer for everything but won't share the number has told you what you need to know.",
         benefits: [
-          'Checks SafeOrStolen theft reports and public web results',
+          'Checks SafeOrStolen theft reports',
           'Works for phones, cars, bikes, laptops, tools, consoles and guns',
           'Every source listed with the result',
           'Dated record of the check saved to your account',

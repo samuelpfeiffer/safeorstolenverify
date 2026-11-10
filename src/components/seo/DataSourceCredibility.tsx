@@ -103,7 +103,7 @@ export const DataSourceCredibility: React.FC = () => {
  Verified Data Sources & Official Partnerships
  </h2>
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
- Our verification system checks SafeOrStolen's item reports, public web results, and applies AI analysis,
+ Our verification system checks SafeOrStolen's item reports and applies AI analysis,
  verified registries, and trusted industry partners to provide accurate, 
  legally-actionable stolen item checks.
  </p>

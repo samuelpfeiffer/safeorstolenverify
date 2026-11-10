@@ -10,15 +10,15 @@ import { PageSEO } from '@/components/seo/PageSEO';
 const FAQS = [
  {
  q: 'How do I check if a car is stolen in Miami?',
- a: "Enter the Florida plate or, better, the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/miami-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports and public web results, and a VIN check also decodes the year, make and model and lists open recalls. You get 1 free check, no account or credit card needed.",
+ a: "Enter the Florida plate or, better, the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/miami-license-plate-lookup). In a few seconds it searches SafeOrStolen theft reports, and a VIN check also decodes the year, make and model and lists open recalls. You get 1 free check, no account or credit card needed.",
  },
  {
  q: 'What does a Miami plate check search, and where else can I check?',
- a: "A Florida plate is checked against SafeOrStolen theft reports and public web results, and a VIN check adds the decoded year, make and model and open recalls. For title or registration questions, contact FLHSMV, and you can ask the Miami-Dade Police Department non-emergency line to run the VIN.",
+ a: "A Florida plate is checked against SafeOrStolen theft reports, and a VIN check adds the decoded year, make and model and open recalls. For title or registration questions, contact FLHSMV, and you can ask the Miami-Dade Police Department non-emergency line to run the VIN.",
  },
  {
  q: 'Can I check a vehicle by license plate or do I need a VIN?',
- a: "You can search either one. A plate search looks for that plate in SafeOrStolen theft reports and public web results, and it never shows the owner's name. Plates can be swapped between cars, so ask for the VIN as well; the VIN check also confirms the year, make and model match the car you're looking at.",
+ a: "You can search either one. A plate search looks for that plate in SafeOrStolen theft reports, and it never shows the owner's name. Plates can be swapped between cars, so ask for the VIN as well; the VIN check also confirms the year, make and model match the car you're looking at.",
  },
  {
  q: "Is SafeOrStolen's Florida license plate lookup free?",
@@ -41,7 +41,7 @@ const MiamiLicensePlateLookupPage = () => {
  "@context": "https://schema.org",
  "@type": "WebPage",
  "name": "Free Miami FL License Plate Lookup",
- "description": "Check a Miami-Dade vehicle's plate or VIN against SafeOrStolen theft reports and public web results before you buy.",
+ "description": "Check a Miami-Dade vehicle's plate or VIN against SafeOrStolen theft reports before you buy.",
  "url": "https://safeorstolen.com/florida/miami-license-plate-lookup",
  "speakable": {
  "@type": "SpeakableSpecification",
@@ -53,7 +53,7 @@ const MiamiLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free Miami FL License Plate Lookup — Check Stolen Vehicles in Miami | SafeOrStolen"
- description="Free Miami license plate lookup. Search a Florida plate or VIN against SafeOrStolen theft reports and public web results in a few seconds before you buy a used car."
+ description="Free Miami license plate lookup. Search a Florida plate or VIN against SafeOrStolen theft reports in a few seconds before you buy a used car."
  canonical="/florida/miami-license-plate-lookup"
  structuredData={[faqSchema, webPageSchema]}
  />
@@ -65,7 +65,7 @@ const MiamiLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Miami License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Type a Florida plate or VIN and SafeOrStolen searches its own theft reports and public web results for it in a few seconds. A VIN check also confirms the year, make and model and lists open recalls. It never shows the owner's name.
+ Type a Florida plate or VIN and SafeOrStolen searches its own theft reports for it in a few seconds. A VIN check also confirms the year, make and model and lists open recalls. It never shows the owner's name.
  </p>
  </div>
  </header>

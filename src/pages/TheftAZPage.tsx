@@ -25,11 +25,11 @@ const TheftAZPage = () => {
  'check if car is stolen arizona',
  ]}
  content={{
- intro: "TheftAZ is the Arizona Attorney General's free public search for vehicles reported stolen to Arizona law enforcement. On SafeOrStolen, every VIN and plate, from any state, is searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily, along with SafeOrStolen's own theft reports, public web results, a VIN decode and open safety recalls.",
+ intro: "TheftAZ is the Arizona Attorney General's free public search for vehicles reported stolen to Arizona law enforcement. On SafeOrStolen, every VIN and plate, from any state, is searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily, along with SafeOrStolen's own theft reports, a VIN decode and open safety recalls.",
 
  whatIs: "TheftAZ is run by the Arizona Attorney General's Office. It lists stolen vehicles reported by participating Arizona law enforcement agencies. It covers vehicles only, and only thefts reported to those Arizona agencies. A car stolen in another state may not show up.",
 
- howItWorks: "On SafeOrStolen, type a VIN or a plate from any state. The check searches Arizona, Alaska and Chicago police stolen-vehicle records, SafeOrStolen's own theft reports, and public web results that mention the number. For a VIN it also decodes the year, make and model and lists open safety recalls. In a few seconds you see one of three results: \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date.",
+ howItWorks: "On SafeOrStolen, type a VIN or a plate from any state. The check searches Arizona, Alaska and Chicago police stolen-vehicle records, SafeOrStolen's own theft reports that mention the number. For a VIN it also decodes the year, make and model and lists open safety recalls. In a few seconds you see one of three results: \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date.",
 
  whyCheck: "Police can take back a stolen car, and the buyer usually loses what they paid. Arizona buyers also see plenty of cars driven in from other states, so an Arizona records search is a strong first step but not the only one. Before you pay, match the VIN on the dashboard to the one on the driver's door sticker and the title, and make sure the name on the title matches the seller's ID.",
 
@@ -38,7 +38,7 @@ const TheftAZPage = () => {
  "Search by VIN or Arizona license plate",
  "Year, make and model decoded from the VIN",
  "Open safety recalls for the vehicle",
- "SafeOrStolen theft reports and public web results in the same check",
+ "SafeOrStolen theft reports in the same check",
  "Optional $1.99 verification certificate: a dated record showing you checked before the sale",
  "1 free check, no account or credit card needed",
  ],
@@ -58,7 +58,7 @@ const TheftAZPage = () => {
  },
  {
  question: "How does SafeOrStolen check Arizona cars?",
- answer: "SafeOrStolen (safeorstolen.com/theftaz) searches Arizona VINs and plates against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily, plus its own theft reports and public web results. A VIN check also decodes the year, make and model and lists open safety recalls. You get 1 free check, no account needed.",
+ answer: "SafeOrStolen (safeorstolen.com/theftaz) searches Arizona VINs and plates against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily, plus its own theft reports. A VIN check also decodes the year, make and model and lists open safety recalls. You get 1 free check, no account needed.",
  },
  {
  question: "Can I check guns, phones or bikes in Arizona the same way?",
@@ -70,7 +70,7 @@ const TheftAZPage = () => {
  },
  {
  question: "Do I need to search TheftAZ separately?",
- answer: "No. SafeOrStolen searches Arizona police stolen-vehicle records, plus Alaska and Chicago police records, for a vehicle from any state, and adds a VIN decode, recalls, its own theft reports and public web results, and saves each check to your account with the date.",
+ answer: "No. SafeOrStolen searches Arizona police stolen-vehicle records, plus Alaska and Chicago police records, for a vehicle from any state, and adds a VIN decode, recalls, its own theft reports, and saves each check to your account with the date.",
  },
  {
  question: "What should I do if a car shows up as stolen?",

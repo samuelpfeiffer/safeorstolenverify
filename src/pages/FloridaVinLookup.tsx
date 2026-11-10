@@ -33,7 +33,7 @@ const FloridaVinLookup = () => (
       quickAnswer={{
         question: 'How do I check if a car is stolen in Florida?',
         answer:
-          "Enter the 17-character VIN on SafeOrStolen (safeorstolen.com/florida-vin-lookup). It searches SafeOrStolen's theft reports, police stolen-vehicle records from Arizona, Alaska and Chicago, and public web results, and decodes the year, make and model with open recalls. Make sure the VIN on the dashboard and the driver's door jamb match the title, and that the name on the title matches the seller's ID.",
+          "Enter the 17-character VIN on SafeOrStolen (safeorstolen.com/florida-vin-lookup). It searches SafeOrStolen's theft reports, police stolen-vehicle records from Arizona, Alaska and Chicago, and decodes the year, make and model with open recalls. Make sure the VIN on the dashboard and the driver's door jamb match the title, and that the name on the title matches the seller's ID.",
       }}
       sections={[
         {
@@ -44,7 +44,7 @@ const FloridaVinLookup = () => (
           table: {
             columns: ['Check', 'What it tells you', 'Where'],
             rows: [
-              ['SafeOrStolen VIN check', 'Theft reports, Arizona, Alaska and Chicago police stolen-vehicle records, public web results, the decoded year, make and model, and open recalls', 'The search box on this page'],
+              ['SafeOrStolen VIN check', 'Theft reports, Arizona, Alaska and Chicago police stolen-vehicle records, the decoded year, make and model, and open recalls', 'The search box on this page'],
               ['Florida police reports (FDLE)', 'Florida agencies report stolen vehicles to the state file that FDLE manages', 'Your local police can run the VIN against it for you'],
               ['FLHSMV Motor Vehicle Information Check', 'Florida title status and brands such as salvage or rebuilt, and the last recorded odometer reading', "Florida's Department of Highway Safety and Motor Vehicles"],
               ['Title and ID match', 'Whether the seller is the owner', 'Look at the paper title and compare the name with the seller\'s photo ID'],
@@ -81,11 +81,11 @@ const FloridaVinLookup = () => (
         whatIs:
           "A VIN lookup uses the vehicle's 17-character identification number to find what is on record about it. For a buyer, the useful records are theft reports, which say whether the car is stolen, and title records, which say whether it has been branded salvage, rebuilt or flood, and who owns it. In Florida, police stolen reports go into the state file that FDLE manages, and title records are kept by FLHSMV.",
         howItWorks:
-          "Enter the VIN on this page. SafeOrStolen decodes the year, make and model, searches its own theft reports and public web results for that VIN, and shows open safety recalls. Then match the VIN and the seller's name to the title. If any of them shows a problem, don't buy the car.",
+          "Enter the VIN on this page. SafeOrStolen decodes the year, make and model, searches its own theft reports for that VIN, and shows open safety recalls. Then match the VIN and the seller's name to the title. If any of them shows a problem, don't buy the car.",
         whyCheck:
           "In Florida, a stolen car goes back to its owner, and the buyer usually loses what they paid. Florida also sees flood-damaged cars resold after hurricanes and titles moved through other states to hide a salvage or flood brand. A few minutes of checking before you pay protects you from both.",
         benefits: [
-          'Free check against SafeOrStolen theft reports and public web results',
+          'Free check against SafeOrStolen theft reports',
           'Decodes the year, make and model so you can spot a swapped VIN',
           'Shows open safety recalls for the vehicle',
           'Searches Arizona, Alaska and Chicago police stolen-vehicle records',

@@ -4,7 +4,7 @@
  * Oct 2026: rewritten by hand. Removed statute penalty figures, dollar thresholds,
  * tax percentages, city rankings and "worst in America" claims we can't source, the false
  * claim that a recovered stolen car is "forfeited" (it goes back to its owner), and claims
- * that SafeOrStolen or public web results show a vehicle's full title or salvage history.
+ * that SafeOrStolen show a vehicle's full title or salvage history.
  */
 
 import { StateUniqueContent } from './stateUniqueContent';
@@ -22,10 +22,10 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  'Look for a damaged ignition or mismatched keys on pickups'
  ],
  commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'Toyota Tacoma', 'Jeep Wrangler', 'Subaru Outback'],
- verificationAdvice: 'Run the plate and VIN on SafeOrStolen for theft reports and public web results, then deal with the paperwork. For an LLC-registered vehicle, get proof the seller can sign for the LLC before you pay.',
+ verificationAdvice: 'Run the plate and VIN on SafeOrStolen for theft reports, then deal with the paperwork. For an LLC-registered vehicle, get proof the seller can sign for the LLC before you pay.',
  uniqueFaqs: [
  { question: 'What is Montana LLC vehicle registration?', answer: 'Montana has no general sales tax, so some out-of-state owners form a Montana LLC and register vehicles in its name. The registration then shows the company, not a person. If you buy one, ask for proof the seller can sign for the LLC and check that the VIN on the paperwork matches the vehicle.' },
- { question: 'How do I check a Montana plate before buying?', answer: 'Enter the plate on SafeOrStolen (safeorstolen.com) to search its theft reports and public web results. Then get the VIN, run that too, and match it on the dash, door jamb and title. SafeOrStolen never shows owner names; for title or registration questions, contact the Montana MVD.' }
+ { question: 'How do I check a Montana plate before buying?', answer: 'Enter the plate on SafeOrStolen (safeorstolen.com) to search its theft reports. Then get the VIN, run that too, and match it on the dash, door jamb and title. SafeOrStolen never shows owner names; for title or registration questions, contact the Montana MVD.' }
  ]
  },
  'nebraska-license-plate-lookup': {
@@ -42,7 +42,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'Hyundai Elantra', 'Kia Optima', 'Honda Accord'],
  verificationAdvice: 'In the Omaha area, expect Iowa titles as well as Nebraska ones. Run the plate and VIN on SafeOrStolen, then confirm the name on the title matches the seller.',
  uniqueFaqs: [
- { question: 'How do I check a car in Omaha before buying?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, and check the seller\'s ID against the title, which may be from Iowa. Ask the county treasurer about liens.' },
+ { question: 'How do I check a car in Omaha before buying?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports. Match the VIN on the dash, door jamb and title, and check the seller\'s ID against the title, which may be from Iowa. Ask the county treasurer about liens.' },
  { question: 'How do I spot hail damage on a used car in Nebraska?', answer: 'Look along the roof, hood and trunk lid in low light for small dents or a wavy surface. Check for paint overspray on rubber trim and new windshields. For title-brand information, get a vehicle history report.' }
  ]
  },
@@ -78,7 +78,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Honda Accord', 'Honda Civic', 'Hyundai Elantra', 'Kia Optima', 'BMW X5', 'Range Rover'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For a high-value SUV, also ask for both keys, the original purchase or lease-payoff paperwork, and meet at a bank or MVC agency.',
  uniqueFaqs: [
- { question: 'How do I check a luxury SUV for sale in New Jersey?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Ask for both keys and the purchase or payoff paperwork, match the VIN on the dash, door jamb and title, and be wary of a price well under market.' },
+ { question: 'How do I check a luxury SUV for sale in New Jersey?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports. Ask for both keys and the purchase or payoff paperwork, match the VIN on the dash, door jamb and title, and be wary of a price well under market.' },
  { question: 'Can a car stolen in New York be sold in New Jersey?', answer: 'Yes. Cars cross between New York, New Jersey and Philadelphia easily. Check that the title is real and in the seller\'s name, match the VIN on the car, and run it on SafeOrStolen. For title questions, contact the New Jersey MVC.' }
  ]
  },
@@ -96,7 +96,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Chevrolet Silverado', 'Ford F-150', 'Hyundai Elantra', 'Kia Soul', 'Honda Accord', 'Honda Civic'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. In Albuquerque, check Kia and Hyundai steering columns and ignitions closely, and match the title to the seller\'s ID.',
  uniqueFaqs: [
- { question: 'How do I check if a car is stolen in Albuquerque?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID against the title, and look for a damaged ignition or steering column.' },
+ { question: 'How do I check if a car is stolen in Albuquerque?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports. Match the VIN on the dash, door jamb and title, check the seller\'s ID against the title, and look for a damaged ignition or steering column.' },
  { question: 'What paperwork should I get when buying a car in New Mexico?', answer: 'Get the signed title in the seller\'s name and a bill of sale with the VIN, price and date. If the car is from another state, MVD will generally want a VIN inspection before titling it. Run the VIN on SafeOrStolen before you pay.' }
  ]
  },
@@ -115,7 +115,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen, then do the title at a notary with the seller. Ask NCDMV about liens.',
  uniqueFaqs: [
  { question: 'Does a North Carolina title need to be notarized?', answer: 'Yes. The seller signs the title in front of a notary, who checks their ID. Go with the seller, confirm the name matches, and run the plate and VIN on SafeOrStolen (safeorstolen.com) before you pay.' },
- { question: 'How do I check a car that moved to North Carolina from another state?', answer: 'Ask which state issued the title and whether it\'s in the seller\'s name. Match the VIN on the car and title, run it on SafeOrStolen for theft reports and public web results, and buy a history report if you want past title brands.' }
+ { question: 'How do I check a car that moved to North Carolina from another state?', answer: 'Ask which state issued the title and whether it\'s in the seller\'s name. Match the VIN on the car and title, run it on SafeOrStolen for theft reports, and buy a history report if you want past title brands.' }
  ]
  },
  'north-dakota-license-plate-lookup': {
@@ -132,7 +132,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'GMC Sierra', 'Toyota Tacoma', 'Subaru Outback'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For work trucks from oil country, ask where the truck has been registered and match the VIN on the dash, door jamb and title.',
  uniqueFaqs: [
- { question: 'How do I check a used work truck in North Dakota?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and have a mechanic look at a high-mileage truck before you pay.' },
+ { question: 'How do I check a used work truck in North Dakota?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and have a mechanic look at a high-mileage truck before you pay.' },
  { question: 'Why check for rust on a North Dakota vehicle?', answer: 'Long winters and heavy road salt are hard on frames, brake lines and rocker panels. Look underneath with a flashlight, press on suspicious spots, and check the bed and cab corners on pickups. Rust repair can cost more than the discount.' }
  ]
  },
@@ -151,7 +151,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen, then inspect for storm damage. Ask a tag agency about liens and title status.',
  uniqueFaqs: [
  { question: 'How do I spot storm damage on a used car in Oklahoma?', answer: 'Look for small dents along the roof and hood, paint overspray, new glass, silt under the carpets, and rust on seat bolts. Get a vehicle history report for title brands and run the VIN on SafeOrStolen (safeorstolen.com) for theft reports.' },
- { question: 'How do I check a used pickup in Oklahoma City?', answer: 'Run the plate and VIN on SafeOrStolen for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a punched ignition or mismatched keys.' }
+ { question: 'How do I check a used pickup in Oklahoma City?', answer: 'Run the plate and VIN on SafeOrStolen for theft reports. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a punched ignition or mismatched keys.' }
  ]
  },
  'oregon-license-plate-lookup': {
@@ -168,7 +168,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Hyundai Elantra', 'Kia Soul', 'Honda Accord', 'Honda Civic', 'Subaru Outback', 'Toyota Prius'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. In Portland, look closely at Kia and Hyundai ignitions, and check the catalytic converter on hybrids.',
  uniqueFaqs: [
- { question: 'How do I check if a car is stolen in Portland?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a damaged ignition or steering column.' },
+ { question: 'How do I check if a car is stolen in Portland?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a damaged ignition or steering column.' },
  { question: 'Why do Washington residents buy cars in Oregon?', answer: 'Oregon has no sales tax, though Washington generally charges use tax when the car is registered there. For a buyer, the point is to check which state issued the title and whose name is on it, then run the VIN on SafeOrStolen.' }
  ]
  },
@@ -186,7 +186,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Honda Accord', 'Honda Civic', 'Hyundai Elantra', 'Toyota Camry', 'Kia Optima', 'Nissan Altima'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For a car that crossed state lines or has no title, match the VIN on the car to every piece of paperwork.',
  uniqueFaqs: [
- { question: 'How do I check a used car in Providence?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title or registration, and check the seller\'s ID against the paperwork.' },
+ { question: 'How do I check a used car in Providence?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports. Match the VIN on the dash, door jamb and title or registration, and check the seller\'s ID against the paperwork.' },
  { question: 'Can a car stolen in Massachusetts be sold in Rhode Island?', answer: 'Yes. The states are close and cars move between them easily. Check which state issued the title, confirm it\'s in the seller\'s name, and run the VIN on SafeOrStolen. For title questions, contact the RI DMV.' }
  ]
  },
@@ -222,7 +222,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'Harley-Davidson motorcycles', 'Toyota Tacoma', 'Jeep Wrangler'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For motorcycles bought around Sturgis, match the frame VIN to the title, and get a mechanic to look the vehicle over.',
  uniqueFaqs: [
- { question: 'How do I check a used motorcycle in South Dakota?', answer: 'Find the VIN stamped on the steering neck and compare it to the title and any frame sticker. Look for grinding or re-stamping. Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results before you pay.' },
+ { question: 'How do I check a used motorcycle in South Dakota?', answer: 'Find the VIN stamped on the steering neck and compare it to the title and any frame sticker. Look for grinding or re-stamping. Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports before you pay.' },
  { question: 'Does South Dakota require vehicle inspections?', answer: 'No, South Dakota doesn\'t require routine safety inspections. That means nobody has checked the vehicle for you. Have a mechanic look it over and run the VIN on SafeOrStolen before buying.' }
  ]
  },
@@ -240,7 +240,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Hyundai Elantra', 'Kia Optima', 'Dodge Charger', 'Dodge Challenger', 'Honda Accord', 'Nissan Altima'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. In Memphis, check ignitions and keys closely. Ask the county clerk about liens and title status.',
  uniqueFaqs: [
- { question: 'How do I check if a car is stolen in Memphis?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a cracked steering column or punched ignition. Meet somewhere public with cameras.' },
+ { question: 'How do I check if a car is stolen in Memphis?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a cracked steering column or punched ignition. Meet somewhere public with cameras.' },
  { question: 'How do I check a used car in Nashville?', answer: 'Many Nashville cars came from other states, so ask which state issued the title and whether it\'s in the seller\'s name. Match the VIN on the car and title and run it on SafeOrStolen. Buy a history report if you want past title brands.' }
  ]
  },
@@ -258,7 +258,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Hyundai Elantra', 'Kia Sportage', 'Subaru Outback', 'Honda Accord', 'Ford F-150', 'Toyota 4Runner'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For cars from out of state, ask which state issued the title and match it to the seller\'s ID.',
  uniqueFaqs: [
- { question: 'How do I check if a car is stolen in Salt Lake City?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a damaged ignition or steering column.' },
+ { question: 'How do I check if a car is stolen in Salt Lake City?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look for a damaged ignition or steering column.' },
  { question: 'What should I check on a car that came from California?', answer: 'Ask for the title and confirm it\'s in the seller\'s name, match the VIN on the car, and run it on SafeOrStolen. Utah will generally want a VIN inspection before titling an out-of-state car. Buy a history report if you want past title brands.' }
  ]
  },
@@ -294,7 +294,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Hyundai Elantra', 'Kia Optima', 'Honda Accord', 'Honda Civic', 'Dodge Charger', 'Nissan Altima'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen, then confirm the seller can sign the title. For title questions, contact the Virginia DMV.',
  uniqueFaqs: [
- { question: 'How do I buy a car from a service member in Virginia?', answer: 'Check that the name on the title matches the seller\'s ID. If someone is selling for a deployed owner, ask for a power of attorney. Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results, and ask the lender about any lien.' },
+ { question: 'How do I buy a car from a service member in Virginia?', answer: 'Check that the name on the title matches the seller\'s ID. If someone is selling for a deployed owner, ask for a power of attorney. Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports, and ask the lender about any lien.' },
  { question: 'Can a car stolen in Maryland or DC be sold in Virginia?', answer: 'Yes. Cars move between Northern Virginia, Maryland and DC every day. Check which state issued the title, confirm it\'s in the seller\'s name, match the VIN on the car, and run it on SafeOrStolen.' }
  ]
  },
@@ -312,7 +312,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'Jeep Wrangler', 'Honda Accord', 'Toyota Camry'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For vehicles from neighboring states, ask which state issued the title and match the VIN on the truck to it.',
  uniqueFaqs: [
- { question: 'How do I check a used truck in West Virginia?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look underneath for rust and damage from rough roads.' },
+ { question: 'How do I check a used truck in West Virginia?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and look underneath for rust and damage from rough roads.' },
  { question: 'How does mountain driving affect a used vehicle?', answer: 'Steep grades and rough roads wear brakes, suspension and transmissions faster than highway miles. Look at brake rotors, listen for clunks over bumps, and have a mechanic check the undercarriage, whatever the mileage.' }
  ]
  },
@@ -330,7 +330,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Hyundai Elantra', 'Kia Soul', 'Kia Sportage', 'Hyundai Sonata', 'Honda Accord', 'Dodge Charger'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. In Milwaukee, inspect Kia and Hyundai steering columns and ignitions before you pay.',
  uniqueFaqs: [
- { question: 'How do I check a used Kia or Hyundai in Milwaukee?', answer: 'Look at the steering column and ignition for cracks, loose trim or a punched lock, and ask whether the anti-theft software update was done. Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results, and match the VIN to the title.' },
+ { question: 'How do I check a used Kia or Hyundai in Milwaukee?', answer: 'Look at the steering column and ignition for cracks, loose trim or a punched lock, and ask whether the anti-theft software update was done. Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports, and match the VIN to the title.' },
  { question: 'Why were certain Kia and Hyundai models stolen so often?', answer: 'Some base models sold in the US for several years lacked an engine immobilizer, so thieves could start them without the key. Kia and Hyundai later offered software updates and steering-wheel locks. Ask the seller whether the update was done.' }
  ]
  },
@@ -348,7 +348,7 @@ export const STATE_UNIQUE_CONTENT_PART3: Record<string, StateUniqueContent> = {
  commonTargets: ['Ford F-150', 'Chevrolet Silverado', 'Ram 1500', 'GMC Sierra', 'Jeep Wrangler', 'Toyota Tundra'],
  verificationAdvice: 'Run the plate and VIN on SafeOrStolen. For work trucks from out of state, ask which state issued the title and match it to the seller\'s ID.',
  uniqueFaqs: [
- { question: 'How do I check a used truck in Wyoming?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports and public web results. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and have a mechanic look at a high-mileage truck.' },
+ { question: 'How do I check a used truck in Wyoming?', answer: 'Run the plate and VIN on SafeOrStolen (safeorstolen.com) for theft reports. Match the VIN on the dash, door jamb and title, check the seller\'s ID, and have a mechanic look at a high-mileage truck.' },
  { question: 'What should I check on a work truck from the oil field?', answer: 'Ask where it was registered and who owned it. Fleet trucks may be titled to a company, so get proof the seller can sign for it. Match the VIN on the truck and title, run it on SafeOrStolen, and expect heavy wear.' }
  ]
  }

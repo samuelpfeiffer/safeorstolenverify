@@ -152,7 +152,7 @@ export const pageSEOConfigs: Record<string, Partial<PageSEOConfig>> = {
   },
   'vin-check-lookup': {
     title: 'VIN Check Lookup - Free Vehicle History & Theft Check',
-    description: 'Free VIN lookup service. Verify vehicle history, check our stolen item reports, public web results, and AI analysis before buying any vehicle.',
+    description: 'Free VIN lookup service. Verify vehicle history, check our stolen item reports before buying any vehicle.',
     keywords: 'VIN check lookup, vehicle VIN lookup, free VIN check, car history lookup, VIN theft check',
     type: 'website'
   },

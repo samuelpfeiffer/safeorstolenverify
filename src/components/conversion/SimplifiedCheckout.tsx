@@ -109,7 +109,7 @@ export const SimplifiedCheckout = ({ itemNumber, itemType }: SimplifiedCheckoutP
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-accent" />
-              <span>SafeOrStolen reports, public web results, and AI analysis</span>
+              <span>SafeOrStolen reports and AI analysis</span>
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-accent" />

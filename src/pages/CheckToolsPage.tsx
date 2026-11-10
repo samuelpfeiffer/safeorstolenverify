@@ -24,7 +24,7 @@ const CheckToolsPage = () => {
       quickAnswer={{
         question: 'How do I check if a power tool is stolen?',
         answer:
-          "Find the serial number on the tool's label, usually on the motor housing or near the battery mount, and enter it on SafeOrStolen (safeorstolen.com/check-tools). It searches theft reports filed on SafeOrStolen and public web results in a few seconds. Then compare the serial with the receipt and look for scraped-off labels, engraved company names or spray-painted markings. If the seller won't show you the serial, walk away.",
+          "Find the serial number on the tool's label, usually on the motor housing or near the battery mount, and enter it on SafeOrStolen (safeorstolen.com/check-tools). It searches theft reports filed on SafeOrStolen in a few seconds. Then compare the serial with the receipt and look for scraped-off labels, engraved company names or spray-painted markings. If the seller won't show you the serial, walk away.",
       }}
       sections={[
         {
@@ -52,14 +52,14 @@ const CheckToolsPage = () => {
         },
       ]}
       content={{
-        intro: "Check a power tool's serial number before you buy it on Facebook Marketplace, Craigslist or at a job site. SafeOrStolen searches theft reports and public web results in a few seconds. Sellers can check first to show a tool is clean, and pawn shops and tool resellers can check at intake.",
+        intro: "Check a power tool's serial number before you buy it on Facebook Marketplace, Craigslist or at a job site. SafeOrStolen searches theft reports in a few seconds. Sellers can check first to show a tool is clean, and pawn shops and tool resellers can check at intake.",
         whatIs: "Checking if a tool is stolen means looking up its serial number to see whether an owner has reported it stolen. Professional-grade tools from DeWalt, Milwaukee, Makita, Bosch and Hilti carry a serial on a label or plate. Owners give that number to police and to SafeOrStolen when tools are stolen, so it's the one thing that ties a tool to a theft report.",
-        howItWorks: "Type the serial into the search box. SafeOrStolen searches theft reports owners filed on SafeOrStolen and public web results that mention the serial, then shows reported stolen, possible match, or no report found in the records searched. Every source is listed, and the check is saved to your account with the date.",
+        howItWorks: "Type the serial into the search box. SafeOrStolen searches theft reports owners filed on SafeOrStolen that mention the serial, then shows reported stolen, possible match, or no report found in the records searched. Every source is listed, and the check is saved to your account with the date.",
         whyCheck: "Tools get taken from work trucks, job trailers, garages and sheds, and resold quickly online or at swap meets. If police identify a stolen tool, it goes back to its owner and you lose what you paid. Many tools carry the owner's name or company markings, which makes them easy for police to trace back.",
         benefits: [
           "Works for DeWalt, Milwaukee, Makita, Bosch, Ryobi, Craftsman, Ridgid, Hilti and Festool",
           "Covers generators, compressors, welders and saws with a serial plate",
-          "Searches SafeOrStolen theft reports and public web results",
+          "Searches SafeOrStolen theft reports",
           "Results in a few seconds, saved to your account with the date",
           "1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited"
         ],
@@ -94,7 +94,7 @@ const CheckToolsPage = () => {
           },
           {
             question: "How long does a tool serial number check take?",
-            answer: "A few seconds. SafeOrStolen searches its own theft reports and public web results for the serial, lists every source it searched, and saves the check to your account with the date."
+            answer: "A few seconds. SafeOrStolen searches its own theft reports for the serial, lists every source it searched, and saves the check to your account with the date."
           },
           {
             question: "What are red flags when buying used power tools?",

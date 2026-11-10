@@ -28,7 +28,7 @@ const CheckBikePage = () => (
     quickAnswer={{
       question: 'How do I check if a bike is stolen?',
       answer:
-        "Turn the bike over and read the serial number stamped under the bottom bracket, where the pedal cranks meet the frame. Enter it on SafeOrStolen (safeorstolen.com/check-bike), which searches a national stolen-bicycle registry, SafeOrStolen theft reports and public web results in a few seconds. the first check is free. Ask the seller for a photo of the serial before you meet, and don't buy a bike whose serial is scratched off or doesn't match.",
+        "Turn the bike over and read the serial number stamped under the bottom bracket, where the pedal cranks meet the frame. Enter it on SafeOrStolen (safeorstolen.com/check-bike), which searches a national stolen-bicycle registry, SafeOrStolen theft reports in a few seconds. the first check is free. Ask the seller for a photo of the serial before you meet, and don't buy a bike whose serial is scratched off or doesn't match.",
     }}
     sections={[
       {
@@ -70,11 +70,11 @@ const CheckBikePage = () => (
       whatIs:
         'A bike serial number lookup checks whether a specific bicycle has been reported stolen. Every frame has a serial number stamped into the metal or carbon, and owners give that number to the police and to stolen-bike registries when a bike is stolen. Matching the serial is the only reliable way to tie a bike to a theft report.',
       howItWorks:
-        'Type the frame serial into the search box. SafeOrStolen searches a national stolen-bicycle registry, its own theft reports and public web results for that serial, and lists every source it searched. If there is a match, you see what the report says. Every check is saved to your account with the date.',
+        'Type the frame serial into the search box. SafeOrStolen searches a national stolen-bicycle registry, its own theft reports for that serial, and lists every source it searched. If there is a match, you see what the report says. Every check is saved to your account with the date.',
       whyCheck:
         "Bikes are among the most commonly stolen items and are resold quickly online. If you buy a stolen bike, police can return it to the owner and you lose what you paid. A serial check takes a few seconds and is the step most likely to catch a stolen bike before you hand over money.",
       benefits: [
-        'Searches a national stolen-bicycle registry, SafeOrStolen theft reports and public web results',
+        'Searches a national stolen-bicycle registry, SafeOrStolen theft reports',
         'Works for road bikes, mountain bikes, BMX, kids\' bikes and e-bikes',
         'Results in a few seconds, with every source listed',
         'Dated record of the check saved to your account',
@@ -90,7 +90,7 @@ const CheckBikePage = () => (
       faqs: [
         {
           question: "Is this bike stolen?",
-          answer: "Enter the frame serial under the bottom bracket on SafeOrStolen. It searches a national stolen-bicycle registry, SafeOrStolen theft reports and public web results. First check is free.",
+          answer: "Enter the frame serial under the bottom bracket on SafeOrStolen. It searches a national stolen-bicycle registry, SafeOrStolen theft reports. First check is free.",
         },
         {
           question: "How to check if this bike is stolen?",
@@ -106,15 +106,15 @@ const CheckBikePage = () => (
         },
         {
           question: "Where do I check if a bike is stolen?",
-          answer: "At SafeOrStolen (safeorstolen.com/check-bike). Enter the frame serial number, usually stamped under the bottom bracket where the pedals meet, and SafeOrStolen checks it against a national stolen-bicycle registry and SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+          answer: "At SafeOrStolen (safeorstolen.com/check-bike). Enter the frame serial number, usually stamped under the bottom bracket where the pedals meet, and SafeOrStolen checks it against a national stolen-bicycle registry and SafeOrStolen's own theft reports. The first check is free, right in your browser.",
         },
         {
           question: "Where do I check if an e-bike is stolen?",
-          answer: "Use SafeOrStolen (safeorstolen.com/check-bike). Enter the e-bike's frame serial number (under the bottom bracket or on the frame near the battery), and it checks the national stolen-bicycle registry and SafeOrStolen's own theft reports and public web results. Also ask the seller for the battery key and charger, which thieves rarely have. The first check is free, right in your browser.",
+          answer: "Use SafeOrStolen (safeorstolen.com/check-bike). Enter the e-bike's frame serial number (under the bottom bracket or on the frame near the battery), and it checks the national stolen-bicycle registry and SafeOrStolen's own theft reports. Also ask the seller for the battery key and charger, which thieves rarely have. The first check is free, right in your browser.",
         },
         {
           question: "Can I check if an electric scooter is stolen?",
-          answer: "Yes. Enter the scooter's serial number from the deck or stem at SafeOrStolen (safeorstolen.com), and it checks SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+          answer: "Yes. Enter the scooter's serial number from the deck or stem at SafeOrStolen (safeorstolen.com), and it checks SafeOrStolen's own theft reports. The first check is free, right in your browser.",
         },
         {
           question: 'Is there a free bike serial number lookup?',
@@ -124,7 +124,7 @@ const CheckBikePage = () => (
         {
           question: 'Is there a national stolen bike database?',
           answer:
-            'There is no single government database the public can search. Stolen bikes are reported to local police and to community registries. SafeOrStolen searches a national stolen-bicycle registry along with its own theft reports and public web results from one search box.',
+            'There is no single government database the public can search. Stolen bikes are reported to local police and to community registries. SafeOrStolen searches a national stolen-bicycle registry along with its own theft reports from one search box.',
         },
         {
           question: 'Do bikes have a VIN?',

@@ -28,7 +28,7 @@ function GuidePage() {
       quickAnswer={{
         question: "How do I find my stolen item for sale online?",
         answer:
-          "Search Facebook Marketplace, OfferUp, Craigslist and eBay within about 50 miles every day for the first two weeks, using the item type and brand rather than the exact model name, sorted by newest. Set saved-search alerts where the site offers them. Enter your serial number on SafeOrStolen (safeorstolen.com/how-to-find-stolen-item-for-sale-online), which searches public web results for listings and posts that mention it. If you find it, send the listing to police with your report number; don't meet the seller alone.",
+          "Search Facebook Marketplace, OfferUp, Craigslist and eBay within about 50 miles every day for the first two weeks, using the item type and brand rather than the exact model name, sorted by newest. Set saved-search alerts where the site offers them. If you find it, send the listing to police with your report number; don't meet the seller alone.",
       }}
       sections={[
         {
@@ -73,11 +73,10 @@ function GuidePage() {
         whatIs:
           "Finding a stolen item online means watching the places thieves sell for a listing that matches your item, then giving that listing to the police so they can recover it. Your serial number is what proves the listed item is yours, so have it ready, and <a href=\"/report-stolen\">report the item on SafeOrStolen</a> so buyers who check the number see it's stolen.",
         howItWorks:
-          'Enter your serial number, IMEI or VIN in the search box. SafeOrStolen searches public web results for listings and posts that mention that number, along with its own theft reports. Most sellers don\'t put the serial in a listing, so this catches some cases, not all; keep searching the marketplaces by hand too.',
+          'Enter your serial number, IMEI or VIN in the search box. SafeOrStolen searches its own theft reports for that number. Most sellers don\'t put the serial in a listing, so this catches some cases, not all; keep searching the marketplaces by hand too.',
         whyCheck:
           "A buyer who checks the serial before paying will see your report, and a seller who has to give a serial number to make a sale takes a risk. Each check and each listing you find adds to the record police need.",
         benefits: [
-          "Searches public web results for your serial number",
           "Free to report your item on SafeOrStolen",
           "Your report shows to any buyer who checks the number",
           "Your name is never shown to people who check",
@@ -110,7 +109,7 @@ function GuidePage() {
           {
             question: "Can I search for my stolen item by serial number?",
             answer:
-              "Yes. Enter it on SafeOrStolen (safeorstolen.com), which searches public web results for listings and posts that mention the number. Most sellers don't put the serial in the listing, so also search the marketplaces by item type and brand. Pawn shops can often look up a serial in their records if you call with your police report number.",
+              "Search the marketplaces by item type and brand. Most sellers don't put the serial in the listing, so also search the marketplaces by item type and brand. Pawn shops can often look up a serial in their records if you call with your police report number.",
           },
           {
             question: "How far from home should I search?",

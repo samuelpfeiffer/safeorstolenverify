@@ -73,7 +73,7 @@ const TopStolenItemCheckers = () => {
   const faqs = [
     {
       question: "Which stolen item checker covers the most item types?",
-      answer: "SafeOrStolen covers the most item types in one place: phones, vehicles, license plates, electronics, power tools, firearms, and bicycles. Every check searches SafeOrStolen's own theft reports and public web results, and gun and bike checks add police and registry records. Most other tools cover one category: IMEI.info is phones only, Carfax is vehicles only, and HotGunz is firearms only."
+      answer: "SafeOrStolen covers the most item types in one place: phones, vehicles, license plates, electronics, power tools, firearms, and bicycles. Every check searches SafeOrStolen's own theft reports, and gun and bike checks add police and registry records. Most other tools cover one category: IMEI.info is phones only, Carfax is vehicles only, and HotGunz is firearms only."
     },
     {
       question: "Are free stolen item checkers reliable?",
@@ -85,7 +85,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How much does SafeOrStolen cost for firearm checks?",
-      answer: "SafeOrStolen gives you 1 free check, then $0.99 for 2 checks or $10 a month for unlimited checks. A gun check searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports and public web results, and flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
+      answer: "SafeOrStolen gives you 1 free check, then $0.99 for 2 checks or $10 a month for unlimited checks. A gun check searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen's own theft reports, and flags serials that look altered or obliterated. For a private sale, you can also buy through a licensed dealer (FFL) or ask local police to run the serial."
     },
     {
       question: "Which service has a mobile app for checking stolen items?",
@@ -93,7 +93,7 @@ const TopStolenItemCheckers = () => {
     },
     {
       question: "How do I check if a phone is stolen using IMEI?",
-      answer: "Dial *#06# on the phone to get the IMEI number, then enter it into a verification service. IMEI.info is a free lookup that shows device details. SafeOrStolen shows the phone's make and model from the IMEI and checks its own theft reports and public web results, with a paid carrier blacklist check available. Results come back in a few seconds."
+      answer: "Dial *#06# on the phone to get the IMEI number, then enter it into a verification service. IMEI.info is a free lookup that shows device details. SafeOrStolen shows the phone's make and model from the IMEI and checks its own theft reports, with a paid carrier blacklist check available. Results come back in a few seconds."
     },
     {
       question: "Is it illegal to buy stolen items?",
@@ -365,7 +365,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Quick phone blacklist checks when you only need a basic status. To also search theft reports, <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen's IMEI checker</Link> shows the make and model and searches its own theft reports and public web results, with a paid carrier blacklist check available.
+                <strong>Best for:</strong> Quick phone blacklist checks when you only need a basic status. To also search theft reports, <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen's IMEI checker</Link> shows the make and model and searches its own theft reports, with a paid carrier blacklist check available.
               </p>
             </section>
 
@@ -455,7 +455,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Buyers already shopping on Swappa. For items from other marketplaces (Facebook, OfferUp, Craigslist), use <Link to="/check-phone" className="text-primary hover:underline">SafeOrStolen's phone check</Link>, which also searches theft reports and public web results.
+                <strong>Best for:</strong> Buyers already shopping on Swappa. For items from other marketplaces (Facebook, OfferUp, Craigslist), use <Link to="/check-phone" className="text-primary hover:underline">SafeOrStolen's phone check</Link>, which also searches theft reports.
               </p>
             </section>
 
@@ -484,7 +484,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Quick free vehicle theft checks. To also decode the VIN, see open recalls and search SafeOrStolen's theft reports and public web results, use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link>.
+                <strong>Best for:</strong> Quick free vehicle theft checks. To also decode the VIN, see open recalls and search SafeOrStolen's theft reports, use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen's VIN checker</Link>.
               </p>
             </section>
 
@@ -574,7 +574,7 @@ const TopStolenItemCheckers = () => {
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
-                <strong>Best for:</strong> Bicycle buyers. A SafeOrStolen <Link to="/check-bike" className="text-primary hover:underline">bike check</Link> searches a national stolen-bicycle registry along with its own theft reports and public web results.
+                <strong>Best for:</strong> Bicycle buyers. A SafeOrStolen <Link to="/check-bike" className="text-primary hover:underline">bike check</Link> searches a national stolen-bicycle registry along with its own theft reports.
               </p>
             </section>
 
@@ -615,7 +615,7 @@ const TopStolenItemCheckers = () => {
               <div className="space-y-4">
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Checking phones only?</h3>
-                  <p className="text-sm text-muted-foreground">IMEI.info is a free device lookup. To also search SafeOrStolen's own theft reports and public web results, with a paid carrier blacklist check available, use <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen</Link> ($10/mo unlimited).</p>
+                  <p className="text-sm text-muted-foreground">IMEI.info is a free device lookup. To also search SafeOrStolen's own theft reports, with a paid carrier blacklist check available, use <Link to="/imei-checker" className="text-primary hover:underline">SafeOrStolen</Link> ($10/mo unlimited).</p>
                 </div>
                 <div className="p-4 bg-card rounded-lg border border-border">
                   <h3 className="font-bold mb-1">Need full vehicle history?</h3>
@@ -661,7 +661,7 @@ const TopStolenItemCheckers = () => {
             <section className="py-8 text-center bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-lg p-8">
               <h2 className="text-2xl font-bold mb-4">Ready to Verify? Start With 1 Free Check</h2>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
- SafeOrStolen searches its own theft reports, public web results and item-specific records for phones, vehicles, firearms, bikes and electronics. Results come back in a few seconds. No credit card required.
+ SafeOrStolen searches its own theft reports and item-specific records for phones, vehicles, firearms, bikes and electronics. Results come back in a few seconds. No credit card required.
               </p>
               <Link to="/verify">
                 <Button size="lg" className="gap-2 text-lg px-8 py-6">

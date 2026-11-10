@@ -88,12 +88,12 @@ const SamsungIMEICheck = () => {
         whatIs:
           'A stolen Galaxy is usually caught one of two ways: its IMEI shows up in a theft report, or it is still tied to the owner\'s Google or Samsung account. The IMEI check covers the first, and watching the seller remove their accounts covers the second. The <a href="/imei-checker">free IMEI check</a> page explains what each result means.',
         howItWorks:
-          "Enter the Galaxy's IMEI in the search box. SafeOrStolen shows the make and model so you can confirm it's the Galaxy in the listing, and searches its own theft reports and public web results. A paid blacklist check looks at the carrier lost/stolen blacklist. SafeOrStolen can't see Google or Samsung account locks, so do that check on the phone.",
+          "Enter the Galaxy's IMEI in the search box. SafeOrStolen shows the make and model so you can confirm it's the Galaxy in the listing, and searches its own theft reports. A paid blacklist check looks at the carrier lost/stolen blacklist. SafeOrStolen can't see Google or Samsung account locks, so do that check on the phone.",
         whyCheck:
           "If you buy a stolen Galaxy, the owner can lock it through Samsung Find, the carrier can block the IMEI, and police can return it to the owner without refunding you. A phone stuck at the Google account screen after a reset can't be set up by you at all.",
         benefits: [
           'Free IMEI check that shows the Galaxy model',
-          'Searches SafeOrStolen theft reports and public web results',
+          'Searches SafeOrStolen theft reports',
           'Paid carrier blacklist check available',
           'Step-by-step account removal check for Samsung phones',
           '1 free check with no credit card',
@@ -109,7 +109,7 @@ const SamsungIMEICheck = () => {
           {
             question: 'How do I check a Samsung IMEI for free?',
             answer:
-              "Dial *#06# to show the IMEI, then enter it on SafeOrStolen (safeorstolen.com/check-samsung-stolen). The free check shows the Galaxy model and searches SafeOrStolen theft reports and public web results. Your first check is free, with no account or credit card needed. The carrier blacklist check is a paid check.",
+              "Dial *#06# to show the IMEI, then enter it on SafeOrStolen (safeorstolen.com/check-samsung-stolen). The free check shows the Galaxy model and searches SafeOrStolen theft reports. Your first check is free, with no account or credit card needed. The carrier blacklist check is a paid check.",
           },
           {
             question: 'What is FRP lock on a Samsung?',

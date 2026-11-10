@@ -19,7 +19,7 @@ export const TrustSignalsSection = () => {
  {
  icon: Database,
  title: "3,000+ Global Databases",
- description: "SafeOrStolen's reports, public web results, and AI analysis for comprehensive checks.",
+ description: "SafeOrStolen's reports and AI analysis for comprehensive checks.",
  color: "text-accent"
  },
  {
@@ -69,7 +69,7 @@ export const TrustSignalsSection = () => {
  3,000+ Databases Worldwide
  </h3>
  <p className="text-base text-muted-foreground mb-6">
- Every check covers our own stolen-item reports, public web results and AI analysis, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns
+ Every check covers our own stolen-item reports, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns
  </p>
  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border">
  <div>

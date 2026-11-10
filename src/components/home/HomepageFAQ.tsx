@@ -18,7 +18,7 @@ export const HomepageFAQ = () => {
  },
  {
  question: 'How accurate is SafeOrStolen?',
-  answer: "We check SafeOrStolen's own stolen-item reports, public web results, and AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft and loss reports from 33 states and DC plus live Ohio records. Free phone checks confirm the IMEI is real; paid phone checks also search the lost and stolen phone blacklist. No service can guarantee that every theft has been reported."
+  answer: "We check SafeOrStolen's own stolen-item reports. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft and loss reports from 33 states and DC plus live Ohio records. Free phone checks confirm the IMEI is real; paid phone checks also search the lost and stolen phone blacklist. No service can guarantee that every theft has been reported."
  },
  {
  question: 'Do you report searches to police?',
@@ -26,7 +26,7 @@ export const HomepageFAQ = () => {
  },
  {
  question: 'Can I check items from other countries?',
- answer: 'Yes! SafeOrStolen works globally. We analyze public web results and our own community theft reports from around the world, making it perfect for checking items from international sellers.'
+ answer: 'Yes! SafeOrStolen works globally. Anyone can run a check from anywhere. SafeOrStolen searches its own community theft reports from around the world, plus U.S. police records for guns and vehicles.'
  }
  ];
 

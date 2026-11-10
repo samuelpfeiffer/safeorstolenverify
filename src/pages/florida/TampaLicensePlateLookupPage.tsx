@@ -6,11 +6,11 @@ import { PageSEO } from '@/components/seo/PageSEO';
 const FAQS = [
  {
  q: 'How do I check if a car is stolen in Tampa?',
- a: 'Enter the Florida plate or, better, the VIN on SafeOrStolen (safeorstolen.com/florida/tampa-license-plate-lookup). It searches theft reports owners have filed on the site and public web results, and a VIN check also decodes the year, make and model and lists open recalls. Your first check is free. On a car you\'re serious about, you can also ask Tampa Police or the Hillsborough County Sheriff non-emergency line to run the VIN.',
+ a: 'Enter the Florida plate or, better, the VIN on SafeOrStolen (safeorstolen.com/florida/tampa-license-plate-lookup). It searches theft reports owners have filed on the site, and a VIN check also decodes the year, make and model and lists open recalls. Your first check is free. On a car you\'re serious about, you can also ask Tampa Police or the Hillsborough County Sheriff non-emergency line to run the VIN.',
  },
  {
  q: 'What does SafeOrStolen search for a Florida car?',
- a: 'For Florida vehicles it searches its own theft reports and public web results, and a VIN check also decodes the car and lists open safety recalls. If you think a car is stolen, call the local police non-emergency line with the VIN and plate.',
+ a: 'For Florida vehicles it searches its own theft reports, and a VIN check also decodes the car and lists open safety recalls. If you think a car is stolen, call the local police non-emergency line with the VIN and plate.',
  },
  {
  q: 'Should I check for flood damage on Tampa vehicles?',
@@ -45,7 +45,7 @@ const TampaLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Tampa License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Buying a used car in Tampa? Enter the Florida plate or VIN and SafeOrStolen searches its own theft reports and public web results in a few seconds. Your first check is free.
+ Buying a used car in Tampa? Enter the Florida plate or VIN and SafeOrStolen searches its own theft reports in a few seconds. Your first check is free.
  </p>
  </div>
  </header>

@@ -10,7 +10,7 @@ const CraigslistSafetyVerification = () => {
   const faqs = [
     {
       question: "How can I tell if a Craigslist item is stolen?",
-      answer: "Ask the seller for the IMEI, VIN or serial number and enter it at SafeOrStolen (safeorstolen.com/craigslist-safety-verification) before you meet. Every check searches SafeOrStolen theft reports and public web results; gun checks add police theft reports from 33 states and DC, and bike checks add a national stolen-bicycle registry. A seller who won't share the number is a warning sign."
+      answer: "Ask the seller for the IMEI, VIN or serial number and enter it at SafeOrStolen (safeorstolen.com/craigslist-safety-verification) before you meet. Every check searches SafeOrStolen theft reports; gun checks add police theft reports from 33 states and DC, and bike checks add a national stolen-bicycle registry. A seller who won't share the number is a warning sign."
     },
     {
       question: "Is Craigslist safe for buying used items?",

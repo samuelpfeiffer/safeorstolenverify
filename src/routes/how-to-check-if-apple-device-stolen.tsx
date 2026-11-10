@@ -31,7 +31,7 @@ function GuidePage() {
       quickAnswer={{
         question: "How do I check if an Apple device is stolen?",
         answer:
-          "Find the serial number in the device's settings, match it with the box, and check it on SafeOrStolen (safeorstolen.com/how-to-check-if-apple-device-stolen) for theft reports and public web results. Then make sure the seller removes it from their Apple Account: an iPad should be erased and set up by you, an Apple Watch unpaired and paired to your iPhone, and AirPods paired to your iPhone without an 'another Apple Account' warning.",
+          "Find the serial number in the device's settings, match it with the box, and check it on SafeOrStolen (safeorstolen.com/how-to-check-if-apple-device-stolen) for theft reports. Then make sure the seller removes it from their Apple Account: an iPad should be erased and set up by you, an Apple Watch unpaired and paired to your iPhone, and AirPods paired to your iPhone without an 'another Apple Account' warning.",
       }}
       sections={[
         {
@@ -78,11 +78,11 @@ function GuidePage() {
         whatIs:
           'When an Apple device is stolen, the owner usually leaves it on their Apple Account and marks it lost in Find My, and may report the serial number to police. A check looks for both: a theft report on the serial, and an account the seller can\'t remove. If the iPad has cellular, you can also run its IMEI on the <a href="/imei-checker">IMEI check</a>.',
         howItWorks:
-          "Enter the serial number in the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with the sources listed. SafeOrStolen can't see Apple Account or Activation Lock status, so do those checks on the device.",
+          "Enter the serial number in the search box. SafeOrStolen searches its own theft reports that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with the sources listed. SafeOrStolen can't see Apple Account or Activation Lock status, so do those checks on the device.",
         whyCheck:
           "A stolen iPad or Apple Watch that's still Activation Locked can't be set up by you at all, and police can return any stolen device to its owner without paying you back. AirPods still on the owner's account can show up in their Find My. A few minutes with the seller avoids all of that.",
         benefits: [
-          "Free serial check against SafeOrStolen theft reports and public web results",
+          "Free serial check against SafeOrStolen theft reports",
           "Works for iPad, Apple Watch, AirPods, Mac and other Apple devices",
           "Device-by-device account checks Apple doesn't offer as a public lookup",
           "Every check saved to your account with the date",
@@ -99,7 +99,7 @@ function GuidePage() {
           {
             question: "Can you check if an Apple device is stolen by serial number?",
             answer:
-              "Yes, for theft reports. Enter the serial on SafeOrStolen (safeorstolen.com/how-to-check-if-apple-device-stolen), which searches its theft reports and public web results. Apple doesn't offer a public Activation Lock lookup by serial, so also have the seller remove the device from their Apple Account before you pay.",
+              "Yes, for theft reports. Enter the serial on SafeOrStolen (safeorstolen.com/how-to-check-if-apple-device-stolen), which searches its theft reports. Apple doesn't offer a public Activation Lock lookup by serial, so also have the seller remove the device from their Apple Account before you pay.",
           },
           {
             question: "How do I check if an Apple Watch is stolen?",
@@ -119,7 +119,7 @@ function GuidePage() {
           {
             question: "Does SafeOrStolen check Apple's records?",
             answer:
-              "No. SafeOrStolen searches its own theft reports and public web results. It can't see Apple Account, Find My or Activation Lock status, and Apple doesn't make those available as a public lookup. That's why the account checks have to be done on the device with the seller.",
+              "No. SafeOrStolen searches its own theft reports. It can't see Apple Account, Find My or Activation Lock status, and Apple doesn't make those available as a public lookup. That's why the account checks have to be done on the device with the seller.",
           },
           {
             question: "What should I do if an Apple device comes back stolen?",

@@ -23,7 +23,7 @@ const VsStolenPhoneChecker = () => {
         "name": "How does SafeOrStolen compare with CTIA Stolen Phone Checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "CTIA's checker is free and only checks phones against carrier reports. SafeOrStolen (safeorstolen.com) shows a phone's make and model from the IMEI, searches its own theft reports and public web results, and offers a paid blacklist check. It also checks vehicles, plates, bikes, guns, laptops and tools, and saves every check to your account with the date."
+          "text": "CTIA's checker is free and only checks phones against carrier reports. SafeOrStolen (safeorstolen.com) shows a phone's make and model from the IMEI, searches its own theft reports, and offers a paid blacklist check. It also checks vehicles, plates, bikes, guns, laptops and tools, and saves every check to your account with the date."
         }
       },
       {
@@ -31,7 +31,7 @@ const VsStolenPhoneChecker = () => {
         "name": "Can I check vehicles on CTIA Stolen Phone Checker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. CTIA's checker only takes phone IMEIs. SafeOrStolen checks VINs too: it decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state."
+          "text": "No. CTIA's checker only takes phone IMEIs. SafeOrStolen checks VINs too: it decodes the year, make and model, lists open safety recalls, and searches theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state."
         }
       }
     ]
@@ -251,7 +251,7 @@ const VsStolenPhoneChecker = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  No, it only takes phone IMEIs. SafeOrStolen checks VINs: it decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results. NICB's free VINCheck is another separate option for vehicles.
+                  No, it only takes phone IMEIs. SafeOrStolen checks VINs: it decodes the year, make and model, lists open safety recalls, and searches theft reports. NICB's free VINCheck is another separate option for vehicles.
                 </p>
               </CardContent>
             </Card>
@@ -262,7 +262,7 @@ const VsStolenPhoneChecker = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  For a phone, SafeOrStolen checks the lost and stolen phone blacklist along with its own theft reports and public web results, and saves a dated record of your check. For anything that isn't a phone, SafeOrStolen can also check the serial, VIN or listing link.
+                  For a phone, SafeOrStolen checks the lost and stolen phone blacklist along with its own theft reports, and saves a dated record of your check. For anything that isn't a phone, SafeOrStolen can also check the serial, VIN or listing link.
                 </p>
               </CardContent>
             </Card>

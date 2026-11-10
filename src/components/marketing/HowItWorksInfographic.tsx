@@ -38,7 +38,7 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
  {
  number: '2',
  title: 'AI Searches Databases',
- description: 'Our AI instantly searches SafeOrStolen reports and public web results to identify stolen goods.',
+ description: 'Our AI instantly searches SafeOrStolen reports to identify stolen goods.',
  icon: <Zap className="w-8 h-8" />,
  },
  {
@@ -59,7 +59,7 @@ export const HowItWorksInfographic: React.FC<{ className?: string }> = ({ classN
  ];
 
  const benefits = [
- 'Checks SafeOrStolen reports and public web results',
+ 'Checks SafeOrStolen reports',
  'AI analysis explains the available information',
  'Protect yourself from legal consequences',
  'Avoid financial loss from blacklisted items',

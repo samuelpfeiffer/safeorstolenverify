@@ -18,7 +18,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "Is there a free alternative to Carfax?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For a theft check, yes. SafeOrStolen (safeorstolen.com) gives you 1 free check, no account needed: it decodes the VIN, lists open recalls, and searches its own theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records. It is not a full vehicle-history report with accidents and service records."
+          "text": "For a theft check, yes. SafeOrStolen (safeorstolen.com) gives you 1 free check, no account needed: it decodes the VIN, lists open recalls, and searches its own theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records. It is not a full vehicle-history report with accidents and service records."
         }
       },
       {
@@ -26,7 +26,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "What's the difference between Carfax and SafeOrStolen?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Carfax sells vehicle history reports covering reported accidents, service records and ownership. SafeOrStolen checks whether a VIN shows up in theft reports: its own owner reports, public web results and, for Arizona VINs, Arizona, Alaska and Chicago police stolen-vehicle records. Many buyers use both: a theft check first, then a paid history report on the car they are serious about."
+          "text": "Carfax sells vehicle history reports covering reported accidents, service records and ownership. SafeOrStolen checks whether a VIN shows up in theft reports: its own owner reports and, for Arizona VINs, Arizona, Alaska and Chicago police stolen-vehicle records. Many buyers use both: a theft check first, then a paid history report on the car they are serious about."
         }
       },
       {
@@ -34,7 +34,7 @@ const CarfaxVsFreeVinAlternatives = () => {
         "name": "How can I check if a car is stolen for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Run the VIN through SafeOrStolen, where your first check is free. SafeOrStolen searches its own theft reports and public web results, and every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. You can also call your local police non-emergency line with the VIN."
+          "text": "Run the VIN through SafeOrStolen, where your first check is free. SafeOrStolen searches its own theft reports, and every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. You can also call your local police non-emergency line with the VIN."
         }
       }
     ]
@@ -143,7 +143,7 @@ const CarfaxVsFreeVinAlternatives = () => {
             </CardHeader>
             <CardContent>
               <p className="text-lg">
-                <strong>For theft verification:</strong> Use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen</Link> (1 free check) - it searches our theft reports and public web results, and Arizona law-enforcement records for Arizona VINs.
+                <strong>For theft verification:</strong> Use <Link to="/vin-checker" className="text-primary hover:underline">SafeOrStolen</Link> (1 free check) - it searches our theft reports, and Arizona law-enforcement records for Arizona VINs.
               </p>
               <p className="text-lg mt-2">
                 <strong>For accident and service history:</strong> Buy a Carfax or AutoCheck report on the car you're serious about.
@@ -254,7 +254,6 @@ const CarfaxVsFreeVinAlternatives = () => {
             </p>
             <ul>
               <li>a search of theft reports owners have filed on SafeOrStolen</li>
-              <li>public web results that mention the VIN</li>
               <li>Arizona, Alaska and Chicago police stolen-vehicle records, searched for any VIN from any state (updated daily)</li>
               <li>the year, make and model, and any open safety recalls</li>
             </ul>

@@ -13,7 +13,7 @@ import { ArrowRight } from 'lucide-react';
 const FEATURES: { name: string; what: string; cost: string; href: string; linkText: string }[] = [
  {
  name: 'Stolen item check',
- what: 'One box for an IMEI, VIN, plate or serial number. Searches SafeOrStolen theft reports and public web results, plus extra sources for some items (below). Results in a few seconds with every source listed.',
+ what: 'One box for an IMEI, VIN, plate or serial number. Searches SafeOrStolen theft reports, plus extra sources for some items (below). Results in a few seconds with every source listed.',
  cost: 'First check free. After that, pay $0.99 for your next check and get one more free (or $2.99 for 2 Complete checks), or go unlimited at $10 a month',
  href: '/check-if-stolen',
  linkText: 'Check an item',
@@ -94,7 +94,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'What can SafeOrStolen check?',
  answer:
- 'SafeOrStolen (safeorstolen.com/features) checks phones and tablets by IMEI, vehicles by VIN, license plates, guns, bikes, and anything else with a serial number, such as laptops, game consoles, cameras and power tools. Every check searches SafeOrStolen theft reports and public web results. Guns, bikes, Arizona vehicles and paid phone checks get extra sources.',
+ 'SafeOrStolen (safeorstolen.com/features) checks phones and tablets by IMEI, vehicles by VIN, license plates, guns, bikes, and anything else with a serial number, such as laptops, game consoles, cameras and power tools. Every check searches SafeOrStolen theft reports. Guns, bikes, Arizona vehicles and paid phone checks get extra sources.',
  },
  {
  question: 'Is there a SafeOrStolen app?',
@@ -114,7 +114,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Which records does SafeOrStolen search?',
  answer:
- 'Every check searches SafeOrStolen\'s own theft reports and public web results. Gun checks add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates add Arizona, Alaska and Chicago police stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, bike checks add a national stolen-bicycle registry, and the paid phone check searches the lost and stolen phone blacklist. Every result lists exactly which sources were searched.',
+ 'Every check searches SafeOrStolen\'s own theft reports. Gun checks add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017) and live Ohio law-enforcement stolen-gun records. Arizona VINs and plates add Arizona, Alaska and Chicago police stolen-vehicle records, vehicle checks decode the VIN and show open safety recalls, bike checks add a national stolen-bicycle registry, and the paid phone check searches the lost and stolen phone blacklist. Every result lists exactly which sources were searched.',
  },
 ];
 

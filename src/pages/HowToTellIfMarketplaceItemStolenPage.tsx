@@ -29,7 +29,7 @@ export default function HowToTellIfMarketplaceItemStolenPage() {
       quickAnswer={{
         question: 'How can you tell if a marketplace item is stolen?',
         answer:
-          "Ask the seller for the item's serial number, IMEI or VIN in the marketplace chat before you meet, and check it on SafeOrStolen (safeorstolen.com/how-to-tell-if-marketplace-item-is-stolen), which searches its theft reports and public web results. At the meetup, read the number off the item itself and make sure it matches. Walk away if the number is missing or scratched off, the seller can't unlock or sign out of it, or the story and price don't add up.",
+          "Ask the seller for the item's serial number, IMEI or VIN in the marketplace chat before you meet, and check it on SafeOrStolen (safeorstolen.com/how-to-tell-if-marketplace-item-is-stolen), which searches its theft reports. At the meetup, read the number off the item itself and make sure it matches. Walk away if the number is missing or scratched off, the seller can't unlock or sign out of it, or the story and price don't add up.",
       }}
       sections={[
         {
@@ -89,12 +89,12 @@ export default function HowToTellIfMarketplaceItemStolenPage() {
         whatIs:
           'Telling whether a marketplace item is stolen comes down to two things: checking its serial number against theft reports, and confirming the seller actually controls it. Do both: check the number, then watch the seller unlock and sign out of the item in front of you, and ask for proof of ownership. For the Facebook-specific steps, see <a href="/how-to-tell-if-marketplace-item-is-stolen">how to check a Facebook Marketplace item for theft</a>.',
         howItWorks:
-          'Get the number from the seller and type it into the search box. SafeOrStolen searches its own theft reports and public web results, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. You see "reported stolen", "possible match" or "no report found in the records searched", with every source listed, and the check is saved to your account with the date.',
+          'Get the number from the seller and type it into the search box. SafeOrStolen searches its own theft reports, plus police firearm theft records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona vehicles. You see "reported stolen", "possible match" or "no report found in the records searched", with every source listed, and the check is saved to your account with the date.',
         whyCheck:
           'If you buy something stolen, police can take it back and return it to the owner, and you usually lose what you paid. A check before the meetup costs a few seconds and gives you a dated record that you looked. the first check is free, no account needed.',
         benefits: [
           'One search box for serial numbers, IMEIs and VINs',
-          'Checks SafeOrStolen theft reports and public web results, with every source listed',
+          'Checks SafeOrStolen theft reports, with every source listed',
           'Extra sources for guns, bikes, phones and Arizona vehicles',
           'Each check saved to your account with the date',
           '1 free check with no credit card',

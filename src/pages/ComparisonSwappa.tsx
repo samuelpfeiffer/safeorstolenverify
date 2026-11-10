@@ -61,7 +61,7 @@ const ComparisonSwappa = () => {
  {
  value: 'databases',
  q: "What does a SafeOrStolen phone check search?",
- a: "Every SafeOrStolen check searches its own theft reports, filed by owners, and public web results that mention the number. A phone check also shows the make and model from the IMEI. A paid lost/stolen carrier blacklist check is available on top. Results read \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with sources listed.",
+ a: "Every SafeOrStolen check searches its own theft reports, filed by owners that mention the number. A phone check also shows the make and model from the IMEI. A paid lost/stolen carrier blacklist check is available on top. Results read \"reported stolen\", \"possible match\", or \"no report found in the records searched\", with sources listed.",
  },
  {
  value: 'any-source',
@@ -91,7 +91,7 @@ const ComparisonSwappa = () => {
  { feature: 'Phones, vehicles, plates, guns and bikes', safeorstolen: true, swappa: false },
  { feature: 'VIN check for vehicles', safeorstolen: true, swappa: false },
  { feature: 'Firearm serial number check', safeorstolen: true, swappa: false },
- { feature: 'Owner theft reports and public web results', safeorstolen: true, swappa: false },
+ { feature: 'Owner theft reports', safeorstolen: true, swappa: false },
  { feature: 'Free checks available', safeorstolen: true, swappa: true },
  { feature: 'Buy/sell marketplace', safeorstolen: false, swappa: true },
  { feature: 'Listing prices to compare', safeorstolen: false, swappa: true },
@@ -116,7 +116,7 @@ const ComparisonSwappa = () => {
  <ul>
  <li><strong>On your phone:</strong> SafeOrStolen has a free installable web app at safeorstolen.com/app (not an app-store download).</li>
  <li><strong>Item types:</strong> SafeOrStolen checks phones, vehicles, plates, guns, bikes and serial-numbered gear. Swappa deals in phones and tech.</li>
- <li><strong>Sources:</strong> SafeOrStolen searches its own theft reports and public web results, plus a stolen-bicycle registry for bikes, police theft records for guns, and Arizona law-enforcement records for Arizona vehicles.</li>
+ <li><strong>Sources:</strong> SafeOrStolen searches its own theft reports, plus a stolen-bicycle registry for bikes, police theft records for guns, and Arizona law-enforcement records for Arizona vehicles.</li>
  <li><strong>Where it works:</strong> SafeOrStolen works on items from any seller. Swappa checks devices listed on Swappa.</li>
  <li><strong>Pricing:</strong> SafeOrStolen: 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</li>
  </ul>
@@ -178,7 +178,7 @@ const ComparisonSwappa = () => {
  {[
  ['Free web app', 'Add safeorstolen.com/app to your home screen; no app-store download'],
  ['Many item types', 'Phones, vehicles, plates, guns, bikes, laptops, tools'],
- ['Sources', "SafeOrStolen theft reports, public web results, plus item-specific records for bikes, guns and Arizona vehicles"],
+ ['Sources', "SafeOrStolen theft reports, plus item-specific records for bikes, guns and Arizona vehicles"],
  ['Clear results', '"Reported stolen", "possible match", or "no report found in the records searched", with sources listed'],
  ['1 free check', 'Then $0.99 for 2 checks or $10 a month unlimited'],
  ['Verification certificate', 'Optional $1.99 dated record with its own link'],

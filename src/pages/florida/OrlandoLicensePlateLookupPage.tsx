@@ -12,7 +12,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 const faqs = [
  {
  question: "How do I check if a car is stolen in Orlando?",
- answer: "Enter the Florida plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/orlando-license-plate-lookup). It searches SafeOrStolen's own theft reports and public web results, such as listings and posts that mention that plate or VIN, and shows the answer in a few seconds with every source listed. Your first check is free.",
+ answer: "Enter the Florida plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/florida/orlando-license-plate-lookup). It searches SafeOrStolen's own theft reports, such as listings and posts that mention that plate or VIN, and shows the answer in a few seconds with every source listed. Your first check is free.",
  },
  {
  question: "Will an Orlando plate lookup show who owns the car?",
@@ -59,7 +59,7 @@ const OrlandoLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Orlando License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Enter a Florida plate or VIN and SafeOrStolen searches its own theft reports and public web results for it. You'll know in a few seconds whether it's been reported stolen.
+ Enter a Florida plate or VIN and SafeOrStolen searches its own theft reports for it. You'll know in a few seconds whether it's been reported stolen.
  </p>
  </div>
  </header>

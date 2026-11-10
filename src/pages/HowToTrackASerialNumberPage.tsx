@@ -79,7 +79,7 @@ export default function HowToTrackASerialNumberPage() {
         whatIs:
           "Tracking a serial number means following an item's record, not its location. The record that matters most to a buyer is whether the serial number appears in a theft report. When something is stolen, the owner gives its serial number to the police and their insurer, which is what ties that one item to the theft.",
         howItWorks:
-          'Type the serial number into the search box. SafeOrStolen searches its own theft reports, the police stolen records it holds for that kind of item and public web results, then shows one of three results: reported stolen, possible match, or no report found in the records searched. Every source searched is listed.',
+          'Type the serial number into the search box. SafeOrStolen searches its own theft reports, the police stolen records it holds for that kind of item, then shows one of three results: reported stolen, possible match, or no report found in the records searched. Every source searched is listed.',
         whyCheck:
           'If you buy an item that turns out to be stolen, police can return it to the owner and you lose what you paid. Checking the serial number first takes seconds, and the record of your check helps show you bought it in good faith.',
         benefits: [

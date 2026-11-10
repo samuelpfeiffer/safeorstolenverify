@@ -17,7 +17,7 @@ import { PRESS_RELEASES } from '@/data/pressCoverage';
 const PRESS_EMAIL = 'safeorstolenmail@gmail.com';
 
 const checkRows: [string, string][] = [
-  ['Every check', "SafeOrStolen's own theft reports (owners report thefts on the site) and public web results: listings and posts that mention the number"],
+  ['Every check', "SafeOrStolen's own theft reports (owners report thefts on the site): listings and posts that mention the number"],
   ['Guns', 'more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, and a flag for serials that look altered or obliterated'],
   ['Bikes', 'A national stolen-bicycle registry'],
   ['Phones (IMEI)', "The phone's make and model from the IMEI. A paid carrier blacklist check for lost or stolen phones is available"],

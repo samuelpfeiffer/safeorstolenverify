@@ -17,7 +17,7 @@ const InstallAppPage = () => {
  const faqs = [
  { question: "How does SafeOrStolen install on my phone?", answer: "SafeOrStolen is a web app (a PWA) that installs from your browser at safeorstolen.com/app. It isn't in the App Store or Google Play. Once added to your home screen it opens full screen like an app and updates itself each time you open it. It works on iPhone, Android, tablets and computers." },
  { question: "Is installing SafeOrStolen safe?", answer: "Yes. An installed web app runs inside your browser with the same protections as a regular website. SafeOrStolen only asks for your camera if you tap Scan to read a barcode, and you can say no and type the number instead." },
- { question: "Will SafeOrStolen work offline?", answer: "No. Each check searches SafeOrStolen's records and the public web, so you need a data connection. If the meetup spot has weak signal, ask the seller for the IMEI, VIN or serial number ahead of time and run the check before you go." },
+ { question: "Will SafeOrStolen work offline?", answer: "No. Each check searches SafeOrStolen's records, so you need a data connection. If the meetup spot has weak signal, ask the seller for the IMEI, VIN or serial number ahead of time and run the check before you go." },
  { question: "How much storage does SafeOrStolen use?", answer: "Very little. An installed web app is mostly a home-screen shortcut plus some cached pages, so it takes far less room than a typical app store app. You can clear it any time by removing the icon." },
  { question: "Can I uninstall SafeOrStolen?", answer: "Yes, just like any app. iPhone: Long-press the icon → Remove App. Android: Long-press → Uninstall. Desktop: Right-click → Uninstall." },
  { question: "Do I need to create an account?", answer: "Yes. A free account is required to run checks. It gives you 1 free check with no credit card and saves each check with the date. After that it's $0.99 for 2 checks or $10 a month for unlimited checks." },
@@ -212,7 +212,7 @@ const InstallAppPage = () => {
  <div className="text-center p-6">
  <Shield className="h-10 w-10 mx-auto text-primary mb-4" />
  <h3 className="font-semibold mb-2">Every Source Listed</h3>
- <p className="text-sm text-muted-foreground">Each check searches SafeOrStolen's own theft reports and public web results, plus extra records for guns, bikes and Arizona vehicles</p>
+ <p className="text-sm text-muted-foreground">Each check searches SafeOrStolen's own theft reports, plus extra records for guns, bikes and Arizona vehicles</p>
  </div>
  <div className="text-center p-6">
  <Zap className="h-10 w-10 mx-auto text-primary mb-4" />

@@ -29,7 +29,7 @@ function GuidePage() {
       quickAnswer={{
         question: "How do I check if a motorcycle is stolen?",
         answer:
-          "Read the 17-character VIN stamped on the steering neck, where the handlebars meet the frame, and make sure it matches the title and registration. Check it on SafeOrStolen (safeorstolen.com/check-motorcycle-stolen-vin), which searches its theft reports and public web results and decodes the year, make and model. Then look at the bike itself: a damaged ignition, a broken fork lock or a ground-down VIN means walk away.",
+          "Read the 17-character VIN stamped on the steering neck, where the handlebars meet the frame, and make sure it matches the title and registration. Check it on SafeOrStolen (safeorstolen.com/check-motorcycle-stolen-vin), which searches its theft reports and decodes the year, make and model. Then look at the bike itself: a damaged ignition, a broken fork lock or a ground-down VIN means walk away.",
       }}
       sections={[
         {
@@ -67,7 +67,7 @@ function GuidePage() {
           table: {
             columns: ["Check", "What it tells you", "Cost"],
             rows: [
-              ["SafeOrStolen VIN check", "Whether the VIN is in SafeOrStolen theft reports or public web results; the decoded year, make and model; open safety recalls", "1 free check"],
+              ["SafeOrStolen VIN check", "Whether the VIN is in SafeOrStolen theft reports; the decoded year, make and model; open safety recalls", "1 free check"],
               ["Frame vs. title", "Whether the paperwork belongs to this bike", "Free"],
               ["Seller ID vs. title", "Whether the seller is the owner", "Free"],
               ["Police VIN check", "Many departments will run the VIN for you. Call the non-emergency line and ask.", "Usually free"],
@@ -82,7 +82,7 @@ function GuidePage() {
         whatIs:
           "A motorcycle VIN check uses the 17-character number stamped on the frame to look for theft reports and confirm what the bike is. If the decoded year, make and model don't match the bike in front of you, the VIN or the paperwork has been swapped. Owners who report a theft to SafeOrStolen add the VIN to the records every check searches.",
         howItWorks:
-          "Enter the VIN in the box. SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports and public web results for that VIN. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily. The result reads reported stolen, possible match, or no report found in the records searched, with each source listed. For title or registration questions, contact your state motor vehicle agency.",
+          "Enter the VIN in the box. SafeOrStolen decodes the year, make and model, lists open safety recalls, and searches its own theft reports for that VIN. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily. The result reads reported stolen, possible match, or no report found in the records searched, with each source listed. For title or registration questions, contact your state motor vehicle agency.",
         whyCheck:
           "Motorcycles are easy to steal, quick to strip and often sold for cash with no paperwork. If police recover a stolen bike from you, it goes back to the owner and you usually lose what you paid. A few minutes with the VIN and the paperwork protects you.",
         benefits: [
@@ -104,7 +104,7 @@ function GuidePage() {
           {
             question: "Can I check a motorcycle VIN for free?",
             answer:
-              "Yes. SafeOrStolen (safeorstolen.com/check-motorcycle-stolen-vin) gives you 1 free VIN check with no account or credit card needed. Each check searches SafeOrStolen's theft reports and public web results, decodes the year, make and model, and lists open safety recalls. After that, $0.99 buys 2 Starter checks, $2.99 buys 2 Complete checks, or $10 a month buys unlimited checks with up to 20 phone blacklist checks a month.",
+              "Yes. SafeOrStolen (safeorstolen.com/check-motorcycle-stolen-vin) gives you 1 free VIN check with no account or credit card needed. Each check searches SafeOrStolen's theft reports, decodes the year, make and model, and lists open safety recalls. After that, $0.99 buys 2 Starter checks, $2.99 buys 2 Complete checks, or $10 a month buys unlimited checks with up to 20 phone blacklist checks a month.",
           },
           {
             question: "Where is the VIN on a motorcycle?",

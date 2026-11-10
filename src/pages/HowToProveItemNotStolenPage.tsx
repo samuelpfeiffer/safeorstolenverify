@@ -69,7 +69,7 @@ export default function HowToProveItemNotStolenPage() {
         whatIs:
           "Proving an item isn't stolen really means two things: showing you own it, and showing it isn't listed as stolen where buyers look. The first comes from your own records and from unlocking the item in front of the buyer. The second comes from a serial number check. Together they answer the questions an honest buyer asks.",
         howItWorks:
-          'Enter your item\'s serial number, IMEI or VIN in the search box. SafeOrStolen searches its theft reports and public web results, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. The check is saved to your account with the date, and you can add the $1.99 certificate to get a shareable link.',
+          'Enter your item\'s serial number, IMEI or VIN in the search box. SafeOrStolen searches its theft reports, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. The check is saved to your account with the date, and you can add the $1.99 certificate to get a shareable link.',
         whyCheck:
           "If your item was ever reported stolen, perhaps before you bought it used, you want to know before a buyer finds out at the meetup. And a buyer who sees you checked is more likely to show up and pay your asking price.",
         benefits: [

@@ -49,7 +49,7 @@ const STEPS: string[] = [
 ];
 
 const SOURCES: { item: string; sources: string }[] = [
-  { item: 'Every item', sources: "SafeOrStolen's own theft reports (filed by owners on the site) and public web results that mention the number" },
+  { item: 'Every item', sources: "SafeOrStolen's own theft reports (filed by owners on the site) that mention the number" },
   { item: 'Guns', sources: 'more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, and a check for serials that look altered or obliterated' },
   { item: 'Bikes', sources: 'A national stolen-bicycle registry' },
   { item: 'Phones', sources: 'Make and model decoded from the IMEI. The carrier lost/stolen blacklist is searched on a paid blacklist check' },

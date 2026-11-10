@@ -13,7 +13,7 @@ interface HowToVerifySectionProps {
 const FAQS = [
  {
  question: 'How does SafeOrStolen verify if an item is stolen?',
- answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against its own stolen-item reports, public web results, and AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 33 states and DC plus live Ohio records. Results return in a few seconds, with every source listed.'
+ answer: 'SafeOrStolen cross-references your IMEI, VIN, or serial number against its own stolen-item reports. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 33 states and DC plus live Ohio records. Results return in a few seconds, with every source listed.'
  },
  {
  question: 'How much does it cost to check if a phone is stolen?',
@@ -25,7 +25,7 @@ const FAQS = [
  },
  {
  question: 'Can I verify a used car before buying it?',
- answer: 'Yes. Enter the 17-character VIN (found on the driver-side dashboard or door jamb) to check against SafeOrStolen\'s reports, public web results, and AI analysis. Results appear in 3 seconds. Unlike Carfax ($44.99/report), SafeOrStolen VIN checks are included in the free tier and unlimited plans.'
+ answer: 'Yes. Enter the 17-character VIN (found on the driver-side dashboard or door jamb) to check against SafeOrStolen\'s reports and AI analysis. Results appear in 3 seconds. Unlike Carfax ($44.99/report), SafeOrStolen VIN checks are included in the free tier and unlimited plans.'
  },
  {
  question: 'Can I check a firearm serial number for stolen status?',
@@ -42,7 +42,7 @@ const STEPS = [
  },
  {
  name: 'Database scan',
- text: 'SafeOrStolen queries its own stolen-item reports, public web results, and AI analysis. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 33 states and DC.',
+ text: 'SafeOrStolen queries its own stolen-item reports. Bikes are also checked against a national stolen-bicycle registry, and guns against police theft reports from 33 states and DC.',
  link: '/data-sources',
  linkText: 'See all multiple sources'
  },
@@ -69,7 +69,7 @@ export const HowToVerifySection: React.FC<HowToVerifySectionProps> = ({ detected
  <FAQSchema faqs={FAQS} />
  <HowToSchema
  name={`How to Check If a ${itemLabel} Is Stolen Using SafeOrStolen`}
- description={`Step-by-step guide to verify ${itemLabel.toLowerCase()} using SafeOrStolen's reports, public web results, and AI analysis.`}
+ description={`Step-by-step guide to verify ${itemLabel.toLowerCase()} using SafeOrStolen's reports and AI analysis.`}
  totalTime="PT1M"
  steps={STEPS}
  />

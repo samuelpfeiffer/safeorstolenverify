@@ -185,7 +185,7 @@ const OfferupScamProtection = () => {
                     Enter the identifier into SafeOrStolen. Results come back
                     in a few seconds, and the first check is free with a
                     free account. Every check searches SafeOrStolen theft
-                    reports and public web results; phone checks also show the
+                    reports; phone checks also show the
                     make and model, and bike checks add a national
                     stolen-bicycle registry.
                   </p>

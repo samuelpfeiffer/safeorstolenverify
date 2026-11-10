@@ -40,11 +40,11 @@ const FreeStolenVehicleCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to see if a car is stolen by VIN?",
- answer: "Yes. SafeOrStolen offers 1 free VIN check. Enter any 17-character VIN to search SafeOrStolen's own theft reports and public web results, decode the year, make and model, and see open safety recalls. Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Results come back in a few seconds."
+ answer: "Yes. SafeOrStolen offers 1 free VIN check. Enter any 17-character VIN to search SafeOrStolen's own theft reports, decode the year, make and model, and see open safety recalls. Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Results come back in a few seconds."
  },
  {
  question: "Can I check a stolen vehicle by license plate only?",
- answer: "Yes. A plate check searches SafeOrStolen theft reports and public web results, and Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Plates can be swapped between cars while the VIN stays with the vehicle, so check both the VIN and the plate."
+ answer: "Yes. A plate check searches SafeOrStolen theft reports, and Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records. Plates can be swapped between cars while the VIN stays with the vehicle, so check both the VIN and the plate."
  },
  {
  question: "Will this tell me the owner's name and address?",
@@ -138,7 +138,7 @@ const FreeStolenVehicleCheckPage = () => {
  
  <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
  Don't buy a stolen car, truck, or motorcycle. Enter a VIN or license plate to search SafeOrStolen theft reports 
- and public web results, and see open safety recalls—free.
+, and see open safety recalls—free.
  </p>
 
  {/* Search Input */}
@@ -162,7 +162,7 @@ const FreeStolenVehicleCheckPage = () => {
  </Button>
  </div>
  <p className="text-sm text-muted-foreground">
- 1 free search • our stolen item reports + public web results • Results in a few seconds
+ 1 free search • our stolen item reports + police stolen-vehicle records • Results in a few seconds
  </p>
  {isLoading && <p className="text-sm text-muted-foreground">Checking the records now.</p>}
  {result && <div className="text-left"><ParallelVerificationDisplay result={result} /></div>}
@@ -208,7 +208,7 @@ const FreeStolenVehicleCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 2 – Enter details into SafeOrStolen</h3>
  <p className="text-muted-foreground">
- Go to our verification tool and enter the complete VIN or license plate. Make sure to include all 17 characters for VINs—even one wrong character can return incorrect results. SafeOrStolen searches its own theft reports and public web results, decodes the VIN and lists open safety recalls. Arizona VINs and plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records.
+ Go to our verification tool and enter the complete VIN or license plate. Make sure to include all 17 characters for VINs—even one wrong character can return incorrect results. SafeOrStolen searches its own theft reports, decodes the VIN and lists open safety recalls. Arizona VINs and plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records.
  </p>
  </div>
  </div>
@@ -240,7 +240,7 @@ const FreeStolenVehicleCheckPage = () => {
  <ul className="space-y-3">
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
- Matches in SafeOrStolen theft reports and public web results
+ Matches in SafeOrStolen theft reports
  </li>
  <li className="flex gap-3 text-muted-foreground">
  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -303,7 +303,7 @@ const FreeStolenVehicleCheckPage = () => {
  <div className="p-6 bg-background rounded-lg">
  <h3 className="text-xl font-semibold mb-3">Free Tools (Like SafeOrStolen & public theft checks)</h3>
  <p className="text-muted-foreground">
- Free checks focus on <strong>theft and fraud risk</strong>. SafeOrStolen's service lets you verify if a vehicle is flagged in our reports or public web results. This is the critical first step before buying—if a vehicle shows theft indicators, you shouldn't proceed regardless of other factors.
+ Free checks focus on <strong>theft and fraud risk</strong>. SafeOrStolen's service lets you verify if a vehicle is flagged in our reports. This is the critical first step before buying—if a vehicle shows theft indicators, you shouldn't proceed regardless of other factors.
  </p>
  </div>
  
@@ -425,7 +425,7 @@ const FreeStolenVehicleCheckPage = () => {
  <div className="max-w-4xl mx-auto text-center">
  <h2 className="text-3xl font-bold mb-4">Check Any Vehicle Free Before You Buy</h2>
  <p className="text-lg text-muted-foreground mb-8">
- 1 free VIN or license plate check. Search our stolen item reports + public web results. Instant results.
+ 1 free VIN or license plate check. Search our stolen item reports and police stolen-vehicle records. Instant results.
  </p>
  <div className="flex gap-4 justify-center flex-wrap">
  <Link to="/verify">

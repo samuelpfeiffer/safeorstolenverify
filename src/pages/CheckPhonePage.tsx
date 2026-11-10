@@ -46,7 +46,7 @@ const CheckPhonePage = () => {
  <h2>What we check</h2>
  <p>
  A SafeOrStolen phone check shows the make and model from the IMEI and searches SafeOrStolen's
- own theft reports, where owners report stolen phones, and public web results such as listings and
+ own theft reports, where owners report stolen phones such as listings and
  posts that mention the IMEI. A paid lost/stolen carrier blacklist check is also available (monthly
  members get up to 20 a month). The result comes back in a few seconds, with every source listed:
  </p>

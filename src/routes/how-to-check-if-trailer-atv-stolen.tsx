@@ -31,7 +31,7 @@ function GuidePage() {
       quickAnswer={{
         question: "How do I check if an ATV or trailer is stolen?",
         answer:
-          "Find the VIN on the frame (front frame tube or under the seat on an ATV, the tongue on a trailer, the steering neck on a dirt bike) and match it to a title, registration or certificate of origin in the seller's name. Check it on SafeOrStolen (safeorstolen.com/how-to-check-if-trailer-atv-stolen), which searches its theft reports and public web results. A missing or ground-off VIN, or no paperwork at all, means don't buy.",
+          "Find the VIN on the frame (front frame tube or under the seat on an ATV, the tongue on a trailer, the steering neck on a dirt bike) and match it to a title, registration or certificate of origin in the seller's name. Check it on SafeOrStolen (safeorstolen.com/how-to-check-if-trailer-atv-stolen), which searches its theft reports. A missing or ground-off VIN, or no paperwork at all, means don't buy.",
       }}
       sections={[
         {
@@ -76,12 +76,12 @@ function GuidePage() {
         whatIs:
           "An ATV or trailer VIN check looks up the frame number in records of reported thefts and confirms what the machine is. Off-road vehicles and trailers often change hands for cash with little or no paperwork, so the frame number is usually the only link back to the owner. For a road motorcycle, see the <a href=\"/check-motorcycle-stolen-vin\">motorcycle VIN check</a>.",
         howItWorks:
-          "Enter the VIN. SafeOrStolen searches its own theft reports, which owners file on the site, and public web results that mention the VIN, such as old listings or stolen-equipment posts. For a standard 17-character VIN it also decodes the year, make and model where the VIN can be decoded. Arizona VINs are searched against Arizona, Alaska and Chicago police stolen-vehicle records too. For title or registration questions, contact your state motor vehicle agency.",
+          "Enter the VIN. SafeOrStolen searches its own theft reports, which owners file on the site that mention the VIN, such as old listings or stolen-equipment posts. For a standard 17-character VIN it also decodes the year, make and model where the VIN can be decoded. Arizona VINs are searched against Arizona, Alaska and Chicago police stolen-vehicle records too. For title or registration questions, contact your state motor vehicle agency.",
         whyCheck:
           "ATVs, side-by-sides and trailers are easy to load or hitch up and drive away, and many sit outside on farms, job sites and driveways. If a stolen machine is recovered from you, it goes back to the owner and you usually lose your money. A frame-number check and a look at the paperwork take ten minutes.",
         benefits: [
           "Works with ATV, UTV, dirt bike and trailer VINs",
-          "Searches SafeOrStolen theft reports and public web results",
+          "Searches SafeOrStolen theft reports",
           "Decodes standard 17-character VINs so you can spot a mismatch",
           "Each check saved to your account with the date",
           "1 free check with no credit card",
@@ -98,7 +98,7 @@ function GuidePage() {
           {
             question: "Is there a free ATV VIN check for stolen ATVs?",
             answer:
-              "Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-trailer-atv-stolen) checks an ATV VIN free twice, no account or credit card needed. It searches SafeOrStolen theft reports and public web results, and Arizona law-enforcement records for Arizona VINs. Your local police can also run the VIN for you; call the non-emergency line and ask.",
+              "Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-trailer-atv-stolen) checks an ATV VIN free twice, no account or credit card needed. It searches SafeOrStolen theft reports, and Arizona law-enforcement records for Arizona VINs. Your local police can also run the VIN for you; call the non-emergency line and ask.",
           },
           {
             question: "Where is the VIN on an ATV?",
@@ -118,7 +118,7 @@ function GuidePage() {
           {
             question: "Can I check a dirt bike VIN?",
             answer:
-              "Yes. A dirt bike's VIN is stamped on the steering neck, where the front forks meet the frame. Enter it on SafeOrStolen to search theft reports and public web results, then compare it with the title, registration or certificate of origin, and make sure the seller's ID matches the name on it.",
+              "Yes. A dirt bike's VIN is stamped on the steering neck, where the front forks meet the frame. Enter it on SafeOrStolen to search theft reports, then compare it with the title, registration or certificate of origin, and make sure the seller's ID matches the name on it.",
           },
           {
             question: "What should I do if an ATV or trailer comes back stolen?",

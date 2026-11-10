@@ -28,12 +28,12 @@ const VINCheckPage = () => {
  content={{
  intro: "Check any vehicle's VIN instantly to see if it has been reported stolen. Our free VIN check analyzes our stolen-item reports, public web information, and uses AI analysis to help ensure the car, truck, or motorcycle you're buying is clean and safe.",
  whatIs: "A VIN check is a verification that uses a vehicle's 17-character Vehicle Identification Number to determine if it's been reported stolen, salvaged, or has title issues. Every vehicle manufactured since 1981 has a unique VIN that's registered in national databases. Running a VIN check before buying a used vehicle protects you from purchasing stolen property, salvage frauds, or vehicles with hidden liens.",
- howItWorks: "Our VIN check analyzes available public information and our own reported stolen items instantly. Enter the 17-character VIN and we'll search: SafeOrStolen reports, public web results, and apply AI analysis. Within seconds, you'll know if the vehicle has any theft reports or red flags.",
+ howItWorks: "Our VIN check analyzes available public information and our own reported stolen items instantly. Enter the 17-character VIN and we'll search: SafeOrStolen reports and apply AI analysis. Within seconds, you'll know if the vehicle has any theft reports or red flags.",
  whyCheck: "Over 800,000 vehicles are stolen in the US each year. Many are sold to unsuspecting buyers who lose their money and the vehicle when police recover it. A stolen vehicle will be seized by law enforcement regardless of whether you paid for it, and you have no legal recourse to recover your money from the seller. A 30-second VIN check prevents this nightmare scenario.",
  benefits: [
  "Free VIN check with a free account",
  "Results in under 3 seconds",
- "Analyzes SafeOrStolen reports, public web results, and AI analysis for stolen vehicles",
+ "Analyzes SafeOrStolen reports and AI analysis for stolen vehicles",
  "Decodes year, make and model and lists open safety recalls",
  "Checks Arizona VINs against Arizona, Alaska and Chicago police stolen-vehicle records",
  "Works for cars, trucks, motorcycles, RVs, and trailers",
@@ -43,7 +43,7 @@ const VINCheckPage = () => {
  process: [
  "Find the VIN: Check the dashboard (driver's side), door jamb, or vehicle registration",
  "Enter the 17-character VIN in our verification tool",
- "Wait a few seconds while SafeOrStolen searches theft reports and public web results",
+ "Wait a few seconds while SafeOrStolen searches theft reports",
  "Review the result and the list of sources searched",
  "Before you pay, match the VIN to the title and ask the seller for proof of ownership"
  ],
@@ -54,11 +54,11 @@ const VINCheckPage = () => {
  },
  {
  question: "Is this VIN check really free?",
- answer: "Yes, SafeOrStolen gives you 1 free check, no account needed. Each VIN check searches SafeOrStolen theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records, and lists every source it searched."
+ answer: "Yes, SafeOrStolen gives you 1 free check, no account needed. Each VIN check searches SafeOrStolen theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records, and lists every source it searched."
  },
  {
  question: "What databases does the VIN check search?",
- answer: "The check decodes the VIN's year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports filed by owners and public web results. every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. For title, odometer and accident history, also get a vehicle history report."
+ answer: "The check decodes the VIN's year, make and model, lists open safety recalls, and searches SafeOrStolen's own theft reports filed by owners. every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. For title, odometer and accident history, also get a vehicle history report."
  },
  {
  question: "Is this the same as Carfax?",

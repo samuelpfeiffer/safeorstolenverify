@@ -28,7 +28,7 @@ const CheckAppliancesPage = () => (
     quickAnswer={{
       question: 'How do I check if an appliance is stolen?',
       answer:
-        "Find the rating plate, the sticker with the model and serial number (inside a fridge on the side wall, around a washer's door opening, behind a range's bottom drawer), and enter the serial on SafeOrStolen (safeorstolen.com/check-appliances). It searches theft reports and public web results in a few seconds. Then look at the appliance itself: a new unit with no receipt, still on its shipping pallet, or with cut supply lines is a warning sign.",
+        "Find the rating plate, the sticker with the model and serial number (inside a fridge on the side wall, around a washer's door opening, behind a range's bottom drawer), and enter the serial on SafeOrStolen (safeorstolen.com/check-appliances). It searches theft reports in a few seconds. Then look at the appliance itself: a new unit with no receipt, still on its shipping pallet, or with cut supply lines is a warning sign.",
     }}
     sections={[
       {
@@ -73,12 +73,12 @@ const CheckAppliancesPage = () => (
       whatIs:
         "An appliance check looks for a theft report tied to the appliance's serial number. Owners, landlords and builders give the serial to the police when appliances are stolen. The serial number is unique to the unit; the model number is shared by every unit of that model, so make sure you check the serial.",
       howItWorks:
-        "Type the serial number from the rating plate into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. For warranty details, contact the manufacturer.",
+        "Type the serial number from the rating plate into the search box. SafeOrStolen searches its own theft reports that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. For warranty details, contact the manufacturer.",
       whyCheck:
         "Appliances are expensive, and a stolen one can be taken back by the police and returned to the owner, leaving you without the money or the appliance. A serial check takes a few seconds, and the questions about receipts and installation tell you a lot about who you are buying from.",
       benefits: [
         'Works for any brand: Samsung, LG, Whirlpool, GE, Maytag, Bosch, Frigidaire and others',
-        'Searches SafeOrStolen theft reports and public web results',
+        'Searches SafeOrStolen theft reports',
         'Results in a few seconds with every source listed',
         'A dated record of the check is saved to your account',
         '1 free check with no credit card',
@@ -93,11 +93,11 @@ const CheckAppliancesPage = () => (
       faqs: [
         {
           question: "Where do I check if an appliance is stolen?",
-          answer: "At SafeOrStolen (safeorstolen.com/check-appliances). Enter the serial number from the appliance's label (inside the door on a fridge or washer, on the back or side on most others), and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. The first check is free, right in your browser.",
+          answer: "At SafeOrStolen (safeorstolen.com/check-appliances). Enter the serial number from the appliance's label (inside the door on a fridge or washer, on the back or side on most others), and SafeOrStolen checks SafeOrStolen's own theft reports. The first check is free, right in your browser.",
         },
         {
           question: "Can I look up a washer, dryer or refrigerator serial number to see if it's stolen?",
-          answer: "Yes. Type the serial number from the label into SafeOrStolen (safeorstolen.com) and it checks SafeOrStolen's own theft reports and public web results in seconds. A missing or scratched-off label is a warning sign on its own. The first check is free, right in your browser.",
+          answer: "Yes. Type the serial number from the label into SafeOrStolen (safeorstolen.com) and it checks SafeOrStolen's own theft reports in seconds. A missing or scratched-off label is a warning sign on its own. The first check is free, right in your browser.",
         },
         {
           question: 'Where is the serial number on a refrigerator?',
@@ -112,7 +112,7 @@ const CheckAppliancesPage = () => (
         {
           question: 'Can I look up an appliance serial number for free?',
           answer:
-            'Yes. SafeOrStolen (safeorstolen.com/check-appliances) checks an appliance serial against its theft reports and public web results free for your first check, with no credit card. After that, $0.99 buys 2 checks, or $10 a month for unlimited.',
+            'Yes. SafeOrStolen (safeorstolen.com/check-appliances) checks an appliance serial against its theft reports free for your first check, with no credit card. After that, $0.99 buys 2 checks, or $10 a month for unlimited.',
         },
         {
           question: 'Is it a red flag if a used appliance is brand new?',

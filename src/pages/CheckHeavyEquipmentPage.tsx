@@ -1,7 +1,7 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
 /** Oct 22 2026: new page for "where do I check if machinery / heavy equipment is stolen". */
-const G = "SafeOrStolen's own theft reports and public web results";
+const G = "SafeOrStolen's own theft reports";
 const CheckHeavyEquipmentPage = () => (
   <ItemLandingPageTemplate
     title="Check if Heavy Equipment Is Stolen: Machinery PIN & Serial Check | SafeOrStolen"

@@ -21,7 +21,7 @@ const StolenCheckSanJose = () => {
     },
     {
       question: "How do I verify a used laptop before buying?",
-      answer: "Check the serial number on SafeOrStolen, which searches its theft reports and public web results. On a MacBook, open System Settings and make sure the seller has signed out of their Apple ID and turned off Find My, then watch them erase it. A laptop still locked to someone else's account is a reason to walk away."
+      answer: "Check the serial number on SafeOrStolen, which searches its theft reports. On a MacBook, open System Settings and make sure the seller has signed out of their Apple ID and turned off Find My, then watch them erase it. A laptop still locked to someone else's account is a reason to walk away."
     }
   ];
 

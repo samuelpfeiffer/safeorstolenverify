@@ -15,12 +15,12 @@ const WHAT_YOU_CAN_CHECK: { item: string; number: string; searched: string }[] =
     item: 'Gun',
     number: 'Serial on the frame or receiver',
     searched:
-      'more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, SafeOrStolen theft reports and public web results. Serials that look altered are flagged.',
+      'more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records, SafeOrStolen theft reports. Serials that look altered are flagged.',
   },
   {
     item: 'Phone',
     number: 'IMEI (dial *#06#)',
-    searched: 'Make and model from the IMEI, SafeOrStolen theft reports and public web results. The carrier lost/stolen blacklist check is a paid add-on.',
+    searched: 'Make and model from the IMEI, SafeOrStolen theft reports. The carrier lost/stolen blacklist check is a paid add-on.',
   },
   {
     item: 'Car, truck or motorcycle',
@@ -35,12 +35,12 @@ const WHAT_YOU_CAN_CHECK: { item: string; number: string; searched: string }[] =
   {
     item: 'Bike',
     number: 'Serial under the bottom bracket',
-    searched: 'A national stolen-bicycle registry, SafeOrStolen theft reports and public web results.',
+    searched: 'A national stolen-bicycle registry, SafeOrStolen theft reports.',
   },
   {
     item: 'Laptop, tool, camera, console',
     number: 'Serial on the label or nameplate',
-    searched: 'SafeOrStolen theft reports and public web results that mention the serial.',
+    searched: 'SafeOrStolen theft reports that mention the serial.',
   },
 ];
 

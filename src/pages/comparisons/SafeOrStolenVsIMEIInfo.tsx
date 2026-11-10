@@ -41,7 +41,7 @@ const SafeOrStolenVsIMEIInfo = () => {
 
   const comparisonData = [
     { feature: 'Pricing', safeOrStolen: '1 free check, then $0.99 for 2 checks or $10 a month unlimited', imeiInfo: 'Free basic lookup; paid extra checks', winner: 'tie' },
-    { feature: 'What it searches', safeOrStolen: 'SafeOrStolen theft reports and public web results', imeiInfo: 'Device information', winner: 'tie' },
+    { feature: 'What it searches', safeOrStolen: 'SafeOrStolen theft reports', imeiInfo: 'Device information', winner: 'tie' },
     { feature: 'Item types', safeOrStolen: 'Phones, vehicles, bikes, guns, tools, electronics', imeiInfo: 'Phones only', winner: 'sos' },
     { feature: 'Phone blacklist check', safeOrStolen: 'Paid add-on; up to 20 a month on the $10 plan', imeiInfo: 'Paid', winner: 'tie' },
     { feature: 'VIN check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
@@ -100,7 +100,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                   <p className="text-lg text-center">
                     If you're buying a used phone and want to know if it was reported stolen, use{' '}
                     <strong className="text-primary">SafeOrStolen</strong>: 1 free check, it searches SafeOrStolen
-                    theft reports and public web results, and it also handles VINs and serial numbers. IMEI.info is
+                    theft reports, and it also handles VINs and serial numbers. IMEI.info is
                     fine if you only want to look up a phone's model and specs.
                   </p>
                 </CardContent>
@@ -181,7 +181,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          Searches SafeOrStolen theft reports and public web results
+                          Searches SafeOrStolen theft reports
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -370,7 +370,7 @@ const SafeOrStolenVsIMEIInfo = () => {
                     <h3 className="font-semibold mb-2">Which service has more accurate data?</h3>
                     <p className="text-muted-foreground">
                       They answer different questions. IMEI.info gives phone device details. A SafeOrStolen check searches
-                      SafeOrStolen theft reports and public web results, shows the phone's make and model, and lists every
+                      SafeOrStolen theft reports, shows the phone's make and model, and lists every
                       source with the result. Carrier blacklist status comes only from the paid blacklist check.
                     </p>
                   </CardContent>

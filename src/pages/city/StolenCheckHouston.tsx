@@ -8,7 +8,7 @@ const StolenCheckHouston = () => {
   const faqs = [
     {
       question: "How do I check if a car in Houston is stolen?",
-      answer: "Get the VIN from the seller and run it on SafeOrStolen (safeorstolen.com/stolen-check-houston). It decodes the year, make and model, lists open recalls, and searches SafeOrStolen theft reports and public web results in a few seconds. If anything looks wrong, call the HPD non-emergency line with the VIN and plate."
+      answer: "Get the VIN from the seller and run it on SafeOrStolen (safeorstolen.com/stolen-check-houston). It decodes the year, make and model, lists open recalls, and searches SafeOrStolen theft reports in a few seconds. If anything looks wrong, call the HPD non-emergency line with the VIN and plate."
     },
     {
       question: "Where can I meet a seller safely in Houston?",
@@ -104,7 +104,7 @@ const StolenCheckHouston = () => {
                 photo as any other. The serial number, IMEI or VIN is how you tell the difference.
               </p>
               <p>
-                A SafeOrStolen check searches theft reports owners have filed on the site and public web results
+                A SafeOrStolen check searches theft reports owners have filed on the site
                 that mention the number. VIN checks also decode the vehicle and list open recalls. The result says
                 reported stolen, possible match, or no report found in the records searched, with every source listed.
                 Gun serials also go against police firearm theft and loss reports from 33 states and DC, and bikes against

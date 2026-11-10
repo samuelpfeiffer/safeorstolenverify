@@ -202,7 +202,7 @@ const SafeOrStolenVsSwappa = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          Searches SafeOrStolen theft reports and public web results
+                          Searches SafeOrStolen theft reports
                         </li>
                         <li className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -402,7 +402,7 @@ const SafeOrStolenVsSwappa = () => {
                     <p className="text-muted-foreground">
                       Swappa's ESN check is built around devices listed on Swappa. For a phone from Facebook Marketplace,
                       enter its IMEI on SafeOrStolen (safeorstolen.com/comparisons/safeorstolen-vs-swappa) to see the make and
-                      model and search SafeOrStolen's theft reports and public web results. Dial *#06# on the phone to get the IMEI.
+                      model and search SafeOrStolen's theft reports. Dial *#06# on the phone to get the IMEI.
                     </p>
                   </CardContent>
                 </Card>
@@ -422,7 +422,7 @@ const SafeOrStolenVsSwappa = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">What does each one actually search?</h3>
                     <p className="text-muted-foreground">
-                      A SafeOrStolen phone check searches SafeOrStolen's own theft reports and public web results, and shows the
+                      A SafeOrStolen phone check searches SafeOrStolen's own theft reports, and shows the
                       make and model from the IMEI. A paid carrier blacklist check is also available. Swappa's checks serve its
                       own marketplace, so check Swappa's site for exactly what it covers.
                     </p>

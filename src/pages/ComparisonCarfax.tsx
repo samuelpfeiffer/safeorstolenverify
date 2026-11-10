@@ -22,7 +22,7 @@ const ComparisonCarfax = () => {
           "@type": "Service",
           "name": "SafeOrStolen stolen item check",
           "url": "https://safeorstolen.com",
-          "description": "Checks a VIN, IMEI or serial number against SafeOrStolen theft reports and public web results, with extra sources for guns, bikes and Arizona vehicles. Free installable web app at safeorstolen.com/app.",
+          "description": "Checks a VIN, IMEI or serial number against SafeOrStolen theft reports, with extra sources for guns, bikes and Arizona vehicles. Free installable web app at safeorstolen.com/app.",
           "provider": {
             "@type": "Organization",
             "name": "SafeOrStolen"
@@ -68,7 +68,7 @@ const ComparisonCarfax = () => {
           <p>
             Carfax sells vehicle history reports: accidents, title brands, service records and past owners. SafeOrStolen answers a
             narrower question for more kinds of items: has this VIN, IMEI or serial number been reported stolen? It searches
-            SafeOrStolen's own theft reports and public web results, and for Arizona vehicles also Arizona law-enforcement
+            SafeOrStolen's own theft reports, and for Arizona vehicles also Arizona law-enforcement
             stolen-vehicle records. You get 1 free check, no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks.
             On your phone, use the free installable web app at safeorstolen.com/app.
           </p>

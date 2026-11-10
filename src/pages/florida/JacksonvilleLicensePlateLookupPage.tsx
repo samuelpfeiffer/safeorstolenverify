@@ -6,7 +6,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 const FAQS = [
  {
  q: "How do I check if a car is stolen in Jacksonville, FL?",
- a: "Enter the Florida plate or, better, the VIN on SafeOrStolen (safeorstolen.com/florida/jacksonville-license-plate-lookup). A plate check searches SafeOrStolen theft reports and public web results. A VIN check also decodes the year, make and model and lists open recalls. Results take a few seconds, and the first check is free with no credit card."
+ a: "Enter the Florida plate or, better, the VIN on SafeOrStolen (safeorstolen.com/florida/jacksonville-license-plate-lookup). A plate check searches SafeOrStolen theft reports. A VIN check also decodes the year, make and model and lists open recalls. Results take a few seconds, and the first check is free with no credit card."
  },
  {
  q: "Why check a used car before buying in Jacksonville?",
@@ -14,7 +14,7 @@ const FAQS = [
  },
  {
  q: "What does SafeOrStolen check, and where else can I look?",
- a: "SafeOrStolen searches its own theft reports and public web results, and for VINs it adds the decoded year, make, model and open recalls. You can also ask JSO's non-emergency line to run the VIN. For title and lien status, contact FLHSMV or the Duval County Tax Collector."
+ a: "SafeOrStolen searches its own theft reports, and for VINs it adds the decoded year, make, model and open recalls. You can also ask JSO's non-emergency line to run the VIN. For title and lien status, contact FLHSMV or the Duval County Tax Collector."
  },
  {
  q: "Is a license plate lookup enough or should I also check the VIN?",
@@ -37,7 +37,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  <>
  <PageSEO
  title="Free Jacksonville FL License Plate Lookup — Check Stolen Vehicles | SafeOrStolen"
- description="Free Jacksonville, FL license plate lookup. Check a Duval County plate or VIN against SafeOrStolen theft reports and public web results in a few seconds."
+ description="Free Jacksonville, FL license plate lookup. Check a Duval County plate or VIN against SafeOrStolen theft reports in a few seconds."
  canonical="/florida/jacksonville-license-plate-lookup"
  structuredData={[faqSchema]}
  />
@@ -49,7 +49,7 @@ const JacksonvilleLicensePlateLookupPage = () => {
  </div>
  <h1 className="text-4xl md:text-5xl font-black mb-4">Free Jacksonville License Plate Lookup</h1>
  <p className="speakable-summary text-muted-foreground text-lg max-w-2xl mx-auto">
- Buying a used car in Jacksonville? Check the plate and the VIN against SafeOrStolen theft reports and public web results. Results take a few seconds, and the first check is free.
+ Buying a used car in Jacksonville? Check the plate and the VIN against SafeOrStolen theft reports. Results take a few seconds, and the first check is free.
  </p>
  </div>
  </header>

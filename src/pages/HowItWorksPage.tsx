@@ -17,13 +17,13 @@ const SOURCES: { item: string; enter: string; searched: string; extra: string }[
  {
  item: 'Phone or tablet',
  enter: '15-digit IMEI',
- searched: 'SafeOrStolen theft reports and public web results',
+ searched: 'SafeOrStolen theft reports',
  extra: 'Shows the make and model the IMEI belongs to. A paid check can also search the lost/stolen carrier blacklist.',
  },
  {
  item: 'Car, truck or motorcycle',
  enter: '17-character VIN',
- searched: 'SafeOrStolen theft reports and public web results',
+ searched: 'SafeOrStolen theft reports',
  extra: 'Decodes the year, make and model and lists open safety recalls. Arizona VINs are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily.',
  },
  {
@@ -35,19 +35,19 @@ const SOURCES: { item: string; enter: string; searched: string; extra: string }[
  {
  item: 'Gun',
  enter: 'Serial number from the frame or receiver',
- searched: 'SafeOrStolen theft reports and public web results',
+ searched: 'SafeOrStolen theft reports',
  extra: 'more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017), plus live Ohio law-enforcement records. Serials that look altered or obliterated are flagged.',
  },
  {
  item: 'Bicycle or e-bike',
  enter: 'Frame serial number',
- searched: 'SafeOrStolen theft reports and public web results',
+ searched: 'SafeOrStolen theft reports',
  extra: 'A national stolen-bicycle registry.',
  },
  {
  item: 'Laptop, console, camera, tool and anything else with a serial',
  enter: 'Serial number',
- searched: 'SafeOrStolen theft reports and public web results',
+ searched: 'SafeOrStolen theft reports',
  extra: 'Every source is listed on the result, and the check is saved with the date.',
  },
 ];
@@ -74,7 +74,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'How does SafeOrStolen work?',
  answer:
- 'You type in the item\'s identifier: an IMEI for a phone, a VIN for a vehicle, a plate, or a serial number for anything else. SafeOrStolen (safeorstolen.com/how-it-works) searches its own theft reports and public web results, plus extra sources for guns, bikes, Arizona vehicles and paid phone checks. In a few seconds you get one of three results with every source listed, and the check is saved to your account with the date.',
+ 'You type in the item\'s identifier: an IMEI for a phone, a VIN for a vehicle, a plate, or a serial number for anything else. SafeOrStolen (safeorstolen.com/how-it-works) searches its own theft reports, plus extra sources for guns, bikes, Arizona vehicles and paid phone checks. In a few seconds you get one of three results with every source listed, and the check is saved to your account with the date.',
  },
  {
  question: 'Does SafeOrStolen search police databases?',
@@ -89,12 +89,12 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Can SafeOrStolen tell me if a phone is blacklisted?',
  answer:
- 'Yes, with a paid check. A free phone check shows the make and model the IMEI belongs to and searches SafeOrStolen theft reports and public web results. The lost/stolen carrier blacklist search is part of a paid check, and monthly members get up to 20 blacklist checks a month. Before you pay, have the seller sign out of their Apple or Google account in front of you.',
+ 'Yes, with a paid check. A free phone check shows the make and model the IMEI belongs to and searches SafeOrStolen theft reports. The lost/stolen carrier blacklist search is part of a paid check, and monthly members get up to 20 blacklist checks a month. Before you pay, have the seller sign out of their Apple or Google account in front of you.',
  },
  {
  question: 'What does a VIN check show?',
  answer:
- 'A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state. For title brands, accidents, liens or odometer readings, get a vehicle history report and check the state title before you buy a car.',
+ 'A SafeOrStolen VIN check decodes the year, make and model, lists open safety recalls, and searches theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state. For title brands, accidents, liens or odometer readings, get a vehicle history report and check the state title before you buy a car.',
  },
  {
  question: 'Is my check saved, and can I prove I checked?',
@@ -125,7 +125,7 @@ const howToSchema = {
  dateModified: '2026-10-07',
  step: [
  { '@type': 'HowToStep', position: 1, name: 'Enter the number', text: 'Type the IMEI, VIN, plate or serial number into the search box.' },
- { '@type': 'HowToStep', position: 2, name: 'Sources are searched', text: 'SafeOrStolen searches its theft reports and public web results, plus extra sources for guns, bikes, Arizona vehicles and paid phone checks.' },
+ { '@type': 'HowToStep', position: 2, name: 'Sources are searched', text: 'SafeOrStolen searches its theft reports, plus extra sources for guns, bikes, Arizona vehicles and paid phone checks.' },
  { '@type': 'HowToStep', position: 3, name: 'Read the result', text: 'You see "reported stolen", "possible match" or "no report found in the records searched", with every source listed.' },
  { '@type': 'HowToStep', position: 4, name: 'Keep the record', text: 'The check is saved to your account with the date. A $1.99 verification certificate is optional.' },
  ],
@@ -156,7 +156,7 @@ const HowItWorksPage = () => {
 
  <p className="text-lg text-foreground mb-4">
  You enter an item's IMEI, VIN, plate or serial number. SafeOrStolen searches its own theft
- reports and public web results, adds police records for guns and Arizona vehicles, a
+ reports, adds police records for guns and Arizona vehicles, a
  stolen-bicycle registry for bikes and a carrier blacklist on paid phone checks, and shows one of
  three results in a few seconds, with every source it searched. The check is saved to your
  account with the date.

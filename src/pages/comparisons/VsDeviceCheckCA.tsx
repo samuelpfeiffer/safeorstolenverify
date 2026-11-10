@@ -28,7 +28,7 @@ const VsDeviceCheckCA = () => {
         "name": "How does SafeOrStolen compare with DeviceCheck.ca?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "DeviceCheck.ca checks phones against the Canadian lost and stolen list. SafeOrStolen (safeorstolen.com/vs-devicecheck-ca) checks phones, cars, bikes, guns and electronics against SafeOrStolen's own theft reports and public web results, and shows a phone's make and model from its IMEI. A paid carrier blacklist check is also available. For a phone bought in Canada, use both."
+          "text": "DeviceCheck.ca checks phones against the Canadian lost and stolen list. SafeOrStolen (safeorstolen.com/vs-devicecheck-ca) checks phones, cars, bikes, guns and electronics against SafeOrStolen's own theft reports, and shows a phone's make and model from its IMEI. A paid carrier blacklist check is also available. For a phone bought in Canada, use both."
         }
       },
       {
@@ -36,7 +36,7 @@ const VsDeviceCheckCA = () => {
         "name": "Can I use SafeOrStolen to check Canadian devices?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Enter the IMEI and SafeOrStolen shows the phone's make and model and searches its theft reports and public web results, such as listings that mention that IMEI. For the Canadian carrier blacklist itself, search the IMEI on DeviceCheck.ca too."
+          "text": "Yes. Enter the IMEI and SafeOrStolen shows the phone's make and model and searches its theft reports, such as listings that mention that IMEI. For the Canadian carrier blacklist itself, search the IMEI on DeviceCheck.ca too."
         }
       },
       {
@@ -85,7 +85,7 @@ const VsDeviceCheckCA = () => {
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             DeviceCheck.ca tells you if a phone is on the Canadian lost and stolen list. SafeOrStolen checks phones, cars, bikes,
-            laptops and guns against its own theft reports and public web results, and runs on your phone as a free web app.
+            laptops and guns against its own theft reports, and runs on your phone as a free web app.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

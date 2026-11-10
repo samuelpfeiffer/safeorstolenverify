@@ -227,7 +227,7 @@ export const AIFloatingChat: React.FC = () => {
   const runVerification = useCallback(async (identifier: string) => {
     // Oct 21 2026 (owner rule): one place to search everything. Send the search to /verify.
     if (typeof window !== 'undefined') { window.location.href = `/verify?q=${encodeURIComponent(identifier)}`; return; }
-    setMessages(prev => [...prev, { role: 'assistant', content: 'Checking that number against SafeOrStolen theft reports and public web results…' }]);
+    setMessages(prev => [...prev, { role: 'assistant', content: 'Checking that number against SafeOrStolen theft reports…' }]);
     try {
       const { data: detect } = await supabase.functions.invoke('ai-detect-identifier', { body: { input: identifier } });
       const itemType = detect?.type || 'serial';
@@ -297,7 +297,7 @@ export const AIFloatingChat: React.FC = () => {
     if (messages.length === 0) {
       setMessages([{
         role: 'assistant',
-        content: "Hi, I'm the SafeOrStolen AI assistant. **Paste an IMEI, VIN, serial, license plate, or marketplace URL** and I'll check it against SafeOrStolen theft reports and public web results in a few seconds. Or ask me anything about buying used safely.",
+        content: "Hi, I'm the SafeOrStolen AI assistant. **Paste an IMEI, VIN, serial, license plate, or marketplace URL** and I'll check it against SafeOrStolen theft reports in a few seconds. Or ask me anything about buying used safely.",
       }]);
     }
   };

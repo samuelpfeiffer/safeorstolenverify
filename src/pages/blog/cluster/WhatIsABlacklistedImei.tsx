@@ -103,7 +103,7 @@ export default function WhatIsABlacklistedImei() {
             Ask the seller to dial <code>*#06#</code> and send a screenshot. Then run the IMEI
             through a blacklist check before you meet. On SafeOrStolen the blacklist check is a
             paid check, and the <a href="/imei-checker">free IMEI check</a> separately shows the
-            model and searches theft reports and public web results. In the US, CTIA's free
+            model and searches theft reports. In the US, CTIA's free
             Stolen Phone Checker is another place to look; SafeOrStolen doesn't query it for you.
           </p>
           <p>

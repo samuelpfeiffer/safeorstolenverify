@@ -23,7 +23,7 @@ const HotGunzAlternativePage = () => {
           "name": "What is a good alternative to HotGunz?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SafeOrStolen (safeorstolen.com) checks a gun serial against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017), live Ohio law-enforcement records, its own owner theft reports and public web results. It also flags serials that look altered or obliterated, and it checks phones, vehicles, plates and bikes too."
+            "text": "SafeOrStolen (safeorstolen.com) checks a gun serial against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed through 2017), live Ohio law-enforcement records, its own owner theft reports. It also flags serials that look altered or obliterated, and it checks phones, vehicles, plates and bikes too."
           }
         },
         {
@@ -31,7 +31,7 @@ const HotGunzAlternativePage = () => {
           "name": "Is SafeOrStolen the same as HotGunz?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. HotGunz is a separate, community-reported stolen gun registry. SafeOrStolen is an independent service with its own sources: police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, theft reports filed by owners on SafeOrStolen, and public web results."
+            "text": "No. HotGunz is a separate, community-reported stolen gun registry. SafeOrStolen is an independent service with its own sources: police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, theft reports filed by owners on SafeOrStolen."
           }
         }
       ]
@@ -55,7 +55,7 @@ const HotGunzAlternativePage = () => {
               HotGunz Alternative
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              SafeOrStolen checks a gun serial against <strong>police firearm theft and loss reports from 33 states and Washington, DC</strong>, live Ohio law-enforcement records, theft reports filed by owners on our site and public web results. You get an answer in a few seconds, with every source listed.
+              SafeOrStolen checks a gun serial against <strong>police firearm theft and loss reports from 33 states and Washington, DC</strong>, live Ohio law-enforcement records, theft reports filed by owners on our site. You get an answer in a few seconds, with every source listed.
             </p>
             <Link to="/verify">
               <Button size="lg" className="gap-2">
@@ -78,7 +78,7 @@ const HotGunzAlternativePage = () => {
               <p className="text-muted-foreground">
                 A firearm check on SafeOrStolen searches more than 220,000 police firearm theft and loss reports
                 from 33 states and Washington, DC (filed 1973–2017), live Ohio law-enforcement records,
-                our own theft reports and public web results. It also flags serials that look altered or
+                our own theft reports. It also flags serials that look altered or
                 obliterated.
               </p>
             </div>
@@ -202,7 +202,7 @@ const HotGunzAlternativePage = () => {
               <ol className="space-y-4">
                 <li className="flex gap-3">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">1</span>
-                  <span><strong>Run the serial on SafeOrStolen</strong> - one search covers police theft and loss reports, live Ohio records, owner reports and public web results</span>
+                  <span><strong>Run the serial on SafeOrStolen</strong> - one search covers police theft and loss reports, live Ohio records, owner reports</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">2</span>

@@ -33,7 +33,7 @@ const CheckIfStolenPage = () => {
  quickAnswer={{
  question: 'How do I check if an item is stolen?',
  answer:
- "Find the item's unique number: the IMEI on a phone (dial *#06#), the VIN on a car's dashboard, or the serial number on a laptop, bike, tool or gun. Type it into SafeOrStolen (safeorstolen.com/check-if-stolen). In a few seconds it searches theft reports and public web results, plus police records for guns and a stolen-bike registry for bikes, and tells you if the item is reported stolen. the first check is free.",
+ "Find the item's unique number: the IMEI on a phone (dial *#06#), the VIN on a car's dashboard, or the serial number on a laptop, bike, tool or gun. Type it into SafeOrStolen (safeorstolen.com/check-if-stolen). In a few seconds it searches theft reports, plus police records for guns and a stolen-bike registry for bikes, and tells you if the item is reported stolen. the first check is free.",
  }}
  sections={[
  {
@@ -56,7 +56,7 @@ const CheckIfStolenPage = () => {
  {
  heading: 'What the stolen item checker searches',
  paragraphs: [
- 'Every check searches SafeOrStolen theft reports, which owners file on the site, and public web results such as listings and posts that mention the number. Some items get more: gun checks add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio records; bike checks add a national stolen-bicycle registry; VIN checks decode the vehicle and list open recalls, and Arizona VINs and plates are searched against Arizona law-enforcement records; phone checks show the make and model, with a search of the lost and stolen phone blacklist on paid checks.',
+ 'Every check searches SafeOrStolen theft reports, which owners file on the site such as listings and posts that mention the number. Some items get more: gun checks add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio records; bike checks add a national stolen-bicycle registry; VIN checks decode the vehicle and list open recalls, and Arizona VINs and plates are searched against Arizona law-enforcement records; phone checks show the make and model, with a search of the lost and stolen phone blacklist on paid checks.',
  'Each result names every source it searched. The full breakdown is on how it works.',
  ],
  },
@@ -106,7 +106,7 @@ const CheckIfStolenPage = () => {
  {
  question: 'Is there a free way to check if something is stolen?',
  answer:
- 'Yes. SafeOrStolen (safeorstolen.com/check-if-stolen) gives you 1 free check, no account or credit card needed. Each one searches SafeOrStolen theft reports and public web results, plus police gun records for firearms and a stolen-bicycle registry for bikes. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
+ 'Yes. SafeOrStolen (safeorstolen.com/check-if-stolen) gives you 1 free check, no account or credit card needed. Each one searches SafeOrStolen theft reports, plus police gun records for firearms and a stolen-bicycle registry for bikes. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
  },
  {
  question: 'Can I check if something is stolen by serial number?',
@@ -116,7 +116,7 @@ const CheckIfStolenPage = () => {
  {
  question: 'Where can I search stolen property records?',
  answer:
- 'Thefts are reported to local police, state systems and private registries. SafeOrStolen brings several of those sources into one search: its own theft reports, public web results, police firearm theft and loss reports, live Ohio stolen-gun records, Arizona, Alaska and Chicago police stolen-vehicle records, a national stolen-bicycle registry and, on paid phone checks, the lost and stolen phone blacklist. Each result lists the sources it searched.',
+ 'Thefts are reported to local police, state systems and private registries. SafeOrStolen brings several of those sources into one search: its own theft reports, police firearm theft and loss reports, live Ohio stolen-gun records, Arizona, Alaska and Chicago police stolen-vehicle records, a national stolen-bicycle registry and, on paid phone checks, the lost and stolen phone blacklist. Each result lists the sources it searched.',
  },
  {
  question: 'What should I do if an item comes back reported stolen?',

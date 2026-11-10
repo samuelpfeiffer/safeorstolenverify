@@ -56,7 +56,7 @@ const IMEICheckerAppDownload = () => {
     },
     {
       question: "Does the IMEI checker app work offline?",
-      answer: "No. A check searches SafeOrStolen's theft reports and the public web, so it needs a data connection. If you're meeting a seller somewhere with weak signal, run the IMEI from the listing photos or ask the seller for it before you go, then check that it matches the phone at the meetup."
+      answer: "No. A check searches SafeOrStolen's theft reports, so it needs a data connection. If you're meeting a seller somewhere with weak signal, run the IMEI from the listing photos or ask the seller for it before you go, then check that it matches the phone at the meetup."
     },
     {
       question: "Is the SafeOrStolen IMEI checker free?",

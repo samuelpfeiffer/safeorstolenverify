@@ -6,7 +6,7 @@ const JewelryCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Jewelry is Stolen - Diamond, Gold Verification | SafeOrStolen"
-      metaDescription="Check pre-owned jewelry before you buy: search a diamond inscription or engraved number against SafeOrStolen theft reports and public web results. 1 free check."
+      metaDescription="Check pre-owned jewelry before you buy: search a diamond inscription or engraved number against SafeOrStolen theft reports. 1 free check."
       h1="Check if Jewelry is Stolen"
       keywords={[
         'check if jewelry is stolen',
@@ -24,7 +24,7 @@ const JewelryCheck = () => {
       itemType="Jewelry"
       identifierType="Serial Number"
       heroBadge="Jewelry Verification"
-      heroSubtitle="If a diamond has a laser inscription or a piece has an engraved number, you can search it against SafeOrStolen theft reports and public web results before you buy. Your first check is free."
+      heroSubtitle="If a diamond has a laser inscription or a piece has an engraved number, you can search it against SafeOrStolen theft reports before you buy. Your first check is free."
       stats={[
         { value: "2", label: "Free Checks" },
         { value: "$0.99", label: "Per Check After That" },
@@ -32,11 +32,11 @@ const JewelryCheck = () => {
         { value: "Every", label: "Source Listed" }
       ]}
       whatIsTitle="What is Jewelry Verification?"
-      whatIsContent="Some jewelry carries a unique number: a laser inscription on a diamond's girdle (often a GIA or AGS report number), or a serial engraved by the maker. A SafeOrStolen check searches SafeOrStolen's own theft reports and public web results for that number. For plain gold pieces without a unique number, ask the seller for a receipt or appraisal."
+      whatIsContent="Some jewelry carries a unique number: a laser inscription on a diamond's girdle (often a GIA or AGS report number), or a serial engraved by the maker. A SafeOrStolen check searches SafeOrStolen's own theft reports for that number. For plain gold pieces without a unique number, ask the seller for a receipt or appraisal."
       howItWorksSteps={[
         "Find a unique number: a laser inscription on the diamond's girdle (use a 10x loupe) or an engraved serial",
         "Enter the number at safeorstolen.com/verify",
-        "We search SafeOrStolen's theft reports and public web results that mention it",
+        "We search SafeOrStolen's theft reports that mention it",
         "In a few seconds you see the result, with every source listed"
       ]}
       whyVerifyTitle="Why Check Jewelry Before Buying?"
@@ -60,7 +60,7 @@ const JewelryCheck = () => {
         },
         {
           question: "Can I verify engagement rings?",
-          answer: "Yes, if the diamond has a laser inscription. Enter that number at SafeOrStolen (safeorstolen.com/check-jewelry-stolen) to search SafeOrStolen theft reports and public web results, and make sure it matches the grading report the seller hands you."
+          answer: "Yes, if the diamond has a laser inscription. Enter that number at SafeOrStolen (safeorstolen.com/check-jewelry-stolen) to search SafeOrStolen theft reports, and make sure it matches the grading report the seller hands you."
         },
         {
           question: "What about gold and precious metals?",

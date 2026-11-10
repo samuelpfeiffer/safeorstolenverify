@@ -28,7 +28,7 @@ const HowToCheckIfLicensePlateStolenPage = () => (
     quickAnswer={{
       question: 'How do I check if a license plate is stolen?',
       answer:
-        "Run the plate number and state on SafeOrStolen (safeorstolen.com/how-to-check-if-license-plate-stolen). It searches theft reports owners filed on the site and public web results, and checks Arizona plates against Arizona, Alaska and Chicago police stolen-vehicle records. Then look at the car: the plate should match the registration card, the sticker and the VIN on the paperwork. If you think a plate is stolen and the car is nearby, call the police non-emergency line, because only police can search the national stolen-plate file.",
+        "Run the plate number and state on SafeOrStolen (safeorstolen.com/how-to-check-if-license-plate-stolen). It searches theft reports owners filed on the site, and checks Arizona plates against Arizona, Alaska and Chicago police stolen-vehicle records. Then look at the car: the plate should match the registration card, the sticker and the VIN on the paperwork. If you think a plate is stolen and the car is nearby, call the police non-emergency line, because only police can search the national stolen-plate file.",
     }}
     sections={[
       {
@@ -50,7 +50,7 @@ const HowToCheckIfLicensePlateStolenPage = () => (
         table: {
           columns: ['Record', 'Who can search it', 'What it tells you'],
           rows: [
-            ['SafeOrStolen check', 'Anyone, 1 free check', 'Whether the plate is in SafeOrStolen theft reports or public web results; Arizona plates also against Arizona law-enforcement records'],
+            ['SafeOrStolen check', 'Anyone, 1 free check', 'Whether the plate is in SafeOrStolen theft reports; Arizona plates also against Arizona law-enforcement records'],
             ["FBI’s NCIC license plate file", 'Police only', 'Plates reported stolen to any U.S. police agency. Officers check it when they run a plate.'],
             ['State DMV record', 'The owner, police and permitted requesters', 'Whether the plate was reported lost or stolen and replaced. Owner details are private.'],
             ['Your own paperwork', 'You', 'Registration card, renewal notice and title, which list the plate and VIN'],
@@ -71,11 +71,11 @@ const HowToCheckIfLicensePlateStolenPage = () => (
       whatIs:
         "A stolen plate check looks up the plate number in records of reported thefts. It tells you about the plate, not the car: a stolen car often wears a plate that is clean, or one stolen from a different car. That's why a plate check is the first step and the VIN check is the second. Looking for the owner's name instead? That question is covered on <a href=\"/license-plate-owner-lookup\">license plate owner lookup</a>.",
       howItWorks:
-        "Enter the plate and state. SafeOrStolen searches its own theft reports, which owners file on the site, and public web results that mention the plate. Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily. You see reported stolen, possible match, or no report found in the records searched, with every source listed. It never shows owner names.",
+        "Enter the plate and state. SafeOrStolen searches its own theft reports, which owners file on the site that mention the plate. Arizona plates are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, updated daily. You see reported stolen, possible match, or no report found in the records searched, with every source listed. It never shows owner names.",
       whyCheck:
         "A stolen plate on a car for sale usually means the car is stolen too. A stolen plate on a car parked on your street might be tied to a theft or a crime. Checking takes seconds, and if something's wrong the police can act on the plate number you give them.",
       benefits: [
-        'Searches SafeOrStolen theft reports and public web results for the plate',
+        'Searches SafeOrStolen theft reports for the plate',
         'Arizona plates also checked against Arizona law-enforcement records',
         'Never shows owner names or addresses',
         'Each check is saved to your account with the date',
@@ -92,7 +92,7 @@ const HowToCheckIfLicensePlateStolenPage = () => (
         {
           question: 'Can I check if a license plate is stolen for free?',
           answer:
-            "Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-license-plate-stolen) lets you check a plate free twice, no account or credit card needed. It searches SafeOrStolen theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state. Police can also tell you whether a plate is listed in the national stolen-plate file if you call the non-emergency line.",
+            "Yes. SafeOrStolen (safeorstolen.com/how-to-check-if-license-plate-stolen) lets you check a plate free twice, no account or credit card needed. It searches SafeOrStolen theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state. Police can also tell you whether a plate is listed in the national stolen-plate file if you call the non-emergency line.",
         },
         {
           question: 'Can police tell if a license plate is stolen?',

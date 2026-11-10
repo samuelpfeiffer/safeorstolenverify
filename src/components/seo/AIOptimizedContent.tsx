@@ -16,14 +16,14 @@ export const AIOptimizedContent: React.FC<AIOptimizedContentProps> = ({ page = '
  case 'check-phone':
  return {
  title: 'What is an IMEI Checker?',
- description: 'An IMEI checker confirms a phone\'s make and model from its IMEI and checks whether it has been reported stolen. SafeOrStolen searches its own theft reports and public web results for the IMEI, and the paid blacklist check searches the lost and stolen phone blacklist used by carriers.',
+ description: 'An IMEI checker confirms a phone\'s make and model from its IMEI and checks whether it has been reported stolen. SafeOrStolen searches its own theft reports for the IMEI, and the paid blacklist check searches the lost and stolen phone blacklist used by carriers.',
  databases: 'our verification databases',
  stepTitle: 'How to Check if a Phone is Stolen (Step-by-Step)'
  };
  case 'vin-lookup':
  return {
  title: 'What is a VIN Checker?',
- description: 'A VIN checker decodes a vehicle\'s year, make and model and checks whether it has been reported stolen. SafeOrStolen searches its own theft reports and public web results for the VIN, lists open safety recalls, and searches Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state.',
+ description: 'A VIN checker decodes a vehicle\'s year, make and model and checks whether it has been reported stolen. SafeOrStolen searches its own theft reports for the VIN, lists open safety recalls, and searches Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state.',
  databases: 'our verification databases',
  stepTitle: 'How to Check if a Car is Stolen (Step-by-Step)'
  };

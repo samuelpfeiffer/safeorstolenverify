@@ -29,7 +29,7 @@ function GuidePage() {
       quickAnswer={{
         question: 'How do I check if a watch is stolen by its serial number?',
         answer:
-          "Get the serial from the watch itself (on most brands, the case back or between the lugs; on modern Rolex, the inner ring at 6 o'clock) and enter it on SafeOrStolen (safeorstolen.com/check-watch-stolen). It searches theft reports and public web results in a few seconds, and the first check is free. Then match the serial to the warranty card and box. Papers that don't match the watch are a reason to walk away.",
+          "Get the serial from the watch itself (on most brands, the case back or between the lugs; on modern Rolex, the inner ring at 6 o'clock) and enter it on SafeOrStolen (safeorstolen.com/check-watch-stolen). It searches theft reports in a few seconds, and the first check is free. Then match the serial to the warranty card and box. Papers that don't match the watch are a reason to walk away.",
       }}
       sections={[
         {
@@ -70,12 +70,12 @@ function GuidePage() {
         whatIs:
           'A stolen watch check looks for theft reports tied to the watch\'s serial number. Owners give the serial to the police and their insurer when a watch is stolen, and can report it on SafeOrStolen. For rings, diamonds and other jewelry without serial numbers, see the <a href="/check-jewelry">jewelry check guide</a>.',
         howItWorks:
-          "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. For an expensive watch, you can also ask a dealer to run a trade check.",
+          "Type the serial number into the search box. SafeOrStolen searches its own theft reports that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. For an expensive watch, you can also ask a dealer to run a trade check.",
         whyCheck:
           "A watch is small, valuable and easy to sell, and when police recover a stolen one it goes back to the owner. A buyer who paid for it loses the money. A serial check plus a papers match gives a private buyer a solid basis to decide.",
         benefits: [
           'Works for Rolex, Omega, TAG Heuer, Cartier, Apple Watch and any watch with a serial',
-          'Searches SafeOrStolen theft reports and public web results',
+          'Searches SafeOrStolen theft reports',
           'Results in a few seconds with every source listed',
           'Optional $1.99 verification certificate showing you checked before the sale',
           '1 free check with no credit card',
@@ -91,7 +91,7 @@ function GuidePage() {
           {
             question: 'Is there a free stolen watch check by serial number?',
             answer:
-              'Yes. SafeOrStolen (safeorstolen.com/check-watch-stolen) checks a watch serial number against its theft reports and public web results free for your first check, with no credit card. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
+              'Yes. SafeOrStolen (safeorstolen.com/check-watch-stolen) checks a watch serial number against its theft reports free for your first check, with no credit card. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
           },
           {
             question: 'Where is the serial number on a Rolex?',
@@ -101,7 +101,7 @@ function GuidePage() {
           {
             question: 'Is there a stolen watch database?',
             answer:
-              "There is no single public database. Owners report thefts to the police and their insurer, and the watch trade keeps registries of lost and stolen watches that dealers can search. Buyers can check a serial on SafeOrStolen, which searches its theft reports and public web results, and ask a dealer to run a trade check.",
+              "There is no single public database. Owners report thefts to the police and their insurer, and the watch trade keeps registries of lost and stolen watches that dealers can search. Buyers can check a serial on SafeOrStolen, which searches its theft reports, and ask a dealer to run a trade check.",
           },
           {
             question: 'Can I check if an Apple Watch is stolen?',

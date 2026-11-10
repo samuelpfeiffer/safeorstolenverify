@@ -75,7 +75,7 @@ const HowToVerifyAUsedItemPage = () => (
  whatIs:
  'Verifying a used item means confirming three things before money changes hands: the item has not been reported stolen, the number on it matches what the seller advertised, and the seller can hand it over free of their account or title. A stolen check covers the first. The other two you confirm with your own eyes at the meetup.',
  howItWorks:
- 'Get the serial number, IMEI or VIN from the seller as a photo, and enter it in the box above. SafeOrStolen searches its theft reports and public web results, plus police gun records for guns, a stolen-bicycle registry for bikes and Arizona law-enforcement records for Arizona vehicles, and lists every source. Then run the meetup checks in the table above.',
+ 'Get the serial number, IMEI or VIN from the seller as a photo, and enter it in the box above. SafeOrStolen searches its theft reports, plus police gun records for guns, a stolen-bicycle registry for bikes and Arizona law-enforcement records for Arizona vehicles, and lists every source. Then run the meetup checks in the table above.',
  whyCheck:
  "If you buy something that was stolen, the police can return it to the owner and you are out the money. A phone locked to someone else's account can't be set up at all. Doing these checks before you pay is the only time they help; after the sale, the seller has stopped answering.",
  benefits: [

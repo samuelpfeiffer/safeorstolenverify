@@ -122,7 +122,7 @@ async function verifyViaApp(ctx, input) {
 var verify_imei_default = defineTool2({
   name: "verify_imei",
   title: "Verify phone IMEI",
-  description: "Check a 15-digit phone IMEI against SafeOrStolen's stolen-item reports, public web results, and AI analysis. Returns a status (safe / stolen / unknown) with any known metadata.",
+  description: "Check a 15-digit phone IMEI against SafeOrStolen's stolen-item reports. Returns a status (safe / stolen / unknown) with any known metadata.",
   inputSchema: {
     imei: z2.string().describe("A 15-digit IMEI. Digits only; SafeOrStolen strips spaces and dashes.")
   },

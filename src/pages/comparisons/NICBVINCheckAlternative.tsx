@@ -39,7 +39,7 @@ const NICBVINCheckAlternative = () => {
         mobileApp: true,
         instantResults: true,
         freeTier: '1 free check',
-        database: 'SafeOrStolen theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records',
+        database: 'SafeOrStolen theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records',
         itemTypes: 'Cars, phones, bikes, tools, etc.'
       },
       pros: [
@@ -149,7 +149,7 @@ const NICBVINCheckAlternative = () => {
                 <CardContent className="space-y-6">
                   <p className="text-lg">
                     SafeOrStolen verifies vehicles plus phones, bikes, tools, and any item with a serial
-                    number — six item types in one platform, each searched against SafeOrStolen theft reports and public web results, with Arizona VINs also checked against Arizona, Alaska and Chicago police stolen-vehicle records.
+                    number — six item types in one platform, each searched against SafeOrStolen theft reports, with Arizona VINs also checked against Arizona, Alaska and Chicago police stolen-vehicle records.
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-6">
@@ -328,11 +328,11 @@ const NICBVINCheckAlternative = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Do I need NICB VINCheck too?</h3>
                     <p className="text-muted-foreground mb-3">
-                      No. SafeOrStolen searches police stolen-vehicle records from Arizona, Alaska and Chicago, its own theft reports and public web results for a vehicle from any state, and decodes the VIN with open recalls, all in one search.
+                      No. SafeOrStolen searches police stolen-vehicle records from Arizona, Alaska and Chicago, its own theft reports for a vehicle from any state, and decodes the VIN with open recalls, all in one search.
                     </p>
                     <h3 className="font-semibold mb-2">What does a SafeOrStolen VIN check search?</h3>
                     <p className="text-muted-foreground">
-                      Every check searches SafeOrStolen's own theft reports and public web results. Arizona VINs and plates
+                      Every check searches SafeOrStolen's own theft reports. Arizona VINs and plates
                       are also searched against Arizona, Alaska and Chicago police stolen-vehicle records, bike checks add a national
                       stolen-bicycle registry, and gun checks add police firearm theft and loss reports from 33 states and
                       Washington, DC, plus live Ohio law-enforcement records.

@@ -7,7 +7,7 @@ export const QuestionBasedContent = () => {
  const questions = [
  {
  question: "How to check if a phone is stolen before buying?",
- answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone reports. Enter the 15-digit IMEI into our checker and get instant results. Our system checks SafeOrStolen's reports, public web results, and uses AI analysis to help you understand if a phone is likely stolen. 1 free check, then $0.99 for 2 checks or $10/month unlimited.",
+ answer: "Use the IMEI number (dial *#06# on the phone) to verify against our stolen phone reports. Enter the 15-digit IMEI into our checker and get instant results. Our system checks SafeOrStolen's reports and uses AI analysis to help you understand if a phone is likely stolen. 1 free check, then $0.99 for 2 checks or $10/month unlimited.",
  icon: Search,
  link: "/verify"
  },
@@ -19,13 +19,13 @@ export const QuestionBasedContent = () => {
  },
  {
  question: "How do I verify a car isn't stolen?",
- answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our search. We check SafeOrStolen's reports, public web results, and use AI analysis to help you understand if a vehicle is likely stolen. Results in 3 seconds. From $0.99 for 2 checks.",
+ answer: "Check the VIN (Vehicle Identification Number) found on the dashboard or driver's door. Enter the 17-character VIN into our search. We check SafeOrStolen's reports and use AI analysis to help you understand if a vehicle is likely stolen. Results in 3 seconds. From $0.99 for 2 checks.",
  icon: Shield,
  link: "/verify"
  },
  {
  question: "Is there a free database to check stolen items?",
- answer: "Yes! SafeOrStolen offers 1 free check, then $0.99 for 2 checks or $10/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against SafeOrStolen's reports, public web results, and use AI analysis to help you understand if an item is likely stolen.",
+ answer: "Yes! SafeOrStolen offers 1 free check, then $0.99 for 2 checks or $10/month unlimited. We check IMEI numbers, VIN numbers, and serial numbers against SafeOrStolen's reports and use AI analysis to help you understand if an item is likely stolen.",
  icon: CheckCircle2,
  link: "/verify"
  }

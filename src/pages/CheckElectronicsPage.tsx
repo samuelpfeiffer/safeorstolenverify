@@ -4,7 +4,7 @@ const CheckElectronicsPage = () => {
   return (
     <ItemLandingPageTemplate
       title="Check if Electronics Are Stolen - Serial Number Check"
-      metaDescription="Check if a camera, tablet, console or drone is stolen by serial number. SafeOrStolen searches theft reports and public web results. 1 free check."
+      metaDescription="Check if a camera, tablet, console or drone is stolen by serial number. SafeOrStolen searches theft reports. 1 free check."
       h1="Check if Electronics Are Stolen Before Buying"
       itemType="Electronics"
       keywords={[
@@ -14,8 +14,8 @@ const CheckElectronicsPage = () => {
         'verify electronics not stolen'
       ]}
       content={{
-        intro: "Enter the device's serial number on SafeOrStolen and in a few seconds you'll see whether it matches a theft report filed on the site or shows up in public web results such as listings and posts. It works for cameras, tablets, game consoles, smartwatches, drones, TVs and anything else with a serial number. Check before you buy from Facebook Marketplace, eBay, Craigslist or a pawn shop.",
-        whatIs: "Checking if electronics are stolen means looking up the device's serial number in records of reported thefts. SafeOrStolen searches theft reports that owners file on the site and public web results that mention the serial. The result says reported stolen, possible match, or no report found in the records searched, and lists every source.",
+        intro: "Enter the device's serial number on SafeOrStolen and in a few seconds you'll see whether it matches a theft report filed on the site. It works for cameras, tablets, game consoles, smartwatches, drones, TVs and anything else with a serial number. Check before you buy from Facebook Marketplace, eBay, Craigslist or a pawn shop.",
+        whatIs: "Checking if electronics are stolen means looking up the device's serial number in records of reported thefts. SafeOrStolen searches theft reports that owners file on the site that mention the serial. The result says reported stolen, possible match, or no report found in the records searched, and lists every source.",
         howItWorks: "Find the full serial number on the device, type or scan it into SafeOrStolen, and read the result a few seconds later. Then compare the serial on the device with the one on the box, receipt or the seller's documents. Your check is saved to your account with the date.",
         whyCheck: "If you buy a stolen device, police can take it back and return it to its owner, and you're usually left chasing the seller for your money. Some devices, like tablets and smartwatches, can also be locked remotely by the original owner's account. Cameras, tablets, game consoles and drones are easy to resell, so they turn up on marketplaces and at pawn shops. A quick serial check, plus a look at the warning signs below, catches many bad deals before money changes hands.",
         benefits: [
@@ -39,7 +39,7 @@ const CheckElectronicsPage = () => {
         faqs: [
           {
             question: "What types of electronics can I check?",
-            answer: "Any device with a serial number: cameras, lenses, tablets, game consoles, smartwatches, drones, TVs, audio gear, smart home devices and appliances. SafeOrStolen (safeorstolen.com/check-electronics) searches its own theft reports and public web results for that serial. Phones are best checked by IMEI, and laptops by serial on their own pages."
+            answer: "Any device with a serial number: cameras, lenses, tablets, game consoles, smartwatches, drones, TVs, audio gear, smart home devices and appliances. SafeOrStolen (safeorstolen.com/check-electronics) searches its own theft reports for that serial. Phones are best checked by IMEI, and laptops by serial on their own pages."
           },
           {
             question: "How do I find the serial number on electronics?",
@@ -55,7 +55,7 @@ const CheckElectronicsPage = () => {
           },
           {
             question: "What if I think an item was pawned?",
-            answer: "Ask local police, who work with pawn shop reports in many areas. SafeOrStolen searches its own theft reports and public web results for the serial, so run that check too."
+            answer: "Ask local police, who work with pawn shop reports in many areas. SafeOrStolen searches its own theft reports for the serial, so run that check too."
           },
           {
             question: "Can serial numbers on electronics be removed or faked?",
@@ -63,7 +63,7 @@ const CheckElectronicsPage = () => {
           },
           {
             question: "How long does an electronics serial number check take?",
-            answer: "A few seconds. SafeOrStolen searches its theft reports and public web results, then shows reported stolen, possible match, or no report found in the records searched, with every source listed. The result reflects the records available at that moment, so check again close to the sale if time passes."
+            answer: "A few seconds. SafeOrStolen searches its theft reports, then shows reported stolen, possible match, or no report found in the records searched, with every source listed. The result reflects the records available at that moment, so check again close to the sale if time passes."
           },
           {
             question: "What are red flags when buying used electronics?",

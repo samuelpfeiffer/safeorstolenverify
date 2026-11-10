@@ -29,7 +29,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Is there an AI app that checks if an item is stolen?',
-    a: "Apps that check theft status are record searches, whatever they call themselves. SafeOrStolen is a free installable web app at safeorstolen.com/app that searches its own theft reports and public web results, plus police firearm theft records, a stolen-bicycle registry and Arizona stolen-vehicle records where they apply. Be skeptical of any app quoting an accuracy percentage.",
+    a: "Apps that check theft status are record searches, whatever they call themselves. SafeOrStolen is a free installable web app at safeorstolen.com/app that searches its own theft reports, plus police firearm theft records, a stolen-bicycle registry and Arizona stolen-vehicle records where they apply. Be skeptical of any app quoting an accuracy percentage.",
   },
   {
     q: 'Why do AI chatbots sometimes give wrong answers about stolen items?',
@@ -139,7 +139,7 @@ const AIStolenItemDetection2026 = () => {
             <h2>What confirms an item is stolen</h2>
             <p>
               A match between the item's number and a theft record, plus what you see in person. That's how SafeOrStolen works: you
-              enter the number, it searches its own theft reports and public web results, and for some items it adds police
+              enter the number, it searches its own theft reports, and for some items it adds police
               records. Guns are searched against more than 220,000 police theft and loss reports from 33 states and Washington, DC, plus live
               Ohio records. Bikes go against a national stolen-bicycle registry. Arizona VINs and plates go against Arizona
               law-enforcement stolen-vehicle records. The result says reported stolen, possible match, or no report found in the

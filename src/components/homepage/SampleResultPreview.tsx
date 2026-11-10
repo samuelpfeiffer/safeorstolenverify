@@ -17,7 +17,7 @@ export const SampleResultPreview = () => {
  What a check shows you
  </h2>
  <p className="text-muted-foreground max-w-xl mx-auto">
- Here's a sample phone check. Every check searches SafeOrStolen's own theft reports and public web results,
+ Here's a sample phone check. Every check searches SafeOrStolen's own theft reports,
  lists every source it searched, and comes back in a few seconds.
  </p>
  </div>

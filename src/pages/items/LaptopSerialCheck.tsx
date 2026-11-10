@@ -6,7 +6,7 @@ const LaptopSerialCheck = () => {
   return (
     <SEOLandingPageTemplate
       title="Check if Laptop is Stolen - Free Serial Number Verification | SafeOrStolen"
-      metaDescription="Check a used laptop's serial number before you buy. SafeOrStolen searches its theft reports and public web results for MacBook, Dell, HP, Lenovo and ASUS."
+      metaDescription="Check a used laptop's serial number before you buy. SafeOrStolen searches its theft reports for MacBook, Dell, HP, Lenovo and ASUS."
       h1="Check if Laptop is Stolen - Free Serial Number Verification"
       keywords={[
         'check if laptop is stolen',
@@ -24,7 +24,7 @@ const LaptopSerialCheck = () => {
       itemType="Laptop"
       identifierType="Serial Number"
       heroBadge="Laptop Theft Verification"
-      heroSubtitle="Before you pay for a used MacBook, Dell, HP or Lenovo, check its serial number against SafeOrStolen theft reports and public web results. The result comes back in a few seconds."
+      heroSubtitle="Before you pay for a used MacBook, Dell, HP or Lenovo, check its serial number against SafeOrStolen theft reports. The result comes back in a few seconds."
       stats={[
         { value: "2", label: "Free Checks" },
         { value: "$0.99", label: "Per Check After That" },
@@ -32,11 +32,11 @@ const LaptopSerialCheck = () => {
         { value: "Every", label: "Source Listed" }
       ]}
       whatIsTitle="What is Laptop Serial Number Verification?"
-      whatIsContent="Every laptop has a serial number from the manufacturer. When an owner reports a theft on SafeOrStolen, that serial is logged, and stolen laptops often get mentioned in posts and listings online. A SafeOrStolen laptop check searches SafeOrStolen's own theft reports and public web results for the serial. At the meetup, also watch the seller sign out and erase the laptop so you can see it isn't locked."
+      whatIsContent="Every laptop has a serial number from the manufacturer. When an owner reports a theft on SafeOrStolen, that serial is logged, and stolen laptops often get mentioned in posts and listings online. A SafeOrStolen laptop check searches SafeOrStolen's own theft reports for the serial. At the meetup, also watch the seller sign out and erase the laptop so you can see it isn't locked."
       howItWorksSteps={[
         "Find the serial number: on a Mac, Apple menu > About This Mac; on Windows, Settings > System > About, or the sticker on the bottom",
         "Enter the serial number at safeorstolen.com/verify",
-        "We search SafeOrStolen's theft reports and public web results that mention the serial",
+        "We search SafeOrStolen's theft reports that mention the serial",
         "In a few seconds you see \"reported stolen\", \"possible match\" or \"no report found in the records searched\", with every source listed"
       ]}
       howItWorksDescription="The serial check is one step. At the meetup, also make sure the serial in the system settings matches the sticker, and watch the seller sign out of their Apple ID or Microsoft account and erase the laptop."
@@ -71,7 +71,7 @@ const LaptopSerialCheck = () => {
         },
         {
           question: "Can I check a MacBook serial number?",
-          answer: "Yes. Enter the MacBook's serial at SafeOrStolen (safeorstolen.com/check-laptop-stolen) and it searches SafeOrStolen theft reports and public web results. Before you pay, also have the seller sign out of their Apple ID and erase the Mac in front of you."
+          answer: "Yes. Enter the MacBook's serial at SafeOrStolen (safeorstolen.com/check-laptop-stolen) and it searches SafeOrStolen theft reports. Before you pay, also have the seller sign out of their Apple ID and erase the Mac in front of you."
         },
         {
           question: "What is MacBook Activation Lock?",
@@ -83,7 +83,7 @@ const LaptopSerialCheck = () => {
         },
         {
           question: "What brands of laptops can I check?",
-          answer: "Any brand with a serial number: Apple, Dell, HP, Lenovo, ASUS, Acer, Microsoft Surface, Razer, MSI, Samsung and others. The check searches SafeOrStolen theft reports and public web results for that serial."
+          answer: "Any brand with a serial number: Apple, Dell, HP, Lenovo, ASUS, Acer, Microsoft Surface, Razer, MSI, Samsung and others. The check searches SafeOrStolen theft reports for that serial."
         },
         {
           question: "What if the laptop is reported stolen?",

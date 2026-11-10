@@ -45,7 +45,7 @@ const FreeTools = () => {
           </ul>
           
           <h2>Need Full Stolen Check?</h2>
-          <p>A full SafeOrStolen check searches theft reports and public web results, with a paid blacklist check for phones. Your first check is free, no account needed.</p>
+          <p>A full SafeOrStolen check searches theft reports, with a paid blacklist check for phones. Your first check is free, no account needed.</p>
         </div>
       </noscript>
       <div className="min-h-screen bg-background pt-20">
@@ -98,7 +98,7 @@ const FreeTools = () => {
                   <h2 className="text-2xl font-bold mb-2">Need Full Stolen Check?</h2>
                   <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
                     Format validation only checks that the number is built correctly. A full
-                    check searches SafeOrStolen theft reports and public web results, and a
+                    check searches SafeOrStolen theft reports, and a
                     paid blacklist check is available for phones.
                   </p>
                   <div className="flex flex-wrap justify-center gap-4">

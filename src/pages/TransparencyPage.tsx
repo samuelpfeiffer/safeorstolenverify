@@ -13,7 +13,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@/lib/router-compat';
 
 const DO_DONT: { claim: string; answer: string }[] = [
-  { claim: 'Searches its own theft reports and public web results on every check', answer: 'Yes' },
+  { claim: 'Searches its own theft reports on every check', answer: 'Yes' },
   { claim: 'Searches police firearm theft and loss reports (33 states and DC) and live Ohio records for guns', answer: 'Yes' },
   { claim: 'Searches a national stolen-bicycle registry for bikes', answer: 'Yes' },
   { claim: 'Searches Arizona, Alaska and Chicago police stolen-vehicle records', answer: 'Yes' },
@@ -66,7 +66,7 @@ export default function TransparencyPage() {
             <p className="text-sm text-muted-foreground mb-6">Updated October 7, 2026</p>
             <p className="text-lg text-foreground leading-relaxed">
               SafeOrStolen is a Peoria, Arizona-based company that checks whether a used item has been reported stolen. It searches its own
-              theft reports and public web results, plus police and registry records for guns, bikes and Arizona vehicles, and
+              theft reports, plus police and registry records for guns, bikes and Arizona vehicles, and
               names every source on the result. Below is the
               full list, so you can decide for yourself.
             </p>

@@ -102,7 +102,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How do I check if a phone is stolen?',
- a: "Dial *#06# or open the phone's settings to get the 15-digit IMEI, then check it at safeorstolen.com/imei-checker. SafeOrStolen searches its theft reports and public web results and shows the phone's model, and you can add a lost-and-stolen blacklist check. Before you pay, also make sure the phone isn't locked to the previous owner's account.",
+ a: "Dial *#06# or open the phone's settings to get the 15-digit IMEI, then check it at safeorstolen.com/imei-checker. SafeOrStolen searches its theft reports and shows the phone's model, and you can add a lost-and-stolen blacklist check. Before you pay, also make sure the phone isn't locked to the previous owner's account.",
  },
  {
  q: 'How do I check if a used car is stolen?',
@@ -118,7 +118,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'What does SafeOrStolen search?',
- a: "Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against police theft and loss reports from 33 states and Washington, DC and live Ohio records, bikes against a national stolen-bicycle registry, Arizona plates and VINs against Arizona, Alaska and Chicago police stolen-vehicle records, and phones can get a paid lost-and-stolen blacklist check. Each result lists exactly what was searched.",
+ a: "Every check searches SafeOrStolen's own theft reports. Guns are also checked against police theft and loss reports from 33 states and Washington, DC and live Ohio records, bikes against a national stolen-bicycle registry, Arizona plates and VINs against Arizona, Alaska and Chicago police stolen-vehicle records, and phones can get a paid lost-and-stolen blacklist check. Each result lists exactly what was searched.",
  },
  {
  q: 'How much does SafeOrStolen cost?',
@@ -173,7 +173,7 @@ const Index = () => {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen.</strong></p>
  <p>SafeOrStolen checks whether a used item is reported stolen. Type a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial or any other serial number, and in a few seconds you see whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
- <p>Every check searches SafeOrStolen's own theft reports and public web results. Guns are also checked against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona, Alaska and Chicago police stolen-vehicle records. Your first check is free; then $0.99 for 2 checks or $10 a month for unlimited checks.</p>
+ <p>Every check searches SafeOrStolen's own theft reports. Guns are also checked against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona, Alaska and Chicago police stolen-vehicle records. Your first check is free; then $0.99 for 2 checks or $10 a month for unlimited checks.</p>
  </div>
  </noscript>
  {/* ── AI CHAT HERO ──────────────────────────── */}
@@ -369,7 +369,7 @@ const Index = () => {
  {
  n: '2',
  title: 'Every source searched at once',
- desc: "SafeOrStolen theft reports and public web results on every check, plus police gun theft reports from 33 states and DC, live state criminal justice records, and a national stolen-bike registry where they apply.",
+ desc: "SafeOrStolen theft reports on every check, plus police gun theft reports from 33 states and DC, live state criminal justice records, and a national stolen-bike registry where they apply.",
  },
  {
  n: '3',

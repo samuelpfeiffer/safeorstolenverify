@@ -9,7 +9,7 @@ const StolenCheckLosAngeles = () => {
  const faqs = [
  {
  question: "How do I check if a used car in Los Angeles is stolen?",
- answer: "Type the 17-character VIN into SafeOrStolen (safeorstolen.com/stolen-check-los-angeles links to the checker). It decodes the year, make and model, lists open recalls, and searches SafeOrStolen theft reports and public web results. Then match the VIN on the dashboard, driver's door sticker and title, and make sure the title name matches the seller's ID."
+ answer: "Type the 17-character VIN into SafeOrStolen (safeorstolen.com/stolen-check-los-angeles links to the checker). It decodes the year, make and model, lists open recalls, and searches SafeOrStolen theft reports. Then match the VIN on the dashboard, driver's door sticker and title, and make sure the title name matches the seller's ID."
  },
  {
  question: "Where should I meet sellers in LA to buy used items?",

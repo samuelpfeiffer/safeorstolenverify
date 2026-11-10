@@ -24,14 +24,14 @@ const IsMyIPhoneStolenPage = () => {
  'iphone imei check stolen'
  ]}
  content={{
- intro: "To check if an iPhone is stolen, get its IMEI by dialing *#06# or opening Settings > General > About, and enter it on SafeOrStolen. In a few seconds you see the phone's make and model and whether that IMEI appears in SafeOrStolen theft reports or public web results. Then, in person, make sure the seller signs out of their Apple ID so Activation Lock is off.",
- whatIs: "Every iPhone has a 15-digit IMEI (two on dual-SIM models) and a serial number. When an owner reports a theft on SafeOrStolen, the IMEI goes into SafeOrStolen's theft reports. Owners also post stolen phones online, and those posts can show up in the public web results a check searches. Separately, the owner's carrier can put the IMEI on a lost/stolen blacklist, and Apple's Activation Lock ties the phone to the owner's Apple ID. A SafeOrStolen check covers the first two; a paid blacklist check covers the carrier blacklist; only the seller can prove Activation Lock is off.",
- howItWorks: "Type the IMEI into the box above. SafeOrStolen reads the make and model from the IMEI, so you can confirm it really is the iPhone model being sold. It then searches SafeOrStolen's own theft reports and public web results for that IMEI. The result says \"reported stolen\", \"possible match\" or \"no report found in the records searched\" and lists every source it checked. If you want the carrier lost/stolen blacklist too, run the paid blacklist check. SafeOrStolen does not see Apple ID or Activation Lock status, so check that on the phone itself.",
+ intro: "To check if an iPhone is stolen, get its IMEI by dialing *#06# or opening Settings > General > About, and enter it on SafeOrStolen. In a few seconds you see the phone's make and model and whether that IMEI appears in SafeOrStolen theft reports. Then, in person, make sure the seller signs out of their Apple ID so Activation Lock is off.",
+ whatIs: "Every iPhone has a 15-digit IMEI (two on dual-SIM models) and a serial number. When an owner reports a theft on SafeOrStolen, the IMEI goes into SafeOrStolen's theft reports. Separately, the owner's carrier can put the IMEI on a lost/stolen blacklist, and Apple's Activation Lock ties the phone to the owner's Apple ID. A SafeOrStolen check covers the first two; a paid blacklist check covers the carrier blacklist; only the seller can prove Activation Lock is off.",
+ howItWorks: "Type the IMEI into the box above. SafeOrStolen reads the make and model from the IMEI, so you can confirm it really is the iPhone model being sold. It then searches SafeOrStolen's own theft reports for that IMEI. The result says \"reported stolen\", \"possible match\" or \"no report found in the records searched\" and lists every source it checked. If you want the carrier lost/stolen blacklist too, run the paid blacklist check. SafeOrStolen does not see Apple ID or Activation Lock status, so check that on the phone itself.",
  whyCheck: "A stolen iPhone can stop working after you pay for it. The owner can put it in Lost Mode or erase it from Find My, a carrier blacklist can cut off service, and police can take it back for the owner without refunding you. Stolen iPhones turn up on Facebook Marketplace, Craigslist, OfferUp and eBay, usually with a story about an upgrade or a gift. Checking the IMEI and watching the seller sign out of iCloud before you hand over money is the cheapest protection you have.",
  benefits: [
  "Works for any iPhone with an IMEI, from older models to the newest",
  "Shows the make and model the IMEI belongs to, so you can spot a swapped or fake listing",
- "Searches SafeOrStolen theft reports and public web results for that IMEI",
+ "Searches SafeOrStolen theft reports for that IMEI",
  "Optional paid check against the carrier lost/stolen blacklist",
  "1 free check, no account or credit card needed",
  "Every check is saved to your account with the date"
@@ -47,7 +47,7 @@ const IsMyIPhoneStolenPage = () => {
  faqs: [
  {
  question: "How do I check if an iPhone is stolen using the IMEI?",
- answer: "Dial *#06# on the iPhone or open Settings > General > About to see the IMEI. Enter the 15 digits on SafeOrStolen (safeorstolen.com). In a few seconds it shows the make and model and whether the IMEI appears in SafeOrStolen theft reports or public web results, with each source listed. A paid blacklist check adds the carrier lost/stolen list."
+ answer: "Dial *#06# on the iPhone or open Settings > General > About to see the IMEI. Enter the 15 digits on SafeOrStolen (safeorstolen.com). In a few seconds it shows the make and model and whether the IMEI appears in SafeOrStolen theft reports, with each source listed. A paid blacklist check adds the carrier lost/stolen list."
  },
  {
  question: "What is iCloud Activation Lock and why does it matter?",

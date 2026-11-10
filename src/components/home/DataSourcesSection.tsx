@@ -62,7 +62,7 @@ export const DataSourcesSection = () => {
  How We Verify Every Item
  </h2>
  <p className="text-muted-foreground max-w-2xl mx-auto">
- We check <strong>SafeOrStolen reports, public web results, and AI analysis</strong> to help you review an item before buying or selling
+ We check <strong>SafeOrStolen reports and AI analysis</strong> to help you review an item before buying or selling
  </p>
  </div>
  

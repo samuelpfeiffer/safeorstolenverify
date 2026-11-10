@@ -280,7 +280,7 @@ const ScamCheckerPage: React.FC = () => {
           <h2 className="text-2xl font-bold text-foreground mb-3">Then check the item itself</h2>
           <p className="text-muted-foreground mb-4">
             A clean-looking listing can still be selling a stolen phone or bike. Ask for the serial number, IMEI or VIN and
-            check it. SafeOrStolen searches its theft reports and public web results and lists every source it searched.
+            check it. SafeOrStolen searches its theft reports and lists every source it searched.
             the first check is free.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

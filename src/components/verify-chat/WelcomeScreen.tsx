@@ -41,7 +41,7 @@ const EXAMPLES = [
 ];
 
 const FEATURES = [
- { Icon: ShieldCheck, label: 'multiple sources', sub: 'SafeOrStolen reports · public web results · AI analysis · specialized item databases' },
+ { Icon: ShieldCheck, label: 'multiple sources', sub: 'SafeOrStolen reports · police stolen-gun and stolen-vehicle records · stolen-bicycle registry' },
  { Icon: Zap, label: '~3 second results', sub: 'Real-time aggregated checks' },
  { Icon: Sparkles, label: 'AI follow-ups', sub: 'Ask anything about your result' },
 ];

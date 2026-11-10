@@ -30,7 +30,7 @@ const VinCheckerApp = () => {
  "featureList": [
  "Decodes year, make and model from the VIN",
  "Lists open safety recalls",
- "Searches SafeOrStolen theft reports and public web results",
+ "Searches SafeOrStolen theft reports",
  "Arizona VINs and plates also searched against Arizona, Alaska and Chicago police stolen-vehicle records",
  "Each check saved to your account with the date"
  ]
@@ -51,7 +51,7 @@ const VinCheckerApp = () => {
  </h1>
 
  <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
- Type the 17-character VIN and in a few seconds you see the year, make and model, any open safety recalls, and whether the VIN turns up in SafeOrStolen theft reports or public web results. Add it to your phone's home screen from safeorstolen.com/app.
+ Type the 17-character VIN and in a few seconds you see the year, make and model, any open safety recalls, and whether the VIN turns up in SafeOrStolen theft reports. Add it to your phone's home screen from safeorstolen.com/app.
  </p>
 
  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

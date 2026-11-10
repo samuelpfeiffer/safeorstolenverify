@@ -89,12 +89,12 @@ export default function CheckAndroidPage() {
         whatIs:
           'An Android stolen-phone check looks for two things: a theft report on the IMEI and an account lock left by the real owner. Either one means the seller may not own the phone. The <a href="/imei-checker">free IMEI check</a> handles the first; your own eyes at the meetup handle the second.',
         howItWorks:
-          "Enter the IMEI in the search box. SafeOrStolen shows the phone's make and model and searches its own theft reports and public web results, then returns reported stolen, possible match, or no report found in the records searched. A paid check adds the carrier lost/stolen blacklist. Google account status isn't visible to anyone but the owner, so check FRP on the phone.",
+          "Enter the IMEI in the search box. SafeOrStolen shows the phone's make and model and searches its own theft reports, then returns reported stolen, possible match, or no report found in the records searched. A paid check adds the carrier lost/stolen blacklist. Google account status isn't visible to anyone but the owner, so check FRP on the phone.",
         whyCheck:
           "A stolen Android phone can be locked by its owner, blocked by the carrier, or taken back by police, and you lose what you paid. A phone stuck behind FRP can't be set up at all. A few minutes at the meetup avoids both.",
         benefits: [
           'Free IMEI check that shows the make and model',
-          'Searches SafeOrStolen theft reports and public web results',
+          'Searches SafeOrStolen theft reports',
           'Paid carrier blacklist check available',
           'Works for Pixel, Motorola, OnePlus, Xiaomi, Sony, Nokia and other Android phones',
           '1 free check with no credit card',
@@ -110,7 +110,7 @@ export default function CheckAndroidPage() {
           {
             question: 'Can you check if an Android phone is stolen with the IMEI?',
             answer:
-              "Yes. Dial *#06# for the IMEI and check it on SafeOrStolen (safeorstolen.com/check-android), which shows the model and searches theft reports and public web results. A paid blacklist check covers the carrier lost/stolen blacklist. Also do the Google account check on the phone, because an IMEI lookup can't show FRP.",
+              "Yes. Dial *#06# for the IMEI and check it on SafeOrStolen (safeorstolen.com/check-android), which shows the model and searches theft reports. A paid blacklist check covers the carrier lost/stolen blacklist. Also do the Google account check on the phone, because an IMEI lookup can't show FRP.",
           },
           {
             question: 'What is FRP lock on Android?',

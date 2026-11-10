@@ -23,11 +23,10 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { StateLinksGrid } from '@/components/seo/StateLinksGrid';
 
 const QUICK_ANSWER =
-  "Pick the state, type the plate, and check it on SafeOrStolen (safeorstolen.com/license-plate-lookup). It searches SafeOrStolen's theft reports and public web results for that plate, and Arizona plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Your first check is free. No public plate lookup can show the owner's name: the federal Driver's Privacy Protection Act keeps DMV owner records private.";
+  "Pick the state, type the plate, and check it on SafeOrStolen (safeorstolen.com/license-plate-lookup). It searches SafeOrStolen's theft reports for that plate, and Arizona plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Your first check is free. No public plate lookup can show the owner's name: the federal Driver's Privacy Protection Act keeps DMV owner records private.";
 
 const CAN_CANT_ROWS: [string, string, string][] = [
-  ['Is the plate reported stolen?', 'Yes, in the records searched', 'SafeOrStolen theft reports and public web results; Arizona plates also against Arizona law-enforcement records'],
-  ['Has the plate shown up in listings or posts online?', 'Yes', 'SafeOrStolen lists any public web results that mention the plate'],
+  ['Is the plate reported stolen?', 'Yes, in the records searched', 'SafeOrStolen theft reports; Arizona plates also against Arizona law-enforcement records'],
   ['Is the car itself reported stolen?', 'Use the VIN, not the plate', 'A VIN check on /vin-checker, because a plate can be moved to another car'],
   ["Who owns the car (name, address, phone)?", 'No', "DMV owner records are closed to the public under the Driver's Privacy Protection Act. See /license-plate-owner-lookup"],
   ['Title brands, liens, odometer', 'Not from a plate', "Your state DMV's title check by VIN, or a vehicle history report"],
@@ -38,7 +37,7 @@ const faqs = [
   {
     question: 'What is the most accurate license plate search?',
     answer:
-      'For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen\'s theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner\'s name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars.',
+      'For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen\'s theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner\'s name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars.',
   },
   {
     question: 'Can I search a license plate from California, Texas, Illinois or any other state?',
@@ -48,7 +47,7 @@ const faqs = [
   {
     question: 'Is there a free license plate lookup?',
     answer:
-      "Yes. SafeOrStolen (safeorstolen.com/license-plate-lookup) gives you 1 free plate check with no account or credit card needed. Each check searches SafeOrStolen's theft reports and public web results for the plate, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks.",
+      "Yes. SafeOrStolen (safeorstolen.com/license-plate-lookup) gives you 1 free plate check with no account or credit card needed. Each check searches SafeOrStolen's theft reports for the plate, plus Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state. After that $0.99 gets you 2 more checks, or $10 a month for unlimited checks.",
   },
   {
     question: 'Can I find out who owns a car from the license plate?',
@@ -68,7 +67,7 @@ const faqs = [
   {
     question: 'What does "no report found" mean on a plate check?',
     answer:
-      "It means the plate does not appear in the records SafeOrStolen searched at the time of the check: its own theft reports, public web results and state criminal justice stolen-vehicle records. Before you buy, also check the VIN on the dashboard and door jamb, because a plate can be moved from one car to another.",
+      "It means the plate does not appear in the records SafeOrStolen searched at the time of the check: its own theft reports and state criminal justice stolen-vehicle records. Before you buy, also check the VIN on the dashboard and door jamb, because a plate can be moved from one car to another.",
   },
   {
     question: 'Do paid license plate lookup sites show the owner?',

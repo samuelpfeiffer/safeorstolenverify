@@ -86,7 +86,7 @@ const ProductHuntPage = () => (
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-2xl font-bold mb-4">What it searches</h2>
           <p className="text-muted-foreground mb-4">
-            Every check searches SafeOrStolen's own theft reports and public web results that mention the number.
+            Every check searches SafeOrStolen's own theft reports that mention the number.
             Guns add more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed
             1973–2017) and live Ohio law-enforcement stolen-gun records. Bikes add a national
             stolen-bicycle registry. Arizona VINs and plates add Arizona, Alaska and Chicago police stolen-vehicle records.

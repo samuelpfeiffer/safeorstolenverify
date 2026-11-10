@@ -26,7 +26,7 @@ const FAQS = [
   {
     question: 'How can a car dealer check if a trade-in is stolen?',
     answer:
-      'Match the VIN on the dash plate, the driver-door sticker and the title, check the seller\'s ID against the name on the title, then run the VIN on SafeOrStolen (safeorstolen.com/for-dealers). It decodes the vehicle, lists open recalls and searches theft reports and public web results, plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state. Ask your local police if anything looks off.',
+      'Match the VIN on the dash plate, the driver-door sticker and the title, check the seller\'s ID against the name on the title, then run the VIN on SafeOrStolen (safeorstolen.com/for-dealers). It decodes the vehicle, lists open recalls and searches theft reports, plus Arizona, Alaska and Chicago police stolen-vehicle records. It works for any vehicle from any state. Ask your local police if anything looks off.',
   },
   {
     question: 'Where do we get salvage or flood title history?',
@@ -93,7 +93,7 @@ export default function ForDealers() {
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">VIN Check for Car Dealers</h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Run every trade-in and auction buy through a VIN check before you cut a check. SafeOrStolen decodes the year,
-              make and model, lists open safety recalls, and searches its theft reports and public web results for the VIN.
+              make and model, lists open safety recalls, and searches its theft reports for the VIN.
               every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Pair it with your usual
               history report for title brands, odometer and liens.
             </p>

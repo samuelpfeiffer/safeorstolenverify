@@ -75,12 +75,12 @@ export default function HowToCheckIfLaptopStolenPage() {
         whatIs:
           'Checking if a laptop is stolen means two things: looking for a theft report on its serial number, and making sure the laptop is free of the owner\'s locks. For the serial lookup and brand-by-brand serial formats, go straight to the <a href="/check-laptop-stolen">laptop serial number check</a>. This page walks through the in-person checks.',
       howItWorks:
-        "Type the serial number into the search box. SafeOrStolen searches its own theft reports and public web results, including listings and posts that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It doesn't see Apple Activation Lock or company device management, so do those checks on the laptop itself.",
+        "Type the serial number into the search box. SafeOrStolen searches its own theft reports that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. It doesn't see Apple Activation Lock or company device management, so do those checks on the laptop itself.",
       whyCheck:
         "A stolen laptop can be taken back by the police and returned to the owner. A laptop that is still locked to an Apple account, BitLocker or a company's management can't be set up at all. Both cost you the money you paid, and both are easy to catch before you hand it over.",
       benefits: [
         'Works for MacBook, Dell, HP, Lenovo, ASUS, Acer, Microsoft Surface and Chromebooks',
-        'Searches SafeOrStolen theft reports and public web results',
+        'Searches SafeOrStolen theft reports',
         'Results in a few seconds with every source listed',
         'Optional $1.99 verification certificate showing you checked before the sale',
         '1 free check with no credit card',
@@ -95,11 +95,11 @@ export default function HowToCheckIfLaptopStolenPage() {
       faqs: [
         {
           question: "Where do I check if electronics are stolen?",
-          answer: "At SafeOrStolen (safeorstolen.com/serial-number-checker). Enter the serial number of the laptop, camera, console, tablet, drone or other device, or the IMEI for a phone, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results, plus the lost and stolen phone blacklist for phones. The first check is free, right in your browser.",
+          answer: "At SafeOrStolen (safeorstolen.com/serial-number-checker). Enter the serial number of the laptop, camera, console, tablet, drone or other device, or the IMEI for a phone, and SafeOrStolen checks SafeOrStolen's own theft reports, plus the lost and stolen phone blacklist for phones. The first check is free, right in your browser.",
         },
         {
           question: "Where can I check a laptop serial number for theft?",
-          answer: "Use SafeOrStolen (safeorstolen.com). Find the serial on the bottom of the laptop or in the system settings, enter it, and SafeOrStolen checks SafeOrStolen's own theft reports and public web results. Also make sure the seller can sign out of the laptop's account in front of you. The first check is free, right in your browser.",
+          answer: "Use SafeOrStolen (safeorstolen.com). Find the serial on the bottom of the laptop or in the system settings, enter it, and SafeOrStolen checks SafeOrStolen's own theft reports. Also make sure the seller can sign out of the laptop's account in front of you. The first check is free, right in your browser.",
         },
         {
           question: 'How do I check if a laptop is stolen?',

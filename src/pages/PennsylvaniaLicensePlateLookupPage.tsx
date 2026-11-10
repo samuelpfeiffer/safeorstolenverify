@@ -7,7 +7,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
     <>
     <ItemLandingPageTemplate
       title="Pennsylvania License Plate Lookup - Free PA Stolen Vehicle Check | SafeOrStolen"
-      metaDescription="Pennsylvania license plate lookup: check if a PA plate or VIN shows up in SafeOrStolen theft reports or public web results in a few seconds. 1 free check."
+      metaDescription="Pennsylvania license plate lookup: check if a PA plate or VIN shows up in SafeOrStolen theft reports in a few seconds. 1 free check."
       h1="Pennsylvania License Plate Lookup - Check a PA Car Before You Buy"
       itemType="Vehicle"
       searchType="plate"
@@ -22,16 +22,16 @@ const PennsylvaniaLicensePlateLookupPage = () => {
         'PA vehicle stolen database'
       ]}
       content={{
-        intro: "Enter the Pennsylvania plate and in a few seconds SafeOrStolen tells you whether it shows up in SafeOrStolen theft reports or in public web results, such as listings and posts that mention it. It never shows the owner's name. Run the VIN too, since plates are easy to swap.",
+        intro: "Enter the Pennsylvania plate and in a few seconds SafeOrStolen tells you whether it shows up in SafeOrStolen theft reports. It never shows the owner's name. Run the VIN too, since plates are easy to swap.",
 
-        whatIs: "A Pennsylvania license plate lookup on SafeOrStolen searches two things: theft reports that owners have filed on SafeOrStolen, and public web results that mention the plate. It never shows owner names. Use it to screen a car from Philadelphia, Pittsburgh, Allentown or Erie before you drive out to see it.",
+        whatIs: "A Pennsylvania license plate lookup on SafeOrStolen searches two things: theft reports that owners have filed on SafeOrStolen that mention the plate. It never shows owner names. Use it to screen a car from Philadelphia, Pittsburgh, Allentown or Erie before you drive out to see it.",
 
         howItWorks: "Type the plate, pick Pennsylvania and tap check. You get one of three results: \"reported stolen\", \"possible match\" or \"no report found in the records searched\", with every source listed. The check is saved to your account with the date.",
 
         whyCheck: "A plate is the first thing you can see in a listing photo, so it's the quickest way to screen a car before you meet anyone. Pennsylvania sits on I-76, I-80, I-95 and the Turnpike, and cars sold here may have come from New Jersey, New York, Ohio or Maryland. Check the car as well as the plate: match the VIN on the dash and door jamb to the PA title, and run that VIN as well.",
 
         benefits: [
-          "Searches SafeOrStolen theft reports and public web results",
+          "Searches SafeOrStolen theft reports",
           "Works the same in Philadelphia, Pittsburgh, Allentown and Erie",
           "Result in a few seconds, with every source listed",
           "Never shows owner names",
@@ -51,15 +51,15 @@ const PennsylvaniaLicensePlateLookupPage = () => {
         faqs: [
           {
             question: "Can I check if a car is stolen in Philadelphia using the license plate?",
-            answer: "Yes. Enter the Pennsylvania plate at SafeOrStolen (safeorstolen.com/pennsylvania-license-plate-lookup) and in a few seconds you'll see whether it appears in SafeOrStolen theft reports or public web results. You can also call the Philadelphia Police non-emergency line and ask them to run the VIN."
+            answer: "Yes. Enter the Pennsylvania plate at SafeOrStolen (safeorstolen.com/pennsylvania-license-plate-lookup) and in a few seconds you'll see whether it appears in SafeOrStolen theft reports. You can also call the Philadelphia Police non-emergency line and ask them to run the VIN."
           },
           {
             question: "How accurate is the Pennsylvania license plate stolen vehicle check?",
-            answer: "It searches SafeOrStolen theft reports and public web results and lists every source with the result. Before you pay, also match the VIN to the title, run a VIN check, and ask the seller for proof of ownership."
+            answer: "It searches SafeOrStolen theft reports and lists every source with the result. Before you pay, also match the VIN to the title, run a VIN check, and ask the seller for proof of ownership."
           },
           {
             question: "Does the lookup work for vehicles in Pittsburgh and western Pennsylvania?",
-            answer: "Yes. The plate lookup works the same anywhere in Pennsylvania, including Allegheny, Westmoreland, Washington and Butler counties. The plate is searched against SafeOrStolen theft reports and public web results. On a car you're serious about, also run the VIN."
+            answer: "Yes. The plate lookup works the same anywhere in Pennsylvania, including Allegheny, Westmoreland, Washington and Butler counties. The plate is searched against SafeOrStolen theft reports. On a car you're serious about, also run the VIN."
           },
           {
             question: "What if the Pennsylvania plate comes back as stolen?",

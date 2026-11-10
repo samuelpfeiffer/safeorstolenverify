@@ -20,7 +20,7 @@ const ArizonaLicensePlateLookupPage = () => {
  dateModified="2026-10-07"
  quickAnswer={{
  question: "How do I check if a car is stolen in Arizona?",
- answer: "Enter the plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/arizona-license-plate-lookup). SafeOrStolen searches Arizona, Alaska and Chicago police stolen-vehicle records, updated daily, along with its own theft reports and public web results, and shows the result in a few seconds. the first check is free. Run both the plate and the VIN, because plates can be moved between cars, and never buy a car whose VIN doesn't match the title.",
+ answer: "Enter the plate or the 17-character VIN on SafeOrStolen (safeorstolen.com/arizona-license-plate-lookup). SafeOrStolen searches Arizona, Alaska and Chicago police stolen-vehicle records, updated daily, along with its own theft reports, and shows the result in a few seconds. the first check is free. Run both the plate and the VIN, because plates can be moved between cars, and never buy a car whose VIN doesn't match the title.",
  }}
  sections={[
  {
@@ -32,7 +32,7 @@ const ArizonaLicensePlateLookupPage = () => {
  ["Year, make, model and safety recalls", "Yes, from the VIN", "Run the VIN on SafeOrStolen"],
  ["Who owns the car", "No", "Protected by the federal Driver's Privacy Protection Act. Police, insurers and courts can request it from Arizona MVD for a permitted purpose."],
  ["Your own registration status", "Yes, for your own vehicle", "Through AZ MVD Now, Arizona MVD's online service"],
- ["Cars stolen in other states", "Yes, in SafeOrStolen reports and web results", "SafeOrStolen searches its own theft reports and public web results for cars from any state. Ask the seller for the title and match the VIN on the dashboard, door jamb and title."],
+ ["Cars stolen in other states", "Yes, in SafeOrStolen reports and web results", "SafeOrStolen searches its own theft reports for cars from any state. Ask the seller for the title and match the VIN on the dashboard, door jamb and title."],
  ],
  },
  },
@@ -68,7 +68,7 @@ const ArizonaLicensePlateLookupPage = () => {
  'phoenix stolen car check',
  ]}
  content={{
- intro: "Type an Arizona plate and SafeOrStolen searches Arizona, Alaska and Chicago police stolen-vehicle records, plus its own theft reports and public web results. It's a fast first check when you're looking at a car in Phoenix, Tucson, Mesa, or anywhere in the state.",
+ intro: "Type an Arizona plate and SafeOrStolen searches Arizona, Alaska and Chicago police stolen-vehicle records, plus its own theft reports. It's a fast first check when you're looking at a car in Phoenix, Tucson, Mesa, or anywhere in the state.",
 
  whatIs: "An Arizona plate lookup on SafeOrStolen answers one question: has this plate been reported stolen to participating Arizona law enforcement agencies? It does not show the owner's name or registration details. Plates can be swapped between cars, so once you're serious about a vehicle, check its VIN too.",
 
@@ -98,7 +98,7 @@ const ArizonaLicensePlateLookupPage = () => {
  faqs: [
  {
  question: "What is the most accurate license plate search in Arizona?",
- answer: "For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. Arizona police stolen-vehicle records are searched on every check. It works the same in Phoenix, Tucson, Mesa, Peoria and every other Arizona city.",
+ answer: "For a stolen check, SafeOrStolen: enter the plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago in seconds, for a plate from any state, with your first check free. No legitimate public site can show a plate owner's name or address, because federal privacy law keeps that private. Run the VIN too, since plates can be swapped between cars. Arizona police stolen-vehicle records are searched on every check. It works the same in Phoenix, Tucson, Mesa, Peoria and every other Arizona city.",
  },
  {
  question: "Can I check if a car is stolen in Arizona by its plate?",
@@ -114,7 +114,7 @@ const ArizonaLicensePlateLookupPage = () => {
  },
  {
  question: "What about cars stolen outside Arizona?",
- answer: "SafeOrStolen searches its own theft reports and public web results for cars from any state, along with police stolen-vehicle records from Arizona, Alaska and the Chicago Police Department. For a car with an out-of-state title, also match the VIN on the dashboard, door jamb and title, and ask the seller for ID.",
+ answer: "SafeOrStolen searches its own theft reports for cars from any state, along with police stolen-vehicle records from Arizona, Alaska and the Chicago Police Department. For a car with an out-of-state title, also match the VIN on the dashboard, door jamb and title, and ask the seller for ID.",
  },
  ],
  }}

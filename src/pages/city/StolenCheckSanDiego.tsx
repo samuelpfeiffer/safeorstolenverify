@@ -8,7 +8,7 @@ const StolenCheckSanDiego = () => {
  const faqs = [
  {
  question: "How do I check if something is stolen in San Diego?",
- answer: "Get the serial number, IMEI or VIN from the item itself and enter it on SafeOrStolen (safeorstolen.com/stolen-check-san-diego). In a few seconds it searches SafeOrStolen theft reports and public web results and lists every source. Bikes are also checked against a national stolen-bicycle registry. the first check is free."
+ answer: "Get the serial number, IMEI or VIN from the item itself and enter it on SafeOrStolen (safeorstolen.com/stolen-check-san-diego). In a few seconds it searches SafeOrStolen theft reports and lists every source. Bikes are also checked against a national stolen-bicycle registry. the first check is free."
  },
  {
  question: "Where can I safely meet sellers in San Diego?",
@@ -101,7 +101,7 @@ const StolenCheckSanDiego = () => {
  Watch for cloned VINs too: make sure the VIN on the dashboard, door jamb and title all match.
  </p>
  <p>
- SafeOrStolen searches its own theft reports and public web results, and lists every source
+ SafeOrStolen searches its own theft reports, and lists every source
  with the result. A check takes a few seconds and is saved to your account with the date.
  </p>
  <h3>Meeting a Seller</h3>

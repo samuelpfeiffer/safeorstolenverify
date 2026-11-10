@@ -73,12 +73,12 @@ export default function EbayBuyerProtection() {
         whatIs:
           "The Money Back Guarantee is eBay's promise to refund you when an eligible purchase doesn't arrive or isn't what the listing described. It applies when you pay through eBay's own checkout. It is built around delivery and condition problems, not ownership, so a stolen item that arrives on time and works fine looks like a successful sale.",
         howItWorks:
-          'Before you buy, message the seller through eBay and ask for the serial number, IMEI or VIN. Type it into the search box above. SafeOrStolen searches its theft reports and public web results, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed.',
+          'Before you buy, message the seller through eBay and ask for the serial number, IMEI or VIN. Type it into the search box above. SafeOrStolen searches its theft reports, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed.',
         whyCheck:
           "If police recover a stolen item from you, it goes back to its owner. Your only claim is against the seller, and an eBay seller who sold stolen goods may be gone by then. Checking the number before you pay is the protection the guarantee doesn't give you.",
         benefits: [
           'Check a serial number, IMEI or VIN before you bid or buy',
-          'Searches SafeOrStolen theft reports and public web results',
+          'Searches SafeOrStolen theft reports',
           'Every source listed with the result',
           'Dated record of the check saved to your account',
           '1 free check with no credit card',
@@ -110,7 +110,7 @@ export default function EbayBuyerProtection() {
           {
             question: 'Can I check if an eBay item is stolen before I buy?',
             answer:
-              "Yes, if the seller gives you the serial number, IMEI or VIN. Ask through eBay messages, then check it on SafeOrStolen (safeorstolen.com/marketplace-url-checker), which searches its theft reports and public web results. the first check is free. When the item arrives, make sure the number on it matches what you checked.",
+              "Yes, if the seller gives you the serial number, IMEI or VIN. Ask through eBay messages, then check it on SafeOrStolen (safeorstolen.com/marketplace-url-checker), which searches its theft reports. the first check is free. When the item arrives, make sure the number on it matches what you checked.",
           },
           {
             question: 'Is paying outside eBay covered by buyer protection?',

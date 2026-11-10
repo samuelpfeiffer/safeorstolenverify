@@ -158,7 +158,7 @@ export const UnifiedSearchBar = ({ onOpenQrScanner, variant = 'default' }: Unifi
  Stolen-Item Search
  </h3>
  <p className="text-sm text-muted-foreground">
- Searches SafeOrStolen theft reports and public web results, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns
+ Searches SafeOrStolen theft reports, plus a national stolen-bicycle registry for bikes and police gun theft records from 33 states and DC for guns
  </p>
  </div>
 

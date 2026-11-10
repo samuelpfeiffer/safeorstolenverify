@@ -186,7 +186,7 @@ export default function TheftTrendsReport2024() {
 
             <h2>What a check covers</h2>
             <p>
-              A SafeOrStolen check searches its own theft reports and public web results for any item, plus police firearm theft
+              A SafeOrStolen check searches its own theft reports for any item, plus police firearm theft
               records for guns, a national stolen-bicycle registry for bikes, and Arizona law-enforcement records for Arizona VINs and
               plates. It can't see NCIC, DMV records or Activation Lock, which is why the in-person signs above still matter. More
               on that: <Link to="/data-sources">what SafeOrStolen searches</Link>.

@@ -28,7 +28,7 @@ export default function StockXVerification() {
       quickAnswer={{
         question: 'Does StockX check if items are stolen?',
         answer:
-          "StockX verification checks that an item is authentic, new and matches what was sold. It is not a stolen-property check, and StockX doesn't publish one. For anything with a serial number, such as a PS5, Xbox, Switch, graphics card or headphones, check the serial on SafeOrStolen (safeorstolen.com/stockx-verification), which searches its theft reports and public web results. Sneakers and clothing usually have no unique serial, so there is nothing to look up.",
+          "StockX verification checks that an item is authentic, new and matches what was sold. It is not a stolen-property check, and StockX doesn't publish one. For anything with a serial number, such as a PS5, Xbox, Switch, graphics card or headphones, check the serial on SafeOrStolen (safeorstolen.com/stockx-verification), which searches its theft reports. Sneakers and clothing usually have no unique serial, so there is nothing to look up.",
       }}
       sections={[
         {
@@ -38,7 +38,7 @@ export default function StockXVerification() {
             rows: [
               ['Is it real or a fake?', 'Yes, that is what it is for', 'No'],
               ['Is it new and in the condition listed?', 'Yes', 'No'],
-              ['Is this exact unit reported stolen?', 'Not part of the process', 'Searches SafeOrStolen theft reports and public web results for the serial'],
+              ['Is this exact unit reported stolen?', 'Not part of the process', 'Searches SafeOrStolen theft reports for the serial'],
               ['Works on sneakers and clothing?', 'Yes', 'Only if the item has a unique serial, which most don\'t'],
               ['Works on a console or GPU bought off-platform?', 'No', 'Yes, with the serial number'],
             ],
@@ -74,12 +74,12 @@ export default function StockXVerification() {
         whatIs:
           'StockX sends items through its own verification before they ship to the buyer, looking at authenticity, condition and whether the item matches the order. That protects you from fakes. A stolen-property check is different: it looks up one unit\'s serial number in theft reports. Sealed electronics stolen from a store or a delivery truck are still authentic, so they can pass an authenticity check.',
         howItWorks:
-          'Type the serial number from the console, card or box label into the search box. SafeOrStolen searches its theft reports and public web results, including listings and posts that mention the number, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. The check is saved to your account with the date.',
+          'Type the serial number from the console, card or box label into the search box. SafeOrStolen searches its theft reports that mention the number, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. The check is saved to your account with the date.',
         whyCheck:
           "Most of the risk is off-platform: a console from Facebook Marketplace, OfferUp or a local reseller with no verification step at all. If police recover a stolen item, it goes back to its owner and you lose what you paid. A serial check takes a few seconds and the first 2 are free.",
         benefits: [
           'Works on consoles, graphics cards, headphones and other electronics with a serial',
-          'Checks SafeOrStolen theft reports and public web results',
+          'Checks SafeOrStolen theft reports',
           'Every source listed with the result',
           'Dated record of the check saved to your account',
           '1 free check with no credit card',
@@ -105,7 +105,7 @@ export default function StockXVerification() {
           {
             question: 'How do I check if a PS5 or Xbox is stolen?',
             answer:
-              "Get the serial number from the sticker on the back of the console or the label on the box, and check it on SafeOrStolen, which searches its theft reports and public web results. Make sure the box and console serials match, and for a used console, watch the seller sign out of their account and reset it.",
+              "Get the serial number from the sticker on the back of the console or the label on the box, and check it on SafeOrStolen, which searches its theft reports. Make sure the box and console serials match, and for a used console, watch the seller sign out of their account and reset it.",
           },
           {
             question: 'Can I check if sneakers are stolen?',

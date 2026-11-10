@@ -1,7 +1,7 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 
 /** Oct 22 2026: new page for "how do I check if art is stolen". Art rarely has a serial number. */
-const G = "SafeOrStolen's own theft reports and public web results";
+const G = "SafeOrStolen's own theft reports";
 const CheckArtStolenPage = () => (
   <ItemLandingPageTemplate
     title="How to Check if Art Is Stolen Before You Buy | SafeOrStolen"

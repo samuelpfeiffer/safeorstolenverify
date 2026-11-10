@@ -12,19 +12,19 @@ export const CompetitiveKeywords: React.FC<CompetitiveKeywordsProps> = ({ pageTy
  return {
  primary: "how to check if something is stolen, is this stolen, check if stolen before buying, free stolen item checker, verify used items, how do I know if stolen",
  longtail: "how do I check if something is stolen before I buy it, is this phone stolen check free, can I verify if item is stolen, how to tell if used item is stolen, check if stolen on Facebook Marketplace, is there a way to check stolen goods, avoid buying stolen merchandise",
- competitor: "SafeOrStolen report lookup, public web search, AI analysis, national stolen-bicycle registry, police gun theft records from 33 states and DC, phone blacklist on paid checks"
+ competitor: "SafeOrStolen report lookup, national stolen-bicycle registry, police gun theft records from 33 states and DC"
  };
  case 'imei':
  return {
  primary: "is my phone stolen check, free IMEI checker, how to check if iPhone is stolen, IMEI lookup stolen phone database, check phone IMEI before buying",
  longtail: "how do I know if a phone is stolen by IMEI, can I check if my phone is stolen for free, check iPhone IMEI stolen status, verify Android phone not stolen, is this used phone stolen IMEI check, check phone before buying on Craigslist",
- competitor: "SafeOrStolen report lookup, public web search, AI analysis, IMEI device details for phones"
+ competitor: "SafeOrStolen report lookup, IMEI device details for phones"
  };
  case 'vin':
  return {
  primary: "is this car stolen VIN check, free VIN lookup stolen vehicle, how to check if car is stolen before buying, VIN number stolen database check",
  longtail: "how do I check if a used car is stolen by VIN, can I verify vehicle not stolen for free, check VIN before buying on Facebook Marketplace, is this truck stolen VIN lookup, verify motorcycle not stolen, check car VIN on Craigslist",
- competitor: "SafeOrStolen report lookup, public web search, AI analysis"
+ competitor: "SafeOrStolen report lookup"
  };
  case 'serial':
  return {

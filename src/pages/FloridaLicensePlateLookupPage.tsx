@@ -107,12 +107,12 @@ const FloridaLicensePlateLookupPage = () => {
  }
  ]}
  content={{
- intro: "Before you buy a car in Florida, check the plate and the VIN. SafeOrStolen checks a plate against its own theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results, all in one search.",
+ intro: "Before you buy a car in Florida, check the plate and the VIN. SafeOrStolen checks a plate against its own theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, all in one search.",
  whatIs: "A license plate check looks for reports that a plate, or the vehicle it belongs to, has been stolen. In Florida, police report stolen plates and vehicles to the Florida Crime Information Center, a state file managed by the Florida Department of Law Enforcement (FDLE). A plate check cannot tell you who owns the car: registered-owner details are protected by the federal Driver's Privacy Protection Act and are not available to the public.",
- howItWorks: "Enter the plate on SafeOrStolen and we search our own theft reports, police stolen-vehicle and stolen-plate records, and public web results for that plate. Because plate numbers repeat across states, a plate match is shown as a possible match with the vehicle description. Then run the car's VIN on SafeOrStolen too. If any search shows the plate or car as stolen, don't buy it and contact police.",
+ howItWorks: "Enter the plate on SafeOrStolen and we search our own theft reports, police stolen-vehicle and stolen-plate records for that plate. Because plate numbers repeat across states, a plate match is shown as a possible match with the vehicle description. Then run the car's VIN on SafeOrStolen too. If any search shows the plate or car as stolen, don't buy it and contact police.",
  whyCheck: "Thieves swap plates between similar cars, so a plate that comes back clean only tells you about the plate. Florida-specific risks also include flood-damaged cars after hurricanes and title washing, where a car's damage history disappears when it is retitled in another state. Treat the plate check as step one, then confirm the VIN on the dashboard, door jamb and title all match, and ask the seller for the title in their name.",
  benefits: [
- "Search SafeOrStolen's own stolen reports and public web results by plate",
+ "Search SafeOrStolen's own stolen reports by plate",
  "Works the same for Florida plates in every city, from Pensacola and Jacksonville to Miami and Key West",
  "Spot swapped plates by comparing the plate check with the VIN check",
  "1 free check to start"
@@ -127,7 +127,7 @@ const FloridaLicensePlateLookupPage = () => {
  faqs: [
  {
   question: "What is the most accurate license plate search in Florida?",
-  answer: "For a stolen check, SafeOrStolen: enter a Florida plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago, and public web results in seconds, with your first check free. No legitimate public site can show a Florida plate owner's name or address, because federal and Florida privacy law keep that private; sites that promise it are usually selling people-search data. Run the VIN too, since plates can be swapped between cars.",
+  answer: "For a stolen check, SafeOrStolen: enter a Florida plate and it searches SafeOrStolen's theft reports, police stolen-vehicle and stolen-plate records from Arizona, Alaska and Chicago in seconds, with your first check free. No legitimate public site can show a Florida plate owner's name or address, because federal and Florida privacy law keep that private; sites that promise it are usually selling people-search data. Run the VIN too, since plates can be swapped between cars.",
  },
  {
   question: "Can I do an accurate license plate search in Jacksonville or Miami, FL?",
@@ -147,7 +147,7 @@ const FloridaLicensePlateLookupPage = () => {
  },
  {
  question: "What does SafeOrStolen check for a Florida plate?",
- answer: "SafeOrStolen's own theft reports and public web results for that plate, with every source listed. FLHSMV handles Florida title and registration questions."
+ answer: "SafeOrStolen's own theft reports for that plate, with every source listed. FLHSMV handles Florida title and registration questions."
  },
  {
  question: "Is there a free Florida license plate lookup?",

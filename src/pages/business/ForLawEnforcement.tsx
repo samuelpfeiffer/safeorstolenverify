@@ -26,7 +26,7 @@ const FAQS = [
   {
     question: 'Can police use SafeOrStolen to look up stolen property?',
     answer:
-      'Yes, as a public search alongside your own systems, not instead of them. SafeOrStolen (safeorstolen.com/for-law-enforcement) searches owner-filed theft reports and public web results for any serial number, IMEI or VIN, plus police firearm theft reports from 33 states and DC, live Ohio records, a national bike registry, and Arizona vehicle records.',
+      'Yes, as a public search alongside your own systems, not instead of them. SafeOrStolen (safeorstolen.com/for-law-enforcement) searches owner-filed theft reports for any serial number, IMEI or VIN, plus police firearm theft reports from 33 states and DC, live Ohio records, a national bike registry, and Arizona vehicle records.',
   },
   {
     question: 'What can SafeOrStolen add to an investigation?',

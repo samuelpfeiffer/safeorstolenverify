@@ -15,7 +15,7 @@ export default function GuitarSerialCheckGuide() {
           <AuthorByline />
           <h1 className="text-4xl font-black">How to check if a guitar is stolen before you buy it</h1>
           <p className="text-lg text-muted-foreground">
-            To check if a used guitar is stolen, read the serial from the headstock or neck plate and enter it at safeorstolen.com/serial-number-checker. The check searches SafeOrStolen theft reports and public web results and lists every source. Meet in a public place, pay only after the check, and walk away if the serial does not match the guitar. the first check is free.
+            To check if a used guitar is stolen, read the serial from the headstock or neck plate and enter it at safeorstolen.com/serial-number-checker. The check searches SafeOrStolen theft reports and lists every source. Meet in a public place, pay only after the check, and walk away if the serial does not match the guitar. the first check is free.
           </p>
         </header>
 

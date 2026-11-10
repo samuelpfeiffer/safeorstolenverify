@@ -13,7 +13,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  },
  dmvLink: "",
  content: {
- intro: "Enter a Nevada vehicle's 17-character VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen's theft reports and public web results. You'll have an answer in a few seconds, with every source listed.",
+ intro: "Enter a Nevada vehicle's 17-character VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen's theft reports. You'll have an answer in a few seconds, with every source listed.",
  whyCheck: "Las Vegas gets a steady flow of cars driven in from California and Arizona, so a Nevada sale often comes with an out-of-state title. Ask to see the title first, check that the seller's name matches their ID, and compare the VIN on it to the dashboard and the driver's door sticker.",
  localLaws: "In Nevada, a car that turns out to be stolen goes back to its owner even if you paid for it in good faith, and you'd have to pursue the seller for your money. Titles and registration go through the Nevada DMV, which also inspects the VIN on vehicles coming from out of state."
  },
@@ -34,12 +34,12 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  },
  dmvLink: "",
  content: {
- intro: "SafeOrStolen decodes a New Hampshire VIN's year, make and model, lists any open safety recalls, and searches SafeOrStolen's theft reports and public web results. It takes a few seconds and every source searched is listed.",
+ intro: "SafeOrStolen decodes a New Hampshire VIN's year, make and model, lists any open safety recalls, and searches SafeOrStolen's theft reports. It takes a few seconds and every source searched is listed.",
  whyCheck: "Southern New Hampshire is close enough to Boston that plenty of cars sold there came up from Massachusetts. Look at the title before the car, make sure the seller's name is on it, and check underneath for rust while you're comparing the VIN on the dash to the title.",
  localLaws: "In New Hampshire, a stolen vehicle is returned to its owner even if the buyer didn't know. Titles are handled by the NH Division of Motor Vehicles, and older vehicles in New Hampshire may not have a title at all, so ask what paperwork the seller has before you go look."
  },
  faqs: [
- { question: "How do I verify a New Hampshire vehicle title?", answer: "Check that the seller's name on the title matches their ID and that the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-hampshire-vin-lookup) to search its theft reports and public web results. For title questions, contact the NH DMV." },
+ { question: "How do I verify a New Hampshire vehicle title?", answer: "Check that the seller's name on the title matches their ID and that the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-hampshire-vin-lookup) to search its theft reports. For title questions, contact the NH DMV." },
  { question: "Is a VIN check required in New Hampshire?", answer: "No law requires a private buyer in New Hampshire to run a VIN check. It's still worth the few seconds: if the car was stolen, police can return it to the owner and you lose what you paid. Your first check on SafeOrStolen is free." },
  { question: "Does New Hampshire have vehicle inspections?", answer: "Yes. New Hampshire requires a yearly safety inspection at a licensed station. The inspection looks at brakes, lights, tires and similar items. It doesn't check whether the car was reported stolen, so search the VIN before you buy rather than counting on the inspection." }
  ]
@@ -60,7 +60,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  localLaws: "In New Jersey, a stolen car goes back to its owner even if you bought it without knowing, and you're left to recover your money from the seller. Title transfers go through the NJ Motor Vehicle Commission."
  },
  faqs: [
- { question: "How do I check a New Jersey VIN for free?", answer: "Sign up free at SafeOrStolen (safeorstolen.com/new-jersey-vin-lookup) for 2 checks, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports and public web results. After that, it's $0.99 for 2 checks or $10 a month for unlimited checks." },
+ { question: "How do I check a New Jersey VIN for free?", answer: "Sign up free at SafeOrStolen (safeorstolen.com/new-jersey-vin-lookup) for 2 checks, no credit card. Enter the 17-character VIN to decode the year, make and model, see open recalls, and search SafeOrStolen's theft reports. After that, it's $0.99 for 2 checks or $10 a month for unlimited checks." },
  { question: "Does New Jersey require VIN inspections?", answer: "New Jersey can require a VIN inspection at a Motor Vehicle Commission facility for some vehicles coming from out of state. That inspection confirms the number matches the paperwork. It isn't a stolen check for a private buyer, so search the VIN yourself before handing over money." },
  { question: "What is New Jersey's title transfer process?", answer: "The seller signs the back of the title and fills in the sale price and odometer reading, and you take it to the NJ Motor Vehicle Commission with proof of insurance to title and register the car. Before signing, confirm the VIN on the title matches the vehicle." }
  ]
@@ -76,12 +76,12 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  },
  dmvLink: "",
  content: {
- intro: "Enter a New Mexico VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen's theft reports and public web results. You'll get the answer in a few seconds, with every source listed.",
+ intro: "Enter a New Mexico VIN on SafeOrStolen to decode the year, make and model, see open safety recalls, and search SafeOrStolen's theft reports. You'll get the answer in a few seconds, with every source listed.",
  whyCheck: "Albuquerque buyers often see pickups and SUVs listed with a story about a quick move or a family emergency. Ask to see the title before you drive over, make sure the seller's name is on it, and compare the VIN on the title to the dashboard and door sticker.",
  localLaws: "In New Mexico, a stolen vehicle is returned to its owner even if the buyer paid in good faith. Titles and registration go through the New Mexico Motor Vehicle Division, which also inspects the VIN on vehicles coming in from another state."
  },
  faqs: [
- { question: "How do I verify a New Mexico vehicle title?", answer: "Make sure the seller's name on the title matches their ID and the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-mexico-vin-lookup) to search its theft reports and public web results. For title records and title brands, contact the MVD." },
+ { question: "How do I verify a New Mexico vehicle title?", answer: "Make sure the seller's name on the title matches their ID and the VIN on the title matches the dashboard and door sticker. Then run the VIN on SafeOrStolen (safeorstolen.com/new-mexico-vin-lookup) to search its theft reports. For title records and title brands, contact the MVD." },
  { question: "Is a VIN check required in New Mexico?", answer: "No law requires a private buyer in New Mexico to run a VIN check. If the car turns out to be stolen, though, police can return it to the owner and you lose your money. Checking first takes a few seconds, and your first check is free." },
  { question: "What is New Mexico's title transfer process?", answer: "The seller signs the title over to you and records the odometer reading, and you take it to the New Mexico MVD with a bill of sale to title and register the car. Out-of-state vehicles also get a VIN inspection. Confirm the VIN on the title matches the car before you sign." }
  ]
@@ -97,7 +97,7 @@ export const STATE_VIN_DATA_PART8: Record<string, any> = {
  },
  dmvLink: "",
  content: {
- intro: "SafeOrStolen decodes a North Carolina VIN's year, make and model, lists any open safety recalls, and searches SafeOrStolen's theft reports and public web results. The answer comes back in a few seconds with every source listed.",
+ intro: "SafeOrStolen decodes a North Carolina VIN's year, make and model, lists any open safety recalls, and searches SafeOrStolen's theft reports. The answer comes back in a few seconds with every source listed.",
  whyCheck: "After a hurricane season, coastal North Carolina cars can turn up for sale inland and in other states. Look for damp carpet, a musty smell, and rust on seat rails while you check the title. Make sure the seller's name is on the title and the VIN matches the dashboard and door sticker.",
  localLaws: "In North Carolina, a stolen vehicle goes back to its owner even if you bought it in good faith. Titles transfer through the NCDMV, and the seller's signature on a North Carolina title has to be notarized."
  },

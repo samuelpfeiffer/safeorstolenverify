@@ -56,7 +56,7 @@ export default function RealUserStories() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-4">What gets searched</h2>
               <p className="text-lg mb-4">
-                You type in a serial number, IMEI, VIN or plate. Every check searches SafeOrStolen's own theft reports (owners report thefts on the site) and public web results, meaning listings and posts that mention that number. Some item types get more:
+                You type in a serial number, IMEI, VIN or plate. Every check searches SafeOrStolen's own theft reports (owners report thefts on the site), meaning listings and posts that mention that number. Some item types get more:
               </p>
               <ul className="list-disc list-inside space-y-2 mb-4">
                 <li>Guns: more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records, and a flag for serials that look altered or obliterated.</li>

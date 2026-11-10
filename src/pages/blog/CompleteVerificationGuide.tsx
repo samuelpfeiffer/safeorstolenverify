@@ -21,7 +21,7 @@ const CHECKS: { name: string; catches: string; who: string; sos: string }[] = [
  name: 'Theft report check',
  catches: 'An item whose owner reported it stolen with the serial number, IMEI or VIN.',
  who: 'Anyone, online, before or at the meetup.',
- sos: 'Yes. Every check searches SafeOrStolen theft reports and public web results; guns add police theft and loss reports from 33 states and Washington, DC plus live Ohio records; bikes add a national stolen-bicycle registry.',
+ sos: 'Yes. Every check searches SafeOrStolen theft reports; guns add police theft and loss reports from 33 states and Washington, DC plus live Ohio records; bikes add a national stolen-bicycle registry.',
  },
  {
  name: 'Police records (NCIC and state systems)',
@@ -91,7 +91,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Does a stolen VIN check show if a car has a lien or salvage title?',
  answer:
- 'Not on SafeOrStolen. Its VIN check searches theft reports and public web results, decodes the year, make and model, and lists open recalls, plus Arizona law-enforcement records for Arizona vehicles. For liens and title brands, read the paper title (a lienholder is listed on it) and get a vehicle history report before you pay.',
+ 'Not on SafeOrStolen. Its VIN check searches theft reports, decodes the year, make and model, and lists open recalls, plus Arizona law-enforcement records for Arizona vehicles. For liens and title brands, read the paper title (a lienholder is listed on it) and get a vehicle history report before you pay.',
  },
  {
  question: 'Which check matters most for a used item?',

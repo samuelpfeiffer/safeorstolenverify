@@ -43,7 +43,7 @@ export const ValueProposition: React.FC = () => {
     {
       icon: Database,
       title: 'Relevant Sources',
-      description: 'We check SafeOrStolen reports, public web results, and AI analysis.',
+      description: 'We check SafeOrStolen reports and AI analysis.',
       stat: '6',
       statLabel: 'item categories',
       color: 'text-primary',

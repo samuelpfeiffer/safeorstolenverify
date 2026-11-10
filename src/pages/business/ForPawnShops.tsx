@@ -135,7 +135,7 @@ export default function ForPawnShops() {
               </table>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
-              Every check also searches SafeOrStolen's own theft reports and public web results, such as a listing or a
+              Every check also searches SafeOrStolen's own theft reports, such as a listing or a
               post by the owner that mentions the number, and every result lists each source it searched.
             </p>
           </div>

@@ -26,7 +26,7 @@ const CheckLaptopPage = () => {
       quickAnswer={{
         question: 'How do I check if a laptop is stolen?',
         answer:
-          "Get the serial number from the sticker or engraving on the bottom and from the system settings, and make sure they match. Enter it on SafeOrStolen (safeorstolen.com/check-laptop), which searches theft reports filed on SafeOrStolen and public web results in a few seconds. Then have the seller sign out of their Apple or Microsoft account and erase the laptop in front of you. If it asks for someone else's login or a firmware password, don't buy it.",
+          "Get the serial number from the sticker or engraving on the bottom and from the system settings, and make sure they match. Enter it on SafeOrStolen (safeorstolen.com/check-laptop), which searches theft reports filed on SafeOrStolen in a few seconds. Then have the seller sign out of their Apple or Microsoft account and erase the laptop in front of you. If it asks for someone else's login or a firmware password, don't buy it.",
       }}
       sections={[
         {
@@ -64,13 +64,13 @@ const CheckLaptopPage = () => {
         },
       ]}
       content={{
-        intro: "Check a laptop serial number before you buy from Facebook Marketplace, Craigslist, eBay or a pawn shop. SafeOrStolen searches theft reports and public web results in a few seconds; a reset in front of you shows whether the laptop is still locked to someone else.",
+        intro: "Check a laptop serial number before you buy from Facebook Marketplace, Craigslist, eBay or a pawn shop. SafeOrStolen searches theft reports in a few seconds; a reset in front of you shows whether the laptop is still locked to someone else.",
         whatIs: "A stolen laptop check looks up the laptop's serial number to see whether anyone has reported it stolen. Every laptop has a serial printed on the case and stored in its firmware. Owners give that number to police and to sites like SafeOrStolen when a laptop is stolen, so matching it is the most direct way to connect a laptop to a theft report.",
-        howItWorks: "Type the serial into the search box. SafeOrStolen searches theft reports owners filed on SafeOrStolen and public web results that mention the serial, and shows one of three results: reported stolen, possible match, or no report found in the records searched. Every source is listed and the check is saved to your account with the date. Account locks have to be checked on the laptop itself.",
+        howItWorks: "Type the serial into the search box. SafeOrStolen searches theft reports owners filed on SafeOrStolen that mention the serial, and shows one of three results: reported stolen, possible match, or no report found in the records searched. Every source is listed and the check is saved to your account with the date. Account locks have to be checked on the laptop itself.",
         whyCheck: "A stolen laptop can be locked by its owner through Find My Mac or a Microsoft account, which can leave it unusable. If police identify it, they can return it to the owner and you lose what you paid. Laptops are easy to carry off and resell quickly online, so a few minutes of checking at the meetup is worth it.",
         benefits: [
           "Works for MacBook, Dell, HP, Lenovo, ASUS, Acer, MSI and Razer laptops",
-          "Searches SafeOrStolen theft reports and public web results",
+          "Searches SafeOrStolen theft reports",
           "Results in a few seconds, with every source listed",
           "Each check saved to your account with the date",
           "1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited",
@@ -86,11 +86,11 @@ const CheckLaptopPage = () => {
         faqs: [
           {
             question: "How do I check if a MacBook is stolen?",
-            answer: "Match the serial in Apple menu > About This Mac with the one on the bottom case, then check it on SafeOrStolen (safeorstolen.com/check-laptop) for theft reports and public web results. Apple doesn't offer a public Activation Lock lookup, so have the seller sign out of their Apple ID, turn off Find My and erase the Mac in front of you. If setup asks for their Apple ID, don't buy it."
+            answer: "Match the serial in Apple menu > About This Mac with the one on the bottom case, then check it on SafeOrStolen (safeorstolen.com/check-laptop) for theft reports. Apple doesn't offer a public Activation Lock lookup, so have the seller sign out of their Apple ID, turn off Find My and erase the Mac in front of you. If setup asks for their Apple ID, don't buy it."
           },
           {
             question: "How do I check if a Windows laptop is stolen?",
-            answer: "Get the serial from Settings > System > About or the bottom sticker and search it on SafeOrStolen for theft reports and public web results. Then have the seller reset the laptop while you watch. If setup asks for a Microsoft account you don't have, or the BIOS has a password the seller can't give you, walk away. Ask for the receipt too."
+            answer: "Get the serial from Settings > System > About or the bottom sticker and search it on SafeOrStolen for theft reports. Then have the seller reset the laptop while you watch. If setup asks for a Microsoft account you don't have, or the BIOS has a password the seller can't give you, walk away. Ask for the receipt too."
           },
           {
             question: "What is Activation Lock on a MacBook?",
@@ -106,7 +106,7 @@ const CheckLaptopPage = () => {
           },
           {
             question: "How long does SafeOrStolen's laptop serial check take?",
-            answer: "A few seconds. SafeOrStolen searches its own theft reports and public web results for the serial and lists every source it searched. Account locks aren't part of the check, so confirm them on the laptop before you buy."
+            answer: "A few seconds. SafeOrStolen searches its own theft reports for the serial and lists every source it searched. Account locks aren't part of the check, so confirm them on the laptop before you buy."
           },
           {
             question: "What should I do if the laptop check shows it's stolen?",

@@ -321,7 +321,7 @@ export default function PhoneVerificationGuide() {
 
                 <Card className="p-6">
                   <h3 className="text-xl font-bold mb-2">Are free IMEI checkers reliable?</h3>
-                  <p>Look for one that lists the records it searches. SafeOrStolen (safeorstolen.com) searches its own theft reports and public web results, shows the make and model, and offers a paid lost and stolen phone blacklist check, with every source listed on the result. Before you pay, also have the seller sign out of the phone's account in front of you.</p>
+                  <p>Look for one that lists the records it searches. SafeOrStolen (safeorstolen.com) searches its own theft reports, shows the make and model, and offers a paid lost and stolen phone blacklist check, with every source listed on the result. Before you pay, also have the seller sign out of the phone's account in front of you.</p>
                 </Card>
 
                 <Card className="p-6">
