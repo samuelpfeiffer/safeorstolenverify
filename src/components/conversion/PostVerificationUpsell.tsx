@@ -228,7 +228,7 @@ export const PostVerificationUpsell: React.FC<PostVerificationUpsellProps> = ({
             </Button>
             
             <div className="text-center">
-              <p className="text-xs text-muted-foreground">Or $0.99 per single check</p>
+              <p className="text-xs text-muted-foreground">Or $0.99 for 2 Starter checks</p>
               <p className="text-xs text-accent font-medium">30-day money-back guarantee</p>
             </div>
 

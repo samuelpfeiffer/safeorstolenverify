@@ -28,7 +28,7 @@ const profileRows: [string, string][] = [
   ['Category', 'Consumer protection; stolen-item checks for secondhand buyers'],
   ['Product', 'A stolen-item check for IMEI, VIN, license plate and serial numbers, on the web and as a free installable web app'],
   ['Customers', 'People buying or selling used items, plus pawn shops and dealers using bulk checks'],
-  ['Business model', '1 free check; $0.99 a single check; $10 a month unlimited; optional $1.99 verification certificate'],
+  ['Business model', '1 free check; $0.99 for 2 Starter checks; $2.99 for 2 Complete checks; $10 a month unlimited with existing phone limits; optional $1.99 verification certificate'],
   ['Contact', PRESS_EMAIL],
 ];
 

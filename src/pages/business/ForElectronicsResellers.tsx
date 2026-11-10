@@ -30,7 +30,7 @@ const FAQS = [
   {
     question: 'Does the bulk check include the carrier blacklist?',
     answer:
-      'On the $10 monthly plan, the first 20 phone checks each month also search the lost and stolen carrier blacklist, whether you run them one at a time or in bulk. After 20, phone checks still search theft reports and web results and show the make and model, but skip the blacklist. A $0.99 single phone check includes it. Free checks do not.',
+      'On the $10 monthly plan, the first 20 phone checks each month also search the lost and stolen carrier blacklist, whether you run them one at a time or in bulk. After 20, phone checks still search theft reports and web results and show the make and model, but skip the blacklist. The $2.99 Complete package buys 2 checks and includes the blacklist search. The $0.99 Starter package buys 2 records-only checks. Free checks do not include the blacklist search.',
   },
   {
     question: 'Can I check if a phone is iCloud locked or Google locked by IMEI?',

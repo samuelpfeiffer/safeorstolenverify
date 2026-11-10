@@ -33,7 +33,7 @@ const CHECKS: { name: string; catches: string; who: string; sos: string }[] = [
  name: 'Carrier blacklist',
  catches: 'Phones reported lost or stolen to a carrier. A blacklisted phone may not connect to networks that honor the list.',
  who: 'Anyone with the IMEI, through a blacklist check.',
- sos: 'Yes, on a paid phone check ($0.99, or up to 20 a month on the $10 plan).',
+ sos: 'Yes, with the $2.99 package of 2 Complete checks, or up to 20 a month on the $10 plan. The $0.99 package of 2 Starter checks is records only.',
  },
  {
  name: 'Account lock (Activation Lock, Google FRP)',
