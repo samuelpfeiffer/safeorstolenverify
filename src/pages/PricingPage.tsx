@@ -7,7 +7,7 @@
  * results", "34 states", seller badges, bulk CSV upload, priority support, embeddable widget/API,
  * "no questions asked" refunds, and emoji.
  */
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from '@/lib/router-compat';
 import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
@@ -53,8 +53,11 @@ const FAQS = [
 
 const PricingPage = () => {
  const [loading, setLoading] = useState<string | null>(null);
+ const checkoutInProgress = useRef(false);
 
  async function handleCheckout(priceId: string, planName: string, isSubscription: boolean) {
+ if (checkoutInProgress.current) return;
+ checkoutInProgress.current = true;
  setLoading(priceId);
  try {
  // Oct 21 2026: guests can pay right away (Stripe asks for their email). Forcing sign-up here lost buyers.
@@ -68,10 +71,14 @@ const PricingPage = () => {
  },
  });
  if (error) throw new Error(error.message);
- if (data?.url) redirectToStripe(data.url);
+ if (typeof data?.url !== 'string' || !data.url.trim()) {
+ throw new Error('Checkout did not return a payment link');
+ }
+ redirectToStripe(data.url);
  } catch {
  alert('Something went wrong. Please try again or email safeorstolenmail@gmail.com');
  } finally {
+ checkoutInProgress.current = false;
  setLoading(null);
  }
  }
@@ -173,7 +180,7 @@ const PricingPage = () => {
 
  <button
  onClick={() => handleCheckout(PAY_PER_CHECK_PRICE_ID, 'Pay Per Check', false)}
- disabled={loading === PAY_PER_CHECK_PRICE_ID}
+ disabled={loading !== null}
  className="w-full py-3 rounded-xl font-bold bg-secondary hover:bg-secondary/90 text-secondary-foreground transition-all disabled:opacity-60 flex items-center justify-center gap-2"
  >
  <CreditCard className="w-4 h-4" />
@@ -211,7 +218,7 @@ const PricingPage = () => {
  </ul>
  <button
  onClick={() => handleCheckout(PAY_PER_CHECK_PRICE_ID + '-complete', 'Complete check', false)}
- disabled={loading === PAY_PER_CHECK_PRICE_ID + '-complete'}
+ disabled={loading !== null}
  className="w-full py-3 rounded-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground transition-all disabled:opacity-60 inline-flex items-center justify-center gap-2"
  >
  <CreditCard className="w-4 h-4" />
@@ -255,7 +262,7 @@ const PricingPage = () => {
 
  <button
  onClick={() => handleCheckout(UNLIMITED_PRICE_ID, 'Unlimited', true)}
- disabled={loading === UNLIMITED_PRICE_ID}
+ disabled={loading !== null}
  className="w-full py-3 rounded-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground transition-all disabled:opacity-60 flex items-center justify-center gap-2"
  >
  <Zap className="w-4 h-4" />
@@ -364,7 +371,7 @@ const PricingPage = () => {
  </Link>
  <button
  onClick={() => handleCheckout(UNLIMITED_PRICE_ID, 'Unlimited', true)}
- disabled={loading === UNLIMITED_PRICE_ID}
+ disabled={loading !== null}
  className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-4 rounded-2xl text-lg transition-all disabled:opacity-60"
  >
  <Shield className="w-5 h-5" />
