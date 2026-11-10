@@ -304,7 +304,7 @@ export const SecurityChicDashboard: React.FC = () => {
 - Peoria, Arizona 85345, United States
 
 ## Pricing
-- 1 free check, $0.99 for 2 checks, or $10/month unlimited — all item types, all databases
+- 1 free check, $4.99 for 1 check, or $10/month unlimited — all item types, all databases
 - Business/Enterprise: Custom API pricing
 
 ## Content Not Permitted

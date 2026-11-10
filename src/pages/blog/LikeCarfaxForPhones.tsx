@@ -188,7 +188,7 @@ const LikeCarfaxForPhones = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span><strong>1 free check</strong>, then $0.99 for 2 checks or $10 a month unlimited</span>
+                    <span><strong>1 free check</strong>, then $4.99 for 1 check or $10 a month unlimited</span>
                   </li>
                 </ul>
               </Card>
@@ -318,7 +318,7 @@ const LikeCarfaxForPhones = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>Pricing</strong>: 1 free check, then $0.99 for 2 checks or $10 a month unlimited</span>
+                  <span><strong>Pricing</strong>: 1 free check, then $4.99 for 1 check or $10 a month unlimited</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />

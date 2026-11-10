@@ -69,7 +69,7 @@ const ImeiStolenPhoneCheckPage = () => {
  },
  {
  question: "How much does the IMEI check cost?",
- answer: "SafeOrStolen offers 2 free IMEI checks, then $0.99 for 2 checks or $10/month unlimited. This covers SafeOrStolen reports and AI analysis. Many other IMEI checkers may charge more per check or provide different data sources."
+ answer: "SafeOrStolen offers 1 free IMEI check, then $4.99 for 1 check or $10/month unlimited. This covers SafeOrStolen reports and AI analysis. Many other IMEI checkers may charge more per check or provide different data sources."
  },
  {
  question: "What's the difference between IMEI and serial number?",

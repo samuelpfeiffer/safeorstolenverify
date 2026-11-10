@@ -1,3 +1,4 @@
+import { purchasedCheckLimit } from './purchasedCheckLimit';
 /**
  * Server-only verification engine.
  *
@@ -22,7 +23,7 @@ export const VERIFY_BUILD_ID = 'app-server-verify-2026-09-19-1';
 const SOURCE_TIMEOUT_MS = 20_000;
 // Oct 21 2026 (owner decision): 1 free check, then $0.99 buys 2 checks (at most 1 phone blacklist search).
 const FREE_LIMIT = 1;
-const SINGLE_CHECKS = 2;
+
 // Oct 29 2026: one-time packs. 'single' = $0.99 Starter (records only); 'complete' = $2.99 Complete
 // (adds the phone blacklist search, web listings + AI review, and a free certificate).
 const isPack = (plan: string | null | undefined) => plan === 'single' || plan === 'complete';
@@ -648,7 +649,16 @@ async function phoneBlacklistAllowed(
       .select('id');
     return !!claimed && claimed.length > 0;
   }
-  if (!userId) return true;
+  if (!userId) {
+    if (!gate.singleSubId) return false;
+    const { data: row } = await admin.from('subscriptions').select('phone_lookups_used').eq('id', gate.singleSubId).maybeSingle();
+    const used = row?.phone_lookups_used ?? 0;
+    if (used >= MONTHLY_PHONE_BLACKLIST_LIMIT) return false;
+    const { data: claimed } = await admin.from('subscriptions')
+      .update({ phone_lookups_used: used + 1, updated_at: new Date().toISOString() })
+      .eq('id', gate.singleSubId).eq('phone_lookups_used', used).select('id');
+    return !!claimed?.length;
+  }
   const monthStart = new Date();
   monthStart.setUTCDate(1);
   monthStart.setUTCHours(0, 0, 0, 0);
@@ -676,10 +686,10 @@ async function guestPaidGate(admin: AdminClient, fingerprint: string): Promise<G
   const now = new Date();
   const list: any[] = rows ?? [];
   const monthly = list.find((r) => !isPack(r.plan) && (!r.period_end || new Date(r.period_end) > now));
-  if (monthly) return { allowed: true, plan: monthly.plan, checksRemaining: null };
+  if (monthly) return { allowed: true, plan: monthly.plan, checksRemaining: null, singleSubId: monthly.id };
   const single =
-    list.find((r) => r.plan === 'complete' && (r.checks_used_this_month ?? 0) < SINGLE_CHECKS) ??
-    list.find((r) => r.plan === 'single' && (r.checks_used_this_month ?? 0) < SINGLE_CHECKS);
+    list.find((r) => r.plan === 'complete' && (r.checks_used_this_month ?? 0) < purchasedCheckLimit(r)) ??
+    list.find((r) => r.plan === 'single' && (r.checks_used_this_month ?? 0) < purchasedCheckLimit(r));
   if (!single) return null;
   // Claim it only if still unused, so two tabs can't spend one purchase twice.
   let claim = admin
@@ -691,7 +701,7 @@ async function guestPaidGate(admin: AdminClient, fingerprint: string): Promise<G
     : claim.eq('checks_used_this_month', single.checks_used_this_month);
   const { data: claimed } = await claim.select('id');
   if (!claimed || claimed.length === 0) return null;
-  return { allowed: true, plan: single.plan, checksRemaining: SINGLE_CHECKS - ((single.checks_used_this_month ?? 0) + 1), singleSubId: single.id };
+  return { allowed: true, plan: single.plan, checksRemaining: purchasedCheckLimit(single) - ((single.checks_used_this_month ?? 0) + 1), singleSubId: single.id };
 }
 
 async function claimGuestPurchasesByEmail(admin: AdminClient, userId: string): Promise<boolean> {
@@ -764,7 +774,7 @@ export async function checkUsageGate(
   const now = new Date();
   const usable = (r: any) =>
     isPack(r.plan)
-      ? (r.checks_used_this_month ?? 0) < SINGLE_CHECKS
+      ? (r.checks_used_this_month ?? 0) < purchasedCheckLimit(r)
       : !r.period_end || new Date(r.period_end) > now;
   const sub: any =
     subRows.find((r) => !isPack(r.plan) && usable(r)) ??
@@ -775,7 +785,7 @@ export async function checkUsageGate(
 
   if (sub) {
     const used = sub.checks_used_this_month ?? 0;
-    if (isPack(sub.plan) && used >= SINGLE_CHECKS) {
+    if (isPack(sub.plan) && used >= purchasedCheckLimit(sub)) {
       return { allowed: false, reason: 'single_used', plan: 'single' };
     }
     if (sub.plan === 'basic' && used >= 50) {
@@ -794,7 +804,7 @@ export async function checkUsageGate(
     return {
       allowed: true,
       plan: sub.plan,
-      checksRemaining: sub.plan === 'basic' ? 50 - (used + 1) : isPack(sub.plan) ? SINGLE_CHECKS - (used + 1) : null,
+      checksRemaining: sub.plan === 'basic' ? 50 - (used + 1) : isPack(sub.plan) ? purchasedCheckLimit(sub) - (used + 1) : null,
       ...(isPack(sub.plan) ? { singleSubId: sub.id } : {}),
     };
   }

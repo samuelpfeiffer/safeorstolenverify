@@ -22,7 +22,7 @@ const FAQS = [
  },
  {
  q: "Is SafeOrStolen's Florida license plate lookup free?",
- a: "Your first check is free, with no account or credit card needed. After that $0.99 gets you 2 more checks, or $10 a month gets you unlimited checks, cancel anytime. Every check is saved to your account with the date.",
+ a: "Your first check is free, with no account or credit card needed. After that $4.99 gets you 1 more check, or $10 a month gets you unlimited checks, cancel anytime. Every check is saved to your account with the date.",
  },
 ];
 

@@ -239,7 +239,7 @@ const OfferupScamProtection = () => {
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">$0.99</div>
+                <div className="text-4xl font-bold text-primary mb-2">$4.99</div>
                 <p className="text-muted-foreground">
                   A single check after your free ones
                 </p>

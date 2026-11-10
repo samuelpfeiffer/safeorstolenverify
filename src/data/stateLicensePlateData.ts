@@ -585,7 +585,7 @@ export const generateLicensePlatePageContent = (stateKey: string) => {
  },
  {
  question: `Is a ${state} license plate lookup free?`,
- answer: `Your first check is free with a SafeOrStolen account, no credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, and you can cancel anytime.`
+ answer: `Your first check is free with a SafeOrStolen account, no credit card needed. After that it's $4.99 for 1 check or $10 a month for unlimited checks, and you can cancel anytime.`
  },
  {
  question: `What does "no report found" mean?`,

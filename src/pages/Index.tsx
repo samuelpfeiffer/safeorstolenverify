@@ -122,7 +122,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'How much does SafeOrStolen cost?',
- a: 'Your first check is free, with no account or credit card needed. After that it is $0.99 for 2 checks, or $10 a month for unlimited checks (including up to 20 phone blacklist checks a month), with a 30-day refund on the monthly plan.',
+ a: 'Your first check is free, with no account or credit card needed. After that it is $4.99 for 1 check, or $10 a month for unlimited checks (including up to 20 phone blacklist checks a month), with a 30-day refund on the monthly plan.',
  },
  {
  q: 'Can a license plate lookup tell me who owns a car?',
@@ -173,7 +173,7 @@ const Index = () => {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>Check if a phone, car, gun, tool, console, appliance, or bike was reported stolen.</strong></p>
  <p>SafeOrStolen checks whether a used item is reported stolen. Type a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial or any other serial number, and in a few seconds you see whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
- <p>Every check searches SafeOrStolen's own theft reports. Guns are also checked against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona, Alaska and Chicago police stolen-vehicle records. Your first check is free; then $0.99 for 2 checks or $10 a month for unlimited checks.</p>
+ <p>Every check searches SafeOrStolen's own theft reports. Guns are also checked against more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC and live Ohio law-enforcement records, bikes against a national stolen-bicycle registry, and Arizona plates and VINs against Arizona, Alaska and Chicago police stolen-vehicle records. Your first check is free; then $4.99 for 1 check or $10 a month for unlimited checks.</p>
  </div>
  </noscript>
  {/* ── AI CHAT HERO ──────────────────────────── */}
@@ -210,7 +210,7 @@ const Index = () => {
  <span className="text-primary">Check for free</span>. No credit card.
  </h2>
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
- Need more checks? Pay <strong className="text-foreground">$0.99 for 2 Starter checks</strong> or <strong className="text-foreground">$2.99 for 2 Complete checks</strong>.
+ Need more checks? Pay <strong className="text-foreground">$4.99 for 1 verification check</strong> or <strong className="text-foreground">$10/month for unlimited standard checks</strong>.
  Verifying often? Get <strong className="text-foreground">$10/month unlimited</strong> with the seller badge,
  installable web app, and verification certificates included. Cancel anytime, 30-day refund.
  </p>

@@ -11,48 +11,20 @@ import { useRef, useState } from 'react';
 import { Link } from '@/lib/router-compat';
 import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
-import { Shield, Zap, Check, ArrowRight, Star, CreditCard } from 'lucide-react';
+import { Shield, ArrowRight } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { redirectToStripe } from '@/utils/stripeRedirect';
 import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/constants';
 
 const FAQS = [
- {
- q: 'How much does SafeOrStolen cost?',
- a: 'SafeOrStolen (safeorstolen.com/pricing) gives you 1 free check with no account or credit card needed. After that, $0.99 buys 2 Starter checks (records only) or $2.99 buys 2 Complete checks (adds phone blacklist searches for phones and a certificate), with no subscription, or you can pay $10 a month for unlimited checks and cancel anytime. A verification certificate, a dated record with its own link showing you checked before a sale, is an optional $1.99, or included with enhanced checks and the monthly plan.',
- },
- {
- q: 'Do guns or other categories cost extra to unlock?',
- a: 'No. The same verification chat and check credits work across item types, including firearms. There is no category unlock fee. Optional enhanced checks include additional features; phone blacklist searches apply only to phones.',
- },
- {
- q: 'What does the 1 free check include?',
- a: 'Each free check searches SafeOrStolen theft reports for the number you enter. Gun checks also search police firearm theft and loss reports from 33 states and Washington, DC, bike checks search a national stolen-bicycle registry, and VIN checks decode the vehicle and list open recalls. A free phone check shows the make and model from the IMEI. The carrier blacklist search needs a paid check.',
- },
- {
- q: 'Is anything limited on the $10 unlimited plan?',
- a: 'Only phone blacklist searches. The monthly plan includes up to 20 lost/stolen carrier blacklist checks a month, because each one costs money to run. Every other check, for cars, plates, guns, bikes, laptops, tools and anything with a serial number, is unlimited. If you need another blacklist check after your 20, buy a $2.99 Complete check.',
- },
- {
- q: 'When is the monthly plan cheaper than single checks?',
- a: 'At about 21 checks a month. At $0.99 for 2 checks, 20 checks cost $9.90 and 22 cost $10.89, so the $10 monthly plan wins once you pass about 20. If you are checking one phone or one bike before a purchase, use your free check, the $0.99 Starter, or the $2.99 Complete check (best for phones). If you buy and resell regularly, or check a lot of listings, the monthly plan costs less.',
- },
- {
- q: 'Can I cancel the monthly plan, and is there a refund?',
- a: 'Yes. Cancel anytime from your account dashboard and the plan stays active until the end of the period you paid for. The monthly plan also has a 30-day refund: if it isn\'t useful to you within 30 days of paying, email safeorstolenmail@gmail.com and ask for your money back. Single checks and certificates are one-time purchases.',
- },
- {
- q: 'What counts as one check?',
- a: 'Each IMEI, VIN, plate or serial number you submit counts as one check. Opening a result you already ran, from your account history, does not cost another check. If you mistype a number and run it again corrected, that is a second check, so compare the number with the photo from the seller before you search.',
- },
- {
- q: 'What is the $1.99 verification certificate?',
- a: 'It is an optional add-on to a check: a dated record with its own link that shows you checked the item before the sale. You can send the link to a buyer when you sell, or keep it in case questions come up after you buy. It costs $1.99 per certificate and is included with enhanced checks and monthly membership.',
- },
- {
- q: 'Do I need an account to buy a single check?',
- a: 'No. You can pay $0.99 as a guest, and Stripe just asks for your email for the receipt. A free account is optional; it saves your results to your history with the date. There is no recurring charge on a single check.',
- },
+ { q: 'How much does SafeOrStolen cost?', a: 'Your first check is free. After that, one verification check costs $4.99, or unlimited checks cost $10 per month. Applicable tax is calculated at checkout.' },
+ { q: 'Do firearms or other categories cost extra?', a: 'No. One chat handles every supported item type. The same price applies to phones, vehicles, firearms, bikes, electronics, tools and other serial-numbered items.' },
+ { q: 'What does a paid check include?', a: 'One item identifier is checked against the sources available for its category, with the sources listed in the result. The paid check includes a verification certificate and one phone blacklist search if the item is a phone. A no-match result is not proof of ownership or a guarantee.' },
+ { q: 'What does unlimited mean?', a: 'The $10 monthly plan includes unlimited standard item checks and certificates. Phone carrier blacklist searches are limited to 20 per month. The plan renews monthly; cancel anytime.' },
+ { q: 'When is monthly better value?', a: 'Three separate paid checks cost $14.97. If you need three or more checks in a month, the $10 monthly plan costs less, before applicable tax.' },
+ { q: 'What happens to checks I already purchased?', a: 'Existing two-check packs keep their original allowance. Existing subscriptions keep their current billing terms. The $4.99 price applies to new one-check purchases.' },
+ { q: 'Do I need an account?', a: 'No account is required for your first free check or a one-time purchase. Use the same browser to access a guest purchase. A signed-in account saves your history across devices.' },
+ { q: 'Can I cancel or request a refund?', a: 'Cancel monthly billing from your account. Access continues until the end of the paid period. For the monthly plan’s 30-day refund, contact safeorstolenmail@gmail.com. One-time checks do not renew.' },
 ];
 
 const PricingPage = () => {
@@ -91,205 +63,40 @@ const PricingPage = () => {
  <>
  <div className="min-h-screen bg-background text-foreground pt-20">
  <PageSEO
- title="SafeOrStolen Pricing: 1 Free Check, From $0.99, $10/Month"
- description="SafeOrStolen pricing: 1 free check with no credit card, 2 checks from $0.99 ($2.99 Complete), or $10 a month for unlimited checks with a 30-day refund. Cancel anytime."
+ title="SafeOrStolen Pricing: 1 Free Check, $4.99/Check, $10/Month"
+ description="One chat for every item. Get 1 free check, then pay $4.99 per verification or $10/month for unlimited standard checks. Applicable tax calculated at checkout."
  keywords="safeorstolen pricing, how much does safeorstolen cost, stolen item check cost, imei check price, vin check price, free stolen check"
  canonical="/pricing"
  modifiedTime="2026-11-10"
  />
 
- {/* Hero */}
- <div className="text-center pt-16 pb-10 px-4">
- <h1 className="text-4xl md:text-5xl font-black mb-4">
- SafeOrStolen Pricing
- </h1>
- <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
- One chat for every item. Start with 1 free check, then get 2 checks for $0.99 or unlimited checks for $10 a month.
- The same prices cover phones, vehicles, firearms, bikes, electronics and tools—no category unlock fees.
- </p>
- <p className="text-muted-foreground text-sm mt-3">
- Updated <time dateTime="2026-11-10">November 10, 2026</time>
- </p>
+ <div className="max-w-5xl mx-auto px-4 py-14">
+ <div className="text-center mb-10">
+ <h1 className="text-4xl md:text-5xl font-black mb-4">One chat. Every item. Simple pricing.</h1>
+ <p className="text-lg text-muted-foreground">1 free check. Then $4.99 per check or $10/month unlimited.</p>
+ <p className="text-sm text-muted-foreground mt-3">Same pricing for firearms, vehicles, phones, bikes, electronics and tools. Applicable tax calculated at checkout.</p>
  </div>
-
- {/* Three Pricing Cards */}
- <div className="max-w-5xl mx-auto px-4 mb-16">
- <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
- Start free. Pay only when you need more checks.
- </h2>
- <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
- {/* Card 1 — Free */}
- <div className="rounded-2xl border border-border bg-card flex flex-col p-6">
- <div className="inline-flex self-start items-center gap-1 bg-muted text-muted-foreground text-xs font-bold px-3 py-1 rounded-full mb-4">
- Start here
+ <div className="grid gap-6 md:grid-cols-3">
+ <section className="rounded-2xl border border-border bg-card p-6 flex flex-col">
+ <h2 className="text-xl font-bold">Try it free</h2><p className="text-4xl font-black my-4">$0</p>
+ <p className="text-muted-foreground mb-6">1 free check. No account or credit card needed. Results list the sources searched.</p>
+ <Link to="/verify" className="mt-auto block rounded-xl bg-muted px-4 py-3 text-center font-bold">Start my free check</Link>
+ </section>
+ <section className="rounded-2xl border-2 border-primary bg-card p-6 flex flex-col">
+ <h2 className="text-xl font-bold">One verification check</h2><p className="text-4xl font-black my-4">$4.99</p>
+ <p className="text-muted-foreground mb-4">One item. Any supported category. Paid once.</p>
+ <ul className="space-y-2 text-sm mb-6"><li>Available records for your item type</li><li>Verification certificate included</li><li>One phone blacklist search for a phone</li><li>No subscription or category unlock fee</li></ul>
+ <button onClick={() => handleCheckout(PAY_PER_CHECK_PRICE_ID, 'One verification check', false)} disabled={loading !== null} className="mt-auto rounded-xl bg-primary px-4 py-3 font-bold text-primary-foreground disabled:opacity-60">{loading === PAY_PER_CHECK_PRICE_ID ? 'Opening checkout…' : 'Check one item — $4.99'}</button>
+ </section>
+ <section className="rounded-2xl border border-border bg-card p-6 flex flex-col">
+ <h2 className="text-xl font-bold">Unlimited</h2><p className="text-4xl font-black my-4">$10<span className="text-base font-normal">/month</span></p>
+ <p className="text-muted-foreground mb-4">For people checking several items.</p>
+ <ul className="space-y-2 text-sm mb-6"><li>Unlimited standard checks across all categories</li><li>Verification certificates included</li><li>Up to 20 phone blacklist searches per month</li><li>Renews monthly. Cancel anytime.</li></ul>
+ <button onClick={() => handleCheckout(UNLIMITED_PRICE_ID, 'Unlimited', true)} disabled={loading !== null} className="mt-auto rounded-xl bg-muted px-4 py-3 font-bold disabled:opacity-60">{loading === UNLIMITED_PRICE_ID ? 'Opening checkout…' : 'Get unlimited — $10/month'}</button>
+ </section>
  </div>
- <h3 className="text-xl font-bold mb-1">Free</h3>
- <div className="mb-1 flex items-baseline gap-1">
- <span className="text-4xl font-black">$0</span>
- </div>
- <p className="text-muted-foreground text-sm mb-6">1 free check</p>
-
- <ul className="space-y-2 flex-1 mb-6">
- {[
- '1 free check, no account or credit card',
- 'Phones, vehicles, plates, guns, bikes and serial numbers',
- 'SafeOrStolen theft reports and police records',
- 'Police gun records for guns, stolen-bicycle registry for bikes',
- 'Each check saved to your account with the date',
- ].map((f) => (
- <li key={f} className="flex items-start gap-2 text-sm text-foreground/80">
- <Check className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" />
- {f}
- </li>
- ))}
- </ul>
-
- <Link
- to="/verify"
- className="w-full py-3 rounded-xl font-bold text-center bg-muted hover:bg-muted/80 text-foreground transition-all block"
- >
- Use my 1 free check
- </Link>
- <p className="text-center text-xs text-muted-foreground mt-2">
- No account or card needed.
- </p>
- </div>
-
- {/* Card 2 — Pay Per Check */}
- <div className="rounded-2xl border border-border bg-card flex flex-col p-6">
- <div className="inline-flex self-start items-center gap-1 bg-secondary/20 text-secondary-foreground text-xs font-bold px-3 py-1 rounded-full mb-4">
- Starter
- </div>
- <h3 className="text-xl font-bold mb-1">2 checks</h3>
- <div className="mb-1 flex items-baseline gap-1">
- <span className="text-4xl font-black">$0.99</span>
- </div>
- <p className="text-muted-foreground text-sm mb-6">for 2 checks, paid once</p>
-
- <ul className="space-y-2 flex-1 mb-6">
- {[
- '2 credits usable across item types',
- 'SafeOrStolen theft reports and police records',
- 'Phone details from IMEI; blacklist checks are an optional upgrade',
- 'Saved to your account with the date',
- 'Optional $1.99 verification certificate',
- 'No subscription',
- ].map((f) => (
- <li key={f} className="flex items-start gap-2 text-sm text-foreground/80">
- <Check className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" />
- {f}
- </li>
- ))}
- </ul>
-
- <button
- onClick={() => handleCheckout(PAY_PER_CHECK_PRICE_ID, 'Pay Per Check', false)}
- disabled={loading !== null}
- className="w-full py-3 rounded-xl font-bold bg-secondary hover:bg-secondary/90 text-secondary-foreground transition-all disabled:opacity-60 flex items-center justify-center gap-2"
- >
- <CreditCard className="w-4 h-4" />
- {loading === PAY_PER_CHECK_PRICE_ID ? 'Loading...' : 'Get 2 checks — $0.99 once'}
- </button>
- <p className="text-center text-xs text-muted-foreground mt-2">
- One-time payment. No subscription.
- </p>
- </div>
-
- {/* Card 3 — Unlimited (highlighted) */}
- <div className="flex flex-col">
- <div className="self-center mb-5 text-xs font-black uppercase tracking-widest text-primary border border-primary/50 bg-primary/10 px-3 py-1 rounded-full">For frequent checks</div>
- <div className="relative rounded-2xl border-2 border-primary bg-card shadow-2xl shadow-primary/20 flex flex-col p-6 flex-1">
- <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-black px-4 py-1.5 rounded-full whitespace-nowrap flex items-center gap-1">
- <Star className="w-3 h-3 fill-current" /> 21+ Starter checks a month
- </div>
- <div className="mt-2" />
- <h3 className="text-xl font-bold mb-1">Unlimited</h3>
- <div className="mb-1 flex items-baseline gap-1">
- <span className="text-4xl font-black">$10</span>
- <span className="text-muted-foreground">/month</span>
- </div>
- <p className="text-muted-foreground text-sm mb-6">unlimited checks</p>
-
- <ul className="space-y-2 flex-1 mb-6">
- {[
- 'Unlimited checks on every item type',
- 'Up to 20 phone blacklist checks a month',
- 'Verification certificates free',
- 'Full check history with dates',
- 'Cancel anytime',
- '30-day refund',
- ].map((f) => (
- <li key={f} className="flex items-start gap-2 text-sm text-foreground/80">
- <Check className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
- {f}
- </li>
- ))}
- </ul>
-
- <button
- onClick={() => handleCheckout(UNLIMITED_PRICE_ID, 'Unlimited', true)}
- disabled={loading !== null}
- className="w-full py-3 rounded-xl font-bold bg-primary hover:bg-primary/90 text-primary-foreground transition-all disabled:opacity-60 flex items-center justify-center gap-2"
- >
- <Zap className="w-4 h-4" />
- {loading === UNLIMITED_PRICE_ID ? 'Loading...' : 'Go unlimited: $10/month'}
- </button>
- <p className="text-center text-xs text-muted-foreground mt-2">
- Costs less than $0.99 Starter packs once you need 21 paid checks in a month.
- </p>
- </div>
- </div>
- </div>
- </div>
-
- {/* Optional enhancement, separate from the two main payment choices. */}
- <div className="max-w-3xl mx-auto px-4 mb-12">
- <details className="rounded-xl border border-border bg-card p-5">
- <summary className="cursor-pointer font-semibold">Optional: phone blacklist checks and certificates</summary>
- <p className="text-sm text-muted-foreground mt-3">Get 2 enhanced checks for $2.99, paid once. This is the Complete pack: standard records plus a certificate and phone blacklist searches for phones. It works across all item types at the same price. Certificates are already included with the monthly plan.</p>
- <button onClick={() => handleCheckout(PAY_PER_CHECK_PRICE_ID + '-complete', 'Complete check', false)} disabled={loading !== null} className="mt-4 rounded-lg border border-border px-4 py-3 font-semibold disabled:opacity-60">
- {loading === PAY_PER_CHECK_PRICE_ID + '-complete' ? 'Loading...' : 'Get 2 enhanced checks — $2.99 once'}
- </button>
- </details>
- </div>
-
- {/* Comparison table */}
- <div className="max-w-3xl mx-auto px-4 mb-16">
- <h2 className="text-2xl font-black text-foreground mb-4 text-center">What each option gets you</h2>
- <div className="overflow-x-auto">
- <table className="w-full text-sm border border-border">
- <thead className="bg-muted/50">
- <tr>
- <th className="text-left p-3 border-b border-border"></th>
- <th className="text-left p-3 border-b border-border">Free</th>
- <th className="text-left p-3 border-b border-border">2 checks / enhanced checks</th>
- <th className="text-left p-3 border-b border-border">Unlimited</th>
- </tr>
- </thead>
- <tbody>
- {[
- ['Price', '$0', '$0.99 or $2.99 for 2', '$10 a month'],
- ['Checks', '1 total', '2 per purchase', 'Unlimited'],
- ['Theft reports', 'Yes', 'Yes', 'Yes'],
- ['Police gun records, bike registry, VIN decode and recalls', 'Yes', 'Yes', 'Yes'],
- ['Phone carrier blacklist search', 'No', 'Complete only', 'Up to 20 a month'],
- ['Verification certificate', 'Optional $1.99', 'Included with Complete; $1.99 with Starter', 'Free'],
- ['Refund', 'Not needed', 'One-time purchase', '30 days'],
- ].map((row) => (
- <tr key={row[0]} className="align-top">
- <td className="p-3 border-b border-border font-semibold">{row[0]}</td>
- <td className="p-3 border-b border-border">{row[1]}</td>
- <td className="p-3 border-b border-border">{row[2]}</td>
- <td className="p-3 border-b border-border">{row[3]}</td>
- </tr>
- ))}
- </tbody>
- </table>
- </div>
- <p className="text-sm text-muted-foreground mt-4">
- Want to know what each check searches before you pay? See{' '}
- <Link to="/how-it-works" className="text-primary underline">how it works</Link>.
- </p>
+ <p className="text-center text-sm text-muted-foreground mt-6">Checking three or more items? Monthly costs less than three separate $4.99 checks.</p>
+ <p className="text-center text-sm mt-3"><Link to="/data-sources" className="text-primary underline">See what each item check searches</Link></p>
  </div>
 
  {/* Audience links */}
@@ -337,7 +144,7 @@ const PricingPage = () => {
 
  {/* Bottom CTA */}
  <div className="text-center pb-20 px-4">
- <p className="text-muted-foreground mb-4">1 free check. Then 2 checks for $0.99 or unlimited checks for $10 a month. Optional enhanced checks are available above.</p>
+ <p className="text-muted-foreground mb-4">1 free check, then $4.99 per check or $10/month. Same prices across all categories.</p>
  <div className="flex flex-col sm:flex-row gap-3 justify-center">
  <Link
  to="/verify"
@@ -365,14 +172,12 @@ const PricingPage = () => {
  "@context": "https://schema.org",
  "@type": "Service",
  "name": "SafeOrStolen stolen item check",
- "description": "Check if a phone, vehicle, plate, gun, bike or serial-numbered item is reported stolen. 1 free check, then 2 checks for $0.99 (Starter) or $2.99 (Complete), or $10 a month for unlimited checks.",
+ "description": "Check if a phone, vehicle, plate, gun, bike or serial-numbered item is reported stolen. 1 free check, then $4.99 per check or $10/month for unlimited standard checks.",
  "brand": { "@type": "Brand", "name": "SafeOrStolen" },
  "offers": [
- { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1 free check, no account or credit card needed" },
- { "@type": "Offer", "name": "2 checks", "price": "0.99", "priceCurrency": "USD", "description": "2 checks of theft reports and police records, no subscription" },
- { "@type": "Offer", "name": "Complete: 2 checks", "price": "2.99", "priceCurrency": "USD", "description": "2 complete checks with phone blacklist searches for phones and a verification certificate, no subscription" },
- { "@type": "Offer", "name": "Unlimited", "price": "10.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://safeorstolen.com/pricing", "description": "Unlimited checks a month, up to 20 phone blacklist checks, free verification certificates, cancel anytime, 30-day refund" },
- { "@type": "Offer", "name": "Verification certificate", "price": "1.99", "priceCurrency": "USD", "description": "Dated record with its own link showing you checked before the sale" },
+ { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1 free check, no card required" },
+ { "@type": "Offer", "name": "One verification check", "price": "4.99", "priceCurrency": "USD", "description": "One item, any supported category. One-time purchase. Applicable tax calculated at checkout." },
+ { "@type": "Offer", "name": "Unlimited monthly", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited standard checks; up to 20 phone blacklist searches per month. Renews monthly. Applicable tax calculated at checkout." },
  ]
  })
  }}

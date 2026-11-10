@@ -25,7 +25,7 @@ const FirearmsSerialNumberCheckPage = () => {
  const faqs = [
  {
  question: "Is there a free way to check if a gun is stolen?",
- answer: "Yes. SafeOrStolen (safeorstolen.com/firearms-serial-number-check) gives you 1 free check, no account or credit card needed. A gun check searches SafeOrStolen theft reports, more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. After the free checks it's $0.99 for 2 checks or $10 a month."
+ answer: "Yes. SafeOrStolen (safeorstolen.com/firearms-serial-number-check) gives you 1 free check, no account or credit card needed. A gun check searches SafeOrStolen theft reports, more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records. After the free checks it's $4.99 for 1 check or $10 a month."
  },
  {
  question: "Can I check a gun serial number online from my phone?",

@@ -12,7 +12,7 @@ const FAQS = [
   },
   {
     question: "What does it cost?",
-    answer: "1 free check, no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks.",
+    answer: "1 free check, no account needed, then $4.99 for 1 check or $10 a month for unlimited checks.",
   },
   {
     question: "What does a miss mean?",
@@ -25,7 +25,7 @@ export default function APIPage() {
     <main className="min-h-screen bg-background pt-24 pb-20">
       <PageSEO
         title="SafeOrStolen API | Check an IMEI, VIN, or Serial"
-        description="POST to /verify-api to check an IMEI, VIN, plate, or serial number. 1 free check, then $0.99 or $10 a month."
+        description="POST to /verify-api to check an IMEI, VIN, plate, or serial number. 1 free check, then $4.99 or $10 a month."
         canonical="/api"
       />
       <article className="container mx-auto max-w-3xl px-4 space-y-8">
@@ -56,7 +56,7 @@ export default function APIPage() {
           <h2 className="text-2xl font-bold">Limits</h2>
           <ul className="list-disc pl-5 text-muted-foreground space-y-1">
             <li>1 free check, no account needed</li>
-            <li>Then $0.99 for 2 checks, or $10 a month unlimited</li>
+            <li>Then $4.99 for 1 check, or $10 a month unlimited</li>
             <li>60 requests a minute per account</li>
           </ul>
         </section>

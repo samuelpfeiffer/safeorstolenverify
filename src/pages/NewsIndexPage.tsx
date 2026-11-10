@@ -147,7 +147,7 @@ const NewsIndexPage = () => {
           <div className="container mx-auto px-4 max-w-3xl text-center">
             <h2 className="text-2xl font-bold mb-4">Check an item</h2>
             <p className="text-muted-foreground mb-6">
-              the first check is free, with no account or credit card needed. After that it's $0.99 for 2 checks or
+              the first check is free, with no account or credit card needed. After that it's $4.99 for 1 check or
               $10 a month for unlimited checks.
             </p>
             <Button asChild size="lg">

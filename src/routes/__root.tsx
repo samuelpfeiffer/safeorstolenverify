@@ -58,7 +58,7 @@ const webApplicationJsonLd = JSON.stringify({
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-    description: "1 free verification, then $0.99 for 2 checks or $10/month unlimited",
+    description: "1 free verification, then $4.99 for 1 check or $10/month unlimited",
   },
   creator: {
     "@type": "Organization",
@@ -191,8 +191,7 @@ const coreGraphJsonLd = JSON.stringify({
         name: "Verification Plans",
         itemListElement: [
           { "@type": "Offer", name: "Free", price: "0", priceCurrency: "USD", description: "1 free verification, no credit card required" },
-          { "@type": "Offer", name: "Starter: 2 checks", price: "0.99", priceCurrency: "USD", description: "2 Starter checks, no subscription" },
-          { "@type": "Offer", name: "Complete: 2 checks", price: "2.99", priceCurrency: "USD", description: "2 Complete checks, no subscription" },
+          { "@type": "Offer", name: "One verification check", price: "4.99", priceCurrency: "USD", description: "1 verification check, no subscription" },
           { "@type": "Offer", name: "Unlimited", price: "10.00", priceCurrency: "USD", description: "Unlimited verifications per month for supported item types, up to 20 phone blacklist checks a month" },
         ],
       },
@@ -236,7 +235,7 @@ const softwareApplicationJsonLd = JSON.stringify({
     "Plain-language explanation of each result and its sources",
   ],
   potentialAction: { "@type": "CommunicateAction", name: "Chat with SafeOrStolen AI", target: "https://safeorstolen.com/ai-chat" },
-  offers: { "@type": "AggregateOffer", priceCurrency: "USD", lowPrice: "0.99", highPrice: "10.00", offerCount: 2 },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", lowPrice: "4.99", highPrice: "10.00", offerCount: 2 },
   dateModified: "2026-09-24",
 });
 

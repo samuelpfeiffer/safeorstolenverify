@@ -61,7 +61,7 @@ Thanks for signing up for SafeOrStolen!
 
 I'm curious: have you had a chance to try our verification service? Is there anything that would make you want to subscribe?
 
-Our unlimited plan is just $10/month — verify as many items as you need across all categories. Or try a 2 checks for $0.99. Cancel anytime.
+Our unlimited plan is just $10/month — verify as many items as you need across all categories. Or try a 1 check for $4.99. Cancel anytime.
 
 Best,
 The SafeOrStolen Team

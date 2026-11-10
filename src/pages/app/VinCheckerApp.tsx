@@ -184,7 +184,7 @@ const VinCheckerApp = () => {
  Put the VIN checker on your home screen
  </h2>
  <p className="text-muted-foreground mb-8">
- It's a free installable web app, not an App Store or Google Play download. 1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited.
+ It's a free installable web app, not an App Store or Google Play download. 1 free check, no account needed, then $4.99 for 1 check or $10 a month unlimited.
  </p>
  <Button size="lg" className="text-lg px-8" asChild>
  <Link to="/app">

@@ -41,7 +41,7 @@ const ComparisonCheckmend = () => {
     <>
       <PageSEO
         title="SafeOrStolen vs CheckMEND: CheckMEND Alternative | SafeOrStolen"
-        description="Comparing CheckMEND and SafeOrStolen: what each covers, what SafeOrStolen searches, its prices ($0.99 for 2 checks, 2 free) and its free web app."
+        description="Comparing CheckMEND and SafeOrStolen: what each covers, what SafeOrStolen searches, its prices ($4.99 for 1 check, 1 free) and its free web app."
         keywords="CheckMEND alternative, CheckMEND app, compare CheckMEND, CheckMEND mobile app, item checker app, SafeOrStolen app download, CheckMEND review"
         canonical="/vs-checkmend"
         structuredData={comparisonSchema}
@@ -50,7 +50,7 @@ const ComparisonCheckmend = () => {
       <noscript>
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
           <p><strong>SafeOrStolen vs CheckMEND</strong></p>
-          <p>CheckMEND is a device history check best known for phones and other electronics. SafeOrStolen checks phones by IMEI, vehicles by VIN, license plates, guns, bikes and any serial-numbered item. Every SafeOrStolen check searches its own theft reports, with extra records for guns, bikes and Arizona vehicles. It runs as a free installable web app at safeorstolen.com/app (not an App Store or Google Play app) and needs a data connection. You get 1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited.</p>
+          <p>CheckMEND is a device history check best known for phones and other electronics. SafeOrStolen checks phones by IMEI, vehicles by VIN, license plates, guns, bikes and any serial-numbered item. Every SafeOrStolen check searches its own theft reports, with extra records for guns, bikes and Arizona vehicles. It runs as a free installable web app at safeorstolen.com/app (not an App Store or Google Play app) and needs a data connection. You get 1 free check, no account needed, then $4.99 for 1 check or $10 a month unlimited.</p>
         </div>
       </noscript>
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-20">
@@ -180,7 +180,7 @@ const ComparisonCheckmend = () => {
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Price</td>
-                        <td className="py-3 px-4">1 free check, then $0.99 for 2 checks or $10 a month unlimited; optional $1.99 verification certificate</td>
+                        <td className="py-3 px-4">1 free check, then $4.99 for 1 check or $10 a month unlimited; optional $1.99 verification certificate</td>
                       </tr>
                     </tbody>
                   </table>

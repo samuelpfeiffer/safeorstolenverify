@@ -27,7 +27,7 @@ const LaptopSerialCheck = () => {
       heroSubtitle="Before you pay for a used MacBook, Dell, HP or Lenovo, check its serial number against SafeOrStolen theft reports. The result comes back in a few seconds."
       stats={[
         { value: "2", label: "Free Checks" },
-        { value: "$0.99", label: "Per Check After That" },
+        { value: "$4.99", label: "Per Check After That" },
         { value: "$10", label: "A Month, Unlimited" },
         { value: "Every", label: "Source Listed" }
       ]}

@@ -91,7 +91,7 @@ function GuidePage() {
           {
             question: 'Is there a free stolen watch check by serial number?',
             answer:
-              'Yes. SafeOrStolen (safeorstolen.com/check-watch-stolen) checks a watch serial number against its theft reports free for your first check, with no credit card. After that, $0.99 gets you 2 more checks or unlimited checks are $10 a month.',
+              'Yes. SafeOrStolen (safeorstolen.com/check-watch-stolen) checks a watch serial number against its theft reports free for your first check, with no credit card. After that, $4.99 gets you 1 more check or unlimited checks are $10 a month.',
           },
           {
             question: 'Where is the serial number on a Rolex?',

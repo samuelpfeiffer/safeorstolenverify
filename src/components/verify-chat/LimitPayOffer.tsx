@@ -7,16 +7,16 @@ import { savePendingCheck } from '@/lib/pendingCheck';
 /**
  * Shown when a visitor has used their 1 free check. No account needed: tap an option, pay,
  * and /payment-success runs the same item.
- * One all-item check pack or monthly plan. Enhanced checks remain optional; no gun surcharge.
+ * One all-item check pack or monthly plan. No category surcharge or separate enhanced tier.
  */
-type Kind = 'single' | 'complete' | 'monthly';
+type Kind = 'single' | 'monthly';
 
 const OPTIONS: { kind: Kind; name: string; price: string; detail: string }[] = [
-  { kind: 'single', name: '2 checks', price: '$0.99 once', detail: 'Use for any item type. Available theft and registry records. No subscription.' },
+  { kind: 'single', name: '1 verification check', price: '$4.99 once', detail: 'One item, any supported category. Includes a certificate and a phone blacklist search when checking a phone. No subscription. Applicable tax calculated at checkout.' },
   { kind: 'monthly', name: 'Unlimited checks', price: '$10/month', detail: 'All item types. Includes certificates and up to 20 phone blacklist searches per month. Cancel anytime.' },
 ];
 
-const PLAN_NAME = { single: 'Single check', complete: 'Complete check' };
+const PLAN_NAME = { single: 'One verification check' };
 
 export function LimitPayOffer({ identifier, itemType }: { identifier: string; itemType?: string }) {
   const [busy, setBusy] = useState<Kind | null>(null);
@@ -76,13 +76,6 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
         ))}
       </div>
 
-      <details className="mt-4 text-sm">
-        <summary className="cursor-pointer font-medium">Need phone blacklist checks or certificates?</summary>
-        <p className="text-muted-foreground mt-2">Optional: 2 enhanced checks for $2.99, paid once. Includes a certificate and phone blacklist searches for phones. Same price for every item type.</p>
-        <button type="button" onClick={() => buy('complete')} disabled={busy !== null} className="mt-3 rounded-lg border border-border px-4 py-2 font-semibold disabled:opacity-60">
-          {busy === 'complete' ? 'Opening checkout…' : 'Get 2 enhanced checks — $2.99 once'}
-        </button>
-      </details>
       <p className="text-xs text-muted-foreground mt-3">No account needed for a one-time purchase. Results list the sources searched.</p>
       {error && <p className="text-sm text-red-500 mt-3">{error}</p>}
     </div>

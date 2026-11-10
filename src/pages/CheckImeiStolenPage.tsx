@@ -190,7 +190,7 @@ const CheckImeiStolenPage = () => {
  </Link>
  </p>
  <p className="text-sm text-muted-foreground">
- Start with 1 free check, no account needed — no credit card. After that it&apos;s $0.99 per
+ Start with 1 free check, no account needed — no credit card. After that it&apos;s $4.99 per
  single check or $10 a month for unlimited checks, up to 20 blacklist checks and free
  certificates. Cancel anytime.
  </p>

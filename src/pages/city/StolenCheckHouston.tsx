@@ -141,7 +141,7 @@ const StolenCheckHouston = () => {
         <section className="py-16 px-4 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Check Before You Buy in Houston</h2>
-            <p className="mb-6 opacity-90">A check takes a few seconds. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.</p>
+            <p className="mb-6 opacity-90">A check takes a few seconds. 1 free check, then $4.99 for 1 check or $10 a month unlimited.</p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Check an Item</Link>
             </Button>

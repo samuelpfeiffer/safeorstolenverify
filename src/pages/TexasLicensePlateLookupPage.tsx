@@ -67,7 +67,7 @@ const TexasLicensePlateLookupPage = () => {
  },
  {
  question: "Is Texas license plate lookup really free?",
- answer: "Your first check is free with a free SafeOrStolen account, no credit card needed. After that a check costs $0.99, or $10 a month covers unlimited checks, cancel anytime. Plate and VIN checks count the same way."
+ answer: "Your first check is free with a free SafeOrStolen account, no credit card needed. After that a check costs $4.99, or $10 a month covers unlimited checks, cancel anytime. Plate and VIN checks count the same way."
  },
  {
  question: "What if the seller's name doesn't match the title?",

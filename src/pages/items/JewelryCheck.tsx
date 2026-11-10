@@ -27,7 +27,7 @@ const JewelryCheck = () => {
       heroSubtitle="If a diamond has a laser inscription or a piece has an engraved number, you can search it against SafeOrStolen theft reports before you buy. Your first check is free."
       stats={[
         { value: "2", label: "Free Checks" },
-        { value: "$0.99", label: "Per Check After That" },
+        { value: "$4.99", label: "Per Check After That" },
         { value: "$10", label: "A Month, Unlimited" },
         { value: "Every", label: "Source Listed" }
       ]}

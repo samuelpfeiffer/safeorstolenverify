@@ -81,7 +81,7 @@ const STOLEN_DB_FAQS: { q: string; a: string }[] = [
  },
  {
  q: 'Is the stolen items database free?',
- a: 'Yes, browsing and searching this list is free and needs no account. A full check of a single number, which adds web results and the police and registry records that apply, comes with 1 free check, no account needed. After that it is $0.99 for 2 checks or $10 a month for unlimited checks.',
+ a: 'Yes, browsing and searching this list is free and needs no account. A full check of a single number, which adds web results and the police and registry records that apply, comes with 1 free check, no account needed. After that it is $4.99 for 1 check or $10 a month for unlimited checks.',
  },
 ];
 

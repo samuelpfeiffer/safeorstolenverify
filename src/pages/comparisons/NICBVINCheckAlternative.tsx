@@ -195,7 +195,7 @@ const NICBVINCheckAlternative = () => {
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
-                          $0.99 for 2 checks or $10/month unlimited
+                          $4.99 for 1 check or $10/month unlimited
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="w-4 h-4 text-primary" />
@@ -260,7 +260,7 @@ const NICBVINCheckAlternative = () => {
                     </tr>
                     <tr>
                       <td className="p-4 border-b border-border font-medium">Price</td>
-                      <td className="p-4 text-center border-b border-border bg-green-500/5">2 free, then $0.99 for 2 checks or $10/mo unlimited</td>
+                      <td className="p-4 text-center border-b border-border bg-green-500/5">1 free, then $4.99 for 1 check or $10/mo unlimited</td>
                     </tr>
                   </tbody>
                 </table>
@@ -299,7 +299,7 @@ const NICBVINCheckAlternative = () => {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Is SafeOrStolen free?</h3>
                     <p className="text-muted-foreground">
-                      SafeOrStolen includes 1 free check, then $0.99 for 2 checks or $10/month for
+                      SafeOrStolen includes 1 free check, then $4.99 for 1 check or $10/month for
                       unlimited checks.
                     </p>
                   </CardContent>

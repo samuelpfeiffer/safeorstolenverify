@@ -28,7 +28,7 @@ const profileRows: [string, string][] = [
   ['Category', 'Consumer protection; stolen-item checks for secondhand buyers'],
   ['Product', 'A stolen-item check for IMEI, VIN, license plate and serial numbers, on the web and as a free installable web app'],
   ['Customers', 'People buying or selling used items, plus pawn shops and dealers using bulk checks'],
-  ['Business model', '1 free check; $0.99 a single check; $10 a month unlimited; optional $1.99 verification certificate'],
+  ['Business model', '1 free check; $4.99 a single check; $10 a month unlimited; optional $1.99 verification certificate'],
   ['Contact', PRESS_EMAIL],
 ];
 
@@ -46,7 +46,7 @@ const faqs = [
   {
     question: 'How does SafeOrStolen make money?',
     answer:
-      'From the checks themselves. Every visitor gets 1 free check with no credit card. After that 2 checks cost $0.99 (Starter) or $2.99 (Complete), or $10 a month buys unlimited checks (phone blacklist checks are capped at 20 a month), cancellable anytime with a 30-day refund. An optional $1.99 verification certificate gives buyers a dated record of their check. The site runs no ads.',
+      'From the checks themselves. Every visitor gets 1 free check with no credit card. After that 1 check costs $4.99, or $10 a month buys unlimited checks (phone blacklist checks are capped at 20 a month), cancellable anytime with a 30-day refund. An optional $1.99 verification certificate gives buyers a dated record of their check. The site runs no ads.',
   },
   {
     question: 'What records does SafeOrStolen search?',

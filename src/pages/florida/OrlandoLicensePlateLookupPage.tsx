@@ -24,7 +24,7 @@ const faqs = [
  },
  {
  question: "Is a license plate lookup free in Orlando?",
- answer: "Yes, for your first check. Create a free SafeOrStolen account, no credit card, and you can check 2 plates or VINs. After that, $0.99 gets you 2 more checks, or $10 a month gets you unlimited checks. You can cancel the monthly plan anytime.",
+ answer: "Yes, for your first check. Create a free SafeOrStolen account, no credit card, and you can check 2 plates or VINs. After that, $4.99 gets you 1 more check, or $10 a month gets you unlimited checks. You can cancel the monthly plan anytime.",
  },
  {
  question: "Should I check the plate or the VIN?",

@@ -36,7 +36,7 @@ const FreeVINLookupGuide = () => {
  "@context": "https://schema.org",
  "@type": "FAQPage",
  "mainEntity": [
- { "@type": "Question", "name": "Is VIN lookup really free?", "acceptedAnswer": { "@type": "Answer", "text": "You get 1 free check with a free SafeOrStolen account and no credit card. After that $0.99 gets you 2 more checks, or $10 a month covers unlimited checks and you can cancel anytime. Cars, trucks, motorcycles and RVs all use the same 17-character VIN check." } },
+ { "@type": "Question", "name": "Is VIN lookup really free?", "acceptedAnswer": { "@type": "Answer", "text": "You get 1 free check with a free SafeOrStolen account and no credit card. After that $4.99 gets you 1 more check, or $10 a month covers unlimited checks and you can cancel anytime. Cars, trucks, motorcycles and RVs all use the same 17-character VIN check." } },
  { "@type": "Question", "name": "What databases does a VIN check search?", "acceptedAnswer": { "@type": "Answer", "text": "A SafeOrStolen VIN check searches SafeOrStolen theft reports, decodes the year, make and model, and lists open safety recalls. every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Before you pay, match the VIN to the paper title and the seller's ID." } },
  { "@type": "Question", "name": "Where do I find the VIN on a car?", "acceptedAnswer": { "@type": "Answer", "text": "The VIN is located on the dashboard (visible through the windshield on the driver's side), the driver's door jamb sticker, the vehicle registration, and the insurance card." } },
  { "@type": "Question", "name": "Can I check a VIN before meeting the seller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ask the seller to text you the VIN before you drive out. If they refuse, treat that as a red flag. Paste it into safeorstolen.com/verify and you'll have a result in a few seconds, then match it to the dashboard and door jamb when you see the car." } },
@@ -92,7 +92,7 @@ const FreeVINLookupGuide = () => {
  <span className="font-bold text-foreground">Quick Answer</span>
  </div>
  <p className="text-muted-foreground text-sm">
- Enter the 17-character VIN at safeorstolen.com/verify. SafeOrStolen searches its own theft reports, decodes the year, make and model, and lists open safety recalls; every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. 1 free check, then $0.99 for 2 checks or $10 a month unlimited.
+ Enter the 17-character VIN at safeorstolen.com/verify. SafeOrStolen searches its own theft reports, decodes the year, make and model, and lists open safety recalls; every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. 1 free check, then $4.99 for 1 check or $10 a month unlimited.
  </p>
  </div>
 
@@ -184,7 +184,7 @@ const FreeVINLookupGuide = () => {
  Carfax and SafeOrStolen serve complementary purposes. Carfax focuses on vehicle history — accident reports, maintenance records, mileage verification, and ownership history. SafeOrStolen answers a narrower question: has anyone reported this VIN stolen?
  </p>
  <p className="text-muted-foreground leading-relaxed mb-6">
- Before you buy, use both: SafeOrStolen for theft verification ($0.99 for 2 checks or $10/month unlimited) and Carfax for full vehicle history. SafeOrStolen also covers item types Carfax doesn't — phones, electronics, firearms, and bicycles.
+ Before you buy, use both: SafeOrStolen for theft verification ($4.99 for 1 check or $10/month unlimited) and Carfax for full vehicle history. SafeOrStolen also covers item types Carfax doesn't — phones, electronics, firearms, and bicycles.
  </p>
 
  <h2 className="text-2xl font-black text-foreground mt-12 mb-4">10 Red Flags When Buying a Used Vehicle</h2>
@@ -222,7 +222,7 @@ const FreeVINLookupGuide = () => {
  <h2 className="text-2xl font-black text-foreground mt-12 mb-4">Frequently Asked Questions</h2>
  <div className="space-y-6 my-8">
  {[
- { q: 'Is VIN lookup really free?', a: 'Your first check on SafeOrStolen is free, and no account or credit card is needed. After that it\'s $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime. The same VIN check covers cars, trucks, motorcycles and RVs.' },
+ { q: 'Is VIN lookup really free?', a: 'Your first check on SafeOrStolen is free, and no account or credit card is needed. After that it\'s $4.99 for 1 check or $10 a month for unlimited checks, cancel anytime. The same VIN check covers cars, trucks, motorcycles and RVs.' },
  { q: 'What databases does a VIN check search?', a: "A SafeOrStolen VIN check searches SafeOrStolen theft reports, decodes the year, make and model, and lists open safety recalls. every VIN, from any state, is also checked against Arizona, Alaska and Chicago police stolen-vehicle records. Before you pay, match the VIN to the paper title and the seller's ID." },
  { q: 'Where do I find the VIN on a car?', a: 'The VIN is on the dashboard (driver\'s side, visible through windshield), the driver\'s door jamb sticker, the registration, and insurance card.' },
  { q: 'Can I check a VIN before meeting the seller?', a: 'Yes. Ask the seller to text you the VIN before you drive out. If they won\'t, treat that as a red flag. Paste it into safeorstolen.com/verify for a result in a few seconds, then make sure it matches the dashboard and door jamb when you see the car.' },

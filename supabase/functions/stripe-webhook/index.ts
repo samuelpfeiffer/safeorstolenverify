@@ -1,5 +1,3 @@
-import { analytics } from 'npm:@heycatch/sdk@0.8.3';
-analytics.init({ projectKey: 'hck_pk_xZyapiclJn2KkAqLo77uOsGXrhcBmE3j' });
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.7";
 import Stripe from "https://esm.sh/stripe@16.0.0";
@@ -7,6 +5,7 @@ import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { createErrorResponse } from '../_shared/errors.ts';
 
 const TIER_CONFIG: Record<string, { tier: string; limit: number | null }> = {
+  'price_1UaFfUGxnZLw8J7OhpJBpwCB': { tier: 'pay_per_use', limit: 1 },
   'price_1T8uNDGxnZLw8J7OrBKrbePR': { tier: 'pay_per_use', limit: 1 },
   'price_1T8uToGxnZLw8J7O6GcOuV1w': { tier: 'unlimited', limit: null },
   'price_1SSVqkGxnZLw8J7O3GwCyKRn': { tier: 'pay_per_use', limit: 1 },
@@ -270,6 +269,7 @@ serve(async (req) => {
 
             let subscriptionTier = 'starter';
             let monthlyLimit: number | null = 15;
+            let purchasedPriceId: string | undefined;
 
             if (session.mode === 'subscription' && session.subscription) {
               const subscription = await stripe.subscriptions.retrieve(session.subscription as string);
@@ -287,6 +287,7 @@ serve(async (req) => {
               try {
                 const lineItems = await stripe.checkout.sessions.listLineItems(session.id, { limit: 1 });
                 oneTimePriceId = lineItems.data[0]?.price?.id;
+                purchasedPriceId = oneTimePriceId;
                 oneTimeLookup = (lineItems.data[0]?.price as any)?.lookup_key;
               } catch (e) {
                 console.error('[WEBHOOK] Could not list line items for one-time payment', e);
@@ -327,27 +328,24 @@ serve(async (req) => {
                 'pay_per_use': 'single', 'starter': 'basic', 'unlimited': 'pro',
                 'personal': 'pro', 'professional': 'pro', 'enterprise': 'business',
               };
-              const gatePlan = planMapping[subscriptionTier] || 'basic';
+              const gatePlan = purchasedPriceId === 'price_1UaFfUGxnZLw8J7OhpJBpwCB' ? 'complete' : (planMapping[subscriptionTier] || 'basic');
               const planLimits: Record<string, number> = { single: 1, basic: 50, pro: 999999, business: 999999 };
               const row: Record<string, unknown> = {
                 user_id: profileOk ? profileId : null,
                 stripe_customer_id: session.customer as string,
                 stripe_subscription_id: (session.subscription as string) || session.id,
                 plan: gatePlan,
+                ...(purchasedPriceId ? { stripe_price_id: purchasedPriceId } : {}),
                 status: 'active',
                 checks_used_this_month: 0,
-                checks_limit: planLimits[gatePlan] || 50,
+                checks_limit: purchasedPriceId === 'price_1UaFfUGxnZLw8J7OhpJBpwCB' ? 1 : (planLimits[gatePlan] || 50),
                 period_end: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
                 updated_at: new Date().toISOString(),
               };
               if (guestFingerprint) row.fingerprint = guestFingerprint;
               const { error: gateErr } = await supabaseClient.from('subscriptions').upsert(row, { onConflict: 'stripe_subscription_id' });
-              if (gateErr) console.error(`[WEBHOOK] CRITICAL: access grant failed: ${gateErr.message}`);
+              if (gateErr) throw new Error(`Access grant failed: ${gateErr.message}`);
               else console.log(`[WEBHOOK] Access granted plan=${gatePlan} user=${profileOk ? profileId : 'guest'} fingerprint=${guestFingerprint ? 'yes' : 'no'}`);
-    if (profileOk && profileId && session.mode === 'subscription') {
-      await analytics.setIdentity(profileId, { plan: gatePlan });
-      await analytics.trackEvent('subscription_started', { plan: gatePlan }, { userId: profileId });
-    }
             } else {
               console.error(`CRITICAL: Could not find profile or fingerprint. Email: ${customerEmail}, UserId: ${userId}`);
               await supabaseClient.from('audit_logs').insert({
@@ -362,7 +360,7 @@ serve(async (req) => {
             const { error: purchaseError } = await supabaseClient
               .from("purchases")
               .update({
-                status: "completed",
+                status: session.payment_status === 'paid' ? "completed" : "pending",
                 stripe_customer_id: session.customer,
                 amount: session.amount_total ?? undefined,
                 currency: session.currency ?? undefined,
@@ -402,6 +400,12 @@ serve(async (req) => {
             // Keep public.subscriptions.status in sync with Stripe's real
             // subscription status. check-gate reads this table first.
             const gateStatus = gateStatusFor(subscription.status);
+            // Guest subscribers use a per-subscription phone quota; reset only for a new paid period.
+            if (subscription.status === 'active' || subscription.status === 'trialing') {
+              await supabaseClient.from('subscriptions').update({ phone_lookups_used: 0 })
+                .eq('stripe_subscription_id', subscription.id)
+                .lt('period_end', new Date(subscription.current_period_end * 1000).toISOString());
+            }
             const { error: gateUpdateError } = await supabaseClient
               .from('subscriptions')
               .update({

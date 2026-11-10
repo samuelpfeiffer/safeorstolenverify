@@ -119,7 +119,7 @@ export const CompetitorComparison: React.FC = () => {
           <div className="p-6 bg-primary/5 border-t border-border">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <p className="text-center font-medium">
-                Start with <span className="text-primary font-bold">2 checks on us</span> — No credit card required
+                Start with <span className="text-primary font-bold">1 check on us</span> — No credit card required
               </p>
               <Button asChild size="lg">
                 <Link to="/verify">

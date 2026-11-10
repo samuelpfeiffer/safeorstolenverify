@@ -13,7 +13,7 @@ const TARGET_GAP = 14;
 const STEPS = [
   { target: 'search', title: 'Start here', description: 'Type or paste a phone IMEI, car VIN or plate, gun serial, or any serial number. You can also paste a Facebook Marketplace or Craigslist link, or scan the label with your camera.' },
   { target: 'quick-actions', title: 'Not sure what to enter?', description: 'Tap the item you are checking and we will show you where to find its number.' },
-  { target: 'free-checks', title: 'Your first check is free', description: 'No account or credit card needed. After that, checks are $0.99 for 2 or $10 a month for unlimited.' },
+  { target: 'free-checks', title: 'Your first check is free', description: 'No account or credit card needed. After that, checks are $4.99 for 2 or $10 a month for unlimited.' },
   { target: 'history', title: 'Save, share and keep going', description: 'Open the app to see every source searched, share a result with a buyer or seller, and find every past check again.' },
 ] as const;
 

@@ -42,7 +42,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "What is the best stolen phone checker?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks multiple sources, and costs $0.99 for 2 checks or $10/month unlimited."
+ "text": "Most stolen-item tools cover one category. SafeOrStolen covers phones, vehicles, license plates, electronics, power tools, firearms, and bicycles in one place, checks multiple sources, and costs $4.99 for 1 check or $10/month unlimited."
  }
  },
  {
@@ -50,7 +50,7 @@ const StolenPhoneCheckerPage = () => {
  "name": "Is SafeOrStolen's phone checker free?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "You get 1 free check, no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime."
+ "text": "You get 1 free check, no account or credit card needed. After that it's $4.99 for 1 check or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime."
  }
  },
  {
@@ -175,7 +175,7 @@ const StolenPhoneCheckerPage = () => {
  </li>
  <li className="flex items-start gap-3">
  <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
- <span>$0.99 for 2 checks or $10/month unlimited — all item types included</span>
+ <span>$4.99 for 1 check or $10/month unlimited — all item types included</span>
  </li>
  </ul>
  </section>
@@ -295,13 +295,13 @@ const StolenPhoneCheckerPage = () => {
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">What is the best stolen phone checker?</h3>
- <p className="text-muted-foreground">SafeOrStolen covers phones, vehicles, plates, serial-numbered electronics and power tools, firearms, and bicycles using its own theft reports, plus item-specific sources for bikes, guns, and Arizona vehicles. After 1 free check, it's $0.99 for 2 checks or $10 a month unlimited.</p>
+ <p className="text-muted-foreground">SafeOrStolen covers phones, vehicles, plates, serial-numbered electronics and power tools, firearms, and bicycles using its own theft reports, plus item-specific sources for bikes, guns, and Arizona vehicles. After 1 free check, it's $4.99 for 1 check or $10 a month unlimited.</p>
  </CardContent>
  </Card>
  <Card>
  <CardContent className="pt-6">
  <h3 className="font-semibold mb-2">Is SafeOrStolen's phone checker free?</h3>
- <p className="text-muted-foreground">You get 1 free check, no account or credit card needed. After that it's $0.99 for 2 checks or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime.</p>
+ <p className="text-muted-foreground">You get 1 free check, no account or credit card needed. After that it's $4.99 for 1 check or $10 a month for unlimited checks on phones, vehicles, electronics, firearms and bikes. Cancel anytime.</p>
  </CardContent>
  </Card>
  <Card>

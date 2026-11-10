@@ -329,7 +329,7 @@ const AppFeatures = () => {
                   </tr>
                   <tr className="border-b">
                     <td className="p-4 font-medium">Single check</td>
-                    <td className="p-4">$0.99</td>
+                    <td className="p-4">$4.99</td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-4 font-medium">Monthly plan</td>

@@ -14,7 +14,7 @@ const FEATURES: { name: string; what: string; cost: string; href: string; linkTe
  {
  name: 'Stolen item check',
  what: 'One box for an IMEI, VIN, plate or serial number. Searches SafeOrStolen theft reports, plus extra sources for some items (below). Results in a few seconds with every source listed.',
- cost: 'First check free. After that, pay $0.99 for your next check and get one more free (or $2.99 for 2 Complete checks), or go unlimited at $10 a month',
+ cost: 'First check free. After that, pay $4.99 for one check, or go unlimited at $10 a month',
  href: '/check-if-stolen',
  linkText: 'Check an item',
  },
@@ -49,7 +49,7 @@ const FEATURES: { name: string; what: string; cost: string; href: string; linkTe
  {
  name: 'IMEI check and phone blacklist check',
  what: 'Shows the make and model the IMEI belongs to and searches theft reports. A paid check adds the lost/stolen carrier blacklist search.',
- cost: 'Blacklist search on a $2.99 Complete check, or up to 20 a month on the monthly plan',
+ cost: 'Blacklist search on a $4.99 paid check, or up to 20 a month on the monthly plan',
  href: '/imei-checker',
  linkText: 'IMEI check',
  },

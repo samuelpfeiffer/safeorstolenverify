@@ -42,7 +42,7 @@ const FreeCarfaxAlternativePage = () => {
     <>
       <PageSEO
         title="Free Carfax Alternative for Stolen Car Checks | SafeOrStolen"
-        description="Looking for a free Carfax alternative? Check a VIN for theft reports and open recalls with 2 free SafeOrStolen checks, then decide if you need a history report."
+        description="Looking for a free Carfax alternative? Check a VIN for theft reports and open recalls with 1 free SafeOrStolen check, then decide if you need a history report."
         keywords="carfax alternative, free carfax, carfax alternative free, free vin check, stolen car check free"
         canonical={location.pathname}
         structuredData={structuredData}
@@ -103,7 +103,7 @@ const FreeCarfaxAlternativePage = () => {
                 <tbody>
                   <tr className="border-t border-border">
                     <td className="p-4">Price</td>
-                    <td className="p-4 text-center font-bold text-primary">1 free check, then $0.99 or $10/month</td>
+                    <td className="p-4 text-center font-bold text-primary">1 free check, then $4.99 or $10/month</td>
                     <td className="p-4 text-center">Paid reports</td>
                   </tr>
                   <tr className="border-t border-border bg-muted/50">

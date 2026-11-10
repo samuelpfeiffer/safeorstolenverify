@@ -132,7 +132,7 @@ export const HomeAIHero: React.FC = () => {
  itemType,
  });
  if (error?.code === 'LIMIT_REACHED') {
- replaceLastAssistant("You've used your free check. You can run this one for $0.99 below, no account needed.");
+ replaceLastAssistant("You've used your free check. You can run this one for $4.99 below, no account needed.");
  setLimitHit({ identifier: cleaned, itemType });
  return;
  }
@@ -396,7 +396,7 @@ export const HomeAIHero: React.FC = () => {
 
  <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-muted-foreground mt-4">
  <span className="flex items-center gap-1"><span className="text-accent">●</span> No credit card</span>
- <span className="flex items-center gap-1"><span className="text-accent">●</span> Then $0.99 for 2 or $10/mo unlimited</span>
+ <span className="flex items-center gap-1"><span className="text-accent">●</span> Then $4.99 for 2 or $10/mo unlimited</span>
  <span className="flex items-center gap-1"><span className="text-accent">●</span> 30-day refund</span>
  </div>
  </div>

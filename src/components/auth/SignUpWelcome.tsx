@@ -36,7 +36,7 @@ export const SignUpWelcome = ({ onContinue, isLoading = false }: SignUpWelcomePr
     {
       icon: CreditCard,
       title: "Unlimited Access",
-      description: "Get unlimited verifications for $10/month, or pay $0.99 for 2 checks. All item types included. Cancel anytime.",
+      description: "Get unlimited verifications for $10/month, or pay $4.99 for 1 check. All item types included. Cancel anytime.",
       action: "View Plan",
       onClick: () => navigate('/pricing')
     }

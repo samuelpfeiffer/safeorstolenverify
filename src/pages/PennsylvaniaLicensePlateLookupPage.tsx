@@ -36,7 +36,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
           "Result in a few seconds, with every source listed",
           "Never shows owner names",
           "Each check saved to your account with the date",
-          "1 free check, then $0.99 for 2 checks or $10 a month unlimited"
+          "1 free check, then $4.99 for 1 check or $10 a month unlimited"
         ],
 
         process: [
@@ -79,7 +79,7 @@ const PennsylvaniaLicensePlateLookupPage = () => {
           },
           {
             question: "Is the Pennsylvania license plate lookup free?",
-            answer: "Your first check is free with a free SafeOrStolen account, no credit card. After that a check is $0.99, or $10 a month for unlimited checks, cancel anytime."
+            answer: "Your first check is free with a free SafeOrStolen account, no credit card. After that a check is $4.99, or $10 a month for unlimited checks, cancel anytime."
           }
         ]
       }}

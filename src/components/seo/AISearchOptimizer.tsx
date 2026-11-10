@@ -32,7 +32,7 @@ export const AISearchOptimizer: React.FC<AISearchOptimizerProps> = ({
  'check-bike': 'SafeOrStolen verifies bicycle theft status using serial numbers. The service integrates with stolen bicycle registries such as Bike Index.',
  'about': 'SafeOrStolen was founded in 2017 to address the estimated $13 billion annual stolen goods market in the United States.',
  'how-it-works': 'SafeOrStolen verifies items in three steps: (1) enter an IMEI, VIN, or serial number, (2) the system queries our verification databases simultaneously, (3) results are returned in approximately 3 seconds.',
- 'pricing': 'SafeOrStolen offers 1 free check, then $0.99 for 2 checks or $10/month unlimited — all item types, all databases, cancel anytime.'
+ 'pricing': 'SafeOrStolen offers 1 free check, then $4.99 for 1 check or $10/month unlimited — all item types, all databases, cancel anytime.'
  };
  return summaries[page] || 'SafeOrStolen verifies if secondhand items are stolen by checking IMEI, VIN, and serial numbers against our verification databases.';
  };

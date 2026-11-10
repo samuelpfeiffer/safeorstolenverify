@@ -35,7 +35,7 @@ const SearchLimitDisplayComponent = ({
           to="/pricing" 
           className="inline-flex items-center gap-1 text-xs text-primary font-semibold hover:underline transition-all hover:gap-2"
         >
-          Then $0.99 for 2 checks or $10/month unlimited →
+          Then $4.99 for 1 check or $10/month unlimited →
         </Link>
       </div>
     );
@@ -48,7 +48,7 @@ const SearchLimitDisplayComponent = ({
           to="/pricing" 
           className="inline-flex items-center gap-1 text-sm text-primary font-semibold hover:underline transition-all hover:gap-2"
         >
-          🔓 Free checks used — $0.99 for 2 checks or $10/month unlimited →
+          🔓 Free checks used — $4.99 for 1 check or $10/month unlimited →
         </Link>
       ) : (
         <>
@@ -59,7 +59,7 @@ const SearchLimitDisplayComponent = ({
             to="/pricing" 
             className="inline-flex items-center gap-1 text-xs text-primary font-semibold hover:underline transition-all hover:gap-2"
           >
-            Then $0.99 for 2 checks or $10/mo unlimited →
+            Then $4.99 for 1 check or $10/mo unlimited →
           </Link>
         </>
       )}

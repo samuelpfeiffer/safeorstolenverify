@@ -254,7 +254,7 @@ const VsVinCheckInfo = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Its basic VIN lookup is free; fuller reports cost extra. SafeOrStolen gives you 1 free check, no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks.
+                  Its basic VIN lookup is free; fuller reports cost extra. SafeOrStolen gives you 1 free check, no account needed, then $4.99 for 1 check or $10 a month for unlimited checks.
                 </p>
               </CardContent>
             </Card>

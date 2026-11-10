@@ -29,7 +29,7 @@ export const CheckStolenPhone = () => (
  },
  {
  q: 'Is this check really free?',
- a: 'Yes. You get 1 free check when you sign up, no credit card required. After that it\'s $0.99 for 2 checks or $10 a month for unlimited checks.'
+ a: 'Yes. You get 1 free check when you sign up, no credit card required. After that it\'s $4.99 for 1 check or $10 a month for unlimited checks.'
  },
  {
  q: 'How accurate is the stolen phone database?',

@@ -30,7 +30,7 @@ const IPhoneIMEICheck = () => {
  stats={[
  { value: "15 digits", label: "IMEI length" },
  { value: "*#06#", label: "Dial to show the IMEI" },
- { value: "Free", label: "First 2 checks" }
+ { value: "Free", label: "First 1 check" }
  ]}
  whatIsTitle="What is an iPhone IMEI check?"
  whatIsContent="Every iPhone has a 15-digit IMEI that identifies that exact phone. When an iPhone is reported lost or stolen to a carrier, its IMEI goes on the carrier blacklist, and the phone stops working on cellular networks. A SafeOrStolen IMEI check shows the iPhone's model from the IMEI and searches theft reports filed on SafeOrStolen. The lost and stolen blacklist is a separate paid check. Activation Lock can only be confirmed on the phone itself."
@@ -95,7 +95,7 @@ const IPhoneIMEICheck = () => {
  },
  {
  question: "Is this service really free?",
- answer: "A free SafeOrStolen account comes with 1 free check, no credit card. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, which includes up to 20 blacklist checks a month."
+ answer: "A free SafeOrStolen account comes with 1 free check, no credit card. After that it's $4.99 for 1 check or $10 a month for unlimited checks, which includes up to 20 blacklist checks a month."
  }
  ]}
  ctaTitle="Check the iPhone before you pay"

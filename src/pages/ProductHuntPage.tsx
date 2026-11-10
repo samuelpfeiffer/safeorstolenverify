@@ -104,7 +104,7 @@ const ProductHuntPage = () => (
           <h2 className="text-2xl font-bold mb-4">Pricing</h2>
           <ul className="space-y-2 text-muted-foreground list-disc pl-6 mb-6">
             <li>1 free check, no account or credit card needed</li>
-            <li>$0.99 for 2 checks</li>
+            <li>$4.99 for 1 check</li>
             <li>$10 a month for unlimited checks, cancel anytime, 30-day refund</li>
             <li>A free installable web app at <Link to="/app" className="text-primary hover:underline">safeorstolen.com/app</Link></li>
           </ul>

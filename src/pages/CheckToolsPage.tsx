@@ -61,7 +61,7 @@ const CheckToolsPage = () => {
           "Covers generators, compressors, welders and saws with a serial plate",
           "Searches SafeOrStolen theft reports",
           "Results in a few seconds, saved to your account with the date",
-          "1 free check, no account needed, then $0.99 for 2 checks or $10 a month unlimited"
+          "1 free check, no account needed, then $4.99 for 1 check or $10 a month unlimited"
         ],
         process: [
           "Find the serial number on the tool's label: usually on the motor housing, near the battery mount or on the base plate.",
@@ -82,7 +82,7 @@ const CheckToolsPage = () => {
           },
           {
             question: "How much does the tool stolen check cost?",
-            answer: "A free SafeOrStolen account comes with 1 free check, no credit card. After that it's $0.99 for 2 checks or $10 a month for unlimited checks, cancel anytime."
+            answer: "A free SafeOrStolen account comes with 1 free check, no credit card. After that it's $4.99 for 1 check or $10 a month for unlimited checks, cancel anytime."
           },
           {
             question: "What should I do if my tool check shows it's stolen?",

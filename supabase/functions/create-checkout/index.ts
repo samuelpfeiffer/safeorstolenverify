@@ -6,59 +6,10 @@ import { createErrorResponse } from '../_shared/errors.ts';
 
 const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
 
-// Oct 2 2026 pricing (reverted Oct 8, see USE_BASE_PRICES): Free (2 checks) -> $3.99 single check -> $14.99/month (20 phone blacklist searches,
-// everything else unlimited). No free trial. Prices are created once in Stripe with fixed lookup keys;
-// stripe-webhook maps those keys to plans. Existing $10 subscribers keep their old price.
-// SAFETY: if the Stripe key cannot create prices yet (needs "Prices: Write"), fall back to the old
-// working price so checkout never breaks. Once permission is granted, new prices take over automatically.
-const NEW_PRICES = {
-  single: { lookup: 'sos_single_399', amount: 399, base: 'price_1T8uNDGxnZLw8J7OrBKrbePR', recurring: false, nickname: 'Single check $3.99' },
-  monthly: { lookup: 'sos_monthly_1499', amount: 1499, base: 'price_1T8uToGxnZLw8J7O6GcOuV1w', recurring: true, nickname: 'Monthly $14.99' },
-} as const;
-
-// Oct 5 2026: verification certificate for one completed check. Priced inline so it never
-// matches a plan price; stripe-webhook handles purchase_type=certificate before any plan logic.
+// New checkouts use one universal check. Existing Stripe sessions and prices remain valid.
+const UNIVERSAL_PRICE_ID = 'price_1UaFfUGxnZLw8J7OhpJBpwCB';
+const MONTHLY_PRICE_ID = 'price_1T8uToGxnZLw8J7O6GcOuV1w';
 const CERTIFICATE_AMOUNT = 199;
-
-// Oct 29 2026: $2.99 "Complete check" (2 checks + phone blacklist search + web listings and AI review +
-// free certificate). Priced inline (no Stripe price needed). stripe-webhook records it like the $0.99
-// purchase (2 checks); the database trigger upgrade_complete_check() then marks it 'complete'.
-const COMPLETE_AMOUNT = 299;
-
-// Nov 6 2026 (owner approved): $4.99 "Gun Buyer's Check", offered only on gun checks in place of the
-// $2.99 Complete check (whose phone blacklist and listings extras don't apply to guns). 2 checks plus a
-// dated verification certificate for each. Same path as Complete: inline price, recorded as 2 checks,
-// and upgrade_complete_check() marks it 'complete' (amount 299 or 499) so certificates are included.
-// The $0.99, $10/month and free-first-check prices are unchanged.
-const GUN_BUYER_AMOUNT = 499;
-
-// Oct 8 2026: back to $0.99 per check and $10/month. Sales stopped when the single check went to
-// $3.99 on Oct 3 (14 paid checks Sept 30-Oct 3 at $0.99, none in the 4 days after). The base prices
-// below are the original $0.99 / $10 Stripe prices, which stripe-webhook already maps to plans.
-const USE_BASE_PRICES = true;
-
-async function getOrCreatePrice(stripe: Stripe, cfg: typeof NEW_PRICES[keyof typeof NEW_PRICES]): Promise<string> {
-  if (USE_BASE_PRICES) return cfg.base;
-  try {
-    const found = await stripe.prices.list({ lookup_keys: [cfg.lookup], active: true, limit: 1 });
-    if (found.data[0]) return found.data[0].id;
-    const base = await stripe.prices.retrieve(cfg.base);
-    const product = typeof base.product === 'string' ? base.product : (base.product as any).id;
-    const created = await stripe.prices.create({
-      product,
-      currency: 'usd',
-      unit_amount: cfg.amount,
-      lookup_key: cfg.lookup,
-      nickname: cfg.nickname,
-      ...(cfg.recurring ? { recurring: { interval: 'month' as const } } : {}),
-    });
-    console.log(`[CREATE-CHECKOUT] Created Stripe price ${created.id} for ${cfg.lookup}`);
-    return created.id;
-  } catch (e) {
-    console.error(`[CREATE-CHECKOUT] NEW PRICE UNAVAILABLE (${cfg.lookup}), using old price ${cfg.base}:`, e instanceof Error ? e.message.slice(0, 200) : e);
-    return cfg.base;
-  }
-}
 
 function cleanFingerprint(fp: unknown): string {
   if (typeof fp !== 'string') return '';
@@ -75,7 +26,6 @@ serve(async (req) => {
     console.log(`[CREATE-CHECKOUT] Request started`);
     const supabaseClient = createClient(Deno.env.get("SUPABASE_URL") ?? "", Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "");
 
-    // Signed-in user if the token is a real user session; otherwise GUEST checkout.
     let user: { id: string; email?: string } | null = null;
     const authHeader = req.headers.get("Authorization");
     if (authHeader) {
@@ -87,12 +37,9 @@ serve(async (req) => {
     const body = await req.json().catch(() => ({}));
     const { priceId, serialNumber, itemType, planName } = body || {};
     const pn = String(planName || '').toLowerCase();
-    // Monthly if the page asked for a subscription, or named the monthly/unlimited plan.
     const isSubscription = !!body?.isSubscription || (/unlimited|month|pro\b|plan/.test(pn) && !/single|per check|pay per|one-time|one time|complete|gun buyer/.test(pn));
-    // Nov 6 2026: the $4.99 Gun Buyer's Check.
-    const isGunBuyer = !isSubscription && (body?.plan === 'gun_buyer' || /gun buyer/.test(pn));
-    // Oct 29 2026: the $2.99 Complete check.
-    const isComplete = !isSubscription && !isGunBuyer && (body?.plan === 'complete' || /complete/.test(pn));
+    const isGunBuyer = false; // old clients are shown the universal price before payment
+    const isComplete = false;
     const isInlineCheckPack = isComplete || isGunBuyer;
     const fingerprint = cleanFingerprint(body?.fingerprint);
     const isGuest = !user;
@@ -106,7 +53,21 @@ serve(async (req) => {
     }
     const stripe = new Stripe(stripeKey, { apiVersion: "2023-10-16" });
 
-    // ===== Verification certificate ($1.99, one completed check) =====
+    if (body?.action === 'payment_status') {
+      const id = String(body?.sessionId || '');
+      if (!/^cs_[A-Za-z0-9_]{6,240}$/.test(id)) {
+        return new Response(JSON.stringify({ error: 'Invalid checkout session' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      }
+      const session = await stripe.checkout.sessions.retrieve(id);
+      const owned = (user?.id && session.metadata?.user_id === user.id) ||
+        (fingerprint && session.metadata?.fingerprint === fingerprint);
+      if (!owned) return new Response(JSON.stringify({ error: 'Checkout session not found' }), { status: 404, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      const paid = session.payment_status === 'paid';
+      const entitlementId = typeof session.subscription === 'string' ? session.subscription : session.id;
+      const { data: entitlement } = await supabaseClient.from('subscriptions').select('status').eq('stripe_subscription_id', entitlementId).maybeSingle();
+      return new Response(JSON.stringify({ paid, ready: paid && entitlement?.status === 'active', status: session.status }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+
     if (body?.product === 'certificate') {
       const proofId = String(body?.proofId || '').trim().toUpperCase();
       if (!/^[A-Z0-9-]{4,40}$/.test(proofId)) {
@@ -124,8 +85,6 @@ serve(async (req) => {
           { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } });
       }
 
-      // Oct 29 2026: the certificate is included with a $2.99 Complete check (or, from Nov 6, a $4.99
-      // Gun Buyer's Check) bought in the last 30 days. Both are recorded with plan 'complete'.
       if (user?.id || fingerprint) {
         let q: any = supabaseClient.from('subscriptions').select('id').eq('plan', 'complete')
           .gte('created_at', new Date(Date.now() - 30 * 86400000).toISOString()).limit(1);
@@ -195,7 +154,7 @@ serve(async (req) => {
       customerId = customers.data.length > 0 ? customers.data[0].id : undefined;
     }
 
-    const resolvedPriceId = isInlineCheckPack ? null : await getOrCreatePrice(stripe, isSubscription ? NEW_PRICES.monthly : NEW_PRICES.single);
+    const resolvedPriceId = isSubscription ? MONTHLY_PRICE_ID : UNIVERSAL_PRICE_ID;
 
     let verificationId: string | undefined;
     if (user && !isSubscription && serialNumber?.trim()) {
@@ -210,7 +169,7 @@ serve(async (req) => {
       : `${PRODUCTION_BASE_URL}/payment-success?session_id={CHECKOUT_SESSION_ID}`;
     const cancelUrl = `${PRODUCTION_BASE_URL}/verify?checkout=cancelled`;
 
-    const planLabel = isSubscription ? 'Monthly' : isGunBuyer ? "Gun Buyer's Check" : isComplete ? 'Complete check' : 'Single check';
+    const planLabel = isSubscription ? 'Monthly' : 'One verification check';
     const metadata: Record<string, string> = {
       user_id: user?.id || '',
       guest: isGuest ? 'true' : 'false',
@@ -222,31 +181,11 @@ serve(async (req) => {
     };
     if (isInlineCheckPack) metadata.purchase_type = 'complete_check';
 
-    const lineItems = isGunBuyer
-      ? [{
-          quantity: 1,
-          price_data: {
-            currency: 'usd',
-            unit_amount: GUN_BUYER_AMOUNT,
-            product_data: {
-              name: "SafeOrStolen Gun Buyer's Check (2 checks)",
-              description: 'Two gun serial number checks of police theft and loss reports, plus a dated verification certificate for each check showing you checked before buying. No subscription.',
-            },
-          },
-        }]
-      : isComplete
-      ? [{
-          quantity: 1,
-          price_data: {
-            currency: 'usd',
-            unit_amount: COMPLETE_AMOUNT,
-            product_data: {
-              name: 'SafeOrStolen Complete Check (2 checks)',
-              description: 'Two checks of the theft reports SafeOrStolen searches, plus a verification certificate for each check. No subscription.',
-            },
-          },
-        }]
-      : [{ price: resolvedPriceId, quantity: 1 }];
+    const lineItems = [{ price: resolvedPriceId, quantity: 1 }];
+    if (!isSubscription) {
+      metadata.pricing_version = 'universal_499_v1';
+      metadata.checks = '1';
+    }
 
     const sessionConfig: any = {
       success_url: successUrl,
@@ -255,13 +194,13 @@ serve(async (req) => {
       line_items: lineItems,
       metadata,
       allow_promotion_codes: true,
+      automatic_tax: { enabled: true },
+      billing_address_collection: 'required',
     };
     if (!isSubscription) sessionConfig.payment_intent_data = { metadata };
-    if (customerId) sessionConfig.customer = customerId;
+    if (customerId) { sessionConfig.customer = customerId; sessionConfig.customer_update = { address: 'auto' }; }
     else if (user?.email) sessionConfig.customer_email = user.email;
-    // Guests: Stripe asks for their email on the payment page.
     if (!isSubscription && !customerId) sessionConfig.customer_creation = 'always';
-    // Oct 2 2026: no free trial (phone searches cost real money from day one).
     if (isSubscription) sessionConfig.subscription_data = { metadata };
 
     const { data: purchaseRecord, error: purchaseError } = await supabaseClient.from("purchases").insert({

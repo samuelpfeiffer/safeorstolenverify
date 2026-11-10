@@ -35,19 +35,19 @@ function buttons(node, out = []) {
   return out;
 }
 
-test('all categories get the same two primary choices and optional enhancement', async () => {
+test('all categories get the same two primary choices without category surcharges', async () => {
   const f = await fixture();
   const baseline = JSON.stringify(f.render('phone'));
   for (const type of ['firearm','vehicle','serial','bicycle','unknown']) assert.equal(JSON.stringify(f.render(type)), baseline);
-  assert.equal(buttons(f.render('firearm')).length, 3);
-  assert.ok(!baseline.includes('4.99') && !baseline.includes('gun_buyer'));
+  assert.equal(buttons(f.render('firearm')).length, 2);
+  assert.ok(baseline.includes('4.99') && !baseline.includes('gun_buyer'));
   assert.ok(baseline.includes('No category unlock fees'));
 });
 
-test('firearm enhancement uses the same Complete checkout plan as every item', async () => {
-  const f = await fixture(); await buttons(f.render('firearm'))[2].props.onClick();
-  assert.equal(f.calls[0].body.plan, 'complete');
-  assert.equal(f.calls[0].body.planName, 'Complete check');
+test('firearm uses the same universal checkout plan as every item', async () => {
+  const f = await fixture(); await buttons(f.render('firearm'))[0].props.onClick();
+  assert.equal(f.calls[0].body.plan, 'single');
+  assert.equal(f.calls[0].body.planName, 'One verification check');
   assert.equal(f.calls[0].body.itemType, 'firearm');
   assert.equal(f.window.location.href, 'https://checkout.stripe.com/test');
 });

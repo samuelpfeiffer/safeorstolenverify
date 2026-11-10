@@ -69,14 +69,14 @@ const ComparisonCarfax = () => {
             Carfax sells vehicle history reports: accidents, title brands, service records and past owners. SafeOrStolen answers a
             narrower question for more kinds of items: has this VIN, IMEI or serial number been reported stolen? It searches
             SafeOrStolen's own theft reports, and for Arizona vehicles also Arizona law-enforcement
-            stolen-vehicle records. You get 1 free check, no account needed, then $0.99 for 2 checks or $10 a month for unlimited checks.
+            stolen-vehicle records. You get 1 free check, no account needed, then $4.99 for 1 check or $10 a month for unlimited checks.
             On your phone, use the free installable web app at safeorstolen.com/app.
           </p>
           <h2>How SafeOrStolen compares with Carfax</h2>
           <ul>
             <li><strong>Items covered:</strong> SafeOrStolen checks cars, phones, bikes, guns and electronics. Carfax covers vehicles.</li>
             <li><strong>What it tells you:</strong> SafeOrStolen looks for theft reports. Carfax reports vehicle history such as accidents and title brands.</li>
-            <li><strong>Price:</strong> SafeOrStolen has 1 free check, then $0.99 for 2 checks or $10 a month.</li>
+            <li><strong>Price:</strong> SafeOrStolen has 1 free check, then $4.99 for 1 check or $10 a month.</li>
             <li><strong>On your phone:</strong> SafeOrStolen is a free installable web app at safeorstolen.com/app, with a barcode scanner in the browser.</li>
           </ul>
         </div>
@@ -130,7 +130,7 @@ const ComparisonCarfax = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span><strong>1 free check</strong> - Then $0.99 for 2 checks or $10 a month unlimited</span>
+                      <span><strong>1 free check</strong> - Then $4.99 for 1 check or $10 a month unlimited</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -232,12 +232,12 @@ const ComparisonCarfax = () => {
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Price</td>
-                        <td className="text-center py-3 px-4 text-green-600 font-bold">$0.99 for 2 checks or $10/month</td>
+                        <td className="text-center py-3 px-4 text-green-600 font-bold">$4.99 for 1 check or $10/month</td>
                         <td className="text-center py-3 px-4 text-muted-foreground">Paid reports</td>
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Free checks</td>
-                        <td className="text-center py-3 px-4 text-green-600 font-bold">2 free</td>
+                        <td className="text-center py-3 px-4 text-green-600 font-bold">1 free</td>
                         <td className="text-center py-3 px-4 text-muted-foreground">None</td>
                       </tr>
                     </tbody>
@@ -270,7 +270,7 @@ const ComparisonCarfax = () => {
                 <h2 className="text-3xl font-bold mb-4">Check before you pay</h2>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
                   Enter a VIN, IMEI or serial number and SafeOrStolen tells you in a few seconds whether it's been reported stolen,
-                  with every source listed. Your first check is free, then $0.99 for 2 checks or $10 a month.
+                  with every source listed. Your first check is free, then $4.99 for 1 check or $10 a month.
                 </p>
                 <Button size="lg" asChild>
                   <Link to="/verify">

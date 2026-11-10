@@ -40,7 +40,7 @@ const consumerFaqs: { question: string; answer: string }[] = [
  {
  question: 'How much does SafeOrStolen cost?',
  answer:
- 'Your first check is free, with no account or credit card needed. After that, $0.99 gets you 2 more checks, or unlimited checks are $10 a month with up to 20 phone blacklist checks, cancel anytime, and a 30-day refund. An optional $1.99 verification certificate gives you a dated record with its own link; it is free for monthly members.',
+ 'Your first check is free, with no account or credit card needed. After that, $4.99 gets you 1 more check, or unlimited checks are $10 a month with up to 20 phone blacklist checks, cancel anytime, and a 30-day refund. An optional $1.99 verification certificate gives you a dated record with its own link; it is free for monthly members.',
  },
  {
  question: 'I am selling something. How can I show the buyer it is not stolen?',
@@ -163,7 +163,7 @@ const ForConsumersPage = () => {
 
  <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">What it costs</h2>
  <p className="text-muted-foreground mb-8">
- 1 free check, no account or credit card needed. Then $0.99 for 2 checks, or $10 a
+ 1 free check, no account or credit card needed. Then $4.99 for 1 check, or $10 a
  month for unlimited checks, cancel anytime, with a 30-day refund on the monthly plan. See{' '}
  <Link to="/pricing" className="text-primary underline">pricing</Link>.
  </p>
