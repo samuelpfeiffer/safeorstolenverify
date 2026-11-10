@@ -13,6 +13,7 @@ import { supabase } from '@/integrations/supabase/client';
 import confetti from 'canvas-confetti';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { takePendingCheck, clearPendingCheck, pendingCheckUrl, type PendingCheck } from '@/lib/pendingCheck';
+import { trackConfirmedPurchase } from '@/lib/funnelAnalytics';
 
 const PaymentSuccessPage = () => {
   const [searchParams] = useSearchParams();
@@ -44,6 +45,7 @@ const PaymentSuccessPage = () => {
         if (cancelled) return;
         if (error) throw error;
         if (data?.ready) {
+          if (data.purchase) trackConfirmedPurchase(data.purchase);
           setReady(true); setStatusMessage('Payment confirmed. Your purchase is active.'); setIsLoading(false);
           confetti({ particleCount: 60, spread: 60, origin: { y: 0.6 } }); return;
         }

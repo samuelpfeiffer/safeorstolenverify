@@ -8,6 +8,7 @@
 
 import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
+import { trackFunnelStage } from '@/lib/funnelAnalytics';
 
 export const VERIFY_ENDPOINT = '/verify-api';
 
@@ -64,6 +65,7 @@ export interface VerifyRequest {
  * sites stay simple.
  */
 export async function requestVerification(request: VerifyRequest): Promise<VerifyApiResponse> {
+  trackFunnelStage('verification_started');
   try {
     const { data: sessionData } = await supabase.auth.getSession();
     const token = sessionData.session?.access_token;
@@ -97,6 +99,7 @@ export async function requestVerification(request: VerifyRequest): Promise<Verif
     const payload = await response.json().catch(() => null);
 
     if (!response.ok) {
+      trackFunnelStage(payload?.code === 'LIMIT_REACHED' ? 'verification_limit_reached' : 'verification_failed');
       return {
         data: null,
         error: {
@@ -111,8 +114,11 @@ export async function requestVerification(request: VerifyRequest): Promise<Verif
       };
     }
 
+    // A successful HTTP response is not enough if the verification itself failed.
+    trackFunnelStage(payload && ['safe', 'stolen', 'lost', 'unknown'].includes(payload.finalStatus) ? 'verification_completed' : 'verification_failed');
     return { data: payload as VerifyApiResult, error: null };
   } catch (error: any) {
+    trackFunnelStage('verification_failed');
     return {
       data: null,
       error: {

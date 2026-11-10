@@ -43,9 +43,11 @@ test('processed webhooks are not granted again and older pack price is preserved
 });
 
 test('payment status requires ownership and paid, active access before showing success',async()=>{
- const session={id:'cs_qa_test_123',status:'complete',payment_status:'paid',metadata:{fingerprint:'qa-fingerprint'}};
+ const session={id:'cs_qa_test_123',status:'complete',payment_status:'paid',amount_total:541,total_details:{amount_tax:42},currency:'usd',mode:'payment',metadata:{fingerprint:'qa-fingerprint'}};
  const f=await endpoint('create-checkout',{session,ready:true});
- const ok=await f.request({action:'payment_status',sessionId:session.id,fingerprint:'qa-fingerprint'});assert.equal((await ok.json()).ready,true);
+ const ok=await f.request({action:'payment_status',sessionId:session.id,fingerprint:'qa-fingerprint'});const receipt=await ok.json();assert.equal(receipt.ready,true);
+ assert.deepEqual(receipt.purchase,{transactionId:session.id,value:4.99,tax:0.42,currency:'USD',plan:'single'});
  const wrong=await f.request({action:'payment_status',sessionId:session.id,fingerprint:'someone-else'});assert.equal(wrong.status,404);
- const pending=await endpoint('create-checkout',{session,ready:false});const r=await pending.request({action:'payment_status',sessionId:session.id,fingerprint:'qa-fingerprint'});assert.equal((await r.json()).ready,false);
+ const pending=await endpoint('create-checkout',{session,ready:false});const r=await pending.request({action:'payment_status',sessionId:session.id,fingerprint:'qa-fingerprint'});const activation=await r.json();assert.equal(activation.ready,false);assert.equal(activation.purchase,undefined);
+ const unpaid=await endpoint('create-checkout',{session:{...session,payment_status:'unpaid'},ready:true});const u=await unpaid.request({action:'payment_status',sessionId:session.id,fingerprint:'qa-fingerprint'});assert.equal((await u.json()).purchase,undefined);
 });

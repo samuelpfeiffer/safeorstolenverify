@@ -13,7 +13,7 @@ async function fixture(invoke = async () => ({ data: { url: 'https://checkout.st
     plugins: [{ name: 'checkout-boundaries', setup(b) {
       b.onResolve({ filter: /^(react|lucide-react|@\/integrations\/supabase\/client|@\/hooks\/useVerifyGate|@\/lib\/pendingCheck)$/ }, a => ({ path: a.path, namespace: 'mock' }));
       b.onLoad({ filter: /.*/, namespace: 'mock' }, a => ({ contents:
-        a.path === 'react' ? 'export const useState = v => [v, () => {}]; export const useRef = v => ({current:v});' :
+        a.path === 'react' ? 'export const useEffect = () => {}; export const useState = v => [v, () => {}]; export const useRef = v => ({current:v});' :
         a.path === 'lucide-react' ? 'export const Loader2 = () => null;' :
         a.path.includes('supabase') ? 'export const supabase = globalThis.checkoutTest.supabase;' :
         a.path.includes('useVerifyGate') ? 'export const getOrCreateFingerprint = () => "qa-fingerprint";' :
