@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { savePendingCheck } from '@/lib/pendingCheck';
+import { trackCheckout, trackFunnelStage } from '@/lib/funnelAnalytics';
 
 /**
  * Shown when a visitor has used their 1 free check. No account needed: tap an option, pay,
@@ -22,6 +23,7 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
   const [busy, setBusy] = useState<Kind | null>(null);
   const checkoutInProgress = useRef(false);
   const [error, setError] = useState<string | null>(null);
+  useEffect(() => { trackFunnelStage('verification_paywall_viewed'); }, []);
 
   const buy = async (kind: Kind) => {
     if (checkoutInProgress.current) return;
@@ -38,8 +40,10 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
           : { planName: PLAN_NAME[kind], plan: kind, serialNumber: identifier, itemType: itemType || 'unknown', fingerprint },
       });
       if (err || typeof data?.url !== 'string' || !data.url.trim()) throw new Error('Checkout didn\'t open. Tap your choice again.');
+      trackCheckout(kind);
       window.location.href = data.url;
     } catch (e) {
+      trackFunnelStage('checkout_failed');
       setError(e instanceof Error ? e.message : 'Checkout didn\'t open. Tap your choice again.');
       checkoutInProgress.current = false;
       setBusy(null);

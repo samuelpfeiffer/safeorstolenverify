@@ -15,6 +15,7 @@ import { Shield, ArrowRight } from 'lucide-react';
 import { PageSEO } from '@/components/seo/PageSEO';
 import { redirectToStripe } from '@/utils/stripeRedirect';
 import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/constants';
+import { trackCheckout, trackFunnelStage } from '@/lib/funnelAnalytics';
 
 const FAQS = [
  { q: 'How much does SafeOrStolen cost?', a: 'Your first check is free. After that, one verification check costs $4.99, or unlimited checks cost $10 per month. Applicable tax is calculated at checkout.' },
@@ -50,8 +51,10 @@ const PricingPage = () => {
  if (typeof data?.url !== 'string' || !data.url.trim()) {
  throw new Error('Checkout did not return a payment link');
  }
+ trackCheckout(isSubscription ? 'monthly' : 'single');
  redirectToStripe(data.url);
  } catch {
+ trackFunnelStage('checkout_failed');
  alert('Something went wrong. Please try again or email safeorstolenmail@gmail.com');
  } finally {
  checkoutInProgress.current = false;
@@ -105,8 +108,8 @@ const PricingPage = () => {
  <Link to="/for-sellers" className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/40 transition-all">
  <h3 className="font-black text-lg text-foreground mb-2">Selling something?</h3>
  <p className="text-muted-foreground text-sm mb-3">
- Check your own item and send the buyer a $1.99 verification certificate link, so they can see
- you checked it and when.
+ A certificate is included with a $4.99 check or the $10 monthly plan. Share it with your buyer
+ so they can see what you checked and when.
  </p>
  <span className="text-primary font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
  For sellers <ArrowRight className="w-4 h-4" />

@@ -65,7 +65,18 @@ serve(async (req) => {
       const paid = session.payment_status === 'paid';
       const entitlementId = typeof session.subscription === 'string' ? session.subscription : session.id;
       const { data: entitlement } = await supabaseClient.from('subscriptions').select('status').eq('stripe_subscription_id', entitlementId).maybeSingle();
-      return new Response(JSON.stringify({ paid, ready: paid && entitlement?.status === 'active', status: session.status }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      const ready = paid && entitlement?.status === 'active';
+      // Return only minimal receipt data, after ownership and fulfillment checks.
+      // Amounts come from Stripe, including discounts and tax, never from client input.
+      const tax = session.total_details?.amount_tax ?? 0;
+      const purchase = ready && typeof session.amount_total === 'number' && session.currency === 'usd' ? {
+        transactionId: session.id,
+        value: (session.amount_total - tax) / 100,
+        tax: tax / 100,
+        currency: session.currency.toUpperCase(),
+        plan: session.mode === 'subscription' ? 'monthly' : 'single',
+      } : undefined;
+      return new Response(JSON.stringify({ paid, ready, status: session.status, purchase }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
     }
 
     if (body?.product === 'certificate') {
