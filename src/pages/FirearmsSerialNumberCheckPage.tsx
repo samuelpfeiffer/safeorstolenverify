@@ -126,6 +126,9 @@ const FirearmsSerialNumberCheckPage = () => {
  reports from 33 states and Washington, DC, live Ohio law-enforcement records, SafeOrStolen theft
  reports.
  </p>
+ <p className="text-sm text-muted-foreground max-w-3xl mx-auto mb-8">
+ You can also run the <Link to="/firearms-check" className="text-primary underline">free gun serial number lookup</Link>.
+ </p>
 
  {/* Search Input */}
  <div className="max-w-xl mx-auto space-y-4 mb-8">
