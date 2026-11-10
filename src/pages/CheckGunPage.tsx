@@ -21,6 +21,10 @@ const CheckGunPage = () => {
             money, and explaining yourself to police. In a private sale, the serial number check
             is the single most important step most buyers skip.
           </p>
+          <p>
+            Have the serial number already?{' '}
+            <Link to="/firearms-check">Run the free gun serial number lookup</Link>.
+          </p>
         </>
       }
       sections={

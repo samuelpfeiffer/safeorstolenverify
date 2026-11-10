@@ -32,6 +32,9 @@ export default function CheckFirearmPage() {
               <Button size="lg" asChild>
                 <Link to="/verify">Check Firearm Serial Now</Link>
               </Button>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Or use the <Link to="/firearms-check" className="text-primary underline">free gun serial number lookup</Link>.
+              </p>
             </div>
           </div>
         </section>
