@@ -667,16 +667,16 @@ const VerifyChatPage: React.FC = () => {
  <title>Check if an Item Is Stolen | SafeOrStolen</title>
  <meta
  name="description"
- content="Paste an IMEI, VIN, serial number or license plate to search SafeOrStolen theft reports and public web results in a few seconds. Every source is listed. 1 free check."
+ content="Paste an IMEI, VIN, serial number or license plate to search SafeOrStolen theft reports and police stolen-gun and stolen-vehicle records in a few seconds. Every source is listed. 1 free check."
  />
  <link rel="canonical" href="https://safeorstolen.com/verify" />
  <meta property="og:title" content="Check if an Item Is Stolen | SafeOrStolen" />
  <meta
  property="og:description"
- content="Check an IMEI, VIN, serial or plate against SafeOrStolen theft reports and public web results, with every source listed and each check saved with the date."
+ content="Check an IMEI, VIN, serial or plate against SafeOrStolen theft reports and police stolen-gun and stolen-vehicle records, with every source listed and each check saved with the date."
  />
  <meta property="og:url" content="https://safeorstolen.com/verify" />
- <meta name="ai:purpose" content="Stolen-item check against SafeOrStolen theft reports and public web results" />
+ <meta name="ai:purpose" content="Stolen-item check against SafeOrStolen theft reports and police stolen-gun and stolen-vehicle records" />
  </Helmet>
 
  {/* Oct 22 2026: plain text for search engines and AI crawlers that don't run JavaScript. */}

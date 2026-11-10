@@ -36,7 +36,7 @@ const WELCOME: ChatMessage = {
  id: 'welcome',
  role: 'assistant',
  content:
- "Hi 👋 I'm the **SafeOrStolen AI**. Paste any **IMEI**, **VIN**, **serial number**, **license plate**, or **marketplace URL**, or upload a photo of the item.\n\nI check SafeOrStolen's own reports, public web results, and the right theft records for the item: law-enforcement stolen-gun and stolen-vehicle records, a national stolen-bicycle registry, and the lost and stolen phone blacklist. You'll get a downloadable report on the right.",
+ "Hi 👋 I'm the **SafeOrStolen AI**. Paste any **IMEI**, **VIN**, **serial number**, **license plate**, or **marketplace URL**, or upload a photo of the item.\n\nI check SafeOrStolen's own reports and the right theft records for the item: police stolen-gun and stolen-vehicle records and a national stolen-bicycle registry. For phones, I confirm the IMEI and the make and model. You'll get a downloadable report on the right.",
  suggestions: [
  'How do I find my phone IMEI?',
  'Where is the VIN on a car?',
