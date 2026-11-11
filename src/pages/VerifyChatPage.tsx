@@ -48,6 +48,7 @@ import { ConversationSidebar } from '@/components/verify-chat/ConversationSideba
 import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useChatThreads';
 import { streamChatReply } from '@/components/verify-chat/streamChatReply';
 import { resolveVerificationInputType } from '@/lib/verificationInputType';
+import { coverageQuestion, coverageReply, extractIdentifier, hintForCategory } from '@/lib/chatIntent';
 
 const URL_REGEX = /^https?:\/\/[^\s]+$/i;
 const IDENTIFIER_REGEX = /^[A-Z0-9\-\s]{4,30}$/i;
@@ -118,6 +119,9 @@ const VerifyChatPage: React.FC = () => {
  // Type hint from tool pages (e.g. ?type=firearm). Gun serials look like any serial, so the hint matters.
  const typeHintRef = useRef<string | null>(null);
  const plateStateRef = useRef<string | null>(null);
+ // Nov 11 2026: the kind of item the visitor just talked about ("can you check guns?", "gun 61050").
+ // Used only when the number itself doesn't show what it is, so a gun serial runs the gun check.
+ const topicHintRef = useRef<string | null>(null);
 
  const voice = useVoiceSearch({
  onResult: (text) => setInput((prev) => (prev ? `${prev} ${text}` : text)),
@@ -246,7 +250,8 @@ const VerifyChatPage: React.FC = () => {
  // This prevents plain words like "hello", "thanks", "pricing" from being treated as identifiers.
  if (!/\d/.test(t)) return false;
  // Reasonable identifier length
- if (t.length < 6 || t.length > 30) return false;
+ // Nov 11 2026: 5 characters is enough. Older gun serials are often that short (F5873).
+ if (t.length < 5 || t.length > 30) return false;
  // Only alphanumerics + dashes
  return /^[A-Z0-9\-]+$/i.test(t);
  }, []);
@@ -256,7 +261,7 @@ const VerifyChatPage: React.FC = () => {
  const looksLikeVerifyIntent = useCallback((text: string) => {
  const t = text.toLowerCase();
  const verbs = /\b(check|verify|lookup|look up|is\s+(this|my|the)|find out|scan)\b/;
- const nouns = /\b(phone|iphone|android|imei|car|vehicle|vin|bike|bicycle|laptop|serial|plate|license|gun|firearm|item|stolen|safe)\b/;
+ const nouns = /\b(phones?|iphones?|android|imei|cars?|vehicles?|vin|bikes?|bicycles?|laptops?|serial|plates?|license|guns?|firearms?|items?|stolen|safe)\b/;
  return verbs.test(t) && nouns.test(t);
  }, []);
 
@@ -342,7 +347,9 @@ const VerifyChatPage: React.FC = () => {
  if (detectErr) throw detectErr;
 
  const detected = detect?.type || 'serial';
- const hint = typeHintRef.current;
+ const genericGuess = ['serial', 'unknown'].includes(String(detected)) ||
+ (['vin', 'vehicle'].includes(String(detected)) && (detect?.extractedValue || identifier).replace(/[\s-]/g, '').length !== 17);
+ const hint = typeHintRef.current ?? (genericGuess ? topicHintRef.current : null);
  typeHintRef.current = null;
  const plateState = plateStateRef.current;
  plateStateRef.current = null;
@@ -573,10 +580,29 @@ const VerifyChatPage: React.FC = () => {
  await runImageVerification(assistantId, currentAttachment.dataUrl);
  } else if (text) {
  const url = extractUrl(text);
+ const single = text.replace(/^#+/, '').trim();
+ // Nov 11 2026 (owner report): a number typed with words ("gun 61050", "IMEI 35 629632 838383 5")
+ // or a question like "can you check guns?" is handled here with fixed, true wording. These used to
+ // go to the AI, which said SafeOrStolen doesn't cover guns or told people to go run the check elsewhere.
+ const extracted = url || looksLikeIdentifier(single) ? null : extractIdentifier(text);
+ const coverage = url || looksLikeIdentifier(single) || extracted?.identifier ? null : coverageQuestion(text);
+ if (extracted?.category) topicHintRef.current = hintForCategory(extracted.category) ?? topicHintRef.current;
  if (url && URL_REGEX.test(url)) {
  await runUrlAnalysis(assistantId, url);
- } else if (looksLikeIdentifier(text)) {
- await runVerification(assistantId, text);
+ } else if (looksLikeIdentifier(single)) {
+ await runVerification(assistantId, single);
+ } else if (extracted?.identifier) {
+ await runVerification(assistantId, extracted.identifier);
+ } else if (coverage) {
+ topicHintRef.current = hintForCategory(coverage) ?? topicHintRef.current;
+ const reply = coverageReply(coverage, true);
+ updateMessage(assistantId, { loading: false, content: reply.content, suggestions: reply.suggestions });
+ } else if (extracted?.choices?.length) {
+ updateMessage(assistantId, {
+ loading: false,
+ content: "**Which of these is the serial number?** Tap it to check it, or type the whole number exactly as it's printed on the item.",
+ suggestions: extracted.choices,
+ });
  } else if (looksLikeVerifyIntent(text)) {
  // User wants to verify but didn't include an identifier yet — guide them.
  updateMessage(assistantId, {
