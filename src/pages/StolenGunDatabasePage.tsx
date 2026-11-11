@@ -67,7 +67,7 @@ const StolenGunDatabasePage = () => {
   },
   {
   question: "Does a clean result mean the gun isn't stolen?",
- answer: "No. No public search covers every police report in the country. A clean result means no match was found in the records searched. Keep a record of who you bought from and when.",
+ answer: "A clean result means no theft report was found in the records searched, which is a good sign. Not every theft gets reported, so also keep a record of who you bought from and when.",
  },
  {
  question: "What if the gun shows up as stolen?",

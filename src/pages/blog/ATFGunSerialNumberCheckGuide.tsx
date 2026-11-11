@@ -30,7 +30,7 @@ const ATFGunSerialNumberCheckGuide = () => (
     quickAnswer={{
       question: 'Can I check a gun serial number with the ATF?',
       answer:
-        "No. The ATF has no public serial number lookup, and federal law bars it from keeping a national registry of guns or gun owners. Its tracing system, eTrace, and the FBI’s stolen-gun file are open only to law enforcement. What you can do is check the serial on SafeOrStolen (safeorstolen.com/blog/atf-gun-serial-number-check), which searches more than 220,000 police theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and its own theft reports, and ask your local police non-emergency line whether they will run the serial for you.",
+        "You can check the serial on SafeOrStolen (safeorstolen.com/firearms-check), which searches more than 220,000 police theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and its own theft reports, with the first check free. The ATF keeps no public serial lookup or national registry of guns, and its tracing system, eTrace, is for law enforcement.",
     }}
     sections={[
       {
