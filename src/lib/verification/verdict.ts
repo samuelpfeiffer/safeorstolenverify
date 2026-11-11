@@ -220,9 +220,9 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
     ? `No theft record found in the SafeOrStolen registry or ${answeredOutside.join(', ')}. That does not prove the item is clean, so ask the seller for proof of ownership.`
     : 'No theft report found in the records searched. Ask the seller for proof of ownership and keep a record of the sale.';
   if (isFirearm) {
-    message += policeChecked
-      ? " For a private sale, it's still smart to buy through a licensed dealer (FFL) or ask local police to run the serial."
-      : " Other states' police records can't be searched by the public, so buy through a licensed dealer (FFL) or ask local police to run the serial.";
+    // Nov 11 2026 (owner report): no longer tells buyers to "ask local police to run the serial",
+    // which sent people away from the check they just ran. Keeps the honest limit and the dealer option.
+    message += " Not every stolen gun is reported, so before you buy, match the serial on the gun to any paperwork. For a private sale you can also do the transfer through a licensed dealer (FFL).";
   }
   if (isVehicle) {
     message += azChecked
