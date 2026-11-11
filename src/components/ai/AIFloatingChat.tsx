@@ -291,6 +291,9 @@ export const AIFloatingChat: React.FC = () => {
   }, [messages, isStreaming, streamChat, detectInput, runVerification, runUrlAnalysis]);
 
   const handleOpen = () => {
+    // Nov 11 2026 (owner rule): one AI chat for the whole site. The bubble opens /verify
+    // instead of a second, smaller chat window.
+    if (typeof window !== 'undefined') { window.location.href = '/verify'; return; }
     setIsOpen(true);
     setIsMinimized(false);
     setHasNewMessage(false);
@@ -318,7 +321,7 @@ export const AIFloatingChat: React.FC = () => {
             whileTap={{ scale: 0.95 }}
             onClick={handleOpen}
             className="fixed bottom-24 right-4 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center group"
-            aria-label="Open AI Chat Assistant"
+            aria-label="Open the SafeOrStolen AI chat"
           >
             <MessageCircle className="w-6 h-6" />
             {hasNewMessage && (
