@@ -743,12 +743,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://safeorstolen.com/marketplace-advisor</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://safeorstolen.com/marketplace-integration</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -842,12 +836,6 @@
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://safeorstolen.com/scam-checker</loc>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/seller-badge</loc>

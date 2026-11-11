@@ -117,6 +117,10 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/vin-verification-for-used-cars-what-you-need-to-know-1760000422701": "/blog/complete-vin-guide",
   "/blog/why-checkmend-has-no-app": "/imei-checker",
   "/ai-chat": "/verify",
+  // Nov 11 2026 (owner rule): one AI chat for every check. These two pages ran their own
+  // listing analyzers; /verify reads pasted listing text and questions in the same chat.
+  "/marketplace-advisor": "/verify",
+  "/scam-checker": "/verify",
   "/verify/classic": "/verify",
   "/developer": "/api",
   "/developers": "/api",
