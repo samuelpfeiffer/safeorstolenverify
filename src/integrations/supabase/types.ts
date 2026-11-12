@@ -981,6 +981,75 @@ export type Database = {
         }
         Relationships: []
       }
+      plate_owner_business_leads: {
+        Row: {
+          company: string
+          contact_name: string
+          created_at: string
+          id: string
+          industry: string
+          license_number: string | null
+          monthly_volume: number
+          phone: string
+          updated_at: string
+          work_email: string
+        }
+        Insert: {
+          company: string
+          contact_name: string
+          created_at?: string
+          id?: string
+          industry: string
+          license_number?: string | null
+          monthly_volume: number
+          phone: string
+          updated_at?: string
+          work_email: string
+        }
+        Update: {
+          company?: string
+          contact_name?: string
+          created_at?: string
+          id?: string
+          industry?: string
+          license_number?: string | null
+          monthly_volume?: number
+          phone?: string
+          updated_at?: string
+          work_email?: string
+        }
+        Relationships: []
+      }
+      plate_owner_kit_purchases: {
+        Row: {
+          created_at: string
+          id: string
+          payment_id: string
+          plate: string
+          selected_reason: string
+          state: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          payment_id: string
+          plate: string
+          selected_reason: string
+          state: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          payment_id?: string
+          plate?: string
+          selected_reason?: string
+          state?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
