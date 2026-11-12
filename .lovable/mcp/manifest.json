@@ -44,7 +44,7 @@
       {
         "name": "verify_imei",
         "title": "Verify phone IMEI",
-        "description": "Check a 15-digit phone IMEI against SafeOrStolen's stolen-item reports, public web results, and AI analysis. Returns a status (safe / stolen / unknown) with any known metadata.",
+        "description": "Check a 15-digit phone IMEI against SafeOrStolen's stolen-item reports. Returns a status (safe / stolen / unknown) with any known metadata.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
