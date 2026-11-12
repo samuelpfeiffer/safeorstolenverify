@@ -77,3 +77,9 @@
 - [ ] /api page truth + remove 2025 API launch claims
 - [ ] Homepage middle consolidation
 - [ ] Three honest comparison pages
+
+# Plate owner request kit (Nov 12)
+- [ ] Add isolated request form, ten state guides, schema, PDF and early-access form.
+- [ ] Create private kit purchases and insert-only business leads tables; verify access controls.
+- [ ] Create $9.99 Stripe price and safely connect hosted checkout (blocked: connected Stripe key lacks Products Write; existing webhook requires kit exclusion).
+- [ ] Verify eligibility/certification, SSR, desktop/mobile and payment boundary; do not publish.

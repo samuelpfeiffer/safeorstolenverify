@@ -75,3 +75,6 @@ Pages that help right now (Search Console Oct 10 – Nov 6 2026), in addition to
 
 - Keep public police-search links in a shared presentation-only component; copy identifiers locally and never fetch linked search pages. This keeps external manual checks separate from verification providers.
 - Share the exact manual-search URL list with the outbound-link guard and allow only those URLs, not whole agency domains, so unrelated outbound restrictions remain intact.
+
+- Keep the plate-owner request kit isolated in `src/features/plate-owner`; generate requester name/address/VIN PDFs locally and persist only the approved purchase fields, so sensitive identity details never enter storage or Stripe metadata.
+- Kit checkout must fail closed until its dedicated Stripe price and webhook isolation are configured; an unknown one-time price can otherwise alter verification entitlements through the legacy webhook.

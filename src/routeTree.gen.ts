@@ -222,6 +222,8 @@ import { Route as PaymentSuccessRouteImport } from './routes/payment-success'
 import { Route as PennsylvaniaLicensePlateLookupRouteImport } from './routes/pennsylvania-license-plate-lookup'
 import { Route as PennsylvaniaVinLookupRouteImport } from './routes/pennsylvania-vin-lookup'
 import { Route as PhoneBlacklistCheckRouteImport } from './routes/phone-blacklist-check'
+import { Route as PlateOwnerApiRouteImport } from './routes/plate-owner-api'
+import { Route as PlateOwnerRequestRouteImport } from './routes/plate-owner-request'
 import { Route as PoshmarkStolenCheckRouteImport } from './routes/poshmark-stolen-check'
 import { Route as PressRouteImport } from './routes/press'
 import { Route as PressKitRouteImport } from './routes/press-kit'
@@ -1519,6 +1521,16 @@ const PhoneBlacklistCheckRoute = PhoneBlacklistCheckRouteImport.update({
   path: '/phone-blacklist-check',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlateOwnerApiRoute = PlateOwnerApiRouteImport.update({
+  id: '/plate-owner-api',
+  path: '/plate-owner-api',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlateOwnerRequestRoute = PlateOwnerRequestRouteImport.update({
+  id: '/plate-owner-request',
+  path: '/plate-owner-request',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PoshmarkStolenCheckRoute = PoshmarkStolenCheckRouteImport.update({
   id: '/poshmark-stolen-check',
   path: '/poshmark-stolen-check',
@@ -2705,6 +2717,8 @@ export interface FileRoutesByFullPath {
   '/pennsylvania-license-plate-lookup': typeof PennsylvaniaLicensePlateLookupRoute
   '/pennsylvania-vin-lookup': typeof PennsylvaniaVinLookupRoute
   '/phone-blacklist-check': typeof PhoneBlacklistCheckRoute
+  '/plate-owner-api': typeof PlateOwnerApiRoute
+  '/plate-owner-request': typeof PlateOwnerRequestRoute
   '/poshmark-stolen-check': typeof PoshmarkStolenCheckRoute
   '/press': typeof PressRoute
   '/press-kit': typeof PressKitRoute
@@ -3098,6 +3112,8 @@ export interface FileRoutesByTo {
   '/pennsylvania-license-plate-lookup': typeof PennsylvaniaLicensePlateLookupRoute
   '/pennsylvania-vin-lookup': typeof PennsylvaniaVinLookupRoute
   '/phone-blacklist-check': typeof PhoneBlacklistCheckRoute
+  '/plate-owner-api': typeof PlateOwnerApiRoute
+  '/plate-owner-request': typeof PlateOwnerRequestRoute
   '/poshmark-stolen-check': typeof PoshmarkStolenCheckRoute
   '/press': typeof PressRoute
   '/press-kit': typeof PressKitRoute
@@ -3493,6 +3509,8 @@ export interface FileRoutesById {
   '/pennsylvania-license-plate-lookup': typeof PennsylvaniaLicensePlateLookupRoute
   '/pennsylvania-vin-lookup': typeof PennsylvaniaVinLookupRoute
   '/phone-blacklist-check': typeof PhoneBlacklistCheckRoute
+  '/plate-owner-api': typeof PlateOwnerApiRoute
+  '/plate-owner-request': typeof PlateOwnerRequestRoute
   '/poshmark-stolen-check': typeof PoshmarkStolenCheckRoute
   '/press': typeof PressRoute
   '/press-kit': typeof PressKitRoute
@@ -3890,6 +3908,8 @@ export interface FileRouteTypes {
     | '/pennsylvania-license-plate-lookup'
     | '/pennsylvania-vin-lookup'
     | '/phone-blacklist-check'
+    | '/plate-owner-api'
+    | '/plate-owner-request'
     | '/poshmark-stolen-check'
     | '/press'
     | '/press-kit'
@@ -4283,6 +4303,8 @@ export interface FileRouteTypes {
     | '/pennsylvania-license-plate-lookup'
     | '/pennsylvania-vin-lookup'
     | '/phone-blacklist-check'
+    | '/plate-owner-api'
+    | '/plate-owner-request'
     | '/poshmark-stolen-check'
     | '/press'
     | '/press-kit'
@@ -4677,6 +4699,8 @@ export interface FileRouteTypes {
     | '/pennsylvania-license-plate-lookup'
     | '/pennsylvania-vin-lookup'
     | '/phone-blacklist-check'
+    | '/plate-owner-api'
+    | '/plate-owner-request'
     | '/poshmark-stolen-check'
     | '/press'
     | '/press-kit'
@@ -5073,6 +5097,8 @@ export interface RootRouteChildren {
   PennsylvaniaLicensePlateLookupRoute: typeof PennsylvaniaLicensePlateLookupRoute
   PennsylvaniaVinLookupRoute: typeof PennsylvaniaVinLookupRoute
   PhoneBlacklistCheckRoute: typeof PhoneBlacklistCheckRoute
+  PlateOwnerApiRoute: typeof PlateOwnerApiRoute
+  PlateOwnerRequestRoute: typeof PlateOwnerRequestRoute
   PoshmarkStolenCheckRoute: typeof PoshmarkStolenCheckRoute
   PressRoute: typeof PressRoute
   PressKitRoute: typeof PressKitRoute
@@ -6694,6 +6720,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PhoneBlacklistCheckRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/plate-owner-api': {
+      id: '/plate-owner-api'
+      path: '/plate-owner-api'
+      fullPath: '/plate-owner-api'
+      preLoaderRoute: typeof PlateOwnerApiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plate-owner-request': {
+      id: '/plate-owner-request'
+      path: '/plate-owner-request'
+      fullPath: '/plate-owner-request'
+      preLoaderRoute: typeof PlateOwnerRequestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/poshmark-stolen-check': {
       id: '/poshmark-stolen-check'
       path: '/poshmark-stolen-check'
@@ -8313,6 +8353,8 @@ const rootRouteChildren: RootRouteChildren = {
   PennsylvaniaLicensePlateLookupRoute: PennsylvaniaLicensePlateLookupRoute,
   PennsylvaniaVinLookupRoute: PennsylvaniaVinLookupRoute,
   PhoneBlacklistCheckRoute: PhoneBlacklistCheckRoute,
+  PlateOwnerApiRoute: PlateOwnerApiRoute,
+  PlateOwnerRequestRoute: PlateOwnerRequestRoute,
   PoshmarkStolenCheckRoute: PoshmarkStolenCheckRoute,
   PressRoute: PressRoute,
   PressKitRoute: PressKitRoute,
