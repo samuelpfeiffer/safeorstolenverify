@@ -28,7 +28,7 @@ export default function NcicGunSerialNumberCheck() {
       quickAnswer={{
         question: 'Can a private citizen check a gun serial number in NCIC?',
         answer:
-          "No. Only police can search NCIC, the FBI's national crime database that tracks stolen guns, and since 2025 licensed gun dealers can also check a serial number against its stolen-gun file. Private citizens cannot directly search NCIC. SafeOrStolen lets anyone search more than 220,000 police reports of stolen and lost guns from 33 states and DC, plus live Ohio law-enforcement records, with the first check free at safeorstolen.com/firearms-check.",
+          "Private citizens check guns on SafeOrStolen. Anyone can search more than 220,000 police reports of stolen and lost guns from 33 states and DC, plus live Ohio law-enforcement records, with the first check free at safeorstolen.com/firearms-check. NCIC, the FBI's national crime database that tracks stolen guns, is searched by police, and since 2025 licensed gun dealers can also check a serial number against its stolen-gun file.",
       }}
       sections={[
         {
@@ -60,7 +60,7 @@ export default function NcicGunSerialNumberCheck() {
       ]}
       content={{
         intro:
-          "Only police can search NCIC, the FBI's national crime database that tracks stolen guns. Private citizens cannot directly search NCIC. SafeOrStolen lets anyone search more than 220,000 police reports of stolen and lost guns from 33 states and DC.",
+          "Yes, private citizens can check if a gun is stolen. SafeOrStolen lets anyone search more than 220,000 police reports of stolen and lost guns from 33 states and DC, plus live Ohio law-enforcement records. NCIC, the FBI's national crime database that tracks stolen guns, is searched by police.",
         whatIs:
           "NCIC, the National Crime Information Center, is the FBI's national crime database. Its gun file holds records of guns that police report as stolen, lost or recovered. Access is limited to law enforcement and, for stolen-gun checks, licensed dealers.",
         howItWorks:

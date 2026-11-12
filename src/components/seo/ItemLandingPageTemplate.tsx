@@ -198,7 +198,7 @@ export const ItemLandingPageTemplate = ({
  </ul>
  
  <h2>What a check searches</h2>
- <p>SafeOrStolen searches its own stolen-item reports. Firearm checks include Ohio Attorney General stolen-gun records, and bicycle checks include Bike Index. VIN checks decode vehicle details and list recalls. Vehicle checks cover police reports in Arizona, Alaska and Chicago. The result names what was actually checked. A miss means not found, not safe. Public search links are separate checks you open yourself; they do not connect additional state databases.</p>
+ <p>SafeOrStolen searches its own theft reports on every check. Gun checks also search more than 220,000 police gun theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement records (<a href="/firearms-check">free gun serial number lookup</a>). Bike checks include a national stolen-bicycle registry. VIN checks decode the vehicle and list open recalls, and vehicle checks cover police reports in Arizona, Alaska and Chicago. Every result names each source searched. No report found means nothing matched in those records.</p>
  
  <h2>Frequently Asked Questions</h2>
  {content.faqs.map((faq, i) => (
@@ -322,7 +322,7 @@ export const ItemLandingPageTemplate = ({
  className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80 mb-8"
   dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.whatIs) }}
   />
- {searchType === 'firearm' ? <p className="text-sm text-muted-foreground">Read the sources actually checked on your result. Historical reports are not connected state databases. Vehicle checks cover police reports in Arizona, Alaska and Chicago. A miss means not found, not safe.</p> : <DataPartnerBadges variant="compact" />}
+ {searchType === 'firearm' ? <p className="text-sm text-muted-foreground">Yes, anyone can check a gun here. Each result lists every source searched: SafeOrStolen's own theft reports, more than 220,000 police gun theft and loss reports from 33 states and DC, and live Ohio law-enforcement records. See the <Link to="/firearms-check" className="text-primary hover:underline">free gun serial number lookup</Link>.</p> : <DataPartnerBadges variant="compact" />}
  </div>
  </section>
 

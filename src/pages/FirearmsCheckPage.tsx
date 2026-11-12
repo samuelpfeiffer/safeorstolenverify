@@ -49,11 +49,14 @@ const STATE_COVERAGE: { state: string; reports: number; years: string }[] = [
 ];
 
 // One list for the visible FAQ and the FAQPage schema, so they always match.
+// Nov 11 2026 (owner): Google and AI answers say private citizens can't check a gun. The first answer
+// on this page now says plainly that anyone can, on SafeOrStolen, and the list is shown and marked up
+// as FAQPage (it was defined here but never rendered or marked up).
 const FIREARM_FAQS: { q: string; a: string }[] = [
+ { q: 'Can private citizens check if a gun is stolen?', a: "Yes. Anyone can check a gun's serial number for free on SafeOrStolen. Scan or type the serial at safeorstolen.com/firearms-check and it searches SafeOrStolen's own theft reports, more than 220,000 police gun theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records, then lists every source it searched. It is a private search, separate from the FBI's NCIC file that police use." },
  { q: 'How do I check if a gun is stolen by serial number?', a: "Private citizens (buyers and sellers) can directly search stolen-gun databases with SafeOrStolen. Scan the serial with your phone camera or type it in at safeorstolen.com/firearms-check. It searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and owner reports, and flags serials that look altered. Result in seconds that names every source." },
  { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 1 free check, no account or credit card needed. After that it is $4.99 for 1 check or $10 a month for unlimited checks.' },
- { q: 'Can private citizens check if a gun is stolen online?', a: "Yes. Private citizens can now directly search stolen-gun databases with SafeOrStolen by scanning or typing the serial. It checks more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC plus live Ohio records. First check is free. This does not include the FBI NCIC file — ask local police or use an FFL for that." },
- { q: "Can I search NCIC to check if a gun is stolen?", a: "No. NCIC, the FBI's National Crime Information Center, is open only to law enforcement, so private buyers and sellers can't search it. Instead, on SafeOrStolen anyone can search more than 220,000 police gun theft and loss reports from 33 states and DC, plus live Ohio law-enforcement records, free for the first check. If a gun matches, give the serial number to police, who can confirm it in NCIC." },
+ { q: "Can I search NCIC to check if a gun is stolen?", a: "NCIC, the FBI's National Crime Information Center, is used by police. Private buyers and sellers check guns on SafeOrStolen instead: anyone can search more than 220,000 police gun theft and loss reports from 33 states and DC, plus live Ohio law-enforcement records, free for the first check. If a gun matches, give the serial number to police, who can confirm it in NCIC." },
  { q: "How do I check if a gun is stolen by serial number online?", a: "Enter the serial number in the search box at safeorstolen.com/firearms-check and press search. In seconds SafeOrStolen checks it against more than 220,000 police gun theft and loss reports from 33 states and DC, live Ohio law-enforcement records and its own theft reports, and shows the reporting police department if it matches. It works for a gun from any state." },
  { q: "Can I look up a Glock serial number to see if it's stolen?", a: "Yes. SafeOrStolen checks a serial number from any make, including Glock, Smith & Wesson, Ruger, Sig Sauer, Taurus, Springfield, Remington and Mossberg. Enter the serial exactly as stamped on the frame; on a Glock it is on the frame, the slide and the barrel, and all three should match." },
  { q: "Is there a stolen gun search for the public?", a: "Yes. SafeOrStolen is a stolen gun search anyone can use, with no account or law-enforcement credentials. One search covers more than 220,000 police gun theft and loss reports from 33 states and DC, live Ohio law-enforcement records and SafeOrStolen's own reports, with your first check free." },
@@ -71,7 +74,8 @@ const FirearmsCheckPage = () => {
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="Free Gun Serial Number Lookup for Private Citizens | SafeOrStolen"
- description="Private citizens can directly search stolen-gun databases. Scan or type a serial to check 220,000+ police reports from 33 states + live Ohio records. First check free."
+ description="Yes, private citizens can check if a gun is stolen. Scan or type a serial to search 220,000+ police reports from 33 states, DC and live Ohio records. First check free."
+ structuredData={{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FIREARM_FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }}
  canonical="/firearms-check"
  />
 
@@ -87,7 +91,7 @@ const FirearmsCheckPage = () => {
  <span className="text-primary">Scan or Type the Serial — Check Stolen Reports</span>
  </h1>
  <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
- Private citizens (buyers and sellers) can now directly search stolen-gun databases with SafeOrStolen. Scan the serial with your phone camera or type it in. We check more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records.
+ <strong className="text-foreground">Yes, private citizens can check if a gun is stolen.</strong> Anyone can check a gun's serial number for free on SafeOrStolen. Scan the serial with your phone camera or type it in. We check SafeOrStolen's own theft reports, more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records.
  </p>
 
 
@@ -113,7 +117,7 @@ const FirearmsCheckPage = () => {
  Quick Answer
  </h2>
  <p className="text-foreground font-semibold text-lg mb-3">
- How do I check if a gun serial number is stolen?
+ Can private citizens check if a gun is stolen?
  </p>
  <p className="text-muted-foreground leading-relaxed">
  {FIREARM_FAQS[0].a}
@@ -131,16 +135,16 @@ const FirearmsCheckPage = () => {
  {/* MAIN CONTENT */}
  <article className="max-w-3xl mx-auto px-4 pb-16">
 
- {/* Oct 28 2026: citizens can't search NCIC. Honest: SafeOrStolen does not search NCIC (police-only). */}
+ {/* Oct 28 2026: SafeOrStolen is a separate private search from NCIC (police use NCIC). Nov 11: worded as a yes. */}
  <section className="mb-12 rounded-2xl border border-primary/40 bg-primary/5 p-6">
  <h2 className="text-2xl font-black text-foreground mb-3">
- Can Citizens Search NCIC? What You Can Check Instead
+ Yes, You Can Check a Gun Yourself: SafeOrStolen and NCIC
  </h2>
  <p className="text-muted-foreground mb-3">
- Police check guns against NCIC, the FBI's National Crime Information Center. Private buyers and sellers can't: NCIC is open only to law enforcement. That has left citizens with no way to check a gun before a private sale.
+ Police check guns against NCIC, the FBI's National Crime Information Center, which is used by law enforcement. Private buyers and sellers check guns on SafeOrStolen.
  </p>
  <p className="text-muted-foreground mb-3">
- What anyone can search is SafeOrStolen. Anyone can search a gun serial number against <strong className="text-foreground">more than 220,000 police gun theft and loss reports from 33 states and DC</strong>, plus live Ohio law-enforcement records, in seconds, for a gun from any state. Your first check is free and no account is needed.
+ Anyone can search a gun serial number against <strong className="text-foreground">more than 220,000 police gun theft and loss reports from 33 states and DC</strong>, plus live Ohio law-enforcement records, in seconds, for a gun from any state. Your first check is free and no account is needed.
  </p>
  <p className="text-muted-foreground">
  If a gun matches, don't buy it. Give the serial number to local police, who can confirm the report in NCIC.
@@ -326,6 +330,21 @@ const FirearmsCheckPage = () => {
  <div key={item.who} className="bg-card/60 border border-border rounded-xl p-4">
  <h3 className="text-foreground font-bold text-sm mb-1">{item.who}</h3>
  <p className="text-muted-foreground text-xs leading-relaxed">{item.desc}</p>
+ </div>
+ ))}
+ </div>
+ </section>
+
+ {/* Nov 11 2026: the FAQ list, shown on the page and marked up as FAQPage above. */}
+ <section className="mb-12" id="faq">
+ <h2 className="text-2xl font-black text-foreground mb-6">
+ Gun Serial Number Lookup: Questions People Ask
+ </h2>
+ <div className="space-y-4">
+ {FIREARM_FAQS.map((f) => (
+ <div key={f.q} className="bg-card/60 border border-border rounded-xl p-5">
+ <h3 className="text-foreground font-bold mb-2">{f.q}</h3>
+ <p className="text-muted-foreground text-sm leading-relaxed">{f.a}</p>
  </div>
  ))}
  </div>

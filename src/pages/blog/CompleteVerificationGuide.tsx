@@ -26,7 +26,7 @@ const CHECKS: { name: string; catches: string; who: string; sos: string }[] = [
  {
  name: 'Police records (NCIC and state systems)',
  catches: 'Thefts reported to police, including ones that never made it online.',
- who: 'Only law enforcement. Call your local police non-emergency line and ask if they will run a serial or VIN.',
+ who: 'Police. Some departments will also run a serial or VIN if you call the non-emergency line.',
  sos: 'No, except Arizona, Alaska and Chicago police stolen-vehicle records and live Ohio records for guns.',
  },
  {
@@ -86,7 +86,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Can I run an NCIC check myself?',
  answer:
- 'No. The FBI\'s NCIC is open only to law enforcement and authorized agencies. Some local police departments will run a serial number or VIN for you if you call the non-emergency line or bring the item to the station, but policies vary. Public tools like SafeOrStolen search the records that are open to them and list them on each result.',
+ 'You can check items yourself on SafeOrStolen, which searches the records listed on each result. NCIC, the FBI\'s system, is used by law enforcement and authorized agencies, and some local police departments will also run a serial number or VIN if you call the non-emergency line.',
  },
  {
  question: 'Does a stolen VIN check show if a car has a lien or salvage title?',
