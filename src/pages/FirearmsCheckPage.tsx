@@ -55,6 +55,7 @@ const STATE_COVERAGE: { state: string; reports: number; years: string }[] = [
 const FIREARM_FAQS: { q: string; a: string }[] = [
  { q: 'Can private citizens check if a gun is stolen?', a: "Yes. Anyone can check a gun's serial number for free on SafeOrStolen. Scan or type the serial at safeorstolen.com/firearms-check and it searches SafeOrStolen's own theft reports, more than 220,000 police gun theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records, then lists every source it searched. It is a private search, separate from the FBI's NCIC file that police use." },
  { q: 'How do I check if a gun is stolen by serial number?', a: "Private citizens (buyers and sellers) can directly search stolen-gun databases with SafeOrStolen. Scan the serial with your phone camera or type it in at safeorstolen.com/firearms-check. It searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and owner reports, and flags serials that look altered. Result in seconds that names every source." },
+ { q: 'Is there a free app to check a gun serial number?', a: "Yes. SafeOrStolen works as a free app on any phone. Open safeorstolen.com/app in Safari or Chrome and add it to your home screen, then scan the serial with your camera or type it in. Each check searches more than 220,000 police gun theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and SafeOrStolen's own reports, and your first check is free." },
  { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 1 free check, no account or credit card needed. After that it is $4.99 for 1 check or $10 a month for unlimited checks.' },
  { q: "Can I search NCIC to check if a gun is stolen?", a: "NCIC, the FBI's National Crime Information Center, is used by police. Private buyers and sellers check guns on SafeOrStolen instead: anyone can search more than 220,000 police gun theft and loss reports from 33 states and DC, plus live Ohio law-enforcement records, free for the first check. If a gun matches, give the serial number to police, who can confirm it in NCIC." },
  { q: "How do I check if a gun is stolen by serial number online?", a: "Enter the serial number in the search box at safeorstolen.com/firearms-check and press search. In seconds SafeOrStolen checks it against more than 220,000 police gun theft and loss reports from 33 states and DC, live Ohio law-enforcement records and its own theft reports, and shows the reporting police department if it matches. It works for a gun from any state." },
@@ -77,6 +78,7 @@ const FirearmsCheckPage = () => {
  description="Yes, private citizens can check if a gun is stolen. Scan or type a serial to search 220,000+ police reports from 33 states, DC and live Ohio records. First check free."
  structuredData={{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FIREARM_FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }}
  canonical="/firearms-check"
+ image="/images/og/firearms-check.jpg"
  />
 
  {/* HERO + TOOL — hero-stable reserves min-height to prevent CLS on mobile */}
@@ -153,6 +155,25 @@ const FirearmsCheckPage = () => {
  In the news: <Link to="/press-release" className="text-primary hover:underline">How to Check if a Gun Is Stolen: Free Gun Serial Number Lookup for Private Buyers</Link> (October 28, 2026)
  </p>
  </section>
+
+ {/* Nov 12 2026: page photo (made for SafeOrStolen), lazy and sized so it doesn't shift the layout */}
+ <figure className="mb-12">
+ <picture>
+ <source type="image/webp" srcSet="/images/cards/firearms-check-480.webp 480w, /images/cards/firearms-check-768.webp 768w" sizes="(max-width: 800px) 100vw, 768px" />
+ <img
+ src="/images/cards/firearms-check.jpg"
+ alt="Used handgun on a gun store counter, ready for a serial number check before buying"
+ width={1024}
+ height={576}
+ loading="lazy"
+ decoding="async"
+ className="w-full h-auto rounded-xl border border-border"
+ />
+ </picture>
+ <figcaption className="text-sm text-muted-foreground mt-2">
+ Check the serial on any used gun before you pay. Want it on your phone? Use the <Link to="/app" className="text-primary hover:underline">free app to check a gun serial number</Link>.
+ </figcaption>
+ </figure>
 
  {/* Section 1 */}
  <section className="mb-12">

@@ -2,6 +2,7 @@ import { Link, useLocation } from '@/lib/router-compat';
 import DOMPurify from 'dompurify';
 import { Shield, Search, CheckCircle, Clock, Award } from 'lucide-react';
 import { FounderNote, FOUNDER_PERSON_SCHEMA } from '@/components/seo/FounderNote';
+import { categoryForItem, photoForCategory, shareImageFor } from '@/lib/shareImages';
 
 // DOMPurify requires a browser DOM (window/document). Under SSR (TanStack Start
 // server render, no DOM) its sanitize() throws, which kills the entire page
@@ -78,6 +79,20 @@ export const ItemLandingPageTemplate = ({
  
  const fullUrl = `https://safeorstolen.com${location.pathname}`;
 
+ // Nov 12 2026: a photo on every item page and its own 1200x630 share card (was the logo).
+ const imageCategory = categoryForItem(itemType, searchType);
+ const photo = photoForCategory(imageCategory);
+ const shareImage = shareImageFor(location.pathname, imageCategory);
+ const shareImageUrl = `https://safeorstolen.com${shareImage}`;
+ const photoUrl = `https://safeorstolen.com${photo.jpg}`;
+ const imageSchema = {
+ "@type": "ImageObject",
+ "url": shareImageUrl,
+ "width": 1200,
+ "height": 630,
+ "caption": h1
+ };
+
  const serviceSchema = {
  "@context": "https://schema.org",
  "@type": "Service",
@@ -94,6 +109,7 @@ export const ItemLandingPageTemplate = ({
  "name": "Worldwide"
  },
  "description": metaDescription,
+ "image": [shareImageUrl, photoUrl],
  "dateModified": dateModified
  };
 
@@ -101,6 +117,7 @@ export const ItemLandingPageTemplate = ({
  "@context": "https://schema.org",
  "@type": "HowTo",
  "name": `How to Check if ${itemType} is Stolen`,
+ "image": photoUrl,
  "dateModified": dateModified,
  "step": content.process.map((step, index) => ({
  "@type": "HowToStep",
@@ -133,17 +150,19 @@ export const ItemLandingPageTemplate = ({
  }))
  } : null;
 
- const webPageSchema = founderNote ? {
+ const webPageSchema = {
  "@context": "https://schema.org",
  "@type": "WebPage",
  "name": h1,
  "url": fullUrl,
  "dateModified": dateModified,
- "author": FOUNDER_PERSON_SCHEMA,
+ "primaryImageOfPage": imageSchema,
+ "image": [shareImageUrl, photoUrl],
+ ...(founderNote ? { "author": FOUNDER_PERSON_SCHEMA } : {}),
  "publisher": { "@type": "Organization", "name": "SafeOrStolen", "url": "https://safeorstolen.com" }
- } : null;
+ };
 
- const structuredData = [serviceSchema, howToSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []), ...(webPageSchema ? [webPageSchema] : [])];
+ const structuredData = [serviceSchema, howToSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : []), webPageSchema];
 
  return (
  <>
@@ -153,6 +172,7 @@ export const ItemLandingPageTemplate = ({
  keywords={keywords.join(', ')}
  canonical={location.pathname}
  structuredData={structuredData}
+ image={shareImage}
  />
 
  {/* noscript fallback for crawlers */}
@@ -178,6 +198,7 @@ export const ItemLandingPageTemplate = ({
  </div>
  ))}
  
+ <img src={photo.jpg} alt={photo.alt} width={photo.width} height={photo.height} />
  <h2>What a {itemType} check looks for</h2>
  <p>{content.whatIs}</p>
  
@@ -317,6 +338,21 @@ export const ItemLandingPageTemplate = ({
  {/* What Is Section */}
  <section className="py-16 px-4 bg-card/50">
  <div className="max-w-4xl mx-auto">
+ <figure className="mb-8">
+ <picture>
+ <source type="image/webp" srcSet={`${photo.base}-480.webp 480w, ${photo.base}-768.webp 768w`} sizes="(max-width: 800px) 100vw, 768px" />
+ <img
+ src={photo.jpg}
+ alt={photo.alt}
+ width={photo.width}
+ height={photo.height}
+ loading="lazy"
+ decoding="async"
+ className="w-full h-auto rounded-xl border border-border"
+ />
+ </picture>
+ <figcaption className="text-sm text-muted-foreground mt-2">{itemType} check on SafeOrStolen: first check free, results in seconds.</figcaption>
+ </figure>
  <h2 className="text-3xl font-bold mb-6">What a {itemType} check looks for</h2>
  <p 
  className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80 mb-8"

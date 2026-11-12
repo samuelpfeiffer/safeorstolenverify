@@ -54,7 +54,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
  title,
  description,
  canonical,
- ogImage = '/sos-logo.png',
+ ogImage = '/images/og/default.jpg', // Nov 12 2026: real 1200x630 card (was the square logo)
  noIndex = false,
  schemaJson,
  keywords,

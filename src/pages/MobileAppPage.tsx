@@ -55,6 +55,13 @@ const MobileAppPage = () => {
  return (
  <>
  <Helmet>
+ <meta property="og:type" content="website" />
+ <meta property="og:site_name" content="SafeOrStolen" />
+ <meta property="og:image" content="https://safeorstolen.com/images/og/default.jpg" />
+ <meta property="og:image:width" content="1200" />
+ <meta property="og:image:height" content="630" />
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:image" content="https://safeorstolen.com/images/og/default.jpg" />
  <title>SafeOrStolen Mobile App | Free Web App for Your Phone</title>
  <meta name="description" content="SafeOrStolen is a free installable web app, not an App Store app. Add it to your home screen from safeorstolen.com/app and check items at the meetup." />
  <meta name="keywords" content="SafeOrStolen app, stolen item checker app, IMEI checker app, VIN lookup app, stolen phone app, download SafeOrStolen" />

@@ -6,11 +6,11 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const CheckPS5Page = () => {
   return (
     <ItemLandingPageTemplate
-      title="PS5 Serial Number Check (Free): How to Know if a PS5 Is Stolen"
-      metaDescription="Free PS5 serial number checker: see if a used PS5, Slim or Pro is reported stolen in seconds, spot the warning signs, and test for a PSN ban before you pay."
+      title="Free PS5 Serial Number Checker: Check if a PS5 Is Stolen"
+      metaDescription="Free PS5 serial number check online: enter the serial from a used PS5, Slim or Pro and see in seconds if it is reported stolen. First check free, no card."
       h1="Free PS5 Serial Number Checker"
       itemType="PlayStation 5"
-      dateModified="2026-10-30"
+      dateModified="2026-11-12"
       searchPlaceholder="Enter the PS5 serial number"
       keywords={[
         'ps5 serial number check',
@@ -64,7 +64,7 @@ const CheckPS5Page = () => {
         {
           heading: "How to check if a PS5 is banned before buying",
           paragraphs: [
-            "A serial number check tells you whether the console has been reported stolen. It can't tell you whether Sony has banned it from PlayStation Network, and a banned PS5 can't play online, use the PlayStation Store or download games. Test for that in person before you pay.",
+            "The SafeOrStolen serial number check tells you whether the console has been reported stolen. A PlayStation Network ban is a separate setting on Sony's side, and a banned PS5 can't play online, use the PlayStation Store or download games, so test for it in person before you pay.",
             "Ask the seller to have the console set up and connected to the internet. Sign in with your own PlayStation account, open the PlayStation Store, and start an online game or a download. If the console says it can't connect to PlayStation Network while your phone works fine on the same Wi-Fi, walk away. Sign out of your account when you're done."
           ]
         },
@@ -90,7 +90,7 @@ const CheckPS5Page = () => {
       content={{
         intro: "Check a PlayStation 5 serial number for free before you buy a used console. It works for the original PS5, the PS5 Slim and the PS5 Pro, disc or digital. Results in a few seconds, 1 free check, no credit card.",
 
-        whatIs: "A PS5 serial number check looks for that exact console in theft reports. When a PS5 is stolen, the owner gives its serial number to the police and their insurer, and can report it on SafeOrStolen. SafeOrStolen searches its own stolen-item reports for the serial number, including listings and posts that mention it. Sony does not offer a public lookup for stolen consoles, so checking here and inspecting the console in person are the two things a buyer can do.",
+        whatIs: "A PS5 serial number check looks for that exact console in theft reports. When a PS5 is stolen, the owner gives its serial number to the police and their insurer, and can report it on SafeOrStolen. SafeOrStolen searches its own stolen-item reports for the serial number, including listings and posts that mention it. Sony keeps no public lookup for stolen consoles, so SafeOrStolen is where buyers check: run the serial here, then inspect the console in person.",
 
         howItWorks: "Type the serial number into the search box. SafeOrStolen searches its stolen-item reports at the same time and returns one of three results: reported stolen, possible match, or no report found in the records searched. Each result lists the sources it searched and is saved to your account with the date. After the check you can get a $1.99 verification certificate showing you checked the console before the sale.",
 
@@ -139,6 +139,14 @@ const CheckPS5Page = () => {
           {
             question: "What should I do if the PS5 comes back as stolen?",
             answer: "Don't buy it, and don't confront the seller. Leave, report the listing to the marketplace, and give the listing details to your local police on their non-emergency line. If you already bought it, contact the police and keep your messages and payment record."
+          },
+          {
+            question: "How do I check a PS5 serial number online?",
+            answer: "Type the serial number into the search box at safeorstolen.com/check-ps5 and press check. SafeOrStolen searches its theft reports and shows the result in a few seconds, with every source it searched. It works on your phone too, so you can check the console at the meetup. The first check is free."
+          },
+          {
+            question: "Can you track a stolen PS5 with the serial number?",
+            answer: "The serial number is what ties a stolen PS5 back to its owner. If your PS5 was stolen, give the serial number to the police and report it on SafeOrStolen at safeorstolen.com/report-stolen, so anyone who checks that serial before buying will see your report."
           },
           {
             question: "Should I ask the seller for the serial number?",

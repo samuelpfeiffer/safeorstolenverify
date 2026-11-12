@@ -17,7 +17,7 @@ const PS5StolenCheckGuide = () => {
     "@type": "Article",
     "headline": "How to Check if a Used PlayStation 5 is Stolen Before Buying",
     "description": "How to check a used PS5 before you buy it: where the serial number is, how to match it on screen, how to check it for theft reports, and the red flags to watch for at the meetup.",
-    "image": "https://safeorstolen.com/og-image-ps5.png",
+    "image": "https://safeorstolen.com/images/og/check-ps5.jpg",
     "author": { "@type": "Person", "name": "Samuel Pfeiffer" },
     "publisher": {
       "@type": "Organization",
