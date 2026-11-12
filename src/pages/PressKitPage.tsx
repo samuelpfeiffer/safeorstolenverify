@@ -127,7 +127,7 @@ const PressKitPage = () => (
           </p>
           <div className="grid gap-6 sm:grid-cols-3">
             {[
-              { src: '/sos-logo.png', file: 'safeorstolen-logo.png', label: 'Full logo (PNG, 631×501)' },
+              { src: '/sos-logo-full.png', file: 'safeorstolen-logo.png', label: 'Full logo (PNG, 631×501)' },
               { src: '/sos-logo-square.png', file: 'safeorstolen-logo-square.png', label: 'Square logo (PNG, 600×600)' },
               { src: '/icon-512.png', file: 'safeorstolen-app-icon-512.png', label: 'App icon (PNG, 512×512)' },
             ].map((a) => (
