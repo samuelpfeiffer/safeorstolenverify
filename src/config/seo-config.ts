@@ -9,7 +9,7 @@ export const SEO_CONFIG = {
   defaultTitle: 'SafeOrStolen - Carfax for Everything - Buy and Sell',
   titleTemplate: '%s | SafeOrStolen',
   defaultDescription: '3-second verification for all secondhand items. Check serial numbers, IMEI, VIN, license plates, firearms. Mobile app with barcode scanning. Free trial.',
-  defaultImage: '/og-image.jpg',
+  defaultImage: '/images/og/default.jpg',
   twitterHandle: '@safeorstolen',
   facebookAppId: '',
   

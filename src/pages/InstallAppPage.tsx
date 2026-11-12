@@ -62,6 +62,13 @@ const InstallAppPage = () => {
  return (
  <>
  <Helmet>
+ <meta property="og:type" content="website" />
+ <meta property="og:site_name" content="SafeOrStolen" />
+ <meta property="og:image" content="https://safeorstolen.com/images/og/default.jpg" />
+ <meta property="og:image:width" content="1200" />
+ <meta property="og:image:height" content="630" />
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:image" content="https://safeorstolen.com/images/og/default.jpg" />
  <title>How to Install the SafeOrStolen Web App on iPhone and Android</title>
  <meta name="description" content="Add SafeOrStolen to your home screen from Safari on iPhone or Chrome on Android. No app store needed. Step-by-step install guide for the free web app." />
  <meta name="keywords" content="install SafeOrStolen, download SafeOrStolen app, SafeOrStolen iPhone, SafeOrStolen Android, PWA install guide" />

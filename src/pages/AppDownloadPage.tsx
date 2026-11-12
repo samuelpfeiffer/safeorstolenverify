@@ -61,7 +61,7 @@ const ANDROID_STEPS = [
 const APP_FAQS: { q: string; a: string }[] = [
   {
     q: 'Is there an app to check if something is stolen?',
-    a: "Yes. SafeOrStolen (safeorstolen.com/app) is a free web app you add to your phone's home screen from Safari or Chrome, with no App Store or Google Play download. Type in a serial number, IMEI, VIN or plate and it tells you in a few seconds whether the item is reported stolen in the records it searched. the first check is free with an account.",
+    a: "Yes. SafeOrStolen (safeorstolen.com/app) is a free web app you add to your phone's home screen from Safari or Chrome, with no App Store or Google Play download. Type in a serial number, IMEI, VIN or plate and it tells you in a few seconds whether the item is reported stolen in the records it searched. The first check is free.",
   },
   {
     q: 'Is there an app to check a gun serial number?',
@@ -69,7 +69,7 @@ const APP_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Is the SafeOrStolen app on the App Store or Google Play?',
-    a: "No. SafeOrStolen is an installable web app, not a store app. On iPhone, open safeorstolen.com/app in Safari, tap Share, then Add to Home Screen. On Android, open it in Chrome and tap Install app from the menu. Any app in the stores using the SafeOrStolen name isn't from SafeOrStolen.",
+    a: "SafeOrStolen installs straight from your browser, so there's no store download to wait for. On iPhone, open safeorstolen.com/app in Safari, tap Share, then Add to Home Screen. On Android, open it in Chrome and tap Install app from the menu. Any app in the stores using the SafeOrStolen name isn't from SafeOrStolen.",
   },
   {
     q: 'Is the SafeOrStolen app free?',
@@ -116,11 +116,12 @@ export default function AppDownloadPage() {
     <>
       <div className="min-h-screen bg-gray-950 text-white pt-20">
         <PageSEO
-          title="Free App to Check Gun Serial Numbers, IMEI & VIN for Theft"
+          title="Free App to Check a Gun Serial Number (Plus IMEI & VIN)"
           description="Free app to check if a gun, phone, car or bike is stolen. Install SafeOrStolen from Safari or Chrome in under a minute and run a serial, IMEI or VIN check."
           keywords="app to check gun serial number, free app to check gun serial number, app to check if something is stolen, stolen item checker app, imei checker app, vin checker app, safe or stolen app"
           canonical="/app"
-          modifiedTime="2026-10-07"
+          image="/images/og/app.jpg"
+          modifiedTime="2026-11-12"
           structuredData={[appSchema, faqSchema]}
         />
 
@@ -128,12 +129,12 @@ export default function AppDownloadPage() {
         <section className="bg-gradient-to-b from-gray-900 to-gray-950 py-16 px-4">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-black mb-4 text-center">App to Check a Gun Serial Number, IMEI or VIN</h1>
-            <p className="text-gray-400 text-xs text-center mb-6">Updated October 7, 2026</p>
+            <p className="text-gray-400 text-xs text-center mb-6">Updated November 12, 2026</p>
             <p className="text-gray-200 text-lg mb-4">
               SafeOrStolen is a free web app you add to your phone's home screen. Enter a gun serial number, a phone's IMEI, a VIN,
               a plate or any serial number, and in a few seconds it tells you if the item is reported stolen in the records it
-              searches, with each source listed. It isn't in the App Store or Google Play. You install it straight from Safari or
-              Chrome, and the first check is free.
+              searches, with each source listed. There's nothing to download from an app store: you install it straight from
+              Safari or Chrome in under a minute, and the first check is free.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <Link
@@ -151,6 +152,21 @@ export default function AppDownloadPage() {
                 How to install it
               </a>
             </div>
+            <figure className="mt-10">
+              <picture>
+                <source type="image/webp" srcSet="/images/item-verified-result-480.webp 480w, /images/item-verified-result-768.webp 768w" sizes="(max-width: 800px) 100vw, 768px" />
+                <img
+                  src="/images/item-verified-result.jpg"
+                  alt="SafeOrStolen app open on a phone and laptop, showing a serial number check result"
+                  width={960}
+                  height={640}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto rounded-xl border border-gray-800"
+                />
+              </picture>
+              <figcaption className="text-sm text-gray-400 mt-2 text-center">The same check runs on your phone at the meetup and on your computer at home.</figcaption>
+            </figure>
           </div>
         </section>
 

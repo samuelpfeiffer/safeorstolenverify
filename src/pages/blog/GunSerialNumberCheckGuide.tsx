@@ -69,6 +69,8 @@ const GunSerialNumberCheckGuide = () => {
  canonical="/blog/how-to-check-if-gun-is-stolen"
  keywords="gun serial number lookup, check if gun is stolen, stolen gun check, stolen firearm database, free gun serial number check"
  structuredData={[faqSchema, articleSchema]}
+ image="/images/og/cat-firearm.jpg"
+ type="article"
  />
  <div className="min-h-screen bg-background pt-20">
  <header className="py-16 px-4 bg-gradient-to-b from-muted to-background">

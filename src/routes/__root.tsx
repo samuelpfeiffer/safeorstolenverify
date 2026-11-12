@@ -259,11 +259,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // twitter:title / twitter:description are emitted PER PAGE by SEOHead
       // (React 19 head hoisting). Never add fallbacks here — they would render
       // before the page's own tags and crawlers would read the wrong one.
-      { property: "og:site_name", content: "SafeOrStolen" },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://safeorstolen.com/sos-logo.png" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://safeorstolen.com/sos-logo.png" },
+      // Nov 12 2026: og:site_name, og:type, og:image, twitter:card and twitter:image are emitted
+      // per page by SEOHead too (default: the 1200x630 card at /images/og/default.jpg). The root
+      // copies rendered first, so share previews showed the square logo instead of the page's card.
       // iOS / PWA support
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },

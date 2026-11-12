@@ -7,10 +7,10 @@ const SerialNumberCheckerPage = () => {
  return (
  <ItemLandingPageTemplate
  title="Free Serial Number Lookup & Search Online (USA) | SafeOrStolen"
- metaDescription="Check any product serial number online free: laptops, tools, cameras, consoles, guns and more. See if it is reported stolen in seconds. No account needed."
+ metaDescription="Product serial number check online, free: laptops, tools, cameras, consoles, guns and more. Search any serial number and see if it is reported stolen in seconds."
  h1="Free Serial Number Lookup: Search Any Item Online"
  itemType="Item"
- dateModified="2026-10-16"
+ dateModified="2026-11-12"
  searchPlaceholder="Type or paste any serial number"
  keywords={[
  'free serial number search',
@@ -28,15 +28,15 @@ const SerialNumberCheckerPage = () => {
  ]}
  quickAnswer={{
  question: "How do I check if an item is stolen by its serial number?",
- answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/serial-number-checker). SafeOrStolen searches its own theft reports, and for guns it also searches police firearm theft and loss reports from 33 states and DC. You get a result in a few seconds: reported stolen, possible match, or no report found in the records searched. the first check is free with no card. Do it before you pay, and save the result as proof you checked."
+ answer: "Enter the serial number at SafeOrStolen (safeorstolen.com/serial-number-checker). SafeOrStolen searches its own theft reports, and for guns it also searches police firearm theft and loss reports from 33 states and DC. You get a result in a few seconds: reported stolen, possible match, or no report found in the records searched. The first check is free with no card. Do it before you pay, and save the result as proof you checked."
  }}
  sections={[
  {
- heading: "What a free serial number search can and can't tell you",
+ heading: "What a free serial number search tells you",
  paragraphs: [
  "A serial number search answers one question: has anyone reported this exact item stolen or lost in the records we search? If there is a match, you see what the report says and you should not buy the item. If there is no match, the result says so plainly, and lists every source that was searched.",
- "No match is not a guarantee. Theft reports in the United States are split across thousands of police departments, and many owners never write down their serial numbers, so plenty of stolen items have never been reported anywhere. That is why the check also looks at how the item is being sold, and why the red flags below still matter.",
- "A stolen-item search does not tell you who owns the item, whether the warranty is still active, or the exact model and build date. Those details belong to the manufacturer. What you get from SafeOrStolen is the part a buyer needs before handing over money: is this item flagged as stolen?"
+ "No report found is a good sign, and it pairs best with a careful look at the deal. Theft reports in the United States are spread across thousands of police departments, so the smartest buyers run the check and also watch how the item is being sold, using the red flags below.",
+ "Warranty status and build dates come from the manufacturer. What you get from SafeOrStolen is the part a buyer needs before handing over money: is this item flagged as stolen? And because the result is saved with the date, you also get a record that you checked before you bought."
  ]
  },
  {

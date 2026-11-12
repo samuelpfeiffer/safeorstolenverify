@@ -10,10 +10,10 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
 const XboxStolenCheck = () => (
   <ItemLandingPageTemplate
     title="Xbox Series X Serial Number Checker (Free): Is This Xbox Stolen? | SafeOrStolen"
-    metaDescription="Free Xbox serial number checker for Series X, Series S and Xbox One. See if a used Xbox is reported stolen in seconds and what to check before you pay."
+    metaDescription="Free Xbox serial number lookup and checker for Series X, Series S and Xbox One. Enter the 12-digit serial and see in seconds if a used Xbox is reported stolen."
     h1="Free Xbox Serial Number Checker: Is This Xbox Stolen?"
     itemType="Xbox"
-    dateModified="2026-10-30"
+    dateModified="2026-11-12"
     searchPlaceholder="Enter the 12-digit Xbox serial number"
     keywords={[
       'check if xbox is stolen',
@@ -24,6 +24,9 @@ const XboxStolenCheck = () => (
       'xbox series s serial number',
       'how to find xbox serial number',
       'buying used xbox',
+      'xbox series x serial number checker',
+      'xbox serial number checker',
+      'xbox serial number lookup free',
     ]}
     quickAnswer={{
       question: 'How do I check if an Xbox is stolen?',
@@ -66,7 +69,7 @@ const XboxStolenCheck = () => (
     ]}
     content={{
       intro:
-        'Check a used Xbox Series X, Xbox Series S or Xbox One before you buy it. Find the 12-digit serial, match it on screen, and check it for theft reports in a few seconds.',
+        'Free Xbox serial number lookup for a used Xbox Series X, Xbox Series S or Xbox One. Find the 12-digit serial, match it on screen, and check it for theft reports in a few seconds. The first check is free.',
       whatIs:
         'An Xbox stolen check looks for theft reports tied to the console\'s serial number. Owners give the serial to the police when a console is stolen, and can report it on SafeOrStolen. Buying a PlayStation instead? Use the <a href="/check-ps5">PS5 serial number check</a>. For Nintendo Switch and other consoles, see the <a href="/check-gaming-console-stolen">gaming console check</a>.',
       howItWorks:
@@ -99,6 +102,11 @@ const XboxStolenCheck = () => (
             'An Xbox serial number is 12 digits, all numbers. If a seller gives you something with letters in it, it is probably the model number or console ID, not the serial. Read it from Settings > System > Console info to be sure.',
         },
         {
+          question: 'Is there a free Xbox Series X serial number checker?',
+          answer:
+            'Yes. Enter the 12-digit serial at safeorstolen.com/check-xbox. The same free check works for Xbox Series X, Xbox Series S, Xbox One, One S and One X, and shows every source searched in a few seconds.',
+        },
+        {
           question: 'Can I check an Xbox serial number for free?',
           answer:
             'Yes. SafeOrStolen (safeorstolen.com/check-xbox) checks an Xbox serial against its theft reports free for your first check, with no credit card. After that, $4.99 gets you 1 more check or unlimited checks are $10 a month.',
@@ -106,12 +114,12 @@ const XboxStolenCheck = () => (
         {
           question: 'Can Microsoft tell me if an Xbox is stolen?',
           answer:
-            "Microsoft doesn't offer a public lookup for stolen consoles, and it won't tell a buyer who owns one. Theft reports go to the police. What you can check yourself is whether the seller can sign in, remove their account and reset the console in front of you.",
+            "Microsoft keeps no public lookup for stolen consoles, so buyers check the serial number here on SafeOrStolen. Then, at the meetup, make sure the seller can sign in, remove their account and reset the console in front of you.",
         },
         {
           question: 'Can a stolen Xbox be tracked?',
           answer:
-            "Not by the public. The owner can give police the serial number, and a console registered to their Microsoft account shows in their device list. If a stolen console is found, the serial is what ties it back to the owner, which is why buyers should check it before paying.",
+            "The serial number is what ties a stolen Xbox back to its owner. If yours was stolen, give the serial to the police and report it on SafeOrStolen at safeorstolen.com/report-stolen, so anyone who checks it before buying sees your report. A console registered to your Microsoft account also shows in your device list.",
         },
         {
           question: 'How do I factory reset an Xbox before buying it?',
