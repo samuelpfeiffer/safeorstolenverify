@@ -331,7 +331,7 @@
   </url>
   <url>
     <loc>https://safeorstolen.com/florida-license-plate-lookup</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -777,6 +777,12 @@
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/plate-owner-request</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/press</loc>
