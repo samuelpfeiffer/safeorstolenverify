@@ -1,3 +1,4 @@
+import { isNativeApp } from './nativeApp';
 // SSR-safe: every helper returns a neutral value when there is no browser.
 const hasWindow = (): boolean => typeof window !== 'undefined';
 const hasNavigator = (): boolean => typeof navigator !== 'undefined';
@@ -21,7 +22,8 @@ export const mobileDetection = {
   isStandalone: (): boolean => {
     if (!hasWindow()) return false;
     return window.matchMedia('(display-mode: standalone)').matches ||
-           (window.navigator as any)?.standalone === true;
+           (window.navigator as any)?.standalone === true ||
+           isNativeApp();
   },
 
   isTouchDevice: (): boolean => {

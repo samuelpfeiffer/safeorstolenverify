@@ -21,6 +21,7 @@ const PRIVATE_EXACT = new Set([
   '/verify',
   '/dashboard',
   '/profile',
+  '/delete-account',
   '/auth',
   '/account',
   '/settings',

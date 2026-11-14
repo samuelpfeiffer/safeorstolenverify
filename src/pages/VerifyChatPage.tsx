@@ -38,6 +38,7 @@ import { toCanonicalItemType } from '@/lib/itemType';
 import { useAuth } from '@/lib/auth';
 import { toast } from 'sonner';
 import { useVoiceSearch } from '@/hooks/useVoiceSearch';
+import { canNativeScan, nativeScan } from '@/mobile/utils/nativeScan';
 import { useVerifyGate, getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { AccountRequiredPrompt } from '@/components/verify-chat/AccountRequiredPrompt';
@@ -229,6 +230,31 @@ const VerifyChatPage: React.FC = () => {
  };
  reader.readAsDataURL(file);
  }, [startBulk]);
+
+ // Nov 14 2026: in the Google Play / App Store app, Scan opens the phone's native barcode scanner
+ // (IMEI, serial and VIN barcodes) and fills the box. The website keeps the photo capture below.
+ const handleScan = useCallback(async () => {
+ if (!canNativeScan()) {
+ cameraInputRef.current?.click();
+ return;
+ }
+ try {
+ const result = await nativeScan();
+ if (result.status === 'scanned') {
+ setInput(result.value);
+ textareaRef.current?.focus();
+ toast.success('Scanned. Check the number, then tap Submit.');
+ } else if (result.status === 'preparing') {
+ toast.message('Getting the scanner ready. Try Scan again in a few seconds.');
+ } else if (result.status === 'denied') {
+ toast.error('Allow camera access for SafeOrStolen in Settings to scan, or take a photo instead.');
+ cameraInputRef.current?.click();
+ }
+ } catch (err) {
+ console.error('Native scan failed:', err);
+ cameraInputRef.current?.click();
+ }
+ }, []);
 
  const publishResult = useCallback(
  (r: ChatVerifyResult) => {
@@ -980,7 +1006,7 @@ const VerifyChatPage: React.FC = () => {
  icon={Camera}
  label="Scan with camera"
  shortLabel="Scan"
- onClick={() => cameraInputRef.current?.click()}
+ onClick={handleScan}
  disabled={isThinking}
  />
  {voice.isSupported && (

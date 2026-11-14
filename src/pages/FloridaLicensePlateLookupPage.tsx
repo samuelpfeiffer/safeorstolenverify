@@ -1,5 +1,6 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
 import { OtherStatesModule } from '@/components/seo/StateLinksGrid';
+import { Link } from '@/lib/router-compat';
 
 /**
  * Oct 5 2026: rewritten to match what the check really does. SafeOrStolen does not
@@ -18,7 +19,7 @@ const FloridaLicensePlateLookupPage = () => {
  itemType="Vehicle"
  searchType="plate"
  searchPlaceholder="Enter the license plate number"
- dateModified="2026-10-30"
+ dateModified="2026-11-14"
  quickAnswer={{
  question: "Can I look up who owns a Florida license plate?",
  answer: "Only if you have a reason the law allows. Florida follows the federal Driver's Privacy Protection Act, so the state releases a plate owner's name and address only for permitted purposes such as law enforcement, insurance claims, towing and court cases. The official way to ask is Florida form HSMV 90510, the Motor Vehicle, Vessel and Mobile Home Records Request, mailed to the Florida Department of Highway Safety and Motor Vehicles (FLHSMV) with your reason listed. Free sites that promise an owner's name can't get it from the state. What you can do is check whether the plate or car is reported stolen on SafeOrStolen (safeorstolen.com/florida-license-plate-lookup), and give the plate to the police for a hit-and-run, an abandoned car or a safety concern. Our license plate owner lookup guide explains every option."
@@ -188,6 +189,25 @@ const FloridaLicensePlateLookupPage = () => {
  ]
  }}
  />
+
+ {/* Nov 14 2026: Search Console showed ~2,500 impressions in 28 days for "florida license plate lookup owner"
+ searches (Tampa, Orlando, Miami, Tallahassee...) and no clicks. This page-local block sends people with a
+ permitted reason to the request kit, which prepares their own HSMV 90510. It does not change the shared template. */}
+ <section className="py-10 border-t border-border">
+ <div className="container mx-auto px-4 max-w-5xl">
+ <h2 className="text-xl font-bold mb-3">Have a legal reason to find a Florida plate owner? Prepare your official request</h2>
+ <p className="text-muted-foreground mb-3">
+ If you qualify under the Driver's Privacy Protection Act (for example an insurance claim, a court case or towing),
+ the SafeOrStolen request kit prepares your Florida form HSMV 90510 request: you pick a reason from the
+ permitted list, and it gives you your plate, VIN and reason to copy onto the official form, plus the mailing address
+ and state fee. You send it to FLHSMV yourself, and FLHSMV decides whether to release the record. SafeOrStolen does not search, receive or provide
+ owner names, and this is not legal advice.
+ </p>
+ <Link to="/plate-owner-request" className="text-sm font-medium text-primary hover:underline">
+ Prepare a Florida plate owner request (HSMV 90510)
+ </Link>
+ </div>
+ </section>
  <OtherStatesModule kind="plate" currentPath="/florida-license-plate-lookup" />
  </>
  );

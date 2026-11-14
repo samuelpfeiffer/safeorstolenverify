@@ -1,0 +1,110 @@
+# Builds the SafeOrStolen Android app (com.safeorstolen.app).
+#
+# - Every pull request that touches the app builds it once, unsigned, to catch breakage early.
+# - "Run workflow" (Actions tab) builds a signed release bundle (.aab) and, once the
+#   Play Console secrets are set, uploads it to Google Play's internal testing track as a draft.
+#
+# Secrets (Settings > Secrets and variables > Actions), see docs/mobile-app/SETUP.md:
+#   ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD
+#   PLAY_SERVICE_ACCOUNT_JSON (optional: without it the .aab is attached to the run for manual upload)
+name: Android app
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_name:
+        description: "Version shown in Google Play (e.g. 1.0.0)"
+        required: true
+        default: "1.0.0"
+  pull_request:
+    paths:
+      - "android/**"
+      - "capacitor.config.ts"
+      - "mobile-shell/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/android-app.yml"
+
+concurrency:
+  group: android-app-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      # Play needs every upload's versionCode to be higher than the last; the run number always is.
+      APP_BUILD_NUMBER: ${{ github.run_number }}
+      APP_VERSION_NAME: ${{ inputs.version_name || '1.0.0' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: gradle
+
+      - name: Install packages
+        run: npm ci --legacy-peer-deps --no-audit --no-fund
+
+      - name: Copy app settings into the Android project
+        run: npx cap sync android
+
+      - name: Build unsigned (pull requests)
+        if: github.event_name == 'pull_request'
+        working-directory: android
+        run: ./gradlew --no-daemon bundleRelease
+
+      - name: Write upload key
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          if [ -z "$ANDROID_KEYSTORE_BASE64" ]; then
+            echo "::error::ANDROID_KEYSTORE_BASE64 is not set. See docs/mobile-app/SETUP.md, step 3."
+            exit 1
+          fi
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/upload.jks"
+          echo "ANDROID_KEYSTORE_PATH=$RUNNER_TEMP/upload.jks" >> "$GITHUB_ENV"
+
+      - name: Build signed release bundle
+        if: github.event_name == 'workflow_dispatch'
+        working-directory: android
+        env:
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: ./gradlew --no-daemon bundleRelease
+
+      - name: Keep the .aab with this run
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: safeorstolen-android-${{ env.APP_VERSION_NAME }}-${{ env.APP_BUILD_NUMBER }}
+          path: android/app/build/outputs/bundle/release/app-release.aab
+          retention-days: 30
+
+      - name: Check for Play Console access
+        id: play
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+        run: echo "ready=$([ -n "$PLAY_SERVICE_ACCOUNT_JSON" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+      # Google only accepts API uploads after the very first .aab has been uploaded by hand in Play Console.
+      - name: Upload to Google Play (internal testing, draft)
+        if: github.event_name == 'workflow_dispatch' && steps.play.outputs.ready == 'true'
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: com.safeorstolen.app
+          releaseFiles: android/app/build/outputs/bundle/release/app-release.aab
+          track: internal
+          status: draft

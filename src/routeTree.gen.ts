@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as R404RouteImport } from './routes/404'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AccountDeleteApiRouteImport } from './routes/account-delete-api'
 import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
 import { Route as AiChatRouteImport } from './routes/ai-chat'
 import { Route as AiVerifyRouteImport } from './routes/ai-verify'
@@ -82,6 +83,7 @@ import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as DataSourcesRouteImport } from './routes/data-sources'
 import { Route as DelawareLicensePlateLookupRouteImport } from './routes/delaware-license-plate-lookup'
 import { Route as DelawareVinLookupRouteImport } from './routes/delaware-vin-lookup'
+import { Route as DeleteAccountRouteImport } from './routes/delete-account'
 import { Route as DeveloperRouteImport } from './routes/developer'
 import { Route as DevelopersRouteImport } from './routes/developers'
 import { Route as DownloadRouteImport } from './routes/download'
@@ -418,6 +420,11 @@ const R404Route = R404RouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountDeleteApiRoute = AccountDeleteApiRouteImport.update({
+  id: '/account-delete-api',
+  path: '/account-delete-api',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AffiliateDisclosureRoute = AffiliateDisclosureRouteImport.update({
@@ -781,6 +788,11 @@ const DelawareLicensePlateLookupRoute =
 const DelawareVinLookupRoute = DelawareVinLookupRouteImport.update({
   id: '/delaware-vin-lookup',
   path: '/delaware-vin-lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeleteAccountRoute = DeleteAccountRouteImport.update({
+  id: '/delete-account',
+  path: '/delete-account',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DeveloperRoute = DeveloperRouteImport.update({
@@ -2507,6 +2519,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/404': typeof R404Route
   '/about': typeof AboutRoute
+  '/account-delete-api': typeof AccountDeleteApiRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/ai-chat': typeof AiChatRoute
   '/ai-verify': typeof AiVerifyRoute
@@ -2577,6 +2590,7 @@ export interface FileRoutesByFullPath {
   '/data-sources': typeof DataSourcesRoute
   '/delaware-license-plate-lookup': typeof DelawareLicensePlateLookupRoute
   '/delaware-vin-lookup': typeof DelawareVinLookupRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/developer': typeof DeveloperRoute
   '/developers': typeof DevelopersRoute
   '/download': typeof DownloadRoute
@@ -2904,6 +2918,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/404': typeof R404Route
   '/about': typeof AboutRoute
+  '/account-delete-api': typeof AccountDeleteApiRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/ai-chat': typeof AiChatRoute
   '/ai-verify': typeof AiVerifyRoute
@@ -2972,6 +2987,7 @@ export interface FileRoutesByTo {
   '/data-sources': typeof DataSourcesRoute
   '/delaware-license-plate-lookup': typeof DelawareLicensePlateLookupRoute
   '/delaware-vin-lookup': typeof DelawareVinLookupRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/developer': typeof DeveloperRoute
   '/developers': typeof DevelopersRoute
   '/download': typeof DownloadRoute
@@ -3299,6 +3315,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/404': typeof R404Route
   '/about': typeof AboutRoute
+  '/account-delete-api': typeof AccountDeleteApiRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/ai-chat': typeof AiChatRoute
   '/ai-verify': typeof AiVerifyRoute
@@ -3369,6 +3386,7 @@ export interface FileRoutesById {
   '/data-sources': typeof DataSourcesRoute
   '/delaware-license-plate-lookup': typeof DelawareLicensePlateLookupRoute
   '/delaware-vin-lookup': typeof DelawareVinLookupRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/developer': typeof DeveloperRoute
   '/developers': typeof DevelopersRoute
   '/download': typeof DownloadRoute
@@ -3698,6 +3716,7 @@ export interface FileRouteTypes {
     | '/'
     | '/404'
     | '/about'
+    | '/account-delete-api'
     | '/affiliate-disclosure'
     | '/ai-chat'
     | '/ai-verify'
@@ -3768,6 +3787,7 @@ export interface FileRouteTypes {
     | '/data-sources'
     | '/delaware-license-plate-lookup'
     | '/delaware-vin-lookup'
+    | '/delete-account'
     | '/developer'
     | '/developers'
     | '/download'
@@ -4095,6 +4115,7 @@ export interface FileRouteTypes {
     | '/'
     | '/404'
     | '/about'
+    | '/account-delete-api'
     | '/affiliate-disclosure'
     | '/ai-chat'
     | '/ai-verify'
@@ -4163,6 +4184,7 @@ export interface FileRouteTypes {
     | '/data-sources'
     | '/delaware-license-plate-lookup'
     | '/delaware-vin-lookup'
+    | '/delete-account'
     | '/developer'
     | '/developers'
     | '/download'
@@ -4489,6 +4511,7 @@ export interface FileRouteTypes {
     | '/'
     | '/404'
     | '/about'
+    | '/account-delete-api'
     | '/affiliate-disclosure'
     | '/ai-chat'
     | '/ai-verify'
@@ -4559,6 +4582,7 @@ export interface FileRouteTypes {
     | '/data-sources'
     | '/delaware-license-plate-lookup'
     | '/delaware-vin-lookup'
+    | '/delete-account'
     | '/developer'
     | '/developers'
     | '/download'
@@ -4887,6 +4911,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   R404Route: typeof R404Route
   AboutRoute: typeof AboutRoute
+  AccountDeleteApiRoute: typeof AccountDeleteApiRoute
   AffiliateDisclosureRoute: typeof AffiliateDisclosureRoute
   AiChatRoute: typeof AiChatRoute
   AiVerifyRoute: typeof AiVerifyRoute
@@ -4957,6 +4982,7 @@ export interface RootRouteChildren {
   DataSourcesRoute: typeof DataSourcesRoute
   DelawareLicensePlateLookupRoute: typeof DelawareLicensePlateLookupRoute
   DelawareVinLookupRoute: typeof DelawareVinLookupRoute
+  DeleteAccountRoute: typeof DeleteAccountRoute
   DeveloperRoute: typeof DeveloperRoute
   DevelopersRoute: typeof DevelopersRoute
   DownloadRoute: typeof DownloadRoute
@@ -5248,6 +5274,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account-delete-api': {
+      id: '/account-delete-api'
+      path: '/account-delete-api'
+      fullPath: '/account-delete-api'
+      preLoaderRoute: typeof AccountDeleteApiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/affiliate-disclosure': {
@@ -5738,6 +5771,13 @@ declare module '@tanstack/react-router' {
       path: '/delaware-vin-lookup'
       fullPath: '/delaware-vin-lookup'
       preLoaderRoute: typeof DelawareVinLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/delete-account': {
+      id: '/delete-account'
+      path: '/delete-account'
+      fullPath: '/delete-account'
+      preLoaderRoute: typeof DeleteAccountRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/developer': {
@@ -8142,6 +8182,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   R404Route: R404Route,
   AboutRoute: AboutRoute,
+  AccountDeleteApiRoute: AccountDeleteApiRoute,
   AffiliateDisclosureRoute: AffiliateDisclosureRoute,
   AiChatRoute: AiChatRoute,
   AiVerifyRoute: AiVerifyRoute,
@@ -8212,6 +8253,7 @@ const rootRouteChildren: RootRouteChildren = {
   DataSourcesRoute: DataSourcesRoute,
   DelawareLicensePlateLookupRoute: DelawareLicensePlateLookupRoute,
   DelawareVinLookupRoute: DelawareVinLookupRoute,
+  DeleteAccountRoute: DeleteAccountRoute,
   DeveloperRoute: DeveloperRoute,
   DevelopersRoute: DevelopersRoute,
   DownloadRoute: DownloadRoute,

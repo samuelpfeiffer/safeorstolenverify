@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { isNativeApp } from '@/mobile/utils/nativeApp';
 
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: string[];
@@ -66,7 +67,8 @@ export const usePWA = () => {
       const hasWindowControls = window.matchMedia('(display-mode: window-controls-overlay)').matches;
       
       // Check if running in PWA context
-      if (isStandalone || isIOSStandalone || hasWindowControls) {
+      // The Google Play / App Store app counts as installed, so no install prompts show inside it.
+      if (isStandalone || isIOSStandalone || hasWindowControls || isNativeApp()) {
         setIsInstalled(true);
         return true;
       }

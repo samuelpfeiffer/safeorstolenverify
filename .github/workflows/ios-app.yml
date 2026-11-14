@@ -1,0 +1,132 @@
+# Builds the SafeOrStolen iPhone app (com.safeorstolen.app) on GitHub's Mac machines.
+#
+# - Every pull request that touches the app builds it once for the simulator (no signing) to catch breakage.
+# - "Run workflow" (Actions tab) archives a signed build and uploads it to App Store Connect / TestFlight.
+#   Signing is automatic: Xcode creates or reuses the distribution certificate and profile through the
+#   App Store Connect API key, so no certificates are stored in GitHub.
+#
+# Secrets (Settings > Secrets and variables > Actions), see docs/mobile-app/SETUP.md:
+#   APPLE_TEAM_ID, APP_STORE_CONNECT_KEY_ID, APP_STORE_CONNECT_ISSUER_ID, APP_STORE_CONNECT_KEY_P8
+name: iOS app
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_name:
+        description: "Version shown in the App Store (e.g. 1.0.0)"
+        required: true
+        default: "1.0.0"
+  pull_request:
+    paths:
+      - "ios/**"
+      - "capacitor.config.ts"
+      - "mobile-shell/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/ios-app.yml"
+
+concurrency:
+  group: ios-app-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # Capacitor 8 needs Xcode 26, and App Store Connect only accepts builds made with the iOS 26 SDK.
+    runs-on: macos-26
+    timeout-minutes: 60
+    env:
+      BUILD_NUMBER: ${{ github.run_number }}
+      VERSION_NAME: ${{ inputs.version_name || '1.0.0' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install packages
+        run: npm ci --legacy-peer-deps --no-audit --no-fund
+
+      - name: Copy app settings into the iOS project (runs pod install)
+        run: npx cap sync ios
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build for simulator (pull requests)
+        if: github.event_name == 'pull_request'
+        working-directory: ios/App
+        run: |
+          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release \
+            -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO build
+
+      - name: Check signing secrets
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          KEY_P8: ${{ secrets.APP_STORE_CONNECT_KEY_P8 }}
+        run: |
+          for v in APPLE_TEAM_ID KEY_ID ISSUER_ID KEY_P8; do
+            if [ -z "${!v}" ]; then echo "::error::Missing secret for $v. See docs/mobile-app/SETUP.md, step 4."; exit 1; fi
+          done
+          printf '%s' "$KEY_P8" > "$RUNNER_TEMP/AuthKey.p8"
+
+      - name: Set team, version and build number (this run only)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          PBX=ios/App/App.xcodeproj/project.pbxproj
+          sed -i '' "s/CODE_SIGN_STYLE = Automatic;/CODE_SIGN_STYLE = Automatic; DEVELOPMENT_TEAM = $APPLE_TEAM_ID;/" "$PBX"
+          sed -i '' "s/CURRENT_PROJECT_VERSION = [0-9.]*;/CURRENT_PROJECT_VERSION = $BUILD_NUMBER;/" "$PBX"
+          sed -i '' "s/MARKETING_VERSION = [0-9.]*;/MARKETING_VERSION = $VERSION_NAME;/" "$PBX"
+
+      - name: Archive (signed)
+        if: github.event_name == 'workflow_dispatch'
+        working-directory: ios/App
+        env:
+          KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+        run: |
+          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release \
+            -destination 'generic/platform=iOS' -archivePath "$RUNNER_TEMP/App.xcarchive" archive \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$RUNNER_TEMP/AuthKey.p8" \
+            -authenticationKeyID "$KEY_ID" \
+            -authenticationKeyIssuerID "$ISSUER_ID"
+
+      - name: Upload to App Store Connect (TestFlight)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+        run: |
+          cat > "$RUNNER_TEMP/ExportOptions.plist" <<PLIST
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>destination</key><string>upload</string>
+            <key>teamID</key><string>$APPLE_TEAM_ID</string>
+            <key>signingStyle</key><string>automatic</string>
+            <key>uploadSymbols</key><true/>
+            <key>manageAppVersionAndBuildNumber</key><false/>
+          </dict>
+          </plist>
+          PLIST
+          xcodebuild -exportArchive -archivePath "$RUNNER_TEMP/App.xcarchive" \
+            -exportOptionsPlist "$RUNNER_TEMP/ExportOptions.plist" -exportPath "$RUNNER_TEMP/export" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$RUNNER_TEMP/AuthKey.p8" \
+            -authenticationKeyID "$KEY_ID" \
+            -authenticationKeyIssuerID "$ISSUER_ID"
+
+      - name: Remove the API key from the machine
+        if: always()
+        run: rm -f "$RUNNER_TEMP/AuthKey.p8"
