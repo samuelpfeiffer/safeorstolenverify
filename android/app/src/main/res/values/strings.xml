@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SafeOrStolen</string>
+    <string name="title_activity_main">SafeOrStolen</string>
+    <string name="package_name">com.safeorstolen.app</string>
+    <string name="custom_url_scheme">com.safeorstolen.app</string>
+</resources>

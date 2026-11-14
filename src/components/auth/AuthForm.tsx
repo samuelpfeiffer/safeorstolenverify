@@ -3,6 +3,7 @@ import { AuthFormToggle } from '@/components/auth/AuthFormToggle';
 import { SignInFormSecure } from '@/components/auth/SignInFormSecure';
 import { SignUpFormSecure } from '@/components/auth/SignUpFormSecure';
 import { GoogleSignInButton } from '@/components/auth/GoogleSignInButton';
+import { useIsNativeApp } from '@/mobile/utils/nativeApp';
 import { useAuth } from '@/lib/auth';
 
 interface AuthFormProps {
@@ -12,6 +13,7 @@ interface AuthFormProps {
 
 export const AuthForm = ({ mode, onToggleMode }: AuthFormProps) => {
   const { loading: authLoading } = useAuth();
+  const isNative = useIsNativeApp();
 
   const handleAuthSuccess = () => {
     if (mode === 'signup') {
@@ -27,6 +29,8 @@ export const AuthForm = ({ mode, onToggleMode }: AuthFormProps) => {
 
       <GoogleSignInButton />
 
+      {/* The app has no Google button (see GoogleSignInButton), so it skips the divider too. */}
+      {!isNative && (
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t border-border" />
@@ -35,6 +39,7 @@ export const AuthForm = ({ mode, onToggleMode }: AuthFormProps) => {
           <span className="bg-card px-2 text-muted-foreground">Or continue with email</span>
         </div>
       </div>
+      )}
 
       {mode === 'signin' ? 
         <SignInFormSecure onSuccess={handleAuthSuccess} /> : 

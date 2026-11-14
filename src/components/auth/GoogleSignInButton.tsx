@@ -3,9 +3,13 @@ import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Loader2 } from 'lucide-react';
+import { useIsNativeApp } from '@/mobile/utils/nativeApp';
 
 export const GoogleSignInButton = () => {
   const [loading, setLoading] = useState(false);
+  // Google blocks its sign-in inside embedded app web views, and Apple requires Sign in with Apple
+  // whenever Google sign-in is offered. The app uses email sign-in only; the website is unchanged.
+  const isNative = useIsNativeApp();
 
   // Preserve the ?redirect= target (e.g. the OAuth consent URL) across the Google round-trip.
   const resolveRedirectTo = () => {
@@ -41,6 +45,8 @@ export const GoogleSignInButton = () => {
       setLoading(false);
     }
   };
+
+  if (isNative) return null;
 
   return (
     <Button

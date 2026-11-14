@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Loader2, ShieldCheck, X } from 'lucide-react';
+import { useIsNativeApp } from '@/mobile/utils/nativeApp';
 
 interface AccountRequiredPromptProps {
   /** Same-origin path to return to after signing in, e.g. /verify?q=12345 */
@@ -21,6 +22,8 @@ export const AccountRequiredPrompt: React.FC<AccountRequiredPromptProps> = ({
   onDismiss,
 }) => {
   const [loading, setLoading] = useState(false);
+  // In the app, Google sign-in is hidden (see GoogleSignInButton) and email sign-up fills the row.
+  const isNative = useIsNativeApp();
 
   const safePath = redirectPath.startsWith('/') && !redirectPath.startsWith('//')
     ? redirectPath
@@ -71,7 +74,8 @@ export const AccountRequiredPrompt: React.FC<AccountRequiredPromptProps> = ({
           </div>
         </div>
 
-        <div className="mt-3 grid gap-2 sm:grid-cols-2">
+        <div className={isNative ? 'mt-3 grid gap-2' : 'mt-3 grid gap-2 sm:grid-cols-2'}>
+          {!isNative && (
           <Button onClick={handleGoogle} disabled={loading} variant="outline" className="w-full">
             {loading ? (
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -85,6 +89,7 @@ export const AccountRequiredPrompt: React.FC<AccountRequiredPromptProps> = ({
             )}
             Continue with Google
           </Button>
+          )}
 
           <Button asChild className="w-full">
             <Link to={authHref('signup')}>Sign up with email</Link>

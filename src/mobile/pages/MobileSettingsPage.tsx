@@ -6,11 +6,16 @@ import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { usePushNotifications } from '../hooks/usePushNotifications';
 import { capacitorBridge } from '../utils/capacitorBridge';
-import { Bell, Camera, Smartphone, Info, Share2, Trash2 } from 'lucide-react';
+import { Bell, Camera, Smartphone, Info, Share2, Trash2, UserX } from 'lucide-react';
+import { Link } from '@/lib/router-compat';
+import { isNativeApp } from '../utils/nativeApp';
 import { useToast } from '@/hooks/use-toast';
 
 const MobileSettingsPage: React.FC = () => {
   const { isEnabled, initializePushNotifications, disablePushNotifications } = usePushNotifications();
+  const pushAvailable =
+    typeof window !== 'undefined' &&
+    Boolean((window as unknown as { Capacitor?: { isPluginAvailable?: (n: string) => boolean } }).Capacitor?.isPluginAvailable?.('PushNotifications'));
   const { toast } = useToast();
   const [appInfo, setAppInfo] = React.useState<any>(null);
 
@@ -103,7 +108,8 @@ const MobileSettingsPage: React.FC = () => {
             </Card>
           )}
 
-          {/* Notifications */}
+          {/* Notifications (hidden in the store app until push is set up; see capacitor.config.ts includePlugins) */}
+          {!(isNativeApp() && !pushAvailable) && (
           <Card className="mb-4">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -126,6 +132,7 @@ const MobileSettingsPage: React.FC = () => {
               </div>
             </CardContent>
           </Card>
+          )}
 
           {/* Camera */}
           <Card className="mb-4">
@@ -172,6 +179,24 @@ const MobileSettingsPage: React.FC = () => {
               >
                 <Trash2 className="mr-2 h-4 w-4" />
                 Clear Cache
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Account. Apple and Google Play require account deletion inside the app (Nov 14 2026). */}
+          <Card className="mb-4">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <UserX className="h-5 w-5" />
+                Account
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <Button asChild variant="outline" className="w-full justify-start text-destructive">
+                <Link to="/delete-account">
+                  <UserX className="mr-2 h-4 w-4" />
+                  Delete my account
+                </Link>
               </Button>
             </CardContent>
           </Card>

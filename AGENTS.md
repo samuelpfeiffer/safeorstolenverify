@@ -78,3 +78,8 @@ Pages that help right now (Search Console Oct 10 – Nov 6 2026), in addition to
 
 - Keep the plate-owner request kit isolated in `src/features/plate-owner`; generate requester name/address/VIN PDFs locally and persist only the approved purchase fields, so sensitive identity details never enter storage or Stripe metadata.
 - Kit checkout must fail closed until its dedicated Stripe price and webhook isolation are configured; an unknown one-time price can otherwise alter verification entitlements through the legacy webhook.
+
+## Store app (Nov 14 2026)
+- The Google Play / App Store app (`com.safeorstolen.app`, Capacitor 8, `android/` + `ios/`) loads the live site. Never change `appId`. Setup and listings: `docs/mobile-app/`.
+- App-only behavior must go behind `isNativeApp()` / `useIsNativeApp()` (`src/mobile/utils/nativeApp.ts`), so the website, SSR output and protected pages stay unchanged.
+- Keep `/delete-account` working: both stores require account deletion, and Google Play's listing links to it.

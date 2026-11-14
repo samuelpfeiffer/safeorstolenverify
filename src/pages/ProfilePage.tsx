@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { User, Mail, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "@/lib/router-compat";
 
 const ProfilePage = () => {
   const { user, loading: authLoading, isAuthenticated } = useUnifiedAuth();
@@ -142,6 +143,12 @@ const ProfilePage = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Nov 14 2026: Apple and Google Play require account deletion inside the app. */}
+        <p className="text-sm text-muted-foreground mt-6">
+          Want to close your account?{' '}
+          <Link to="/delete-account" className="text-destructive hover:underline">Delete my account</Link>
+        </p>
     </div>
     </div>
     </>
