@@ -16,9 +16,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -32,9 +42,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -48,9 +68,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: Claude-User
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -64,9 +94,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -80,9 +120,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -96,9 +146,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -112,9 +172,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -128,9 +198,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: meta-externalagent
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -144,9 +224,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: MistralBot
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -160,9 +250,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: BraveBot
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -176,9 +276,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: CCBot
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
@@ -192,6 +302,11 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: Twitterbot
 Allow: /
@@ -200,9 +315,19 @@ Disallow: /auth/
 Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /proof/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 
 User-agent: LinkedInBot
 Allow: /
+Disallow: /api/
+Disallow: /auth/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /proof/
 Disallow: /api/
 Disallow: /auth/
 Disallow: /admin/
