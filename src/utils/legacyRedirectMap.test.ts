@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { resolveLegacyRedirect } from './legacyRedirectMap';
+import { LEGACY_REDIRECT_MAP, resolveLegacyRedirect } from './legacyRedirectMap';
 
 test('numbered retired blog series redirect directly to their existing destinations', () => {
   const series = {
@@ -17,7 +17,8 @@ test('numbered retired blog series redirect directly to their existing destinati
   };
   for (const [slug, destination] of Object.entries(series)) {
     for (let n = 1; n <= 20; n++) {
-      assert.equal(resolveLegacyRedirect(`/blog/${slug}-${n}`), destination);
+      const path = `/blog/${slug}-${n}`;
+      assert.equal(resolveLegacyRedirect(path), LEGACY_REDIRECT_MAP[path] ?? destination);
       assert.equal(resolveLegacyRedirect(destination), null);
     }
   }

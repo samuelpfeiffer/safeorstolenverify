@@ -1,5 +1,5 @@
 import {useEffect,useState} from 'react';
-import {Link} from '@tanstack/react-router';
+import {Link} from '@/lib/router-compat';
 import {FileText,Download,LockKeyhole} from 'lucide-react';
 import {Button} from '@/components/ui/button';
 import {supabase} from '@/integrations/supabase/client';
