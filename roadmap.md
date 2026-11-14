@@ -1,5 +1,11 @@
 - [x] Repair damaged shared copy, publish, and report live sitemap phrase counts.
 
+# Technical indexing fixes (Nov 14)
+- [ ] Correct robots restrictions in every named crawler group.
+- [ ] Enforce server-side retired-blog redirects and clean blog/RSS/sitemap discovery.
+- [ ] Audit phone/vehicle canonical targets, malformed link, and gun-state coverage.
+- [ ] Verify protected-page metadata, tests and rendering; submit changed URLs to IndexNow.
+
 # One free check and strict payment gate (Oct 24)
 - [ ] Enforce one lifetime free check and atomic paid/free usage in /verify-api
 - [ ] Reuse existing Stripe checkout; verify payment before granting 2 single checks or Unlimited

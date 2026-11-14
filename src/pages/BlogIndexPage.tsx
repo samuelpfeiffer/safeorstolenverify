@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Clock, Tag, Loader2 } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
+import { resolveLegacyRedirect, resolveRetiredBlogSlug } from '@/utils/legacyRedirectMap';
 
 // Static articles for SEO (always shown as fallback + featured)
 const staticArticles = [
@@ -166,7 +167,7 @@ export default function BlogIndexPage() {
   // Combine static and dynamic articles, removing duplicates by slug
   const staticSlugs = new Set(staticArticles.map(a => a.slug));
   const dynamicArticles = (dbArticles || [])
-    .filter(a => !staticSlugs.has(a.slug))
+    .filter(a => !staticSlugs.has(a.slug) && !resolveLegacyRedirect(`/blog/${a.slug}`) && !resolveRetiredBlogSlug(a.slug))
     .map(article => ({
       title: article.title,
       slug: article.slug,
