@@ -78,6 +78,7 @@ Pages that help right now (Search Console Oct 10 – Nov 6 2026), in addition to
 
 - Keep the plate-owner request kit isolated in `src/features/plate-owner`; generate requester name/address/VIN PDFs locally and persist only the approved purchase fields, so sensitive identity details never enter storage or Stripe metadata.
 - Kit checkout must fail closed until its dedicated Stripe price and webhook isolation are configured; an unknown one-time price can otherwise alter verification entitlements through the legacy webhook.
+- Resolve numbered retired blog series before database lookup and exclude retired slugs from discovery lists; this prevents duplicate records from overriding permanent redirects.
 
 ## Store app (Nov 14 2026)
 - The Google Play / App Store app (`com.safeorstolen.app`, Capacitor 8, `android/` + `ios/`) loads the live site. Never change `appId`. Setup and listings: `docs/mobile-app/`.
