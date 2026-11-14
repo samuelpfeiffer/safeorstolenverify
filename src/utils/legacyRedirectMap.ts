@@ -4,6 +4,7 @@
  * NEVER delete entries - URL preservation mandate.
  */
 export const LEGACY_REDIRECT_MAP: Record<string, string> = {
+  "/safeorstolen.com/safeorstolen-checker": "/",
   // Nov 9 2026: recover legitimate old guides reported in Search Console. Junk asset/placeholder
   // URLs remain real 404s; existing redirect entries and destinations are unchanged.
   "/blog/craigslist-facebook-bike-scams": "/how-to-tell-if-marketplace-item-is-stolen",
@@ -888,6 +889,9 @@ export function resolveLegacyRedirect(pathname: string): string | null {
       return to;
     }
   }
+  if (p.startsWith("/blog/") && /-\d+$/.test(p)) {
+    return resolveRetiredBlogSlug(p.slice("/blog/".length));
+  }
   return null;
 }
 
@@ -895,7 +899,7 @@ export function resolveLegacyRedirect(pathname: string): string | null {
  * Retired auto-generated blog series. The database once held many numbered copies of each
  * (".../chicago-vin-check-...-11", "-12", ...). Most are gone and were answering "Blog Post Not
  * Found" with a 200, which Search Console reports as soft 404s. Only used when the post lookup
- * finds nothing, so a numbered copy that still exists keeps rendering (and canonicalising) as before.
+ * finds nothing for unnumbered slugs; numbered copies redirect before any database lookup.
  */
 const RETIRED_BLOG_SERIES: Record<string, string> = {
   "chicago-vin-check-how-to-verify-used-cars-in-illinois": "/vin-checker",
