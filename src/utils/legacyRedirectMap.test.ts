@@ -2,24 +2,32 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { resolveLegacyRedirect } from './legacyRedirectMap';
 
-test('recover retired guides with relevant canonical destinations', () => {
-  const expected = {
-    '/blog/craigslist-facebook-bike-scams': '/how-to-tell-if-marketplace-item-is-stolen',
-    '/blog/bought-stolen-bike-what-to-do': '/what-to-do-if-you-bought-something-stolen',
-    '/blog/fbi-lost-stolen-gun-database': '/blog/ncic-gun-serial-number-check',
-    '/blog/rolex-serial-number-check-stolen': '/serial-number-checker',
-    '/blog/firearm-serial-number-checker': '/firearms-check',
-    '/blog/gun-serial-number-lookup-free': '/firearms-check',
-    '/blog/stolen-bike-serial-number-check': '/check-bike',
+test('numbered retired blog series redirect directly to their existing destinations', () => {
+  const series = {
+    'chicago-vin-check-how-to-verify-used-cars-in-illinois': '/vin-checker',
+    'samsung-galaxy-s24-ultra-stolen-check-complete-imei-guide': '/check-samsung-stolen',
+    'facebook-marketplace-safety-2025-complete-stolen-item-guide': '/how-to-tell-if-marketplace-item-is-stolen',
+    'iphone-16-pro-max-imei-check-complete-2025-buyer-protection-guide': '/blog/how-to-check-if-iphone-stolen',
+    'safeorstolen-mobile-app-complete-guide-to-on-the-go-verification': '/app',
+    'safeorstolen-offline-mode-verify-without-internet': '/app',
+    'playstation-5-serial-number-verification-guide': '/check-ps5',
+    'tesla-model-3-vin-verification-avoid-stolen-electric-vehicles': '/vin-checker',
+    'los-angeles-imei-verification-phone-fraud-protection': '/how-to-check-if-item-stolen',
+    'stolen-item-checker-in-new-york-city-complete-2025-guide': '/how-to-check-if-item-stolen',
   };
-  for (const [source, target] of Object.entries(expected)) {
-    assert.equal(resolveLegacyRedirect(source), target);
-    assert.equal(resolveLegacyRedirect(source + '/'), target);
-    assert.equal(resolveLegacyRedirect(target), null);
+  for (const [slug, destination] of Object.entries(series)) {
+    for (let n = 1; n <= 20; n++) {
+      assert.equal(resolveLegacyRedirect(`/blog/${slug}-${n}`), destination);
+      assert.equal(resolveLegacyRedirect(destination), null);
+    }
   }
 });
 
-test('junk asset stack locations and placeholder paths are not redirected', () => {
-  assert.equal(resolveLegacyRedirect('/assets/index-BnGzzGD0.js:9:114984'), null);
-  assert.equal(resolveLegacyRedirect('/blog/[SAFEORSTOLEN_APP_ANDROID_LINK]'), null);
+test('malformed domain path permanently resolves to the homepage', () => {
+  assert.equal(resolveLegacyRedirect('/safeorstolen.com/safeorstolen-checker'), '/');
+});
+
+test('unrelated numbered articles are not retired by their suffix alone', () => {
+  assert.equal(resolveLegacyRedirect('/blog/ai-stolen-item-detection-2026'), null);
+  assert.equal(resolveLegacyRedirect('/blog/theft-trends-report-2024'), null);
 });

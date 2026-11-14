@@ -60,20 +60,26 @@ const blogMeta = new Map();
 try {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 8000);
-  const res = await fetch(
-    `${SUPABASE_URL}/rest/v1/blog_posts?select=slug,updated_at,published_at&status=eq.published`,
-    { headers: { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}` }, signal: ctrl.signal },
-  );
+  const rows = [];
+  for (let offset = 0; ; offset += 1000) {
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/blog_posts?select=slug,updated_at,published_at&status=eq.published&order=slug.asc&limit=1000&offset=${offset}`,
+      { headers: { apikey: SUPABASE_ANON, Authorization: `Bearer ${SUPABASE_ANON}` }, signal: ctrl.signal },
+    );
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const page = await res.json();
+    rows.push(...page);
+    if (page.length < 1000) break;
+  }
   clearTimeout(timer);
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  for (const row of await res.json()) {
+  for (const row of rows) {
     if (!row.slug || isRedirected(row.slug)) continue;
     const day = String(row.updated_at || row.published_at || '').slice(0, 10);
     blogMeta.set(`/blog/${row.slug}`, day);
   }
 } catch (err) {
   console.warn(`sitemap: could not load blog posts (${err.message}); keeping previous blog URLs`);
-  for (const p of prev.keys()) if (p.startsWith('/blog/') && !routes.includes(p)) blogMeta.set(p, prev.get(p)?.lastmod);
+  for (const p of prev.keys()) if (p.startsWith('/blog/') && !routes.includes(p) && !isRedirected(p.slice('/blog/'.length))) blogMeta.set(p, prev.get(p)?.lastmod);
 }
 for (const [p, day] of blogMeta) {
   if (routes.includes(p)) continue;
