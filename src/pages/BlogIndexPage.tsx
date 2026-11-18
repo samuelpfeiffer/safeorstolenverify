@@ -4,7 +4,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Clock, Tag, Loader2 } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
-import { supabase } from '@/integrations/supabase/client';
+import { blogIndexQueryOptions } from '@/lib/blogPostQuery';
 import { resolveLegacyRedirect, resolveRetiredBlogSlug } from '@/utils/legacyRedirectMap';
 
 // Static articles for SEO (always shown as fallback + featured)
@@ -113,6 +113,142 @@ const staticArticles = [
     readTime: '9 min',
     keywords: ['theft statistics', 'stolen goods trends', 'crime data']
   },
+  {
+    title: 'Can You Run a Gun Serial Number Through NCIC?',
+    slug: 'ncic-gun-serial-number-check',
+    excerpt: 'Only police can search NCIC. What private citizens can do instead, including a free check of 220,000+ police reports of stolen guns.',
+    category: 'Firearms Safety',
+    readTime: '11 min',
+    keywords: ['NCIC gun check', 'gun serial number check']
+  },
+  {
+    title: 'ATF Gun Serial Number Check: What You Can and Can\'t Look Up',
+    slug: 'atf-gun-serial-number-check',
+    excerpt: 'The ATF has no public lookup and no gun registry. Here is what you can check instead, free, before you buy a used gun.',
+    category: 'Firearms Safety',
+    readTime: '12 min',
+    keywords: ['ATF serial number check', 'used gun check']
+  },
+  {
+    title: 'Stolen Gun Database by State: What You Can Search',
+    slug: 'state-stolen-gun-database-guide',
+    excerpt: 'Where stolen guns are recorded, which states offer a public search, and how to check a serial across 33 states and DC at once.',
+    category: 'Firearms Safety',
+    readTime: '5 min',
+    keywords: ['stolen gun database', 'gun serial lookup by state']
+  },
+  {
+    title: 'How to Check a Gun Serial Number at a Gun Show',
+    slug: 'gun-show-serial-number-check',
+    excerpt: 'How to check a gun serial number from your phone at a gun show: before you go, at the table, with walk-around sellers, and if it comes back stolen.',
+    category: 'Firearms Safety',
+    readTime: '5 min',
+    keywords: ['gun show serial check', 'check gun before buying']
+  },
+  {
+    title: 'Used Phone Buying Checklist: What to Check Before You Pay',
+    slug: 'buying-used-phone-checklist',
+    excerpt: 'Get and check the IMEI, match it in person, watch the seller remove their account, test everything, and pay safely.',
+    category: 'Phone Security',
+    readTime: '4 min',
+    keywords: ['used phone checklist', 'IMEI check']
+  },
+  {
+    title: 'How to Find the IMEI Number on Any Phone',
+    slug: 'how-to-find-imei-number',
+    excerpt: 'Dial *#06#, or find the IMEI in iPhone and Android settings, on the box or SIM tray, even on a locked phone.',
+    category: 'Phone Security',
+    readTime: '3 min',
+    keywords: ['find IMEI number', 'IMEI *#06#']
+  },
+  {
+    title: 'What Is a Blacklisted IMEI? (And Can You Unblacklist One?)',
+    slug: 'what-is-a-blacklisted-imei',
+    excerpt: 'What it means when carriers block a phone\'s IMEI after a loss, theft or unpaid bill, how to check it, and whether it can be removed.',
+    category: 'Phone Security',
+    readTime: '4 min',
+    keywords: ['blacklisted IMEI', 'phone blacklist check']
+  },
+  {
+    title: 'iCloud Locked Phone: What It Means for a Used-iPhone Buyer',
+    slug: 'icloud-locked-phone-meaning',
+    excerpt: 'What the Activation Lock screens say, why a used iPhone is still tied to someone else\'s Apple Account, and who can remove it.',
+    category: 'Phone Security',
+    readTime: '3 min',
+    keywords: ['iCloud locked', 'activation lock']
+  },
+  {
+    title: 'I Bought a Stolen Phone. What Do I Do Now?',
+    slug: 'bought-stolen-phone-what-to-do',
+    excerpt: 'What to do, in order: stop using it, keep the evidence, report it to police, and try to get your money back.',
+    category: 'Phone Security',
+    readTime: '4 min',
+    keywords: ['bought stolen phone', 'what to do']
+  },
+  {
+    title: 'Free VIN Lookup 2026: Check If Any Vehicle Is Stolen',
+    slug: 'free-vin-lookup-guide',
+    excerpt: 'Run a free VIN check for theft reports, year, make, model and open recalls in seconds, plus the other checks to run before buying.',
+    category: 'Vehicle Safety',
+    readTime: '7 min',
+    keywords: ['free VIN lookup', 'stolen car check']
+  },
+  {
+    title: 'How to Check if a Guitar Is Stolen Before You Buy It',
+    slug: 'check-if-guitar-stolen',
+    excerpt: 'How to check a used guitar before a Craigslist or Marketplace meetup: read the serial, run it, and know what a match means.',
+    category: 'Buying Guides',
+    readTime: '3 min',
+    keywords: ['guitar serial check', 'stolen guitar']
+  },
+  {
+    title: 'How to Verify an Item Before You Meet the Seller',
+    slug: 'verify-item-before-meetup',
+    excerpt: 'What to check before and at a Facebook Marketplace or OfferUp meetup, what to test, and when to walk away.',
+    category: 'Marketplace Safety',
+    readTime: '14 min',
+    keywords: ['meetup checklist', 'marketplace safety']
+  },
+  {
+    title: 'How to Check if Something Is Stolen From Your Phone',
+    slug: 'stolen-verification-app-guide',
+    excerpt: 'Which number to look up for phones, cars, guns, bikes and laptops, and how to run the check on your phone at a meetup.',
+    category: 'Buying Guides',
+    readTime: '6 min',
+    keywords: ['stolen check app', 'check if stolen']
+  },
+  {
+    title: 'Stolen, Blacklisted or Locked? The Checks a Used Item Needs',
+    slug: 'complete-verification-guide',
+    excerpt: 'What each check catches, who can run it, and which ones a used phone, car or bike needs.',
+    category: 'Buying Guides',
+    readTime: '6 min',
+    keywords: ['stolen check', 'blacklist check']
+  },
+  {
+    title: 'How to Read a Stolen Check Result',
+    slug: 'verification-methodology',
+    excerpt: 'What reported stolen, possible match and no report found mean, and what to do after each.',
+    category: 'Buying Guides',
+    readTime: '6 min',
+    keywords: ['stolen check result', 'no report found']
+  },
+  {
+    title: 'How Reliable Are Stolen Item Databases?',
+    slug: 'data-source-credibility-stolen-goods-verification',
+    excerpt: 'Police reports, carrier blacklists, owner registries and web results: how reliable each source is and how to judge a stolen check.',
+    category: 'Industry Insights',
+    readTime: '6 min',
+    keywords: ['stolen item database', 'data sources']
+  },
+  {
+    title: 'How to Sell Verified Items on Any Marketplace',
+    slug: 'how-to-sell-verified-items',
+    excerpt: 'Check an item before listing it and share a dated Proof of Clean Purchase record buyers can review.',
+    category: 'Marketplace Safety',
+    readTime: '6 min',
+    keywords: ['sell verified items', 'proof of clean purchase']
+  },
 ];
 
 const categories = [
@@ -145,24 +281,7 @@ function calculateReadTime(content: string | null): string {
 
 export default function BlogIndexPage() {
   // Fetch dynamic blog posts from database
-  const { data: dbArticles, isLoading } = useQuery({
-    queryKey: ['blog-posts-index'],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select('id, title, slug, excerpt, meta_keywords, content, reading_time, published_at')
-        .eq('status', 'published')
-        .order('published_at', { ascending: false })
-        .limit(50);
-      
-      if (error) {
-        console.error('Error fetching blog posts:', error);
-        return [];
-      }
-      return data || [];
-    },
-    staleTime: 1000 * 60 * 5, // 5 minutes cache
-  });
+  const { data: dbArticles, isLoading } = useQuery(blogIndexQueryOptions());
 
   // Combine static and dynamic articles, removing duplicates by slug
   const staticSlugs = new Set(staticArticles.map(a => a.slug));

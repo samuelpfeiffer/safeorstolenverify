@@ -27,6 +27,7 @@ const SitemapPage = () => {
  { to: "/check-if-stolen", label: "Check If Stolen" },
  { to: "/how-to-check-if-item-stolen", label: "How to Check If Item Stolen" },
  { to: "/partial-serial-number-search", label: "Partial Serial Number Search" },
+ { to: "/barcode-scanner", label: "Serial Number & Barcode Scanner" },
  { to: "/for-pawn-shops", label: "Pawn Shop Verification" },
  ]
  },

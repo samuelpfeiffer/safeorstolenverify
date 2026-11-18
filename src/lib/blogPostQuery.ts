@@ -57,3 +57,28 @@ export async function getCanonicalBlogSlug(title: string): Promise<string | null
   if (error) throw error;
   return data?.slug ?? null;
 }
+
+/**
+ * Nov 17 2026: the blog index used to fetch posts only in the browser, so
+ * crawlers and AI bots saw none of the database posts on /blog (they had no
+ * internal links at all). The /blog/ route loader now fills this same cache
+ * entry during server rendering.
+ */
+export const blogIndexQueryOptions = () => ({
+  queryKey: ['blog-posts-index'] as const,
+  queryFn: async () => {
+    const { data, error } = await supabase
+      .from('blog_posts')
+      .select('id, title, slug, excerpt, meta_keywords, content, reading_time, published_at')
+      .eq('status', 'published')
+      .order('published_at', { ascending: false })
+      .limit(50);
+
+    if (error) {
+      console.error('Error fetching blog posts:', error);
+      return [];
+    }
+    return data || [];
+  },
+  staleTime: 1000 * 60 * 5,
+});
