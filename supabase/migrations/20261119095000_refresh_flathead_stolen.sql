@@ -1,0 +1,7 @@
+-- Nov 19 2026: daily refresh of Flathead County (MT) Sheriff's public stolen
+-- firearm and stolen vehicle lists into theft_records (source_key 'flathead_mt_so').
+-- Already applied in production via the Supabase dashboard tools; this file keeps a
+-- copy in the repo. Scheduled with pg_cron job 'refresh-flathead-stolen' (12:35 UTC daily).
+-- Rows still listed are refreshed. A row that drops off while under 350 days old is
+-- marked 'removed_from_source' (likely recovered); rows that age off after a year stay 'stolen'.
+-- Function bodies: see public.flathead_row_cells(text) and public.refresh_flathead_stolen() in the database.
