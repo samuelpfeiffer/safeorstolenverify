@@ -29,9 +29,15 @@ const ITEM_TYPES = [
 
 type Result = { id: string; status: string; itemType: string };
 
-export function ReportStolenForm() {
+/**
+ * Nov 19 2026: optional props for the /report-stolen-gun page. Without props the
+ * form behaves exactly as before. Firearm reports require a police report number
+ * (also enforced in /reports-api).
+ */
+export function ReportStolenForm({ defaultItemType = 'phone', lockItemType = false }: { defaultItemType?: string; lockItemType?: boolean } = {}) {
   const { user } = useAuth();
-  const [itemType, setItemType] = useState<string>('phone');
+  const [itemType, setItemType] = useState<string>(defaultItemType);
+  const policeRequired = itemType === 'firearm';
   const [identifier, setIdentifier] = useState('');
   const [brand, setBrand] = useState('');
   const [model, setModel] = useState('');
@@ -61,6 +67,7 @@ export function ReportStolenForm() {
     setError(null);
     if (!user) return setError('Please sign in to file a report.');
     if (!termsAccepted) return setError('Please confirm the report is true.');
+    if (policeRequired && policeReportNumber.trim().length < 3) return setError('A police report number is required to report a stolen gun.');
     setSubmitting(true);
     try {
       const photoPaths = await Promise.all(photos.map((f) => uploadPrivateFile(user.id, f, 'photo')));
@@ -114,6 +121,7 @@ export function ReportStolenForm() {
 
   return (
     <form onSubmit={submit} className="rounded-2xl border border-border bg-card p-5 sm:p-6 space-y-5">
+      {!lockItemType && (
       <div className="space-y-2">
         <Label htmlFor="rs-type">What was stolen?</Label>
         <select
@@ -125,6 +133,7 @@ export function ReportStolenForm() {
           {ITEM_TYPES.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
         </select>
       </div>
+      )}
 
       <div className="space-y-2">
         <Label htmlFor="rs-id">{type.idLabel}</Label>
@@ -160,8 +169,8 @@ export function ReportStolenForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="rs-police">Police report number <span className="text-muted-foreground font-normal">(strongly recommended)</span></Label>
-        <Input id="rs-police" maxLength={60} value={policeReportNumber} onChange={(e) => setPoliceReportNumber(e.target.value)} className="h-11" />
+        <Label htmlFor="rs-police">Police report number <span className="text-muted-foreground font-normal">{policeRequired ? '(required for guns)' : '(strongly recommended)'}</span></Label>
+        <Input id="rs-police" required={policeRequired} minLength={policeRequired ? 3 : undefined} maxLength={60} value={policeReportNumber} onChange={(e) => setPoliceReportNumber(e.target.value)} className="h-11" />
         <p className="text-xs text-muted-foreground">
           Reports with a police number are labeled “Police report number provided”. We never show the number itself.
         </p>

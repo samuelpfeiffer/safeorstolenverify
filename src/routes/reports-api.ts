@@ -122,6 +122,10 @@ export const Route = createFileRoute('/reports-api')({
               const v = validateVin(id);
               if (!v.valid) return json({ error: v.message }, 400);
             }
+            // Nov 19 2026: gun reports must include a police report number.
+            if (r.itemType === 'firearm' && r.policeReportNumber.trim().length < 3) {
+              return json({ error: 'A police report number is required to report a stolen gun. File a report with your local police first, then add the number here.' }, 400);
+            }
             if (r.itemType === 'phone' && !imeiValid(id)) {
               return json({ error: 'That IMEI is not valid. Dial *#06# on the phone or check the box to copy all 15 digits.' }, 400);
             }

@@ -248,6 +248,7 @@ const SitemapPage = () => {
  { to: "/download", label: "Install the Web App" },
  { to: "/faq", label: "FAQ" },
  { to: "/report-stolen", label: "Report Stolen Item" },
+ { to: "/report-stolen-gun", label: "Report a Stolen Gun" },
  { to: "/data-sources", label: "Data Sources" },
  { to: "/resource-center", label: "Resource Center" },
  { to: "/comprehensive-guide", label: "Complete Buyer Guide" },

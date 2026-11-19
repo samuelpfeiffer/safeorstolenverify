@@ -235,6 +235,7 @@ import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ProofOfPurchaseRouteImport } from './routes/proof-of-purchase'
 import { Route as RealTimeVerificationRouteImport } from './routes/real-time-verification'
 import { Route as ReportStolenRouteImport } from './routes/report-stolen'
+import { Route as ReportStolenGunRouteImport } from './routes/report-stolen-gun'
 import { Route as ReportsApiRouteImport } from './routes/reports-api'
 import { Route as ResourceCenterRouteImport } from './routes/resource-center'
 import { Route as RhodeIslandLicensePlateLookupRouteImport } from './routes/rhode-island-license-plate-lookup'
@@ -1586,6 +1587,11 @@ const ReportStolenRoute = ReportStolenRouteImport.update({
   path: '/report-stolen',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReportStolenGunRoute = ReportStolenGunRouteImport.update({
+  id: '/report-stolen-gun',
+  path: '/report-stolen-gun',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReportsApiRoute = ReportsApiRouteImport.update({
   id: '/reports-api',
   path: '/reports-api',
@@ -2730,6 +2736,7 @@ export interface FileRoutesByFullPath {
   '/proof-of-purchase': typeof ProofOfPurchaseRoute
   '/real-time-verification': typeof RealTimeVerificationRoute
   '/report-stolen': typeof ReportStolenRoute
+  '/report-stolen-gun': typeof ReportStolenGunRoute
   '/reports-api': typeof ReportsApiRoute
   '/resource-center': typeof ResourceCenterRoute
   '/rhode-island-license-plate-lookup': typeof RhodeIslandLicensePlateLookupRoute
@@ -3125,6 +3132,7 @@ export interface FileRoutesByTo {
   '/proof-of-purchase': typeof ProofOfPurchaseRoute
   '/real-time-verification': typeof RealTimeVerificationRoute
   '/report-stolen': typeof ReportStolenRoute
+  '/report-stolen-gun': typeof ReportStolenGunRoute
   '/reports-api': typeof ReportsApiRoute
   '/resource-center': typeof ResourceCenterRoute
   '/rhode-island-license-plate-lookup': typeof RhodeIslandLicensePlateLookupRoute
@@ -3522,6 +3530,7 @@ export interface FileRoutesById {
   '/proof-of-purchase': typeof ProofOfPurchaseRoute
   '/real-time-verification': typeof RealTimeVerificationRoute
   '/report-stolen': typeof ReportStolenRoute
+  '/report-stolen-gun': typeof ReportStolenGunRoute
   '/reports-api': typeof ReportsApiRoute
   '/resource-center': typeof ResourceCenterRoute
   '/rhode-island-license-plate-lookup': typeof RhodeIslandLicensePlateLookupRoute
@@ -3921,6 +3930,7 @@ export interface FileRouteTypes {
     | '/proof-of-purchase'
     | '/real-time-verification'
     | '/report-stolen'
+    | '/report-stolen-gun'
     | '/reports-api'
     | '/resource-center'
     | '/rhode-island-license-plate-lookup'
@@ -4316,6 +4326,7 @@ export interface FileRouteTypes {
     | '/proof-of-purchase'
     | '/real-time-verification'
     | '/report-stolen'
+    | '/report-stolen-gun'
     | '/reports-api'
     | '/resource-center'
     | '/rhode-island-license-plate-lookup'
@@ -4712,6 +4723,7 @@ export interface FileRouteTypes {
     | '/proof-of-purchase'
     | '/real-time-verification'
     | '/report-stolen'
+    | '/report-stolen-gun'
     | '/reports-api'
     | '/resource-center'
     | '/rhode-island-license-plate-lookup'
@@ -5110,6 +5122,7 @@ export interface RootRouteChildren {
   ProofOfPurchaseRoute: typeof ProofOfPurchaseRoute
   RealTimeVerificationRoute: typeof RealTimeVerificationRoute
   ReportStolenRoute: typeof ReportStolenRoute
+  ReportStolenGunRoute: typeof ReportStolenGunRoute
   ReportsApiRoute: typeof ReportsApiRoute
   ResourceCenterRoute: typeof ResourceCenterRoute
   RhodeIslandLicensePlateLookupRoute: typeof RhodeIslandLicensePlateLookupRoute
@@ -6811,6 +6824,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReportStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/report-stolen-gun': {
+      id: '/report-stolen-gun'
+      path: '/report-stolen-gun'
+      fullPath: '/report-stolen-gun'
+      preLoaderRoute: typeof ReportStolenGunRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reports-api': {
       id: '/reports-api'
       path: '/reports-api'
@@ -8366,6 +8386,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProofOfPurchaseRoute: ProofOfPurchaseRoute,
   RealTimeVerificationRoute: RealTimeVerificationRoute,
   ReportStolenRoute: ReportStolenRoute,
+  ReportStolenGunRoute: ReportStolenGunRoute,
   ReportsApiRoute: ReportsApiRoute,
   ResourceCenterRoute: ResourceCenterRoute,
   RhodeIslandLicensePlateLookupRoute: RhodeIslandLicensePlateLookupRoute,
