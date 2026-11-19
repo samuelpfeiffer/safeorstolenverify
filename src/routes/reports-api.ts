@@ -19,6 +19,8 @@ const reportSchema = z.object({
   city: z.string().trim().min(1).max(80),
   state: z.string().trim().min(2).max(40),
   policeReportNumber: z.string().trim().max(60).optional().default(''),
+  // Nov 19 2026: uploaded police report (image or PDF) in the user's private folder.
+  policeReportPath: z.string().max(300).optional().default(''),
   contactPref: z.enum(['email', 'none']).default('email'),
   photoPaths: z.array(z.string().max(300)).max(4).default([]),
   registeredItemId: z.string().uuid().optional(),
@@ -115,6 +117,13 @@ export const Route = createFileRoute('/reports-api')({
             if (!p.success) return json({ error: 'Please fill in every required field and accept the terms.' }, 400);
             const r = p.data;
             if (!ownPaths(r.photoPaths)) return json({ error: 'Invalid photo' }, 400);
+            // Nov 19 2026: every theft report needs a police report number and an uploaded copy of the report.
+            if (r.policeReportNumber.trim().length < 3) {
+              return json({ error: 'Please add your police report number. File a report with your local police first, then add the number here.' }, 400);
+            }
+            if (!r.policeReportPath || !ownPaths([r.policeReportPath]) || !r.policeReportPath.includes('/police-')) {
+              return json({ error: 'Please upload a photo or PDF of your police report.' }, 400);
+            }
             const id = normalize(r.identifier);
             if (!/^[A-Z0-9]{3,50}$/.test(id)) return json({ error: 'The identifier can only contain letters and numbers.' }, 400);
             if (r.itemType === 'vehicle') {
@@ -135,7 +144,8 @@ export const Route = createFileRoute('/reports-api')({
             const { data: mine } = await admin.from('stolen_items').select('id,created_at').eq('user_id', userId);
             const last30 = (mine ?? []).filter((m) => now - new Date(m.created_at).getTime() < 30 * 864e5).length;
             const last365 = (mine ?? []).filter((m) => now - new Date(m.created_at).getTime() < 365 * 864e5).length;
-            const reasons: string[] = [];
+            // Every report waits for a person to confirm the uploaded police report before it goes live.
+            const reasons: string[] = ['Police report awaiting review'];
             if (last30 >= 3 || last365 >= 10) reasons.push('Account report limit reached');
 
             const hash = await sha256Hex(id);
@@ -148,7 +158,7 @@ export const Route = createFileRoute('/reports-api')({
               .in('status', ['active', 'reported', 'pending_review']);
             if ((others ?? []).some((o) => o.user_id !== userId)) reasons.push('Another account already reported this identifier');
 
-            const status = reasons.length ? 'pending_review' : 'active';
+            const status = 'pending_review';
             const { data: inserted, error } = await admin.from('stolen_items').insert({
               user_id: userId,
               item_type: r.itemType,
@@ -162,6 +172,8 @@ export const Route = createFileRoute('/reports-api')({
               state: r.state,
               police_report_number: r.policeReportNumber || null,
               police_report_provided: !!r.policeReportNumber,
+              police_report_path: r.policeReportPath,
+              police_report_verified: false,
               contact_pref: r.contactPref,
               photo_paths: r.photoPaths,
               registered_item_id: r.registeredItemId ?? null,
@@ -201,7 +213,7 @@ export const Route = createFileRoute('/reports-api')({
             const [items, reports] = await Promise.all([
               admin.from('registered_items').select('*').eq('user_id', userId).order('created_at', { ascending: false }),
               admin.from('stolen_items')
-                .select('id,item_type,brand,model,serial_number,imei,vin,status,created_at,date_stolen,city,state,police_report_provided,registered_item_id')
+                .select('id,item_type,brand,model,serial_number,imei,vin,status,created_at,date_stolen,city,state,police_report_provided,police_report_verified,registered_item_id')
                 .eq('user_id', userId).order('created_at', { ascending: false }),
             ]);
             return json({ items: items.data ?? [], reports: reports.data ?? [] });
@@ -225,7 +237,7 @@ export const Route = createFileRoute('/reports-api')({
             if (action === 'adminQueue') {
               const [queue, disputes, filed, registered, recovered, cleared] = await Promise.all([
                 admin.from('stolen_items')
-                  .select('id,item_type,brand,model,serial_number,imei,vin,status,review_reason,created_at,city,state,police_report_provided,description')
+                  .select('id,item_type,brand,model,serial_number,imei,vin,status,review_reason,created_at,city,state,police_report_provided,police_report_number,police_report_path,police_report_verified,description')
                   .eq('status', 'pending_review').order('created_at', { ascending: true }).limit(200),
                 admin.from('report_disputes').select('*').eq('status', 'open').order('created_at', { ascending: true }).limit(200),
                 admin.from('stolen_items').select('id', { count: 'exact', head: true }),
@@ -233,10 +245,53 @@ export const Route = createFileRoute('/reports-api')({
                 admin.from('stolen_items').select('id', { count: 'exact', head: true }).eq('status', 'recovered'),
                 admin.from('stolen_items').select('id', { count: 'exact', head: true }).eq('status', 'cleared'),
               ]);
+              // Short-lived private links so the reviewer can open each uploaded police report.
+              const queueRows = await Promise.all((queue.data ?? []).map(async (row) => {
+                let policeReportUrl: string | null = null;
+                if (row.police_report_path) {
+                  const { data: signed } = await admin.storage.from('item-photos').createSignedUrl(row.police_report_path, 60 * 30);
+                  policeReportUrl = signed?.signedUrl ?? null;
+                }
+                const { police_report_path: _omit, ...rest } = row;
+                return { ...rest, police_report_url: policeReportUrl };
+              }));
               return json({
-                queue: queue.data ?? [],
+                queue: queueRows,
                 disputes: disputes.data ?? [],
                 stats: { filed: filed.count ?? 0, registered: registered.count ?? 0, recovered: recovered.count ?? 0, cleared: cleared.count ?? 0 },
+              });
+            }
+
+            // Nov 19 2026: numbers checked from many different connections in the last 7 days.
+            if (action === 'adminRiskHotlist') {
+              const { data: hot, error: hotErr } = await admin.rpc('search_risk_hotlist', { p_min_connections: 5 });
+              if (hotErr) return json({ error: 'Could not load lookup activity.' }, 500);
+              const rows = (hot ?? []) as Array<{ identifier_hash: string; item_type: string | null; total_checks: number; distinct_connections: number; distinct_accounts: number; last_seen: string }>;
+              // Hashes are one-way; match them back to numbers from this week's saved checks.
+              const labels = new Map<string, string>();
+              if (rows.length) {
+                const { hashValue, normalizeIdentifier } = await import('@/lib/verification/searchSignals.server');
+                const { data: recent } = await admin.from('verification_searches').select('serial_number')
+                  .gte('created_at', new Date(Date.now() - 8 * 864e5).toISOString()).limit(5000);
+                const wanted = new Set(rows.map((r) => r.identifier_hash));
+                const seen = new Set<string>();
+                for (const r of recent ?? []) {
+                  const raw = typeof r.serial_number === 'string' ? normalizeIdentifier(r.serial_number) : '';
+                  if (!raw || seen.has(raw)) continue;
+                  seen.add(raw);
+                  const h = await hashValue(`id:${raw}`);
+                  if (wanted.has(h)) labels.set(h, raw);
+                }
+              }
+              return json({
+                rows: rows.map((r) => ({
+                  identifier: labels.get(r.identifier_hash) ?? null,
+                  itemType: r.item_type,
+                  checks: Number(r.total_checks),
+                  connections: Number(r.distinct_connections),
+                  accounts: Number(r.distinct_accounts),
+                  lastSeen: r.last_seen,
+                })),
               });
             }
 
@@ -246,8 +301,12 @@ export const Route = createFileRoute('/reports-api')({
               }).safeParse(data);
               if (!p.success) return json({ error: 'Bad request' }, 400);
               const next = p.data.decision === 'approve' ? 'active' : p.data.decision === 'clear' ? 'cleared' : 'pending_review';
+              // Approving means the reviewer opened the uploaded police report and it matches the item.
+              const { data: current } = await admin.from('stolen_items').select('police_report_path').eq('id', p.data.id).maybeSingle();
+              const verifiedNow = p.data.decision === 'approve' && !!current?.police_report_path;
               await admin.from('stolen_items').update({
                 status: next, status_changed_at: new Date().toISOString(),
+                ...(verifiedNow ? { police_report_verified: true, police_report_verified_at: new Date().toISOString() } : {}),
                 ...(p.data.decision === 'needs_info' ? { review_reason: `Needs info: ${p.data.note ?? ''}` } : {}),
               }).eq('id', p.data.id);
               await admin.from('report_review_log').insert({ stolen_item_id: p.data.id, admin_id: userId, action: p.data.decision, note: p.data.note ?? null });

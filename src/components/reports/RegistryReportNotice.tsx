@@ -23,7 +23,7 @@ export function RegistryReportNotice({ providers }: { providers?: ProviderLike[]
   const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [error, setError] = useState('');
   if (!hit) return null;
-  const d = (hit.details ?? {}) as { reportId?: string; reportedAt?: string; policeReportProvided?: boolean; generalArea?: string | null };
+  const d = (hit.details ?? {}) as { reportId?: string; reportedAt?: string; policeReportProvided?: boolean; policeReportVerified?: boolean; generalArea?: string | null };
   const date = d.reportedAt
     ? new Date(d.reportedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
     : null;
@@ -50,7 +50,9 @@ export function RegistryReportNotice({ providers }: { providers?: ProviderLike[]
             Reported stolen to SafeOrStolen{date ? ` on ${date}` : ''}.
           </p>
           <p className="mt-1 flex items-center gap-1.5 text-muted-foreground">
-            {d.policeReportProvided ? (
+            {d.policeReportVerified ? (
+              <><ShieldCheck className="h-4 w-4" /> Police report verified: SafeOrStolen reviewed the owner’s police report.</>
+            ) : d.policeReportProvided ? (
               <><ShieldCheck className="h-4 w-4" /> Police report number provided by the owner.</>
             ) : (
               <><ShieldQuestion className="h-4 w-4" /> User report — not verified by police.</>

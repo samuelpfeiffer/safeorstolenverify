@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Loader2, CheckCircle2, AlertCircle, ImagePlus, X } from 'lucide-react';
+import { Loader2, CheckCircle2, AlertCircle, ImagePlus, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -30,14 +30,14 @@ const ITEM_TYPES = [
 type Result = { id: string; status: string; itemType: string };
 
 /**
- * Nov 19 2026: optional props for the /report-stolen-gun page. Without props the
- * form behaves exactly as before. Firearm reports require a police report number
- * (also enforced in /reports-api).
+ * Nov 19 2026: optional props for the /report-stolen-gun page.
+ * Every report now needs a police report number and an uploaded photo or PDF of
+ * the police report (also enforced in /reports-api). A person reviews the upload
+ * before the report goes live, so every live report is backed by a police report.
  */
 export function ReportStolenForm({ defaultItemType = 'phone', lockItemType = false }: { defaultItemType?: string; lockItemType?: boolean } = {}) {
   const { user } = useAuth();
   const [itemType, setItemType] = useState<string>(defaultItemType);
-  const policeRequired = itemType === 'firearm';
   const [identifier, setIdentifier] = useState('');
   const [brand, setBrand] = useState('');
   const [model, setModel] = useState('');
@@ -48,6 +48,7 @@ export function ReportStolenForm({ defaultItemType = 'phone', lockItemType = fal
   const [policeReportNumber, setPoliceReportNumber] = useState('');
   const [emailMe, setEmailMe] = useState(true);
   const [photos, setPhotos] = useState<File[]>([]);
+  const [policeFile, setPoliceFile] = useState<File | null>(null);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -67,9 +68,11 @@ export function ReportStolenForm({ defaultItemType = 'phone', lockItemType = fal
     setError(null);
     if (!user) return setError('Please sign in to file a report.');
     if (!termsAccepted) return setError('Please confirm the report is true.');
-    if (policeRequired && policeReportNumber.trim().length < 3) return setError('A police report number is required to report a stolen gun.');
+    if (policeReportNumber.trim().length < 3) return setError('Please add your police report number.');
+    if (!policeFile) return setError('Please upload a photo or PDF of your police report.');
     setSubmitting(true);
     try {
+      const policeReportPath = await uploadPrivateFile(user.id, policeFile, 'police');
       const photoPaths = await Promise.all(photos.map((f) => uploadPrivateFile(user.id, f, 'photo')));
       const res = await reportsApi<Result>('report', {
         itemType,
@@ -81,6 +84,7 @@ export function ReportStolenForm({ defaultItemType = 'phone', lockItemType = fal
         city,
         state,
         policeReportNumber,
+        policeReportPath,
         contactPref: emailMe ? 'email' : 'none',
         photoPaths,
         termsAccepted: true,
@@ -104,14 +108,14 @@ export function ReportStolenForm({ defaultItemType = 'phone', lockItemType = fal
             <p className="text-muted-foreground mt-1">
               {live
                 ? 'Your report is live. Anyone who checks this number on SafeOrStolen will see it was reported stolen, without your name or contact details.'
-                : 'Your report is saved and waiting for a quick review before it goes live. We review reports to protect people from false accusations.'}
+                : 'Your report is saved. We check your police report, then your report goes live, usually within one business day. Once it’s live, anyone who checks this number will see it was reported stolen, with a “Police report verified” label.'}
               {emailMe && ' We’ll email you if someone checks this number.'}
             </p>
           </div>
         </div>
         <div className="flex flex-wrap gap-3">
           <Button asChild><Link to="/my-items">See my items</Link></Button>
-          <Button variant="outline" onClick={() => { setResult(null); setIdentifier(''); setPhotos([]); setTermsAccepted(false); }}>
+          <Button variant="outline" onClick={() => { setResult(null); setIdentifier(''); setPhotos([]); setPoliceFile(null); setPoliceReportNumber(''); setTermsAccepted(false); }}>
             Report another item
           </Button>
         </div>
@@ -169,10 +173,42 @@ export function ReportStolenForm({ defaultItemType = 'phone', lockItemType = fal
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="rs-police">Police report number <span className="text-muted-foreground font-normal">{policeRequired ? '(required for guns)' : '(strongly recommended)'}</span></Label>
-        <Input id="rs-police" required={policeRequired} minLength={policeRequired ? 3 : undefined} maxLength={60} value={policeReportNumber} onChange={(e) => setPoliceReportNumber(e.target.value)} className="h-11" />
+        <Label htmlFor="rs-police">Police report number</Label>
+        <Input id="rs-police" required minLength={3} maxLength={60} value={policeReportNumber} onChange={(e) => setPoliceReportNumber(e.target.value)} className="h-11" />
         <p className="text-xs text-muted-foreground">
-          Reports with a police number are labeled “Police report number provided”. We never show the number itself.
+          The case or incident number the police gave you. We never show the number itself.
+        </p>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="rs-police-file">Copy of your police report</Label>
+        {policeFile ? (
+          <span className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs">
+            <FileText className="h-3 w-3" /> {policeFile.name.slice(0, 32)}
+            <button type="button" aria-label="Remove police report" onClick={() => setPoliceFile(null)}>
+              <X className="h-3 w-3" />
+            </button>
+          </span>
+        ) : (
+          <label htmlFor="rs-police-file" className="flex items-center gap-2 rounded-lg border border-dashed border-border px-4 py-3 text-sm cursor-pointer hover:border-primary">
+            <FileText className="h-4 w-4 text-primary" /> Upload a photo or PDF of the police report
+          </label>
+        )}
+        <input
+          id="rs-police-file"
+          type="file"
+          accept="image/*,application/pdf"
+          className="sr-only"
+          onChange={(e) => {
+            const f = e.target.files?.[0] ?? null;
+            if (f && f.size > 10 * 1024 * 1024) { setError('The police report must be under 10 MB.'); return; }
+            if (f && !(f.type.startsWith('image/') || f.type === 'application/pdf')) { setError('Please upload a photo or a PDF.'); return; }
+            setError(null);
+            setPoliceFile(f);
+          }}
+        />
+        <p className="text-xs text-muted-foreground">
+          A phone photo of the paper report or the PDF the police emailed you both work. It stays private: only our review team sees it, to confirm the report is real.
         </p>
       </div>
 
@@ -230,7 +266,7 @@ export function ReportStolenForm({ defaultItemType = 'phone', lockItemType = fal
         </Button>
       )}
       <p className="text-xs text-muted-foreground text-center">
-        Reporting is free. Your name, contact details, police number and photos are never shown to anyone who checks the item.
+        Reporting is free. Your name, contact details, police report and photos are never shown to anyone who checks the item.
       </p>
     </form>
   );

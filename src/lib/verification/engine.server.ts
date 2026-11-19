@@ -338,6 +338,8 @@ async function runInternalRegistry(
           reportId: matches[0].id,
           reportedAt: matches[0].created_at,
           policeReportProvided: !!(matches[0].police_report_provided || matches[0].police_report_number),
+          // Nov 19 2026: a reviewer opened the owner's uploaded police report before approving.
+          policeReportVerified: !!matches[0].police_report_verified,
           generalArea: matches[0].state ?? null,
           reportIds: matches.map((m: any) => m.id),
         },

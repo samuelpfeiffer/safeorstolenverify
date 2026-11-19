@@ -1,4 +1,5 @@
 import { RegistryReportNotice } from '@/components/reports/RegistryReportNotice';
+import { LookupActivityNotice, type LookupActivity } from '@/components/verification/LookupActivityNotice';
 import React from 'react';
 import { ShieldLogo } from '@/components/brand/ShieldLogo';
 import { cn } from '@/lib/utils';
@@ -57,6 +58,8 @@ export type ChatVerifyResult = {
  timestamp?: string;
  /** Saved check id (verification_searches) for the certificate offer. */
  checkId?: string | null;
+ /** Nov 19 2026: repeat-lookup signal from /verify-api (only when unusual). */
+ lookupActivity?: LookupActivity | null;
 };
 
 interface ResultsPaneProps {
@@ -311,6 +314,7 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  </button>
 
  <RegistryReportNotice providers={current.providers as any} />
+ <LookupActivityNotice activity={current.lookupActivity} />
 
  {/* Watch this — daily re-check for items with a real outside source */}
  {current.status !== 'stolen' &&

@@ -91,6 +91,34 @@ export const Route = createFileRoute('/verify-api')({
             }
           }
 
+          // Nov 19 2026: burst limits so nobody can bulk-copy the database. Hashed, never raw.
+          const signals = await import('@/lib/verification/searchSignals.server');
+          const ipHash = clientIp ? await signals.hashValue(`ip:${clientIp}`) : null;
+          const rate = await signals.checkRateLimit(supabaseAdmin, userId, ipHash);
+          if (!rate.allowed) {
+            return new Response(
+              JSON.stringify({
+                error: 'Too many checks',
+                code: 'RATE_LIMITED',
+                message:
+                  rate.window === 'minute'
+                    ? 'You are checking very quickly. Please wait a minute and try again.'
+                    : rate.window === 'hour'
+                      ? 'You have reached the hourly check limit. Please try again in an hour, or contact us for business volume.'
+                      : 'You have reached the daily check limit. Please try again tomorrow, or contact us for business volume.',
+                retryAfterSeconds: rate.retryAfterSeconds,
+              }),
+              {
+                status: 429,
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Cache-Control': 'private, no-store',
+                  'Retry-After': String(rate.retryAfterSeconds),
+                },
+              },
+            );
+          }
+
           const gate = await checkUsageGate(supabaseAdmin, userId, fingerprint, clientIp);
           if (!gate.allowed) {
             return json(
@@ -121,6 +149,20 @@ export const Route = createFileRoute('/verify-api')({
             },
             gate,
           );
+
+          // Log the check (hashed) and attach how often this number was checked this week.
+          const identifierHash = await signals.hashValue(`id:${signals.normalizeIdentifier(identifier)}`);
+          await signals.logSearch(supabaseAdmin, {
+            identifierHash,
+            itemType: toCanonicalItemType(itemType ?? undefined) ?? itemType,
+            userId,
+            ipHash,
+            fingerprintHash: fingerprint ? await signals.hashValue(`fp:${fingerprint}`) : null,
+          });
+          const lookupActivity = await signals.getLookupActivity(supabaseAdmin, identifierHash);
+          if (lookupActivity && lookupActivity.level !== 'normal' && result && typeof result === 'object') {
+            return json({ ...(result as unknown as Record<string, unknown>), lookupActivity });
+          }
 
           return json(result);
         } catch (error) {

@@ -1403,6 +1403,36 @@ export type Database = {
           },
         ]
       }
+      search_events: {
+        Row: {
+          created_at: string
+          fingerprint_hash: string | null
+          id: number
+          identifier_hash: string
+          ip_hash: string | null
+          item_type: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          fingerprint_hash?: string | null
+          id?: number
+          identifier_hash: string
+          ip_hash?: string | null
+          item_type?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          fingerprint_hash?: string | null
+          id?: number
+          identifier_hash?: string
+          ip_hash?: string | null
+          item_type?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       shared_reports: {
         Row: {
           created_at: string | null
@@ -1526,7 +1556,10 @@ export type Database = {
           model: string | null
           photo_paths: string[]
           police_report_number: string | null
+          police_report_path: string | null
           police_report_provided: boolean
+          police_report_verified: boolean
+          police_report_verified_at: string | null
           registered_item_id: string | null
           review_reason: string | null
           serial_number: string | null
@@ -1552,7 +1585,10 @@ export type Database = {
           model?: string | null
           photo_paths?: string[]
           police_report_number?: string | null
+          police_report_path?: string | null
           police_report_provided?: boolean
+          police_report_verified?: boolean
+          police_report_verified_at?: string | null
           registered_item_id?: string | null
           review_reason?: string | null
           serial_number?: string | null
@@ -1578,7 +1614,10 @@ export type Database = {
           model?: string | null
           photo_paths?: string[]
           police_report_number?: string | null
+          police_report_path?: string | null
           police_report_provided?: boolean
+          police_report_verified?: boolean
+          police_report_verified_at?: string | null
           registered_item_id?: string | null
           review_reason?: string | null
           serial_number?: string | null
@@ -2038,6 +2077,26 @@ export type Database = {
     }
     Functions: {
       admin_growth_summary: { Args: { p_days?: number }; Returns: Json }
+      search_risk_hotlist: {
+        Args: { p_min_connections?: number }
+        Returns: {
+          distinct_accounts: number
+          distinct_connections: number
+          identifier_hash: string
+          item_type: string
+          last_seen: string
+          total_checks: number
+        }[]
+      }
+      search_risk_signal: {
+        Args: { p_days?: number; p_identifier_hash: string }
+        Returns: {
+          distinct_accounts: number
+          distinct_connections: number
+          first_seen: string
+          total_checks: number
+        }[]
+      }
       check_auth_rate_limit: { Args: never; Returns: boolean }
       check_enhanced_rate_limit: {
         Args: {

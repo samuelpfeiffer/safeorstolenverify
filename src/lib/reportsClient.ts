@@ -18,10 +18,10 @@ export async function reportsApi<T = any>(action: string, data: unknown = {}): P
 }
 
 /** Upload a file into the user's private folder. Returns the storage path. */
-export async function uploadPrivateFile(userId: string, file: File, kind: 'photo' | 'proof'): Promise<string> {
+export async function uploadPrivateFile(userId: string, file: File, kind: 'photo' | 'proof' | 'police'): Promise<string> {
   const ext = (file.name.split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 5);
   const path = `${userId}/${kind}-${crypto.randomUUID()}.${ext}`;
   const { error } = await supabase.storage.from('item-photos').upload(path, file, { upsert: false });
-  if (error) throw new Error('Upload failed. Photos must be under 8 MB.');
+  if (error) throw new Error(kind === 'police' ? 'Upload failed. The police report must be a photo or PDF under 10 MB.' : 'Upload failed. Photos must be under 8 MB.');
   return path;
 }

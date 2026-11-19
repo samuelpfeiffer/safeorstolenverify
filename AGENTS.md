@@ -79,3 +79,6 @@ Pages that help right now (Search Console Oct 10 – Nov 6 2026), in addition to
 - Keep the plate-owner request kit isolated in `src/features/plate-owner`; generate requester name/address/VIN PDFs locally and persist only the approved purchase fields, so sensitive identity details never enter storage or Stripe metadata.
 - Kit checkout must fail closed until its dedicated Stripe price and webhook isolation are configured; an unknown one-time price can otherwise alter verification entitlements through the legacy webhook.
 - Resolve numbered retired blog series before database lookup and exclude retired slugs from discovery lists; this prevents duplicate records from overriding permanent redirects.
+
+- Nov 19 2026 data moat: every victim report needs a police report number plus an uploaded photo/PDF of the report (private `item-photos/<user>/police-*`), and waits in admin review; approving sets `police_report_verified`. Never show the upload or the number publicly.
+- Every check through /verify-api is logged to `search_events` with the identifier, IP and browser SHA-256 hashed (never raw). It powers the "checked from many places" notice (5+ connections in 7 days = watch, 15+ = high), the admin hotlist, and burst limits (120/min, 300/hour, 1000/day per account or connection). Keep limits above one 100-row bulk run.

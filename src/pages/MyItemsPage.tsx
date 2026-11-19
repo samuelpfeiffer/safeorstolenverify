@@ -18,7 +18,7 @@ type Report = {
   id: string; item_type: string; brand: string | null; model: string | null;
   serial_number: string | null; imei: string | null; vin: string | null;
   status: string; created_at: string; date_stolen: string | null;
-  city: string | null; state: string | null; police_report_provided: boolean | null;
+  city: string | null; state: string | null; police_report_provided: boolean | null; police_report_verified?: boolean | null;
 };
 type Registered = {
   id: string; item_type: string; identifier: string; brand: string | null; model: string | null;
@@ -152,7 +152,7 @@ function MyItemsContent() {
                   </div>
                   <p className="text-xs text-muted-foreground">
                     Stolen {fmt(r.date_stolen)}{r.city ? ` in ${r.city}${r.state ? `, ${r.state}` : ''}` : ''} · Reported {fmt(r.created_at)}
-                    {r.police_report_provided ? ' · Police report number provided' : ''}
+                    {r.police_report_verified ? ' · Police report verified' : r.police_report_provided ? ' · Police report number provided' : ''}
                   </p>
                   {open && (
                     <div className="flex flex-wrap gap-2 pt-1">

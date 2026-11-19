@@ -37,11 +37,13 @@ export interface VerifyApiResult {
   timestamp: string;
   /** Saved check id; used to issue a verification certificate. */
   checkId?: string | null;
+  /** Nov 19 2026: present only when this number was checked from many places this week. */
+  lookupActivity?: import('@/components/verification/LookupActivityNotice').LookupActivity | null;
 }
 
 export interface VerifyApiError {
   message: string;
-  /** AUTH_REQUIRED | LIMIT_REACHED | INVALID_INPUT | INTERNAL_ERROR | NETWORK_ERROR */
+  /** AUTH_REQUIRED | LIMIT_REACHED | RATE_LIMITED | INVALID_INPUT | INTERNAL_ERROR | NETWORK_ERROR */
   code: string;
   status: number;
   reason?: string;
