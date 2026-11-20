@@ -55,6 +55,8 @@ const STATE_COVERAGE: { state: string; reports: number; years: string }[] = [
 const FIREARM_FAQS: { q: string; a: string }[] = [
  { q: 'Can private citizens check if a gun is stolen?', a: "Yes. Anyone can check a gun's serial number for free on SafeOrStolen. Scan or type the serial at safeorstolen.com/firearms-check and it searches SafeOrStolen's own theft reports, more than 220,000 police gun theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records, then lists every source it searched. It is a private search, separate from the FBI's NCIC file that police use." },
  { q: 'How do I check if a gun is stolen by serial number?', a: "Private citizens (buyers and sellers) can directly search stolen-gun databases with SafeOrStolen. Scan the serial with your phone camera or type it in at safeorstolen.com/firearms-check. It searches more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and owner reports, and flags serials that look altered. Result in seconds that names every source." },
+ { q: 'Is there a firearm serial number lookup online?', a: "Yes. SafeOrStolen is a free firearm serial number lookup you can use online from any phone or computer. Type or scan the serial at safeorstolen.com/firearms-check and it searches more than 220,000 police gun theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and SafeOrStolen's own reports, then lists every source it searched." },
+ { q: 'Is there a national gun serial number lookup that is free?', a: "Yes. SafeOrStolen's free gun serial number lookup works from every state. One search covers police gun theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and SafeOrStolen's own reports, because guns stolen in one state often turn up in another. Your first check is free." },
  { q: 'Is there a free app to check a gun serial number?', a: "Yes. SafeOrStolen works as a free app on any phone. Open safeorstolen.com/app in Safari or Chrome and add it to your home screen, then scan the serial with your camera or type it in. Each check searches more than 220,000 police gun theft and loss reports from 33 states and Washington, DC, live Ohio law-enforcement records and SafeOrStolen's own reports, and your first check is free." },
  { q: 'Is the gun serial number lookup free?', a: 'Yes. SafeOrStolen gives you 1 free check, no account or credit card needed. After that it is $4.99 for 1 check or $10 a month for unlimited checks.' },
  { q: "Can I search NCIC to check if a gun is stolen?", a: "NCIC, the FBI's National Crime Information Center, is used by police. Private buyers and sellers check guns on SafeOrStolen instead: anyone can search more than 220,000 police gun theft and loss reports from 33 states and DC, plus live Ohio law-enforcement records, free for the first check. If a gun matches, give the serial number to police, who can confirm it in NCIC." },
@@ -75,7 +77,7 @@ const FirearmsCheckPage = () => {
  <div className="min-h-screen bg-background text-foreground">
  <PageSEO
  title="Free Gun Serial Number Lookup for Private Citizens | SafeOrStolen"
- description="Yes, private citizens can check if a gun is stolen. Scan or type a serial to search 220,000+ police reports from 33 states, DC and live Ohio records. First check free."
+ description="Free gun serial number lookup. Yes, anyone can check if a gun is stolen: search 220,000+ police reports from 33 states, DC and Ohio. First check free."
  structuredData={{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FIREARM_FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }}
  canonical="/firearms-check"
  image="/images/og/firearms-check.jpg"
@@ -90,10 +92,10 @@ const FirearmsCheckPage = () => {
  <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
  Free Gun Serial Number Lookup for Private Citizens{' '}
  <br />
- <span className="text-primary">Scan or Type the Serial — Check Stolen Reports</span>
+ <span className="text-primary">Scan or Type the Serial to Check Stolen Reports</span>
  </h1>
  <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
- <strong className="text-foreground">Yes, private citizens can check if a gun is stolen.</strong> Anyone can check a gun's serial number for free on SafeOrStolen. Scan the serial with your phone camera or type it in. We check SafeOrStolen's own theft reports, more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records.
+ <strong className="text-foreground">Free gun serial number lookup: yes, private citizens can check if a gun is stolen.</strong> Anyone can check a gun's serial number for free on SafeOrStolen. Scan the serial with your phone camera or type it in. We check SafeOrStolen's own theft reports, more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC, plus live Ohio records.
  </p>
 
 
