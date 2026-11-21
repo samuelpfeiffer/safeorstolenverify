@@ -837,6 +837,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://safeorstolen.com/report-stolen-gun</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://safeorstolen.com/resource-center</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -925,6 +930,11 @@
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://safeorstolen.com/verify</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://safeorstolen.com/vin-checker</loc>

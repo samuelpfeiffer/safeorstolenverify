@@ -106,12 +106,20 @@ export function dynamicRoutes() {
 /** Public pages that point Google at another page (canonical), so they stay out of the sitemap (Oct 20 2026). */
 const CANONICAL_ELSEWHERE = new Set(['/ai-verify', '/comprehensive-guide']);
 
+/**
+ * Nov 21 2026: indexed pages that stay on the private list only so the prerender step skips them.
+ * /verify was made indexable Oct 2 (robotsPolicy.ts) but was still left out of the sitemap, so Google
+ * kept its Sep 27 "noindex" copy for two months. It belongs in the sitemap.
+ */
+const SITEMAP_ONLY = ['/verify'];
+
 /** Final public URL list: router routes minus redirects minus private routes. */
 export function publicRoutes() {
   const redirects = redirectPaths();
-  return [...routesFromRouter(), ...dynamicRoutes()]
+  return [...new Set([...routesFromRouter(), ...dynamicRoutes()]
     .filter((p) => !redirects.has(p))
     .filter((p) => !isPrivateRoute(p))
     .filter((p) => !CANONICAL_ELSEWHERE.has(p))
+    .concat(SITEMAP_ONLY))]
     .sort();
 }
