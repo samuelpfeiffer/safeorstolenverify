@@ -206,7 +206,9 @@ serve(async (req) => {
       metadata,
       allow_promotion_codes: true,
       automatic_tax: { enabled: true },
-      billing_address_collection: 'required',
+      // Nov 21 2026: 'auto' (was 'required'). Stripe Tax only needs country + ZIP; a full street
+      // address for a $4.99 online check scared buyers off (2 of 3 who opened checkout left).
+      billing_address_collection: 'auto',
     };
     if (!isSubscription) sessionConfig.payment_intent_data = { metadata };
     if (customerId) { sessionConfig.customer = customerId; sessionConfig.customer_update = { address: 'auto' }; }
