@@ -105,8 +105,10 @@ serve(async (req) => {
     if (!paid) {
       const freeResult = {
         success: true, status: 'unknown', confidence: 0, source: 'IMEI_Verification',
-        message: 'FREE CHECK: This IMEI number is real and correctly formed (not fake or mistyped). The official lost-and-stolen phone blacklist search is part of the full check. Run the full check to see if this phone is reported lost or stolen before you pay the seller.',
-        details: { imei: cleanImei.substring(0, 8) + '*******', checksumValid: true, tac, deviceInfo, blacklistChecked: false, blacklistLocked: true, databases: [], notChecked: ['Phone blacklist (included in the full check)'] },
+        // Nov 21 2026: no longer tells free users the paid check adds a blacklist search (the blacklist
+        // service has not answered since Oct 21, so paying would not add it).
+        message: 'This IMEI number is real and correctly formed (not fake or mistyped).',
+        details: { imei: cleanImei.substring(0, 8) + '*******', checksumValid: true, tac, deviceInfo, blacklistChecked: false, blacklistLocked: false, databases: [], notChecked: [] },
         responseTime: Date.now() - startTime,
       };
       console.log('[IMEI] Free check - paid blacklist skipped');
