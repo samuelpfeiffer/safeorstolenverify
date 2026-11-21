@@ -27,7 +27,7 @@ const CarVINStolenCheck = () => {
  { value: "810K+", label: "Vehicles Stolen in US (2024)" },
  { value: "3 sec", label: "VIN Check Time" },
  { value: "Instant", label: "Results" },
- { value: "Free", label: "First 2 Checks" }
+ { value: "Free", label: "First Check" }
  ]}
  whatIsTitle="What is VIN Stolen Vehicle Verification?"
  whatIsContent="A VIN (Vehicle Identification Number) is a unique 17-character code assigned to every vehicle. When a car is reported stolen, its VIN is often recorded. Our VIN verification instantly searches SafeOrStolen's own reports and uses AI analysis to determine if a vehicle has been reported stolen, has a salvage title, or has other issues. Our stolen vehicle check is free."

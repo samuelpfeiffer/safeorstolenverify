@@ -104,7 +104,7 @@ const StolenCheckSanJose = () => {
               <p>
                 SafeOrStolen helps you verify if a device has been reported stolen before you buy. 
                 For Apple devices, also make sure the seller has signed out of their Apple ID so Activation Lock is off.
-                A check takes a few seconds, and your first 2 are free.
+                A check takes a few seconds, and your first one is free.
               </p>
               <h3>Where to meet</h3>
               <p>
@@ -137,7 +137,7 @@ const StolenCheckSanJose = () => {
         <section className="py-16 px-4 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Verify Before You Buy in San Jose</h2>
-            <p className="mb-6 opacity-90">A check takes a few seconds, and your first 2 are free.</p>
+            <p className="mb-6 opacity-90">A check takes a few seconds, and your first one is free.</p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Verify Item Free</Link>
             </Button>

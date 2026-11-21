@@ -27,7 +27,7 @@ const CameraEquipmentCheck = () => {
         { value: "$50K+", label: "Avg. Pro Gear Value" },
         { value: "3 sec", label: "Verification Time" },
         { value: "Instant", label: "Results" },
-        { value: "Free", label: "First 2 Checks" }
+        { value: "Free", label: "First Check" }
       ]}
       whatIsTitle="What is Camera Serial Number Verification?"
       whatIsContent="Every camera body and lens has a unique serial number assigned by the manufacturer. Photographers and services like Lenstag and StolenCameraFinder track stolen camera equipment by serial number. When gear is stolen, these numbers are logged in databases. Our verification searches these sources to check if camera equipment has been reported stolen. With professional cameras costing $2,000-$6,000+ and lenses up to $10,000+, verification is essential."

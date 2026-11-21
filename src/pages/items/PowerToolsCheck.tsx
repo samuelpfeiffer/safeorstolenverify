@@ -96,7 +96,7 @@ const PowerToolsCheck = () => {
         }
       ]}
       ctaTitle="Check Power Tools Before You Buy"
-      ctaDescription="A serial number check takes a few seconds, and your first 2 are free."
+      ctaDescription="A serial number check takes a few seconds, and your first one is free."
       relatedLinks={[
         { title: "General Tool Check", href: "/check-tools" },
         { title: "Craigslist Safety", href: "/craigslist-safety-verification" },

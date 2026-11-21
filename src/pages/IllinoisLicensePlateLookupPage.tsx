@@ -63,7 +63,7 @@ const IllinoisLicensePlateLookupPage = () => {
  },
  {
  question: "How much does an Illinois license plate lookup cost?",
- answer: "Your first 2 SafeOrStolen checks are free with no account or credit card needed. After that it's $4.99 for 1 check or $10 a month for unlimited checks, cancel anytime. The same account checks VINs, so you can run the plate and the VIN on the same car."
+ answer: "Your first SafeOrStolen check is free with no account or credit card needed. After that it's $4.99 for 1 check or $10 a month for unlimited checks, cancel anytime. The same account checks VINs, so you can run the plate and the VIN on the same car."
  },
  {
  question: "What does SafeOrStolen search for an Illinois plate?",

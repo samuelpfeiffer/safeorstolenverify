@@ -140,7 +140,7 @@ const Hero = () => {
               </div>
               
               <p className="text-sm text-sos-gray-300 text-center">
-                <span className="text-sos-orange font-bold">2 FREE</span> verifications • 
+                <span className="text-sos-orange font-bold">1 FREE</span> verification • 
                 <span className="text-sos-lime font-bold">Instant</span> results • 
                 Multi-database search • No credit card required
               </p>

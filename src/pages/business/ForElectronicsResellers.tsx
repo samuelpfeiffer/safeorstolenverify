@@ -30,7 +30,7 @@ const FAQS = [
   {
     question: 'Does the bulk check include the carrier blacklist?',
     answer:
-      'On the $10 monthly plan, the first 20 phone checks each month also search the lost and stolen carrier blacklist, whether you run them one at a time or in bulk. After 20, phone checks still search theft reports and web results and show the make and model, but skip the blacklist. A $4.99 single phone check includes it. Free checks do not.',
+      'No. Bulk phone checks search SafeOrStolen theft reports and show each phone\'s make and model. They do not include a carrier blacklist search.',
   },
   {
     question: 'Can I check if a phone is iCloud locked or Google locked by IMEI?',
@@ -92,8 +92,7 @@ const ForElectronicsResellers = () => {
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">Bulk IMEI Check for Resellers</h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Paste up to 100 IMEIs or serial numbers into SafeOrStolen's bulk check and it searches each one against
-              SafeOrStolen theft reports, and shows each phone's make and model. On the monthly
-              plan, the first 20 phone checks a month also search the carrier blacklist. Download the results as a CSV and
+              SafeOrStolen theft reports, and shows each phone's make and model. Download the results as a CSV and
               keep it with the purchase.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">

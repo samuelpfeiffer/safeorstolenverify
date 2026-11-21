@@ -60,7 +60,7 @@ const FirearmSerialCheck = () => {
  }
  ]}
  ctaTitle="Check the Serial Before You Buy"
- ctaDescription="A serial number check takes a few seconds, and your first 2 are free."
+ ctaDescription="A serial number check takes a few seconds, and your first one is free."
  relatedLinks={[
  { title: "Firearms Check Main", href: "/firearms-check" },
  { title: "Serial Number Checker", href: "/serial-number-checker" },

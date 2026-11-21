@@ -254,9 +254,9 @@ const OfferupScamProtection = () => {
               </div>
               <div className="p-6">
                 <div className="text-4xl font-bold text-primary mb-2">
-                  2 Free
+                  1 Free
                 </div>
-                <p className="text-muted-foreground">Checks before you pay</p>
+                <p className="text-muted-foreground">Check before you pay</p>
               </div>
             </div>
           </div>

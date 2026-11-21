@@ -27,7 +27,7 @@ const MotorcycleVINCheck = () => {
  { value: "40K+", label: "Motorcycles Stolen Yearly" },
  { value: "3 sec", label: "VIN Check Time" },
   { value: "AI", label: "Plain-Language Analysis" },
- { value: "Free", label: "First 2 Checks" }
+ { value: "Free", label: "First Check" }
  ]}
  whatIsTitle="What is Motorcycle VIN Verification?"
  whatIsContent="Every motorcycle has a 17-character VIN (Vehicle Identification Number) stamped on the frame. When a motorcycle is stolen, its VIN might be reported. Motorcycles are stolen at nearly twice the rate of cars, making verification essential. Our service checks publicly available information, SafeOrStolen's reports, and uses AI analysis to help ensure you're not buying stolen property."

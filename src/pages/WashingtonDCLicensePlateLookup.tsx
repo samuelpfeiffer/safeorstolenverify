@@ -280,8 +280,8 @@ const WashingtonDCLicensePlateLookup = () => {
  <p className="text-muted-foreground">
  Enter the DC license plate number into SafeOrStolen's verification tool above. 
  SafeOrStolen searches its theft reports for that plate
- and lists every source. For registration records, contact the DC DMV. Your first 2
- checks are free.
+ and lists every source. For registration records, contact the DC DMV. Your first
+ check is free.
  </p>
  </CardContent>
  </Card>

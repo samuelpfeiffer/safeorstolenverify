@@ -112,7 +112,7 @@ const StolenCheckPhiladelphia = () => {
         <section className="py-16 px-4 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Verify Before You Buy in Philly</h2>
-            <p className="mb-6 opacity-90">A check takes a few seconds, and your first 2 are free.</p>
+            <p className="mb-6 opacity-90">A check takes a few seconds, and your first one is free.</p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Verify Item Free</Link>
             </Button>

@@ -117,7 +117,7 @@ const VerifyCraigslistItems = () => {
                   Free Verification
                 </h3>
                 <p className="text-muted-foreground">
-                  Your first 2 SafeOrStolen checks are free, and each one takes a few seconds.
+                  Your first SafeOrStolen check is free, and it takes a few seconds.
                 </p>
               </div>
             </div>

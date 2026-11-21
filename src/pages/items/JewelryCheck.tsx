@@ -68,7 +68,7 @@ const JewelryCheck = () => {
         }
       ]}
       ctaTitle="Check the Inscription Before You Buy"
-      ctaDescription="A check takes a few seconds. Your first 2 are free."
+      ctaDescription="A check takes a few seconds. Your first one is free."
       relatedLinks={[
         { title: "Watch Verification", href: "/check-watch-stolen" },
         { title: "General Jewelry Check", href: "/check-jewelry" },

@@ -257,7 +257,7 @@ export const MarketplaceLandingTemplate = ({
             <h2 className="text-3xl font-bold mb-4">{ctaTitle}</h2>
             <p className="text-lg opacity-90 mb-8">{ctaDescription}</p>
             <Button asChild size="lg" variant="secondary">
-              <Link to="/verify">Check an Item - First 2 Checks Free</Link>
+              <Link to="/verify">Check an Item - First Check Free</Link>
             </Button>
           </div>
         </section>

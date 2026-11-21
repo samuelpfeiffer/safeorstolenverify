@@ -76,7 +76,7 @@ export default function StockXVerification() {
         howItWorks:
           'Type the serial number from the console, card or box label into the search box. SafeOrStolen searches its theft reports that mention the number, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. The check is saved to your account with the date.',
         whyCheck:
-          "Most of the risk is off-platform: a console from Facebook Marketplace, OfferUp or a local reseller with no verification step at all. If police recover a stolen item, it goes back to its owner and you lose what you paid. A serial check takes a few seconds and the first 2 are free.",
+          "Most of the risk is off-platform: a console from Facebook Marketplace, OfferUp or a local reseller with no verification step at all. If police recover a stolen item, it goes back to its owner and you lose what you paid. A serial check takes a few seconds and the first one is free.",
         benefits: [
           'Works on consoles, graphics cards, headphones and other electronics with a serial',
           'Checks SafeOrStolen theft reports',

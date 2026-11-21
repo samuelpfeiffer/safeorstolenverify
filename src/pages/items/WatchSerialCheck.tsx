@@ -27,7 +27,7 @@ const WatchSerialCheck = () => {
         { value: "$1B+", label: "Watch Theft Annually" },
         { value: "3 sec", label: "Verification Time" },
         { value: "Instant", label: "Results" },
-        { value: "Free", label: "First 2 Checks" }
+        { value: "Free", label: "First Check" }
       ]}
       whatIsTitle="What is Watch Serial Number Verification?"
       whatIsContent="Every luxury watch has a unique serial number engraved by the manufacturer. When a Rolex, Omega, Patek Philippe, or other high-end watch is reported stolen, this serial number is logged in databases maintained by organizations like The Watch Register. Our verification searches these databases to check if a watch has been reported stolen. Given that luxury watches can cost $5,000 to $500,000+, verification is essential before any significant purchase."

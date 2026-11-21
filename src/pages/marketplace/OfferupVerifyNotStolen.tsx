@@ -231,7 +231,7 @@ const OfferupVerifyNotStolen = () => {
               A verified seller isn't a verified item
             </h2>
             <p className="text-lg opacity-90 mb-8">
-              A check takes a few seconds and your first 2 are free. Run it before you hand over cash.
+              A check takes a few seconds and your first one is free. Run it before you hand over cash.
             </p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Verify Item Free</Link>

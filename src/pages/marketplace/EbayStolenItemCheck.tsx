@@ -348,7 +348,7 @@ const EbayStolenItemCheck = () => {
               Verify Before You Bid
             </h2>
             <p className="text-lg opacity-90 mb-8">
-              A check takes a few seconds, and your first 2 are free.
+              A check takes a few seconds, and your first one is free.
             </p>
             <Button asChild size="lg" variant="secondary">
               <Link to="/verify">Verify an Item Free</Link>
