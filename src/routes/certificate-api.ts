@@ -16,7 +16,9 @@ const SOURCE_LABELS: Record<string, string> = {
   'SafeOrStolen Database': 'SafeOrStolen theft reports',
   BikeIndex: 'National stolen-bicycle registry',
   IMEI_Verification: 'Phone IMEI records',
-  Vehicle_Verification: 'Vehicle records (VIN decode; Arizona, Alaska and Chicago police stolen-vehicle records, for a vehicle from any state)',
+  Vehicle_Verification: 'Vehicle identification and federal safety recall records',
+  Police_Vehicle_Records: 'Alaska police stolen-vehicle records',
+  Chicago_Police_Records: 'Chicago Police stolen-vehicle records',
   Firearm_Verification: 'Ohio law-enforcement stolen-gun records',
   Police_Theft_Records: 'Police firearm theft and loss reports (33 states and DC)',
   Web_Scraper: 'Public web search',
@@ -106,11 +108,14 @@ export const Route = createFileRoute('/certificate-api')({
           let proof = existing as { id: string; paid_at: string | null } | null;
 
           if (!proof) {
-            const res = (search.result ?? {}) as { status?: string; providers?: { provider: string; status: string }[] };
+            const res = (search.result ?? {}) as { status?: string; providers?: { provider: string; status: string; checked?: boolean; azChecked?: boolean }[] };
+            // Nov 21 2026: list only sources that actually answered. Arizona appears only when it responded.
             const databases = Array.from(new Set(
               (res.providers ?? [])
-                .filter((x) => x.status !== 'error' && SOURCE_LABELS[x.provider])
-                .map((x) => SOURCE_LABELS[x.provider]),
+                .filter((x) => x.status !== 'error' && x.checked !== false && SOURCE_LABELS[x.provider])
+                .flatMap((x) => x.provider === 'Vehicle_Verification' && x.azChecked === true
+                  ? [SOURCE_LABELS[x.provider], 'Arizona police stolen-vehicle records']
+                  : [SOURCE_LABELS[x.provider]]),
             ));
             const id = normalize(String(search.serial_number ?? ''));
             const category = categoryFor(String(search.item_type ?? ''));

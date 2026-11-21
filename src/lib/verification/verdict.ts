@@ -99,6 +99,28 @@ function aggregateConfidence(results: SourceResult[]): number {
   return Math.min(base + multiSourceBonus, 99);
 }
 
+/**
+ * Nov 21 2026: name every police/registry source that was DOWN for this check, so a clean result
+ * never hides an outage (e.g. Arizona and Chicago city sites went offline in Nov 2026).
+ */
+function downNote(data: SourceResult[]): string {
+  const down: string[] = [];
+  const has = (p: string) => data.some((s) => s.provider === p);
+  const v = data.find((s) => s.provider === 'Vehicle_Verification');
+  const vehicleSearch = v && !(v.details as any)?.invalidInput;
+  if (vehicleSearch && (v!.details as any)?.theftaz?.checked !== true) down.push('Arizona');
+  if (data.some((s) => s.provider === 'Police_Vehicle_Records' && s.status === 'error')) down.push('Alaska');
+  if (data.some((s) => s.provider === 'Chicago_Police_Records' && s.status === 'error')) down.push('Chicago');
+  const parts: string[] = [];
+  if (down.length) parts.push(`${down.join(down.length === 2 ? ' and ' : ', ')} police stolen-vehicle records`);
+  const f = data.find((s) => s.provider === 'Firearm_Verification');
+  if (f && (f.status === 'error' || (f.details as any)?.ohio?.checked === false)) parts.push('Ohio law-enforcement stolen-gun records');
+  if (has('Police_Theft_Records') && data.some((s) => s.provider === 'Police_Theft_Records' && s.status === 'error')) parts.push('police gun theft and loss reports');
+  if (data.some((s) => s.provider === 'BikeIndex' && s.status === 'error')) parts.push('the national stolen-bicycle registry');
+  if (!parts.length) return '';
+  return ` ⚠️ Not searched this time because the source was offline: ${parts.join('; ')}. Try the check again later.`;
+}
+
 /** Plain-English name for a source, used in verdict messages. */
 function sourceLabel(s: SourceResult): string {
   if (s.provider === 'Firearm_Verification' && (s.details as any)?.ohio?.found === true) {
@@ -113,6 +135,9 @@ function sourceLabel(s: SourceResult): string {
     Vehicle_Verification: 'vehicle records',
     Police_Vehicle_Records: 'Alaska law-enforcement stolen-vehicle records',
     Chicago_Police_Records: 'Chicago Police stolen-vehicle records',
+    BikeIndex: 'the national stolen-bicycle registry',
+    Police_Theft_Records: 'police gun theft and loss reports',
+    Firearm_Verification: 'Ohio law-enforcement stolen-gun records',
   };
   return names[s.provider] ?? s.provider;
 }
@@ -186,7 +211,7 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
       finalStatus: 'safe',
       riskLevel: 'low',
       confidence: aggregateConfidence(safe),
-      message: `✅ NO THEFT REPORTS FOUND in ${safe.map(sourceLabel).join(' and ')}. No check can guarantee an item was never stolen, so keep your receipt and the seller's info.`,
+      message: `✅ NO THEFT REPORTS FOUND in ${safe.map(sourceLabel).join(' and ')}. No check can guarantee an item was never stolen, so keep your receipt and the seller's info.${downNote(data)}`,
     };
   }
 
@@ -225,10 +250,18 @@ export function decideVerdict(sources: SourceResult[]): Verdict {
     message += " Not every stolen gun is reported, so before you buy, match the serial on the gun to any paperwork. For a private sale you can also do the transfer through a licensed dealer (FFL).";
   }
   if (isVehicle) {
-    message += azChecked
-      ? ' Police records searched cover reports in Arizona, Alaska and Chicago, so before you pay, match the VIN on the dashboard and door sticker to the title, and check that the name on the title matches the seller\'s ID.'
+    const answeredPlaces = [
+      azChecked ? 'Arizona' : '',
+      data.some((s) => s.provider === 'Police_Vehicle_Records' && s.status !== 'error') ? 'Alaska' : '',
+      data.some((s) => s.provider === 'Chicago_Police_Records' && s.status !== 'error') ? 'Chicago' : '',
+    ].filter(Boolean);
+    const places = answeredPlaces.length > 1 ? `${answeredPlaces.slice(0, -1).join(', ')} and ${answeredPlaces[answeredPlaces.length - 1]}` : answeredPlaces[0];
+    message += places
+      ? ` Police records searched this time cover reports in ${places}, so before you pay, match the VIN on the dashboard and door sticker to the title, and check that the name on the title matches the seller\'s ID.`
       : ' Before you pay, match the VIN on the dashboard and door sticker to the title, and check that the name on the title matches the seller\'s ID.';
   }
+
+  message += downNote(data);
 
   return {
     finalStatus: 'unknown',

@@ -732,6 +732,21 @@ async function claimGuestPurchasesByEmail(admin: AdminClient, userId: string): P
   }
 }
 
+/**
+ * Nov 21 2026: what we store for each source. Also records whether each police source actually
+ * answered, so certificates never claim a source was searched when it was offline.
+ */
+function savedProvider(p: SourceResult) {
+  const d = (p.details ?? {}) as any;
+  return {
+    provider: p.provider,
+    status: p.status,
+    confidence: p.confidence,
+    ...(p.provider === 'Vehicle_Verification' ? { azChecked: d?.theftaz?.checked === true } : {}),
+    ...(typeof d?.checked === 'boolean' ? { checked: d.checked } : {}),
+  };
+}
+
 export async function checkUsageGate(
   admin: AdminClient,
   userId: string | null,
@@ -954,11 +969,7 @@ export async function runVerification(
         confidence: result.confidence,
         riskLevel: result.riskLevel,
         message: result.message,
-        providers: providers.map((p) => ({
-          provider: p.provider,
-          status: p.status,
-          confidence: p.confidence,
-        })),
+        providers: providers.map(savedProvider),
         checkedSources: result.checkedSources,
       },
     }).select('id').single();
@@ -981,11 +992,7 @@ export async function runVerification(
       risk_assessment: {
         riskLevel: result.riskLevel,
         message: result.message,
-        providers: providers.map((p) => ({
-          provider: p.provider,
-          status: p.status,
-          confidence: p.confidence,
-        })),
+        providers: providers.map(savedProvider),
       },
     });
   } catch (error) {
