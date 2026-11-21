@@ -362,7 +362,7 @@ export const ConversationSidebar: React.FC<Props> = ({
             </div>
           </div>
         ) : (
-          <SignInNudge text="Sign up free to save your chats, results, and certificates on any device." compact />
+          <SignInNudge text="Sign up free for 1 more free check, and save your chats, results, and certificates on any device." compact />
         )}
       </div>
     </div>

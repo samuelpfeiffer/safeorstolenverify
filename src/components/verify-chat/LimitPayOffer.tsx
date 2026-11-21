@@ -20,6 +20,13 @@ const OPTIONS: { kind: Kind; name: string; price: string; detail: string }[] = [
 const PLAN_NAME = { single: 'One verification check' };
 
 export function LimitPayOffer({ identifier, itemType }: { identifier: string; itemType?: string }) {
+  // Nov 21 2026: guests can unlock 1 more free check by creating a free account (2 per account).
+  const [signedIn, setSignedIn] = useState<boolean | null>(null);
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => setSignedIn(!!data.session)).catch(() => setSignedIn(null));
+  }, []);
+  const back = `/verify?q=${encodeURIComponent(identifier)}${itemType ? `&type=${encodeURIComponent(itemType)}` : ''}`;
+  const signupHref = `/auth?tab=signup&redirect=${encodeURIComponent(back)}`;
   const [busy, setBusy] = useState<Kind | null>(null);
   const checkoutInProgress = useRef(false);
   const [error, setError] = useState<string | null>(null);
@@ -56,6 +63,22 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
       <p className="text-sm text-muted-foreground mt-1">
         One chat for every item. Checks work across categories, including firearms. No category unlock fees.
       </p>
+
+      {signedIn === false && (
+        <a
+          href={signupHref}
+          onClick={() => { try { trackFunnelStage('signup_bonus_click' as any); } catch { /* analytics optional */ } }}
+          className="mt-4 block rounded-lg border-2 border-primary bg-primary/10 p-3 hover:bg-primary/15 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          <div className="flex items-baseline justify-between gap-3">
+            <span className="font-semibold">Create a free account</span>
+            <span className="font-semibold text-primary">1 more check free</span>
+          </div>
+          <p className="text-sm text-muted-foreground mt-1">
+            Sign up free and this check runs right away. Your reports and certificates are saved to your dashboard on every device.
+          </p>
+        </a>
+      )}
 
       <div className="mt-4 space-y-2" role="list">
         {OPTIONS.map((o) => (

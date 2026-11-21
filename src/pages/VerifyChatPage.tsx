@@ -386,7 +386,7 @@ const VerifyChatPage: React.FC = () => {
          if (!allowed) {
            updateMessage(assistantId, {
              loading: false,
-             content: `Your free check is used. Pick an option below to run this check. No account needed.`,
+             content: isAuthenticated ? `Your free checks are used. Pick an option below to run this check.` : `Your free check is used. Create a free account to run this one free, or pick a paid option below. No account needed to pay.`,
              payOffer: { identifier: cleanedIdentifier, itemType },
            });
            return;
@@ -406,7 +406,7 @@ const VerifyChatPage: React.FC = () => {
            savePendingCheck(cleanedIdentifier, itemType);
            updateMessage(assistantId, {
              loading: false,
-             content: `Your free check is used. Pick an option below to run this check. No account needed.`,
+             content: isAuthenticated ? `Your free checks are used. Pick an option below to run this check.` : `Your free check is used. Create a free account to run this one free, or pick a paid option below. No account needed to pay.`,
              payOffer: { identifier: cleanedIdentifier, itemType },
            });
            return;
@@ -1036,7 +1036,7 @@ const VerifyChatPage: React.FC = () => {
 
  {!user && (
  <p className="text-xs text-muted-foreground text-center mt-2">
- Your first check is free. No sign-up needed.
+ Your first check is free, no sign-up needed. Sign up free for 1 more.
  </p>
  )}
  </div>
