@@ -454,7 +454,7 @@ const VerifyChatPage: React.FC = () => {
  ? ['What does this confidence score mean?', 'Tips for buying safely', 'Generate a share link']
  : result.status === 'lost'
  ? ['How do I contact the owner?', 'Is it legal to buy this?']
- : ['Why is this inconclusive?', 'What else can I check?'];
+ : ['What does this result mean?', 'Tips for buying safely', 'What else can I check?'];
 
  updateMessage(assistantId, {
  loading: false,
