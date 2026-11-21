@@ -23,7 +23,6 @@ export const VERIFY_BUILD_ID = 'app-server-verify-2026-09-19-1';
 const SOURCE_TIMEOUT_MS = 20_000;
 // Oct 21 2026 (owner decision): 1 free check, then $0.99 buys 2 checks (at most 1 phone blacklist search).
 const FREE_LIMIT = 1;
-const ACCOUNT_FREE_LIMIT = 2;
 
 // Oct 29 2026: one-time packs. 'single' = $0.99 Starter (records only); 'complete' = $2.99 Complete
 // (adds the phone blacklist search, web listings + AI review, and a free certificate).
@@ -859,8 +858,7 @@ export async function checkUsageGate(
   const { data, error } = await admin.rpc('claim_lifetime_free_check' as never, {
     p_user_id: userId, p_fingerprint: fingerprint ?? `user:${userId}`, p_ip_key: null,
   } as never);
-  // Nov 21 2026: a free account gets 2 free checks (1 more than a guest). See claim_lifetime_free_check.
-  if (error || data !== true) return { allowed: false, reason: 'free_limit', plan: 'free', checksLimit: ACCOUNT_FREE_LIMIT };
+  if (error || data !== true) return { allowed: false, reason: 'free_limit', plan: 'free', checksLimit: FREE_LIMIT };
   return { allowed: true, plan: 'free', checksRemaining: 0 };
 }
 

@@ -18,7 +18,7 @@ import { UNLIMITED_PRICE_ID, PAY_PER_CHECK_PRICE_ID } from '@/features/pricing/c
 import { trackCheckout, trackFunnelStage } from '@/lib/funnelAnalytics';
 
 const FAQS = [
- { q: 'How much does SafeOrStolen cost?', a: 'Your first check is free, and a free account gets 1 more free check. After that, one verification check costs $4.99, or unlimited checks cost $10 per month. Applicable tax is calculated at checkout.' },
+ { q: 'How much does SafeOrStolen cost?', a: 'Your first check is free. After that, one verification check costs $4.99, or unlimited checks cost $10 per month. Applicable tax is calculated at checkout.' },
  { q: 'Do firearms or other categories cost extra?', a: 'No. One chat handles every supported item type. The same price applies to phones, vehicles, firearms, bikes, electronics, tools and other serial-numbered items.' },
  { q: 'What does a paid check include?', a: 'One item identifier is checked against the sources available for its category, with the sources listed in the result. The paid check includes a verification certificate and one phone blacklist search if the item is a phone. A no-match result is not proof of ownership or a guarantee.' },
  { q: 'What does unlimited mean?', a: 'The $10 monthly plan includes unlimited standard item checks and certificates. Phone carrier blacklist searches are limited to 20 per month. The plan renews monthly; cancel anytime.' },
@@ -76,13 +76,13 @@ const PricingPage = () => {
  <div className="max-w-5xl mx-auto px-4 py-14">
  <div className="text-center mb-10">
  <h1 className="text-4xl md:text-5xl font-black mb-4">One chat. Every item. Simple pricing.</h1>
- <p className="text-lg text-muted-foreground">1 free check, plus 1 more when you sign up free. Then $4.99 per check or $10/month unlimited.</p>
+ <p className="text-lg text-muted-foreground">1 free check. Then $4.99 per check or $10/month unlimited.</p>
  <p className="text-sm text-muted-foreground mt-3">Same pricing for firearms, vehicles, phones, bikes, electronics and tools. Applicable tax calculated at checkout.</p>
  </div>
  <div className="grid gap-6 md:grid-cols-3">
  <section className="rounded-2xl border border-border bg-card p-6 flex flex-col">
  <h2 className="text-xl font-bold">Try it free</h2><p className="text-4xl font-black my-4">$0</p>
- <p className="text-muted-foreground mb-6">1 free check with no account or credit card. Create a free account for 1 more. Results list the sources searched.</p>
+ <p className="text-muted-foreground mb-6">1 free check. No account or credit card needed. Results list the sources searched.</p>
  <Link to="/verify" className="mt-auto block rounded-xl bg-muted px-4 py-3 text-center font-bold">Start my free check</Link>
  </section>
  <section className="rounded-2xl border-2 border-primary bg-card p-6 flex flex-col">
@@ -178,7 +178,7 @@ const PricingPage = () => {
  "description": "Check if a phone, vehicle, plate, gun, bike or serial-numbered item is reported stolen. 1 free check, then $4.99 per check or $10/month for unlimited standard checks.",
  "brand": { "@type": "Brand", "name": "SafeOrStolen" },
  "offers": [
- { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1 free check with no account, plus 1 more with a free account, no card required" },
+ { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1 free check, no card required" },
  { "@type": "Offer", "name": "One verification check", "price": "4.99", "priceCurrency": "USD", "description": "One item, any supported category. One-time purchase. Applicable tax calculated at checkout." },
  { "@type": "Offer", "name": "Unlimited monthly", "price": "10.00", "priceCurrency": "USD", "description": "Unlimited standard checks. Renews monthly. Applicable tax calculated at checkout." },
  ]
