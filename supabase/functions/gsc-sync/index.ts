@@ -24,6 +24,15 @@ serve(async (req) => {
   if (corsPreFlight) return corsPreFlight;
   const corsHeaders = getCorsHeaders(req.headers.get('origin'));
 
+  // Nov 21 2026: PAUSED. No Google account is connected (gsc_oauth_tokens is empty), so the
+  // hourly cron only produced 403s. Search Console data comes through a separate connection.
+  // To turn back on: connect an account, then delete this early return and redeploy.
+  if (Deno.env.get('GSC_SYNC_ENABLED') !== 'true') {
+    return new Response(JSON.stringify({ paused: true, message: 'gsc-sync is paused' }), {
+      status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+
   try {
     // --- Authentication: require admin user ---
     const authHeader = req.headers.get('authorization');
