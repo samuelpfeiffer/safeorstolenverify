@@ -49,6 +49,8 @@ import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useCh
 import { streamChatReply } from '@/components/verify-chat/streamChatReply';
 import { resolveVerificationInputType } from '@/lib/verificationInputType';
 import { coverageQuestion, coverageReply, extractIdentifier, hintForCategory } from '@/lib/chatIntent';
+// Nov 23 2026: live barcode scanner (IMEI Code 128, VIN Code 39, serial labels, QR) on the public check page.
+const BarcodeScanner = React.lazy(() => import('@/components/hero/QrScanner'));
 
 const URL_REGEX = /^https?:\/\/[^\s]+$/i;
 const IDENTIFIER_REGEX = /^[A-Z0-9\-\s]{4,30}$/i;
@@ -113,6 +115,7 @@ const VerifyChatPage: React.FC = () => {
 
  const fileInputRef = useRef<HTMLInputElement>(null);
  const cameraInputRef = useRef<HTMLInputElement>(null);
+ const [barcodeOpen, setBarcodeOpen] = useState(false);
  const scrollRef = useRef<HTMLDivElement>(null);
  const textareaRef = useRef<HTMLTextAreaElement>(null);
  const consumedParamRef = useRef(false);
@@ -978,9 +981,16 @@ const VerifyChatPage: React.FC = () => {
  disabled={isThinking}
  />
  <ToolButton
- icon={Camera}
- label="Scan with camera"
+ icon={ScanLine}
+ label="Scan a barcode with your camera"
  shortLabel="Scan"
+ onClick={() => setBarcodeOpen(true)}
+ disabled={isThinking}
+ />
+ <ToolButton
+ icon={Camera}
+ label="Take a photo of the label and read the number"
+ shortLabel="Photo"
  onClick={() => cameraInputRef.current?.click()}
  disabled={isThinking}
  />
@@ -1010,6 +1020,19 @@ const VerifyChatPage: React.FC = () => {
  hidden
  onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
  />
+ {barcodeOpen && (
+ <React.Suspense fallback={null}>
+ <BarcodeScanner
+ isOpen={barcodeOpen}
+ onOpenChange={setBarcodeOpen}
+ onScanSuccess={(text) => {
+ const value = text.trim();
+ setBarcodeOpen(false);
+ if (value) void handleSend(value);
+ }}
+ />
+ </React.Suspense>
+ )}
  </div>
 
  <Button

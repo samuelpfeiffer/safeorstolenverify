@@ -22,7 +22,12 @@ const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
   // Enhanced scanner configuration for multiple formats
   const getScannerConfig = () => ({
     fps: 10,
-    qrbox: { width: 280, height: 280 },
+    // Wide, short box: IMEI (Code 128) and VIN (Code 39) labels are long 1D barcodes, and a square
+    // box cut them off. QR and Data Matrix codes still fit inside.
+    qrbox: (w: number, h: number) => ({
+      width: Math.max(200, Math.floor(w * 0.9)),
+      height: Math.max(120, Math.floor(Math.min(h * 0.5, w * 0.45))),
+    }),
     aspectRatio: 1.0,
     // Support multiple formats including barcodes and QR codes
     formatsToSupport: [
@@ -78,11 +83,16 @@ const QrScanner = ({ isOpen, onOpenChange, onScanSuccess }: QrScannerProps) => {
     try {
       // Clear any existing scanner first
       await stopQrScanner();
-      
-      const scanner = new Html5Qrcode("qr-scanner");
-      scannerInstanceRef.current = scanner;
-      
       const config = getScannerConfig();
+      
+      // Formats belong in the constructor (the start() config ignores them). The browser's own
+      // BarcodeDetector, where available, reads 1D barcodes faster and more reliably.
+      const scanner = new Html5Qrcode("qr-scanner", {
+        formatsToSupport: config.formatsToSupport,
+        experimentalFeatures: { useBarCodeDetectorIfSupported: true },
+        verbose: false,
+      });
+      scannerInstanceRef.current = scanner;
       
       await scanner.start(
         { facingMode: "environment" },
