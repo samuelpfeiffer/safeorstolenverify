@@ -3,9 +3,12 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.39.3';
 import { getCorsHeaders, handleCorsPreFlight } from '../_shared/cors.ts';
 import { requireAdmin } from '../_shared/require-admin.ts';
 
-const INDEXNOW_KEY = 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6';
+// Nov 23 2026: the old hard-coded key (a1b2c3d4...) matched no key file, so every submission was refused.
+// Use the INDEXNOW_KEY secret, falling back to the key file live at /290890a314344654bf01fae854029860.txt
+// (an IndexNow key is public by design; the key file proves ownership).
+const INDEXNOW_KEY = (Deno.env.get('INDEXNOW_KEY') || '').trim() || '290890a314344654bf01fae854029860';
 const HOST = 'safeorstolen.com';
-const KEY_LOCATION = `https://${HOST}/indexnow-key.txt`;
+const KEY_LOCATION = `https://${HOST}/${INDEXNOW_KEY}.txt`;
 
 interface SubmissionResult {
   engine: string;
