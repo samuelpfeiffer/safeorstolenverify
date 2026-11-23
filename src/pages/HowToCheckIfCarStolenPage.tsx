@@ -274,6 +274,12 @@ const HowToCheckIfCarStolenPage = () => {
           ))}
         </div>
 
+        {/* Nov 23 2026: related guides (added; no existing wording changed). */}
+        <p className="mt-8">
+          Checking something else? See <Link to="/how-to-check-if-a-gun-is-stolen" className="text-primary underline">how to check if a gun is stolen</Link>{' '}
+          and <Link to="/how-to-check-if-phone-stolen" className="text-primary underline">how to check if a phone is stolen</Link>.
+        </p>
+
         <H2 id="faq">FAQ</H2>
         <div className="space-y-4">
           {FAQS.map((f) => (
