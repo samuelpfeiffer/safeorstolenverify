@@ -24,7 +24,8 @@ import { VerificationRecord } from '@/components/verification/VerificationRecord
 import { CertificateOffer } from '@/components/proof/CertificateOffer';
 import { PhoneBlacklistOffer } from '@/components/verify-chat/PhoneBlacklistOffer';
 
-const PHONE_BLACKLIST_FOR_SALE = false;
+// Nov 23 2026: back on. IMEI.info answered a live test lookup (HTTP 200, full blacklist result).
+const PHONE_BLACKLIST_FOR_SALE = true;
 import { BuyerCheck } from '@/components/verify-chat/BuyerCheck';
 import { WatchButton } from '@/components/verify-chat/WatchButton';
 import { toCanonicalItemType } from '@/lib/itemType';
@@ -38,7 +39,7 @@ const SOURCE_LABELS: Record<string, string> = {
   hotgunz: 'Stolen-firearm database',
   firearm_verification: 'Ohio law-enforcement stolen-gun records',
   police_theft_records: 'Police theft records (33 states and DC)',
-  imei_verification: 'IMEI check (make and model)',
+  imei_verification: 'Lost & stolen phone blacklist',
   vehicle_verification: 'VIN decode, recalls and Arizona law-enforcement records',
   web_scraper: 'Public web search',
   ai_analysis: 'Automated risk review',

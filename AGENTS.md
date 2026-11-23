@@ -1,5 +1,10 @@
 # Project rules
 
+## Owner rule (Samuel, Nov 23 2026): top three is off limits
+- If a page ranks in the top three on Google for any search, don't touch it. Leave it alone. This widens the #1 lock below to positions 1–3. Shared components and site-wide files that render on such a page count as editing it (example: `LimitPayOffer` renders on the homepage, `/firearms-check` and `/license-plate-lookup`, so it is locked).
+- Until Samuel says otherwise, apply it to searches for our own name too (a page at position 1–3 for "safeorstolen" or "safe or stolen" is locked). This currently locks `/for-businesses`, `/imei-checker`, `/vin-checker`, `/app`, `/how-it-works`, `/news`, `/download` and `/for-law-enforcement` on top of the lists below.
+- Check Search Console (query + page, last 28 days) before editing any page.
+
 ## Owner update (Samuel, Nov 9 2026)
 - Proactively improve search visibility, LLM/GEO/AI-answer citations, Bing discovery, speed and monetization using verified evidence and measured results.
 - Preserve every verified #1 ranking. This protection applies to Google and Bing, and to the page assets and shared dependencies that affect the winning page. Do not remove an existing protection just because a later data export omits that query.

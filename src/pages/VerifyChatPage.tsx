@@ -49,6 +49,8 @@ import { useChatThreads, type ChatMessage, type Attachment } from '@/hooks/useCh
 import { streamChatReply } from '@/components/verify-chat/streamChatReply';
 import { resolveVerificationInputType } from '@/lib/verificationInputType';
 import { coverageQuestion, coverageReply, extractIdentifier, hintForCategory } from '@/lib/chatIntent';
+// Nov 23 2026: live barcode scanner (IMEI Code 128, VIN Code 39, serial labels, QR) on the public check page.
+const BarcodeScanner = React.lazy(() => import('@/components/hero/QrScanner'));
 
 const URL_REGEX = /^https?:\/\/[^\s]+$/i;
 const IDENTIFIER_REGEX = /^[A-Z0-9\-\s]{4,30}$/i;
@@ -113,6 +115,7 @@ const VerifyChatPage: React.FC = () => {
 
  const fileInputRef = useRef<HTMLInputElement>(null);
  const cameraInputRef = useRef<HTMLInputElement>(null);
+ const [barcodeOpen, setBarcodeOpen] = useState(false);
  const scrollRef = useRef<HTMLDivElement>(null);
  const textareaRef = useRef<HTMLTextAreaElement>(null);
  const consumedParamRef = useRef(false);
@@ -718,7 +721,7 @@ const VerifyChatPage: React.FC = () => {
  <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
  <p><strong>Check if an item is stolen with SafeOrStolen</strong></p>
  <p>Type or paste a phone's IMEI, a car's VIN, a license plate, a gun's serial number, a bike's frame serial, any other serial number, or a marketplace listing link. In a few seconds SafeOrStolen shows whether it is reported stolen, a possible match, or not found in the records searched, with every source listed.</p>
- <p>Every check searches SafeOrStolen's own theft reports. Guns are also checked against more than 220,000 police stolen-gun reports from 33 states and Washington, DC and live Ohio law-enforcement records; bikes against a national stolen-bicycle registry; phones by IMEI to confirm the make and model; and Arizona plates and VINs against Arizona, Alaska and Chicago police stolen-vehicle records.</p>
+ <p>Every check searches SafeOrStolen's own theft reports. Guns are also checked against more than 220,000 police stolen-gun reports from 33 states and Washington, DC and live Ohio law-enforcement records; bikes against a national stolen-bicycle registry; phones by IMEI to confirm the make and model, with paid checks also searching the lost and stolen phone blacklist; and Arizona plates and VINs against Arizona, Alaska and Chicago police stolen-vehicle records.</p>
  <p>Your first check is free with no account needed. After that, $4.99 buys 1 check, or $10 a month for unlimited checks.</p>
  </div>
  </noscript>
@@ -978,9 +981,16 @@ const VerifyChatPage: React.FC = () => {
  disabled={isThinking}
  />
  <ToolButton
- icon={Camera}
- label="Scan with camera"
+ icon={ScanLine}
+ label="Scan a barcode with your camera"
  shortLabel="Scan"
+ onClick={() => setBarcodeOpen(true)}
+ disabled={isThinking}
+ />
+ <ToolButton
+ icon={Camera}
+ label="Take a photo of the label and read the number"
+ shortLabel="Photo"
  onClick={() => cameraInputRef.current?.click()}
  disabled={isThinking}
  />
@@ -1010,6 +1020,19 @@ const VerifyChatPage: React.FC = () => {
  hidden
  onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
  />
+ {barcodeOpen && (
+ <React.Suspense fallback={null}>
+ <BarcodeScanner
+ isOpen={barcodeOpen}
+ onOpenChange={setBarcodeOpen}
+ onScanSuccess={(text) => {
+ const value = text.trim();
+ setBarcodeOpen(false);
+ if (value) void handleSend(value);
+ }}
+ />
+ </React.Suspense>
+ )}
  </div>
 
  <Button

@@ -1,13 +1,17 @@
 import { CapacitorConfig } from '@capacitor/core';
 
+// Nov 23 2026: store-ready identity. appId matches the web app manifest id (com.safeorstolen.app) and
+// cannot be changed after the first Play Store / App Store upload. The app loads the live site over
+// HTTPS (it used to load a Lovable preview URL with cleartext allowed). The site is server-rendered
+// (.output/public), so there is no static dist folder to bundle yet; webDir only holds the fallback.
 const config: CapacitorConfig = {
-  appId: 'app.lovable.ded9e6b996c44cc38b1a81d9ed9b1d6b',
-  appName: 'safeorstolen',
+  appId: 'com.safeorstolen.app',
+  appName: 'SafeOrStolen',
   webDir: 'dist',
   server: {
-    url: 'https://ded9e6b9-96c4-4cc3-8b1a-81d9ed9b1d6b.lovableproject.com?forceHideBadge=true',
-    cleartext: true
-  }
+    url: 'https://safeorstolen.com',
+    cleartext: false,
+  },
 };
 
 export default config;
