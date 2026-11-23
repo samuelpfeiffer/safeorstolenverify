@@ -116,6 +116,7 @@ import { Route as HawaiiLicensePlateLookupRouteImport } from './routes/hawaii-li
 import { Route as HawaiiVinLookupRouteImport } from './routes/hawaii-vin-lookup'
 import { Route as HotgunzAlternativeRouteImport } from './routes/hotgunz-alternative'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as HowToCheckIfAGunIsStolenRouteImport } from './routes/how-to-check-if-a-gun-is-stolen'
 import { Route as HowToCheckIfAppleDeviceStolenRouteImport } from './routes/how-to-check-if-apple-device-stolen'
 import { Route as HowToCheckIfBikeStolenRouteImport } from './routes/how-to-check-if-bike-stolen'
 import { Route as HowToCheckIfBoatStolenRouteImport } from './routes/how-to-check-if-boat-stolen'
@@ -960,6 +961,12 @@ const HowItWorksRoute = HowItWorksRouteImport.update({
   path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowToCheckIfAGunIsStolenRoute =
+  HowToCheckIfAGunIsStolenRouteImport.update({
+    id: '/how-to-check-if-a-gun-is-stolen',
+    path: '/how-to-check-if-a-gun-is-stolen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const HowToCheckIfAppleDeviceStolenRoute =
   HowToCheckIfAppleDeviceStolenRouteImport.update({
     id: '/how-to-check-if-apple-device-stolen',
@@ -2617,6 +2624,7 @@ export interface FileRoutesByFullPath {
   '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/how-to-check-if-a-gun-is-stolen': typeof HowToCheckIfAGunIsStolenRoute
   '/how-to-check-if-apple-device-stolen': typeof HowToCheckIfAppleDeviceStolenRoute
   '/how-to-check-if-bike-stolen': typeof HowToCheckIfBikeStolenRoute
   '/how-to-check-if-boat-stolen': typeof HowToCheckIfBoatStolenRoute
@@ -3013,6 +3021,7 @@ export interface FileRoutesByTo {
   '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/how-to-check-if-a-gun-is-stolen': typeof HowToCheckIfAGunIsStolenRoute
   '/how-to-check-if-apple-device-stolen': typeof HowToCheckIfAppleDeviceStolenRoute
   '/how-to-check-if-bike-stolen': typeof HowToCheckIfBikeStolenRoute
   '/how-to-check-if-boat-stolen': typeof HowToCheckIfBoatStolenRoute
@@ -3411,6 +3420,7 @@ export interface FileRoutesById {
   '/hawaii-vin-lookup': typeof HawaiiVinLookupRoute
   '/hotgunz-alternative': typeof HotgunzAlternativeRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/how-to-check-if-a-gun-is-stolen': typeof HowToCheckIfAGunIsStolenRoute
   '/how-to-check-if-apple-device-stolen': typeof HowToCheckIfAppleDeviceStolenRoute
   '/how-to-check-if-bike-stolen': typeof HowToCheckIfBikeStolenRoute
   '/how-to-check-if-boat-stolen': typeof HowToCheckIfBoatStolenRoute
@@ -3811,6 +3821,7 @@ export interface FileRouteTypes {
     | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
+    | '/how-to-check-if-a-gun-is-stolen'
     | '/how-to-check-if-apple-device-stolen'
     | '/how-to-check-if-bike-stolen'
     | '/how-to-check-if-boat-stolen'
@@ -4207,6 +4218,7 @@ export interface FileRouteTypes {
     | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
+    | '/how-to-check-if-a-gun-is-stolen'
     | '/how-to-check-if-apple-device-stolen'
     | '/how-to-check-if-bike-stolen'
     | '/how-to-check-if-boat-stolen'
@@ -4604,6 +4616,7 @@ export interface FileRouteTypes {
     | '/hawaii-vin-lookup'
     | '/hotgunz-alternative'
     | '/how-it-works'
+    | '/how-to-check-if-a-gun-is-stolen'
     | '/how-to-check-if-apple-device-stolen'
     | '/how-to-check-if-bike-stolen'
     | '/how-to-check-if-boat-stolen'
@@ -5003,6 +5016,7 @@ export interface RootRouteChildren {
   HawaiiVinLookupRoute: typeof HawaiiVinLookupRoute
   HotgunzAlternativeRoute: typeof HotgunzAlternativeRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  HowToCheckIfAGunIsStolenRoute: typeof HowToCheckIfAGunIsStolenRoute
   HowToCheckIfAppleDeviceStolenRoute: typeof HowToCheckIfAppleDeviceStolenRoute
   HowToCheckIfBikeStolenRoute: typeof HowToCheckIfBikeStolenRoute
   HowToCheckIfBoatStolenRoute: typeof HowToCheckIfBoatStolenRoute
@@ -5989,6 +6003,13 @@ declare module '@tanstack/react-router' {
       path: '/how-it-works'
       fullPath: '/how-it-works'
       preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-to-check-if-a-gun-is-stolen': {
+      id: '/how-to-check-if-a-gun-is-stolen'
+      path: '/how-to-check-if-a-gun-is-stolen'
+      fullPath: '/how-to-check-if-a-gun-is-stolen'
+      preLoaderRoute: typeof HowToCheckIfAGunIsStolenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-to-check-if-apple-device-stolen': {
@@ -8266,6 +8287,7 @@ const rootRouteChildren: RootRouteChildren = {
   HawaiiVinLookupRoute: HawaiiVinLookupRoute,
   HotgunzAlternativeRoute: HotgunzAlternativeRoute,
   HowItWorksRoute: HowItWorksRoute,
+  HowToCheckIfAGunIsStolenRoute: HowToCheckIfAGunIsStolenRoute,
   HowToCheckIfAppleDeviceStolenRoute: HowToCheckIfAppleDeviceStolenRoute,
   HowToCheckIfBikeStolenRoute: HowToCheckIfBikeStolenRoute,
   HowToCheckIfBoatStolenRoute: HowToCheckIfBoatStolenRoute,

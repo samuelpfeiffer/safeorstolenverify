@@ -201,7 +201,9 @@ export default function StateFirearmTransferLawsPage() {
             <p className="text-muted-foreground mb-6 text-sm">
               State law in these {NOT_REQUIRED.length} states doesn't require a background check on a sale between two
               residents. Federal law still applies to every sale, and the buyer and seller carry the checking themselves:
-              ID, proof of residence, a bill of sale and a serial check.
+              ID, proof of residence, a bill of sale and a serial check.{' '}
+              {/* Nov 23 2026: link added */}
+              <Link to="/how-to-check-if-a-gun-is-stolen" className="text-primary underline">How to check if a gun is stolen</Link>.
             </p>
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {NOT_REQUIRED.map((s) => (
