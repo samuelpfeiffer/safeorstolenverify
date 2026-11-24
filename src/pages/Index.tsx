@@ -31,7 +31,7 @@ const cardListing = '/images/cards/paste-listing.jpg';
 const VERIFY_CARDS = [
  {
  title: 'Gun Serial Number Lookup',
-  subtitle: 'Police theft reports from 33 states and DC, plus live state criminal justice records',
+  subtitle: 'Police theft reports from 33 states and DC, plus live Ohio records',
  href: '/firearms-check',
  image: cardFirearms,
  badge: 'Most searched',
@@ -98,7 +98,7 @@ const FOR_SELLERS_FEATURES = [
 const FAQ_ITEMS = [
  {
  q: 'How do I check if something is stolen before I buy it?',
- a: "Find its identifier: the IMEI on a phone (dial *#06#), the VIN on a car, the frame serial on a bike, or the serial number on anything else. Enter it on SafeOrStolen (safeorstolen.com). In a few seconds you'll see whether it's reported stolen, a possible match, or no report found, with every source listed. Your first check is free with no credit card.",
+ a: "Find its serial number: the IMEI on a phone (dial *#06#), the VIN on a car, the frame serial on a bike, or the serial number on anything else. Enter it on SafeOrStolen (safeorstolen.com). In a few seconds you'll see whether it's reported stolen, a possible match, or no report found, with every source listed. Your first check is free with no credit card.",
  },
  {
  q: 'How do I check if a phone is stolen?',
@@ -209,9 +209,8 @@ const Index = () => {
  <span className="text-primary">Check for free</span>. No credit card.
  </h2>
  <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
- Need more checks? Pay <strong className="text-foreground">$4.99 for 1 verification check</strong> or <strong className="text-foreground">$10/month for unlimited standard checks</strong>.
- Verifying often? Get <strong className="text-foreground">$10/month unlimited</strong> with the seller badge,
- installable web app, and verification certificates included. Cancel anytime, 30-day refund.
+ After your free check, it's <strong className="text-foreground">$4.99 for one check</strong>, or <strong className="text-foreground">$10 a month for unlimited checks</strong> with certificates included.
+ Cancel anytime, with a 30-day refund on the monthly plan.
  </p>
  <div className="flex flex-wrap items-center justify-center gap-3">
  <Link
@@ -368,7 +367,7 @@ const Index = () => {
  {
  n: '2',
  title: 'Every source searched at once',
- desc: "SafeOrStolen theft reports on every check, plus police gun theft reports from 33 states and DC, live state criminal justice records, and a national stolen-bike registry where they apply.",
+ desc: "SafeOrStolen theft reports on every check, plus police gun theft reports from 33 states and DC, live Ohio law-enforcement records, and a national stolen-bike registry where they apply.",
  },
  {
  n: '3',

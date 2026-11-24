@@ -138,7 +138,7 @@ export const HomeAIHero: React.FC = () => {
  }
  if (error) throw new Error(error.message);
  const status = verify?.finalStatus || 'unknown';
- const conf = verify?.confidence ? ` (${verify.confidence}% confidence)` : '';
+ const conf = ''; // Nov 24 2026: internal confidence scores mean nothing to a buyer, so they aren't shown.
  let result = '';
  if (status === 'stolen') result = `Reported stolen: this ${itemType.toUpperCase()} matches a theft report${conf}. Don't buy it.`;
  else if (status === 'safe') result = `No report found in the records searched for this ${itemType.toUpperCase()}${conf}.`;
