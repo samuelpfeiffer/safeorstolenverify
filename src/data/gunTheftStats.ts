@@ -56,3 +56,28 @@ export const GUN_STATES: GunStateStats[] = [
 ];
 
 export const gunStateBySlug = (slug: string) => GUN_STATES.find((s) => s.slug === slug) ?? null;
+
+// Nov 24 2026 (owner request): states with NO police reports in theft_records yet. They get an honest
+// lookup page (GunStateNoRecordsPage) that says so plainly; a check there still searches every record
+// above plus live Ohio records and SafeOrStolen's own reports. Never show counts for these states.
+export interface GunNoRecordState { slug: string; code: string; name: string }
+export const GUN_NO_RECORD_STATES: GunNoRecordState[] = [
+ { slug: 'alabama', code: 'AL', name: 'Alabama' },
+ { slug: 'alaska', code: 'AK', name: 'Alaska' },
+ { slug: 'arkansas', code: 'AR', name: 'Arkansas' },
+ { slug: 'hawaii', code: 'HI', name: 'Hawaii' },
+ { slug: 'iowa', code: 'IA', name: 'Iowa' },
+ { slug: 'kentucky', code: 'KY', name: 'Kentucky' },
+ { slug: 'maine', code: 'ME', name: 'Maine' },
+ { slug: 'minnesota', code: 'MN', name: 'Minnesota' },
+ { slug: 'mississippi', code: 'MS', name: 'Mississippi' },
+ { slug: 'montana', code: 'MT', name: 'Montana' },
+ { slug: 'new-mexico', code: 'NM', name: 'New Mexico' },
+ { slug: 'north-dakota', code: 'ND', name: 'North Dakota' },
+ { slug: 'south-dakota', code: 'SD', name: 'South Dakota' },
+ { slug: 'vermont', code: 'VT', name: 'Vermont' },
+ { slug: 'west-virginia', code: 'WV', name: 'West Virginia' },
+ { slug: 'wyoming', code: 'WY', name: 'Wyoming' },
+];
+
+export const gunNoRecordStateBySlug = (slug: string) => GUN_NO_RECORD_STATES.find((s) => s.slug === slug) ?? null;
