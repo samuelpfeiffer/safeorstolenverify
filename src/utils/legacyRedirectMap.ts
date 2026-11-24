@@ -15,23 +15,9 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/gun-serial-number-lookup-free": "/firearms-check",
   "/blog/stolen-bike-serial-number-check": "/check-bike",
   // Nov 6 2026: states without gun report data have no page; send those links to the main gun check.
-  "/gun-serial-number-lookup/alabama": "/firearms-check",
-  "/gun-serial-number-lookup/alaska": "/firearms-check",
-  "/gun-serial-number-lookup/arkansas": "/firearms-check",
-  "/gun-serial-number-lookup/hawaii": "/firearms-check",
-  "/gun-serial-number-lookup/iowa": "/firearms-check",
-  "/gun-serial-number-lookup/kentucky": "/firearms-check",
-  "/gun-serial-number-lookup/maine": "/firearms-check",
-  "/gun-serial-number-lookup/minnesota": "/firearms-check",
-  "/gun-serial-number-lookup/mississippi": "/firearms-check",
-  "/gun-serial-number-lookup/montana": "/firearms-check",
-  "/gun-serial-number-lookup/new-mexico": "/firearms-check",
-  "/gun-serial-number-lookup/north-dakota": "/firearms-check",
-  "/gun-serial-number-lookup/south-dakota": "/firearms-check",
-  "/gun-serial-number-lookup/vermont": "/firearms-check",
+  // Nov 24 2026: the 16 states without police records now have their own pages (GunStateNoRecordsPage),
+  // so their old redirects to /firearms-check were removed. A live page must not be a key here.
   "/gun-serial-number-lookup/washington-dc": "/gun-serial-number-lookup/district-of-columbia",
-  "/gun-serial-number-lookup/west-virginia": "/firearms-check",
-  "/gun-serial-number-lookup/wyoming": "/firearms-check",
   // Nov 5 2026 (Search Console "Soft 404" / "Duplicate" / 404 report): old guide and city pages now land on
   // an indexable guide instead of the chat app (which is noindex, so Google called those redirects soft 404s).
   "/pittsburgh-stolen-item-check": "/how-to-check-if-item-stolen",
