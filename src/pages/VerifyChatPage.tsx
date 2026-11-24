@@ -872,21 +872,15 @@ const VerifyChatPage: React.FC = () => {
  <div
  className={cn(
  'flex-1 flex flex-col min-w-0 relative',
+ // Nov 24 2026 (owner: Claude look and feel): on the welcome screen the greeting and the
+ // composer sit together in the middle of the page; once a chat starts, the composer docks below.
+ showWelcome && 'justify-center',
  mainView && IN_PAGE_VIEWS[mainView] && 'hidden')}
  >
- {/* Subtle ambient glow */}
- <div
- className="pointer-events-none absolute inset-0 opacity-60"
- style={{
- background:
- 'radial-gradient(60% 40% at 50% -10%, hsl(var(--primary) / 0.08), transparent 70%)',
- }}
- />
-
- <div ref={scrollRef} className="flex-1 overflow-y-auto relative">
+ <div ref={scrollRef} className={cn('relative', showWelcome ? 'shrink-0' : 'flex-1 overflow-y-auto')}>
  <div className={cn(
- "mx-auto px-4 py-8",
- showWelcome ? "max-w-5xl" : "max-w-2xl"
+ "mx-auto px-4 max-w-3xl",
+ showWelcome ? "pt-6 pb-2" : "py-8"
  )}>
  {showWelcome ? (
  <LuminalWelcome
@@ -930,7 +924,7 @@ const VerifyChatPage: React.FC = () => {
  </div>
 
  {/* Composer — Luminal style */}
- <div className="border-t border-border bg-card/40 backdrop-blur-xl shrink-0 relative">
+ <div className={cn('shrink-0 relative', !showWelcome && 'bg-background')}>
  {/* Account required before any check can run */}
  {!isAuthenticated && pendingIdentifier !== null && (
  <div className="pt-3">
@@ -944,7 +938,7 @@ const VerifyChatPage: React.FC = () => {
  />
  </div>
  )}
-<div className="max-w-2xl mx-auto px-4 py-3.5">
+<div className="max-w-3xl mx-auto px-4 pt-2 pb-4">
  {attachment && (
  <div className="mb-2 inline-flex items-center gap-2 bg-muted/60 border border-border rounded-lg px-3 py-1.5">
  <ImageIcon className="w-3.5 h-3.5 text-primary" />
@@ -961,7 +955,7 @@ const VerifyChatPage: React.FC = () => {
  </div>
  )}
 
- <div className="bg-background/80 rounded-2xl border-2 border-primary/40 focus-within:border-primary/70 focus-within:ring-2 focus-within:ring-primary/20 transition-all shadow-[0_0_40px_-10px_hsl(var(--primary)/0.4)]">
+ <div className="bg-card rounded-[1.5rem] border border-border focus-within:border-foreground/25 transition-colors shadow-[0_4px_20px_-8px_rgba(0,0,0,0.55)]">
  <Textarea
  ref={textareaRef}
  value={input}
@@ -971,9 +965,9 @@ const VerifyChatPage: React.FC = () => {
  placeholder={hint || "Enter an IMEI, VIN, serial number, plate or listing link"}
  rows={1}
  disabled={isThinking}
- className="w-full resize-none bg-transparent border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm px-4 py-3 min-h-0 max-h-40 placeholder:text-muted-foreground/70"
+ className="w-full resize-none bg-transparent border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-[15px] px-4 pt-4 pb-1 min-h-0 max-h-48 placeholder:text-muted-foreground/70"
  />
- <div className="flex items-center justify-between px-2 py-1.5 border-t border-border/80">
+ <div className="flex items-center justify-between px-2.5 pb-2.5 pt-1">
  <div className="flex items-center gap-0.5">
  <ToolButton
  icon={Paperclip}
@@ -1040,20 +1034,15 @@ const VerifyChatPage: React.FC = () => {
  <Button
  onClick={() => handleSend()}
  disabled={(!input.trim() && !attachment) || isThinking}
- size="sm"
- className="rounded-lg h-10 sm:h-9 min-w-[64px] px-3.5 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md shadow-primary/20 disabled:shadow-none"
- aria-label="Submit"
+ size="icon"
+ className="size-9 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-40"
+ aria-label={isThinking ? 'Checking' : 'Send'}
+ title={isThinking ? 'Checking…' : 'Send'}
  >
  {isThinking ? (
- <>
  <Loader2 className="w-4 h-4 animate-spin" />
- <span className="ml-1.5 text-xs">Analyzing</span>
- </>
  ) : (
- <>
- <span className="text-xs">Submit</span>
- <ArrowUp className="w-4 h-4 ml-1" />
- </>
+ <ArrowUp className="w-4 h-4" />
  )}
  </Button>
  </div>
@@ -1063,6 +1052,15 @@ const VerifyChatPage: React.FC = () => {
  <p className="text-xs text-muted-foreground text-center mt-2">
  Your first check is free. No sign-up needed.
  </p>
+ )}
+ {showWelcome && (
+ <WelcomeShortcuts
+ onPick={(text, itemType) => {
+ setHint(text);
+ typeHintRef.current = itemType;
+ textareaRef.current?.focus();
+ }}
+ />
  )}
  </div>
  </div>
@@ -1123,47 +1121,51 @@ export default VerifyChatPage;
  * Luminal welcome screen
  * ──────────────────────────────────────────────────────────────────── */
 
-const LuminalWelcome: React.FC<{ onPick: (text: string, itemType: string) => void }> = ({ onPick }) => {
+const LuminalWelcome: React.FC<{ onPick: (text: string, itemType: string) => void }> = () => {
+ // Nov 24 2026: Claude-style greeting. Shortcuts render under the composer (WelcomeShortcuts).
  return (
  <motion.div
  initial={{ opacity: 0, y: 8 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.4 }}
- className="flex flex-col items-center text-center pt-8 sm:pt-14"
+ className="flex flex-col items-center text-center"
  >
- <ShieldLogo size={48} className="mb-5" />
-
- <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+ <div className="flex items-center gap-3">
+ <ShieldLogo size={36} />
+ <h1 className="font-serif text-3xl sm:text-4xl font-normal tracking-tight text-foreground">
  Is it safe or stolen?
  </h1>
+ </div>
  <p className="text-base text-muted-foreground mt-3 max-w-md">
  Enter an IMEI, VIN, serial number, license plate or listing link. You'll see the result in a few seconds.
  </p>
+ </motion.div>
+ );
+};
 
- <div className="mt-8 flex flex-wrap justify-center gap-2">
+const WelcomeShortcuts: React.FC<{ onPick: (text: string, itemType: string) => void }> = ({ onPick }) => (
+ <div className="flex flex-col items-center text-center mt-4">
+ <div className="flex flex-wrap justify-center gap-2">
  {EXAMPLE_PROMPTS.map((p) => (
  <button
  key={p.tag}
  type="button"
  onClick={() => onPick(p.text, p.itemType)}
- className="rounded-full border border-border px-4 py-2 text-sm text-foreground/90 hover:border-primary/60 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+ className="rounded-lg border border-border bg-card/40 px-3.5 py-1.5 text-sm text-foreground/85 hover:bg-card hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
  >
  {p.label}
  </button>
  ))}
  </div>
-
  <a
  href="/app"
- className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+ className="mt-5 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
  >
- <Smartphone className="w-4 h-4" /> Get the free app
+ <Smartphone className="w-4 h-4" /> Get the free app to check items in person
  </a>
- <p className="text-xs text-muted-foreground mt-2">Check items in person, right from your phone.</p>
- <p className="text-xs text-muted-foreground mt-6">Checking a list? Paste one number per line, or tap Attach and add a .csv file.</p>
- </motion.div>
- );
-};
+ <p className="text-xs text-muted-foreground mt-2">Checking a list? Paste one number per line, or tap Attach and add a .csv file.</p>
+ </div>
+);
 
 const ActionTile: React.FC<{
  tag: string;
@@ -1292,13 +1294,12 @@ const ChatBubble: React.FC<{
  </div>
  )}
 
- <div className={cn('flex flex-col max-w-[85%] min-w-0', isUser && 'items-end')}>
+ <div className={cn('flex flex-col min-w-0', isUser ? 'items-end max-w-[85%]' : 'flex-1')}>
  <div
  className={cn(
- 'rounded-xl px-4 py-3 text-sm leading-relaxed',
  isUser
- ? 'bg-primary text-primary-foreground rounded-br-sm shadow-md shadow-primary/10'
- : 'bg-card/60 border border-border text-foreground rounded-bl-sm backdrop-blur-sm')}
+ ? 'rounded-2xl px-4 py-2.5 text-[15px] leading-relaxed bg-muted text-foreground'
+ : 'pt-1 text-foreground font-serif text-[15.5px] leading-7')}
  >
  {msg.attachment?.kind === 'image' && msg.attachment.dataUrl && (
  <img
@@ -1319,7 +1320,7 @@ const ChatBubble: React.FC<{
  </div>
  ) : (
  <div
- className="prose prose-sm prose-invert max-w-none [&_a]:text-primary [&_a]:underline [&_p]:my-1.5 [&_p:first-child]:mt-0 [&_p:last-child]:mb-0"
+ className={cn("prose prose-invert max-w-none text-[inherit] leading-[inherit] [&_a]:text-primary [&_a]:underline [&_p]:my-2 [&_p:first-child]:mt-0 [&_p:last-child]:mb-0 [&_strong]:text-foreground", isUser && "[&_p]:my-0")}
  dangerouslySetInnerHTML={{ __html: renderInline(msg.content) }}
  />
  )}
