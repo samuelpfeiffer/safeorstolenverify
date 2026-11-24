@@ -42,6 +42,7 @@ import { useVerifyGate, getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { usePendingVerification } from '@/hooks/usePendingVerification';
 import { AccountRequiredPrompt } from '@/components/verify-chat/AccountRequiredPrompt';
 import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
+import { SaveHistoryPrompt } from '@/components/verify-chat/SaveHistoryPrompt';
 import { BulkChatRun, parseRows, remainingRows, MAX_ROWS, type BulkRow } from '@/components/premium/BulkVerification';
 import { ResultsPane, type ChatVerifyResult } from '@/components/verify-chat/ResultsPane';
 import { ConversationSidebar } from '@/components/verify-chat/ConversationSidebar';
@@ -464,6 +465,7 @@ const VerifyChatPage: React.FC = () => {
  content: headline,
  result,
  suggestions,
+ savePrompt: !user,
  });
  publishResult(result);
  } catch (err: any) {
@@ -1355,6 +1357,8 @@ const ChatBubble: React.FC<{
  {!isUser && !msg.loading && msg.payOffer && (
  <LimitPayOffer identifier={msg.payOffer.identifier} itemType={msg.payOffer.itemType} />
  )}
+
+ {!isUser && !msg.loading && msg.savePrompt && <SaveHistoryPrompt />}
 
  {!isUser && msg.bulk && (
  <BulkChatRun
