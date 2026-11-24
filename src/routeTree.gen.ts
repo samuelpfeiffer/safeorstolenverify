@@ -15,6 +15,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
 import { Route as AiChatRouteImport } from './routes/ai-chat'
 import { Route as AiVerifyRouteImport } from './routes/ai-verify'
+import { Route as AirpodsSerialNumberCheckRouteImport } from './routes/airpods-serial-number-check'
 import { Route as AlabamaLicensePlateLookupRouteImport } from './routes/alabama-license-plate-lookup'
 import { Route as AlabamaVinLookupRouteImport } from './routes/alabama-vin-lookup'
 import { Route as AlaskaLicensePlateLookupRouteImport } from './routes/alaska-license-plate-lookup'
@@ -173,6 +174,7 @@ import { Route as MarylandVinLookupRouteImport } from './routes/maryland-vin-loo
 import { Route as MassachusettsLicensePlateLookupRouteImport } from './routes/massachusetts-license-plate-lookup'
 import { Route as MassachusettsVinLookupRouteImport } from './routes/massachusetts-vin-lookup'
 import { Route as MercariStolenCheckRouteImport } from './routes/mercari-stolen-check'
+import { Route as MetaQuestSerialNumberCheckRouteImport } from './routes/meta-quest-serial-number-check'
 import { Route as MethodologyRouteImport } from './routes/methodology'
 import { Route as MichiganLicensePlateLookupRouteImport } from './routes/michigan-license-plate-lookup'
 import { Route as MichiganVinLookupRouteImport } from './routes/michigan-vin-lookup'
@@ -205,6 +207,7 @@ import { Route as NewYorkLicensePlateLookupRouteImport } from './routes/new-york
 import { Route as NewYorkVinLookupRouteImport } from './routes/new-york-vin-lookup'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as NicbAlternativeRouteImport } from './routes/nicb-alternative'
+import { Route as NintendoSwitchSerialNumberCheckRouteImport } from './routes/nintendo-switch-serial-number-check'
 import { Route as NorthCarolinaLicensePlateLookupRouteImport } from './routes/north-carolina-license-plate-lookup'
 import { Route as NorthCarolinaVinLookupRouteImport } from './routes/north-carolina-vin-lookup'
 import { Route as NorthDakotaLicensePlateLookupRouteImport } from './routes/north-dakota-license-plate-lookup'
@@ -437,6 +440,12 @@ const AiVerifyRoute = AiVerifyRouteImport.update({
   path: '/ai-verify',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AirpodsSerialNumberCheckRoute =
+  AirpodsSerialNumberCheckRouteImport.update({
+    id: '/airpods-serial-number-check',
+    path: '/airpods-serial-number-check',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AlabamaLicensePlateLookupRoute =
   AlabamaLicensePlateLookupRouteImport.update({
     id: '/alabama-license-plate-lookup',
@@ -1262,6 +1271,12 @@ const MercariStolenCheckRoute = MercariStolenCheckRouteImport.update({
   path: '/mercari-stolen-check',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MetaQuestSerialNumberCheckRoute =
+  MetaQuestSerialNumberCheckRouteImport.update({
+    id: '/meta-quest-serial-number-check',
+    path: '/meta-quest-serial-number-check',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MethodologyRoute = MethodologyRouteImport.update({
   id: '/methodology',
   path: '/methodology',
@@ -1433,6 +1448,12 @@ const NicbAlternativeRoute = NicbAlternativeRouteImport.update({
   path: '/nicb-alternative',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NintendoSwitchSerialNumberCheckRoute =
+  NintendoSwitchSerialNumberCheckRouteImport.update({
+    id: '/nintendo-switch-serial-number-check',
+    path: '/nintendo-switch-serial-number-check',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const NorthCarolinaLicensePlateLookupRoute =
   NorthCarolinaLicensePlateLookupRouteImport.update({
     id: '/north-carolina-license-plate-lookup',
@@ -2523,6 +2544,7 @@ export interface FileRoutesByFullPath {
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/ai-chat': typeof AiChatRoute
   '/ai-verify': typeof AiVerifyRoute
+  '/airpods-serial-number-check': typeof AirpodsSerialNumberCheckRoute
   '/alabama-license-plate-lookup': typeof AlabamaLicensePlateLookupRoute
   '/alabama-vin-lookup': typeof AlabamaVinLookupRoute
   '/alaska-license-plate-lookup': typeof AlaskaLicensePlateLookupRoute
@@ -2681,6 +2703,7 @@ export interface FileRoutesByFullPath {
   '/massachusetts-license-plate-lookup': typeof MassachusettsLicensePlateLookupRoute
   '/massachusetts-vin-lookup': typeof MassachusettsVinLookupRoute
   '/mercari-stolen-check': typeof MercariStolenCheckRoute
+  '/meta-quest-serial-number-check': typeof MetaQuestSerialNumberCheckRoute
   '/methodology': typeof MethodologyRoute
   '/michigan-license-plate-lookup': typeof MichiganLicensePlateLookupRoute
   '/michigan-vin-lookup': typeof MichiganVinLookupRoute
@@ -2713,6 +2736,7 @@ export interface FileRoutesByFullPath {
   '/new-york-vin-lookup': typeof NewYorkVinLookupRoute
   '/news': typeof NewsRoute
   '/nicb-alternative': typeof NicbAlternativeRoute
+  '/nintendo-switch-serial-number-check': typeof NintendoSwitchSerialNumberCheckRoute
   '/north-carolina-license-plate-lookup': typeof NorthCarolinaLicensePlateLookupRoute
   '/north-carolina-vin-lookup': typeof NorthCarolinaVinLookupRoute
   '/north-dakota-license-plate-lookup': typeof NorthDakotaLicensePlateLookupRoute
@@ -2922,6 +2946,7 @@ export interface FileRoutesByTo {
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/ai-chat': typeof AiChatRoute
   '/ai-verify': typeof AiVerifyRoute
+  '/airpods-serial-number-check': typeof AirpodsSerialNumberCheckRoute
   '/alabama-license-plate-lookup': typeof AlabamaLicensePlateLookupRoute
   '/alabama-vin-lookup': typeof AlabamaVinLookupRoute
   '/alaska-license-plate-lookup': typeof AlaskaLicensePlateLookupRoute
@@ -3078,6 +3103,7 @@ export interface FileRoutesByTo {
   '/massachusetts-license-plate-lookup': typeof MassachusettsLicensePlateLookupRoute
   '/massachusetts-vin-lookup': typeof MassachusettsVinLookupRoute
   '/mercari-stolen-check': typeof MercariStolenCheckRoute
+  '/meta-quest-serial-number-check': typeof MetaQuestSerialNumberCheckRoute
   '/methodology': typeof MethodologyRoute
   '/michigan-license-plate-lookup': typeof MichiganLicensePlateLookupRoute
   '/michigan-vin-lookup': typeof MichiganVinLookupRoute
@@ -3110,6 +3136,7 @@ export interface FileRoutesByTo {
   '/new-york-vin-lookup': typeof NewYorkVinLookupRoute
   '/news': typeof NewsRoute
   '/nicb-alternative': typeof NicbAlternativeRoute
+  '/nintendo-switch-serial-number-check': typeof NintendoSwitchSerialNumberCheckRoute
   '/north-carolina-license-plate-lookup': typeof NorthCarolinaLicensePlateLookupRoute
   '/north-carolina-vin-lookup': typeof NorthCarolinaVinLookupRoute
   '/north-dakota-license-plate-lookup': typeof NorthDakotaLicensePlateLookupRoute
@@ -3319,6 +3346,7 @@ export interface FileRoutesById {
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/ai-chat': typeof AiChatRoute
   '/ai-verify': typeof AiVerifyRoute
+  '/airpods-serial-number-check': typeof AirpodsSerialNumberCheckRoute
   '/alabama-license-plate-lookup': typeof AlabamaLicensePlateLookupRoute
   '/alabama-vin-lookup': typeof AlabamaVinLookupRoute
   '/alaska-license-plate-lookup': typeof AlaskaLicensePlateLookupRoute
@@ -3477,6 +3505,7 @@ export interface FileRoutesById {
   '/massachusetts-license-plate-lookup': typeof MassachusettsLicensePlateLookupRoute
   '/massachusetts-vin-lookup': typeof MassachusettsVinLookupRoute
   '/mercari-stolen-check': typeof MercariStolenCheckRoute
+  '/meta-quest-serial-number-check': typeof MetaQuestSerialNumberCheckRoute
   '/methodology': typeof MethodologyRoute
   '/michigan-license-plate-lookup': typeof MichiganLicensePlateLookupRoute
   '/michigan-vin-lookup': typeof MichiganVinLookupRoute
@@ -3509,6 +3538,7 @@ export interface FileRoutesById {
   '/new-york-vin-lookup': typeof NewYorkVinLookupRoute
   '/news': typeof NewsRoute
   '/nicb-alternative': typeof NicbAlternativeRoute
+  '/nintendo-switch-serial-number-check': typeof NintendoSwitchSerialNumberCheckRoute
   '/north-carolina-license-plate-lookup': typeof NorthCarolinaLicensePlateLookupRoute
   '/north-carolina-vin-lookup': typeof NorthCarolinaVinLookupRoute
   '/north-dakota-license-plate-lookup': typeof NorthDakotaLicensePlateLookupRoute
@@ -3720,6 +3750,7 @@ export interface FileRouteTypes {
     | '/affiliate-disclosure'
     | '/ai-chat'
     | '/ai-verify'
+    | '/airpods-serial-number-check'
     | '/alabama-license-plate-lookup'
     | '/alabama-vin-lookup'
     | '/alaska-license-plate-lookup'
@@ -3878,6 +3909,7 @@ export interface FileRouteTypes {
     | '/massachusetts-license-plate-lookup'
     | '/massachusetts-vin-lookup'
     | '/mercari-stolen-check'
+    | '/meta-quest-serial-number-check'
     | '/methodology'
     | '/michigan-license-plate-lookup'
     | '/michigan-vin-lookup'
@@ -3910,6 +3942,7 @@ export interface FileRouteTypes {
     | '/new-york-vin-lookup'
     | '/news'
     | '/nicb-alternative'
+    | '/nintendo-switch-serial-number-check'
     | '/north-carolina-license-plate-lookup'
     | '/north-carolina-vin-lookup'
     | '/north-dakota-license-plate-lookup'
@@ -4119,6 +4152,7 @@ export interface FileRouteTypes {
     | '/affiliate-disclosure'
     | '/ai-chat'
     | '/ai-verify'
+    | '/airpods-serial-number-check'
     | '/alabama-license-plate-lookup'
     | '/alabama-vin-lookup'
     | '/alaska-license-plate-lookup'
@@ -4275,6 +4309,7 @@ export interface FileRouteTypes {
     | '/massachusetts-license-plate-lookup'
     | '/massachusetts-vin-lookup'
     | '/mercari-stolen-check'
+    | '/meta-quest-serial-number-check'
     | '/methodology'
     | '/michigan-license-plate-lookup'
     | '/michigan-vin-lookup'
@@ -4307,6 +4342,7 @@ export interface FileRouteTypes {
     | '/new-york-vin-lookup'
     | '/news'
     | '/nicb-alternative'
+    | '/nintendo-switch-serial-number-check'
     | '/north-carolina-license-plate-lookup'
     | '/north-carolina-vin-lookup'
     | '/north-dakota-license-plate-lookup'
@@ -4515,6 +4551,7 @@ export interface FileRouteTypes {
     | '/affiliate-disclosure'
     | '/ai-chat'
     | '/ai-verify'
+    | '/airpods-serial-number-check'
     | '/alabama-license-plate-lookup'
     | '/alabama-vin-lookup'
     | '/alaska-license-plate-lookup'
@@ -4673,6 +4710,7 @@ export interface FileRouteTypes {
     | '/massachusetts-license-plate-lookup'
     | '/massachusetts-vin-lookup'
     | '/mercari-stolen-check'
+    | '/meta-quest-serial-number-check'
     | '/methodology'
     | '/michigan-license-plate-lookup'
     | '/michigan-vin-lookup'
@@ -4705,6 +4743,7 @@ export interface FileRouteTypes {
     | '/new-york-vin-lookup'
     | '/news'
     | '/nicb-alternative'
+    | '/nintendo-switch-serial-number-check'
     | '/north-carolina-license-plate-lookup'
     | '/north-carolina-vin-lookup'
     | '/north-dakota-license-plate-lookup'
@@ -4915,6 +4954,7 @@ export interface RootRouteChildren {
   AffiliateDisclosureRoute: typeof AffiliateDisclosureRoute
   AiChatRoute: typeof AiChatRoute
   AiVerifyRoute: typeof AiVerifyRoute
+  AirpodsSerialNumberCheckRoute: typeof AirpodsSerialNumberCheckRoute
   AlabamaLicensePlateLookupRoute: typeof AlabamaLicensePlateLookupRoute
   AlabamaVinLookupRoute: typeof AlabamaVinLookupRoute
   AlaskaLicensePlateLookupRoute: typeof AlaskaLicensePlateLookupRoute
@@ -5073,6 +5113,7 @@ export interface RootRouteChildren {
   MassachusettsLicensePlateLookupRoute: typeof MassachusettsLicensePlateLookupRoute
   MassachusettsVinLookupRoute: typeof MassachusettsVinLookupRoute
   MercariStolenCheckRoute: typeof MercariStolenCheckRoute
+  MetaQuestSerialNumberCheckRoute: typeof MetaQuestSerialNumberCheckRoute
   MethodologyRoute: typeof MethodologyRoute
   MichiganLicensePlateLookupRoute: typeof MichiganLicensePlateLookupRoute
   MichiganVinLookupRoute: typeof MichiganVinLookupRoute
@@ -5105,6 +5146,7 @@ export interface RootRouteChildren {
   NewYorkVinLookupRoute: typeof NewYorkVinLookupRoute
   NewsRoute: typeof NewsRoute
   NicbAlternativeRoute: typeof NicbAlternativeRoute
+  NintendoSwitchSerialNumberCheckRoute: typeof NintendoSwitchSerialNumberCheckRoute
   NorthCarolinaLicensePlateLookupRoute: typeof NorthCarolinaLicensePlateLookupRoute
   NorthCarolinaVinLookupRoute: typeof NorthCarolinaVinLookupRoute
   NorthDakotaLicensePlateLookupRoute: typeof NorthDakotaLicensePlateLookupRoute
@@ -5296,6 +5338,13 @@ declare module '@tanstack/react-router' {
       path: '/ai-verify'
       fullPath: '/ai-verify'
       preLoaderRoute: typeof AiVerifyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/airpods-serial-number-check': {
+      id: '/airpods-serial-number-check'
+      path: '/airpods-serial-number-check'
+      fullPath: '/airpods-serial-number-check'
+      preLoaderRoute: typeof AirpodsSerialNumberCheckRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/alabama-license-plate-lookup': {
@@ -6404,6 +6453,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MercariStolenCheckRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/meta-quest-serial-number-check': {
+      id: '/meta-quest-serial-number-check'
+      path: '/meta-quest-serial-number-check'
+      fullPath: '/meta-quest-serial-number-check'
+      preLoaderRoute: typeof MetaQuestSerialNumberCheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/methodology': {
       id: '/methodology'
       path: '/methodology'
@@ -6626,6 +6682,13 @@ declare module '@tanstack/react-router' {
       path: '/nicb-alternative'
       fullPath: '/nicb-alternative'
       preLoaderRoute: typeof NicbAlternativeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nintendo-switch-serial-number-check': {
+      id: '/nintendo-switch-serial-number-check'
+      path: '/nintendo-switch-serial-number-check'
+      fullPath: '/nintendo-switch-serial-number-check'
+      preLoaderRoute: typeof NintendoSwitchSerialNumberCheckRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/north-carolina-license-plate-lookup': {
@@ -8186,6 +8249,7 @@ const rootRouteChildren: RootRouteChildren = {
   AffiliateDisclosureRoute: AffiliateDisclosureRoute,
   AiChatRoute: AiChatRoute,
   AiVerifyRoute: AiVerifyRoute,
+  AirpodsSerialNumberCheckRoute: AirpodsSerialNumberCheckRoute,
   AlabamaLicensePlateLookupRoute: AlabamaLicensePlateLookupRoute,
   AlabamaVinLookupRoute: AlabamaVinLookupRoute,
   AlaskaLicensePlateLookupRoute: AlaskaLicensePlateLookupRoute,
@@ -8345,6 +8409,7 @@ const rootRouteChildren: RootRouteChildren = {
   MassachusettsLicensePlateLookupRoute: MassachusettsLicensePlateLookupRoute,
   MassachusettsVinLookupRoute: MassachusettsVinLookupRoute,
   MercariStolenCheckRoute: MercariStolenCheckRoute,
+  MetaQuestSerialNumberCheckRoute: MetaQuestSerialNumberCheckRoute,
   MethodologyRoute: MethodologyRoute,
   MichiganLicensePlateLookupRoute: MichiganLicensePlateLookupRoute,
   MichiganVinLookupRoute: MichiganVinLookupRoute,
@@ -8377,6 +8442,7 @@ const rootRouteChildren: RootRouteChildren = {
   NewYorkVinLookupRoute: NewYorkVinLookupRoute,
   NewsRoute: NewsRoute,
   NicbAlternativeRoute: NicbAlternativeRoute,
+  NintendoSwitchSerialNumberCheckRoute: NintendoSwitchSerialNumberCheckRoute,
   NorthCarolinaLicensePlateLookupRoute: NorthCarolinaLicensePlateLookupRoute,
   NorthCarolinaVinLookupRoute: NorthCarolinaVinLookupRoute,
   NorthDakotaLicensePlateLookupRoute: NorthDakotaLicensePlateLookupRoute,
