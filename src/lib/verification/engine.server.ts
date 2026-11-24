@@ -294,7 +294,7 @@ async function runInternalRegistry(
       provider: 'SafeOrStolen Database',
       status: 'unknown',
       confidence: 0,
-      message: 'Identifier format not supported for registry lookup',
+      message: "This number can't be searched in SafeOrStolen's theft reports",
       responseTime: Date.now() - startedAt,
     };
   }
@@ -352,7 +352,7 @@ async function runInternalRegistry(
         provider: 'SafeOrStolen Database',
         status: 'unknown',
         confidence: 0,
-        message: 'Identifier too short to confirm a registry match',
+        message: "Too short to confirm a match in SafeOrStolen's theft reports",
         responseTime: Date.now() - startedAt,
       };
     }

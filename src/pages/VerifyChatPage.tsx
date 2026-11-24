@@ -455,7 +455,7 @@ const VerifyChatPage: React.FC = () => {
  result.status === 'stolen'
  ? ['What should I do now?', 'How do I report this seller?', 'Can I get my money back?']
  : result.status === 'safe'
- ? ['What does this confidence score mean?', 'Tips for buying safely', 'Generate a share link']
+ ? ['What should I check before I pay?', 'Tips for buying safely', 'Generate a share link']
  : result.status === 'lost'
  ? ['How do I contact the owner?', 'Is it legal to buy this?']
  : ['What does this result mean?', 'Tips for buying safely', 'What else can I check?'];
@@ -501,14 +501,14 @@ const VerifyChatPage: React.FC = () => {
  if (!ocr?.found || !ocr?.identifiers?.length) {
  updateMessage(assistantId, {
  loading: false,
- content: `I couldn't spot an identifier in that image. ${ocr?.tip || 'Try a clearer, well-lit photo of the IMEI/VIN/serial label.'}`,
+ content: `I couldn't find a serial number, IMEI or VIN in that photo. ${ocr?.tip || 'Try a clearer, well-lit photo of the label.'}`,
  });
  return;
  }
 
  const first = ocr.identifiers[0];
  updateMessage(assistantId, {
- content: `📸 Found a **${first.type.toUpperCase()}** in your photo: \`${first.extractedValue}\` (${first.confidence}% confidence). Checking now…`,
+ content: `📸 Found a **${first.type.toUpperCase()}** in your photo: \`${first.extractedValue}\`. Checking it now…`,
  });
  await runVerification(assistantId, first.extractedValue);
  } catch (err: any) {
@@ -614,7 +614,7 @@ const VerifyChatPage: React.FC = () => {
  updateMessage(assistantId, {
  loading: false,
  content:
- "Got it — happy to verify that. **Paste the identifier** and I'll check multiple sources:\n\n• **Phone** → 15-digit IMEI (dial `*#06#`)\n• **Car / motorcycle** → 17-character VIN (dashboard or driver-door sticker)\n• **Bike / electronics / firearm** → serial number on the frame or label\n• **License plate** → plate + state\n• **Marketplace listing** → paste the URL (eBay, FB Marketplace, Craigslist, OfferUp)",
+ "Sure. **Send me the item's number** and I'll check it:\n\n• **Phone** → 15-digit IMEI (dial `*#06#`)\n• **Car / motorcycle** → 17-character VIN (dashboard or driver-door sticker)\n• **Bike / electronics / firearm** → serial number on the frame or label\n• **License plate** → plate + state\n• **Marketplace listing** → paste the URL (eBay, FB Marketplace, Craigslist, OfferUp)",
  suggestions: [
  'How do I find my IMEI?',
  'Where is the VIN on a car?',
@@ -748,7 +748,7 @@ const VerifyChatPage: React.FC = () => {
  </div>
  <div className="min-w-0">
  <p className="text-sm font-semibold leading-tight truncate tracking-tight">
- {active?.title || 'Verification stream'}
+ {active?.title || 'New check'}
  </p>
 
  </div>
@@ -1316,7 +1316,7 @@ const ChatBubble: React.FC<{
  <span className="size-1.5 rounded-full bg-primary/60 animate-bounce [animation-delay:-0.15s]" />
  <span className="size-1.5 rounded-full bg-primary/60 animate-bounce" />
  </span>
- <span className="text-xs font-mono tracking-wide">ANALYZING</span>
+ <span className="text-xs">Checking…</span>
  </div>
  ) : (
  <div

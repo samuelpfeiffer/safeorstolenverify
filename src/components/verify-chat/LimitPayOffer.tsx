@@ -54,7 +54,7 @@ export function LimitPayOffer({ identifier, itemType }: { identifier: string; it
     <div className="mt-3 rounded-xl border border-border bg-card p-4">
       <p className="font-semibold">Your free check is used</p>
       <p className="text-sm text-muted-foreground mt-1">
-        One chat for every item. Checks work across categories, including firearms. No category unlock fees.
+        Every item costs the same to check, guns included.
       </p>
 
       <div className="mt-4 space-y-2" role="list">
