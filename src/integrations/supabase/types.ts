@@ -2077,26 +2077,6 @@ export type Database = {
     }
     Functions: {
       admin_growth_summary: { Args: { p_days?: number }; Returns: Json }
-      search_risk_hotlist: {
-        Args: { p_min_connections?: number }
-        Returns: {
-          distinct_accounts: number
-          distinct_connections: number
-          identifier_hash: string
-          item_type: string
-          last_seen: string
-          total_checks: number
-        }[]
-      }
-      search_risk_signal: {
-        Args: { p_days?: number; p_identifier_hash: string }
-        Returns: {
-          distinct_accounts: number
-          distinct_connections: number
-          first_seen: string
-          total_checks: number
-        }[]
-      }
       check_auth_rate_limit: { Args: never; Returns: boolean }
       check_enhanced_rate_limit: {
         Args: {
@@ -2144,6 +2124,7 @@ export type Database = {
         }
         Returns: string
       }
+      flathead_row_cells: { Args: { tr: string }; Returns: string[] }
       generate_api_key: { Args: never; Returns: string }
       generate_proof_record_id: { Args: never; Returns: string }
       generate_unique_clean_slug: {
@@ -2235,6 +2216,7 @@ export type Database = {
       public_checks_run_count: { Args: never; Returns: number }
       public_stolen_property_stats: { Args: never; Returns: Json }
       refresh_ak_stolen_vehicles: { Args: never; Returns: string }
+      refresh_flathead_stolen: { Args: never; Returns: string }
       reset_monthly_verifications: { Args: never; Returns: undefined }
       retrieve_pending_verification: {
         Args: { p_session_id: string }
@@ -2248,6 +2230,26 @@ export type Database = {
           p_user_intent?: string
         }
         Returns: Json
+      }
+      search_risk_hotlist: {
+        Args: { p_min_connections?: number }
+        Returns: {
+          distinct_accounts: number
+          distinct_connections: number
+          identifier_hash: string
+          item_type: string
+          last_seen: string
+          total_checks: number
+        }[]
+      }
+      search_risk_signal: {
+        Args: { p_days?: number; p_identifier_hash: string }
+        Returns: {
+          distinct_accounts: number
+          distinct_connections: number
+          first_seen: string
+          total_checks: number
+        }[]
       }
       subscribe_to_newsletter: { Args: { user_email: string }; Returns: Json }
       subscribe_to_newsletter_secure: {
