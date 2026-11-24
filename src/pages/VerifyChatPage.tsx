@@ -135,7 +135,7 @@ const VerifyChatPage: React.FC = () => {
  const isAuthenticated = !!user;
  const messages = active?.messages || [];
  const sessionResults = active?.results || [];
- const showWelcome = messages.length <= 1 && !isThinking;
+ const showWelcome = !messages.some((m) => m.role === 'user') && !isThinking;
 
  // ─── EFFECTS ───────────────────────────────────────────────────────
  useEffect(() => {
@@ -893,7 +893,7 @@ const VerifyChatPage: React.FC = () => {
  ) : (
  <div className="space-y-6">
  <AnimatePresence initial={false}>
- {messages.map((msg, idx) => (
+ {messages.map((msg, idx) => msg.id === 'welcome' ? null : (
  <ChatBubble
  key={msg.id}
  msg={msg}

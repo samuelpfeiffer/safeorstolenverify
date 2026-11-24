@@ -34,17 +34,10 @@ export type ChatThread = {
 const STORAGE_KEY = 'sos_chat_threads_v1';
 const MAX_THREADS = 30;
 
-const WELCOME: ChatMessage = {
- id: 'welcome',
- role: 'assistant',
- content:
- "Hi 👋 I'm the **SafeOrStolen AI**. Paste any **IMEI**, **VIN**, **serial number**, **license plate**, or **marketplace URL**, or upload a photo of the item.\n\nI check SafeOrStolen's own reports and the right theft records for the item: police stolen-gun and stolen-vehicle records and a national stolen-bicycle registry. For phones, I confirm the IMEI and the make and model. You'll get a downloadable report on the right.",
- suggestions: [
- 'How do I find my phone IMEI?',
- 'Where is the VIN on a car?',
- 'Analyze a Facebook Marketplace listing',
- ],
-};
+// Nov 24 2026 (owner): no canned assistant message at the top of a chat (like Claude). The
+// welcome screen in VerifyChatPage greets the user instead. Old saved chats may still hold a
+// message with id 'welcome'; VerifyChatPage hides it.
+
 
 export function newThread(): ChatThread {
  const id = `t_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
@@ -53,7 +46,7 @@ export function newThread(): ChatThread {
  title: 'New verification',
  createdAt: Date.now(),
  updatedAt: Date.now(),
- messages: [WELCOME],
+ messages: [],
  results: [],
  };
 }
