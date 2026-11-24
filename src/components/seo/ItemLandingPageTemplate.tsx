@@ -1,6 +1,6 @@
 import { Link, useLocation } from '@/lib/router-compat';
 import DOMPurify from 'dompurify';
-import { Shield, Search, CheckCircle, Clock, Award } from 'lucide-react';
+import { Search, CheckCircle } from 'lucide-react';
 import { FounderNote, FOUNDER_PERSON_SCHEMA } from '@/components/seo/FounderNote';
 import { categoryForItem, photoForCategory, shareImageFor } from '@/lib/shareImages';
 
@@ -22,10 +22,10 @@ import {
  AccordionTrigger,
 } from "@/components/ui/accordion";
 import { PageSEO } from '@/components/seo/PageSEO';
-import { DataPartnerBadges } from '@/components/trust/DataPartnerBadges';
-import { AuthoritySignals } from '@/components/trust/AuthoritySignals';
-import { SitewideCredibilityBar } from '@/components/trust/SitewideCredibilityBar';
 import { InlineSerialCheck } from '@/components/seo/InlineSerialCheck';
+
+// Nov 24 2026: "an Xbox", "an iPhone", "a PlayStation 5" in headings.
+const withArticle = (word: string) => `${/^(?:[aeiou]|x(?![aeiou]))/i.test(word) ? 'an' : 'a'} ${word}`;
 
 /** Extra hand-written sections a page can add below the quick answer. */
 export interface LandingSection {
@@ -199,7 +199,7 @@ export const ItemLandingPageTemplate = ({
  ))}
  
  <img src={photo.jpg} alt={photo.alt} width={photo.width} height={photo.height} />
- <h2>What a {itemType} check looks for</h2>
+ <h2>What {withArticle(itemType)} check looks for</h2>
  <p>{content.whatIs}</p>
  
  <h2>How to Check if {itemType} is Stolen</h2>
@@ -262,29 +262,10 @@ export const ItemLandingPageTemplate = ({
  </p>
  </div>
 
- {/* Trust Indicators */}
- <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
- <div className="flex flex-col items-center p-4 bg-card rounded-lg">
- <Shield className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">Secure</span>
- </div>
- <div className="flex flex-col items-center p-4 bg-card rounded-lg">
- <Clock className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">Results in seconds</span>
- </div>
- <div className="flex flex-col items-center p-4 bg-card rounded-lg">
- <CheckCircle className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">Sources listed</span>
- </div>
- <div className="flex flex-col items-center p-4 bg-card rounded-lg">
- <Award className="w-8 h-8 text-primary mb-2" />
- <span className="text-sm font-semibold">Free web app</span>
- </div>
- </div>
+ 
  </div>
  </section>
 
- <SitewideCredibilityBar />
 
  {quickAnswer && (
  <section className="py-10 px-4">
@@ -353,12 +334,12 @@ export const ItemLandingPageTemplate = ({
  </picture>
  <figcaption className="text-sm text-muted-foreground mt-2">{itemType} check on SafeOrStolen: first check free, results in seconds.</figcaption>
  </figure>
- <h2 className="text-3xl font-bold mb-6">What a {itemType} check looks for</h2>
+ <h2 className="text-3xl font-bold mb-6">What {withArticle(itemType)} check looks for</h2>
  <p 
  className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:hover:text-primary/80 mb-8"
   dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.whatIs) }}
   />
- {searchType === 'firearm' ? <p className="text-sm text-muted-foreground">Yes, anyone can check a gun here. Each result lists every source searched: SafeOrStolen's own theft reports, more than 220,000 police gun theft and loss reports from 33 states and DC, and live Ohio law-enforcement records. See the <Link to="/firearms-check" className="text-primary hover:underline">free gun serial number lookup</Link>.</p> : <DataPartnerBadges variant="compact" />}
+ {searchType === 'firearm' ? <p className="text-sm text-muted-foreground">Yes, anyone can check a gun here. Each result lists every source searched: SafeOrStolen's own theft reports, more than 220,000 police gun theft and loss reports from 33 states and DC, and live Ohio law-enforcement records. See the <Link to="/firearms-check" className="text-primary hover:underline">free gun serial number lookup</Link>.</p> : <p className="text-sm text-muted-foreground">Every check searches SafeOrStolen's own theft reports and lists each source in the result. Gun, bike and vehicle checks also search police and registry records for those items.</p>}
  </div>
  </section>
 
@@ -452,7 +433,6 @@ export const ItemLandingPageTemplate = ({
  </div>
  </section>
 
- <AuthoritySignals variant="banner" className="mb-0" />
 
  {/* CTA Section */}
  <section className="py-16 px-4 bg-gradient-to-r from-primary/10 via-destructive/10 to-primary/10">
@@ -464,7 +444,7 @@ export const ItemLandingPageTemplate = ({
  <div className="flex gap-4 justify-center flex-wrap">
  <Link to="/verify">
  <Button size="lg" className="gap-2">
- Verify Now — Free <Search className="w-4 h-4" />
+ Run a free check <Search className="w-4 h-4" />
  </Button>
  </Link>
  <Link to="/pricing">

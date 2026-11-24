@@ -88,10 +88,10 @@ const VERIFY_CARDS = [
 ];
 
 const FOR_SELLERS_FEATURES = [
-  { icon: '📄', title: 'Verification Record', desc: 'Generate a shareable Proof of Clean Purchase record showing what was checked and when' },
- { icon: '🔗', title: 'Shareable Link', desc: 'Send buyers a direct link to your verified result — no login required to view' },
- { icon: '⚡', title: 'Results in Seconds', desc: 'Check before you list, so a buyer never finds the problem first' },
-  { icon: '🛡️', title: 'Clear Context', desc: 'Give buyers a dated record they can review alongside the identifier and your ownership documents' },
+  { icon: '📄', title: 'A dated record', desc: 'Shows what you checked and the date you checked it' },
+ { icon: '🔗', title: 'A link you can share', desc: 'Buyers open it without making an account' },
+ { icon: '⚡', title: 'Done in seconds', desc: 'Check before you list, so you find a problem before a buyer does' },
+  { icon: '🛡️', title: 'Proof you checked', desc: 'Buyers can look at it next to the serial number and your receipt' },
 ];
 
 
@@ -181,13 +181,12 @@ const Index = () => {
 
  {/* ── STATS BAR ───────────────────────────────────── */}
  <div className="bg-card border-y border-border">
- <div className={`max-w-5xl mx-auto grid grid-cols-2 ${checksRun ? 'md:grid-cols-5' : 'md:grid-cols-4'} divide-x divide-border`}>
+ <div className={`max-w-5xl mx-auto grid grid-cols-2 ${checksRun ? 'md:grid-cols-4' : 'md:grid-cols-3'} divide-x divide-border`}>
  {[
   ...(checksRun ? [{ v: checksRun.toLocaleString('en-US'), l: 'Checks run so far' }] : []),
   { v: '220,000+', l: 'Police gun theft reports' },
-  { v: '6', l: 'Kinds of items' },
-  { v: 'Listed', l: 'Every source searched' },
- { v: '1', l: 'Free Check to Start' },
+  { v: '33 states + DC', l: 'Covered by those reports' },
+  { v: 'Free', l: 'Your first check, no card' },
  ].map((s) => (
  <div key={s.l} className="text-center py-5 px-4">
  <div className="text-2xl font-black text-primary">{s.v}</div>
@@ -268,7 +267,7 @@ const Index = () => {
  </h3>
  <p className="text-muted-foreground text-xs mt-1 leading-relaxed">{card.subtitle}</p>
  <div className="mt-3 flex items-center text-primary text-xs font-semibold">
- Verify now
+ Check now
  <span className="ml-1 group-hover:translate-x-1 transition-transform inline-block">→</span>
  </div>
  </div>
