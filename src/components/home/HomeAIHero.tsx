@@ -224,7 +224,7 @@ export const HomeAIHero: React.FC = () => {
  <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-4">
  <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-3 py-1 text-primary text-xs sm:text-sm">
  <Shield className="w-3.5 h-3.5" />
- Private citizens can check stolen reports now
+ Anyone can check if an item was reported stolen
  </div>
  <div className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs sm:text-sm font-semibold text-primary">
  1 free check · No account
@@ -267,7 +267,7 @@ export const HomeAIHero: React.FC = () => {
  <div className="leading-tight">
  <div className="text-sm font-bold text-foreground">SafeOrStolen AI</div>
  <div className="text-[11px] text-emerald-400 flex items-center gap-1">
- <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Online · Ready to verify
+ <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Paste a number to start
  </div>
  </div>
  </div>
@@ -396,7 +396,7 @@ export const HomeAIHero: React.FC = () => {
 
  <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-muted-foreground mt-4">
  <span className="flex items-center gap-1"><span className="text-accent">●</span> No credit card</span>
- <span className="flex items-center gap-1"><span className="text-accent">●</span> Then $4.99 for 2 or $10/mo unlimited</span>
+ <span className="flex items-center gap-1"><span className="text-accent">●</span> Then $4.99 per check or $10/mo unlimited</span>
  <span className="flex items-center gap-1"><span className="text-accent">●</span> 30-day refund</span>
  </div>
  </div>
