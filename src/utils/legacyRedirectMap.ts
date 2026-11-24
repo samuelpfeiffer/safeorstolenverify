@@ -836,7 +836,8 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/check-firearm-serial": "/firearms-check",
   "/firearms-serial-number-check": "/firearms-check",
   "/gun-serial-number-lookup": "/firearms-check",
-  "/stolen-gun-database": "/firearms-check",
+  // Nov 24 2026 (owner: "take the wheel"): /stolen-gun-database is a live page again
+  // (src/routes/stolen-gun-database.tsx). A live page must not be a key here.
   "/blog/bicycle-stolen-serial-number-check": "/check-bike",
   "/is-this-bike-stolen": "/check-bike",
   "/check-bicycle-stolen": "/check-bike",

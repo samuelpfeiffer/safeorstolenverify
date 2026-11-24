@@ -1,4 +1,10 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
+import { GUN_STATES, GUN_NATIONAL, GUN_STATS_AS_OF } from '@/data/gunTheftStats';
+
+const fmt = (n: number) => n.toLocaleString('en-US');
+const stateRows = [...GUN_STATES]
+ .sort((a, b) => b.total - a.total)
+ .map((s) => [s.name, fmt(s.total), s.years || 'Not listed']);
 
 /**
  * Stolen gun database page — rewritten Oct 2 2026 to match real capability.
@@ -16,9 +22,34 @@ const StolenGunDatabasePage = () => {
  itemType="Firearm"
  searchType="firearm"
  searchPlaceholder="Enter the gun's serial number"
- dateModified="2026-10-02"
+ dateModified="2026-11-24"
+ quickAnswer={{
+ question: "Is there a stolen gun database the public can search?",
+ answer: `Yes. SafeOrStolen lets private citizens search a gun's serial number against ${fmt(GUN_NATIONAL.total)} police theft and loss reports from 33 states and Washington, DC, plus live Ohio law-enforcement stolen-gun records and SafeOrStolen's own theft reports. Enter the serial from the frame or receiver; the first check is free. NCIC, the FBI's national file, can only be searched by police and licensed dealers.`,
+ }}
+ sections={[
+ {
+ heading: "Stolen gun database coverage by state",
+ paragraphs: [
+ `Police theft and loss reports in SafeOrStolen's stolen gun database, by state (counted ${GUN_STATS_AS_OF}). Most reports were filed between 2010 and 2017. Ohio is also searched live. States not listed have no police reports in these records yet; a check still searches SafeOrStolen's own theft reports.`,
+ ],
+ table: { columns: ['State', 'Police reports', 'Report years'], rows: stateRows },
+ },
+ {
+ heading: "Where to find a gun's serial number",
+ list: [
+ "On a handgun: usually on the frame, often on the side or under the barrel near the trigger guard",
+ "On a rifle or shotgun: usually on the receiver",
+ "Copy it exactly, including letters, dashes and leading zeros",
+ "If the serial looks scratched, ground off or altered, don't buy the gun and contact local police",
+ ],
+ },
+ ]}
  keywords={[
  'stolen gun database',
+ 'national stolen gun database',
+ 'stolen gun search',
+ 'stolen gun database search',
  'check if gun is stolen',
  'gun serial number lookup',
  'is this gun stolen',
