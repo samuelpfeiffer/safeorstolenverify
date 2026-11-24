@@ -175,13 +175,13 @@ export default function DynamicBlogPost() {
           <div className="mt-16">
             <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
               <CardContent className="p-8 text-center">
-                <h2 className="text-2xl font-bold mb-4">Ready to Verify an Item?</h2>
+                <h2 className="text-2xl font-bold mb-4">Check it before you pay</h2>
                 <p className="text-muted-foreground mb-6">
-                  Check an item’s identifier against available theft reports before you buy. A result covers the sources searched; it does not establish ownership.
+                  Enter the serial number, IMEI or VIN and see in a few seconds if it's been reported stolen. Your first check is free.
                 </p>
                 <Link to="/verify">
                   <button className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:opacity-90 transition-opacity">
-                    Verify Now
+                    Run a free check
                   </button>
                 </Link>
               </CardContent>
