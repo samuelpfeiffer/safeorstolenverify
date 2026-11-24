@@ -40,7 +40,7 @@ export const useParallelVerification = () => {
       toast({
         title: "Free checks used",
         description: user?.id
-          ? "Subscribe for $10/month for unlimited verifications, or pay $0.99 for 2 checks."
+          ? "Subscribe for $10/month for unlimited verifications, or pay $4.99 for 1 check."
           : "Create a free account to keep verifying, or upgrade for unlimited checks.",
         variant: "destructive",
       });

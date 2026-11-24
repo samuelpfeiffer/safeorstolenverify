@@ -79,7 +79,7 @@ export const useSearchLimits = () => {
     if (!user) {
       toast({
         title: "Subscription Required",
-        description: "Get a 2 checks for $0.99 or subscribe for $10/month unlimited.",
+        description: "Get 1 check for $4.99, or subscribe for $10/month unlimited.",
         variant: "destructive",
       });
       return false;
@@ -119,7 +119,7 @@ export const useSearchLimits = () => {
     if (hasReachedLimit) {
       toast({
         title: "Subscription Required",
-        description: "Get a 2 checks for $0.99 or subscribe for $10/month unlimited.",
+        description: "Get 1 check for $4.99, or subscribe for $10/month unlimited.",
         variant: "destructive",
       });
       return false;

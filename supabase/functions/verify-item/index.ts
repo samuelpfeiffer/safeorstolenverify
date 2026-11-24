@@ -265,9 +265,9 @@ serve(async (req) => {
       riskLevel = 'medium';
       confidence = 0;
       message = allowance.reason === 'monthly_cap'
-        ? `🔒 This IMEI number is real and correctly formed. You've used this month's ${PHONE_CAP_PER_MONTH} phone blacklist searches on your plan. Run a single full check for $0.99 to search the lost and stolen phone blacklist now.`
+        ? `🔒 This IMEI number is real and correctly formed. You've used this month's ${PHONE_CAP_PER_MONTH} phone blacklist searches on your plan. Run a full check for $4.99 to search the lost and stolen phone blacklist now.`
         : allowance.reason === 'single_used'
-          ? '🔒 This IMEI number is real and correctly formed. Your single check has already been used. Run another full check for $0.99 to search the lost and stolen phone blacklist.'
+          ? '🔒 This IMEI number is real and correctly formed. Your single check has already been used. Run another full check for $4.99 to search the lost and stolen phone blacklist.'
           : '🔒 FREE CHECK DONE: This IMEI number is real and correctly formed. The official lost and stolen phone blacklist search is part of the full check. Run the full check before you hand over any money.';
     } else {
       finalStatus = 'unknown';
