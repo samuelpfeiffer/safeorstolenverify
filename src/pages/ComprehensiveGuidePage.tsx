@@ -38,7 +38,7 @@ const GROUPS: { heading: string; anchor: string; note: string; rows: Row[] }[] =
  { item: 'Windows laptop', id: 'Serial number (sometimes "S/N")', onItem: 'Label on the bottom, or under the battery on older models', elsewhere: 'Type "wmic bios get serialnumber" in Command Prompt', check: 'Laptop check', href: '/check-laptop-stolen' },
  { item: 'PlayStation 5', id: 'Serial number', onItem: 'Sticker on the back or base of the console', elsewhere: 'Settings > System > System Software > Console Information', check: 'PS5 check', href: '/check-ps5' },
  { item: 'Xbox Series X or S', id: 'Serial number', onItem: 'Sticker on the back near the ports', elsewhere: 'Settings > System > Console info', check: 'Xbox check', href: '/check-xbox' },
- { item: 'Nintendo Switch', id: 'Serial number', onItem: 'Bottom edge of the console, near the charging port', elsewhere: 'System Settings > System > Serial Information', check: 'Console check', href: '/check-gaming-console-stolen' },
+ { item: 'Nintendo Switch', id: 'Serial number', onItem: 'Bottom edge of the console, near the charging port', elsewhere: 'System Settings > System > Serial Information', check: 'Switch check', href: '/nintendo-switch-serial-number-check' },
  { item: 'Camera or lens', id: 'Serial number', onItem: 'Bottom plate of the body, or inside the battery door; on a lens, near the mount or on the barrel', elsewhere: 'Original box or receipt', check: 'Camera check', href: '/check-camera-stolen' },
  { item: 'TV', id: 'Serial number', onItem: 'Label on the back panel', elsewhere: 'The TV\'s Settings > Support or About screen', check: 'TV check', href: '/how-to-check-if-tv-stolen' },
  ],
