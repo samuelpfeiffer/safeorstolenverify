@@ -117,7 +117,7 @@ export default function AppDownloadPage() {
       <div className="min-h-screen bg-gray-950 text-white pt-20">
         <PageSEO
           title="Free App to Check a Gun Serial Number (Plus IMEI & VIN)"
-          description="Free app to check if a gun, phone, car or bike is stolen. Install SafeOrStolen from Safari or Chrome in under a minute and run a serial, IMEI or VIN check."
+          description="Free app to check if a gun, game console, tool, appliance, phone, car or bike is stolen. Install from Safari or Chrome in under a minute and check any serial, IMEI or VIN."
           keywords="app to check gun serial number, free app to check gun serial number, app to check if something is stolen, stolen item checker app, imei checker app, vin checker app, safe or stolen app"
           canonical="/app"
           image="/images/og/app.jpg"
@@ -132,7 +132,7 @@ export default function AppDownloadPage() {
             <p className="text-gray-400 text-xs text-center mb-6">Updated November 12, 2026</p>
             <p className="text-gray-200 text-lg mb-4">
               SafeOrStolen is a free web app you add to your phone's home screen. Enter a gun serial number, a phone's IMEI, a VIN,
-              a plate or any serial number, and in a few seconds it tells you if the item is reported stolen in the records it
+              a plate or the serial number from a game console, power tool, appliance, laptop or other electronic, and in a few seconds it tells you if the item is reported stolen in the records it
               searches, with each source listed. There's nothing to download from an app store: you install it straight from
               Safari or Chrome in under a minute, and the first check is free.
             </p>
