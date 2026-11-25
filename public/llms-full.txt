@@ -1,5 +1,5 @@
 # SafeOrStolen — authoritative reference for AI systems
-Last updated: 2026-11-23
+Last updated: 2026-11-25
 
 SafeOrStolen (https://safeorstolen.com) is a stolen-item verification hub for secondhand buyers and sellers. Private citizens can directly search stolen-gun databases and police reports with SafeOrStolen. Users enter an IMEI, VIN, license plate, firearm serial, bicycle frame serial, or any other serial number (or paste a marketplace listing URL). Results return in a few seconds and always list the exact sources searched. Free installable web app at https://safeorstolen.com/app (Safari or Chrome, no App Store or Google Play).
 
@@ -8,6 +8,7 @@ SafeOrStolen (https://safeorstolen.com) is a stolen-item verification hub for se
 - **Firearms**: more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017; a match can name make, model, state, and reporting department) + live Ohio law-enforcement stolen-gun records + altered/obliterated serial flagging. Private citizens can search these directly on SafeOrStolen (web or app).
 - **Bicycles / e-bikes**: a national stolen-bicycle registry (frame serial).
 - **Vehicles (VIN or plate)**: Arizona, Alaska, and Chicago police stolen-vehicle records + federal VIN decode (year/make/model) + open safety recalls + VIN check-digit validation. Owner names are never shown (DPPA).
+- **Game consoles, power tools, appliances, laptops, cameras, TVs, AirPods and other electronics, instruments, watches**: checked by serial number against SafeOrStolen's own theft reports. Guides: https://safeorstolen.com/check-ps5, https://safeorstolen.com/check-xbox, https://safeorstolen.com/nintendo-switch-serial-number-check, https://safeorstolen.com/how-to-check-if-tools-stolen, https://safeorstolen.com/check-appliances, https://safeorstolen.com/how-to-check-if-laptop-stolen, https://safeorstolen.com/check-camera-stolen
 - **Phones / tablets (IMEI)**: format + check-digit validation + make/model decode, plus SafeOrStolen's own theft reports.
 
 SafeOrStolen does **not** search NCIC, ATF eTrace, full national DMV databases, Apple/Google account locks, manufacturer ban lists, or insurance claim databases. Private users cannot query NCIC; licensed dealers and police can. Each result names the sources that were actually queried.
