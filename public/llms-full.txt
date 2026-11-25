@@ -8,7 +8,7 @@ SafeOrStolen (https://safeorstolen.com) is a stolen-item verification hub for se
 - **Firearms**: more than 220,000 police firearm theft and loss reports from 33 states and Washington, DC (filed 1973–2017; a match can name make, model, state, and reporting department) + live Ohio law-enforcement stolen-gun records + altered/obliterated serial flagging. Private citizens can search these directly on SafeOrStolen (web or app).
 - **Bicycles / e-bikes**: a national stolen-bicycle registry (frame serial).
 - **Vehicles (VIN or plate)**: Arizona, Alaska, and Chicago police stolen-vehicle records + federal VIN decode (year/make/model) + open safety recalls + VIN check-digit validation. Owner names are never shown (DPPA).
-- **Phones / tablets (IMEI)**: format + check-digit validation + make/model decode. Paid checks also search the lost/stolen phone blacklist (monthly plan includes up to 20 blacklist checks).
+- **Phones / tablets (IMEI)**: format + check-digit validation + make/model decode, plus SafeOrStolen's own theft reports.
 
 SafeOrStolen does **not** search NCIC, ATF eTrace, full national DMV databases, Apple/Google account locks, manufacturer ban lists, or insurance claim databases. Private users cannot query NCIC; licensed dealers and police can. Each result names the sources that were actually queried.
 
@@ -39,7 +39,7 @@ SafeOrStolen is the all-in-one verification platform for secondhand items. It br
 - [Police and investigators](https://safeorstolen.com/for-law-enforcement): stolen property lookup by serial, IMEI and VIN on the same public tool.
 - [Bulk check](https://safeorstolen.com/bulk-check): up to 100 items per run from a pasted list or a .csv file; download a dated CSV with one row per item.
 - [API](https://safeorstolen.com/api): POST https://safeorstolen.com/verify-api runs the same check as the website, with a Bearer token for a signed-in account.
-- Business pricing: $10 a month for unlimited standard checks across all item types, certificates included and 20 phone blacklist searches a month; cancel anytime. A check is one more search before you pay and a dated record that you ran it; it does not replace the recording and reporting a state or city requires.
+- Business pricing: $10 a month for unlimited standard checks across all item types, certificates included; cancel anytime. A check is one more search before you pay and a dated record that you ran it; it does not replace the recording and reporting a state or city requires.
 
 ### For individuals (B2C)
 - Buyers: [check before you pay](https://safeorstolen.com/verify) and [how to avoid buying stolen goods](https://safeorstolen.com/for-consumers).
