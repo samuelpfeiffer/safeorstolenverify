@@ -43,7 +43,7 @@ export function newThread(): ChatThread {
  const id = `t_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
  return {
  id,
- title: 'New verification',
+ title: 'New check',
  createdAt: Date.now(),
  updatedAt: Date.now(),
  messages: [],
@@ -219,7 +219,7 @@ export function useChatThreads() {
  results: [r, ...t.results.filter((p) => p.identifier !== r.identifier)].slice(0, 20),
  // auto-title the thread from the first real check
  title:
- t.title === 'New verification'
+ t.title === 'New check' || t.title === 'New verification'
  ? `${r.itemType.toUpperCase()} · ${r.identifier.slice(0, 14)}`
  : t.title,
  }));
