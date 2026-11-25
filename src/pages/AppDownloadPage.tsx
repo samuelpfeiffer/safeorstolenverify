@@ -44,6 +44,13 @@ const WHAT_YOU_CAN_CHECK: { item: string; number: string; searched: string }[] =
   },
 ];
 
+// Nov 25 2026: real screenshots of the app (iPhone size), taken from safeorstolen.com/verify.
+export const APP_SCREENS = [
+  { src: 'app-chat', alt: 'SafeOrStolen app home screen on an iPhone: a box to enter an IMEI, VIN, serial number or plate, with buttons for phone, gun, car, plate, bike, game console, tool, appliance and electronics', caption: 'Open the app and pick what you are checking, or just type the number.' },
+  { src: 'app-typed', alt: 'SafeOrStolen app on an iPhone with a serial number typed in, ready to check', caption: 'Type, scan or photograph the serial, IMEI or VIN, then tap the arrow.' },
+  { src: 'app-history', alt: 'SafeOrStolen app sidebar on an iPhone showing saved chats, results and certificates', caption: 'Every check is saved in your history, results and certificates.' },
+];
+
 const IPHONE_STEPS = [
   'Open safeorstolen.com/app in Safari. (Add to Home Screen works best from Safari.)',
   'Tap the Share button, the square with an arrow pointing up. On iPhone it sits in the bottom toolbar.',
@@ -102,14 +109,24 @@ export default function AppDownloadPage() {
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'Any (installable web app for iPhone, Android and desktop browsers)',
     url: 'https://safeorstolen.com/app',
-    dateModified: '2026-10-07',
+    dateModified: '2026-11-25',
     description:
-      'Installable web app for checking whether a gun serial number, phone IMEI, VIN, license plate, bike serial or other serial number has been reported stolen.',
+      'Installable web app for checking whether a gun, phone (IMEI), car (VIN), license plate, bike, game console, tool, appliance, laptop or other electronic has been reported stolen.',
+    screenshot: APP_SCREENS.map((s) => ({ '@type': 'ImageObject', url: `https://safeorstolen.com/images/app/${s.src}.jpg`, caption: s.caption })),
+    installUrl: 'https://safeorstolen.com/app#install',
     offers: [
       { '@type': 'Offer', name: 'Free account', price: '0', priceCurrency: 'USD', description: '1 free check, no credit card' },
       { '@type': 'Offer', name: 'Single check', price: '4.99', priceCurrency: 'USD' },
       { '@type': 'Offer', name: 'Monthly', price: '10.00', priceCurrency: 'USD', description: 'Unlimited checks, cancel anytime' },
     ],
+  };
+
+  const installSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to install the SafeOrStolen app on iPhone',
+    totalTime: 'PT1M',
+    step: IPHONE_STEPS.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, text })),
   };
 
   return (
@@ -121,15 +138,15 @@ export default function AppDownloadPage() {
           keywords="app to check gun serial number, free app to check gun serial number, app to check if something is stolen, stolen item checker app, imei checker app, vin checker app, safe or stolen app"
           canonical="/app"
           image="/images/og/app.jpg"
-          modifiedTime="2026-11-12"
-          structuredData={[appSchema, faqSchema]}
+          modifiedTime="2026-11-25"
+          structuredData={[appSchema, installSchema, faqSchema]}
         />
 
         {/* Hero */}
         <section className="bg-gradient-to-b from-gray-900 to-gray-950 py-16 px-4">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-black mb-4 text-center">App to Check a Gun Serial Number, IMEI or VIN</h1>
-            <p className="text-gray-400 text-xs text-center mb-6">Updated November 12, 2026</p>
+            <p className="text-gray-400 text-xs text-center mb-6">Updated November 25, 2026</p>
             <p className="text-gray-200 text-lg mb-4">
               SafeOrStolen is a free web app you add to your phone's home screen. Enter a gun serial number, a phone's IMEI, a VIN,
               a plate or the serial number from a game console, power tool, appliance, laptop or other electronic, and in a few seconds it tells you if the item is reported stolen in the records it
@@ -167,6 +184,35 @@ export default function AppDownloadPage() {
               </picture>
               <figcaption className="text-sm text-gray-400 mt-2 text-center">The same check runs on your phone at the meetup and on your computer at home.</figcaption>
             </figure>
+          </div>
+        </section>
+
+        {/* Screenshots */}
+        <section className="py-16 px-4 border-b border-gray-800">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-black text-white mb-3">See the app</h2>
+            <p className="text-gray-400 mb-8">
+              This is what SafeOrStolen looks like on an iPhone. Android and computers look the same.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              {APP_SCREENS.map((s) => (
+                <figure key={s.src} className="mx-auto max-w-[260px]">
+                  <picture>
+                    <source type="image/webp" srcSet={`/images/app/${s.src}-390.webp 390w, /images/app/${s.src}-780.webp 780w`} sizes="260px" />
+                    <img
+                      src={`/images/app/${s.src}.jpg`}
+                      alt={s.alt}
+                      width={390}
+                      height={664}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-auto rounded-[1.75rem] border-4 border-gray-800 shadow-xl"
+                    />
+                  </picture>
+                  <figcaption className="text-sm text-gray-300 mt-3 text-center">{s.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </section>
 
