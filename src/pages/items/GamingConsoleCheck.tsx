@@ -69,7 +69,7 @@ const GamingConsoleCheck = () => (
       intro:
         'Check a used Nintendo Switch, PlayStation, Xbox or handheld gaming PC before you buy it. Find the serial number, match it on screen, and check it for theft reports in a few seconds.',
       whatIs:
-        'A console stolen check looks for theft reports tied to the console\'s serial number. Owners give the serial to the police when a console is stolen. Buying a PlayStation? The <a href="/check-ps5">PS5 serial number check</a> covers it step by step. Buying an Xbox? Use the <a href="/check-xbox">Xbox serial number check</a>.',
+        'A console stolen check looks for theft reports tied to the console\'s serial number. Owners give the serial to the police when a console is stolen. Buying a PlayStation? The <a href="/check-ps5">PS5 serial number check</a> covers it step by step. Buying an Xbox? Use the <a href="/check-xbox">Xbox serial number lookup</a>. Buying a Switch? Use the <a href="/nintendo-switch-serial-number-check">Nintendo Switch serial number check</a>. For a VR headset, use the <a href="/meta-quest-serial-number-check">Meta Quest serial number check</a>.',
       howItWorks:
         "Type the serial number into the search box. SafeOrStolen searches its own theft reports that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Before you pay, also watch the seller sign out of their account and reset the console.",
       whyCheck:

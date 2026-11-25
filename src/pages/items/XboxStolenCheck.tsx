@@ -9,11 +9,11 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
  */
 const XboxStolenCheck = () => (
   <ItemLandingPageTemplate
-    title="Xbox Series X Serial Number Checker (Free): Is This Xbox Stolen? | SafeOrStolen"
-    metaDescription="Free Xbox serial number lookup and checker for Series X, Series S and Xbox One. Enter the 12-digit serial and see in seconds if a used Xbox is reported stolen."
-    h1="Free Xbox Serial Number Checker: Is This Xbox Stolen?"
+    title="Xbox Serial Number Lookup (Free): Check if an Xbox Is Stolen"
+    metaDescription="Free Xbox serial number lookup for Series X, Series S and Xbox One. Find the 12-digit serial, check it for theft reports in seconds, and know before you buy."
+    h1="Xbox Serial Number Lookup: Is This Xbox Stolen?"
     itemType="Xbox"
-    dateModified="2026-11-12"
+    dateModified="2026-11-25"
     searchPlaceholder="Enter the 12-digit Xbox serial number"
     keywords={[
       'check if xbox is stolen',
@@ -71,7 +71,7 @@ const XboxStolenCheck = () => (
       intro:
         'Free Xbox serial number lookup for a used Xbox Series X, Xbox Series S or Xbox One. Find the 12-digit serial, match it on screen, and check it for theft reports in a few seconds. The first check is free.',
       whatIs:
-        'An Xbox stolen check looks for theft reports tied to the console\'s serial number. Owners give the serial to the police when a console is stolen, and can report it on SafeOrStolen. Buying a PlayStation instead? Use the <a href="/check-ps5">PS5 serial number check</a>. For Nintendo Switch and other consoles, see the <a href="/check-gaming-console-stolen">gaming console check</a>.',
+        'An Xbox stolen check looks for theft reports tied to the console\'s serial number. Owners give the serial to the police when a console is stolen, and can report it on SafeOrStolen. Buying a PlayStation instead? Use the <a href="/check-ps5">PS5 serial number check</a>. Buying a Nintendo Switch? Use the <a href="/nintendo-switch-serial-number-check">Nintendo Switch serial number check</a>. A VR headset? Use the <a href="/meta-quest-serial-number-check">Meta Quest serial number check</a>. For other consoles, see the <a href="/check-gaming-console-stolen">gaming console check</a>.',
       howItWorks:
         "Type the serial number into the search box. SafeOrStolen searches its own theft reports that mention the serial, and returns reported stolen, possible match, or no report found in the records searched, with every source listed. Before you pay, also watch the seller remove their account and reset the console.",
       whyCheck:
