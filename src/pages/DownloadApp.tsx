@@ -58,6 +58,7 @@ const DownloadApp = () => {
       description:
         'Installable web app for checking whether a phone, vehicle, plate, gun, bike or other serial-numbered item has been reported stolen.',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free to install; 1 free check, no account needed' },
+      screenshot: 'https://safeorstolen.com/images/app/app-chat.jpg',
     },
     {
       '@context': 'https://schema.org',
@@ -73,14 +74,14 @@ const DownloadApp = () => {
         description="How to download SafeOrStolen on iPhone, Android or a computer. It installs free from Safari or Chrome, not an app store, and runs the same stolen-item checks."
         keywords="download SafeOrStolen app, SafeOrStolen app download, stolen item checker app download, install SafeOrStolen"
         canonical="/download"
-        modifiedTime="2026-10-07"
+        modifiedTime="2026-11-25"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background pt-16">
         <section className="py-16 px-4 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-3 leading-tight">Download the SafeOrStolen App</h1>
-            <p className="text-sm text-muted-foreground mb-6">Updated October 7, 2026</p>
+            <p className="text-sm text-muted-foreground mb-6">Updated November 25, 2026</p>
             <p className="text-lg text-foreground mb-4">
               SafeOrStolen isn't in the App Store or Google Play. You install it straight from your browser: open
               safeorstolen.com/app in Safari (iPhone) or Chrome (Android) and tap Add to Home Screen or Install app. It's free,
@@ -93,6 +94,23 @@ const DownloadApp = () => {
                 Go to the install page
               </Link>
             </Button>
+            <figure className="mt-10 max-w-[260px]">
+              <picture>
+                <source type="image/webp" srcSet="/images/app/app-chat-390.webp 390w, /images/app/app-chat-780.webp 780w" sizes="260px" />
+                <img
+                  src="/images/app/app-chat.jpg"
+                  alt="SafeOrStolen app on an iPhone: enter an IMEI, VIN, serial number or plate, with buttons for phone, gun, car, plate, bike, game console, tool, appliance and electronics"
+                  width={390}
+                  height={664}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto rounded-[1.75rem] border-4 border-border shadow-xl"
+                />
+              </picture>
+              <figcaption className="text-sm text-muted-foreground mt-3">
+                The app on an iPhone. <Link to="/app" className="text-primary underline">See more screenshots</Link>.
+              </figcaption>
+            </figure>
           </div>
         </section>
 
