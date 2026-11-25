@@ -59,10 +59,16 @@ const IDENTIFIER_REGEX = /^[A-Z0-9\-\s]{4,30}$/i;
 // Nov 1 2026: tapping one of these no longer fills a made-up number (that wasted a visitor's
 // only free check). It focuses the box and shows where to find that number instead.
 const EXAMPLE_PROMPTS = [
+ // Nov 25 2026 (owner): show every kind of item people can check, not just four.
  { tag: 'IMEI', itemType: 'phone', label: 'Phone', text: "Enter the phone's IMEI (dial *#06# to see it)" },
+ { tag: 'GUN', itemType: 'firearm', label: 'Gun', text: 'Enter the serial number stamped on the frame or receiver' },
  { tag: 'VIN', itemType: 'vehicle', label: 'Car or truck', text: 'Enter the 17-character VIN' },
- { tag: 'SERIAL', itemType: 'serial', label: 'Serial number', text: 'Enter the serial number from the label' },
  { tag: 'PLATE', itemType: 'plate', label: 'License plate', text: 'Enter the license plate number' },
+ { tag: 'BIKE', itemType: 'bicycle', label: 'Bike', text: 'Enter the frame serial (under the bottom bracket)' },
+ { tag: 'CONSOLE', itemType: 'serial', label: 'Game console', text: "Enter the console's serial (in its system settings)" },
+ { tag: 'TOOL', itemType: 'serial', label: 'Tool', text: "Enter the serial from the tool's nameplate" },
+ { tag: 'APPLIANCE', itemType: 'serial', label: 'Appliance', text: 'Enter the serial from the rating label' },
+ { tag: 'ELECTRONICS', itemType: 'serial', label: 'Laptop or electronics', text: 'Enter the serial number from the label or settings' },
 ];
 
 
@@ -1208,8 +1214,8 @@ const MiniSidebar: React.FC<{
  <div className="w-6 h-px bg-border/60 my-1" />
  <button
  onClick={onNew}
- title="New verification (⌘⇧N)"
- aria-label="New verification"
+ title="New check (⌘⇧N)"
+ aria-label="New check"
  className="size-9 rounded-lg flex items-center justify-center text-primary hover:bg-primary/10 border border-primary/30 transition-colors"
  >
  <Plus className="w-4 h-4" />
