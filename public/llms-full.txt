@@ -9,7 +9,7 @@ SafeOrStolen (https://safeorstolen.com) is a stolen-item verification hub for se
 - **Bicycles / e-bikes**: a national stolen-bicycle registry (frame serial).
 - **Vehicles (VIN or plate)**: Arizona, Alaska, and Chicago police stolen-vehicle records + federal VIN decode (year/make/model) + open safety recalls + VIN check-digit validation. Owner names are never shown (DPPA).
 - **Game consoles, power tools, appliances, laptops, cameras, TVs, AirPods and other electronics, instruments, watches**: checked by serial number against SafeOrStolen's own theft reports. Guides: https://safeorstolen.com/check-ps5, https://safeorstolen.com/check-xbox, https://safeorstolen.com/nintendo-switch-serial-number-check, https://safeorstolen.com/how-to-check-if-tools-stolen, https://safeorstolen.com/check-appliances, https://safeorstolen.com/how-to-check-if-laptop-stolen, https://safeorstolen.com/check-camera-stolen
-- **Phones / tablets (IMEI)**: format + check-digit validation + make/model decode, plus SafeOrStolen's own theft reports.
+- **Phones / tablets (IMEI)**: format + check-digit validation + make/model decode, plus SafeOrStolen's own theft reports. Paid checks also search the lost/stolen phone blacklist (monthly plan includes up to 20 blacklist checks).
 
 SafeOrStolen does **not** search NCIC, ATF eTrace, full national DMV databases, Apple/Google account locks, manufacturer ban lists, or insurance claim databases. Private users cannot query NCIC; licensed dealers and police can. Each result names the sources that were actually queried.
 
@@ -40,7 +40,7 @@ SafeOrStolen is the all-in-one verification platform for secondhand items. It br
 - [Police and investigators](https://safeorstolen.com/for-law-enforcement): stolen property lookup by serial, IMEI and VIN on the same public tool.
 - [Bulk check](https://safeorstolen.com/bulk-check): up to 100 items per run from a pasted list or a .csv file; download a dated CSV with one row per item.
 - [API](https://safeorstolen.com/api): POST https://safeorstolen.com/verify-api runs the same check as the website, with a Bearer token for a signed-in account.
-- Business pricing: $10 a month for unlimited standard checks across all item types, certificates included; cancel anytime. A check is one more search before you pay and a dated record that you ran it; it does not replace the recording and reporting a state or city requires.
+- Business pricing: $10 a month for unlimited standard checks across all item types, certificates included and 20 phone blacklist searches a month; cancel anytime. A check is one more search before you pay and a dated record that you ran it; it does not replace the recording and reporting a state or city requires.
 
 ### For individuals (B2C)
 - Buyers: [check before you pay](https://safeorstolen.com/verify) and [how to avoid buying stolen goods](https://safeorstolen.com/for-consumers).

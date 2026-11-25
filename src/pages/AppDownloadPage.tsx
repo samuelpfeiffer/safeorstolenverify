@@ -20,7 +20,7 @@ const WHAT_YOU_CAN_CHECK: { item: string; number: string; searched: string }[] =
   {
     item: 'Phone',
     number: 'IMEI (dial *#06#)',
-    searched: 'Make and model from the IMEI, SafeOrStolen theft reports.',
+    searched: 'Make and model from the IMEI, SafeOrStolen theft reports. The carrier lost/stolen blacklist check is part of a paid check.',
   },
   {
     item: 'Car, truck or motorcycle',
@@ -81,7 +81,7 @@ const APP_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Can I check an IMEI with the app?',
-    a: "Yes. Dial *#06# on the phone you're buying, or look in Settings > General > About on an iPhone, then enter the IMEI. You get the make and model and any SafeOrStolen theft reports. Have the seller sign out of their Apple or Google account in front of you.",
+    a: "Yes. Dial *#06# on the phone you're buying, or look in Settings > General > About on an iPhone, then enter the IMEI. You get the make and model and any SafeOrStolen theft reports. A paid check also searches the lost and stolen phone blacklist. Have the seller sign out of their Apple or Google account in front of you.",
   },
 ];
 
