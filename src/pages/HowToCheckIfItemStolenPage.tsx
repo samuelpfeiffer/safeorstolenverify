@@ -7,7 +7,7 @@ const guides = [
   ['/how-to-check-if-car-stolen', 'Vehicle', 'VIN, plate, title, tampering, and official vehicle resources'],
   ['/how-to-check-if-phone-stolen', 'Phone', 'IMEI, carrier status, account locks, and seller checks'],
   ['/blog/how-to-check-if-iphone-stolen', 'iPhone', 'Activation Lock, Find My, IMEI, and carrier checks'],
-  ['/how-to-check-if-gun-is-stolen', 'Firearm', 'Police theft records, dealer (FFL) checks, Florida and Ohio searches, and red flags'],
+  ['/how-to-check-if-a-gun-is-stolen', 'Firearm', 'Police theft records, dealer (FFL) checks, Florida and Ohio searches, and red flags'],
   ['/check-bike', 'Bicycle or e-bike', 'Frame serials, stolen-bike registries, and e-bike accounts'],
   ['/how-to-check-if-laptop-stolen', 'Laptop or electronics', 'Serials, manufacturer details, account locks, and receipts'],
   ['/how-to-check-if-tv-stolen', 'TV', 'Serial label and settings match, receipts, and retail-theft red flags'],

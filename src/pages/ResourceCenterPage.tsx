@@ -37,7 +37,7 @@ const BY_ITEM: { item: string; number: string; links: { to: string; label: strin
     number: 'Serial on the frame or receiver',
     links: [
       { to: '/gun-serial-number-lookup', label: 'Gun serial number lookup' },
-      { to: '/how-to-check-if-gun-is-stolen', label: 'How to check if a gun is stolen' },
+      { to: '/how-to-check-if-a-gun-is-stolen', label: 'How to check if a gun is stolen' },
       { to: '/stolen-gun-database', label: 'Stolen gun database' },
     ],
   },

@@ -109,9 +109,11 @@ const FirearmsCheckPage = () => {
  1 free check · No credit card · Works for handguns, rifles, shotguns, and more
  </p>
  <p className="text-sm mt-3">
- <Link to="/how-to-check-if-gun-is-stolen" className="text-primary hover:underline">How to check if a gun is stolen: step-by-step guide</Link>
+ <Link to="/how-to-check-if-a-gun-is-stolen" className="text-primary hover:underline">How to check if a gun is stolen: step-by-step guide</Link>
  {' · '}
  <Link to="/stolen-gun-statistics" className="text-primary hover:underline">Stolen gun statistics by state</Link>
+ {' · '}
+ <Link to="/stolen-gun-database" className="text-primary hover:underline">Stolen gun database: states covered</Link>
  </p>
  </div>
  </section>

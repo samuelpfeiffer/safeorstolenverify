@@ -263,7 +263,7 @@ export default function StateFirearmTransferLawsPage() {
             <div className="rounded-2xl border border-border bg-card p-5">
               <h2 className="font-semibold mb-2 text-base">Related guides</h2>
               <p className="text-sm text-muted-foreground">
-                <Link to="/how-to-check-if-gun-is-stolen" className="text-primary underline underline-offset-4">How to check if a gun is stolen</Link>
+                <Link to="/how-to-check-if-a-gun-is-stolen" className="text-primary underline underline-offset-4">How to check if a gun is stolen</Link>
                 {' · '}
                 <Link to="/blog/gun-show-serial-number-check" className="text-primary underline underline-offset-4">Checking a gun at a gun show</Link>
                 {' · '}
