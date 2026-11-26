@@ -1,5 +1,6 @@
 import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { Link } from '@/lib/router-compat';
+import { GUN_BRANDS } from '@/data/gunBrandStats';
 import { useState } from 'react'
 import { useParallelVerification } from '@/hooks/useParallelVerification'
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
@@ -261,6 +262,23 @@ const FirearmsCheckPage = () => {
  <li>The seller pushes you to skip a dealer transfer or rush the meetup</li>
  <li>The seller can't say where the gun came from, or has several guns to sell at once</li>
  </ul>
+ </section>
+
+ {/* Nov 26 2026: brand pages built on SafeOrStolen's own police-report counts. Additive only. */}
+ <section className="mb-12">
+ <h2 className="text-2xl font-black text-foreground mb-3">
+ Gun Serial Number Lookup by Brand
+ </h2>
+ <p className="text-muted-foreground leading-relaxed mb-4">
+ See how many police reports SafeOrStolen holds for each brand, its most reported models, and check a serial:
+ </p>
+ <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+ {GUN_BRANDS.map((b) => (
+ <Link key={b.slug} to={`/${b.slug}-serial-number-lookup`} className="rounded-lg border border-border bg-card/60 px-3 py-2 text-sm text-primary hover:bg-card">
+ {b.name}
+ </Link>
+ ))}
+ </div>
  </section>
 
  {/* Section 2 */}
