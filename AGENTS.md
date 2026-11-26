@@ -3,7 +3,8 @@
 ## Owner rule clarification (Samuel, Nov 25 2026)
 - Samuel: "only time i dont want you to edit something is if the URL is in top 3." Every other page should be improved (titles, content, links, schema). The lock follows current Search Console rankings (28 days, query + page): a page that leaves the top 3 is editable again.
 - Nov 26 2026: Samuel approved additive sections on `/firearms-check` (title, H1, meta description and URL unchanged). Brand gun pages `/<brand>-serial-number-lookup` (data in `src/data/gunBrandStats.ts`) were added the same day.
-- Open question for Samuel: whether a top-3 ranking for our own name ("safeorstolen") still locks a page (rule below). `/app` and `/download` were edited Nov 25 (screenshots, item types) before this was raised.
+- Samuel, Nov 26 2026: searches for our own name ("safeorstolen", "safe or stolen") do NOT lock a page. Only a top-3 ranking for a search a customer types to find a check locks it. This replaces the Nov 23 brand-name bullet below, so `/app`, `/download`, `/imei-checker`, `/vin-checker`, `/for-businesses`, `/how-it-works`, `/news` and `/for-law-enforcement` are editable unless they are top 3 for a customer search.
+- Weekly ranking check (Samuel chose "check and fix", Nov 26 2026): Mondays 1:17 PM Arizona, scheduled task "Weekly SafeOrStolen ranking defense".
 - Paid phone checks do search the lost/stolen phone blacklist again (verify-imei v95, Nov 23 2026); free checks don't. Check the deployed function before calling a source broken.
 
 ## Owner rule (Samuel, Nov 23 2026): top three is off limits
