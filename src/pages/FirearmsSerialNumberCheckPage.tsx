@@ -397,7 +397,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <h3 className="font-semibold mb-2">Stolen Gun Database</h3>
  <p className="text-sm text-muted-foreground">Search reported stolen firearms</p>
  </Link>
- <Link to="/how-to-check-if-gun-is-stolen" className="p-4 bg-background rounded-lg hover:border-primary/50 border transition-colors">
+ <Link to="/how-to-check-if-a-gun-is-stolen" className="p-4 bg-background rounded-lg hover:border-primary/50 border transition-colors">
  <h3 className="font-semibold mb-2">How to Check If a Gun Is Stolen</h3>
  <p className="text-sm text-muted-foreground">Step-by-step guide before you buy</p>
  </Link>

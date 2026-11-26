@@ -406,7 +406,7 @@ export const STOLEN_GUN_VICTIM_GUIDE: DefinitiveGuideProps = {
   ],
   related: [
     { href: "/how-to-report-a-stolen-item", label: "How to report a stolen item" },
-    { href: "/how-to-check-if-gun-is-stolen", label: "How to check if a gun is stolen (buyers)" },
+    { href: "/how-to-check-if-a-gun-is-stolen", label: "How to check if a gun is stolen (buyers)" },
   ],
 };
 

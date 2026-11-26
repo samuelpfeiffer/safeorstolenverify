@@ -192,7 +192,7 @@ const GunShowSerialNumberCheckGuide = () => (
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-4">Related guides</h2>
           <div className="flex flex-wrap gap-3">
-            <Link to="/how-to-check-if-gun-is-stolen" className="text-primary hover:underline font-medium">How to check if a gun is stolen</Link>
+            <Link to="/how-to-check-if-a-gun-is-stolen" className="text-primary hover:underline font-medium">How to check if a gun is stolen</Link>
             <Link to="/blog/atf-gun-serial-number-check" className="text-primary hover:underline font-medium">ATF serial number check</Link>
             <Link to="/blog/state-stolen-gun-database-guide" className="text-primary hover:underline font-medium">Stolen gun database by state</Link>
             <Link to="/firearms-check" className="text-primary hover:underline font-medium">Gun serial number lookup</Link>
