@@ -67,6 +67,9 @@ const FIREARM_FAQS: { q: string; a: string }[] = [
  { q: 'What should I do if the result is not found?', a: 'No report found means nothing matched in the records SafeOrStolen searched, which is a good sign. It does not prove ownership. Before you pay, also ask for the original receipt or transfer paperwork, and use a licensed dealer for the transfer where your state requires one.' },
  { q: 'What should I do if the gun comes back as stolen?', a: "Don't buy it and don't confront the seller. Leave, and give the serial number and the seller's details to your local police on their non-emergency line." },
  { q: 'Will the seller know I checked the serial number?', a: 'No. Searches on SafeOrStolen are private and the seller is never told.' },
+ { q: 'Can I look up who owns a gun by its serial number?', a: "No. The United States has no public federal gun registry, and owner records are not open to the public. A serial number check tells you whether the gun was reported stolen or lost in the records searched, not who owns it. ATF ownership traces are run only for law enforcement." },
+ { q: 'Can I find out when a gun was made from its serial number?', a: "Usually, from the manufacturer. Many makers can tell you the year and model from the serial number through their website or customer service. A manufacturer lookup does not tell you whether the gun was stolen, so check the serial on SafeOrStolen too." },
+ { q: 'Is a gun without a serial number illegal?', a: "Not always. Guns made before the Gun Control Act of 1968 were not required to have serial numbers. But a gun whose serial number has been removed, altered or obliterated is a federal crime to possess under 18 U.S.C. 922(k), even if you didn't remove it. If a serial looks tampered with, don't buy the gun." },
  { q: 'How do I report my own stolen gun?', a: 'File a report with your local police first and give them the serial number. Then report it on SafeOrStolen at safeorstolen.com/report-stolen, so anyone who checks that serial number before buying will see it.' },
 ];
 
@@ -78,6 +81,7 @@ const FirearmsCheckPage = () => {
  description="Yes, private citizens can check if a gun is stolen. Scan or type a serial to search 220,000+ police reports from 33 states, DC and live Ohio records. First check free."
  structuredData={{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: FIREARM_FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }}
  canonical="/firearms-check"
+ modifiedTime="2026-11-26"
  image="/images/og/firearms-check.jpg"
  />
 
@@ -208,6 +212,53 @@ const FirearmsCheckPage = () => {
  Under 18 U.S.C. § 922(k), it is a federal felony to possess a firearm with an obliterated 
  serial number — even if you did not remove it yourself.
  </p>
+ </section>
+
+ {/* Nov 26 2026 (owner approved): answers buyers search for next. Additive only; title, H1 and URL unchanged. */}
+ <section className="mb-12">
+ <h2 className="text-2xl font-black text-foreground mb-3">
+ What a Gun Serial Number Lookup Can and Can't Tell You
+ </h2>
+ <div className="grid sm:grid-cols-2 gap-4 mb-4">
+ <div className="bg-card/60 border border-border rounded-xl p-4">
+ <h3 className="text-foreground font-bold text-sm mb-2">It can tell you</h3>
+ <ul className="list-disc pl-5 space-y-1 text-muted-foreground text-sm leading-relaxed">
+ <li>Whether the serial matches a police report of a stolen or lost gun in the records searched</li>
+ <li>What the matching report says, such as make, model, state and reporting agency</li>
+ <li>Whether the serial looks altered</li>
+ <li>Exactly which sources were searched, with a dated record that you checked</li>
+ </ul>
+ </div>
+ <div className="bg-card/60 border border-border rounded-xl p-4">
+ <h3 className="text-foreground font-bold text-sm mb-2">It can't tell you</h3>
+ <ul className="list-disc pl-5 space-y-1 text-muted-foreground text-sm leading-relaxed">
+ <li>Who owns the gun. There is no public federal gun registry, and owner records are not public</li>
+ <li>The gun's full ownership history. ATF traces are run for law enforcement only</li>
+ <li>Thefts reported only to police in states SafeOrStolen doesn't hold reports from yet</li>
+ <li>The gun's condition, round count or repair history</li>
+ </ul>
+ </div>
+ </div>
+ <p className="text-muted-foreground leading-relaxed">
+ For the strongest check, run the serial here, then ask local police to run it in NCIC or buy through a
+ licensed dealer (FFL). Since 2025, licensed dealers can check NCIC's stolen-gun file. To learn when a gun was
+ made, ask the manufacturer: many makers can date a gun from its serial number, but they can't tell you if it
+ was stolen.
+ </p>
+ </section>
+
+ <section className="mb-12">
+ <h2 className="text-2xl font-black text-foreground mb-3">
+ Red Flags When Buying a Used Gun
+ </h2>
+ <ul className="list-disc pl-5 space-y-2 text-muted-foreground leading-relaxed">
+ <li>The serial number is scratched, ground, re-stamped or covered</li>
+ <li>The seller won't send the serial number before you meet</li>
+ <li>The serial format doesn't fit the make and model the seller claims</li>
+ <li>The price is far below what the same gun sells for used</li>
+ <li>The seller pushes you to skip a dealer transfer or rush the meetup</li>
+ <li>The seller can't say where the gun came from, or has several guns to sell at once</li>
+ </ul>
  </section>
 
  {/* Section 2 */}
