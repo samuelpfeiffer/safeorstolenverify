@@ -1,7 +1,11 @@
 import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplate';
-import { GUN_STATES, GUN_NATIONAL, GUN_STATS_AS_OF } from '@/data/gunTheftStats';
+import { GUN_STATES, GUN_NATIONAL, GUN_STATS_AS_OF, GUN_NO_RECORD_STATES } from '@/data/gunTheftStats';
 
 const fmt = (n: number) => n.toLocaleString('en-US');
+// Nov 26 2026: the state table cells are plain text, so this page linked to only 12 state pages and
+// Search Console shows most state pages "Discovered - currently not indexed". Link every state page.
+const stateLinks = (list: { slug: string; name: string }[]) =>
+ [...list].sort((a, b) => a.name.localeCompare(b.name)).map((s) => `<a href="/gun-serial-number-lookup/${s.slug}">${s.name}</a>`).join(', ');
 const stateRows = [...GUN_STATES]
  .sort((a, b) => b.total - a.total)
  .map((s) => [s.name, fmt(s.total), s.years || 'Not listed']);
@@ -60,7 +64,7 @@ const StolenGunDatabasePage = () => {
  content={{
  intro: "Every firearm check on SafeOrStolen searches police stolen-gun records from 33 states and Washington, DC, more than 220,000 theft and loss reports, plus live Ohio law-enforcement stolen-gun records and SafeOrStolen's own theft reports. It also checks the serial number for signs of alteration. Here's what that covers and what no public site can search.",
 
- whatIs: "SafeOrStolen searches police department theft and loss reports from 33 states and DC, including California, Florida, Texas, Arizona, Washington, North Carolina, Georgia, and Illinois. Most reports were filed between 2010 and 2017. A match names the police department. Ohio records are searched live. For a serial lookup by itself, use the <a href=\"/firearms-check\">free gun serial number lookup</a>.",
+ whatIs: "SafeOrStolen searches police department theft and loss reports from 33 states and DC, including California, Florida, Texas, Arizona, Washington, North Carolina, Georgia, and Illinois. Most reports were filed between 2010 and 2017. A match names the police department. Ohio records are searched live. For a serial lookup by itself, use the <a href=\"/firearms-check\">free gun serial number lookup</a>. State lookup pages: " + stateLinks(GUN_STATES) + ". States without police reports yet: " + stateLinks(GUN_NO_RECORD_STATES) + ".",
 
  howItWorks: "Enter the serial number from the frame or receiver. SafeOrStolen first checks for signs of an altered or missing serial, such as all zeros or words like 'obliterated.' Then it searches police theft records from 33 states and DC, live Ohio records, and its own reports. A stolen warning only appears on an exact serial match, and it shows the make, model, year, city, and police department so you can tell whether the record is for the same gun.",
 

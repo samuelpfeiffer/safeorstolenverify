@@ -1,6 +1,7 @@
 import { LimitPayOffer } from '@/components/verify-chat/LimitPayOffer';
 import { Link } from '@/lib/router-compat';
 import { GUN_BRANDS } from '@/data/gunBrandStats';
+import { GUN_NO_RECORD_STATES } from '@/data/gunTheftStats';
 import { useState } from 'react'
 import { useParallelVerification } from '@/hooks/useParallelVerification'
 import { ParallelVerificationDisplay } from '@/components/verification/ParallelVerificationDisplay';
@@ -371,6 +372,16 @@ const FirearmsCheckPage = () => {
  check any gun here. The search covers SafeOrStolen's own reports, plus the historical reports above,
  where guns stolen elsewhere often turn up. For an extra check, ask your local police on their non-emergency line
  whether they will run the serial for a private buyer.
+ </p>
+ {/* Nov 26 2026: the 16 no-report state pages had no link from this page; Search Console shows most "Discovered - currently not indexed". */}
+ <p className="text-muted-foreground leading-relaxed mt-3">
+ State pages for states without police reports yet:{' '}
+ {GUN_NO_RECORD_STATES.map((s, i) => (
+ <span key={s.slug}>
+ <Link to={`/gun-serial-number-lookup/${s.slug}`} className="text-primary hover:underline">{s.name}</Link>
+ {i < GUN_NO_RECORD_STATES.length - 1 ? ', ' : '.'}
+ </span>
+ ))}
  </p>
  </section>
 
