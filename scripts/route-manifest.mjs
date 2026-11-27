@@ -37,6 +37,7 @@ const PRIVATE_EXACT = new Set([
   '/mobile-settings',
   '/mobile-verify',
   '/my-items',
+  '/sms-verify', // Nov 27 2026: "coming soon" page, noindex (soft-404 risk)
 ]);
 
 const PRIVATE_PREFIXES = [

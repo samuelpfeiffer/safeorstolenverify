@@ -44,6 +44,19 @@ export function isPrivateNoIndexPath(pathname: string): boolean {
     return true;
   }
 
+  // Nov 27 2026: soft-404 audit. These dynamic pages render a 200 for ANY id (made-up ids included):
+  // /verified/<id> shows "No Report Found" for every id and badges on other sites keep feeding Google
+  // new ids; /item, /shared and /go come back from the server with an empty body. They are per-user
+  // results or click-through links, not search pages, so keep them out of the index.
+  if (/^\/(verified|item|shared|go)\//i.test(path)) {
+    return true;
+  }
+
+  // Nov 27 2026: "coming soon" page; Google treats "not available yet" pages as soft 404s.
+  if (/^\/sms-verify$/i.test(path)) {
+    return true;
+  }
+
   // NOTE: /api is NOT noindexed — it has developer docs content and should be indexed.
   // NOTE: All public content pages (blog, state, city, comparison) are indexable.
 
