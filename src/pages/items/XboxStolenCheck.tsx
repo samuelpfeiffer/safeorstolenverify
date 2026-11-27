@@ -66,6 +66,18 @@ const XboxStolenCheck = () => (
           'A listing that says the console is "banned" or "offline only" for a cheap price',
         ],
       },
+      // Nov 27 2026: owners whose Xbox was stolen search "xbox serial number lookup" too; Microsoft's
+      // own stolen-console page ranks for it. Steps follow Microsoft Support's account device page.
+      {
+        heading: 'If your Xbox was stolen: find the serial number and report it',
+        list: [
+          'Sign in to your Microsoft account at account.microsoft.com/devices and open Devices.',
+          'Select the stolen console and choose Show details. The serial number is listed under Device details.',
+          'File a police report and give the officer that serial number.',
+          'Change your Microsoft account password and remove the stolen console from your account.',
+          'Report it on SafeOrStolen at safeorstolen.com/report-stolen, so anyone who checks that serial before buying sees it was stolen.',
+        ],
+      },
     ]}
     content={{
       intro:
