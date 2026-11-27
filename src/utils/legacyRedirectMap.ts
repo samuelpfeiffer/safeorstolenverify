@@ -24,12 +24,12 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/raleigh-stolen-item-check": "/how-to-check-if-item-stolen",
   "/cleveland-stolen-item-check": "/how-to-check-if-item-stolen",
   "/app/los-angeles": "/app",
-  "/blog/how-to-check-if-gun-stolen": "/firearms-check",
+  "/blog/how-to-check-if-gun-stolen": "/how-to-check-if-a-gun-is-stolen",
   // Oct 31 2026: four pages competed for "how do I check if a gun is stolen" (each at spots 20-80).
   // Google already prefers /firearms-check for those questions, so the duplicates point there.
   "/how-to-check-if-gun-is-stolen": "/firearms-check",
   "/is-this-gun-stolen": "/firearms-check",
-  "/blog/how-to-check-if-gun-is-stolen": "/firearms-check",
+  "/blog/how-to-check-if-gun-is-stolen": "/how-to-check-if-a-gun-is-stolen",
   // Oct 31 2026 (owner decision): no pages comparing SafeOrStolen with other services or data sources.
   // Send readers to the matching SafeOrStolen check instead.
   "/compare/safeorstolen-vs-asking-police": "/how-to-check-if-item-stolen",
@@ -558,7 +558,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/how-to-use-imei-checker-app": "/app",
   "/blog/business-guide-preventing-stolen-goods": "/blog/pawn-shop-stolen-item-verification",
   "/blog/how-to-check-phone-stolen": "/how-to-check-if-phone-stolen",
-  "/blog/stolen-gun-database-search": "/firearms-check",
+  "/blog/stolen-gun-database-search": "/stolen-gun-database",
   "/blog/firearms-app-exclusive": "/firearms-check",
   "/blog/firearms-verification-what-sellers-need-to-know-1760259614826": "/firearms-check",
   "/blog/vin-verification-for-used-cars-what-you-need-to-know-1760173219942": "/blog/complete-vin-guide",
