@@ -284,6 +284,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
 
   // ===== REMOVED VIDEO PAGES (video content retired) =====
   "/youtube": "/",
+  "/youtube/vin-check": "/vin-checker",
   "/youtube/*": "/",
   "/videos": "/",
   "/videos/*": "/",
@@ -741,7 +742,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/guides/imei-verification-guide": "/imei-checker",
   "/app/vs-checkmend": "/imei-checker",
   "/blog/how-to-verify-a-used-phone-before-buying-complete-imei-check-guide-1759914015379": "/how-to-check-if-phone-stolen",
-  "/blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide-1760346020281": "/blog",
+  "/blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide-1760346020281": "/blog/protecting-yourself-from-stolen-goods-a-buyer-s-guide",
   "/blog/how-law-enforcement-tracks-stolen-goods-1760086814875": "/blog",
   "/blog/los-angeles-imei-verification-phone-fraud-protection": "/how-to-check-if-item-stolen",
   "/guides/how-to-check-stolen-items": "/how-to-check-if-item-stolen",
