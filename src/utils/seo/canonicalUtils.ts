@@ -2,6 +2,12 @@
  * Utility functions for managing canonical URLs
  */
 
+// Nov 27 2026: duplicate audit. 54 pages also served at an uppercase address (/VIN-CHECKER) and the
+// fallback canonical pointed at that uppercase copy, so Google saw two self-canonical versions. Site paths
+// are lowercase; ids in these per-record paths are case-sensitive, so they keep their case.
+const CASE_SENSITIVE_PREFIX = /^\/(proof|verified|shared|item|go|verification\/shared)\//i;
+const lowerSitePath = (p: string): string => (CASE_SENSITIVE_PREFIX.test(p) ? p : p.toLowerCase());
+
 export const getCanonicalUrl = (path: string): string => {
   const baseUrl = 'https://safeorstolen.com'; // Always use non-www version for canonical
   
@@ -27,7 +33,7 @@ export const getCanonicalUrl = (path: string): string => {
         cleanPath = cleanPath.slice(0, -1);
       }
       
-      return `${baseUrl}${cleanPath}`;
+      return `${baseUrl}${lowerSitePath(cleanPath)}`;
     } catch {
       return baseUrl;
     }
@@ -43,7 +49,7 @@ export const getCanonicalUrl = (path: string): string => {
   const normalizedPath = trimmedPath.startsWith('/') ? trimmedPath : `/${trimmedPath}`;
   
   // Remove double slashes
-  const finalPath = normalizedPath.replace(/\/+/g, '/');
+  const finalPath = lowerSitePath(normalizedPath.replace(/\/+/g, '/'));
   
   return `${baseUrl}${finalPath}`;
 };
