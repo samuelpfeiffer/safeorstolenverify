@@ -130,7 +130,7 @@ const FAQ_ITEMS = [
  },
  {
  q: 'Can I show a buyer that my item checked clean?',
- a: "Yes. After a check you can get a $1.99 verification certificate: a dated record with its own link that shows what you checked, when, and what the check found. It isn't proof an item was never stolen, but it shows you checked before the sale. Monthly members get certificates free.",
+ a: "Yes. After a check you can get a $4.99 verification certificate: a dated record with its own link that shows what you checked, when, and what the check found. It isn't proof an item was never stolen, but it shows you checked before the sale. Monthly members get certificates free.",
  },
  {
  q: 'What should I do if an item comes back stolen?',
@@ -372,7 +372,7 @@ const Index = () => {
  {
  n: '3',
  title: 'Read the result',
- desc: "Reported stolen, possible match, or no report found, with each source listed. The check is saved to your account with the date, and you can add a $1.99 certificate to share.",
+ desc: "Reported stolen, possible match, or no report found, with each source listed. The check is saved to your account with the date, and you can add a $4.99 certificate to share.",
  },
  ].map((step) => (
  <div key={step.n} className="text-center">

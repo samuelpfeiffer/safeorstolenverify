@@ -92,7 +92,7 @@ const CheckPS5Page = () => {
 
         whatIs: "A PS5 serial number check looks for that exact console in theft reports. When a PS5 is stolen, the owner gives its serial number to the police and their insurer, and can report it on SafeOrStolen. SafeOrStolen searches its own stolen-item reports for the serial number, including listings and posts that mention it. Sony keeps no public lookup for stolen consoles, so SafeOrStolen is where buyers check: run the serial here, then inspect the console in person. Buying a different console? Use the <a href=\"/check-xbox\">Xbox serial number lookup</a> or the <a href=\"/nintendo-switch-serial-number-check\">Nintendo Switch serial number check</a>.",
 
-        howItWorks: "Type the serial number into the search box. SafeOrStolen searches its stolen-item reports at the same time and returns one of three results: reported stolen, possible match, or no report found in the records searched. Each result lists the sources it searched and is saved to your account with the date. After the check you can get a $1.99 verification certificate showing you checked the console before the sale.",
+        howItWorks: "Type the serial number into the search box. SafeOrStolen searches its stolen-item reports at the same time and returns one of three results: reported stolen, possible match, or no report found in the records searched. Each result lists the sources it searched and is saved to your account with the date. After the check you can get a $4.99 verification certificate showing you checked the console before the sale.",
 
         whyCheck: "Game consoles are among the most commonly stolen and resold electronics, because they are easy to carry and sell quickly online. If you buy a stolen PS5, police can return it to the owner and you lose what you paid. A stolen or banned console can also be blocked from PlayStation Network. A few minutes of checking before you pay protects you.",
 
@@ -103,7 +103,7 @@ const CheckPS5Page = () => {
           "Results in a few seconds, with every source listed",
           "Dated record of every check saved to your account",
           "Also works for Xbox, Nintendo Switch, Steam Deck and PS4",
-          "Optional $1.99 certificate to show you checked before buying",
+          "Optional $4.99 certificate to show you checked before buying",
           "Free web app for checking at the meetup"
         ],
 

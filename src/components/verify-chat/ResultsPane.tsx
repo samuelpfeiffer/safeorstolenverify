@@ -22,6 +22,7 @@ import { toast } from 'sonner';
 import { isFirearmItemType } from '@/components/verification/FirearmSourceDisclosure';
 import { VerificationRecord } from '@/components/verification/VerificationRecord';
 import { CertificateOffer } from '@/components/proof/CertificateOffer';
+import { useSubscription } from '@/hooks/useSubscription';
 import { PhoneBlacklistOffer } from '@/components/verify-chat/PhoneBlacklistOffer';
 
 // Nov 23 2026: back on. IMEI.info answered a live test lookup (HTTP 200, full blacklist result).
@@ -148,6 +149,11 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  isAuthenticated,
  inline = false,
 }) => {
+ // Nov 27 2026 (owner decision): the free check gives the answer; the per-source breakdown, the PDF and the
+ // dated certificate are the paid full report ($4.99, included with the $10/month plan). 99.5% of people ran
+ // one free check and left, so the full report is what earns money. Stolen warnings always stay free.
+ const { subscriptionData } = useSubscription();
+ const member = subscriptionData?.subscribed === true;
  const handleDownload = () => {
  if (!current) return;
  if (!isAuthenticated) {
@@ -362,10 +368,10 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
  timestamp={current.timestamp ?? null}
  />
 
- <CertificateOffer checkId={current.checkId} />
+ <CertificateOffer checkId={current.checkId} sourceCount={current.sources?.length ?? 0} member={member} />
 
  {/* Sources */}
- {current.sources && current.sources.length > 0 && (
+ {member && current.sources && current.sources.length > 0 && (
  <div>
  <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2 flex items-center gap-1.5">
  <Database className="w-3 h-3" />
@@ -414,10 +420,12 @@ export const ResultsPane: React.FC<ResultsPaneProps> = ({
 
  {/* Actions */}
  <div className="space-y-2">
+ {member && (
  <Button onClick={handleDownload} className="w-full" size="sm">
  <FileDown className="w-4 h-4 mr-2" />
  Download PDF Report
  </Button>
+ )}
  <div className="grid grid-cols-2 gap-2">
  <Button onClick={() => handleShare(tone.label)} variant="outline" size="sm">
  <Share2 className="w-4 h-4 mr-2" />

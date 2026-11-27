@@ -45,7 +45,7 @@ const FAQS = [
   {
     question: 'Can we give a buyer proof that we checked the car?',
     answer:
-      'Yes. After a check, add a $1.99 verification certificate (free on the monthly plan). It has its own link and shows the date, the last four characters of the VIN, the result and the sources searched. It shows the car was looked up on that date. It is not a title report or a guarantee.',
+      'Yes. After a check, add a $4.99 verification certificate (free on the monthly plan). It has its own link and shows the date, the last four characters of the VIN, the result and the sources searched. It shows the car was looked up on that date. It is not a title report or a guarantee.',
   },
   {
     question: 'What if the VIN plates on a vehicle don\'t match?',
@@ -138,7 +138,7 @@ export default function ForDealers() {
               <li>Check the seller's photo ID against the name on the title or registration.</li>
               <li>Run the VIN at /vin-checker. A mistyped VIN is caught before it uses a check.</li>
               <li>Pull your title and odometer history from your usual provider.</li>
-              <li>Save the check in the deal jacket: your account keeps the date, and a $1.99 certificate gives you a link to print or share.</li>
+              <li>Save the check in the deal jacket: your account keeps the date, and a $4.99 certificate gives you a link to print or share.</li>
             </ol>
           </div>
         </section>

@@ -99,7 +99,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Is my check saved, and can I prove I checked?',
  answer:
- 'Every check is saved to your SafeOrStolen account with the date and the sources searched. If you want something to show a seller, buyer or the police later, you can add a verification certificate for $1.99: a dated record with its own link showing you checked before the sale. Monthly members get certificates free.',
+ 'Every check is saved to your SafeOrStolen account with the date and the sources searched. If you want something to show a seller, buyer or the police later, you can add a verification certificate for $4.99: a dated record with its own link showing you checked before the sale. Monthly members get certificates free.',
  },
  {
  question: 'Can I see who owns an item or who reported it stolen?',
@@ -127,7 +127,7 @@ const howToSchema = {
  { '@type': 'HowToStep', position: 1, name: 'Enter the number', text: 'Type the IMEI, VIN, plate or serial number into the search box.' },
  { '@type': 'HowToStep', position: 2, name: 'Sources are searched', text: 'SafeOrStolen searches its theft reports, plus extra sources for guns, bikes, Arizona vehicles and paid phone checks.' },
  { '@type': 'HowToStep', position: 3, name: 'Read the result', text: 'You see "reported stolen", "possible match" or "no report found in the records searched", with every source listed.' },
- { '@type': 'HowToStep', position: 4, name: 'Keep the record', text: 'The check is saved to your account with the date. A $1.99 verification certificate is optional.' },
+ { '@type': 'HowToStep', position: 4, name: 'Keep the record', text: 'The check is saved to your account with the date. A $4.99 verification certificate is optional.' },
  ],
 };
 
@@ -242,7 +242,7 @@ const HowItWorksPage = () => {
  <p className="text-muted-foreground mb-4">
  Each check goes into your account history with the number, the date, the result and the sources
  searched. You can come back to it if a question comes up after the sale. If you want a record
- you can send to someone, add a verification certificate for $1.99. It's a dated record with its
+ you can send to someone, add a verification certificate for $4.99. It's a dated record with its
  own link that shows you checked before you bought. Monthly members get certificates free.
  </p>
 

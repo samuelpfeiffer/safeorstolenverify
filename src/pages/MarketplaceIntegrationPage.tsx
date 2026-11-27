@@ -127,7 +127,7 @@ export default function MarketplaceIntegrationPage() {
             <h2 className="text-2xl font-bold mb-4">Seller certificate links</h2>
             <p className="text-muted-foreground">
               Add an optional field where a seller can paste a SafeOrStolen certificate link. A seller gets one by checking
-              the item and adding a $1.99 verification certificate. The page at that link shows the check date, the result,
+              the item and adding a $4.99 verification certificate. The page at that link shows the check date, the result,
               the sources searched and only the last four characters of the number, so the full IMEI or serial isn't
               published. Only accept links that start with safeorstolen.com/proof/. Sellers can read{' '}
               <Link to="/for-sellers" className="text-primary underline">how it works for them</Link>.

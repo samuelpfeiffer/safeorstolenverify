@@ -2,7 +2,7 @@
  * Oct 7 2026: rewritten by hand for "verified seller badge" / "show buyers my item isn't stolen".
  * No Search Console data for this page yet. The old page described a "Generate Seller Badge"
  * button, a downloadable badge image and a "VERIFIED CLEAN" seal that do not exist in the product.
- * What exists is the $1.99 verification certificate with its own link, so the page now describes
+ * What exists is the $4.99 verification certificate with its own link, so the page now describes
  * that. Removed: "sell 2x faster", "get full price", "legal protection" and the letgo mention.
  */
 import React from 'react';
@@ -15,7 +15,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: 'Does SafeOrStolen have a verified seller badge?',
     answer:
-      "Not as an image. What SafeOrStolen gives sellers is a verification certificate: a page with its own link showing the date of a check on your item, the records searched and the result. It costs $1.99 and is free for monthly members. You paste the link into your listing, and buyers open it to see the check for themselves (safeorstolen.com/seller-badge explains how).",
+      "Not as an image. What SafeOrStolen gives sellers is a verification certificate: a page with its own link showing the date of a check on your item, the records searched and the result. It costs $4.99 and is free for monthly members. You paste the link into your listing, and buyers open it to see the check for themselves (safeorstolen.com/seller-badge explains how).",
   },
   {
     question: 'How do I add the verification link to my listing?',
@@ -40,7 +40,7 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: 'How much does it cost?',
     answer:
-      'The check itself is one of your checks: 2 are free with no account needed, then $4.99 for 1 check or $10 a month for unlimited checks. The certificate is $1.99 on top, or included free with the monthly plan. You only need one certificate per item.',
+      'The check itself is one of your checks: 2 are free with no account needed, then $4.99 for 1 check or $10 a month for unlimited checks. The certificate is $4.99 on top, or included free with the monthly plan. You only need one certificate per item.',
   },
 ];
 
@@ -59,7 +59,7 @@ const SellerBadgePage: React.FC = () => {
     <>
       <PageSEO
         title="Verified Seller Badge: Share a Stolen-Check Link in Your Listing | SafeOrStolen"
-        description="Show buyers you checked your item for theft reports. Get a $1.99 dated certificate with its own link and paste it into your Facebook Marketplace, eBay, OfferUp or Craigslist listing."
+        description="Show buyers you checked your item for theft reports. Get a $4.99 dated certificate with its own link and paste it into your Facebook Marketplace, eBay, OfferUp or Craigslist listing."
         keywords="verified seller badge, marketplace seller verification, show buyer item is not stolen, seller verification link, prove item not stolen to buyer, facebook marketplace verified seller, stolen check certificate"
         canonical="/seller-badge"
         structuredData={[faqSchema]}
@@ -69,7 +69,7 @@ const SellerBadgePage: React.FC = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">Verified Seller Badge: Share a Check Link</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto speakable-summary">
             To show buyers you checked your item for theft reports, run a SafeOrStolen check on its serial number, IMEI
-            or VIN, then get the $1.99 verification certificate under the result (free for monthly members). It's a
+            or VIN, then get the $4.99 verification certificate under the result (free for monthly members). It's a
             page with its own link showing the check date, the records searched and the result. Paste that link into
             your listing. SafeOrStolen doesn't make a badge image; the link is the badge.
           </p>
@@ -81,7 +81,7 @@ const SellerBadgePage: React.FC = () => {
           <ol className="list-decimal list-inside space-y-3 text-muted-foreground">
             <li>Find your item's serial number, IMEI or VIN and enter it on the <Link to="/verify" className="text-primary hover:underline">verify page</Link>.</li>
             <li>Read the result. If it says "reported stolen" or "possible match", don't list the item: see the questions below.</li>
-            <li>Under the result, choose "Get my certificate" and pay $1.99. Monthly members skip the payment.</li>
+            <li>Under the result, choose "Get my certificate" and pay $4.99. Monthly members skip the payment.</li>
             <li>The certificate page opens. Copy its link from your browser.</li>
             <li>Paste the link into your listing description, or send it to buyers in the chat.</li>
           </ol>

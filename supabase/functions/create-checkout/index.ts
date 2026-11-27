@@ -9,7 +9,7 @@ const PRODUCTION_BASE_URL = 'https://safeorstolen.com';
 // New checkouts use one universal check. Existing Stripe sessions and prices remain valid.
 const UNIVERSAL_PRICE_ID = 'price_1UaFfUGxnZLw8J7OhpJBpwCB';
 const MONTHLY_PRICE_ID = 'price_1T8uToGxnZLw8J7O6GcOuV1w';
-const CERTIFICATE_AMOUNT = 199;
+const CERTIFICATE_AMOUNT = 499;
 
 function cleanFingerprint(fp: unknown): string {
   if (typeof fp !== 'string') return '';

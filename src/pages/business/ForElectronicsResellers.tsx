@@ -160,7 +160,7 @@ const ForElectronicsResellers = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Run your next lot through it</h2>
             <p className="text-muted-foreground mb-6">
-              Selling a device and want to show the buyer you checked it? A $1.99 verification certificate gives them a
+              Selling a device and want to show the buyer you checked it? A $4.99 verification certificate gives them a
               dated record with its own link, free on the monthly plan. Questions: safeorstolenmail@gmail.com.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

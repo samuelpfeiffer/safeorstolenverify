@@ -124,10 +124,10 @@ const ProofRecordPage: React.FC = () => {
                     <>
                       <p className="text-sm text-muted-foreground">
                         A SafeOrStolen check was run on {created?.toLocaleDateString()}. Get the verification certificate
-                        for $1.99 to show the full result, the records searched and the tamper-evident hash at this link.
+                        for $4.99 to show the full result, the records searched and the tamper-evident hash at this link.
                       </p>
                       <Button onClick={pay} disabled={paying} className="w-full">
-                        {paying ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Get the certificate — $1.99'}
+                        {paying ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Get the certificate — $4.99'}
                       </Button>
                       {payError && <p className="text-xs text-red-500">{payError}</p>}
                     </>
@@ -196,6 +196,10 @@ const ProofRecordPage: React.FC = () => {
                       <span className="font-mono text-xs break-all">{record.record_hash}</span>
                     </Row>
                   </dl>
+                  {/* Nov 27 2026: the full report includes a PDF; the browser's print dialog saves this page as one. */}
+                  <Button variant="outline" size="sm" className="w-full mt-4 print:hidden" onClick={() => window.print()}>
+                    Download PDF
+                  </Button>
                 </div>
               )}
 

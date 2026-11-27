@@ -57,7 +57,7 @@ const STEPS = [
   },
   {
     name: 'Run a SafeOrStolen check and save the result',
-    text: 'Enter the VIN or plate at SafeOrStolen. In a few seconds it decodes the year, make and model, lists open safety recalls, and checks SafeOrStolen\u2019s own theft reports (Arizona VINs and plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records). The result is saved to your account with the date, and you can add a $1.99 verification certificate.',
+    text: 'Enter the VIN or plate at SafeOrStolen. In a few seconds it decodes the year, make and model, lists open safety recalls, and checks SafeOrStolen\u2019s own theft reports (Arizona VINs and plates are also checked against Arizona, Alaska and Chicago police stolen-vehicle records). The result is saved to your account with the date, and you can add a $4.99 verification certificate.',
   },
 ];
 

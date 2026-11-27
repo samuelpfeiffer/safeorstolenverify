@@ -63,7 +63,7 @@ const FEATURES: { name: string; what: string; cost: string; href: string; linkTe
  {
  name: 'Verification certificate',
  what: 'A dated record with its own link that shows you checked an item before the sale. Send it to a buyer, or keep it in case questions come up after you buy.',
- cost: '$1.99, free for monthly members',
+ cost: '$4.99, free for monthly members',
  href: '/pricing',
  linkText: 'Pricing',
  },
@@ -109,7 +109,7 @@ const FAQS: { question: string; answer: string }[] = [
  {
  question: 'Can I prove I checked an item before I bought it?',
  answer:
- 'Yes. Every check is saved to your account with the date. For something you can share, add a verification certificate for $1.99: a dated record with its own link showing you checked before the sale. Monthly members get certificates free. It shows you did your homework; it doesn\'t replace a receipt or bill of sale.',
+ 'Yes. Every check is saved to your account with the date. For something you can share, add a verification certificate for $4.99: a dated record with its own link showing you checked before the sale. Monthly members get certificates free. It shows you did your homework; it doesn\'t replace a receipt or bill of sale.',
  },
  {
  question: 'Which records does SafeOrStolen search?',
@@ -133,7 +133,7 @@ export default function FeaturesPage() {
  <>
  <PageSEO
  title="SafeOrStolen Features: Every Check and Tool, With Prices"
- description="Everything SafeOrStolen does: IMEI, VIN, plate, gun, bike and serial checks, phone blacklist search, check history, $1.99 certificates, bulk check and the web app."
+ description="Everything SafeOrStolen does: IMEI, VIN, plate, gun, bike and serial checks, phone blacklist search, check history, $4.99 certificates, bulk check and the web app."
  keywords="safeorstolen features, what can safeorstolen check, stolen item checker features, safeorstolen app, verification certificate, bulk stolen check"
  canonical="/features"
  modifiedTime="2026-10-07"
@@ -148,7 +148,7 @@ export default function FeaturesPage() {
  <p className="text-lg mb-4">
  SafeOrStolen checks whether a phone, vehicle, plate, gun, bike or any serial-numbered item has
  been reported stolen. On top of the check itself you get a saved history of every search, an
- optional $1.99 verification certificate, a free form to report your own stolen items, bulk
+ optional $4.99 verification certificate, a free form to report your own stolen items, bulk
  checking for businesses, and a free web app you can use at a meetup.
  </p>
  <p className="text-muted-foreground mb-8">

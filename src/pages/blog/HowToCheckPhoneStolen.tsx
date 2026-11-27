@@ -195,7 +195,7 @@ export default function HowToCheckPhoneStolen() {
             <li>A free installable web app with a camera barcode scanner</li>
             <li>Checks for other items too: laptops, bikes, cars, plates and guns</li>
             <li>1 free check, no account or credit card needed; then $4.99 for 1 check or $10 a month unlimited</li>
-            <li>Each check saved to your account with the date, plus an optional $1.99 verification certificate</li>
+            <li>Each check saved to your account with the date, plus an optional $4.99 verification certificate</li>
           </ul>
 
           <div className="bg-primary/10 border border-primary/20 p-6 rounded-lg my-8">

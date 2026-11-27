@@ -16,7 +16,7 @@ const WHAT_YOU_GET: string[][] = [
   ['Single checks', 'Type or paste a serial number, IMEI, VIN or plate at /verify and get a result in a few seconds.', 'Every account, 1 free check'],
   ['Bulk check', 'Paste up to 100 numbers, or upload a .csv or .txt file, at /bulk-check. Download the results as a CSV.', 'Built for the $10/month plan'],
   ['Dated check history', 'Every check is saved to your account with the date and time, the result and the sources searched.', 'Every account'],
-  ['Verification certificate', 'A dated record with its own link that shows you checked an item. You can show it to a customer or keep it in the file.', '$1.99, free on the monthly plan'],
+  ['Verification certificate', 'A dated record with its own link that shows you checked an item. You can show it to a customer or keep it in the file.', '$4.99, free on the monthly plan'],
   ['Phone blacklist check', 'Checks an IMEI against the lost and stolen carrier blacklist.', 'Paid; up to 20 a month on the monthly plan'],
 ];
 
@@ -181,7 +181,7 @@ export default function ForBusinesses() {
               <li>Record the seller's photo ID and the number the way your state or city requires.</li>
               <li>Run the number at /verify, or save a day's intake and run it through /bulk-check.</li>
               <li>Hold anything that comes back "reported stolen" or "possible match", and call your local police non-emergency line about a stolen result.</li>
-              <li>Keep the CSV or your account history with the transaction. For a customer who wants proof, add a $1.99 verification certificate.</li>
+              <li>Keep the CSV or your account history with the transaction. For a customer who wants proof, add a $4.99 verification certificate.</li>
             </ol>
           </div>
         </section>

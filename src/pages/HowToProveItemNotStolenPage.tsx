@@ -4,7 +4,7 @@ import { ItemLandingPageTemplate } from '@/components/seo/ItemLandingPageTemplat
  * Oct 7 2026: rewritten by hand for "how to prove an item is not stolen". No Search Console data
  * for this page yet. Now self-contained (no longer reads SELLER_PROOF_GUIDE from
  * src/data/definitiveGuides.ts). Honest framing: nobody can prove a negative; a seller can show
- * ownership evidence, and the $1.99 certificate is a dated record of a check and its result.
+ * ownership evidence, and the $4.99 certificate is a dated record of a check and its result.
  */
 export default function HowToProveItemNotStolenPage() {
   return (
@@ -28,7 +28,7 @@ export default function HowToProveItemNotStolenPage() {
       quickAnswer={{
         question: 'How do I prove an item is not stolen?',
         answer:
-          "Strictly, no one can prove an item was never stolen, because there's no complete list of every theft. What you can do is show a buyer that you own it: a receipt or order confirmation whose serial number matches the item, the original box with the same serial, and unlocking and signing out of it in front of them. Add a check on SafeOrStolen (safeorstolen.com/how-to-prove-item-is-not-stolen) showing no report was found, and the optional $1.99 certificate gives that check a dated link you can share.",
+          "Strictly, no one can prove an item was never stolen, because there's no complete list of every theft. What you can do is show a buyer that you own it: a receipt or order confirmation whose serial number matches the item, the original box with the same serial, and unlocking and signing out of it in front of them. Add a check on SafeOrStolen (safeorstolen.com/how-to-prove-item-is-not-stolen) showing no report was found, and the optional $4.99 certificate gives that check a dated link you can share.",
       }}
       sections={[
         {
@@ -46,9 +46,9 @@ export default function HowToProveItemNotStolenPage() {
           },
         },
         {
-          heading: 'What the $1.99 verification certificate is, and isn\'t',
+          heading: 'What the $4.99 verification certificate is, and isn\'t',
           paragraphs: [
-            'After any SafeOrStolen check, you can get a verification certificate for $1.99 (free for monthly members). It is a page with its own link that shows the record ID, the date and time of the check, the item category, a masked identifier (only the last few characters), the records searched, the result, and a tamper-evident hash. You can paste the link into your listing or send it to a buyer.',
+            'After any SafeOrStolen check, you can get a verification certificate for $4.99 (free for monthly members). It is a page with its own link that shows the record ID, the date and time of the check, the item category, a masked identifier (only the last few characters), the records searched, the result, and a tamper-evident hash. You can paste the link into your listing or send it to a buyer.',
             "It is a dated record that you checked, and of what the check found. It is not proof of ownership, not a bill of sale, and not a guarantee the item wasn't stolen: many stolen items are never reported to any database. The certificate page says so, word for word.",
           ],
         },
@@ -69,20 +69,20 @@ export default function HowToProveItemNotStolenPage() {
         whatIs:
           "Proving an item isn't stolen really means two things: showing you own it, and showing it isn't listed as stolen where buyers look. The first comes from your own records and from unlocking the item in front of the buyer. The second comes from a serial number check. Together they answer the questions an honest buyer asks.",
         howItWorks:
-          'Enter your item\'s serial number, IMEI or VIN in the search box. SafeOrStolen searches its theft reports, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. The check is saved to your account with the date, and you can add the $1.99 certificate to get a shareable link.',
+          'Enter your item\'s serial number, IMEI or VIN in the search box. SafeOrStolen searches its theft reports, plus extra sources for guns, bikes, phones and Arizona vehicles, and shows "reported stolen", "possible match" or "no report found in the records searched" with every source listed. The check is saved to your account with the date, and you can add the $4.99 certificate to get a shareable link.',
         whyCheck:
           "If your item was ever reported stolen, perhaps before you bought it used, you want to know before a buyer finds out at the meetup. And a buyer who sees you checked is more likely to show up and pay your asking price.",
         benefits: [
           'Find out what a buyer will see when they check your serial',
           'Every source listed with the result',
-          'Optional $1.99 certificate with its own link to share (free for monthly members)',
+          'Optional $4.99 certificate with its own link to share (free for monthly members)',
           'Masked identifier on the certificate, so the full number stays private',
           '1 free check with no credit card',
         ],
         process: [
           'Gather your receipt, order confirmation, title or registration.',
           'Check your serial number, IMEI or VIN on SafeOrStolen.',
-          'If you want a shareable link, get the $1.99 certificate from the result.',
+          'If you want a shareable link, get the $4.99 certificate from the result.',
           'Put the serial (or the certificate link) in your listing and answer serial questions openly.',
           'At the meetup, unlock the item and sign out of your accounts while the buyer watches.',
           'Give the buyer a signed bill of sale with the serial number.',
@@ -101,7 +101,7 @@ export default function HowToProveItemNotStolenPage() {
           {
             question: 'Does a SafeOrStolen certificate prove an item is not stolen?',
             answer:
-              "No. The $1.99 certificate is a dated record with its own link showing that a check was run, which records were searched and what the result was. It isn't proof of ownership or a guarantee the item wasn't stolen, since many stolen items are never reported. It shows a buyer you checked, and when.",
+              "No. The $4.99 certificate is a dated record with its own link showing that a check was run, which records were searched and what the result was. It isn't proof of ownership or a guarantee the item wasn't stolen, since many stolen items are never reported. It shows a buyer you checked, and when.",
           },
           {
             question: 'Should I give a buyer my serial number or IMEI?',

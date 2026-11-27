@@ -38,7 +38,7 @@ const current: { title: string; body: string; to: string; linkText: string }[] =
   },
   {
     title: 'Verification certificate',
-    body: 'An optional $1.99 certificate gives a buyer a dated record, with its own link, showing they checked before the sale. It is free for monthly members.',
+    body: 'An optional $4.99 certificate gives a buyer a dated record, with its own link, showing they checked before the sale. It is free for monthly members.',
     to: '/pricing',
     linkText: 'See pricing',
   },

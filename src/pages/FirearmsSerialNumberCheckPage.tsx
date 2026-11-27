@@ -167,7 +167,7 @@ const FirearmsSerialNumberCheckPage = () => {
  </div>
  <div className="flex items-center gap-2">
  <FileText className="h-5 w-5 text-primary" />
- <span>Optional $1.99 certificate</span>
+ <span>Optional $4.99 certificate</span>
  </div>
  </div>
  </div>
@@ -204,7 +204,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 3 – Review risk signals before you buy or sell</h3>
  <p className="text-muted-foreground">
- You'll see one of three results: reported stolen, possible match, or no report found in the records searched, with every source listed. The check is saved to your account with the date, and you can add a $1.99 verification certificate with its own link. If the gun comes back reported stolen or a possible match, don't buy it and call your local police non-emergency line.
+ You'll see one of three results: reported stolen, possible match, or no report found in the records searched, with every source listed. The check is saved to your account with the date, and you can add a $4.99 verification certificate with its own link. If the gun comes back reported stolen or a possible match, don't buy it and call your local police non-emergency line.
  </p>
  </div>
  </div>
@@ -336,7 +336,7 @@ const FirearmsSerialNumberCheckPage = () => {
  <div>
  <h3 className="font-semibold mb-1">Run and save a pre-sale check</h3>
  <p className="text-muted-foreground">
- Before selling, run your own serial so you know what a buyer will see. The check is saved to your account with the date, and the optional $1.99 certificate gives you a dated record with its own link to share.
+ Before selling, run your own serial so you know what a buyer will see. The check is saved to your account with the date, and the optional $4.99 certificate gives you a dated record with its own link to share.
  </p>
  </div>
  </div>

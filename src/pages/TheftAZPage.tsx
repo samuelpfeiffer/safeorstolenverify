@@ -39,7 +39,7 @@ const TheftAZPage = () => {
  "Year, make and model decoded from the VIN",
  "Open safety recalls for the vehicle",
  "SafeOrStolen theft reports in the same check",
- "Optional $1.99 verification certificate: a dated record showing you checked before the sale",
+ "Optional $4.99 verification certificate: a dated record showing you checked before the sale",
  "1 free check, no account or credit card needed",
  ],
 
@@ -48,7 +48,7 @@ const TheftAZPage = () => {
  "Enter it in the SafeOrStolen search box",
  "Read the result and the list of sources searched",
  "Match the VIN on the dashboard, door sticker and title, and compare the title name to the seller's ID",
- "Save the check, or add a $1.99 certificate, before you pay",
+ "Save the check, or add a $4.99 certificate, before you pay",
  ],
 
  faqs: [

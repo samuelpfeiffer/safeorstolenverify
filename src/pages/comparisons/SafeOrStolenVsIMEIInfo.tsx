@@ -48,7 +48,7 @@ const SafeOrStolenVsIMEIInfo = () => {
     { feature: 'Serial number check', safeOrStolen: 'Yes', imeiInfo: 'No', winner: 'sos' },
     { feature: 'Make and model from IMEI', safeOrStolen: 'Yes', imeiInfo: 'Yes', winner: 'tie' },
     { feature: 'App', safeOrStolen: 'Free installable web app at safeorstolen.com/app', imeiInfo: 'Website', winner: 'tie' },
-    { feature: 'Dated proof of your check', safeOrStolen: 'Optional $1.99 certificate', imeiInfo: 'No', winner: 'sos' },
+    { feature: 'Dated proof of your check', safeOrStolen: 'Optional $4.99 certificate', imeiInfo: 'No', winner: 'sos' },
   ];
 
   return (

@@ -25,7 +25,7 @@ const StolenCheckLosAngeles = () => {
  },
  {
  question: "What does a SafeOrStolen check cost?",
- answer: "You get 1 free check, no account or credit card needed. After that $4.99 gets you 1 more check, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 certificate gives you a dated record with its own link showing you checked before the sale."
+ answer: "You get 1 free check, no account or credit card needed. After that $4.99 gets you 1 more check, or $10 a month for unlimited checks, cancel anytime. An optional $4.99 certificate gives you a dated record with its own link showing you checked before the sale."
  }
  ];
 
@@ -144,7 +144,7 @@ const StolenCheckLosAngeles = () => {
  "Bring a friend and keep your phone charged",
  "Confirm the number on the item matches what the seller sent",
  "Walk away if the seller rushes you, won't show the number, or the price is far below other listings",
- "Save your check with the date; add a $1.99 certificate if you want a shareable record"
+ "Save your check with the date; add a $4.99 certificate if you want a shareable record"
  ].map((tip, i) => (
  <Card key={i}>
  <CardContent className="flex items-center gap-3 py-4">

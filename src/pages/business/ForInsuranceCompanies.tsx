@@ -40,7 +40,7 @@ const FAQS = [
   {
     question: 'What record do we get of each check?',
     answer:
-      'Every check is saved to your account with the date, the result and the sources searched. The bulk check also gives you a CSV with the time of each check in UTC and a check ID. A $1.99 verification certificate adds a dated record with its own link. None of these is an official record or a finding of fraud.',
+      'Every check is saved to your account with the date, the result and the sources searched. The bulk check also gives you a CSV with the time of each check in UTC and a check ID. A $4.99 verification certificate adds a dated record with its own link. None of these is an official record or a finding of fraud.',
   },
   {
     question: 'Is there an API for claims systems?',

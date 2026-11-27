@@ -320,7 +320,7 @@ const TopStolenItemCheckers = () => {
                     <li><Yes /> Every source searched is listed in the result</li>
                     <li><Yes /> $10/mo unlimited</li>
                     <li><Yes /> Results in a few seconds</li>
-                    <li><Yes /> Optional $1.99 verification certificate with its own link</li>
+                    <li><Yes /> Optional $4.99 verification certificate with its own link</li>
                     <li><Yes /> Bulk checking for pawn shops and dealers</li>
                   </ul>
                 </div>

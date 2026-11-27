@@ -107,7 +107,7 @@ const VinCheckerApp = () => {
  <div>
  <h3 className="font-bold mb-2">Useful for sellers too</h3>
  <p className="text-muted-foreground text-sm">
- Sellers can run their own VIN and share a $1.99 verification certificate, a dated record with its own link, so buyers see the check was done.
+ Sellers can run their own VIN and share a $4.99 verification certificate, a dated record with its own link, so buyers see the check was done.
  </p>
  </div>
  </div>

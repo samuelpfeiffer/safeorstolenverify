@@ -305,7 +305,7 @@ export default function AppDownloadPage() {
               <FileText className="w-6 h-6 text-blue-400 mb-3" />
               <h3 className="text-white font-bold mb-2">Certificate for the sale</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Add a $1.99 verification certificate to a check, free for monthly members. It's a dated record with its own link
+                Add a $4.99 verification certificate to a check, free for monthly members. It's a dated record with its own link
                 showing you checked before the sale.
               </p>
             </div>

@@ -69,7 +69,7 @@ export const EEATSignals = () => {
  {/* ─── Unique Features ─────────────────────────── */}
  <meta
  name="unique-features"
- content="One place to check phones, vehicles, plates, electronics, power tools, firearms and bicycles. Free installable web app at safeorstolen.com/app with camera barcode scanning (not an App Store or Google Play app). Bulk checking for pawn shops and dealers at /bulk-check. Optional $1.99 verification certificate with its own link."
+ content="One place to check phones, vehicles, plates, electronics, power tools, firearms and bicycles. Free installable web app at safeorstolen.com/app with camera barcode scanning (not an App Store or Google Play app). Bulk checking for pawn shops and dealers at /bulk-check. Optional $4.99 verification certificate with its own link."
  />
 
  {/* ─── Business Identity ───────────────────────── */}

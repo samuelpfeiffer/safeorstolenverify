@@ -16,7 +16,7 @@ const UPDATED = 'October 7, 2026';
 const OPTIONS: string[][] = [
   ['Ask for the number in the listing form', 'A field for the serial number, IMEI or VIN on phones, laptops, bikes, tools, guns and vehicles', 'Your own form; nothing needed from us'],
   ['Link the listing to a check', 'A "Check this item" link to safeorstolen.com/verify?q=NUMBER&type=imei (or vin, gun, bike, plate). The buyer lands on SafeOrStolen and the check starts.', 'Available now'],
-  ['Ask sellers for a certificate link', 'The seller runs a check and adds a $1.99 verification certificate. Its link shows the date, the last four characters of the number, the result and the sources searched.', 'Available now'],
+  ['Ask sellers for a certificate link', 'The seller runs a check and adds a $4.99 verification certificate. Its link shows the date, the last four characters of the number, the result and the sources searched.', 'Available now'],
   ['Review a batch of listings', 'Staff paste up to 100 numbers into /bulk-check and download a CSV of results.', 'Available now, on the $10/month plan'],
   ['Automatic checks through an API', 'Checks run from your own systems at listing time', 'Not available today. Email safeorstolenmail@gmail.com.'],
 ];

@@ -4,7 +4,7 @@
  * Issues a certificate from a check that SafeOrStolen actually ran and saved
  * (verification_searches), so the result and the records searched always come
  * from the server, never from the browser. Monthly members get it free; everyone
- * else pays $1.99 through create-checkout, and stripe-webhook marks it paid.
+ * else pays $4.99 through create-checkout, and stripe-webhook marks it paid.
  */
 import { createFileRoute } from '@tanstack/react-router';
 import { createClient } from '@supabase/supabase-js';
@@ -154,7 +154,7 @@ export const Route = createFileRoute('/certificate-api')({
             }
           }
 
-          return json({ id: proof.id, paid: !!proof.paid_at, price: 1.99 });
+          return json({ id: proof.id, paid: !!proof.paid_at, price: 4.99 });
         } catch (e) {
           console.error('[certificate-api]', e);
           return json({ error: 'Something went wrong. Please try again.' }, 500);

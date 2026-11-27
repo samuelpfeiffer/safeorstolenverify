@@ -134,7 +134,7 @@ export const StolenCheckLanding: React.FC<StolenCheckLandingProps> = ({
                     <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
                     <h3 className="font-bold mb-2">A Dated Record</h3>
                     <p className="text-sm text-muted-foreground">
-                      Each check is saved to your account with the date. A $1.99 verification certificate gives you a link showing you checked before the sale.
+                      Each check is saved to your account with the date. A $4.99 verification certificate gives you a link showing you checked before the sale.
                     </p>
                   </CardContent>
                 </Card>

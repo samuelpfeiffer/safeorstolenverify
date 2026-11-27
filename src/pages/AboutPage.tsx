@@ -188,7 +188,7 @@ const AboutPage = () => {
                   <strong className="text-foreground">Monthly:</strong> $10 for unlimited checks. Cancel anytime, 30-day refund.
                 </li>
                 <li>
-                  <strong className="text-foreground">Verification certificate:</strong> $1.99, free for monthly members. A dated record
+                  <strong className="text-foreground">Verification certificate:</strong> $4.99, free for monthly members. A dated record
                   with its own link showing you checked before the sale.
                 </li>
               </ul>

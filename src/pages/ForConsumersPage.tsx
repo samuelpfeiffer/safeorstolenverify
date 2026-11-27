@@ -40,12 +40,12 @@ const consumerFaqs: { question: string; answer: string }[] = [
  {
  question: 'How much does SafeOrStolen cost?',
  answer:
- 'Your first check is free, with no account or credit card needed. After that, $4.99 gets you 1 more check, or unlimited checks are $10 a month, cancel anytime, and a 30-day refund. An optional $1.99 verification certificate gives you a dated record with its own link; it is free for monthly members.',
+ 'Your first check is free, with no account or credit card needed. After that, $4.99 gets you 1 more check, or unlimited checks are $10 a month, cancel anytime, and a 30-day refund. An optional $4.99 verification certificate gives you a dated record with its own link; it is free for monthly members.',
  },
  {
  question: 'I am selling something. How can I show the buyer it is not stolen?',
  answer:
- 'Run a check on your own item, then add a $1.99 verification certificate: a dated record with its own link that shows the item was checked. Put the link in your listing or send it to the buyer. Also keep the original receipt or box with the serial number on it. Those two together answer most buyers\' questions before they ask.',
+ 'Run a check on your own item, then add a $4.99 verification certificate: a dated record with its own link that shows the item was checked. Put the link in your listing or send it to the buyer. Also keep the original receipt or box with the serial number on it. Those two together answer most buyers\' questions before they ask.',
  },
  {
  question: 'My phone, bike or laptop was stolen. What should I do?',
@@ -142,7 +142,7 @@ const ForConsumersPage = () => {
  <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">When you're selling</h2>
  <p className="text-muted-foreground mb-8">
  Buyers who have read this page will ask you for the serial number. Send a clear photo of it
- with the listing. If you want to go further, check your own item and add a $1.99 verification
+ with the listing. If you want to go further, check your own item and add a $4.99 verification
  certificate, a dated record with its own link, and put the link in the listing. Signing out of
  your accounts and resetting the device before the buyer arrives saves everyone time. More on this
  for <Link to="/for-sellers" className="text-primary underline">sellers</Link>.

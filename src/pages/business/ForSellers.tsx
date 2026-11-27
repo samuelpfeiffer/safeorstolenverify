@@ -28,7 +28,7 @@ const FAQS = [
   {
     question: 'How do I prove an item I\'m selling is not stolen?',
     answer:
-      "You can't prove it outright, but you can show what you did. Keep your receipt, run the serial number, IMEI or VIN on SafeOrStolen (safeorstolen.com/for-sellers), and add a $1.99 verification certificate. Post its link in your listing. Buyers see the check date, the result, the sources searched and the last four characters of the number, and can check the number themselves.",
+      "You can't prove it outright, but you can show what you did. Keep your receipt, run the serial number, IMEI or VIN on SafeOrStolen (safeorstolen.com/for-sellers), and add a $4.99 verification certificate. Post its link in your listing. Buyers see the check date, the result, the sources searched and the last four characters of the number, and can check the number themselves.",
   },
   {
     question: 'What does a buyer see when they open my certificate link?',
@@ -38,7 +38,7 @@ const FAQS = [
   {
     question: 'How much does a verification certificate cost?',
     answer:
-      'The check comes first: 1 free check, no account needed, then $4.99 for 1 check or $10 a month for unlimited checks. The certificate is $1.99 on top, or free if you are on the monthly plan. You can add one up to 30 days after the check, and each check gets one certificate.',
+      'The check comes first: 1 free check, no account needed, then $4.99 for 1 check or $10 a month for unlimited checks. The certificate is $4.99 on top, or free if you are on the monthly plan. You can add one up to 30 days after the check, and each check gets one certificate.',
   },
   {
     question: 'What else should I show buyers besides the certificate?',
@@ -69,7 +69,7 @@ export default function ForSellers() {
       areaServed: { '@type': 'Country', name: 'United States' },
       description: 'Check an item before listing it and share a dated verification certificate link with buyers.',
       offers: [
-        { '@type': 'Offer', price: '1.99', priceCurrency: 'USD', description: 'Verification certificate' },
+        { '@type': 'Offer', price: '4.99', priceCurrency: 'USD', description: 'Verification certificate' },
         { '@type': 'Offer', price: '10.00', priceCurrency: 'USD', description: 'Unlimited checks per month, certificates included' },
       ],
       dateModified: '2026-10-07',
@@ -85,7 +85,7 @@ export default function ForSellers() {
     <>
       <PageSEO
         title="How to Prove an Item Isn't Stolen When Selling It | SafeOrStolen"
-        description="Show buyers you checked an item before listing it: run the serial, IMEI or VIN, add a $1.99 dated verification certificate, and post its link. What buyers see and what to keep with it."
+        description="Show buyers you checked an item before listing it: run the serial, IMEI or VIN, add a $4.99 dated verification certificate, and post its link. What buyers see and what to keep with it."
         keywords="how to prove an item is not stolen, prove item not stolen when selling, verification certificate for sellers, show buyer item is not stolen, seller stolen check"
         canonical="/for-sellers"
         modifiedTime="2026-10-07"
@@ -98,7 +98,7 @@ export default function ForSellers() {
             <p className="text-sm font-semibold text-primary mb-3">For people selling phones, bikes, tools, cars and more</p>
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">How to Show Buyers an Item Isn't Stolen</h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Run the item's serial number, IMEI or VIN on SafeOrStolen before you list it, then add a $1.99 verification
+              Run the item's serial number, IMEI or VIN on SafeOrStolen before you list it, then add a $4.99 verification
               certificate. The certificate is a dated record with its own link that shows the result, the sources searched
               and the last four characters of the number. Post that link in your listing, keep your receipt handy, and
               invite buyers to run the number themselves.
@@ -117,7 +117,7 @@ export default function ForSellers() {
             <ol className="list-decimal pl-6 space-y-3 text-muted-foreground">
               <li>Find the number on the item: *#06# on a phone, the frame under the pedals on a bike, the nameplate on a tool, the VIN at the base of the windshield.</li>
               <li>Enter it at /verify. The result comes back in a few seconds and is saved to your account with the date.</li>
-              <li>Under the result, click "Get my certificate" and pay $1.99 (free on the monthly plan). You have 30 days from the check to add it.</li>
+              <li>Under the result, click "Get my certificate" and pay $4.99 (free on the monthly plan). You have 30 days from the check to add it.</li>
               <li>Copy the certificate link and paste it into your listing description.</li>
               <li>When a buyer asks, send them the full number privately so they can check it too, and show your receipt at the meetup.</li>
             </ol>

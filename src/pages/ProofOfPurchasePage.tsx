@@ -1,7 +1,7 @@
 /**
  * Oct 7 2026: rewritten by hand for "proof of clean purchase" (a dated record that you checked a
  * used item for theft reports before buying it). No Search Console data for this page yet. The page
- * now describes the $1.99 verification certificate as it exists (offered under every check result,
+ * now describes the $4.99 verification certificate as it exists (offered under every check result,
  * free for monthly members, its own /proof/ link). Removed: the claim that "most stolen property is
  * never reported" stated as a statistic, and a "save to their account" typo. PROOF_DISCLAIMER is
  * rendered unchanged through <ProofDisclaimer />.
@@ -20,17 +20,17 @@ const FAQS: { question: string; answer: string }[] = [
   {
     question: "How do I prove I didn't know something was stolen?",
     answer:
-      "Show what you did before you paid. A dated record of a stolen-item check on the serial number, the listing, your messages with the seller, the receipt and how you paid all show you acted in good faith at the time. Records made at the time of the sale carry far more weight than an explanation given afterwards. SafeOrStolen's $1.99 verification certificate (safeorstolen.com/proof-of-purchase) is one such record.",
+      "Show what you did before you paid. A dated record of a stolen-item check on the serial number, the listing, your messages with the seller, the receipt and how you paid all show you acted in good faith at the time. Records made at the time of the sale carry far more weight than an explanation given afterwards. SafeOrStolen's $4.99 verification certificate (safeorstolen.com/proof-of-purchase) is one such record.",
   },
   {
     question: 'What is a proof of clean purchase certificate?',
     answer:
-      "It's a page with its own link that records a SafeOrStolen check: the record ID, the date and time, the item category, the last four characters of the number, the records searched, the result, and a tamper-evident hash. It costs $1.99 and is free for monthly members. It shows that you checked and what the check found. It doesn't prove ownership or replace a bill of sale.",
+      "It's a page with its own link that records a SafeOrStolen check: the record ID, the date and time, the item category, the last four characters of the number, the records searched, the result, and a tamper-evident hash. It costs $4.99 and is free for monthly members. It shows that you checked and what the check found. It doesn't prove ownership or replace a bill of sale.",
   },
   {
     question: 'How do I get a certificate?',
     answer:
-      'Run a check on the serial number, IMEI or VIN of the item you are buying. Under the result you will see "Get a verification certificate — $1.99". Pay, and you are taken to the certificate page; copy its link and keep it with your receipt. Monthly members get the certificate at no charge. You can also send the link to the seller or anyone else who needs to see it.',
+      'Run a check on the serial number, IMEI or VIN of the item you are buying. Under the result you will see "Get a verification certificate — $4.99". Pay, and you are taken to the certificate page; copy its link and keep it with your receipt. Monthly members get the certificate at no charge. You can also send the link to the seller or anyone else who needs to see it.',
   },
   {
     question: "Does a clean check mean the item definitely isn't stolen?",
@@ -78,7 +78,7 @@ const ProofOfPurchasePage: React.FC = () => {
     <>
       <PageSEO
         title="Proof of Clean Purchase: A Dated Record You Checked Before Buying | SafeOrStolen"
-        description="Get a $1.99 dated certificate with its own link showing you checked a used item for theft reports before you bought it, and what the check found. Free for monthly members."
+        description="Get a $4.99 dated certificate with its own link showing you checked a used item for theft reports before you bought it, and what the check found. Free for monthly members."
         keywords="proof of clean purchase, proof i checked item was not stolen, good faith purchase proof, stolen item check certificate, proof of due diligence used item, how to prove you didn't know something was stolen"
         canonical="/proof-of-purchase"
         structuredData={[faqSchema, breadcrumbSchema]}
@@ -98,7 +98,7 @@ const ProofOfPurchasePage: React.FC = () => {
             >
               <p className="text-base md:text-lg text-foreground leading-relaxed">
                 Proof of clean purchase is a dated record that you checked a used item for theft reports before you
-                bought it. After any SafeOrStolen check, you can get a verification certificate for $1.99 (free for
+                bought it. After any SafeOrStolen check, you can get a verification certificate for $4.99 (free for
                 monthly members). It has its own link and shows the date and time of the check, the item category, the
                 last four characters of the number, the records searched, the result and a tamper-evident hash. Keep it
                 with your receipt.
@@ -133,7 +133,7 @@ const ProofOfPurchasePage: React.FC = () => {
               </table>
             </div>
 
-            <h2 className="text-2xl font-bold mt-12 mb-4">When it's worth $1.99</h2>
+            <h2 className="text-2xl font-bold mt-12 mb-4">When it's worth $4.99</h2>
             <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
               <li>You're buying something expensive from a stranger: a phone, laptop, e-bike, tools or a car.</li>
               <li>You're paying cash, so there's no payment record that shows when and from whom you bought.</li>

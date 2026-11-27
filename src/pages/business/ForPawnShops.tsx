@@ -194,7 +194,7 @@ export default function ForPawnShops() {
             <p className="text-muted-foreground">
               Buyers often ask whether pawn shops check items at all. That is answered in{' '}
               <Link to="/blog/pawn-shop-stolen-item-verification" className="text-primary underline">how pawn shops check if items are stolen</Link>.
-              For a customer who wants proof that an item they're buying from you was checked, a $1.99 verification
+              For a customer who wants proof that an item they're buying from you was checked, a $4.99 verification
               certificate gives them a dated record with its own link.
             </p>
           </div>

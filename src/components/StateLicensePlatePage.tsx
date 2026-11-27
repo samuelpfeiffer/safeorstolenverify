@@ -378,7 +378,7 @@ export const StateLicensePlatePage = ({ stateData }: StateLicensePlatePageProps)
  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Prove your vehicle is legitimate</li>
  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Show buyers you checked first</li>
  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Answer the "is it stolen?" question up front</li>
- <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Share a $1.99 verification certificate link</li>
+ <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /> Share a $4.99 verification certificate link</li>
  </ul>
  </div>
  </div>

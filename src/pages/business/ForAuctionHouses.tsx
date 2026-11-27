@@ -43,7 +43,7 @@ const FAQS = [
   {
     question: 'Can we show bidders that lots were checked?',
     answer:
-      "Yes, lot by lot. A $1.99 verification certificate, free on the monthly plan, gives a dated record with its own link showing the result and the sources searched, with only the last four characters of the number visible. You can add that link to the lot description. There are no catalog badges or branded reports.",
+      "Yes, lot by lot. A $4.99 verification certificate, free on the monthly plan, gives a dated record with its own link showing the result and the sources searched, with only the last four characters of the number visible. You can add that link to the lot description. There are no catalog badges or branded reports.",
   },
   {
     question: 'What should we do when a lot comes back with no report found?',
