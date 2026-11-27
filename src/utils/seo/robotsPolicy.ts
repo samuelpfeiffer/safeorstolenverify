@@ -52,6 +52,11 @@ export function isPrivateNoIndexPath(pathname: string): boolean {
     return true;
   }
 
+  // Nov 27 2026: duplicate audit. App/API endpoints that serve an empty app shell on GET (200, no title).
+  if (/^\/(my-items|certificate-api|verify-api|plate-owner-api|reports-api)$/i.test(path) || /^\/\.lovable\//.test(path)) {
+    return true;
+  }
+
   // Nov 27 2026: "coming soon" page; Google treats "not available yet" pages as soft 404s.
   if (/^\/sms-verify$/i.test(path)) {
     return true;
