@@ -109,6 +109,13 @@ export default function ForPawnShops() {
               <Button size="lg" variant="outline" asChild><Link to="/verify">Check one item</Link></Button>
             </div>
             <p className="text-sm text-muted-foreground mt-4">1 free check · No credit card · Updated {UPDATED}</p>
+            {/* Nov 27 2026: these guides had 1–3 internal links and sit in "Crawled - currently not indexed". */}
+            <p className="text-sm text-muted-foreground mt-3">
+              Guides: <Link to="/blog/pawn-shop-stolen-item-verification" className="text-primary underline">how pawn shops verify items</Link>
+              {' · '}<Link to="/blog/scammer-tactics-exposed" className="text-primary underline">how stolen goods are sold online</Link>
+              {' · '}<Link to="/blog/atf-gun-serial-number-check" className="text-primary underline">ATF gun serial number check</Link>
+              {' · '}<Link to="/partial-serial-number-search" className="text-primary underline">partial serial number search</Link>
+            </p>
           </div>
         </section>
 
