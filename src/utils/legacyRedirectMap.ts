@@ -100,6 +100,7 @@ export const LEGACY_REDIRECT_MAP: Record<string, string> = {
   "/blog/title-washing-explained": "/how-to-check-if-car-stolen",
   "/blog/understanding-imei-blacklists-and-what-they-mean": "/blog/what-is-a-blacklisted-imei",
   "/blog/understanding-imei-blacklists-and-what-they-mean-1759654818848": "/blog/what-is-a-blacklisted-imei",
+  "/blog/understanding-imei-blacklists-and-what-they-mean-2": "/blog/what-is-a-blacklisted-imei",
   "/blog/verification-data-and-privacy": "/privacy",
   "/blog/vin-verification-for-used-cars-what-you-need-to-know-1760000422701": "/blog/complete-vin-guide",
   "/blog/why-checkmend-has-no-app": "/imei-checker",
