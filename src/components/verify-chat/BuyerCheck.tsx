@@ -87,7 +87,7 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [], che
     ];
   }, [autoChecked]);
 
-  // Oct 5 2026: issued on the server from the saved check ($1.99, free for members).
+  // Oct 5 2026: issued on the server from the saved check ($4.99, free for members).
   const save = async () => {
     if (!allDone || !allPassed || !checkId) return;
     setSaving(true);
@@ -271,7 +271,7 @@ export const BuyerCheck: React.FC<BuyerCheckProps> = ({ vin, providers = [], che
           <div className="space-y-3">
             <Button onClick={save} disabled={!allDone || saving} className="w-full sm:w-auto">
               {saving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden /> : null}
-              Get Proof of Clean Purchase — $1.99
+              Get Proof of Clean Purchase — $4.99
             </Button>
             {!allDone && (
               <p className="text-xs text-muted-foreground">Finish all four steps to save your record.</p>

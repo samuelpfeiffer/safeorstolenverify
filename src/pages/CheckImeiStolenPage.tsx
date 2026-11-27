@@ -36,7 +36,7 @@ const FAQS = [
  {
  question: 'Do I get proof that I checked the phone?',
  answer:
- 'Every SafeOrStolen check is saved to your account with the date. If you want something you can show someone else, add the optional $1.99 verification certificate: a dated record with its own link showing you checked before the sale. It\'s free for monthly members.',
+ 'Every SafeOrStolen check is saved to your account with the date. If you want something you can show someone else, add the optional $4.99 verification certificate: a dated record with its own link showing you checked before the sale. It\'s free for monthly members.',
  },
 ];
 
@@ -153,7 +153,7 @@ const CheckImeiStolenPage = () => {
  <p>
  The regular SafeOrStolen check answers the first question from <strong>its own theft reports</strong>, and shows the phone&apos;s make and model so you can match it to the
  device. The second question is answered by the paid <strong>blacklist check</strong>. Every check is
- saved to your account with the date, and an optional $1.99 <strong>verification certificate</strong>
+ saved to your account with the date, and an optional $4.99 <strong>verification certificate</strong>
  gives you a dated record with its own link.
  </p>
 

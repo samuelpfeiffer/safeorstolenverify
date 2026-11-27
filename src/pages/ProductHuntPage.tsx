@@ -30,7 +30,7 @@ const whatYouGet = [
   },
   {
     title: 'Saved and shareable',
-    body: 'Each check is saved to your account with the date. An optional $1.99 certificate gives you a dated record with its own link to show you checked before buying.',
+    body: 'Each check is saved to your account with the date. An optional $4.99 certificate gives you a dated record with its own link to show you checked before buying.',
   },
 ];
 

@@ -19,7 +19,7 @@ const categories = [
       { question: 'What do the result labels mean?', answer: 'Reported stolen means a source holds a theft report for that identifier. Possible match means something close was found and you should look at the details. No report found in the records searched means none of the listed sources had a report; every result lists the sources it searched.' },
       { question: 'What should I do after a no report found result?', answer: 'Before you pay, also ask for proof of ownership. Match the identifier on the physical item, review the seller’s records, and follow the item-specific steps in our guides.' },
       { question: 'What should I do if an item is shown as stolen?', answer: 'Do not buy, transfer, reset, or resell it. Preserve the listing, messages, identifier, and payment record, then contact local police and the marketplace.' },
-      { question: 'What is a Proof of Clean Purchase?', answer: 'It is a dated record of a clean SafeOrStolen check, with its own link, that buyers and sellers can share. The verification certificate costs $1.99 and is free for monthly members. It is not a title, guarantee of ownership, or legal document.' },
+      { question: 'What is a Proof of Clean Purchase?', answer: 'It is a dated record of a clean SafeOrStolen check, with its own link, that buyers and sellers can share. The verification certificate costs $4.99 and is free for monthly members. It is not a title, guarantee of ownership, or legal document.' },
       { question: 'What if I think a result is wrong?', answer: 'Email safeorstolenmail@gmail.com with the identifier and any documents you have so the result can be reviewed.' },
     ],
   },

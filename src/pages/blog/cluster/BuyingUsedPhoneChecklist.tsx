@@ -4,7 +4,7 @@ import { ClusterArticleTemplate } from "@/components/blog/ClusterArticleTemplate
  * Oct 7 2026: rewritten by hand for "buying used phone checklist" / "what to check when buying a
  * used phone". No Search Console rows for this URL yet. Removed "AI analysis", the statement that
  * SafeOrStolen doesn't check carrier blacklists (it now has a paid blacklist check), and the
- * "Proof of Clean Purchase" name in favour of the $1.99 verification certificate.
+ * "Proof of Clean Purchase" name in favour of the $4.99 verification certificate.
  */
 export default function BuyingUsedPhoneChecklist() {
   return (
@@ -129,7 +129,7 @@ export default function BuyingUsedPhoneChecklist() {
           <h3>12. Keep a record</h3>
           <p>
             Save the listing, messages, the IMEI and the payment confirmation. Your SafeOrStolen
-            check is saved to your account with the date. For $1.99 (free for monthly members) you
+            check is saved to your account with the date. For $4.99 (free for monthly members) you
             can add a verification certificate: a dated record with its own link showing you
             checked before the sale.
           </p>

@@ -78,7 +78,7 @@ const CheckJewelryPage = () => (
         'Searches SafeOrStolen theft reports',
         'Every source searched is listed with the result',
         'A dated record of the check is saved to your account',
-        'Optional $1.99 verification certificate showing you checked before the sale',
+        'Optional $4.99 verification certificate showing you checked before the sale',
         '1 free check with no credit card',
       ],
       process: [

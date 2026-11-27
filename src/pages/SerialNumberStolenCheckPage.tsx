@@ -2,7 +2,7 @@
  * Serial Number Stolen Check Hub Page
  * Landing page for serial number stolen checks
  * Oct 8 2026 audit: removed "AI analysis", insurance/salvage claims, "3 seconds" and the
- * made-up Safe/Caution/Alert labels; certificate described as the optional $1.99 add-on.
+ * made-up Safe/Caution/Alert labels; certificate described as the optional $4.99 add-on.
  * URL: /serial-number-stolen-check
  */
 
@@ -110,7 +110,7 @@ const SerialNumberStolenCheckPage = () => {
  "@type": "HowToStep",
  "position": 3,
  "name": "Save or share results as proof",
- "text": "Every check is saved to your account with the date. For a shareable record, add the optional $1.99 verification certificate, a dated page with its own link showing you checked before the sale (free for monthly members)."
+ "text": "Every check is saved to your account with the date. For a shareable record, add the optional $4.99 verification certificate, a dated page with its own link showing you checked before the sale (free for monthly members)."
  }
  ]
  },
@@ -274,7 +274,7 @@ const SerialNumberStolenCheckPage = () => {
  <div>
  <h3 className="text-xl font-semibold mb-2">Step 3 – Save or share results as proof</h3>
  <p className="text-muted-foreground">
- Every check is saved to your account with the date. If you want something to show others, add the optional $1.99 verification certificate: a dated record with its own link showing you checked before the sale. It's free for monthly members.
+ Every check is saved to your account with the date. If you want something to show others, add the optional $4.99 verification certificate: a dated record with its own link showing you checked before the sale. It's free for monthly members.
  </p>
  </div>
  </div>

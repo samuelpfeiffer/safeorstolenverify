@@ -50,7 +50,7 @@ const HowToSellVerifiedItems = () => {
           "@type": "HowToStep",
           position: 3,
           name: "Save the record",
-          text: "The check is saved to your account with the date. Add the optional $1.99 verification certificate for a dated record with its own link you can share.",
+          text: "The check is saved to your account with the date. Add the optional $4.99 verification certificate for a dated record with its own link you can share.",
         },
         {
           "@type": "HowToStep",
@@ -70,7 +70,7 @@ const HowToSellVerifiedItems = () => {
           name: "How much does seller verification cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You get 1 free check with a free SafeOrStolen account. After that it's $4.99 for 1 check or $10 a month for unlimited checks, cancel anytime. The verification certificate you share with buyers is $1.99, or free on the monthly plan.",
+            text: "You get 1 free check with a free SafeOrStolen account. After that it's $4.99 for 1 check or $10 a month for unlimited checks, cancel anytime. The verification certificate you share with buyers is $4.99, or free on the monthly plan.",
           },
         },
         {
@@ -232,7 +232,7 @@ const HowToSellVerifiedItems = () => {
                 {
                   step: "3",
                   title: "Save the Record",
-                  desc: "Every check is saved to your account with the date. To share it, add the optional $1.99 verification certificate (free for monthly members). Its link shows part of the identifier, the result, the sources checked and the date.",
+                  desc: "Every check is saved to your account with the date. To share it, add the optional $4.99 verification certificate (free for monthly members). Its link shows part of the identifier, the result, the sources checked and the date.",
                 },
                 {
                   step: "4",
@@ -351,7 +351,7 @@ const HowToSellVerifiedItems = () => {
                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-1" />{" "}
                 <span>
                   <strong className="text-foreground">
-                    $1.99 verification certificate
+                    $4.99 verification certificate
                   </strong>{" "}
                   — A dated record with its own link to share with buyers. Free for monthly members.
                 </span>
@@ -373,7 +373,7 @@ const HowToSellVerifiedItems = () => {
               {[
                 {
                   q: "How much does seller verification cost?",
-                  a: "You get 1 free check with a free SafeOrStolen account. After that it's $4.99 for 1 check or $10 a month for unlimited checks, cancel anytime. The verification certificate you share with buyers is $1.99, or free on the monthly plan.",
+                  a: "You get 1 free check with a free SafeOrStolen account. After that it's $4.99 for 1 check or $10 a month for unlimited checks, cancel anytime. The verification certificate you share with buyers is $4.99, or free on the monthly plan.",
                 },
                 {
                   q: "What can a verification record do for a seller?",

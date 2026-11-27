@@ -321,7 +321,7 @@ const LikeCarfaxForPhones = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span><strong>Optional $1.99 certificate</strong>: a dated record with its own link showing you checked before the sale</span>
+                  <span><strong>Optional $4.99 certificate</strong>: a dated record with its own link showing you checked before the sale</span>
                 </li>
               </ul>
             </Card>

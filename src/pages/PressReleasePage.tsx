@@ -41,7 +41,7 @@ const qa: { q: string; a: string }[] = [
   },
   {
     q: "I'm selling. How do I show buyers my item is clean?",
-    a: 'Run a check, then add the $1.99 certificate link to your listing so buyers can see what you checked and when.',
+    a: 'Run a check, then add the $4.99 certificate link to your listing so buyers can see what you checked and when.',
   },
   {
     q: 'Does it work for pawn shops and dealers?',

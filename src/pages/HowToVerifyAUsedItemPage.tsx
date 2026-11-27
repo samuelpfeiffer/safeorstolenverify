@@ -65,7 +65,7 @@ const HowToVerifyAUsedItemPage = () => (
  {
  heading: 'Paperwork worth keeping',
  paragraphs: [
- 'If an item you bought is later reported stolen, police will want to know how you got it. A dated receipt with the serial number, the original listing, your messages with the seller and your SafeOrStolen check record show you bought in good faith and checked first. If you want a shareable version of the check, add a $1.99 verification certificate: a dated record with its own link. It is free on the monthly plan.',
+ 'If an item you bought is later reported stolen, police will want to know how you got it. A dated receipt with the serial number, the original listing, your messages with the seller and your SafeOrStolen check record show you bought in good faith and checked first. If you want a shareable version of the check, add a $4.99 verification certificate: a dated record with its own link. It is free on the monthly plan.',
  ],
  },
  ]}

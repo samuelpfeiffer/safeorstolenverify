@@ -180,7 +180,7 @@ const ComparisonCheckmend = () => {
                       </tr>
                       <tr className="border-b">
                         <td className="py-3 px-4 font-medium">Price</td>
-                        <td className="py-3 px-4">1 free check, then $4.99 for 1 check or $10 a month unlimited; optional $1.99 verification certificate</td>
+                        <td className="py-3 px-4">1 free check, then $4.99 for 1 check or $10 a month unlimited; optional $4.99 verification certificate</td>
                       </tr>
                     </tbody>
                   </table>

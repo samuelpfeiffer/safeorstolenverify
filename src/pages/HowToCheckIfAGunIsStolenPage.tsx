@@ -74,7 +74,7 @@ const FAQS = [
   },
   {
     q: 'How can a seller show a gun is not stolen?',
-    a: 'Run the serial on SafeOrStolen and share a verification certificate: a dated record with its own link showing what was checked and when. It costs $1.99 and is free on the monthly plan.',
+    a: 'Run the serial on SafeOrStolen and share a verification certificate: a dated record with its own link showing what was checked and when. It costs $4.99 and is free on the monthly plan.',
   },
 ];
 
@@ -227,7 +227,7 @@ const HowToCheckIfAGunIsStolenPage = () => {
         <H2 id="sellers">For sellers and businesses</H2>
         <p className="mb-4">
           Sellers can run the serial before listing and share a <Link to="/seller-badge" className="text-primary underline">verification certificate</Link>,
-          a dated record with its own link that shows a buyer what was checked and when ($1.99, free on the monthly plan).
+          a dated record with its own link that shows a buyer what was checked and when ($4.99, free on the monthly plan).
         </p>
         <p>
           Pawn shops and dealers can check up to 100 serials at a time with the{' '}

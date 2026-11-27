@@ -79,7 +79,7 @@ function GuidePage() {
           "Find out if the number is reported in SafeOrStolen theft reports",
           "Every source listed with the result",
           "Dated record of the check saved to your account",
-          "Optional $1.99 verification certificate with its own link",
+          "Optional $4.99 verification certificate with its own link",
           "1 free check with no credit card",
         ],
         process: [

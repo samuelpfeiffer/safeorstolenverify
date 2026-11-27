@@ -143,7 +143,7 @@ const PressPage = () => (
             <li>1 free check, no account or credit card needed.</li>
             <li>$4.99 for 1 check.</li>
             <li>$10 a month for unlimited checks (phone blacklist checks capped at 20 a month), cancel anytime, 30-day refund on the monthly plan.</li>
-            <li>An optional $1.99 verification certificate: a dated record with its own link showing the buyer checked before the sale. Free for monthly members.</li>
+            <li>An optional $4.99 verification certificate: a dated record with its own link showing the buyer checked before the sale. Free for monthly members.</li>
             <li>A free installable web app at safeorstolen.com/app. There is no App Store or Google Play app.</li>
             <li>Bulk checking for pawn shops and dealers at <Link to="/bulk-check" className="text-primary hover:underline">/bulk-check</Link>.</li>
           </ul>

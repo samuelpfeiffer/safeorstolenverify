@@ -82,7 +82,7 @@ export default function HowToCheckIfLaptopStolenPage() {
         'Works for MacBook, Dell, HP, Lenovo, ASUS, Acer, Microsoft Surface and Chromebooks',
         'Searches SafeOrStolen theft reports',
         'Results in a few seconds with every source listed',
-        'Optional $1.99 verification certificate showing you checked before the sale',
+        'Optional $4.99 verification certificate showing you checked before the sale',
         '1 free check with no credit card',
       ],
       process: [

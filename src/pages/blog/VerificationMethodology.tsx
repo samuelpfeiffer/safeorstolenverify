@@ -39,7 +39,7 @@ const FAQS = [
   {
     question: 'Should I save a stolen check result?',
     answer:
-      "Yes. A dated record shows you checked before you paid, which matters if the item later turns out to be stolen. SafeOrStolen saves signed-in checks to your account with the date. A $1.99 verification certificate, free for monthly members, gives you a dated record with its own link to show a buyer or keep with your receipt.",
+      "Yes. A dated record shows you checked before you paid, which matters if the item later turns out to be stolen. SafeOrStolen saves signed-in checks to your account with the date. A $4.99 verification certificate, free for monthly members, gives you a dated record with its own link to show a buyer or keep with your receipt.",
   },
 ];
 

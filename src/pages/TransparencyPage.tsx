@@ -110,7 +110,7 @@ export default function TransparencyPage() {
                   <li>Free account: 1 check, no credit card.</li>
                   <li>1 check: $4.99.</li>
                   <li>Monthly: $10 for unlimited checks,. Cancel anytime; 30-day refund.</li>
-                  <li>Verification certificate: $1.99, free for monthly members.</li>
+                  <li>Verification certificate: $4.99, free for monthly members.</li>
                   <li>The installable app at safeorstolen.com/app: free.</li>
                 </ul>
                 <p className="text-sm text-muted-foreground mt-3">

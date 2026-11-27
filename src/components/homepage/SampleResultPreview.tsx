@@ -87,7 +87,7 @@ export const SampleResultPreview = () => {
  <div className="border-t border-border pt-4 flex flex-wrap gap-3">
  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
  <FileText className="w-3.5 h-3.5" />
- Optional $1.99 certificate
+ Optional $4.99 certificate
  </div>
  <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
  <Share2 className="w-3.5 h-3.5" />

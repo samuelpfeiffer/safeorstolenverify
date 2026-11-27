@@ -122,7 +122,7 @@ export default function HowToCheckIfItemStolenPage() {
       <section className="mx-auto mt-12 max-w-3xl rounded-xl border border-primary/30 bg-card p-6 text-muted-foreground">
         <h2 className="text-2xl font-bold text-foreground">Where SafeOrStolen fits</h2>
         <p className="mt-3">Every SafeOrStolen check searches its own theft reports. Guns are also checked against police theft and loss reports from 33 states and Washington, DC, and live Ohio law-enforcement records; bikes against a national stolen-bicycle registry; and Arizona VINs and plates against Arizona, Alaska and Chicago police stolen-vehicle records. Outside sources described in these guides are separate checks for the reader to perform.</p>
-        <p className="mt-3">A result is one part of due diligence, not proof of ownership or a guarantee. Sellers and buyers can add an optional $1.99 verification certificate, a dated record with its own link showing the check was done before the sale; it is not a legal document.</p>
+        <p className="mt-3">A result is one part of due diligence, not proof of ownership or a guarantee. Sellers and buyers can add an optional $4.99 verification certificate, a dated record with its own link showing the check was done before the sale; it is not a legal document.</p>
       </section>
     </main>
   </div>;

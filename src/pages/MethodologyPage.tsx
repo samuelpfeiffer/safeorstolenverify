@@ -95,7 +95,7 @@ const FAQS = [
   },
   {
     q: 'What is saved when I run a check?',
-    a: 'Signed-in checks are saved to your account with the item type, the result, the sources searched, and the date and time. If you add a $1.99 verification certificate (free on the monthly plan), you get a dated record with its own link that shows only the last four characters of the number, so you can share it without publishing the full serial.',
+    a: 'Signed-in checks are saved to your account with the item type, the result, the sources searched, and the date and time. If you add a $4.99 verification certificate (free on the monthly plan), you get a dated record with its own link that shows only the last four characters of the number, so you can share it without publishing the full serial.',
   },
 ];
 

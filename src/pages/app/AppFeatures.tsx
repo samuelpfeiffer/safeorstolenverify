@@ -25,7 +25,7 @@ const AppFeatures = () => {
     {
       icon: <Shield className="w-8 h-8" />,
       title: "For buyers and sellers",
-      description: "Buyers check a serial before paying. Sellers can add a $1.99 verification certificate, a dated record with its own link that shows they checked before the sale.",
+      description: "Buyers check a serial before paying. Sellers can add a $4.99 verification certificate, a dated record with its own link that shows they checked before the sale.",
       highlight: "Both sides of the sale"
     },
     {
@@ -70,7 +70,7 @@ const AppFeatures = () => {
       "VIN vehicle check with open recalls",
       "Serial number check",
       "Saved check history",
-      "Optional $1.99 verification certificate"
+      "Optional $4.99 verification certificate"
     ],
     "offers": {
       "@type": "Offer",
@@ -237,7 +237,7 @@ const AppFeatures = () => {
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span>Add a $1.99 verification certificate (free for monthly members)</span>
+                      <span>Add a $4.99 verification certificate (free for monthly members)</span>
                     </li>
                     <li className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
@@ -337,7 +337,7 @@ const AppFeatures = () => {
                   </tr>
                   <tr>
                     <td className="p-4 font-medium">Verification certificate</td>
-                    <td className="p-4">$1.99, free for monthly members</td>
+                    <td className="p-4">$4.99, free for monthly members</td>
                   </tr>
                 </tbody>
               </table>

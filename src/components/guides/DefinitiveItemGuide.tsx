@@ -390,7 +390,7 @@ export function DefinitiveItemGuide({
         </p>
         <p className="mt-4">
           Buyers can save the result with their other due-diligence records.
-          You can also add an optional $1.99{" "}
+          You can also add an optional $4.99{" "}
           <Link className="text-primary underline" to="/proof-of-purchase">
             verification certificate
           </Link>

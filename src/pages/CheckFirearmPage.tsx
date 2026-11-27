@@ -155,7 +155,7 @@ export default function CheckFirearmPage() {
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
                   <div>
                     <h3 className="font-bold text-lg">Keep the Record</h3>
-                    <p className="text-muted-foreground">The check is saved to your account with the date. If you want a link to share, add the optional $1.99 verification certificate, free for monthly members.</p>
+                    <p className="text-muted-foreground">The check is saved to your account with the date. If you want a link to share, add the optional $4.99 verification certificate, free for monthly members.</p>
                   </div>
                 </div>
               </div>

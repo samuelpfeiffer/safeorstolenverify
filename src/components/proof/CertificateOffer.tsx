@@ -6,11 +6,11 @@ import { getOrCreateFingerprint } from '@/hooks/useVerifyGate';
 import { useNavigate } from '@/lib/router-compat';
 
 /**
- * Offered under every check result (Oct 5 2026): a $1.99 certificate showing the
+ * Offered under every check result (Oct 5 2026): a $4.99 certificate showing the
  * buyer or seller did their due diligence. Free for monthly members. The
  * certificate is built on the server from the saved check (/certificate-api).
  */
-export function CertificateOffer({ checkId }: { checkId?: string | null }) {
+export function CertificateOffer({ checkId, sourceCount = 0, member = false }: { checkId?: string | null; sourceCount?: number; member?: boolean }) {
   const navigate = useNavigate();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -54,16 +54,19 @@ export function CertificateOffer({ checkId }: { checkId?: string | null }) {
       <div className="flex items-start gap-3">
         <Award className="h-5 w-5 text-primary shrink-0 mt-0.5" />
         <div>
-          <p className="font-semibold text-sm">Get a verification certificate — $1.99</p>
+          <p className="font-semibold text-sm">
+            {member ? 'Get your full report and certificate (included in your plan)' : 'See the full report — $4.99'}
+          </p>
           <p className="text-xs text-muted-foreground mt-0.5">
-            A dated, tamper-evident certificate with its own link showing you checked this item before the sale,
-            and what the check found. Share it with the buyer or seller, or keep it with your receipt.
-            Included free with the monthly plan.
+            {sourceCount > 0 ? `The full list of the ${sourceCount} sources searched, ` : 'The full list of sources searched, '}
+            the result, a PDF, and a dated, tamper-evident certificate with its own link that shows you checked this
+            item before the sale. Share it with the buyer or seller, or keep it with your receipt.
+            Included free with the $10/month plan.
           </p>
         </div>
       </div>
       <Button size="sm" className="w-full" onClick={getCertificate} disabled={busy}>
-        {busy ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Preparing…</> : 'Get my certificate'}
+        {busy ? <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Preparing…</> : member ? 'Open my full report' : 'Get the full report'}
       </Button>
       {error && <p className="text-xs text-red-500">{error}</p>}
     </div>

@@ -196,7 +196,7 @@ const FreeCarfaxAlternativePage = () => {
                 <Award className="w-6 h-6 text-primary flex-shrink-0" />
                 <div>
                   <h3 className="font-bold">A dated record</h3>
-                  <p className="text-sm text-muted-foreground">Each check is saved to your account with the date, and a $1.99 certificate gives you a shareable record.</p>
+                  <p className="text-sm text-muted-foreground">Each check is saved to your account with the date, and a $4.99 certificate gives you a shareable record.</p>
                 </div>
               </div>
             </div>

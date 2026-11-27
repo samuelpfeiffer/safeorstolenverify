@@ -95,7 +95,7 @@ const ComparisonSwappa = () => {
  { feature: 'Free checks available', safeorstolen: true, swappa: true },
  { feature: 'Buy/sell marketplace', safeorstolen: false, swappa: true },
  { feature: 'Listing prices to compare', safeorstolen: false, swappa: true },
- { feature: '$1.99 dated verification certificate', safeorstolen: true, swappa: false },
+ { feature: '$4.99 dated verification certificate', safeorstolen: true, swappa: false },
  { feature: 'Bulk checking for pawn shops and dealers', safeorstolen: true, swappa: false },
  ];
 
@@ -181,7 +181,7 @@ const ComparisonSwappa = () => {
  ['Sources', "SafeOrStolen theft reports, plus item-specific records for bikes, guns and Arizona vehicles"],
  ['Clear results', '"Reported stolen", "possible match", or "no report found in the records searched", with sources listed'],
  ['1 free check', 'Then $4.99 for 1 check or $10 a month unlimited'],
- ['Verification certificate', 'Optional $1.99 dated record with its own link'],
+ ['Verification certificate', 'Optional $4.99 dated record with its own link'],
  ].map(([title, desc]) => (
  <li key={title} className="flex items-start gap-2">
  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />

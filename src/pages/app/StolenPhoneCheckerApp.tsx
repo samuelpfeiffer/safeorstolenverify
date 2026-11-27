@@ -105,7 +105,7 @@ const StolenPhoneCheckerApp = () => {
  <div>
  <h3 className="font-bold mb-2">For buyers and sellers</h3>
  <p className="text-muted-foreground text-sm">
- Buyers check before paying. Sellers can add a $1.99 verification certificate with its own link to show they checked first.
+ Buyers check before paying. Sellers can add a $4.99 verification certificate with its own link to show they checked first.
  </p>
  </div>
  </div>

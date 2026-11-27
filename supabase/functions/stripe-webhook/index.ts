@@ -203,7 +203,7 @@ serve(async (req) => {
           const purchaseType = metadata.purchase_type || 'subscription';
           const userId = metadata.user_id || undefined;
 
-          // Oct 5 2026: a $1.99 verification certificate. It only issues the
+          // Oct 5 2026: a $4.99 verification certificate. It only issues the
           // certificate; it must never grant checks or change the buyer's plan,
           // so it is handled here and nothing below runs.
           if (purchaseType === 'certificate') {

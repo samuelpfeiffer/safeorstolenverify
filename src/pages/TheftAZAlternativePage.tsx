@@ -29,7 +29,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How much does SafeOrStolen cost?',
-    a: 'Your first check is free, with no account or credit card needed. After that, $4.99 gets you 1 more check, or $10 a month for unlimited checks, cancel anytime. An optional $1.99 verification certificate gives you a dated record showing you checked before the sale.',
+    a: 'Your first check is free, with no account or credit card needed. After that, $4.99 gets you 1 more check, or $10 a month for unlimited checks, cancel anytime. An optional $4.99 verification certificate gives you a dated record showing you checked before the sale.',
   },
 ];
 
@@ -138,7 +138,7 @@ const TheftAZAlternativePage = () => {
             <p className="text-muted-foreground leading-relaxed">
               Before you pay, match the VIN on the driver's door sticker to the one on the dashboard and the title, and
               compare the name on the title to the seller's photo ID. SafeOrStolen saves each check to your account with
-              the date, and an optional $1.99 verification certificate gives you a dated record with its own link
+              the date, and an optional $4.99 verification certificate gives you a dated record with its own link
               showing you checked before the sale.
             </p>
           </section>

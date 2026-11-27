@@ -28,7 +28,7 @@ const FreeVINLookupGuide = () => {
  { "@type": "HowToStep", "position": 1, "name": "Find the VIN", "text": "Locate the 17-character VIN on the dashboard (driver's side), driver's door jamb, or vehicle registration." },
  { "@type": "HowToStep", "position": 2, "name": "Enter the VIN", "text": "Go to safeorstolen.com/verify and paste the 17-character VIN. The search box recognizes it as a VIN, so there's nothing to pick from a menu." },
  { "@type": "HowToStep", "position": 3, "name": "Review results", "text": "In a few seconds you see the decoded year, make and model, any open safety recalls, and whether the VIN appears in SafeOrStolen theft reports. Every VIN and plate, from any state, is also searched against Arizona, Alaska and Chicago police stolen-vehicle records." },
- { "@type": "HowToStep", "position": 4, "name": "Save proof of the check", "text": "Every check is saved to your account with the date. For $1.99 you can add a verification certificate with its own link that shows you checked before the sale." }
+ { "@type": "HowToStep", "position": 4, "name": "Save proof of the check", "text": "Every check is saved to your account with the date. For $4.99 you can add a verification certificate with its own link that shows you checked before the sale." }
  ],
  "totalTime": "PT30S"
  },
@@ -149,7 +149,7 @@ const FreeVINLookupGuide = () => {
  { step: '1', title: 'Get the VIN', desc: 'Ask the seller to send you the VIN before you drive to see the vehicle. If they refuse, walk away — legitimate sellers have nothing to hide.' },
  { step: '2', title: 'Enter It on SafeOrStolen', desc: 'Go to safeorstolen.com/verify and paste the 17-digit VIN. The search box recognizes it as a VIN, so there\'s no dropdown to pick from.' },
  { step: '3', title: 'Review Your Results', desc: 'In a few seconds you get the year, make, model and any open recalls, plus one of three results: reported stolen, possible match, or no report found in the records searched. Every source is listed.' },
- { step: '4', title: 'Keep the Record', desc: 'The check is saved to your account with the date. If you want something to show the other party, a $1.99 verification certificate gives you a dated record with its own link.' },
+ { step: '4', title: 'Keep the Record', desc: 'The check is saved to your account with the date. If you want something to show the other party, a $4.99 verification certificate gives you a dated record with its own link.' },
  ].map(s => (
  <div key={s.step} className="flex gap-4 p-5 bg-card border border-border rounded-xl">
  <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/30 text-primary font-black text-lg flex items-center justify-center flex-shrink-0">
