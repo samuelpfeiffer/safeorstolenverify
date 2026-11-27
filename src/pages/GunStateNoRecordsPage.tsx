@@ -3,6 +3,7 @@ import { PageSEO } from '@/components/seo/PageSEO';
 import { InlineSerialCheck } from '@/components/seo/InlineSerialCheck';
 import { GUN_NATIONAL, GUN_STATES, type GunNoRecordState } from '@/data/gunTheftStats';
 import { REQUIRED, NOT_REQUIRED } from '@/pages/StateFirearmTransferLawsPage';
+import { GUN_STATE_LAWS } from '@/data/gunStateLaws';
 
 // Nov 24 2026 (owner request): gun serial number lookup pages for the 16 states SafeOrStolen holds
 // NO police reports from. Honest by design: the page says there are no reports from this state yet,
@@ -25,6 +26,7 @@ function privateSaleRule(name: string): string {
 export default function GunStateNoRecordsPage({ state: s }: { state: GunNoRecordState }) {
   const path = `/gun-serial-number-lookup/${s.slug}`;
   const url = `https://safeorstolen.com${path}`;
+  const law = GUN_STATE_LAWS[s.slug];
   const jurisdictions = GUN_STATES.length - 1; // 33 states + DC are listed as GUN_STATES (34 entries)
 
   const quickAnswer = `Enter the gun's serial number at SafeOrStolen (safeorstolen.com${path}). SafeOrStolen does not hold police reports from ${s.name} yet, but every check still searches ${fmt(GUN_NATIONAL.total)} police reports of stolen and lost guns from 33 states and Washington, DC, live Ohio law-enforcement records and SafeOrStolen's own theft reports, and flags altered serial numbers. A gun reported stolen in another state can still turn up for sale in ${s.name}. The first check is free.`;
@@ -74,7 +76,7 @@ export default function GunStateNoRecordsPage({ state: s }: { state: GunNoRecord
         description={`Check a gun serial number before you buy in ${s.name} (${s.code}). Searches ${fmt(GUN_NATIONAL.total)} police reports of stolen guns from 33 states and DC plus live Ohio records. ${s.name} reports not yet included. First check free.`}
         canonical={path}
         structuredData={schema}
-        modifiedTime="2026-11-24"
+        modifiedTime={law ? "2026-11-27" : "2026-11-24"}
       />
       <div className="min-h-screen bg-background text-foreground">
         <section className="px-4 pt-24 pb-12 bg-gradient-to-b from-muted to-background">
@@ -134,6 +136,25 @@ export default function GunStateNoRecordsPage({ state: s }: { state: GunNoRecord
                 </p>
               </div>
             </section>
+
+            {law && (
+              <section>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">{s.name} gun laws a buyer should know</h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <ul className="list-disc pl-6 space-y-2">
+                    {law.rules.map((r) => <li key={r}>{r}</li>)}
+                  </ul>
+                  <h3 className="text-lg font-semibold text-foreground pt-2">Reporting a lost or stolen gun in {s.name}</h3>
+                  <p>{law.reportStolen} You can also report it on SafeOrStolen so anyone who checks the serial number before buying sees it.</p>
+                  <h3 className="text-lg font-semibold text-foreground pt-2">Who handles stolen guns in {s.name}</h3>
+                  <p>{law.agency}</p>
+                  <h3 className="text-lg font-semibold text-foreground pt-2">Pawn shops and serial numbers in {s.name}</h3>
+                  <p>{law.pawn}</p>
+                  {law.extra && <p>{law.extra}</p>}
+                  <p className="text-sm">Laws change. This is a plain summary, not legal advice; confirm the current rule with the state or a licensed dealer before a sale.</p>
+                </div>
+              </section>
+            )}
 
             <section>
               <h2 className="text-2xl md:text-3xl font-bold mb-6">{s.name} gun serial number questions</h2>
