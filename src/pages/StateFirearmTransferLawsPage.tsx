@@ -27,6 +27,7 @@ export const REQUIRED: StateEntry[] = [
   { state: 'Massachusetts', scope: 'All firearms; both parties need valid permits' },
   { state: 'Minnesota', scope: 'Pistols and semiautomatic military-style assault weapons, through a dealer or with a permit (Minn. Stat. § 624.7134, since 2023)' },
   { state: 'Nevada', scope: 'All firearms; immediate-family transfers exempt' },
+  { state: 'New Mexico', scope: 'All firearms, through a dealer; immediate-family transfers exempt (NMSA 30-7-7.1)' },
   { state: 'New Jersey', scope: 'All firearms; family exemptions apply' },
   { state: 'New York', scope: 'All firearms; narrow family exemptions' },
   { state: 'Oregon', scope: 'All firearms; immediate-family transfers exempt' },
@@ -46,7 +47,7 @@ export const NOT_REQUIRED: string[] = [
   'Wisconsin', 'Wyoming',
 ];
 
-const UNLISTED = ['Michigan', 'New Mexico', 'Virginia'];
+const UNLISTED = ['Michigan', 'Virginia'];
 
 const FAQS = [
   {

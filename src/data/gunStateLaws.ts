@@ -12,8 +12,8 @@ export interface GunStateLaw {
   reportStolen: string;
   /** Buyer-relevant rules, each with its citation. */
   rules: string[];
-  /** Pawn shop / secondhand dealer serial-number rule. */
-  pawn: string;
+  /** Pawn shop / secondhand dealer serial-number rule (omitted when no official source confirmed it). */
+  pawn?: string;
   /** One extra fact for a private buyer. */
   extra?: string;
 }
@@ -103,5 +103,44 @@ export const GUN_STATE_LAWS: Record<string, GunStateLaw> = {
       "No gun registration.",
     ],
     pawn: "Minnesota pawnbrokers must record each item's serial number, keep their records for three years and give them to police on request (Minn. Stat. §§ 325J.04, 325J.05, 325J.08).",
+  },
+  mississippi: {
+    agency: "The Mississippi Department of Public Safety, whose Criminal Information Center and Mississippi Justice Information Center keep the state's criminal records.",
+    reportStolen: "Mississippi law does not set a deadline for reporting a lost or stolen gun. Report it to local police or the sheriff with the serial number so it is entered as stolen.",
+    rules: [
+      "No state permit to buy, no gun registration and no waiting period.",
+      "No state background check on private sales between Mississippi residents.",
+    ],
+    pawn: "Mississippi pawnbrokers must record serial numbers (Miss. Code § 75-67-305), give their records to police on request, electronically within 72 hours where the agency supplies the software (§ 75-67-309), and may not take items whose serial numbers have been removed (§ 75-67-315).",
+    extra: "Possessing or receiving a stolen firearm is its own crime in Mississippi (Miss. Code § 97-37-35).",
+  },
+  montana: {
+    agency: "The Montana Department of Justice, which runs the state's criminal justice information network and criminal history records.",
+    reportStolen: "Montana law does not set a deadline for reporting a lost or stolen gun. Report it to local police or the sheriff with the serial number so it is entered as stolen.",
+    rules: [
+      "No state permit to buy, no gun registration and no waiting period.",
+      "No state background check on private sales between Montana residents.",
+    ],
+    pawn: "Montana pawnbrokers must keep a register of what they take in, open to any peace officer (MCA 31-1-402), and cities can require pawn and secondhand dealers to keep records (MCA 7-21-4207).",
+    extra: "Possessing a gun whose serial number has been obscured, in order to conceal or transfer it, is an offense in Montana, and possession creates a presumption that the person knew (MCA 45-6-326).",
+  },
+  "new-mexico": {
+    agency: "The New Mexico Department of Public Safety, whose Law Enforcement Records Bureau keeps the state's records.",
+    reportStolen: "New Mexico law does not set a deadline for reporting a lost or stolen gun. Report it to local police or the sheriff with the serial number so it is entered as stolen.",
+    rules: [
+      "Private sales must go through a licensed dealer for a background check, with the dealer's fee capped at $35; transfers between immediate family members are exempt (NMSA 30-7-7.1).",
+      "A 7-day waiting period was enacted in 2024 (NMSA 30-7-7.3). It has been challenged in federal court and its enforcement has been limited, so confirm its current status with a dealer before you buy.",
+      "No state permit to buy and no gun registration.",
+    ],
+  },
+  "north-dakota": {
+    agency: "The North Dakota Attorney General's Bureau of Criminal Investigation (BCI).",
+    reportStolen: "North Dakota law does not set a deadline for reporting a lost or stolen gun. Report it to local police or the sheriff with the serial number so it is entered as stolen.",
+    rules: [
+      "No state permit to buy, no gun registration and no waiting period.",
+      "No state background check on private sales between North Dakota residents, but knowingly transferring a handgun to someone prohibited from having one is a crime (N.D.C.C. 62.1-02-02 and 62.1-02-08).",
+    ],
+    pawn: "North Dakota has no statewide pawn-shop serial-number law; cities license and regulate pawnbrokers (N.D.C.C. 40-05-01), so ask the local police department how they track pawned guns.",
+    extra: "Possessing a gun with an altered serial number is banned in North Dakota, and the person holding it is presumed to have altered it unless they show otherwise (N.D.C.C. 62.1-03-05).",
   },
 };
