@@ -148,8 +148,12 @@ export default function GunStateNoRecordsPage({ state: s }: { state: GunNoRecord
                   <p>{law.reportStolen} You can also report it on SafeOrStolen so anyone who checks the serial number before buying sees it.</p>
                   <h3 className="text-lg font-semibold text-foreground pt-2">Who handles stolen guns in {s.name}</h3>
                   <p>{law.agency}</p>
-                  <h3 className="text-lg font-semibold text-foreground pt-2">Pawn shops and serial numbers in {s.name}</h3>
-                  <p>{law.pawn}</p>
+                  {law.pawn && (
+                    <>
+                      <h3 className="text-lg font-semibold text-foreground pt-2">Pawn shops and serial numbers in {s.name}</h3>
+                      <p>{law.pawn}</p>
+                    </>
+                  )}
                   {law.extra && <p>{law.extra}</p>}
                   <p className="text-sm">Laws change. This is a plain summary, not legal advice; confirm the current rule with the state or a licensed dealer before a sale.</p>
                 </div>

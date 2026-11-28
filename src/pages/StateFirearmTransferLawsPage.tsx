@@ -22,9 +22,12 @@ export const REQUIRED: StateEntry[] = [
   { state: 'Delaware', scope: 'All firearms' },
   { state: 'Hawaii', scope: 'All firearms, through a permit-to-acquire system' },
   { state: 'Illinois', scope: 'All transfers, through the FOID system' },
+  { state: 'Maine', scope: 'Sales arranged by advertisement (including online) or at gun shows, through a dealer; family transfers exempt (15 MRSA § 395)' },
   { state: 'Maryland', scope: 'Regulated firearms only; long guns exempt' },
   { state: 'Massachusetts', scope: 'All firearms; both parties need valid permits' },
+  { state: 'Minnesota', scope: 'Pistols and semiautomatic military-style assault weapons, through a dealer or with a permit (Minn. Stat. § 624.7134, since 2023)' },
   { state: 'Nevada', scope: 'All firearms; immediate-family transfers exempt' },
+  { state: 'New Mexico', scope: 'All firearms, through a dealer; immediate-family transfers exempt (NMSA 30-7-7.1)' },
   { state: 'New Jersey', scope: 'All firearms; family exemptions apply' },
   { state: 'New York', scope: 'All firearms; narrow family exemptions' },
   { state: 'Oregon', scope: 'All firearms; immediate-family transfers exempt' },
@@ -38,13 +41,13 @@ export const REQUIRED: StateEntry[] = [
 /** States whose law does not mandate a background check on private-party sales. */
 export const NOT_REQUIRED: string[] = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'Florida', 'Georgia', 'Idaho', 'Indiana',
-  'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Mississippi', 'Missouri', 'Montana',
+  'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Mississippi', 'Missouri', 'Montana',
   'Nebraska', 'New Hampshire', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma',
   'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'West Virginia',
   'Wisconsin', 'Wyoming',
 ];
 
-const UNLISTED = ['Michigan', 'Minnesota', 'New Mexico', 'Virginia'];
+const UNLISTED = ['Michigan', 'Virginia'];
 
 const FAQS = [
   {
